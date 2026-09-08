@@ -1,6 +1,6 @@
 SatGenDescClass {
  FileName "C:/QGIS/ArmaTerrainExport/bamiyanhighway/satmap_20260906_102652_BSRGANx4_InputR-50_OutputR-100.png"
- sRGBOutput 1
+ sRGBOutput 0
  Interpolation bilinear
  RenderRoads 1
  RoadsAA "8x"
