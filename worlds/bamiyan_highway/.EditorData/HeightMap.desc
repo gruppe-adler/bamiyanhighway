@@ -1,0 +1,7 @@
+HeightMapImportDescClass {
+ FileName "C:/Users/nomisum/Downloads/bamiyan_final_combined_8192.png"
+ Flags 1
+ MinHeight -1000000
+ ResampleMinHeight 0
+ ResampleMaxHeight 1
+}
