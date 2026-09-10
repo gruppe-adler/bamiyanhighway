@@ -1,0 +1,4 @@
+TerrainMaterial {
+ Color 0.236 0.352 0.021 1
+ SatMapBlend 0
+}
