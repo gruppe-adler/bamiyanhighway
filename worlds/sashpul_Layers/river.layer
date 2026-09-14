@@ -320,4 +320,47 @@ $grp SplineShapeEntity {
    }
   }
  }
+ {
+  coords 1366.438 -43.5 954.091
+  angles 0 -55.612 0
+  Points {
+   ShapePoint "{6A5D43E79AE67C78}" {
+    Position -9.162 0.094 1.865
+   }
+   ShapePoint "{6A5D43E79AE59257}" {
+    Position 6.129 0.1 1.502
+   }
+   ShapePoint "{6A5D43E79305623B}" {
+    Position 23.855 -0.429 1.599
+   }
+   ShapePoint "{6A5D43E792F616FD}" {
+    Position 48.178 0.86 -0.947
+   }
+   ShapePoint "{6A5D43E4F346F099}" {
+    Position 54.896 0.5 -0.977
+   }
+   ShapePoint "{6A5D43E4F396C4B8}" {
+    Position 60.733 -1.8 -0.919
+   }
+   ShapePoint "{6A5D43E4F2D247B4}" {
+    Position 69.28 -2.219 -2.043
+   }
+   ShapePoint "{6A5D43E4ECB3D24F}" {
+    Position 72.84 -2.181 -2.912
+   }
+   ShapePoint "{6A5D43E4EE57C1B6}" {
+    Position 79.296 -2.376 -10.807
+   }
+  }
+  {
+   RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
+    coords 0 0 0
+    Width 6
+    SplineOffsetUp 2.4
+    ReverseFlow 1
+    Clearance 0.8
+    GUID "6A5D43E7DE87E20A"
+   }
+  }
+ }
 }
