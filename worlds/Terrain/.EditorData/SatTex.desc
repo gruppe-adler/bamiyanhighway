@@ -1,0 +1,7 @@
+SatGenDescClass {
+ FileName "C:/QGIS/ArmaTerrainExport/bamiyanhighway/2200/archive/satmap_20260913_221958.png"
+ sRGBOutput 0
+ Interpolation bilinear
+ RenderRoads 1
+ RoadsAA "8x"
+}

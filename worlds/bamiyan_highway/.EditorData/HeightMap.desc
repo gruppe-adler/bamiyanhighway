@@ -1,7 +1,7 @@
 HeightMapImportDescClass {
- FileName "C:/Users/nomisum/Downloads/bamiyan_final_combined_8192.png"
+ FileName "C:/QGIS/ArmaTerrainExport/bamiyanhighway/2200/heightmap_20260912_104758.png"
  Flags 1
  MinHeight -1000000
- ResampleMinHeight 0
- ResampleMaxHeight 1
+ ResampleMinHeight 2183.59
+ ResampleMaxHeight 2866.34
 }

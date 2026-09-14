@@ -3,7 +3,7 @@ NormGenDescClass {
  MinDegAngle 30
  MaxDegAngle 45
  Intensity 1
- TexSize 256
+ TexSize 1024
  XC 0.5
  YC 0.5
  M 1.005

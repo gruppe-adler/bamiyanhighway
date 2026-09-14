@@ -1,0 +1,7 @@
+HeightMapImportDescClass {
+ FileName "C:/QGIS/ArmaTerrainExport/bamiyanhighway/2200/archive/heightmap_20260913_221958_eroded.png"
+ Flags 1
+ MinHeight -1000000
+ ResampleMinHeight 0
+ ResampleMaxHeight 1
+}
