@@ -1,0 +1,250 @@
+GenericEntity cliff_photogrammetry_dummy {
+ components {
+  MeshObject "{6A730D222A89F8E1}" {
+   Object "{A0DB05CFD910106F}Prefabs/Rocks/Granite/cliff_v6_holefilled_baked.xob"
+   Materials {
+    MaterialAssignClass "{6A730D22763D807E}" {
+     SourceMaterial "material_01"
+     AssignedMaterial "{6EBF7ADA9FD582F7}Assets/Structures/Military/Fortifications/DirtMounds/Data/DirtCover_01.emat"
+    }
+   }
+  }
+ }
+ coords 1632.493 -25.016 865.259
+ angles 3.656 -174.747 0
+ scale 45.749
+}
+StaticModelEntity : "{20142DB5C4E8D026}Temppa/Prefabs/Structures/villa/tem_villa_ruin.et" {
+ coords 1688.289 21.534 917.259
+ angles 0 28.221 0
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
+ {
+  coords 1631.015 -25.778 966.096
+  angles -18.864 131.684 0
+ }
+ {
+  coords 1627.43 -7.2 954.795
+  angles -18.14 131.684 91.944
+  scale 2
+ }
+ {
+  coords 1684.28 -44.707 1029.803
+  angles 0 -76.454 0
+ }
+ {
+  coords 1676.352 -23.067 1017.283
+  angles 0 126.001 0
+ }
+ {
+  coords 1669.313 -46.864 1010.794
+  angles 0 -61.763 0
+ }
+ {
+  coords 1694.298 -45.244 1029.975
+  angles -17.452 -101.171 0
+ }
+ {
+  coords 1681.438 -7.353 1014.917
+  angles 0 109.122 -149.089
+ }
+ {
+  coords 1627.033 -24.53 952.955
+  angles -13.559 143.074 0
+  scale 2
+ }
+ {
+  coords 1669.379 10.109 966.533
+  angles -88.479 -180 49.152
+  scale 2
+ }
+ {
+  coords 1726.509 4.783 911.462
+  angles -10.977 178.447 -155.459
+  scale 2
+ }
+ {
+  coords 1678.548 11.279 939.79
+  angles -81.846 -180 -180
+  scale 2
+ }
+ {
+  coords 1663.409 10.143 947.719
+  angles -81.846 180 -4.51
+  scale 2
+ }
+ {
+  coords 1632.951 5.487 934.585
+  angles -81.846 -180 48.503
+  scale 2
+ }
+ {
+  coords 1606.184 14.1 907.833
+  angles -81.846 180 -131.99
+  scale 2
+ }
+ {
+  coords 1615.515 9.705 921.992
+  angles -82.555 149.421 -106.374
+  scale 2
+ }
+ {
+  coords 1564.661 -30.644 899.64
+  angles 5.817 7.676 23.73
+  scale 2
+ }
+ {
+  coords 1758.496 -39.879 849.727
+  angles 4.981 157.166 11.651
+  scale 2
+ }
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{487E00C3FA4FE2A5}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_04.et" {
+ {
+  coords 1687.393 -33.207 1033.147
+  angles -9.95 177.173 84.9
+ }
+ {
+  coords 1692.567 -26.853 1012.761
+  angles 0 0 -103.042
+ }
+ {
+  coords 1676.699 0.492 1015.172
+  angles -17.53 -158.359 -95.844
+ }
+ {
+  coords 1633.094 -19.455 964.742
+  angles -21.462 137.234 100.218
+ }
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
+ {
+  coords 1640.071 -26.376 973.78
+  angles -18.554 139.567 0
+ }
+ {
+  coords 1625.646 -2.073 949.615
+  angles -20.873 137.311 -173.691
+ }
+ {
+  coords 1678.04 -36.319 1018.163
+  angles 0 -54.149 0
+ }
+ {
+  coords 1668.181 -4.301 998.691
+  angles -8.242 108.165 0
+ }
+ {
+  coords 1662.318 11.615 982.082
+  angles -8.034 121.15 178.154
+  scale 2
+ }
+ {
+  coords 1619.059 -30.152 964.077
+  angles -26.94 152.533 0
+ }
+ {
+  coords 1602.274 -10.626 927.08
+  angles -13.628 137.842 85.838
+  scale 2
+ }
+ {
+  coords 1544.475 -29.929 878.353
+  angles -29.54 134.163 -61.147
+  scale 2
+ }
+ {
+  coords 1700.588 -35.411 971.542
+  angles 0 -40.266 -18.523
+  scale 2
+ }
+ {
+  coords 1733.566 -27.453 933.913
+  angles -28.779 -116.254 0
+  scale 2
+ }
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{754A25FB8F236B92}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_03.et" {
+ {
+  coords 1695.811 -23.559 1004.525
+  angles -5.906 -19.604 -106.114
+ }
+ {
+  coords 1695.811 -23.559 1004.525
+  angles -5.906 -19.604 -106.114
+ }
+ {
+  coords 1692.239 -24.443 1022.229
+  angles 1.372 175.544 107.082
+ }
+ {
+  coords 1596.527 -18.524 938.412
+  angles -8.601 60.083 124.377
+ }
+ {
+  coords 1602.373 -12.373 924.537
+  angles -23.003 149.202 -91.437
+  scale 2
+ }
+ {
+  coords 1693.792 -10.32 994.474
+  angles -0.933 -20.571 -107.289
+  scale 2
+ }
+}
+SCR_IndestructibleEnvironmentalEntity : "{90D6690283C6FCF9}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_02.et" {
+ coords 1675.281 13.127 991.854
+ angles 6.423 -70.977 2.209
+ scale 2
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{BB0CABEFA5D3D5EB}Prefabs/Rocks/Granite/SP_GraniteCliff_03.et" {
+ {
+  coords 1653.066 -17.981 981.075
+  angles -17.289 126.663 -90
+ }
+ {
+  coords 1667.24 -56.859 1008.486
+  angles -13.531 118.792 0
+  scale 2
+ }
+ {
+  coords 1673.929 5.415 1001.279
+  angles -11.184 118.792 180
+ }
+ {
+  coords 1682.804 -32.833 1025.158
+  angles 0 107.017 32.745
+ }
+ {
+  coords 1690.048 -27.502 1007.414
+  angles -8.603 -101.69 27.983
+ }
+ {
+  coords 1692.558 -13.479 995.489
+  angles -18.284 -122.595 -166.645
+ }
+ {
+  coords 1603.39 -21.527 935.677
+  angles -29.697 136.014 -86.209
+ }
+ {
+  coords 1633.37 -11.885 949.381
+  angles -22.442 136.002 -90
+  scale 2
+ }
+ {
+  coords 1724.309 -16.261 954.313
+  angles 0 -37.531 -113.733
+  scale 2
+ }
+ {
+  coords 1683.006 -24.738 1005.278
+  angles -6.149 -83.491 -19.668
+  scale 1.8
+ }
+ {
+  coords 1614.083 7.024 875.755
+  angles -84.731 106.734 -155.858
+  scale 2
+ }
+}

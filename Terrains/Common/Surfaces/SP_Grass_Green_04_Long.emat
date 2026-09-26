@@ -1,0 +1,5 @@
+TerrainMaterial : "{5E80F5F438B08C00}Terrains/Common/Surfaces/Grass_01.emat" {
+ Color 0.236 0.352 0.021 1
+ SatMapBlend 0
+ PlantMat "{E4AE7334EE678ABC}Assets/Clutter/Procedural/SP_cp_grass_04.emat"
+}

@@ -1,0 +1,24 @@
+SCR_IndestructibleEnvironmentalEntity : "{B94DDC61F0B7F9D7}Prefabs/Rocks/Rock_Base.et" {
+ ID "1133272B892A2239"
+ components {
+  MeshObject "{6A730D20BA1045DF}" {
+   Object "{F202182239EEDD93}Assets/Rocks/Granite/GraniteSurfaceStone_01.xob"
+   Materials {
+    MaterialAssignClass "{6A730D2124274C95}" {
+     SourceMaterial "Common/Materials/Physics/stone"
+     AssignedMaterial "{1A11562FCAC42792}Assets/Rocks/Granite/Data/SP_GraniteSurfaceStone_01.emat"
+    }
+   }
+   LODFactors {
+    100 40 20 10 2 1
+   }
+   ObjectHeightmapBias 1
+  }
+  RigidBody "{6A730D20BA1045B6}" {
+   ModelGeometry 1
+   Static 1
+  }
+ }
+ Flags 0x10503 0x80000
+ coords 2655.224 31.074 3054.471
+}

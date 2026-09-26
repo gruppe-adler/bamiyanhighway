@@ -1,0 +1,16 @@
+SCR_IndestructibleEnvironmentalEntity : "{D52660D5BB19E3CA}Prefabs/Rocks/Granite/GraniteSurfaceStone_base.et" {
+ ID "1133272B892A2239"
+ components {
+  MeshObject "{61F0B2DF0BD2DDD2}" {
+   Materials {
+    MaterialAssignClass "{6A730D214ECFCE43}" {
+     SourceMaterial "GraniteSurfaceStone_05_AC4448B70059EBB6"
+     AssignedMaterial "{0D216A73078FDDF7}Assets/Rocks/Granite/Data/SP_GraniteSurfaceStone_05.emat"
+    }
+   }
+   ClutterOccluder 1
+   ClutterOccluderClipPlane 2.8
+  }
+ }
+ scale 1.277
+}

@@ -1,0 +1,73 @@
+MatPBRMulti {
+ Color 1 0.799 0.716 1
+ Diffuse 1 1 1 1
+ CastShadow 1
+ ReceiveShadow 1
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ Specular 0.706 0.706 0.706 1
+ RoughnessScale 0.85
+ AOScale 1.5
+ MudColor 0.815 0.839 0.632 1
+ MudMetalness 0
+ MudUVTransform MatUVTransform "{042A67330EFC679C}" {
+  TilingU 10
+  TilingV 10
+ }
+ DirtLayerSharpness 1.715
+ DirtColor 0.325 0.329 0.287 1
+ DirtRoughness 0.786
+ DirtUVTransform MatUVTransform "{042A673304CDD104}" {
+  TilingU 10
+  TilingV 10
+ }
+ GlobalMCRMap "{47077F14BA5BBEC2}Assets/Rocks/Granite/Data/GraniteSurfaceStone_02_MCR.edds"
+ OverlayWhitePower 0.1
+ MaskMap "{2E751B33ECA93938}Assets/Rocks/Granite/Data/GraniteSurfaceStone_02_MASK.edds"
+ MaskGreenScale 0.6
+ NormalPower 1.5
+ GlobalNMOMap "{83B44E1711D27C82}Assets/Rocks/Granite/Data/GraniteSurfaceStone_02_NMO.edds"
+ Enabled_4 1
+ Color_4 0.503 0.503 0.503 1
+ BCR_4 "{41982383B642E38C}Assets/Rocks/Granite/Data/Granite_01_BCR.edds"
+ NMO_4 "{794098116F35B112}Assets/Rocks/Granite/Data/Granite_01_NMO.edds"
+ MaskSharpness_4 3
+ Mask_4 "{4B9C7CC56249C673}Assets/Rocks/Granite/Data/Granite_01_MASK.edds"
+ UVTransform_4 MatUVTransform "{042A6733027144DD}" {
+  TilingU 14
+  TilingV 8
+ }
+ Metalness_4 0
+ Enabled_3 1
+ Color_3 0.571 0.571 0.571 1
+ BCR_3 "{29D7083F1CBC01B7}Assets/Rocks/Granite/Data/Granite_moss_02_BCR.edds"
+ NMO_3 "{110FB3ADC5CB5329}Assets/Rocks/Granite/Data/Granite_moss_02_NMO.edds"
+ MaskSharpness_3 4
+ MaskOffset_3 0.698
+ Mask_3 "{80AEFF0F4B810E3C}Assets/Rocks/Granite/Data/Granite_moss_02_MASK.edds"
+ UVTransform_3 MatUVTransform "{042A67337F0597B2}" {
+  TilingU 14
+  TilingV 8
+ }
+ Metalness_3 0
+ Enabled_2 1
+ Color_2 0.347 0.347 0.347 1
+ BCR_2 "{FF6842E3F50C0D87}Assets/Rocks/Granite/Data/Granite_03_BCR.edds"
+ NMO_2 "{C7B0F9712C7B5F19}Assets/Rocks/Granite/Data/Granite_03_NMO.edds"
+ MaskSharpness_2 1.5
+ MaskOffset_2 0.159
+ Mask_2 "{B9F4195EA1A46FC8}Assets/Rocks/Granite/Data/Granite_03_MASK.edds"
+ UVTransform_2 MatUVTransform "{042A67337500796F}" {
+  TilingU 14
+  TilingV 8
+ }
+ DetNormal_2 1.5
+ Metalness_2 0
+ Color_1 0.665 0.665 0.665 1
+ BCR_1 "{C1B825901DFF5ACA}Assets/Rocks/Granite/Data/Granite_08_BCR.edds"
+ NMO_1 "{F9609E02C4880854}Assets/Rocks/Granite/Data/Granite_08_NMO.edds"
+ UVTransform_1 MatUVTransform "{042A673371EFAE29}" {
+  TilingU 14
+  TilingV 8
+ }
+ Metalness_1 0
+}
