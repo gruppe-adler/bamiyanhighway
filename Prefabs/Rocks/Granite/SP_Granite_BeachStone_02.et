@@ -1,0 +1,13 @@
+SCR_IndestructibleEnvironmentalEntity : "{6BAF8D4249D7BDCA}Prefabs/Rocks/Granite/Granite_BeachStone_02.et" {
+ ID "50D67C36F422DE53"
+ components {
+  MeshObject "{212B670187D6DEA1}" {
+   Materials {
+    MaterialAssignClass "{6A74F8632974A1DE}" {
+     SourceMaterial "Common/Materials/Physics/stone"
+     AssignedMaterial "{66C3FCB69BB41B8B}Assets/Rocks/Granite/Data/SP_GraniteBeachStone_02.emat"
+    }
+   }
+  }
+ }
+}

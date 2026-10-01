@@ -1,0 +1,11 @@
+GenericEntity {
+ ID "6A773DCA8B5D7F53"
+ components {
+  MeshObject "{6A773DCA4F559A3D}" {
+   Object "{31B5657B175EDFB0}Assets/Structures/Gate/gate_collider_manual.xob"
+  }
+  RigidBody "{6A773DCA9F08457A}" {
+   SimState Collision
+  }
+ }
+}

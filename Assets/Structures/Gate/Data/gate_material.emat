@@ -1,0 +1,5 @@
+MatPBRBasic {
+ MetalnessScale 0
+ BCRMap "{8033553EA82A840E}Assets/Structures/Gate/gate_BC.edds"
+ NMOMap "{F7EA27E3D70E6C21}Assets/Structures/Gate/gate_N.edds"
+}

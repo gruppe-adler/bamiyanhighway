@@ -2434,6 +2434,35 @@ $grp SplineShapeEntity {
   }
  }
 }
+$grp Tree : "{014BBD51756DB620}Prefabs/Vegetation/Vegetables/CabbageCrop_01.et" {
+ {
+  coords 808.334 0.015 986.333
+ }
+ {
+  coords 807.266 -0.015 985.734
+  angles 1.72 -50.656 -4.115
+ }
+ {
+  coords 806.214 -0.02 985.224
+  angles -3.973 -150.133 -0.803
+ }
+ {
+  coords 805.156 -0.026 984.715
+  angles 4.026 25.118 0.471
+ }
+ {
+  coords 804.675 -0.011 986.136
+  angles 4.387 25.116 -0.302
+ }
+ {
+  coords 806.787 -0.01 987.157
+  angles 1.216 -50.601 -6.176
+ }
+ {
+  coords 807.861 -0.011 987.769
+  angles 10.856 -1.231 -6.51
+ }
+}
 StaticModelEntity : "{09277B76FF010FCB}Prefabs/Structures/Infrastructure/Waterworks/Well_02/Well_02_blue.et" {
  coords 1499.597 0.067 1097.951
  angles 0 -61.035 0
@@ -2506,12 +2535,75 @@ $grp Tree : "{4B176F8E58FA9D53}Prefabs/Vegetation/Tree/t_carpinus_betulus/t_carp
   coords 1552.871 0.589 1213.294
  }
 }
+$grp Tree : "{4FE3B631FA363978}Prefabs/Vegetation/Vegetables/CapsicumCrop_01.et" {
+ {
+  coords 805.5 0.007 982.078
+  angles 0 -23.644 0
+ }
+ {
+  coords 806.092 -0.003 982.299
+  angles 0 53.76 0
+ }
+ {
+  coords 806.76 -0.011 982.714
+  angles 0 151.052 0
+ }
+ {
+  coords 807.516 -0.017 983.078
+  angles 0 -109.792 0
+ }
+ {
+  coords 808.194 -0.024 983.215
+  angles 0 39.207 0
+ }
+ {
+  coords 808.844 -0.049 983.645
+  angles 0 166.76 0
+ }
+ {
+  coords 809.791 -0.033 983.914
+  angles 0 25.179 0
+ }
+ {
+  coords 805.69 -0.002 983.425
+  angles 0 -99.155 0
+ }
+ {
+  coords 806.361 -0.019 983.623
+  angles 0 101.705 0
+ }
+ {
+  coords 807.153 -0.039 983.992
+  angles 0 -47.346 0
+ }
+ {
+  coords 807.817 -0.056 984.234
+  angles 0 -10.462 0
+ }
+ {
+  coords 808.464 -0.079 984.517
+  angles 0 82.247 0
+ }
+ {
+  coords 809.339 -0.193 985.031
+  angles 0 -108.168 0
+ }
+ {
+  coords 805.037 0.014 982.991
+  angles 0 27.535 0
+ }
+}
 StaticModelEntity : "{528AB2322A646026}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_wave.et" {
  coords 1423.331 -39.281 924.857
  angles 0 33.501 0
 }
 Tree : "{59CD4C0D8A6C586E}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_3s_aut.et" {
  coords 1498.487 0.254 1224.311
+}
+SCR_IndestructibleEnvironmentalEntity : "{5C073036215B0C18}Prefabs/Rocks/Granite/GraniteRock_02_MOG.et" {
+ coords 798.802 -23.486 998.955
+ angles -0.23 0 0
+ scale 0.941
 }
 $grp Tree : "{5C594649DBDD5EAE}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_2s.et" {
  {
@@ -2657,8 +2749,14 @@ StaticModelEntity : "{AFC5471AE0EB8294}PrefabLibrary/DefaultLibrary/Terrain/Eros
  coords 1556.629 -39.605 974.7
  angles -3.948 -127.679 -5.094
 }
-Tree : "{B78F72C338993EA1}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_1f.et" {
- coords 1576.017 -0.182 1023.27
+$grp Tree : "{B78F72C338993EA1}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_1f.et" {
+ {
+  coords 1576.017 -0.182 1023.27
+ }
+ {
+  coords 804.565 0.017 979.641
+  angles 0 19.079 0
+ }
 }
 Tree : "{BE42E1814B854B8F}Prefabs/Vegetation/Bush/b_rubus_idaeus_0s_aut.et" {
  coords 1508.797 0 978.376
@@ -3249,6 +3347,11 @@ $grp Tree : "{C547FFD0C63A6F3E}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula
   coords 1644.002 0 1075.514
  }
 }
+SCR_IndestructibleEnvironmentalEntity : "{CEEA9256B95DCE8A}Prefabs/Rocks/Granite/Granite_Cluster_06_MOG.et" {
+ coords 802.029 -0.18 993.685
+ angles 8.856 -0.734 -4.754
+ scale 0.288
+}
 $grp GenericEntity : "{D2A6C0439183CB18}Prefabs/Structures/flowers/papaver.et" {
  {
   coords 1610.515 -40.862 1041.654
@@ -3339,9 +3442,122 @@ StaticModelEntity : "{E87BCD612EEDAC6D}Prefabs/Terrain/Erosion/ErodedEmbankment_
  coords 1435.758 -39.051 919.857
  angles -6.337 28.119 0
 }
-Tree : "{EFD5BDE091DAE12B}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_2f.et" {
- coords 1579.715 0.178 1023.55
+$grp Tree : "{EFD5BDE091DAE12B}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_2f.et" {
+ {
+  coords 1579.715 0.178 1023.55
+ }
+ {
+  coords 805.325 0.09 977.85
+  angles 0 55.021 0
+ }
 }
 Tree : "{F10E2D0423AC5D19}Prefabs/Vegetation/Bush/Calamagrostis_epigejos/B_Calamagrostis_epigejos_1.et" {
  coords 1509.687 0.038 978.862
+}
+$grp Tree : "{F8A57337BD45B783}Prefabs/Vegetation/Vegetables/TomatoCrop_01.et" {
+ {
+  coords 806.995 -0.013 978.533
+  angles 0 -21.18 0
+  {
+   $grp Tree : "{F8A57337BD45B783}Prefabs/Vegetation/Vegetables/TomatoCrop_01.et" {
+    {
+     coords 0.73 -0 0
+    }
+    {
+     coords 1.478 0 -0.002
+     angles 0 -107.128 0
+    }
+    {
+     coords 2.164 -0 0.057
+     angles 0 88.82 0
+    }
+    {
+     coords 2.889 0 0.075
+     angles 0 137.785 0
+    }
+    {
+     coords 3.538 0 0.085
+     angles 0 88.82 0
+    }
+    {
+     coords 4.187 -0 0.063
+     angles 0 -100.365 0
+    }
+    {
+     coords 4.832 -0 0.114
+     angles 0 147.269 0
+    }
+   }
+  }
+ }
+ {
+  coords 811.003 -0.071 981.561
+  angles 0 158.82 0
+  {
+   $grp Tree : "{F8A57337BD45B783}Prefabs/Vegetation/Vegetables/TomatoCrop_01.et" {
+    {
+     coords 1.478 0 -0.002
+     angles 0 -107.128 0
+    }
+    {
+     coords 2.164 -0 0.057
+     angles 0 88.82 0
+    }
+    {
+     coords 2.889 0 0.075
+     angles 0 137.785 0
+    }
+    {
+     coords 3.538 0 0.085
+     angles 0 88.82 0
+    }
+    {
+     coords 4.187 -0 0.063
+     angles 0 -100.365 0
+    }
+    {
+     coords 4.832 -0 0.114
+     angles 0 147.269 0
+    }
+    {
+     coords 0.73 -0 0
+    }
+   }
+  }
+ }
+ {
+  coords 806.009 0.002 980.756
+  angles 0 -21.18 0
+  {
+   $grp Tree : "{F8A57337BD45B783}Prefabs/Vegetation/Vegetables/TomatoCrop_01.et" {
+    {
+     coords 1.46 0 -0.01
+     angles 0 -56.585 0
+    }
+    {
+     coords 2.171 -0 0.06
+     angles 0 107.952 0
+    }
+    {
+     coords 2.868 0 0.07
+     angles 0 79.912 0
+    }
+    {
+     coords 3.538 0 0.085
+     angles 0 88.82 0
+    }
+    {
+     coords 4.194 -0 0.083
+     angles 0 -157.089 0
+    }
+    {
+     coords 4.816 0 0.115
+     angles 0 105.775 0
+    }
+    {
+     coords 0.73 -0 0
+    }
+   }
+  }
+ }
 }

@@ -1,0 +1,6 @@
+MatPBR2Layers : "{7D20B25DF128D43E}Assets/Rocks/Granite/Data/GraniteBeachStone_02.emat" {
+ Color 1 0.799 0.716 1
+ GlobalMapsUVTransform MatUVTransform "{54E2910A800FACFD}" {
+ }
+ MaskScale 1.046
+}

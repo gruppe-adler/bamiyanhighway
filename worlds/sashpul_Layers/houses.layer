@@ -1,4 +1,12 @@
+SCR_DestructibleBuildingEntity : "{195991A94FF1210A}Prefabs/Structures/PrefabComposition/afghan_house_set_01.et" {
+ coords 819.855 -22.574 995.285
+ angles 0 -20.921 0
+}
 SCR_DestructibleBuildingEntity : "{3E5D56D7448CE0BD}Prefabs/Structures/Bulding/HouseC/House_C_11_EP3.et" {
  coords 1195.715 0.653 1011.417
  angles 0 55.778 0
+}
+SCR_DestructibleBuildingEntity : "{750DA549F335AE24}Prefabs/Structures/PrefabComposition/afghan_house_set_02.et" {
+ coords 1004.632 -33.55 1070.035
+ angles 0 -24.379 0
 }

@@ -1,0 +1,27 @@
+GenericEntity {
+ ID "6A82B29327AA1C24"
+ components {
+  MeshObject "{6A82B29310F8A7EB}" {
+   Object "{993E3B1F4A1ED8CE}Assets/Structures/CastleNew/zuhak_portals_blender45_2.xob"
+  }
+  RigidBody "{6A82B2930C4EFAD7}" {
+   LayerPreset "BuildingFireView"
+   Active Active
+   SimState Collision
+   Geometries {
+    PhysicsModelGeometry "{6A82C048CAE5793D}" {
+     LayerPreset "BuildingFireView"
+     SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+     Collider "UTM_castle_raw"
+    }
+   }
+   Static 1
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{94B6B47CDA125A62}Prefabs/Structures/Core/ProbeEnvCave_base.et" {
+   ID "6A82C075ECEF42F3"
+   coords 0 0 0
+  }
+ }
+}

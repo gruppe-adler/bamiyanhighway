@@ -1,22 +1,139 @@
-GenericEntity cliff_photogrammetry_dummy {
- components {
-  MeshObject "{6A730D222A89F8E1}" {
-   Object "{A0DB05CFD910106F}Prefabs/Rocks/Granite/cliff_v6_holefilled_baked.xob"
-   Materials {
-    MaterialAssignClass "{6A730D22763D807E}" {
-     SourceMaterial "material_01"
-     AssignedMaterial "{6EBF7ADA9FD582F7}Assets/Structures/Military/Fortifications/DirtMounds/Data/DirtCover_01.emat"
+SplineShapeEntity {
+ coords 1506.089 -34.64 883.919
+ Points {
+  ShapePoint "{6A74E16A5412D8B8}" {
+   Position 0 0 0
+  }
+  ShapePoint "{6A74E16A5412FC48}" {
+   Position 5 0.549 0
+  }
+  ShapePoint "{6A74E16A40F14CA2}" {
+   Position 16.1 4.023 -3.784
+  }
+  ShapePoint "{6A74E16A436A3C52}" {
+   Position 29.79 7.819 -23.472
+  }
+  ShapePoint "{6A74E16A43F1CD43}" {
+   Position 56.447 19.775 -33.858
+  }
+  ShapePoint "{6A74E16A8AF6769B}" {
+   Position 68.93 25.421 -41.247
+  }
+  ShapePoint "{6A74E16A427BA502}" {
+   Position 81.535 29.478 -45.503
+  }
+  ShapePoint "{6A74E16A4297BF62}" {
+   Position 109.562 37.92 -49.369
+  }
+  ShapePoint "{6A74E16A7D0EBF71}" {
+   Position 135.261 43.753 -51.558
+  }
+  ShapePoint "{6A74E16A7DA921DA}" {
+   Position 155.462 49.574 -50.336
+  }
+  ShapePoint "{6A74E16A7C249DE6}" {
+   Position 185.698 57.524 -57.787
+  }
+  ShapePoint "{6A74E16A790BD400}" {
+   Position 188.457 60.723 -40.332
+  }
+ }
+ {
+  RoadGeneratorEntity : "{98DF2267CDD17758}PrefabLibrary/DefaultLibrary/Generators/Roads/Dirt/RG_TrailGravel_01.et" {
+   coords 0 0 0
+   AdjustHeightMapPriority 1
+   FalloffStartWidth 0
+   RoadFalloffWidth 1
+   {
+    RoadEntity {
+     ID "5262CB47BB2B3833"
+     SplinePoints {
+      ShapePoint "{5256DA7852E4536F}" {
+       Position 0 0 0
+      }
+      ShapePoint "{5256DA7852E450A5}" {
+       Position 5 0.549 0
+      }
+      ShapePoint "{6A74E16A6F31CA34}" {
+       Position 16.1 4.023 -3.784
+      }
+      ShapePoint "{6A74E16A6F31CBE3}" {
+       Position 29.79 7.819 -23.472
+      }
+      ShapePoint "{6A74E16A6F31CBAE}" {
+       Position 56.447 19.775 -33.858
+      }
+      ShapePoint "{6A74E16A6F31CB6D}" {
+       Position 68.93 25.421 -41.247
+      }
+      ShapePoint "{6A74E16A6F31CB29}" {
+       Position 81.535 29.478 -45.502
+      }
+      ShapePoint "{6A74E16A6F31C8DD}" {
+       Position 109.562 37.92 -49.369
+      }
+      ShapePoint "{6A74E16A6F31C89B}" {
+       Position 135.261 43.753 -51.558
+      }
+      ShapePoint "{6A74E16A6F31C844}" {
+       Position 155.462 49.574 -50.336
+      }
+      ShapePoint "{6A74E16A6F31C806}" {
+       Position 185.698 57.524 -57.787
+      }
+      ShapePoint "{6A74E16A8AF64915}" {
+       Position 188.457 60.722 -40.332
+      }
+     }
+     IsClosedSpline 0
+     Width 1.75
     }
    }
   }
  }
- coords 1632.493 -25.016 865.259
- angles 3.656 -174.747 0
- scale 45.749
 }
 StaticModelEntity : "{20142DB5C4E8D026}Temppa/Prefabs/Structures/villa/tem_villa_ruin.et" {
  coords 1688.289 21.534 917.259
  angles 0 28.221 0
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{28BA4EC52CBF7A35}Prefabs/Rocks/Granite/Granite_Cluster_02_V2.et" {
+ {
+  coords 1577.973 -0.125 957.339
+  angles -21.617 79.639 -38.842
+  scale 0.7
+ }
+ {
+  coords 1578.766 -0.282 955.892
+  angles -21.617 79.639 -38.842
+  scale 0.7
+ }
+ {
+  coords 1576.127 -0.064 960.352
+  angles -3.08 65.26 -35.853
+  scale 0.7
+ }
+ {
+  coords 1573.971 -0.032 962.742
+  angles 2.763 -118.932 40.129
+  scale 0.7
+ }
+ {
+  coords 1570.098 -0.042 965.967
+  angles -9.782 61.563 -9.042
+  scale 0.7
+ }
+}
+GenericEntity : "{29063844DEEAC10B}Prefabs/Props/Garbage/Generic/Junk_01/Junk_01_pile_large.et" {
+ coords 1413.814 -31.387 1221.499
+ angles 1.712 0.003 0.428
+}
+SCR_IndestructibleEnvironmentalEntity : "{29EA7C7ADF66D388}Prefabs/Rocks/Granite/Granite_BeachCluster_02.et" {
+ coords 1571.943 0.271 964.813
+ angles -21.159 1.891 -11.125
+}
+GenericEntity : "{32654927F2657E8A}Prefabs/Props/Forest/WoodPile/WoodLog_01_A.et" {
+ coords 1579.585 -30.018 953.907
+ angles 0 62.294 0
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
  {
@@ -98,6 +215,14 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Gr
   angles 4.981 157.166 11.651
   scale 2
  }
+ {
+  coords 1546.654 -28.389 843.637
+  angles -4.031 29.191 64.466
+  scale 2
+ }
+}
+SCR_IndestructibleEnvironmentalEntity : "{450AAF1BC197F8C9}Prefabs/Rocks/Granite/Granite_Cluster_01.et" {
+ coords 1571.248 -0.034 966.047
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{487E00C3FA4FE2A5}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_04.et" {
  {
@@ -116,6 +241,19 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{487E00C3FA4FE2A5}Prefabs/Rocks/Gr
   coords 1633.094 -19.455 964.742
   angles -21.462 137.234 100.218
  }
+ {
+  coords 1532.749 -24.819 818.051
+  angles 25.37 -94.139 92.864
+ }
+ {
+  coords 1536.231 -26.165 850.869
+  angles 69.171 -135.377 -179.52
+  scale 1.5
+ }
+}
+GenericEntity : "{5E317DC74EA1F1A4}Prefabs/Props/Forest/WoodPile/WoodLog_01_B.et" {
+ coords 1580.169 -29.9 953.771
+ angles 0 60.826 0
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
  {
@@ -144,7 +282,7 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Gr
   angles -26.94 152.533 0
  }
  {
-  coords 1602.274 -10.626 927.08
+  coords 1601.151 -10.517 926.027
   angles -13.628 137.842 85.838
   scale 2
  }
@@ -162,6 +300,10 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Gr
   coords 1733.566 -27.453 933.913
   angles -28.779 -116.254 0
   scale 2
+ }
+ {
+  coords 1572.622 -10.241 866.247
+  angles -22.925 61.169 4.548
  }
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{754A25FB8F236B92}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_03.et" {
@@ -191,11 +333,31 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{754A25FB8F236B92}Prefabs/Rocks/Gr
   angles -0.933 -20.571 -107.289
   scale 2
  }
+ {
+  coords 1529.213 -25.638 836.035
+  angles 0 0 129.457
+ }
+ {
+  coords 1571.157 1.191 879.512
+  angles 0 0 122.238
+ }
+}
+GenericEntity : "{869914063728EFF8}Prefabs/Props/Forest/WoodPile/WoodLog_01_D.et" {
+ coords 1579.469 -30.151 954.207
+ angles 0 62.668 0
 }
 SCR_IndestructibleEnvironmentalEntity : "{90D6690283C6FCF9}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_02.et" {
  coords 1675.281 13.127 991.854
  angles 6.423 -70.977 2.209
  scale 2
+}
+SCR_IndestructibleEnvironmentalEntity : "{9FCC62295273F4B7}Prefabs/Rocks/Granite/SP_Granite_BeachStone_02.et" {
+ coords 1579.733 -1.292 919.487
+ angles 3.692 19.231 -46.463
+}
+SCR_IndestructibleEnvironmentalEntity : "{A5A0B5EF1773A200}Prefabs/Rocks/Granite/Granite_Cluster_Large_01.et" {
+ coords 1570.725 -0.263 964.372
+ angles -28.273 0 0
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{BB0CABEFA5D3D5EB}Prefabs/Rocks/Granite/SP_GraniteCliff_03.et" {
  {
@@ -247,4 +409,20 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{BB0CABEFA5D3D5EB}Prefabs/Rocks/Gr
   angles -84.731 106.734 -155.858
   scale 2
  }
+}
+GenericEntity : "{BBAD313E424466CF}Prefabs/Props/Forest/WoodPile/WoodLog_01_C.et" {
+ coords 1580.044 -29.877 953.964
+ angles 0 61.783 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{CCC2D70271B6E08C}Prefabs/Rocks/Granite/Granite_Cluster_03.et" {
+ coords 1579.825 -0.036 919.765
+ angles -22.965 22.431 -41.198
+}
+SCR_IndestructibleEnvironmentalEntity : "{EF76DE58D9E93939}Prefabs/Rocks/Granite/Granite_Cluster_03_V2.et" {
+ coords 1581.559 -0.028 918.085
+ angles -28.837 25.586 -44.791
+}
+SCR_IndestructibleEnvironmentalEntity : "{FC825DE23F0273D7}Prefabs/Rocks/Granite/SP_GraniteSurfaceStone_01.et" {
+ coords 1565.225 -14.642 856.827
+ angles 5.86 -3.251 -23.27
 }

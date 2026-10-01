@@ -1,0 +1,33 @@
+MatPBRMulti {
+ MaskMap "{57B7399671A96CB2}Assets/Structures/Castle/Data/castle_GLOBAL_MCR.edds"
+ Enabled_4 1
+ BCR_4 "{2799639EB374368C}Assets/Structures/Castle/Data/Bricks083_1K-JPG_Color_BCR.edds"
+ NMO_4 "{DBF743988DCF7069}Assets/Structures/Castle/Data/Bricks083_1K-JPG_N.edds"
+ UVTransform_4 MatUVTransform "{6A7D3B218B04F5DF}" {
+  TilingU 30
+  TilingV 30
+  Rotation 90
+ }
+ Enabled_3 1
+ BCR_3 "{BABAAD8616B35A7D}Assets/Structures/Castle/Data/red_dirt_mud_01_diff_4k_BCR.edds"
+ UVTransform_3 MatUVTransform "{6A7AE9E03B41899A}" {
+  TilingU 30
+  TilingV 30
+ }
+ Enabled_2 1
+ BCR_2 "{FCE0A2F639B97FCE}Assets/Structures/Castle/Data/lehm_albedo_BCR.edds"
+ NMO_2 "{95870FE123501D09}Assets/Structures/Castle/Data/lehm_N.edds"
+ MaskUVScale_2 0.15
+ UVTransform_2 MatUVTransform "{6A7AE9E02CE8D7FF}" {
+  TilingU 30
+  TilingV 30
+ }
+ DetNormal_2 1.286
+ BCR_1 "{C71D31800AC5AE1A}Assets/Structures/Castle/Data/lehm3_albedo_BCR.edds"
+ NMO_1 "{AE7A9C97102CCCDD}Assets/Structures/Castle/Data/lehm3_N.edds"
+ UVTransform_1 MatUVTransform "{6A7AE998D060B7E6}" {
+  TilingU 50
+  TilingV 50
+ }
+ DetNormal_1 1.2
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{57B7399671A96CB2}Assets/Structures/Castle/Data/castle_GLOBAL_MCR.edds"
+ Configurations {
+  PNGResourceClass PC : "{A6CC0A2F9DB86CBE}Configs/System/ResourceTypes/PC/TextureMCRMap.conf" {
+  }
+  PNGResourceClass XBOX_ONE : "{224B78299A038E4A}Configs/System/ResourceTypes/XBOX_ONE/TextureMCRMap.conf" {
+  }
+  PNGResourceClass XBOX_SERIES : "{B5FA7506CF384E79}Configs/System/ResourceTypes/XBOX_SERIES/TextureMCRMap.conf" {
+  }
+  PNGResourceClass PS4 : "{E7A6FCCE55593073}Configs/System/ResourceTypes/PS4/TextureMCRMap.conf" {
+  }
+  PNGResourceClass PS5 : "{E3BE705DB85AD3CA}Configs/System/ResourceTypes/PS5/TextureMCRMap.conf" {
+  }
+  PNGResourceClass HEADLESS : "{D49C34F7354B6F47}Configs/System/ResourceTypes/HEADLESS/TextureMCRMap.conf" {
+  }
+  PNGResourceClass Xbox : PC {
+  }
+ }
+}

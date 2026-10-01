@@ -1,0 +1,4 @@
+MatPBRMulti {
+ DirtRoughness 0
+ MCROpacityBlend 0
+}
