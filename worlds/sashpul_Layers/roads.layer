@@ -4501,7 +4501,7 @@ $grp SplineShapeEntity {
         Position 0 0 0
        }
        ShapePoint "{5256E6ED186CB58D}" {
-        Position 5 0.047 -0
+        Position 5 0.047 0
        }
        ShapePoint "{6A72FDF08A23DC3D}" {
         Position 22.397 0 2.296

@@ -252,7 +252,7 @@ $grp PolylineShapeEntity {
     Position -6.065 0.454 -5.655
    }
    ShapePoint "{6A773DC07C3B92C7}" {
-    Position 0 -0 0
+    Position 0 0 0
    }
    ShapePoint "{6A773DC07C3BA512}" {
     Position 5 -0.32 0
@@ -470,7 +470,7 @@ $grp SCR_DestructibleBuildingEntity : "{64AB01B2EC925635}Prefabs/Structures/Wall
      coords -5.833 0.001 0
     }
     {
-     coords 7.785 0 -0
+     coords 7.785 0 0
      {
       $grp SCR_DestructibleBuildingEntity : "{64AB01B2EC925635}Prefabs/Structures/Wall/CNCBlock_T.et" {
        {
@@ -502,7 +502,7 @@ $grp SCR_DestructibleBuildingEntity : "{64AB01B2EC925635}Prefabs/Structures/Wall
      }
     }
     {
-     coords -27.278 -0 -0.112
+     coords -27.278 0 -0.112
     }
     {
      coords -29.205 0 -0.112
@@ -511,7 +511,7 @@ $grp SCR_DestructibleBuildingEntity : "{64AB01B2EC925635}Prefabs/Structures/Wall
      coords -25.335 -0.001 -0.112
     }
     {
-     coords -15.587 -0 -0.112
+     coords -15.587 0 -0.112
      {
       $grp SCR_DestructibleBuildingEntity : "{64AB01B2EC925635}Prefabs/Structures/Wall/CNCBlock_T.et" {
        {
