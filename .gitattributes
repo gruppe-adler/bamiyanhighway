@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Prefabs/Rocks/Granite/cliff_v6_holefilled_baked.fbx filter=lfs diff=lfs merge=lfs -text
+Prefabs/Rocks/Granite/cliff_v6_holefilled_baked.txo filter=lfs diff=lfs merge=lfs -text
+Prefabs/Rocks/Granite/cliff_v6_holefilled_baked.xob filter=lfs diff=lfs merge=lfs -text
