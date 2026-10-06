@@ -2,7 +2,6 @@ MatPBRMulti {
  MaskMap "{DFC5A78CF2202DBC}Assets/Structures/Castle3/Data/clay_multimat_MASK.edds"
  MaskGreenScale 0.343
  MaskBlueScale 0.7
- Enabled_4 1
  BCR_4 "{57E4CFFA663A615A}Assets/Structures/Castle3/Textures/Bricks083_1K-JPG_Color_BCR.edds"
  NMO_4 "{9D91E9936EADC49E}Assets/Structures/Castle3/Textures/Bricks083_1K-JPG_NormalDX.edds"
  UVTransform_4 MatUVTransform "{6A7D3B218B04F5DF}" {

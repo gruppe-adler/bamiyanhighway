@@ -4,7 +4,6 @@ MatPBRMulti {
  ReceiveShadow 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  Specular 0.706 0.706 0.706 1
- VFXMap "{DC660EF6845EFD97}Assets/Rocks/Granite/Data/GraniteCliff_02_VFX.edds"
  RoughnessScale 0.85
  MudColor 0.418 0.418 0.418 1
  MudMetalness 0
@@ -26,12 +25,15 @@ MatPBRMulti {
  GlobalMCRMap "{4593BD421BA836F4}Assets/Rocks/Granite/Data/GraniteCliff_02_MCR.edds"
  OverlayWhitePower 0.1
  MaskMap "{3F568E454CF5621E}Assets/Rocks/Granite/Data/GraniteCliff_02_MASK.edds"
+ MaskRedScale 0.6
+ MaskGreenScale 0.846
+ MaskBlueScale 0.417
  NormalPower 1.5
  GlobalNMOMap "{45D52DA439DE0B01}Assets/Rocks/Granite/Data/GraniteCliff_02_mips_NMO.edds"
  Enabled_4 1
  Color_4 0.784 0.784 0.784 1
- BCR_4 "{41982383B642E38C}Assets/Rocks/Granite/Data/Granite_01_BCR.edds"
- NMO_4 "{794098116F35B112}Assets/Rocks/Granite/Data/Granite_01_NMO.edds"
+ BCR_4 "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NMO_4 "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
  MaskSharpness_4 2
  Mask_4 "{4B9C7CC56249C673}Assets/Rocks/Granite/Data/Granite_01_MASK.edds"
  UVTransform_4 MatUVTransform "{042A67322BCA94F2}" {
@@ -41,8 +43,8 @@ MatPBRMulti {
  Metalness_4 0
  Enabled_3 1
  Color_3 0.44 0.44 0.44 1
- BCR_3 "{7E8800A899350909}Assets/Rocks/Granite/Data/Granite_05_BCR.edds"
- NMO_3 "{4650BB3A40425B97}Assets/Rocks/Granite/Data/Granite_05_NMO.edds"
+ BCR_3 "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
+ NMO_3 "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
  MaskSharpness_3 0.89
  MaskOffset_3 0.174
  Mask_3 "{EDBC56194C78A396}Assets/Rocks/Granite/Data/Granite_05_MASK.edds"
@@ -53,8 +55,8 @@ MatPBRMulti {
  Metalness_3 0
  Enabled_2 1
  Color_2 0.491 0.491 0.491 1
- BCR_2 "{016802A6005E61CB}Assets/Rocks/Granite/Data/Granite_02_BCR.edds"
- NMO_2 "{39B0B934D9293355}Assets/Rocks/Granite/Data/Granite_02_NMO.edds"
+ BCR_2 "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
+ NMO_2 "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
  MaskSharpness_2 2.456
  MaskOffset_2 0.206
  Mask_2 "{EDBC56194C78A396}Assets/Rocks/Granite/Data/Granite_05_MASK.edds"
@@ -65,8 +67,8 @@ MatPBRMulti {
  DetNormal_2 1.5
  Metalness_2 0
  Color_1 0.491 0.491 0.491 1
- BCR_1 "{808840ED6C676545}Assets/Rocks/Granite/Data/Granite_04_BCR.edds"
- NMO_1 "{B850FB7FB51037DB}Assets/Rocks/Granite/Data/Granite_04_NMO.edds"
+ BCR_1 "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NMO_1 "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
  UVTransform_1 MatUVTransform "{56D0BE0DDA3DB364}" {
   TilingU 35
   TilingV 20

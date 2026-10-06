@@ -4,7 +4,7 @@ SCR_IndestructibleEnvironmentalEntity : "{B94DDC61F0B7F9D7}Prefabs/Rocks/Rock_Ba
   MeshObject "{6A711DAB0C36C3DB}" {
    Object "{EFF7EEDA722D6326}Assets/Rocks/Granite/GraniteCliff_02.xob"
    Materials {
-    MaterialAssignClass "{6A711DAB6A499E54}" {
+    MaterialAssignClass "{6A8CF17A9214BAF9}" {
      SourceMaterial "GraniteCliff_02"
      AssignedMaterial "{1C2A598515F5A15D}Assets/Rocks/Granite/Data/SP_GraniteCliff_02.emat"
     }

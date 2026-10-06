@@ -3,40 +3,44 @@ MatPBRMulti {
  Specular 0.706 0.706 0.706 1
  RoughnessScale 0.85
  GlobalMCRMap "{C6E73D5FD662BA4C}Assets/Rocks/Granite/Data/GraniteSurfaceStone_04_MCR.edds"
- OverlayWhitePower 0.1
+ OverlayBlackPower 0.297
+ OverlayWhitePower 0
  MaskMap "{7A3D54740175F566}Assets/Rocks/Granite/Data/GraniteSurfaceStone_04_MASK.edds"
- NormalPower 1.5
+ MaskRedScale 1.042
+ MaskGreenScale 0.993
+ NormalPower 0.784
  GlobalNMOMap "{02540C5C7DEB780C}Assets/Rocks/Granite/Data/GraniteSurfaceStone_04_NMO.edds"
  Color_4 0.776 0.776 0.776 1
  MaskSharpness_4 4
  MaskOffset_4 0.137
  Enabled_3 1
  Color_3 0.617 0.617 0.617 1
- BCR_3 "{41982383B642E38C}Assets/Rocks/Granite/Data/Granite_01_BCR.edds"
- NMO_3 "{794098116F35B112}Assets/Rocks/Granite/Data/Granite_01_NMO.edds"
- MaskSharpness_3 4
- MaskOffset_3 0.381
+ BCR_3 "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NMO_3 "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
+ MaskSharpness_3 0.074
+ MaskOffset_3 0.091
  Mask_3 "{4B9C7CC56249C673}Assets/Rocks/Granite/Data/Granite_01_MASK.edds"
  UVTransform_3 MatUVTransform "{37DBA78C7CBBEE1E}" {
-  TilingU 15
-  TilingV 15
+  TilingU 7
+  TilingV 7
  }
+ Metalness_3 0
  Enabled_2 1
  Color_2 0.231 0.231 0.231 1
- BCR_2 "{FF6842E3F50C0D87}Assets/Rocks/Granite/Data/Granite_03_BCR.edds"
- NMO_2 "{C7B0F9712C7B5F19}Assets/Rocks/Granite/Data/Granite_03_NMO.edds"
- MaskSharpness_2 5.637
- MaskOffset_2 0.523
+ BCR_2 "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NMO_2 "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
+ MaskSharpness_2 0.882
+ MaskOffset_2 0.429
  Mask_2 "{B9F4195EA1A46FC8}Assets/Rocks/Granite/Data/Granite_03_MASK.edds"
  UVTransform_2 MatUVTransform "{37DBA78C1F0C337D}" {
-  TilingU 15
-  TilingV 15
+  TilingU 6
+  TilingV 6
  }
  Color_1 0.392 0.392 0.392 1
- BCR_1 "{29D7083F1CBC01B7}Assets/Rocks/Granite/Data/Granite_moss_02_BCR.edds"
- NMO_1 "{110FB3ADC5CB5329}Assets/Rocks/Granite/Data/Granite_moss_02_NMO.edds"
+ BCR_1 "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
+ NMO_1 "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
  UVTransform_1 MatUVTransform "{37DBA78C306DC25E}" {
-  TilingU 15
-  TilingV 15
+  TilingU 8
+  TilingV 8
  }
 }
