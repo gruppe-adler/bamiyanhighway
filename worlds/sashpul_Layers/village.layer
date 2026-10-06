@@ -27,7 +27,7 @@ GenericEntity : "{2EA17F3C79DF529E}Prefabs/Structures/Misc/barrel_water.et" {
  angles 0.296 -0.009 -1.712
 }
 SCR_DestructibleBuildingEntity : "{446671DE9607E741}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_03.et" {
- coords 1515.305 -0 1193.022
+ coords 1515.305 0 1193.022
  angles -0.063 -43.511 2.419
 }
 $grp StaticModelEntity : "{528AB2322A646026}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_wave.et" {
@@ -94,6 +94,10 @@ StaticModelEntity : "{9C7477A3F066F74F}Prefabs/Terrain/Erosion/ErodedEmbankment_
  coords 963.317 -26.368 1027.107
  angles 0 -14.557 0
  scale 1.6
+}
+SCR_DestructibleBuildingEntity : "{A7E607D1C1A1B240}Prefabs/Structures/Military/Houses/Barracks_E_02/Barracks_E_Takistan_02.et" {
+ coords 1421.112 -0 1296.471
+ angles 0 151.899 0
 }
 GenericEntity : "{A9ABB5DF9160A75B}PrefabLibrary/DefaultLibrary/Props/Industrial/VehicleGarbage_01_pile_small.et" {
  coords 1552.695 -41.481 1153.994
@@ -671,6 +675,10 @@ GenericEntity : "{E9FA4D7B531C7FF0}PrefabLibrary/DefaultLibrary/Props/Agricultur
 }
 GenericEntity : "{EFA4B1AF954CDB27}PrefabLibrary/DefaultLibrary/Props/Civilian/WellPump_01/WellPump_01_green.et" {
  coords 1538.77 -41.481 1141.169
+}
+SCR_DestructibleBuildingEntity : "{F2BFC2A25264EC0C}Prefabs/Structures/Bulding/HouseC/House_C_4_Police.et" {
+ coords 1454.196 -28.927 1288.466
+ angles 0 45.555 0
 }
 GenericEntity : "{F47C56E3678C7D87}PrefabLibrary/DefaultLibrary/Props/Industrial/VehicleGarbage_01_pile_large.et" {
  coords 1554.16 -41.483 1154.859

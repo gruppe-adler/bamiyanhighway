@@ -904,7 +904,6 @@ $grp SplineShapeEntity {
       {
        coords 134.877 0.708 107.984
        angles -1.906 -105.999 -2.206
-       scale 1
       }
      }
      $grp Tree : "{70692C116A6B4177}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_1sw.et" {
@@ -3294,6 +3293,213 @@ $grp Tree : "{75CEDC0C3B9CCE14}Prefabs/Vegetation/Bush/Betula_Nana/b_betula_nana
 GenericEntity : "{794D95ED8AA1742D}Prefabs/Vegetation/Tree/Roots/Roots_01_huge.et" {
  coords 1426.071 -37.534 926.866
  angles -4.903 -1.172 -0.991
+}
+$grp Tree : "{79689D379A820D9E}PrefabLibrary/CainLibrary/Vegetation/Plants/p_rubus_gracilis_0_aut.et" {
+ {
+  coords 1504.42 0 1122.03
+  angles -2.582 166.334 -1.573
+  scale 1.142
+ }
+ {
+  coords 1506.02 0 1119.36
+  angles -6.917 90.447 9.171
+  scale 0.937
+ }
+ {
+  coords 1502.39 0 1118.7
+  angles -2.139 143.236 -0.004
+  scale 1.114
+ }
+ {
+  coords 1501.77 0 1116.53
+  angles -4.242 135.228 2.998
+  scale 1.002
+ }
+ {
+  coords 1499.59 0 1115.54
+  angles -2.043 160.386 -0.635
+  scale 1.018
+ }
+ {
+  coords 1501.15 0 1114.06
+  angles -5.968 124.849 2.585
+  scale 1.088
+ }
+ {
+  coords 1498.78 0 1111.52
+  angles 3.238 -47.72 -7.969
+  scale 1.183
+ }
+ {
+  coords 1497.81 0 1113.67
+  angles 0.262 125.084 9.983
+  scale 0.944
+ }
+ {
+  coords 1495.55 0 1115.84
+  angles -10.662 -150.901 1.829
+  scale 0.869
+ }
+ {
+  coords 1496.05 0 1118.47
+  angles -4.265 -176.81 -0.237
+  scale 1.072
+ }
+ {
+  coords 1498.31 0 1118.1
+  angles 3.176 -57.822 -1.031
+  scale 1.047
+ }
+ {
+  coords 1500.42 0 1118.32
+  angles -3.052 131.813 -0.437
+  scale 0.886
+ }
+ {
+  coords 1497.44 0 1120.9
+  angles -2.734 144.633 -0.158
+  scale 0.978
+ }
+ {
+  coords 1499.5 0 1121.78
+  angles -2.02 -175.038 -1.463
+  scale 1.019
+ }
+ {
+  coords 1500.91 0 1124.9
+  angles 1.643 -70.164 -0.772
+  scale 1.091
+ }
+ {
+  coords 1502.04 0 1122.77
+  angles -2.879 152.753 -0.922
+  scale 0.916
+ }
+ {
+  coords 1506.31 0 1123.06
+  angles 2.621 -21.822 0.794
+  scale 0.952
+ }
+ {
+  coords 1502.74 0 1120.89
+  angles 2.619 -68.31 -0.798
+  scale 1.108
+ }
+ {
+  coords 1494.7 0 1120.75
+  angles -1.213 -160.884 -0.42
+  scale 0.811
+ }
+ {
+  coords 1496.06 0 1122.49
+  angles -0.71 158.67 -0.641
+  scale 0.79
+ }
+ {
+  coords 1493.88 0 1123.37
+  angles 0.07 -51.635 0.601
+  scale 1.01
+ }
+ {
+  coords 1494.62 0 1125.62
+  angles 0 -65.052 0
+  scale 1.125
+ }
+ {
+  coords 1496.75 0 1124.49
+  angles 0.298 -44.199 0.307
+  scale 0.763
+ }
+ {
+  coords 1492.27 0 1124.9
+  angles 0.605 -132.992 0.021
+  scale 0.882
+ }
+ {
+  coords 1498.79 0 1125.06
+  angles 0.843 -99.859 -0.147
+  scale 1.072
+ }
+ {
+  coords 1494.28 0 1132.35
+  angles -0.272 129.51 0.33
+  scale 0.82
+ }
+ {
+  coords 1496.73 0 1130.6
+  angles 0.359 147.045 -0.233
+  scale 0.804
+ }
+ {
+  coords 1494.61 0 1129.41
+  angles 0 -2.747 0
+  scale 0.954
+ }
+ {
+  coords 1492.47 0 1130.07
+  angles 0.12 146.453 -0.593
+  scale 1.173
+ }
+ {
+  coords 1490.46 0 1128.64
+  angles 0 72.127 0
+  scale 1.082
+ }
+ {
+  coords 1489.11 0 1131.34
+  angles -0.199 -154.154 -0.572
+  scale 1.169
+ }
+ {
+  coords 1489.79 0 1133.99
+  angles 1.536 -28.386 0.143
+  scale 1.235
+ }
+ {
+  coords 1487.68 0 1133.67
+  angles -0.904 -144.76 -1.686
+  scale 1.18
+ }
+ {
+  coords 1485.68 0 1130.69
+  angles -1.095 -95.42 -2.474
+  scale 0.922
+ }
+ {
+  coords 1491.68 0 1132.17
+  angles -0.048 -119.417 -0.956
+  scale 0.835
+ }
+ {
+  coords 1488.97 0 1137.1
+  angles 1.396 -19.035 4.038
+  scale 0.816
+ }
+ {
+  coords 1496.2 0 1134.28
+  angles 0 161.471 0
+  scale 0.826
+ }
+ {
+  coords 1498.32 0 1128.07
+  angles 0 -78.236 0
+  scale 0.777
+ }
+ {
+  coords 1496.23 0 1128.15
+  angles 0 29.576 0
+  scale 1.222
+ }
+ {
+  coords 1504.17 0 1126.35
+  angles 1.029 -144.776 -2.938
+  scale 0.851
+ }
+ {
+  coords 1503.82 0 1117.03
+  angles -8.593 123.889 -0.172
+  scale 1.058
+ }
 }
 Tree : "{87BE91E8E84DA493}Prefabs/Vegetation/Tree/t_alnus_glutinosa/t_alnus_glutinosa_2s.et" {
  coords 1664.753 0.031 1090.196

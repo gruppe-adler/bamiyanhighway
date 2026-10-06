@@ -5688,6 +5688,16 @@ $grp Tree : "{79689D379A820D9E}PrefabLibrary/CainLibrary/Vegetation/Plants/p_rub
   angles 22.222 -169.794 -64.116
   scale 0.764
  }
+ {
+  coords 1376.65 0 1071.91
+  angles 0.795 -82.756 0.533
+  scale 1.241
+ }
+ {
+  coords 1367.66 0 1061.05
+  angles -0.806 83.942 0.516
+  scale 0.952
+ }
 }
 $grp Tree : "{80C2B17EB509D6CF}Prefabs/Vegetation/Plant/p_echium_vulgare_0s.et" {
  {
