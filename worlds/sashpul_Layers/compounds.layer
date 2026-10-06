@@ -345,11 +345,7 @@ $grp PolylineShapeEntity {
   }
  }
 }
-SCR_DestructibleBuildingEntity : "{8746E5841CA719C0}Assets/Structures/Castle/zuhak.et" {
- coords 1651.751 20.607 874.202
- angles 0 -83.504 0
-}
 GenericEntity : "{E09998DC6A2CB5C6}Assets/Structures/CastleNew/castle.et" {
- coords 1640.845 18.937 904.634
+ coords 1654.125 20.56 870.75
  angles 0 -76.755 0
 }
