@@ -1,3 +1,12 @@
+GenericEntity {
+ components {
+  MeshObject "{6A8CD18164E2FAC3}" {
+   Object "{486069FE536D1413}Assets/ME_Wreck/tractor_wreck.xob"
+  }
+ }
+ coords 1554.085 -41.52 1151.745
+ angles 0.854 0.045 2.993
+}
 GenericEntity : "{17141C691DCD56C1}Prefabs/Structures/Wreck/bluecar1.et" {
  coords 870.775 -19.505 1017.692
  angles -7.266 147.107 -3.704
@@ -16,6 +25,10 @@ GenericEntity : "{2A6186F7E7BB7C9D}Prefabs/Structures/Misc/Cable2.et" {
 GenericEntity : "{2EA17F3C79DF529E}Prefabs/Structures/Misc/barrel_water.et" {
  coords 802.366 -21.947 983.028
  angles 0.296 -0.009 -1.712
+}
+SCR_DestructibleBuildingEntity : "{446671DE9607E741}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_03.et" {
+ coords 1515.305 -0 1193.022
+ angles -0.063 -43.511 2.419
 }
 $grp StaticModelEntity : "{528AB2322A646026}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_wave.et" {
  {
@@ -41,6 +54,11 @@ $grp GenericEntity : "{62D08E8600994BA3}Prefabs/Structures/Misc/Canister.et" {
   coords 802.17 -21.917 983.727
   angles 3.132 -31.272 -3.895
  }
+}
+GenericEntity : "{670F3221F5114B42}PrefabLibrary/DefaultLibrary/Vegetation/Debris/BranchTrash_dec_01.et" {
+ coords 1557.823 -41.69 1151.381
+ angles -2.359 139.926 -0.81
+ scale 1.094
 }
 SCR_DestructibleBuildingEntity : "{6A64B1FF75724B75}Prefabs/Structures/Bulding/Favella Shed/F_Red_Shed_03.et" {
  coords 963.805 0.032 1069.41
@@ -68,10 +86,22 @@ SCR_DestructibleBuildingEntity : "{77D9086CD1F98694}Prefabs/Structures/Bulding/H
  coords 960.581 -21.177 1053
  angles 0 67.241 0
 }
+SCR_DestructibleBuildingEntity : "{810FC4D515FB00F2}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_02_square.et" {
+ coords 1511.682 0 1189.664
+ angles -2.706 -45.99 0.954
+}
 StaticModelEntity : "{9C7477A3F066F74F}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_straight.et" {
  coords 963.317 -26.368 1027.107
  angles 0 -14.557 0
  scale 1.6
+}
+GenericEntity : "{A9ABB5DF9160A75B}PrefabLibrary/DefaultLibrary/Props/Industrial/VehicleGarbage_01_pile_small.et" {
+ coords 1552.695 -41.481 1153.994
+ angles 0 -45.354 0
+}
+GenericEntity : "{AEDCB4708FE94641}PrefabLibrary/DefaultLibrary/Props/Industrial/VehicleGarbage_01_pile_medium.et" {
+ coords 1551.86 -41.481 1152.714
+ angles 0 -93.343 0
 }
 $grp GenericEntity : "{BEC5AFE34DD32C87}Prefabs/Structures/flowers/canabis_sign.et" {
  {
@@ -631,8 +661,28 @@ GenericEntity : "{D5247F493225CA91}Prefabs/Props/Civilian/WateringCan_01.et" {
  coords 802.971 -21.879 982.591
  angles 0 126.821 0
 }
+GenericEntity : "{D7787456BDF1D199}PrefabLibrary/DefaultLibrary/Props/Agricultural/Scarecrow_01.et" {
+ coords 1624.492 -42.027 1181.06
+ angles 0 0 0
+}
+GenericEntity : "{E9FA4D7B531C7FF0}PrefabLibrary/DefaultLibrary/Props/Agricultural/WaterTank_01/WaterTank_01.et" {
+ coords 1537.82 -41.548 1134.905
+ angles 0.856 -0.006 0.428
+}
+GenericEntity : "{EFA4B1AF954CDB27}PrefabLibrary/DefaultLibrary/Props/Civilian/WellPump_01/WellPump_01_green.et" {
+ coords 1538.77 -41.481 1141.169
+}
+GenericEntity : "{F47C56E3678C7D87}PrefabLibrary/DefaultLibrary/Props/Industrial/VehicleGarbage_01_pile_large.et" {
+ coords 1554.16 -41.483 1154.859
+ angles -0.65 -139.381 -0.557
+}
 SCR_IndestructibleEnvironmentalEntity : "{F8DBBF9A2BF4C90D}Prefabs/Structures/Rock/African_Rock/GraniteCliff_African_03.et" {
  coords 808.709 -50.221 978.039
  angles 0 -24.096 0
  scale 1.3
+}
+GenericEntity : "{FA7D049A734AD1B5}PrefabLibrary/DefaultLibrary/Vegetation/Debris/BranchTrash_con_01.et" {
+ coords 1556.285 -41.683 1149.444
+ angles 1.24 -42.056 -0.542
+ scale 1.004
 }

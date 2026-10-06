@@ -10,3 +10,7 @@ SCR_DestructibleBuildingEntity : "{750DA549F335AE24}Prefabs/Structures/PrefabCom
  coords 1004.632 -33.55 1070.035
  angles 0 -24.379 0
 }
+SCR_DestructibleBuildingEntity : "{77D9086CD1F98694}Prefabs/Structures/Bulding/HouseL/House_L_3_EP1_Full.et" {
+ coords 1548.859 -40.952 1146.36
+ angles 1.213 -44.891 -1.208
+}
