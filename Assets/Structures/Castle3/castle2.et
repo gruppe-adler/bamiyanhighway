@@ -12,7 +12,7 @@ GenericEntity {
     PhysicsModelGeometry "{6A8CDDDF88DB0B5A}" {
      LayerPreset "BuildingFireView"
      SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
-     Collider "UTM_castle_raw"
+     Collider "UTM_castle_raw_LOD0"
     }
    }
    Static 1

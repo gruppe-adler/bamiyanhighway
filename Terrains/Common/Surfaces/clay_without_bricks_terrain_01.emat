@@ -1,0 +1,14 @@
+TerrainMaterial : "{A32410815EBEA300}Terrains/Common/Surfaces/DirtTakistan_Dark.emat" {
+ Color 0.44 0.353 0.317 1
+ SpecularIBL 1 0.799 0.716 1
+ BCRMap "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NHOMap "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
+ DielectricReflectance 0
+ ScaleUV 6
+ GlobalLayerHeightPower 0.635
+ MiddleColor 1 0.905 0.863 1
+ BCRMiddleMap "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NHOMiddleMap "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
+ MiddleScaleUV 9.9
+ MiddleNOPower 0.424
+}

@@ -1,0 +1,8 @@
+TerrainMaterial : "{A32410815EBEA300}Terrains/Common/Surfaces/DirtTakistan_Dark.emat" {
+ Color 0.44 0.353 0.317 1
+ SpecularIBL 1 0.799 0.716 1
+ BCRMap "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
+ NHOMap "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
+ BCRMiddleMap "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
+ NHOMiddleMap "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
+}

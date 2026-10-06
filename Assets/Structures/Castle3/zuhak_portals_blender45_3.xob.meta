@@ -3,7 +3,6 @@ MetaFileClass {
  Configurations {
   FBXResourceClass PC {
    SourceFile "zuhak_portals_blender45_3.fbx"
-   RemoveLods 5
    MaterialAssigns {
     MaterialAssignClass "{6A8CC447AD1DE305}" {
      SourceMaterial "portal"
@@ -18,12 +17,39 @@ MetaFileClass {
      AssignedMaterial "{1DF9B10139578F34}Assets/Structures/Castle3/Data/dummyvolume.emat"
     }
    }
+   VolumeParams {
+    VolumeParam BOXVOL_02 {
+     Lerp 250
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_03 {
+     Lerp 250
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_04 {
+     Lerp 250
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_05 {
+     Lerp 250
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_06 {
+     Lerp 250
+     FarEvBias 0
+    }
+    VolumeParam SPHVOL_01 {
+     Lerp 400
+     Ev 0
+     FarEvBias 0
+    }
+   }
    MeshParams {
     MeshParam castle_raw {
     }
    }
    GeometryParams {
-    GeometryParam UTM_castle_raw {
+    GeometryParam UTM_castle_raw_LOD0 {
      LayerPreset "FireGeo"
      SurfaceProperties {
       "{5E4EA52B03682185}FireGeo_Material.gamemat"

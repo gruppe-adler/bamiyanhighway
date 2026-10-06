@@ -1,6 +1,12 @@
-GenericEntity {
- coords 1643.18 18.095 872.728
- angles 0 -86.439 0
+$grp GenericEntity {
+ {
+  coords 1643.18 18.095 872.728
+  angles 0 -86.439 0
+ }
+ {
+  coords 1654.125 20.56 870.75
+  angles 0 -76.755 0
+ }
 }
 $grp PolylineShapeEntity {
  {
@@ -345,7 +351,7 @@ $grp PolylineShapeEntity {
   }
  }
 }
-GenericEntity : "{E09998DC6A2CB5C6}Assets/Structures/CastleNew/castle.et" {
- coords 1654.125 20.56 870.75
- angles 0 -76.755 0
+GenericEntity : "{CE68DCFE1C2B1FA5}Assets/Structures/Castle3/castle2.et" {
+ coords 1645.948 18.899 871.624
+ angles 0 -83.044 0
 }
