@@ -2,7 +2,7 @@ GenericEntity {
  ID "6A82B29327AA1C24"
  components {
   MeshObject "{6A82B29310F8A7EB}" {
-   Object "{993E3B1F4A1ED8CE}Assets/Structures/CastleNew/zuhak_portals_blender45_2.xob"
+   Object "{C513EFE668A8E3DE}Assets/Structures/Castle3/zuhak_portals_blender45_3.xob"
   }
   RigidBody "{6A82B2930C4EFAD7}" {
    LayerPreset "BuildingFireView"

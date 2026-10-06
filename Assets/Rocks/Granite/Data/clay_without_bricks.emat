@@ -1,0 +1,34 @@
+MatPBRMulti {
+ MaskMap "{DFC5A78CF2202DBC}Assets/Structures/Castle3/Data/clay_multimat_MASK.edds"
+ MaskGreenScale 0.343
+ MaskBlueScale 0.7
+ BCR_4 "{57E4CFFA663A615A}Assets/Structures/Castle3/Textures/Bricks083_1K-JPG_Color_BCR.edds"
+ NMO_4 "{9D91E9936EADC49E}Assets/Structures/Castle3/Textures/Bricks083_1K-JPG_NormalDX.edds"
+ UVTransform_4 MatUVTransform "{6A7D3B218B04F5DF}" {
+  TilingU 30
+  TilingV 30
+  Rotation 90
+ }
+ Enabled_3 1
+ BCR_3 "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
+ NMO_3 "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
+ UVTransform_3 MatUVTransform "{6A7AE9E03B41899A}" {
+  TilingU 30
+  TilingV 30
+ }
+ Enabled_2 1
+ BCR_2 "{A0A88751471D1A32}Assets/Structures/Castle3/Textures/lehm_albedo.edds"
+ NMO_2 "{C9CF2A465DF478F5}Assets/Structures/Castle3/Textures/lehm_normal.edds"
+ MaskUVScale_2 0.15
+ UVTransform_2 MatUVTransform "{6A7AE9E02CE8D7FF}" {
+  TilingU 30
+  TilingV 30
+ }
+ BCR_1 "{E85546DBC6EAC3BB}Assets/Structures/Castle3/Textures/lehm3_albedo.edds"
+ NMO_1 "{8132EBCCDC03A17C}Assets/Structures/Castle3/Textures/lehm3_normal.edds"
+ UVTransform_1 MatUVTransform "{6A7AE998D060B7E6}" {
+  TilingU 50
+  TilingV 50
+ }
+ DetNormal_1 1.2
+}

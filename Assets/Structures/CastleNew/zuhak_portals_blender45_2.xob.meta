@@ -3,42 +3,62 @@ MetaFileClass {
  Configurations {
   FBXResourceClass PC {
    MaterialAssigns {
-    MaterialAssignClass "{6A82B29151A120EF}" {
+    MaterialAssignClass "{6A8B14134D6122B4}" {
      SourceMaterial "clay"
      AssignedMaterial "{1A8B237E7D25B61B}Assets/Structures/CastleNew/Data/clay2.emat"
     }
-    MaterialAssignClass "{6A82B29151A120D2}" {
+    MaterialAssignClass "{6A8B14134D612286}" {
      SourceMaterial "portal"
      AssignedMaterial "{8EB7FEF91208D27F}Assets/Structures/CastleNew/Data/portal.emat"
     }
-    MaterialAssignClass "{6A82C075DB6C6109}" {
+    MaterialAssignClass "{6A8B14134D61228E}" {
      SourceMaterial "DefaultGeneratedMaterial"
-     AssignedMaterial "{3D765592610F9DE8}Assets/Structures/CastleNew/Data/DefaultGeneratedMaterial.emat"
+     AssignedMaterial "{8E478D41A0D46C11}Assets/_BaseMaterials/Equipment_MatPBRBasicGlass.emat"
     }
-    MaterialAssignClass "{6A89138168C0F2DA}" {
+    MaterialAssignClass "{6A8B14134D612274}" {
      SourceMaterial "dummyvolume"
      AssignedMaterial "{2D4033D361CAB39A}Assets/Structures/CastleNew/Data/dummyvolume.emat"
     }
    }
    VolumeParams {
-    VolumeParam SPHVOL_02 {
-     Lerp 300
+    VolumeParam BOXVOL_01 {
+     Lerp 150
      Ev 0
      FarEvBias 0
     }
-    VolumeParam SPHVOL_03 {
-     Lerp 300
+    VolumeParam BOXVOL_02 {
+     Lerp 150
      Ev 0
      FarEvBias 0
     }
-    VolumeParam SPHVOL_04 {
-     Lerp 300
+    VolumeParam BOXVOL_03 {
+     Lerp 150
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_04 {
+     Lerp 150
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_05 {
+     Lerp 150
      Ev 0
      FarEvBias 0
     }
    }
    MeshParams {
     MeshParam castle_raw {
+    }
+    MeshParam "1" {
+    }
+    MeshParam "2" {
+    }
+    MeshParam "3" {
+    }
+    MeshParam "4" {
+    }
+    MeshParam "5" {
     }
    }
    GeometryParams {

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{99FF87EEC024B9F1}Assets/Structures/Castle3/Textures/clay_multimat_MASK2.edds"
+ Configurations {
+  PNGResourceClass PC : "{0FE15736B2B24038}Configs/System/ResourceTypes/PC/TextureMask2.conf" {
+  }
+  PNGResourceClass XBOX_ONE : "{D9E3C07E0CEFD28B}Configs/System/ResourceTypes/XBOX_ONE/TextureMask2.conf" {
+  }
+  PNGResourceClass XBOX_SERIES : "{A0D4A5D55754C80B}Configs/System/ResourceTypes/XBOX_SERIES/TextureMask2.conf" {
+  }
+  PNGResourceClass PS4 : "{8F56C72593079310}Configs/System/ResourceTypes/PS4/TextureMask2.conf" {
+  }
+  PNGResourceClass PS5 : "{785A4583AC38909F}Configs/System/ResourceTypes/PS5/TextureMask2.conf" {
+  }
+  PNGResourceClass HEADLESS : "{095FD5ADF84725BA}Configs/System/ResourceTypes/HEADLESS/TextureMask2.conf" {
+  }
+  PNGResourceClass Xbox : PC {
+  }
+ }
+}
