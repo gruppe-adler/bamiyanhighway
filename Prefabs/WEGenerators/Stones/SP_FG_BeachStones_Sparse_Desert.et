@@ -1,0 +1,83 @@
+ForestGeneratorEntity : "{532AED66429654F6}Prefabs/WEGenerators/Brushland/FG_Brushland_Sorbus_Dense.et" {
+ ID "50DAEB90A9F4F719"
+ coords 2165.428 1.155 6475.002
+ GeneratorType GeneratorType "{6A9102F4320C10FB}" {
+ }
+ m_aLevels {
+  ForestGeneratorBottomLevel intermediate {
+   m_bGenerate 0
+  }
+ }
+ m_aClusters {
+  ForestGeneratorCircleCluster Sorbus {
+   m_bGenerate 0
+  }
+  ForestGeneratorCircleCluster Corylus {
+   m_bGenerate 0
+  }
+  ForestGeneratorCircleCluster Betula {
+   m_bGenerate 0
+  }
+  ForestGeneratorStripCluster Rosa {
+   m_bGenerate 0
+  }
+  ForestGeneratorStripCluster Rubus_Idaeus {
+   m_bGenerate 0
+  }
+  ForestGeneratorCircleCluster Stones {
+   m_aObjects {
+    SmallForestGeneratorClusterObject Stone_01 {
+     m_Prefab "{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fMinRadius 8
+     m_fMaxRadius 10
+    }
+    SmallForestGeneratorClusterObject Stone_02 {
+     m_Prefab "{D435306C5AD8F81E}Prefabs/Rocks/Desert/Desert_Stone_02.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fMinRadius 7
+     m_fMaxRadius 7
+    }
+    SmallForestGeneratorClusterObject Stone_03 {
+     m_Prefab "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fMinRadius 5
+     m_fMaxRadius 5
+    }
+    SmallForestGeneratorClusterObject Stone_small {
+     m_Prefab "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fMinRadius 7
+     m_fMaxRadius 7
+    }
+   }
+   m_fMinCDENSHA 5
+   m_fMaxCDENSHA 5
+  }
+  ForestGeneratorCircleCluster Stones2 {
+   m_aObjects {
+    SmallForestGeneratorClusterObject Stone_01 {
+     m_Prefab "{5C31F8C6870C1033}Prefabs/Rocks/Desert/Desert_Cluster_01.et"
+     m_fMinRadius 5
+    }
+    SmallForestGeneratorClusterObject Stone_02 {
+     m_Prefab "{3065CC263BC89F1D}Prefabs/Rocks/Desert/Desert_Cluster_02.et"
+     m_fMinRadius 5
+    }
+    SmallForestGeneratorClusterObject Stone_03 {
+     m_Prefab "{5C31F8C6870C1034}Prefabs/Rocks/Desert/Desert_Cluster_03.et"
+    }
+    SmallForestGeneratorClusterObject Stone_small {
+     m_Prefab "{E8CDA5E742418141}Prefabs/Rocks/Desert/Desert_Cluster_04.et"
+     m_fMinRadius 5
+    }
+   }
+   m_fMinCDENSHA 10
+   m_fMaxCDENSHA 10
+  }
+ }
+}

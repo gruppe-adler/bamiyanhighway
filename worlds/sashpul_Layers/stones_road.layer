@@ -2,7 +2,7 @@ SplineShapeEntity {
  coords 1287.506 -30.404 1177.717
  Points {
   ShapePoint "{6A9102ED658F9615}" {
-   Position 0 -0 0
+   Position 0 0 0
    Data {
     ForestGeneratorPointData "{000000002C57B0BA}" {
     }
@@ -102,816 +102,1031 @@ SplineShapeEntity {
  }
  LineColor 0 0 0 0
  {
-  ForestGeneratorEntity : "{7B10FDF7AB9F3C25}PrefabLibrary/DefaultLibrary/Generators/Stones/FG_BeachStones_Sparse.et" {
+  ForestGeneratorEntity : "{6D0DD928C53512C9}Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et" {
    Flags 0x100003 0
-   m_iSeed 131
+   coords 0 0 0
+   m_iSeed 119
+   m_bAvoidRoads 1
    {
-    $grp SCR_IndestructibleEnvironmentalEntity : "{2A841F5C64F4BCE2}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_BeachCluster_02/Granite_BeachCluster_02.et" {
+    $grp SCR_IndestructibleEnvironmentalEntity : "{3065CC263BC89F1D}Prefabs/Rocks/Desert/Desert_Cluster_02.et" {
      {
-      coords -33.66 4.883 16.425
-      angles 32.525 -32.504 1.338
-      scale 1.059
+      coords -208.08 6.849 -56.902
+      angles 0 120.579 0
+      scale 0.622
      }
      {
-      coords -27.93 3.934 14.077
-      angles -17.771 96.071 13.849
-      scale 1.061
+      coords -222.453 6.669 -61.505
+      angles 0 -145.474 0
+      scale 0.981
      }
      {
-      coords -36.227 3.07 11.491
-      angles 17.705 -38.181 -4.873
-      scale 1.168
+      coords 54.6 8.647 53.331
+      angles 0 -94.936 0
+      scale 0.729
      }
      {
-      coords -32.046 2.823 10.726
-      angles -8.424 -146.419 -27.209
-      scale 1.18
+      coords -164.617 4.827 -57.942
+      angles 0 -36.3 0
+      scale 1.12
      }
      {
-      coords -28.798 6.67 20.349
-      angles -8.898 64.421 28.749
-      scale 0.41
+      coords -162.071 4.208 -62.007
+      angles 0 63.404 0
+      scale 1.043
      }
      {
-      coords -42.757 3.47 8.599
-      angles 17.576 15.207 19.552
-      scale 0.211
+      coords -113.011 1.356 -54.451
+      angles 0 58.021 0
+      scale 0.816
      }
      {
-      coords -22.125 3.601 13.915
-      angles 18.056 32.94 11.355
-      scale 0.475
-     }
-     {
-      coords 14.326 1.002 12.861
-      angles 6.398 33.016 11.109
-      scale 0.64
-     }
-     {
-      coords 14.562 0.685 11.462
-      angles -11.495 -171.584 -5.908
-      scale 1.198
-     }
-     {
-      coords 4.02 0.977 9.646
-      angles -9.658 152.305 19.08
-      scale 0.833
-     }
-     {
-      coords 8.153 0.259 4.955
-      angles -6.85 133.69 3.458
-      scale 0.724
-     }
-     {
-      coords 4.04 1.927 13.138
-      angles -18.241 -146.612 -1.596
-      scale 1.037
-     }
-     {
-      coords 6.314 0.686 7.494
-      angles 8.135 -29.568 -4.59
-      scale 0.763
-     }
-     {
-      coords -108.262 9.199 -11.274
-      angles -28.46 144.022 -1.102
-      scale 0.738
-     }
-     {
-      coords -111.401 9.984 -10.432
-      angles 12.617 -71.296 -20.426
-      scale 0.99
-     }
-     {
-      coords -104.039 7.876 -13.138
-      angles -21.699 -171.502 -11.454
-      scale 0.521
-     }
-     {
-      coords -106.826 7.9 -13.681
-      angles 19.694 -87.667 -17.959
-      scale 0.547
-     }
-     {
-      coords -203.684 7.678 -55.839
-      angles 8.733 -12.261 -5.767
-      scale 1.123
-     }
-     {
-      coords -197.978 8.833 -49.097
-      angles 2.249 -80.9 -11.19
-      scale 0.724
-     }
-     {
-      coords -199.689 9.298 -46.964
-      angles -12.252 -114.933 -13.029
-      scale 0.771
-     }
-     {
-      coords -199.092 7.953 -52.825
-      angles 9.595 103.434 12.493
+      coords -70.497 0.764 -16.459
+      angles 0 -30.169 0
       scale 1.085
      }
      {
-      coords -208.834 8.354 -48.39
-      angles 15.107 -129.365 -8.447
-      scale 0.602
+      coords -53.602 0.534 -8.13
+      angles 0 -148.122 0
+      scale 0.66
      }
      {
-      coords -211.292 8.885 -49.568
-      angles -14.929 153.012 4.722
-      scale 0.462
+      coords -41.937 -0.29 -11.965
+      angles 0 24.61 0
+      scale 0.809
      }
      {
-      coords -209.338 8.525 -48.771
-      angles -16.84 102.011 -2.692
-      scale 0.226
+      coords -55.558 -0.261 -15.522
+      angles 0 -178.621 0
+      scale 0.827
      }
      {
-      coords -207.106 7.13 -55.264
-      angles 19.496 46.903 -8.438
-      scale 0.57
+      coords 82.976 4.285 68.12
+      angles 0 -38.486 0
+      scale 1.072
      }
      {
-      coords -156.767 3.667 -61.824
-      angles 4.248 -73.903 -8.486
-      scale 0.884
+      coords -110.321 2.912 -33.783
+      angles 0 149.957 0
+      scale 0.961
      }
      {
-      coords -151.426 3.609 -55.299
-      angles -3.532 74.834 4.928
-      scale 0.686
+      coords -116.8 2.729 -41.547
+      angles 0 -118.392 0
+      scale 0.974
      }
      {
-      coords -155.57 3.422 -63.302
-      angles 6.676 31.549 4.579
-      scale 0.803
-     }
-     {
-      coords -145.667 2.314 -61.86
-      angles 2.297 -77.988 -2.57
-      scale 0.649
-     }
-     {
-      coords -153.328 4.307 -50.46
-      angles -4.645 65.629 11.319
-      scale 0.291
-     }
-     {
-      coords -141.159 2.298 -59.059
-      angles -11.047 -162.257 3.979
-      scale 0.339
-     }
-     {
-      coords -235.62 4.47 -73.842
-      angles -0.514 31.281 12.982
-      scale 0.52
-     }
-     {
-      coords -237.121 5.909 -66.567
-      angles 13.54 11.868 -3.131
-      scale 0.907
-     }
-     {
-      coords -241.963 4.273 -77.903
-      angles 8.443 -130.157 -7.063
-      scale 0.342
-     }
-     {
-      coords 19.066 8.725 37.335
-      angles -15.619 -126.138 -28.885
-      scale 0.984
-     }
-     {
-      coords 16.934 15.555 46.928
-      angles -14.699 99.217 33.487
-      scale 0.614
-     }
-     {
-      coords 25.021 8.909 39.741
-      angles 11.869 -94.455 -33.183
-      scale 1.159
-     }
-     {
-      coords 19.155 15.376 48.228
-      angles -36.316 86.347 24.416
-      scale 0.542
-     }
-     {
-      coords 22.679 7.878 37.696
-      angles 10.474 -57.902 -35.693
-      scale 1.034
-     }
-     {
-      coords 21.509 14.002 46.151
-      angles 31.351 24.951 18.446
-      scale 0.726
-     }
-     {
-      coords 15.096 7.213 33.317
-      angles 7.825 6.614 36.992
-      scale 0.549
-     }
-     {
-      coords 14.735 10.544 39.467
-      angles -13.009 109.371 39.208
-      scale 0.289
-     }
-     {
-      coords -86.031 0.737 -35.511
-      angles 4.945 5.952 6.065
-      scale 0.776
-     }
-     {
-      coords -83.861 -0.001 -42.305
-      angles 2.489 33.715 4.734
-      scale 0.582
-     }
-     {
-      coords -83.785 0.433 -36.609
-      angles -6.769 109.96 1.165
-      scale 0.767
-     }
-     {
-      coords -130.381 9.997 -15.449
-      angles 15.406 -81.231 -14.455
-      scale 0.831
-     }
-     {
-      coords -137.268 10.111 -16.854
-      angles 13.231 -51.932 -9.23
-      scale 0.71
-     }
-     {
-      coords -130.257 11.829 -8.293
-      angles -27.303 138.244 -15.884
-      scale 1.101
-     }
-     {
-      coords -124.634 12.737 -5.459
-      angles -2.593 18.497 20.327
-      scale 0.355
-     }
-     {
-      coords -128.279 8.621 -19.22
-      angles 18.758 -77.727 -8.374
-      scale 0.301
-     }
-     {
-      coords -138.433 10.469 -15.585
-      angles 3.1 -71.106 -15.28
-      scale 0.467
-     }
-     {
-      coords -32.994 4.151 14.593
-      angles 14.997 -141.401 -21.483
-      scale 0.986
-     }
-     {
-      coords -34.659 8.936 23.429
-      angles -17.411 128.18 23.105
-      scale 1.104
-     }
-     {
-      coords -156.422 4.898 -48.864
-      angles -5.286 -145.063 -7.287
-      scale 1.018
-     }
-     {
-      coords -164.112 6.372 -43.635
-      angles -13.69 27.204 29.06
-      scale 0.883
-     }
-     {
-      coords -159.879 7.428 -38.347
-      angles -4.165 -141.793 -11.798
-      scale 0.867
-     }
-     {
-      coords -161.644 7.217 -39.987
-      angles 17.307 35.615 5.657
-      scale 1.08
-     }
-     {
-      coords -151.868 3.971 -51.244
-      angles 10.764 -17.552 4.544
-      scale 0.354
-     }
-     {
-      coords -149.252 3.658 -50.338
-      angles 7.686 -65.646 6.697
-      scale 0.329
-     }
-     {
-      coords -141.26 9.817 -19.461
-      angles -1.754 71.544 13.414
-      scale 0.904
-     }
-     {
-      coords -142.266 11.041 -14.429
-      angles 18.734 -85.456 -11.396
-      scale 0.601
-     }
-     {
-      coords -147.849 11.058 -12.976
-      angles -20.632 119.42 5.611
-      scale 0.741
-     }
-     {
-      coords -146.608 11.519 -11.396
-      angles -31.813 -123.397 -11.303
-      scale 1.097
-     }
-     {
-      coords -151.358 11.95 -13.283
-      angles 4.658 27.672 15.535
-      scale 0.752
-     }
-     {
-      coords -139.87 8.371 -25.812
-      angles -10.685 176.507 -1.458
-      scale 0.345
-     }
-     {
-      coords -24.908 -0.487 -6.827
-      angles -8.171 -172.904 3.677
-      scale 0.814
-     }
-     {
-      coords -21.275 -0.543 -6.443
-      angles -2.753 -67.289 -6.682
-      scale 0.996
-     }
-     {
-      coords -34.507 -0.675 -15.44
-      angles -0.969 -143.809 -2.298
-      scale 0.341
-     }
-     {
-      coords -28.595 -0.682 -11.624
-      angles -4.526 106.209 1.795
-      scale 0.219
-     }
-     {
-      coords -18.607 -0.811 -8.94
-      angles -6.85 144.874 -4.535
-      scale 0.462
-     }
-     {
-      coords -136.95 10.971 -13.251
-      angles 20.348 -34.684 -0.123
-      scale 1.011
-     }
-     {
-      coords -128.298 9.759 -13.144
-      angles 18.497 103.484 25.148
-      scale 1.192
-     }
-     {
-      coords -60.481 1.584 -6.421
-      angles -2.792 34.485 12.901
-      scale 0.76
-     }
-     {
-      coords -60.469 2.918 -2.082
-      angles 9.925 -77.648 -15.168
-      scale 1.023
-     }
-     {
-      coords -66.678 4.433 -0.545
-      angles 20.104 -3.679 -6.872
-      scale 0.703
-     }
-     {
-      coords -59.868 1.728 -5.75
-      angles 15.22 -37.068 -20.302
-      scale 0.332
-     }
-     {
-      coords -51.914 4.082 6.825
-      angles 28.696 -109.315 -9.939
-      scale 0.421
-     }
-     {
-      coords 60.353 6.369 52.656
-      angles 12.046 -131.968 -27.554
-      scale 1.066
-     }
-     {
-      coords 56.272 4.176 44.751
-      angles 26.505 28.565 18.092
-      scale 1.185
-     }
-     {
-      coords 58.558 7.857 54.846
-      angles -29.214 94.034 8.818
-      scale 0.885
-     }
-     {
-      coords 52.513 7.552 50.127
-      angles 34.392 -64.404 16.949
-      scale 0.554
-     }
-     {
-      coords 58.432 7.436 53.503
-      angles -1.345 -122.15 -27.225
-      scale 1.119
-     }
-     {
-      coords 57.236 6.549 50.512
-      angles -34.664 -160.903 -12.212
-      scale 0.582
-     }
-     {
-      coords 54.349 5.147 45.525
-      angles 8.811 -121.94 -27.553
-      scale 0.301
-     }
-     {
-      coords 65.277 13.893 77.665
-      angles -25.086 122.117 4.422
-      scale 0.62
-     }
-     {
-      coords 67.102 11.878 74.625
-      angles -17.489 51.712 27.821
-      scale 1.075
-     }
-     {
-      coords 57.991 14.84 73.693
-      angles 12.818 -38.691 3.183
-      scale 0.524
-     }
-     {
-      coords 70.812 9.834 72.759
-      angles -27.263 114.73 9.602
-      scale 0.432
-     }
-     {
-      coords 64.369 9.165 64.387
-      angles 1.937 44.754 26.386
-      scale 0.464
-     }
-     {
-      coords 68.088 9.99 70.851
-      angles 13.011 50.957 27.485
-      scale 0.216
-     }
-    }
-    $grp SCR_IndestructibleEnvironmentalEntity : "{46D02BBCD83033CC}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_BeachCluster_01/Granite_BeachCluster_01.et" {
-     {
-      coords 3.862 0.221 4.477
-      angles 7.808 -41.243 5.006
-      scale 0.668
-     }
-     {
-      coords 7.992 3.991 20.548
-      angles 18.094 16.083 12.95
-      scale 0.887
-     }
-     {
-      coords -117.454 7.205 -17.842
-      angles -11.544 -75.54 -28.497
-      scale 0.723
-     }
-     {
-      coords -103.806 5.524 -18.325
-      angles -31.879 168.451 7.986
-      scale 1.012
-     }
-     {
-      coords -205.456 9.884 -45.714
-      angles 13.768 12.245 3.805
-      scale 0.631
-     }
-     {
-      coords 26.357 13.931 47.496
-      angles -1.592 109.559 39.155
-      scale 0.656
-     }
-     {
-      coords -80.201 0.419 -32.932
-      angles -3.352 -170.988 -6.132
-      scale 0.898
-     }
-     {
-      coords -139.705 10.739 -13.903
-      angles 19.629 -11.443 -18.078
-      scale 1.03
-     }
-     {
-      coords -27.879 8.572 25.992
-      angles -33.077 155.354 33.294
-      scale 0.79
-     }
-     {
-      coords -30.082 9.1 24.855
-      angles 13.548 -91.598 -24.559
-      scale 0.797
-     }
-     {
-      coords -146.929 8.889 -24.958
-      angles 11.689 -34.17 11.71
-      scale 0.833
-     }
-     {
-      coords -50.277 1.396 -2.413
-      angles -3.318 -72.86 -20.256
-      scale 1.125
-     }
-     {
-      coords 47.782 10.968 52.492
-      angles 0.201 -125.535 -33.562
-      scale 0.893
-     }
-     {
-      coords 49.593 9.291 50.642
-      angles 31.639 -19.258 6.455
-      scale 0.95
-     }
-    }
-    $grp SCR_IndestructibleEnvironmentalEntity : "{75E7837701ADA216}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_Stone_03/Granite_BeachStone_03.et" {
-     {
-      coords -94.954 11.674 -0.89
-      angles -0.182 -88.278 -3.322
-      scale 0.706
-     }
-     {
-      coords -60.39 3.963 1.744
-      angles 1.91 30.477 -3.811
-      scale 0.546
-     }
-     {
-      coords -59.816 3.576 0.603
-      angles -1.396 -48.001 1.592
-      scale 1.091
-     }
-     {
-      coords -60.671 4.321 3.311
-      angles -4.644 -29.301 3.092
-      scale 0.559
-     }
-     {
-      coords -11.988 11.858 35.102
-      angles 1.043 -151.869 1.217
-      scale 1.061
-     }
-     {
-      coords -2.576 11.482 36.547
-      angles -0.007 133.136 3.624
-      scale 0.963
-     }
-     {
-      coords -8.349 13.895 39.144
-      angles -4.555 -36.662 3.992
-      scale 0.88
-     }
-     {
-      coords -112.112 5.491 -22.907
-      angles -2.033 -43.991 0.019
-      scale 0.61
-     }
-     {
-      coords -117.278 6.605 -19.297
-      angles 4.715 106.351 1.753
-      scale 0.574
-     }
-     {
-      coords -151.645 2.644 -71.493
-      angles 0.385 -74.786 -2.138
-      scale 1.033
-     }
-     {
-      coords -154.517 2.876 -73.732
-      angles 0.763 -99.199 0.317
-      scale 0.559
-     }
-     {
-      coords -109.15 4.553 -24.122
-      angles 1.515 -83.773 -2.204
-      scale 0.878
-     }
-     {
-      coords -108.874 2.539 -34.062
-      angles -0.904 78.687 -3.409
-      scale 0.554
-     }
-     {
-      coords -157.736 10.959 -19.852
-      angles -1.097 -73.413 -3.482
-      scale 0.587
-     }
-     {
-      coords -160.785 9.621 -27.202
-      angles -1.106 -68.601 -0.266
-      scale 1.08
-     }
-    }
-    $grp SCR_IndestructibleEnvironmentalEntity : "{907BCF8E0D48357D}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_Stone_02/Granite_BeachStone_02.et" {
-     {
-      coords -58.286 2.313 -3.094
-      angles -1.47 18.447 -2.117
-      scale 1.007
-     }
-     {
-      coords -56.253 1.874 -3.577
-      angles 0.571 -138.882 -4.983
-      scale 1.044
-     }
-     {
-      coords -55.712 6.344 10.399
-      angles -1.74 34.938 3.255
-      scale 0.738
-     }
-     {
-      coords -10.158 14.724 40.588
-      angles -0.81 154.462 4.357
-      scale 0.655
-     }
-     {
-      coords -0.314 9.365 32.412
-      angles 1.507 84.608 -4.168
-      scale 0.685
-     }
-     {
-      coords -2.851 13.16 39.916
-      angles -1.717 20.018 1.901
-      scale 0.975
-     }
-     {
-      coords -10.659 8.841 28.317
-      angles -2.728 -44.979 4.099
-      scale 0.823
-     }
-     {
-      coords -110.635 5.301 -21.201
-      angles 3.961 75.676 3.922
-      scale 1.059
-     }
-     {
-      coords -123.779 6.873 -22.89
-      angles 2.53 140.783 -1.025
-      scale 1.104
-     }
-     {
-      coords -116.971 4.354 -31.284
-      angles -0.511 -30.938 -3.264
-      scale 0.61
-     }
-     {
-      coords -162.601 3.638 -71.101
-      angles 4.168 -148.54 -2.368
-      scale 1.135
-     }
-     {
-      coords -116.489 4.658 -29.944
-      angles 4.806 -108.548 4.923
-      scale 0.662
-     }
-     {
-      coords -106.077 4.704 -23.023
-      angles -2.468 -31.576 -1.172
-      scale 0.923
-     }
-     {
-      coords -167.562 11.988 -18.042
-      angles -2.527 -164.119 -3.972
-      scale 0.91
-     }
-    }
-    $grp SCR_IndestructibleEnvironmentalEntity : "{FC2FFB6EB18CBA53}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_Stone_01/Granite_BeachStone_01.et" {
-     {
-      coords -86.095 10.245 0.635
-      angles 1.61 -71.644 1.316
-      scale 0.218
-     }
-     {
-      coords -88.578 9.183 -2.335
-      angles -1.039 69.062 -2.207
-      scale 0.355
-     }
-     {
-      coords -51.669 1.423 -3.824
-      angles 2.723 4.483 0.189
-      scale 1.132
-     }
-     {
-      coords -56.921 1.481 -5.939
-      angles -3.844 -31.202 -1.107
-      scale 1.148
-     }
-     {
-      coords -47.277 1.477 -0.344
-      angles 3.353 24.676 -1.464
-      scale 0.734
-     }
-     {
-      coords -63.573 3.403 -2.065
-      angles -0.839 -129.774 -2.244
-      scale 0.834
-     }
-     {
-      coords -15.205 13.38 37.553
-      angles -1.408 -7.262 -4.292
-      scale 1.071
-     }
-     {
-      coords -0.168 10.6 35.593
-      angles 2.566 -166.69 4.267
-      scale 0.401
-     }
-     {
-      coords -1.148 12.135 38.078
-      angles -4.711 -6.361 -1.598
-      scale 0.328
-     }
-     {
-      coords -5.828 14.497 41.208
-      angles -0.195 -113.075 3.168
-      scale 0.24
-     }
-     {
-      coords -7.821 8.369 27.358
-      angles -0.035 72.765 1.609
-      scale 0.287
-     }
-     {
-      coords -122.706 5.271 -31.028
-      angles 4.044 81.796 0.798
-      scale 0.793
-     }
-     {
-      coords -111.142 3.26 -30.401
-      angles 2.974 -37.849 -3.294
-      scale 1.191
-     }
-     {
-      coords -118.152 4.204 -31.174
-      angles 4.677 59.8 -0.651
-      scale 0.394
-     }
-     {
-      coords -118.746 7.145 -17.526
-      angles -2.545 59.119 4.1
-      scale 0.335
-     }
-     {
-      coords -160.106 3.939 -63.311
-      angles -4.844 -131.368 2.391
-      scale 0.534
-     }
-     {
-      coords -159.136 3.905 -62.71
-      angles -1.264 133.092 0.859
-      scale 0.271
-     }
-     {
-      coords -161.557 3.478 -73.12
-      angles -0.778 121.436 1.167
-      scale 0.5
-     }
-     {
-      coords -108.565 5.566 -21.085
-      angles -0.421 -48.451 -4.261
-      scale 0.757
-     }
-     {
-      coords -117.501 5.807 -24.385
-      angles -3.62 -154.055 -2.734
-      scale 0.917
-     }
-     {
-      coords -102.546 3.075 -29.418
-      angles 2.101 -5.197 2.02
-      scale 0.348
-     }
-     {
-      coords -115.35 5.095 -25.205
-      angles 4.209 119.084 4.604
-      scale 0.306
-     }
-     {
-      coords -153.146 9.417 -26.447
-      angles 2.239 -102.67 -2.438
-      scale 0.808
-     }
-     {
-      coords 42.49 3.1 35.21
-      angles -1.187 -158.658 -2.434
-      scale 1.031
-     }
-     {
-      coords 38.455 7.217 42.788
-      angles -2.034 70.941 1.369
+      coords -122.098 2.771 -43.996
+      angles 0 -5.768 0
       scale 1.152
      }
      {
-      coords 42.468 3.837 36.76
-      angles 3.804 -0.428 -1.772
+      coords -16.81 -0.693 -8.408
+      angles 0 -111.778 0
+      scale 1.081
+     }
+     {
+      coords -14.808 0.657 3.393
+      angles 0 -92.64 0
+      scale 1.177
+     }
+     {
+      coords -18.319 0.113 0.368
+      angles 0 -10.536 0
+      scale 0.665
+     }
+     {
+      coords 7.821 16.339 46.303
+      angles 0 -46.935 0
+      scale 0.88
+     }
+     {
+      coords 6.701 8.487 31.722
+      angles 0 -16.546 0
+      scale 0.776
+     }
+     {
+      coords 11.453 4.43 23.268
+      angles 0 177.533 0
+      scale 0.614
+     }
+     {
+      coords -3.35 4.471 18.713
+      angles 0 -173.875 0
+      scale 1.123
+     }
+     {
+      coords 7.078 2.116 14.269
+      angles 0 170.392 0
+      scale 0.679
+     }
+     {
+      coords -125.61 2.047 -54.223
+      angles 0 60.207 0
+      scale 0.807
+     }
+     {
+      coords -139.685 3.22 -50.331
+      angles 0 93.002 0
+      scale 0.946
+     }
+     {
+      coords -200.571 6.14 -65.087
+      angles 0 0.736 0
+      scale 0.799
+     }
+     {
+      coords -47.975 5.542 11.975
+      angles 0 -72.336 0
+      scale 0.986
+     }
+     {
+      coords -50.679 5.32 10.7
+      angles 0 101.78 0
+      scale 1.042
+     }
+     {
+      coords -193.912 6.069 -65.694
+      angles 0 -109.702 0
+      scale 0.884
+     }
+     {
+      coords -195.05 7.471 -56.266
+      angles 0 -176.742 0
+      scale 0.8
+     }
+     {
+      coords -202.492 7.878 -54.782
+      angles 0 170.414 0
+      scale 0.866
+     }
+    }
+    $grp SCR_IndestructibleEnvironmentalEntity : "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et" {
+     {
+      coords -75.229 5.437 -3.371
+      angles -4.798 -159.603 -4.084
+      scale 1.116
+     }
+     {
+      coords -67.388 5.174 1.054
+      angles 4.595 100.825 -0.597
+      scale 0.636
+     }
+     {
+      coords -65.607 4.106 -1.172
+      angles -0.058 170.392 3.28
+      scale 0.685
+     }
+     {
+      coords -63.564 3.525 -0.947
+      angles -2.175 114.822 -3.131
+      scale 0.306
+     }
+     {
+      coords -74.305 7.363 2.645
+      angles -3.984 17.645 -0.478
+      scale 0.435
+     }
+     {
+      coords -69.568 6.688 3.914
+      angles 3.117 140.41 1.855
+      scale 0.589
+     }
+     {
+      coords 21.42 1.942 21.152
+      angles -4.245 15.162 2.248
+      scale 0.84
+     }
+     {
+      coords 19.772 1.654 19.038
+      angles 3.765 -172.644 2.496
+      scale 0.728
+     }
+     {
+      coords 9.797 4.63 23.051
+      angles -0.587 -51.066 -1.291
+      scale 0.313
+     }
+     {
+      coords 15.208 1.629 16.24
+      angles -2.821 2.263 -0.421
+      scale 0.432
+     }
+     {
+      coords 18.834 1.102 16.36
+      angles 4.658 -149.748 1.179
+      scale 0.236
+     }
+     {
+      coords 21.464 4.196 28.275
+      angles -0.678 1.296 4.813
+      scale 0.446
+     }
+     {
+      coords 9.921 4.139 21.749
+      angles -1.022 -116.283 1.572
+      scale 0.23
+     }
+     {
+      coords -220.511 9.616 -48.588
+      angles -0.42 88.08 -3.146
+      scale 0.844
+     }
+     {
+      coords -218.508 9.517 -48.83
+      angles -1.279 161.163 2.761
+      scale 0.57
+     }
+     {
+      coords -229.068 9.16 -54.807
+      angles -1.454 92.793 -4.081
+      scale 0.482
+     }
+     {
+      coords 13.785 17.706 49.308
+      angles -3.349 6.394 0.763
+      scale 1.051
+     }
+     {
+      coords 17.853 12.655 43.172
+      angles -3.655 176.193 0.148
+      scale 0.699
+     }
+     {
+      coords 11.043 10.338 37.649
+      angles 2.508 50.769 3.995
+      scale 0.337
+     }
+     {
+      coords 7.139 12.735 40.54
+      angles 2.407 124.479 -3.747
+      scale 0.374
+     }
+     {
+      coords 9.011 18.882 50.123
+      angles -4.915 -63.393 1.025
+      scale 0.476
+     }
+     {
+      coords -66.224 0.805 -13.513
+      angles -4.832 -41.035 -0.286
+      scale 1.194
+     }
+     {
+      coords -71.75 0.027 -23.751
+      angles 0.258 -94.211 -4.794
+      scale 0.353
+     }
+     {
+      coords -60.528 -0.043 -16.371
+      angles -1.47 179.665 -2.947
+      scale 0.449
+     }
+     {
+      coords -62.961 -0.474 -23.964
+      angles -1.028 -56.867 1.119
+      scale 0.39
+     }
+     {
+      coords -64.543 0.971 -11.945
+      angles -1.953 81.675 -4.044
+      scale 0.301
+     }
+     {
+      coords -65.572 1.074 -11.609
+      angles -1.613 -106.494 4.119
+      scale 0.377
+     }
+     {
+      coords -187.618 11.529 -27.19
+      angles -1.842 -90.233 -2.843
+      scale 0.904
+     }
+     {
+      coords -179.193 11.805 -23.679
+      angles 0.64 132.51 -4.401
+      scale 0.985
+     }
+     {
+      coords -46.922 -0.538 -16.673
+      angles 3.935 141.607 0.967
+      scale 0.563
+     }
+     {
+      coords -42.687 -0.511 -16.03
+      angles 4.265 -169.272 -0.593
+      scale 0.557
+     }
+     {
+      coords -40.095 -0.652 -19.77
+      angles 1.223 142.585 -3.384
+      scale 0.441
+     }
+     {
+      coords -53.377 -0.644 -24.153
+      angles -2.634 179.522 0.361
+      scale 0.296
+     }
+     {
+      coords -119.909 11.18 -7.93
+      angles 2.045 138.036 -4.743
+      scale 0.62
+     }
+     {
+      coords -125.923 9.306 -15.909
+      angles -0.995 52.791 -3.894
+      scale 0.924
+     }
+     {
+      coords -127.958 12.321 -7.359
+      angles 4.503 100.242 1.634
+      scale 0.492
+     }
+     {
+      coords -151.304 9.551 -24.62
+      angles 1.753 154.703 -0.971
+      scale 0.704
+     }
+     {
+      coords -159.65 10.445 -20.655
+      angles -4.564 -47.825 -4.509
+      scale 0.686
+     }
+    }
+    $grp SCR_IndestructibleEnvironmentalEntity : "{5C31F8C6870C1033}Prefabs/Rocks/Desert/Desert_Cluster_01.et" {
+     {
+      coords -215.579 7.877 -54.093
+      angles 0 146.276 0
+      scale 1.07
+     }
+     {
+      coords -212.276 7.732 -55.207
+      angles 0 -16.041 0
+      scale 0.714
+     }
+     {
+      coords -220.488 7.136 -57.377
+      angles 0 -16.084 0
+      scale 1.024
+     }
+     {
+      coords 57.77 12.125 64.224
+      angles 0 -171.678 0
+      scale 0.7
+     }
+     {
+      coords -216.382 6.585 -61.569
+      angles 0 18.721 0
+      scale 0.887
+     }
+     {
+      coords -211.991 7.133 -58.255
+      angles 0 147.595 0
+      scale 1
+     }
+     {
+      coords -159.575 4.513 -56.77
+      angles 0 34.322 0
+      scale 0.87
+     }
+     {
+      coords -150.955 2.899 -62.862
+      angles 0 -95.243 0
+      scale 0.779
+     }
+     {
+      coords -120.717 1.569 -58.513
+      angles 0 14.074 0
+      scale 0.892
+     }
+     {
+      coords -120.092 1.483 -59.802
+      angles 0 70.381 0
+      scale 1.144
+     }
+     {
+      coords 87.381 2.907 69.612
+      angles 0 -131.115 0
+      scale 1.17
+     }
+     {
+      coords 82.702 4.75 69.44
+      angles 0 -88.278 0
+      scale 0.96
+     }
+     {
+      coords 79.714 6.586 73.861
+      angles 0 81.005 0
+      scale 0.935
+     }
+     {
+      coords -65.974 -0.398 -27.245
+      angles 0 -60.471 0
+      scale 0.82
+     }
+     {
+      coords -59.66 -0.387 -19.486
+      angles 0 99.803 0
+      scale 0.799
+     }
+     {
+      coords -64.049 -0.473 -27.312
+      angles 0 -126.654 0
+      scale 1.191
+     }
+     {
+      coords -52.574 0.036 -11.957
+      angles 0 -90.794 0
       scale 1.078
+     }
+     {
+      coords -119.007 4.509 -30.305
+      angles 0 68.293 0
+      scale 1.098
+     }
+     {
+      coords -122.986 4.485 -35.438
+      angles 0 18.007 0
+      scale 0.803
+     }
+     {
+      coords -112.304 2.521 -38.571
+      angles 0 132.378 0
+      scale 0.732
+     }
+     {
+      coords -19.389 -0.43 -5.658
+      angles 0 5.702 0
+      scale 1.021
+     }
+     {
+      coords 16.811 11.865 41.833
+      angles 0 82.653 0
+      scale 0.712
+     }
+     {
+      coords 15.498 9.242 37.448
+      angles 0 5.23 0
+      scale 0.649
+     }
+     {
+      coords 7.289 15.259 44.38
+      angles 0 -110.449 0
+      scale 0.606
+     }
+     {
+      coords 7.515 6.362 26.729
+      angles 0 28.455 0
+      scale 0.855
+     }
+     {
+      coords -0.989 5.571 22.055
+      angles 0 -66.854 0
+      scale 1.07
+     }
+     {
+      coords -138.75 2.65 -55.801
+      angles 0 -76.951 0
+      scale 0.955
+     }
+     {
+      coords -139.083 2.759 -54.639
+      angles 0 -106.527 0
+      scale 0.785
+     }
+     {
+      coords -133.747 2.025 -59.613
+      angles 0 -52.461 0
+      scale 0.6
+     }
+     {
+      coords -138.443 2.769 -53.469
+      angles 0 98.276 0
+      scale 0.679
+     }
+     {
+      coords -201.888 4.413 -76.94
+      angles 0 -9.987 0
+      scale 0.837
+     }
+     {
+      coords -194.172 5.504 -69.509
+      angles 0 69.601 0
+      scale 1.118
+     }
+     {
+      coords -197.582 5.512 -68.209
+      angles 0 69.084 0
+      scale 0.984
+     }
+     {
+      coords -52.806 4.596 7.576
+      angles 0 27.895 0
+      scale 1.064
+     }
+     {
+      coords -51.907 2.358 1.171
+      angles 0 -35.333 0
+      scale 0.684
+     }
+     {
+      coords -47.151 1.326 -1.13
+      angles 0 158.34 0
+      scale 1.073
+     }
+     {
+      coords -198.784 5.387 -68.043
+      angles 0 -61.701 0
+      scale 0.606
+     }
+    }
+    $grp SCR_IndestructibleEnvironmentalEntity : "{5C31F8C6870C1034}Prefabs/Rocks/Desert/Desert_Cluster_03.et" {
+     {
+      coords -215.481 6.841 -59.514
+      angles 0 -179.775 0
+      scale 1.064
+     }
+     {
+      coords -217.009 6.87 -60.151
+      angles 0 -157.648 0
+      scale 0.968
+     }
+     {
+      coords 52.542 14.437 64.783
+      angles 0 8.35 0
+      scale 0.526
+     }
+     {
+      coords 51.765 10.585 54.662
+      angles 0 -4.559 0
+      scale 0.93
+     }
+     {
+      coords -219.32 6.447 -60.77
+      angles 0 39.98 0
+      scale 0.874
+     }
+     {
+      coords -219.011 7.572 -56.431
+      angles 0 81.422 0
+      scale 1.124
+     }
+     {
+      coords -158.481 4.182 -58.648
+      angles 0 173.084 0
+      scale 0.931
+     }
+     {
+      coords -161.976 3.801 -65.972
+      angles 0 122.501 0
+      scale 0.922
+     }
+     {
+      coords -117.424 1.511 -55.817
+      angles 0 149.43 0
+      scale 0.879
+     }
+     {
+      coords 79.548 8.588 79.779
+      angles 0 46.781 0
+      scale 0.883
+     }
+     {
+      coords 77.947 6.838 71.511
+      angles 0 -152.66 0
+      scale 0.953
+     }
+     {
+      coords 82.053 5.416 71.718
+      angles 0 -24.511 0
+      scale 0.593
+     }
+     {
+      coords -64.394 -0.388 -23.893
+      angles 0 -11.404 0
+      scale 0.943
+     }
+     {
+      coords -44.036 0.418 -6.569
+      angles 0 154.286 0
+      scale 0.606
+     }
+     {
+      coords 85.594 3.235 66.391
+      angles 0 175.303 0
+      scale 1.159
+     }
+     {
+      coords 89.655 1.814 63.924
+      angles 0 47.649 0
+      scale 0.834
+     }
+     {
+      coords -114.341 2.702 -39.075
+      angles 0 171.535 0
+      scale 0.682
+     }
+     {
+      coords -119.098 3.456 -38.482
+      angles 0 80.587 0
+      scale 0.596
+     }
+     {
+      coords -116.648 3.605 -34.033
+      angles 0 90.97 0
+      scale 0.563
+     }
+     {
+      coords -12.056 0.48 2.51
+      angles 0 -74.039 0
+      scale 0.52
+     }
+     {
+      coords 13.641 12.449 42.141
+      angles 0 95.133 0
+      scale 1.107
+     }
+     {
+      coords 2.083 3.518 19.179
+      angles 0 59.625 0
+      scale 0.718
+     }
+     {
+      coords 6.229 4.734 22.131
+      angles 0 -10.789 0
+      scale 0.511
+     }
+     {
+      coords 3.857 5.05 22.196
+      angles 0 -101.495 0
+      scale 0.77
+     }
+     {
+      coords -135.89 3.008 -50.504
+      angles 0 175.754 0
+      scale 0.853
+     }
+     {
+      coords -136.931 2.387 -58.442
+      angles 0 113.393 0
+      scale 0.963
+     }
+     {
+      coords -200.119 5.315 -69.97
+      angles 0 100.66 0
+      scale 0.798
+     }
+     {
+      coords -194.387 4.735 -75.617
+      angles 0 160.68 0
+      scale 0.799
+     }
+     {
+      coords -48.978 2.679 3.734
+      angles 0 73.743 0
+      scale 0.537
+     }
+     {
+      coords -46.572 2.061 2.183
+      angles 0 -126.852 0
+      scale 1.088
+     }
+     {
+      coords -48.274 1.814 0.837
+      angles 0 74.138 0
+      scale 0.591
+     }
+     {
+      coords -198.057 6.397 -62.141
+      angles 0 -27.873 0
+      scale 0.514
+     }
+    }
+    $grp SCR_IndestructibleEnvironmentalEntity : "{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et" {
+     {
+      coords -76.494 3.626 -9.687
+      angles 3.337 -150.111 -4.289
+      scale 0.813
+     }
+     {
+      coords -61.214 2.054 -4.908
+      angles 3.921 146.705 4.622
+      scale 0.985
+     }
+     {
+      coords -69.265 7.491 5.762
+      angles -4.414 73.259 -4.308
+      scale 0.659
+     }
+     {
+      coords 11.327 7.393 31.04
+      angles -2.554 -43.189 1.072
+      scale 0.712
+     }
+     {
+      coords 20.194 5.191 30.321
+      angles 4.922 -85.037 4.905
+      scale 1.085
+     }
+     {
+      coords 10.781 7.067 30.286
+      angles 2.193 105.681 -2.197
+      scale 0.671
+     }
+     {
+      coords 8 4.857 22.94
+      angles -2.158 143.376 1.451
+      scale 1.088
+     }
+     {
+      coords 10.412 9.252 34.829
+      angles -1.415 160.955 1.64
+      scale 0.773
+     }
+     {
+      coords 19.844 18.024 51.631
+      angles 2.161 -179.566 0.481
+      scale 1.121
+     }
+     {
+      coords -59.448 -0.514 -21.592
+      angles 3.944 97.638 -1.749
+      scale 0.787
+     }
+     {
+      coords -58.565 0.193 -13.56
+      angles -4.517 -148.342 -4.89
+      scale 0.703
+     }
+     {
+      coords -58.916 -0.149 -15.995
+      angles 2.72 -154.956 -2.137
+      scale 0.719
+     }
+     {
+      coords -74.474 0.481 -21.912
+      angles 2.58 -45.672 -0.376
+      scale 1.13
+     }
+     {
+      coords -191.938 12.28 -25.647
+      angles -0.379 167.92 4.001
+      scale 0.643
+     }
+     {
+      coords -55.418 -0.611 -25.972
+      angles -0.299 39.97 4.886
+      scale 0.853
+     }
+     {
+      coords -52.129 -0.579 -28.494
+      angles -2.916 97.001 4.058
+      scale 1.02
+     }
+     {
+      coords -117.401 12.297 -5.248
+      angles 0.506 59.075 -0.619
+      scale 0.624
+     }
+     {
+      coords -149.61 8.894 -27.572
+      angles -3.09 112.789 -4.499
+      scale 0.932
+     }
+     {
+      coords -162.587 11.179 -19.52
+      angles 1.518 165.734 4.906
+      scale 0.675
+     }
+    }
+    $grp SCR_IndestructibleEnvironmentalEntity : "{D435306C5AD8F81E}Prefabs/Rocks/Desert/Desert_Stone_02.et" {
+     {
+      coords -68.108 1.983 -9.721
+      angles 0.884 -46.693 -1.232
+      scale 0.999
+     }
+     {
+      coords -218.698 9.036 -50.4
+      angles 4.23 -10.459 -1.256
+      scale 0.931
+     }
+     {
+      coords -219.517 8.463 -52.401
+      angles 2.242 40.365 -3.537
+      scale 0.962
+     }
+     {
+      coords 10.177 19.128 50.776
+      angles -4.352 -162.097 -3.002
+      scale 0.79
+     }
+     {
+      coords 9.166 11.401 38.512
+      angles 0.958 41.233 3.491
+      scale 0.723
+     }
+     {
+      coords -62.1 0.465 -13.642
+      angles -2.538 117.524 -3.945
+      scale 1.108
+     }
+     {
+      coords -53.828 -0.623 -21.888
+      angles 2.956 -165.382 -2.707
+      scale 0.962
+     }
+     {
+      coords -50.734 -0.605 -27.483
+      angles 3.519 -13.755 -2.363
+      scale 0.634
+     }
+     {
+      coords -116.781 11.125 -8.391
+      angles -0.774 -35.685 1.695
+      scale 0.827
+     }
+     {
+      coords -127.916 8.677 -16.769
+      angles -3.112 -124.995 4.999
+      scale 0.902
+     }
+     {
+      coords -122.592 7.984 -19.039
+      angles -1.719 8.482 -3.427
+      scale 1.02
+     }
+     {
+      coords -121.442 12.144 -5.165
+      angles 1.626 -81.851 -3.813
+      scale 0.738
+     }
+     {
+      coords -160.343 9.926 -24.993
+      angles -2.842 165.053 3.53
+      scale 0.633
+     }
+    }
+    $grp SCR_IndestructibleEnvironmentalEntity : "{E8CDA5E742418141}Prefabs/Rocks/Desert/Desert_Cluster_04.et" {
+     {
+      coords -210.774 5.589 -65.288
+      angles 0 12.821 0
+      scale 0.529
+     }
+     {
+      coords -212.624 8.61 -50.943
+      angles 0 67.173 0
+      scale 0.223
+     }
+     {
+      coords -209.349 8.455 -50.376
+      angles 0 -42.266 0
+      scale 0.34
+     }
+     {
+      coords -220.973 6.788 -60.897
+      angles 0 92.343 0
+      scale 0.426
+     }
+     {
+      coords 42.534 17.777 64.263
+      angles 0 110.965 0
+      scale 0.417
+     }
+     {
+      coords 52.258 16.113 73.679
+      angles 0 51.022 0
+      scale 0.582
+     }
+     {
+      coords 49.899 10.459 53.513
+      angles 0 159.922 0
+      scale 0.28
+     }
+     {
+      coords -158.016 3.27 -67.664
+      angles 0 144.321 0
+      scale 0.218
+     }
+     {
+      coords -157.944 3.126 -73.314
+      angles 0 -27.61 0
+      scale 0.315
+     }
+     {
+      coords -165.745 5.005 -57.293
+      angles 0 -43.683 0
+      scale 0.363
+     }
+     {
+      coords -107.606 0.929 -55.781
+      angles 0 120.205 0
+      scale 0.225
+     }
+     {
+      coords 74.653 7.645 70.617
+      angles 0 -88.761 0
+      scale 0.209
+     }
+     {
+      coords 77.114 8.321 76.051
+      angles 0 74.555 0
+      scale 0.484
+     }
+     {
+      coords 86.106 1.63 58.492
+      angles 0 89.102 0
+      scale 0.343
+     }
+     {
+      coords 80.566 2.292 57.571
+      angles 0 90.124 0
+      scale 0.585
+     }
+     {
+      coords -12.957 0.862 4.85
+      angles 0 104.033 0
+      scale 0.579
+     }
+     {
+      coords -9.641 0.591 3.595
+      angles 0 -20.765 0
+      scale 0.562
+     }
+     {
+      coords -13.657 1.562 8.145
+      angles 0 -10.965 0
+      scale 0.261
+     }
+     {
+      coords 15.578 14.663 45.623
+      angles 0 45.21 0
+      scale 0.335
+     }
+     {
+      coords 18.069 7.793 35.443
+      angles 0 163.767 0
+      scale 0.559
+     }
+     {
+      coords -1.698 7.306 27.7
+      angles 0 26.851 0
+      scale 0.443
+     }
+     {
+      coords -2.967 9.032 30.538
+      angles 0 161.856 0
+      scale 0.233
+     }
+     {
+      coords 10.8 1.643 14.097
+      angles 0 -89.585 0
+      scale 0.261
+     }
+     {
+      coords -136.809 1.346 -64.319
+      angles 0 -105.087 0
+      scale 0.458
+     }
+     {
+      coords -122.94 1.847 -54.804
+      angles 0 50.879 0
+      scale 0.411
+     }
+     {
+      coords -129.588 3.222 -46.134
+      angles 0 -70.15 0
+      scale 0.388
+     }
+     {
+      coords -135.305 1.871 -62.876
+      angles 0 6.9 0
+      scale 0.334
+     }
+     {
+      coords -196.73 5.737 -67.305
+      angles 0 133.697 0
+      scale 0.435
+     }
+     {
+      coords -201.188 7.357 -57.589
+      angles 0 -119.755 0
+      scale 0.26
+     }
+     {
+      coords -196.17 8.032 -53.029
+      angles 0 92.508 0
+      scale 0.351
      }
     }
    }
   }
  }
+}
+SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/DesertCliff_NS_03.et" {
+ coords 1195.295 -25.6 1131.809
+ angles 19.952 -40.435 174.919
+ scale 0.7
+}
+SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
+ coords 1194.466 -40.811 1131.865
+ angles -10.545 -32.807 0
 }

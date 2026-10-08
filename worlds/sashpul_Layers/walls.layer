@@ -457,9 +457,6 @@ SCR_DestructibleBuildingEntity : "{26D9ACB98DEC20C2}Prefabs/Structures/Wall/Wall
  coords 892.109 -20.523 1015.926
  angles 0 59.008 0
 }
-StaticModelEntity : "{2C6F571B5517686A}Prefabs/Structures/Commercial/FuelStations/FuelStation_E_01/Dst/FuelStation_E_01_building_small_ruin.et" {
- coords 1077.981 -27.879 1039.343
-}
 $grp SCR_DestructibleBuildingEntity : "{64AB01B2EC925635}Prefabs/Structures/Wall/CNCBlock_T.et" {
  {
   coords 883.727 -0.121 997.911

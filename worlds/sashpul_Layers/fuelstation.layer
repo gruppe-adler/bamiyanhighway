@@ -1,0 +1,42 @@
+GenericEntity : "{3A113DD1929E18E5}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_Takistan_Blue.et" {
+ coords 1076.426 -28.364 1031.664
+ angles 0 -19.534 0
+}
+GenericEntity : "{56C3CCA6D6374353}Prefabs/Structures/Market/hut2.et" {
+ coords 1073.36 -27.917 1030.223
+ angles 0 -15.661 0
+}
+GenericEntity : "{7E030D95888DE2C9}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_Takistan_Gray.et" {
+ coords 1079.845 -28.364 1032.676
+ angles 0 -18.879 0
+}
+$grp GenericEntity : "{A4D0B331414901A5}Prefabs/Structures/Commercial/FuelStations/FuelStation_E_01/HouseAddons/FuelStation_E_01_tankpistol.et" {
+ {
+  coords 1091.714 0.154 1052.004
+  angles 0.889 -23.433 0.359
+ }
+ {
+  coords 1098.131 0.164 1054.753
+  angles 0.895 -24.47 0.343
+ }
+}
+SCR_DestructibleBuildingEntity : "{AFB66B5D636927AD}PrefabLibrary/DefaultLibrary/Structures/Industrial/Workshop_02.et" {
+ coords 1105.347 0.014 1034.316
+ angles 0 67.896 0
+}
+GenericEntity : "{B3C90E8116DD7913}Prefabs/Structures/Market/Bags.et" {
+ coords 841.039 -20.977 1005.967
+ angles 0 -135.225 0
+}
+GenericEntity : "{B67A4797AED7B3BC}Prefabs/Structures/Wreck/ikarus.et" {
+ coords 1128.224 -28.364 1064.312
+ angles 0 -28.971 0
+}
+SCR_DestructibleBuildingEntity : "{B6E9AA79B5C15161}Prefabs/Structures/Military/Houses/FuelStorage_E_01/FuelStorage_E_01_roof_V1.et" {
+ coords 1096.526 0.159 1049.121
+ angles 0 -23.545 0
+}
+SCR_DestructibleBuildingEntity : "{C7A59DCCFF7BF19F}Prefabs/Structures/Industrial/Containers/FuelTanks/FuelTank_02/FuelTank_02_Base.et" {
+ coords 1125.674 0.055 1044.569
+ angles 0 132.887 0
+}

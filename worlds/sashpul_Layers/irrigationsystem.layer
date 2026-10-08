@@ -1,0 +1,84 @@
+PolylineShapeEntity {
+ coords 602.696 -33.049 851.869
+ angles 0 27.101 0
+ Points {
+  ShapePoint "{6A773DDA643CD4AF}" {
+   Position 11.792 -3.891 -10.995
+  }
+  ShapePoint "{6A773DDA643CEC0F}" {
+   Position 11.086 -3.734 -4.345
+  }
+  ShapePoint "{6A773DDA6193F845}" {
+   Position 18.786 -3.817 12.2
+  }
+  ShapePoint "{6A773DDA60577643}" {
+   Position 24.548 -3.363 20.267
+  }
+  ShapePoint "{6A773DDA60ADFFED}" {
+   Position 35.374 -3.103 27.087
+  }
+  ShapePoint "{6A773DDA6345FB45}" {
+   Position 42.163 -3.073 32.684
+  }
+  ShapePoint "{6A773DDA62F8953B}" {
+   Position 46.494 -3.273 34.089
+  }
+  ShapePoint "{6A773DDA9D53E861}" {
+   Position 55.877 -2.75 51.07
+  }
+  ShapePoint "{6A773DDA9DCF29C9}" {
+   Position 51.468 -2.648 65.394
+  }
+  ShapePoint "{6A773DDA9C7FE01A}" {
+   Position 50.061 -0.717 78.615
+  }
+  ShapePoint "{6A773DDA9F4CB230}" {
+   Position 66.547 1.498 93.063
+  }
+  ShapePoint "{6A773DDA9F1E417A}" {
+   Position 79.387 2.443 104.082
+  }
+  ShapePoint "{6A773DDA9E073002}" {
+   Position 103.39 1.847 115.274
+  }
+  ShapePoint "{6A773DDA9EDBECC7}" {
+   Position 115.89 1.696 129.414
+  }
+  ShapePoint "{6A773DDA98304FCD}" {
+   Position 127.57 0.318 138.881
+  }
+  ShapePoint "{6A773DDA98DDABB8}" {
+   Position 135.018 0.442 148.997
+  }
+  ShapePoint "{6A773DDA9B63B54B}" {
+   Position 144.277 2.101 164.666
+  }
+  ShapePoint "{6A773DDA9ABC38F3}" {
+   Position 156.72 1.916 176.167
+  }
+  ShapePoint "{6A773DDA9548BD7B}" {
+   Position 169.222 0.985 191.222
+  }
+  ShapePoint "{6A773DDA951A9934}" {
+   Position 179.568 1.288 209.717
+  }
+  ShapePoint "{6A773DDA94C9305B}" {
+   Position 194.663 1.436 222.831
+  }
+  ShapePoint "{6A773DDA94832458}" {
+   Position 213.352 1.208 237.843
+  }
+  ShapePoint "{6A773DDA91BDD84F}" {
+   Position 230.613 0.224 249.795
+  }
+  ShapePoint "{6A773DDA900A1094}" {
+   Position 235.431 0.126 251.896
+  }
+ }
+ LineColor 0 0 0 0
+ {
+  RoadGeneratorEntity : "{98DF2267CDD17758}PrefabLibrary/DefaultLibrary/Generators/Roads/Dirt/RG_TrailGravel_01.et" {
+   coords 0 0 0
+  }
+ }
+}

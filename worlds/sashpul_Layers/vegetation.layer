@@ -3545,6 +3545,10 @@ $grp Tree : "{B78F72C338993EA1}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula
   coords 804.565 0.017 979.641
   angles 0 19.079 0
  }
+ {
+  coords 1467.529 -0.123 957.978
+  angles 0 -90.164 0
+ }
 }
 Tree : "{BE42E1814B854B8F}Prefabs/Vegetation/Bush/b_rubus_idaeus_0s_aut.et" {
  coords 1508.797 0 978.376

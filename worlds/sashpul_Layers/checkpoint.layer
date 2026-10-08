@@ -13,6 +13,12 @@ $grp SplineShapeEntity {
    }
    ShapePoint "{6A9102ECEA2C8D46}" {
     Position 0.616 0.367 20.533
+    Data {
+     SplinePointData SplinePointData {
+      InTangent -15.689 0.452 -13.036
+      OutTangent -9.92 0.286 -8.243
+     }
+    }
    }
    ShapePoint "{6A9102ECC0BDFB0A}" {
     Position -21.793 1.15 6.14
@@ -40,16 +46,22 @@ $grp SplineShapeEntity {
          }
         }
        }
-       ShapePoint "{6A9102ECC0BDC67B}" {
+       ShapePoint "{52346539D885C1A2}" {
         Position 0.616 0.367 20.533
+        Data {
+         SplinePointData "{00000000D8F1BA4F}" {
+          InTangent -15.689 0.452 -13.036
+          OutTangent -9.92 0.286 -8.243
+         }
+        }
        }
-       ShapePoint "{6A9102ECF1A2B535}" {
+       ShapePoint "{6A9102ECC0BDC67B}" {
         Position -21.793 1.15 6.14
        }
-       ShapePoint "{6A9102ECF09DE572}" {
+       ShapePoint "{6A9102ECF1A2B535}" {
         Position -27.219 3.63 -14.969
        }
-       ShapePoint "{6A9102ECEA2D41B8}" {
+       ShapePoint "{6A9102ECF09DE572}" {
         Position -35.031 4.891 -25.704
        }
       }
@@ -64,7 +76,7 @@ $grp SplineShapeEntity {
   coords 1522.031 -39.024 1299.871
   Points {
    ShapePoint "{6A9102EC3BB2A51A}" {
-    Position 9.548 0.245 29.262
+    Position 8.172 0.239 29.854
    }
    ShapePoint "{6A9102ECEA2C8D46}" {
     Position 0.925 0.349 17.562
@@ -84,15 +96,15 @@ $grp SplineShapeEntity {
       ID "523EAA80CAA6C6B5"
       SplinePoints {
        ShapePoint "{52346539D885C296}" {
-        Position 9.548 0.245 29.262
+        Position 8.172 0.239 29.854
        }
-       ShapePoint "{6A9102ECC0BDC67B}" {
+       ShapePoint "{52346539D885C1A2}" {
         Position 0.925 0.349 17.562
        }
-       ShapePoint "{6A9102ECF1A2B535}" {
+       ShapePoint "{6A9102ECC0BDC67B}" {
         Position -7.164 0.469 -1.634
        }
-       ShapePoint "{6A9102ECF09DE572}" {
+       ShapePoint "{6A9102ECF1A2B535}" {
         Position -16.09 1.937 -12.958
        }
       }
@@ -110,7 +122,7 @@ $grp SplineShapeEntity {
     Position 6.528 0.238 29.497
    }
    ShapePoint "{6A9102ECC0BDFB0A}" {
-    Position -5.49 0.553 3.063
+    Position -3.46 0.405 2.572
    }
    ShapePoint "{6A9102ECF1A2FF3D}" {
     Position 17.82 -1.564 -2.332
@@ -126,10 +138,10 @@ $grp SplineShapeEntity {
        ShapePoint "{52346539D885C296}" {
         Position 6.528 0.238 29.497
        }
-       ShapePoint "{6A9102ECC0BDC67B}" {
-        Position -5.49 0.553 3.063
+       ShapePoint "{52346539D885C1A2}" {
+        Position -3.46 0.405 2.572
        }
-       ShapePoint "{6A9102ECF1A2B535}" {
+       ShapePoint "{6A9102ECC0BDC67B}" {
         Position 17.82 -1.564 -2.332
        }
       }
@@ -166,6 +178,9 @@ GenericEntity : "{36A03FA64BEEF78B}Prefabs/Structures/Wreck/uazminibus1.et" {
 SCR_DestructibleBuildingEntity : "{3F91DEEC9C78E473}Prefabs/Structures/Military/Houses/GuardHouse_01/GuardHouse_01.et" {
  coords 1503.483 -0.062 1302.442
  angles 0 160.152 0
+}
+GenericEntity : "{6401BFEA3B30EBF7}Prefabs/Structures/BuildingParts/Eletrical/ElectricityJunction_02/ElectricityJunction_02.et" {
+ coords 1240.349 -24.955 1103.57
 }
 $grp DecalEntity : "{8D2E929A1C8D0AEE}PrefabLibrary/DefaultLibrary/Decals/Dirt/Decal_Dirt_Crossroad_01.et" {
  {

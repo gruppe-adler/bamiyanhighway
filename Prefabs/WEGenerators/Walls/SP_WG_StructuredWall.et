@@ -1,0 +1,16 @@
+WallGeneratorEntity : "{679C24CA52C90674}Prefabs/WEGenerators/Walls/WG_WallGenerator_base.et" {
+ ID "62D953462FF83896"
+ m_bEnableMiddleObject 0
+ m_bEnableFirstObject 0
+ m_bEnableLastObject 0
+ m_aWallGroups {
+  WallLengthGroup "{6A9166F8A3AA2D93}" {
+   m_aWallPrefabs {
+    WallWeightPair "{6A9166F8A3AA2D84}" {
+     m_sWallAsset "{77664D56B9080B79}Prefabs/Structures/Wall/Wall_ATC_L2_5m_EP1.et"
+     m_fPostPadding -1
+    }
+   }
+  }
+ }
+}
