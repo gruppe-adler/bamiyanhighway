@@ -1,0 +1,250 @@
+$grp PolylineShapeEntity {
+ {
+  coords 1247.671 -34.893 1081.851
+  Points {
+   ShapePoint "{6A9077884D479403}" {
+    Position -1.226 0.116 1.75
+   }
+   ShapePoint "{6A9077884D47A8C2}" {
+    Position 26.539 -2.598 -52.807
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   WallGeneratorEntity : "{C290227A0992EDB6}PrefabLibrary/DefaultLibrary/Generators/Pavements/Tile/WG_TilePavement_01_Wide.et" {
+    Flags 0x100003 0
+    m_iSeed 22090
+    m_bEnableFirstObject 0
+    m_bEnableLastObject 0
+    PrePadFirst 0
+    ExactPlacement 1
+    {
+     $grp StaticModelEntity : "{0C1AAC1BD35C8418}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_A.et" {
+      {
+       coords -1.226 0.116 1.75
+       angles 0 63.028 0
+      }
+      {
+       coords 0.588 -0.232 -1.815
+       angles 0 63.028 0
+      }
+      {
+       coords 24.17 -2.451 -48.152
+       angles 0 63.028 0
+      }
+     }
+     $grp StaticModelEntity : "{604E98FB6F980B36}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_B.et" {
+      {
+       coords 2.402 -0.593 -5.379
+       angles 0 63.028 0
+      }
+      {
+       coords 7.844 -1.056 -16.072
+       angles 0 63.028 0
+      }
+      {
+       coords 9.658 -1.077 -19.637
+       angles 0 63.028 0
+      }
+      {
+       coords 13.286 -1.205 -26.765
+       angles 0 63.028 0
+      }
+      {
+       coords 15.1 -1.351 -30.33
+       angles 0 63.028 0
+      }
+      {
+       coords 16.914 -1.533 -33.894
+       angles 0 63.028 0
+      }
+      {
+       coords 22.356 -2.292 -44.587
+       angles 0 63.028 0
+      }
+     }
+     $grp StaticModelEntity : "{85D2D402637D9C5D}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_C.et" {
+      {
+       coords 6.03 -0.991 -12.508
+       angles 0 63.028 0
+      }
+      {
+       coords 11.472 -1.121 -23.201
+       angles 0 63.028 0
+      }
+      {
+       coords 18.728 -1.812 -37.459
+       angles 0 63.028 0
+      }
+      {
+       coords 20.542 -2.064 -41.023
+       angles 0 63.028 0
+      }
+     }
+     StaticModelEntity : "{B8E6F13A1611156A}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_D.et" {
+      coords 4.216 -0.851 -8.943
+      angles 0 63.028 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1257.486 -36.083 1047.004
+  Points {
+   ShapePoint "{6A9077884D479403}" {
+    Position 73.785 -2.895 10.474
+   }
+   ShapePoint "{6A9077884D47A8C2}" {
+    Position -36.422 -1.202 -44.714
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   WallGeneratorEntity : "{7CF39B1DB9EBBDB7}PrefabLibrary/DefaultLibrary/Generators/Pavements/Tile/WG_TilePavement_01_Narrow.et" {
+    Flags 0x100003 0
+    m_iSeed 24927
+    m_bEnableFirstObject 0
+    m_bEnableLastObject 0
+    {
+     $grp StaticModelEntity : "{0D189AAC0603B503}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Narrow_4m_C.et" {
+      {
+       coords 70.993 -2.615 9.076
+       angles 0 -206.6 0
+      }
+      {
+       coords 60.351 -1.631 3.747
+       angles 0 -206.6 0
+      }
+      {
+       coords 39.065 -1.57 -6.912
+       angles 0 -206.6 0
+      }
+      {
+       coords 10.685 -1.028 -21.124
+       angles 0 -206.6 0
+      }
+      {
+       coords 3.59 -0.591 -24.677
+       angles 0 -206.6 0
+      }
+      {
+       coords 0.042 -0.438 -26.454
+       angles 0 -206.6 0
+      }
+      {
+       coords -3.505 -0.434 -28.23
+       angles 0 -206.6 0
+      }
+      {
+       coords -14.148 -0.537 -33.56
+       angles 0 -206.6 0
+      }
+      {
+       coords -17.695 -0.647 -35.336
+       angles 0 -206.6 0
+      }
+     }
+     $grp StaticModelEntity : "{302CBF94736F3C34}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Narrow_4m_D.et" {
+      {
+       coords 53.256 -1.307 0.194
+       angles 0 -206.6 0
+      }
+      {
+       coords 46.16 -1.328 -3.359
+       angles 0 -206.6 0
+      }
+      {
+       coords 28.423 -1.798 -12.242
+       angles 0 -206.6 0
+      }
+      {
+       coords 21.328 -1.682 -15.795
+       angles 0 -206.6 0
+      }
+      {
+       coords 7.137 -0.781 -22.901
+       angles 0 -206.6 0
+      }
+      {
+       coords -7.053 -0.377 -30.007
+       angles 0 -206.6 0
+      }
+     }
+     $grp StaticModelEntity : "{84D0E2B5B622AD46}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Narrow_4m_A.et" {
+      {
+       coords 67.446 -2.251 7.3
+       angles 0 -206.6 0
+      }
+      {
+       coords 49.708 -1.269 -1.583
+       angles 0 -206.6 0
+      }
+      {
+       coords 42.613 -1.434 -5.136
+       angles 0 -206.6 0
+      }
+      {
+       coords 17.78 -1.48 -17.571
+       angles 0 -206.6 0
+      }
+      {
+       coords 14.233 -1.255 -19.348
+       angles 0 -206.6 0
+      }
+      {
+       coords -10.6 -0.437 -31.783
+       angles 0 -206.6 0
+      }
+      {
+       coords -24.791 -0.883 -38.889
+       angles 0 -206.6 0
+      }
+      {
+       coords -28.338 -0.97 -40.666
+       angles 0 -206.6 0
+      }
+     }
+     $grp StaticModelEntity : "{E884D6550AE62268}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Narrow_4m_B.et" {
+      {
+       coords 74.541 -2.937 10.853
+       angles 0 -206.6 0
+      }
+      {
+       coords 63.898 -1.915 5.523
+       angles 0 -206.6 0
+      }
+      {
+       coords 56.803 -1.424 1.97
+       angles 0 -206.6 0
+      }
+      {
+       coords 35.518 -1.695 -8.689
+       angles 0 -206.6 0
+      }
+      {
+       coords 31.97 -1.774 -10.465
+       angles 0 -206.6 0
+      }
+      {
+       coords 24.875 -1.768 -14.018
+       angles 0 -206.6 0
+      }
+      {
+       coords -21.243 -0.76 -37.113
+       angles 0 -206.6 0
+      }
+     }
+    }
+   }
+  }
+ }
+}
+StaticModelEntity : "{D7462F99BC0CDAE8}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_04.et" {
+ coords 1244.353 -31.275 1087.592
+ angles 0 150.436 0
+}
+StaticModelEntity : "{E51A6B529A68F439}Prefabs/Structures/Walls/Brick/BrickGate_01/BrickGate_Takistan.et" {
+ coords 1243.814 -30.984 1088.209
+ angles 0 -30.66 0
+}
