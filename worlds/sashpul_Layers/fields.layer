@@ -12993,7 +12993,7 @@ $grp Tree : "{822382583FCFFCB3}Prefabs/Vegetation/Plant/Chamerion_angustifolium/
  }
 }
 SCR_DestructibleBuildingEntity : "{8EA3254BD902EE95}Prefabs/Structures/Bulding/Favella/Favella_House_03.et" {
- coords 1262.026 -29.975 1113.873
+ coords 1261.986 -31.716 1113.898
  angles 0.678 -122.344 -1.391
  {
   Building {
@@ -13744,7 +13744,7 @@ $grp GenericEntity : "{D16F58EC1C0027D7}Prefabs/Vegetation/Cuttings/Salix_cinere
  }
 }
 SCR_DestructibleBuildingEntity : "{D907D34D6F4BF49E}Prefabs/Structures/Bulding/DumIstan/dum_istan3_hromada2_02.et" {
- coords 1245.569 -29.325 1102.935
+ coords 1247.875 -31.01 1104.202
  angles 0 151.203 0
  {
   Building {

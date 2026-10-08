@@ -10,123 +10,55 @@ $grp PolylineShapeEntity {
     Position 5 -0.123 0
    }
    ShapePoint "{6A5B594A06817A70}" {
-    Position 33.639 -0.278 1.044
-   }
-   ShapePoint "{6A5B594A0039296F}" {
-    Position 36.575 3.334 26.537
-   }
-   ShapePoint "{6A5B594A3E120B22}" {
-    Position 102.303 3.605 21.061
+    Position 26.585 0.117 0.967
    }
   }
   LineColor 0 0 0 0
   {
    WallGeneratorEntity : "{2781482CFE270E77}Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et" {
     Flags 0x100003 0
-    m_iSeed 4115
+    m_iSeed 17661
     {
-     $grp SCR_DestructibleEntity : "{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et" {
-      {
-       coords 27.796 -0.586 0.828
-       angles 0 -2.11 0
-      }
-      {
-       coords 97.513 3.707 21.417
-       angles 0 4.242 0
-      }
+     SCR_DestructibleEntity : "{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et" {
+      coords 19.972 0.009 0.668
+      angles 0 -2.586 0
      }
-     $grp SCR_DestructibleEntity : "{37382E22EACF3E8A}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m_D.et" {
-      {
-       coords -10.066 -0.217 -0.941
-       angles 0 -3.576 0
-      }
-      {
-       coords 67.513 2.676 23.642
-       angles 0 4.242 0
-      }
+     SCR_DestructibleEntity : "{37382E22EACF3E8A}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m_D.et" {
+      coords -17.876 0.876 -1.429
+      angles 0 -3.575 0
      }
-     $grp SCR_DestructibleEntity : "{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et" {
-      {
-       coords 31.674 -0.533 0.971
-       angles 0 -2.11 0
-      }
-      {
-       coords 36.283 2.877 23.917
-       angles 0 -83.635 0
-      }
+     SCR_DestructibleEntity : "{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et" {
+      coords 23.848 0.142 0.843
+      angles 0 -2.586 0
      }
      SCR_DestructibleEntity : "{D1A7F179B35C2F96}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Pole.et" {
-      coords 101.339 3.571 21.133
-      angles 0 4.242 0
+      coords 25.645 0.193 0.925
+      angles 0 -2.586 0
      }
      $grp SCR_DestructibleEntity : "{FF9F22E572547ED5}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_8m.et" {
       {
-       coords -33.498 -0.407 -2.406
-       angles 0 -3.576 0
+       coords -33.499 0.572 -2.406
+       angles 0 -3.575 0
       }
       {
-       coords -25.688 -0.241 -1.918
-       angles 0 -3.576 0
+       coords -25.687 0.833 -1.917
+       angles 0 -3.575 0
       }
       {
-       coords -17.877 -0.012 -1.43
-       angles 0 -3.576 0
+       coords -11.288 0.794 -1.018
+       angles 0 -3.575 0
       }
       {
-       coords -3.478 -0.099 -0.53
-       angles 0 -3.576 0
+       coords -3.476 0.398 -0.53
+       angles 0 -3.575 0
       }
       {
-       coords 4.333 0.141 -0.036
-       angles 0 -2.11 0
+       coords 4.335 0.167 -0.038
+       angles 0 -2.586 0
       }
       {
-       coords 12.154 -0.008 0.252
-       angles 0 -2.11 0
-      }
-      {
-       coords 19.975 -0.616 0.54
-       angles 0 -2.11 0
-      }
-      {
-       coords 33.708 -0.315 0.834
-       angles 0 -83.635 0
-      }
-      {
-       coords 34.566 0.468 8.528
-       angles 0 -83.635 0
-      }
-      {
-       coords 35.424 1.704 16.223
-       angles 0 -83.635 0
-      }
-      {
-       coords 36.292 3.161 25.957
-       angles 0 4.242 0
-      }
-      {
-       coords 44.097 3.036 25.378
-       angles 0 4.242 0
-      }
-      {
-       coords 51.903 2.648 24.8
-       angles 0 4.242 0
-      }
-      {
-       coords 59.708 2.552 24.221
-       angles 0 4.242 0
-      }
-      {
-       coords 74.097 2.868 23.153
-       angles 0 4.242 0
-      }
-      {
-       coords 81.902 3.136 22.575
-       angles 0 4.242 0
-      }
-      {
-       coords 89.708 3.582 21.996
-       angles 0 4.242 0
+       coords 12.153 -0.088 0.315
+       angles 0 -2.586 0
       }
      }
     }
@@ -419,6 +351,84 @@ $grp PolylineShapeEntity {
      SCR_DestructibleEntity : "{95A1D31077D47BEA}PrefabLibrary/DefaultLibrary/Walls/Concrete/ConcreteWall_01_Pole.et" {
       coords 31.55 0.827 2.09
       angles 0 -2.443 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1158.604 -35.798 1035.611
+  angles 0 -33.235 0
+  Points {
+   ShapePoint "{6A9102C29CA7B7D3}" {
+    Position 35.568 4.36 5.995
+   }
+   ShapePoint "{6A5B594A0039296F}" {
+    Position 36.575 3.334 26.537
+   }
+   ShapePoint "{6A5B594A3E120B22}" {
+    Position 102.303 3.605 21.061
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   WallGeneratorEntity : "{2781482CFE270E77}Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et" {
+    Flags 0x100003 0
+    m_iSeed 6677
+    {
+     SCR_DestructibleEntity : "{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et" {
+      coords 36.324 4.461 21.413
+      angles 0 -87.194 0
+     }
+     SCR_DestructibleEntity : "{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et" {
+      coords 98.781 4.461 21.299
+      angles 0 3.866 0
+     }
+     SCR_DestructibleEntity : "{D1A7F179B35C2F96}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Pole.et" {
+      coords 100.575 4.458 21.178
+      angles 0 3.866 0
+     }
+     $grp SCR_DestructibleEntity : "{FF9F22E572547ED5}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_8m.et" {
+      {
+       coords 35.558 4.321 5.779
+       angles 0 -87.194 0
+      }
+      {
+       coords 35.941 4.461 13.596
+       angles 0 -87.194 0
+      }
+      {
+       coords 36.308 4.408 25.521
+       angles 0 3.866 0
+      }
+      {
+       coords 44.117 4.461 24.993
+       angles 0 3.866 0
+      }
+      {
+       coords 51.926 4.461 24.465
+       angles 0 3.866 0
+      }
+      {
+       coords 59.735 4.461 23.938
+       angles 0 3.866 0
+      }
+      {
+       coords 67.544 4.461 23.41
+       angles 0 3.866 0
+      }
+      {
+       coords 75.353 4.461 22.882
+       angles 0 3.866 0
+      }
+      {
+       coords 83.162 4.461 22.354
+       angles 0 3.866 0
+      }
+      {
+       coords 90.971 4.461 21.827
+       angles 0 3.866 0
+      }
      }
     }
    }
