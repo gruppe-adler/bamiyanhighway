@@ -1,0 +1,15 @@
+MatPBRBasic {
+ Color 1 1 1 1
+ Sort translucent
+ CastShadow 0
+ AlphaTest 0.028
+ AlphaMul 0.143
+ BlendMode AlphaBlend
+ RoughnessScale 1.5
+ MetalnessScale 0
+ BCRMap "{160920FC854CBDD6}Assets/Props/Commercial/SignPub_01/Data/SignPub_01_Decals_BCR.edds"
+ OpacityMap "{0E0384F9010FA5F0}Assets/Props/Commercial/SignPub_01/Data/shashpul_pubsigns.edds"
+ GlobalMapsUVTransform MatUVTransform "{5A0445722C806C62}" {
+  OffsetU -0.848
+ }
+}
