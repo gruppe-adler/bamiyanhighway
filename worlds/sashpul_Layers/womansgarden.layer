@@ -808,6 +808,50 @@ $grp PolylineShapeEntity {
    }
   }
  }
+ {
+  coords 1245.234 -31.337 1107.195
+  Points {
+   ShapePoint "{6A9102E153C07B45}" {
+    Position -6.383 -0 -2.881
+   }
+   ShapePoint "{6A9102EE154683F8}" {
+    Position -5.888 -0.38 7.588
+   }
+   ShapePoint "{6A9102E153CF9A8D}" {
+    Position -3.777 -0.481 22.239
+   }
+  }
+  LineColor 0 0.498 0.8314 0
+  {
+   SCR_PowerlineGeneratorEntity : "{15D9F0EBA2E2DDFF}PrefabLibrary/DefaultLibrary/Generators/Powerlines/PG_PowerLine_01_WoodenSmall.et" {
+    Flags 0x100003 0
+    m_iSeed 3144
+    m_fDistance 30
+    {
+     $grp SCR_PowerPole : "{17F4D13D8E2E43C1}PrefabLibrary/DefaultLibrary/Infrastructure/Powerline/PowerLine_01_pole_small_hook_end.et" {
+      {
+       coords -6.383 -0 -2.881
+       angles -1.484 5.924 0.126
+      }
+      {
+       coords -3.777 -0.481 22.239
+       angles 1.332 5.924 3.068
+      }
+     }
+     PowerlineEntity : "{613763D114E7CD1C}Prefabs/WEGenerators/Powerline/Powerline.et" {
+      coords -6.383 -0 -2.881
+      Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
+      Cables {
+       Cable "{6A9102EEB45989C4}" {
+        StartPoint 0.038 7.747 0.198
+        EndPoint 3 7.256 24.898
+       }
+      }
+     }
+    }
+   }
+  }
+ }
 }
 GenericEntity : "{01EB4A20B6BB6390}Prefabs/Structures/Misc/Nargile.et" {
  coords 1264.433 -31.64 1109.647

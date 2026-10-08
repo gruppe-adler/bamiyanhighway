@@ -5426,6 +5426,114 @@ $grp SplineShapeEntity {
    }
   }
  }
+ {
+  coords 1131.807 -28.345 1071.692
+  Points {
+   ShapePoint "{6A9102ED1D94443C}" {
+    Position 0 0 0
+   }
+   ShapePoint "{6A9102ED1D94685C}" {
+    Position 4.297 -0.039 -5.303
+   }
+   ShapePoint "{6A9102ED1EF81BD5}" {
+    Position 7.815 -0.023 -13.231
+   }
+   ShapePoint "{6A9102ED199F12E2}" {
+    Position 4.115 -0.019 -20.672
+   }
+   ShapePoint "{6A9102ED181E34FC}" {
+    Position -2.25 -0.019 -27.348
+   }
+   ShapePoint "{6A9102ED189981D0}" {
+    Position -11.474 -0.021 -35.851
+   }
+   ShapePoint "{6A9102ED15E36E00}" {
+    Position -17.105 -0.019 -39.17
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   WallGeneratorEntity : "{5CC5533D06EF5FF6}PrefabLibrary/DefaultLibrary/Generators/Walls/CrashBarrier/WG_CrashBarrier_01B.et" {
+    Flags 0x100003 0
+    coords 0 0 0
+    m_iSeed 25863
+    m_aWallGroups {
+     WallLengthGroup "{057268261A936A99}" {
+      m_aWallPrefabs {
+       WallWeightPair "{05726821F50853DD}" {
+        m_sWallAsset "{4A1FAB7E3F610EA9}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_4m_V1.et"
+       }
+       WallWeightPair "{057268216D1D100B}" {
+        m_sWallAsset "{264B9F9E83A58187}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_4m_V2.et"
+       }
+      }
+     }
+    }
+    {
+     SCR_DestructibleEntity : "{02985B6E455AD79C}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_End2.et" {
+      coords -16.195 -0.019 -38.739
+      angles 0 153.398 0
+     }
+     $grp SCR_DestructibleEntity : "{264B9F9E83A58187}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_4m_V2.et" {
+      {
+       coords 6.758 -0.019 -9.533
+       angles 0 74.824 0
+      }
+      {
+       coords 6.55 -0.019 -17.088
+       angles 0 124.078 0
+      }
+      {
+       coords -1.016 -0.019 -26.157
+       angles 0 135.972 0
+      }
+      {
+       coords -3.856 -0.019 -28.903
+       angles 0 136.39 0
+      }
+      {
+       coords -12.72 -0.019 -36.757
+       angles 0 150.306 0
+      }
+     }
+     SCR_DestructibleEntity : "{32E1B4D5E24832D1}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_start2.et" {
+      coords -0.011 -0 -0.01
+      angles 0 48.565 0
+     }
+     $grp SCR_DestructibleEntity : "{4A1FAB7E3F610EA9}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_4m_V1.et" {
+      {
+       coords 2.535 -0.139 -2.863
+       angles 0 55.272 0
+      }
+      {
+       coords 4.789 -0.024 -6.107
+       angles 0 60.296 0
+      }
+      {
+       coords 7.822 -0.023 -13.347
+       angles 0 108.961 0
+      }
+      {
+       coords 4.34 -0.019 -20.363
+       angles 0 129.889 0
+      }
+      {
+       coords 1.811 -0.019 -23.398
+       angles 0 135.701 0
+      }
+      {
+       coords -6.716 -0.019 -31.628
+       angles 0 137.627 0
+      }
+      {
+       coords -9.632 -0.023 -34.293
+       angles 0 141.522 0
+      }
+     }
+    }
+   }
+  }
+ }
 }
 GenericEntity : "{01EB4A20B6BB6390}Prefabs/Structures/Misc/Nargile.et" {
  coords 839.622 -20.841 1000.843
@@ -5490,6 +5598,9 @@ Tree : "{45A5973AE6686EA1}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pend
 GenericEntity : "{56C3CCA6D6374353}Prefabs/Structures/Market/hut2.et" {
  coords 840.995 -21.042 1005.871
  angles 0 64.042 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{5C073036215B0C18}Prefabs/Rocks/Granite/GraniteRock_02_MOG.et" {
+ coords 1050.234 -34.296 1081.27
 }
 GenericEntity : "{63051039C3049FED}PrefabsEditable/Auto/Props/Industrial/E_GasTank_01_red.et" {
  coords 1107.771 -28.364 1040.561

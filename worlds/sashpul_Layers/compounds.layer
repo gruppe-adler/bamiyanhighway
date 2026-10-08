@@ -351,42 +351,7 @@ $grp PolylineShapeEntity {
   }
  }
 }
-StaticModelEntity : "{07F043DD6AACCD0B}Prefabs/Structures/Infrastructure/Barriers/BarGate_01/BarGate_01.et" {
- coords 1503.459 -0.451 1283.703
- angles 0 81.641 0
- {
-  GenericEntity {
-   ID "5EE111167686B083"
-   components {
-    DoorComponent "{221C667A9F7D4B69}" {
-     InitialAngle -70
-    }
-   }
-  }
- }
-}
-GenericEntity : "{2F67953E56F1D453}Prefabs/Structures/Wreck/Trailer.et" {
- coords 1500.176 -38.5 1332.018
- angles 0 -29.294 0
-}
-GenericEntity : "{36A03FA64BEEF78B}Prefabs/Structures/Wreck/uazminibus1.et" {
- coords 1515.323 -38.125 1343.19
- angles 0.387 78.903 8.582
-}
-SCR_DestructibleBuildingEntity : "{3F91DEEC9C78E473}Prefabs/Structures/Military/Houses/GuardHouse_01/GuardHouse_01.et" {
- coords 1503.483 -0.062 1302.442
- angles 0 160.152 0
-}
-DecalEntity : "{7C184D5F132A8987}Prefabs/Decals/Asphalt/Decal_Asphalt_Crossroad_01.et" {
- coords 1528.867 -0.048 1326.106
- angles -90 0 31.533
- scale 3.5
-}
 GenericEntity : "{CE68DCFE1C2B1FA5}Assets/Structures/Castle3/castle2.et" {
  coords 1645.948 18.899 871.624
  angles 0 -83.044 0
-}
-GenericEntity : "{D6221D514F58856A}Prefabs/Structures/Wreck/Trailer_Green.et" {
- coords 1503.963 -38.577 1335.608
- angles 0 -32.988 0
 }
