@@ -49,19 +49,19 @@ $grp PolylineShapeEntity {
   angles 0 27.101 0
   Points {
    ShapePoint "{6A773DDA643CD4AF}" {
-    Position 0 0 0
+    Position 11.792 -3.891 -10.995
    }
    ShapePoint "{6A773DDA643CEC0F}" {
-    Position 5 -0.444 0
+    Position 11.099 -3.161 -4.303
    }
    ShapePoint "{6A773DDA66E34989}" {
-    Position 7.392 -1.446 -0.424
+    Position 12.545 -3.719 0.323
    }
    ShapePoint "{6A773DDA6193F845}" {
-    Position 18.763 -2.588 12.168
+    Position 18.786 -3.817 12.2
    }
    ShapePoint "{6A773DDA60577643}" {
-    Position 24.576 -2.565 20.285
+    Position 24.548 -3.363 20.267
    }
    ShapePoint "{6A773DDA60ADFFED}" {
     Position 35.374 -3.103 27.087
@@ -76,10 +76,10 @@ $grp PolylineShapeEntity {
     Position 55.877 -2.75 51.07
    }
    ShapePoint "{6A773DDA9DCF29C9}" {
-    Position 51.486 -1.541 65.227
+    Position 51.473 -2.175 65.349
    }
    ShapePoint "{6A773DDA9C7FE01A}" {
-    Position 50.034 1.057 78.591
+    Position 50.061 -0.717 78.615
    }
    ShapePoint "{6A773DDA9F4CB230}" {
     Position 66.547 1.498 93.063
@@ -121,288 +121,22 @@ $grp PolylineShapeEntity {
     Position 230.613 0.224 249.795
    }
    ShapePoint "{6A773DDA900A1094}" {
-    Position 241.141 -0.425 252.141
+    Position 235.431 0.126 251.896
    }
   }
   LineColor 0 0 0 0
   {
-   WallGeneratorEntity : "{2781482CFE270E77}Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et" {
-    Flags 0x100003 0
+   RoadGeneratorEntity : "{47E7068FE332800D}PrefabLibrary/DefaultLibrary/Generators/Roads/Dirt/RG_TrailDirt_01.et" {
     coords 0 0 0
-    m_iSeed 7765
-    {
-     $grp SCR_DestructibleEntity : "{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et" {
-      {
-       coords -0.213 0.257 0
-      }
-      {
-       coords 3.603 -0.388 0.025
-       angles 0 6.757 0
-      }
-      {
-       coords 31.198 -3.006 24.502
-       angles 0 -31.756 0
-      }
-      {
-       coords 42.001 -3.06 32.654
-       angles 0 -17.715 0
-      }
-      {
-       coords 53.038 -2.572 46.183
-       angles 0 -59.839 0
-      }
-      {
-       coords 50.728 -0.214 72.35
-       angles 0 -96.346 0
-      }
-      {
-       coords 61.515 1.041 88.499
-       angles 0 -42.21 0
-      }
-      {
-       coords 112.612 1.882 125.914
-       angles 0 -46.872 0
-      }
-      {
-       coords 131.175 0.212 144.033
-       angles 0 -52.251 0
-      }
-      {
-       coords 166.221 1.232 187.631
-       angles 0 -50.121 0
-      }
-      {
-       coords 175.845 0.932 203.139
-       angles 0 -60.492 0
-      }
-      {
-       coords 191.368 1.358 219.99
-       angles 0 -40.768 0
-      }
-      {
-       coords 225.419 0.764 246.18
-       angles 0 -34.84 0
-      }
-     }
-     $grp SCR_DestructibleEntity : "{37382E22EACF3E8A}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m_D.et" {
-      {
-       coords 49.722 -2.904 40.477
-       angles 0 -59.839 0
-      }
-      {
-       coords 115.246 1.871 128.767
-       angles 0 -39.374 0
-      }
-      {
-       coords 172.594 0.673 197.394
-       angles 0 -60.492 0
-      }
-     }
-     $grp SCR_DestructibleEntity : "{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et" {
-      {
-       coords 22.427 -2.478 17.358
-       angles 0 -53.71 0
-      }
-      {
-       coords 23.517 -2.432 18.843
-       angles 0 -53.71 0
-      }
-      {
-       coords 40.603 -3.092 31.428
-       angles 0 -38.846 0
-      }
-      {
-       coords 50.308 0.538 76.127
-       angles 0 -96.346 0
-      }
-      {
-       coords 64.389 1.279 91.105
-       angles 0 -42.21 0
-      }
-      {
-       coords 77.592 2.326 102.537
-       angles 0 -40.713 0
-      }
-      {
-       coords 100.197 2.06 113.773
-       angles 0 -25.18 0
-      }
-      {
-       coords 133.551 0.312 147.102
-       angles 0 -52.251 0
-      }
-      {
-       coords 142.659 1.154 161.941
-       angles 0 -59.29 0
-      }
-      {
-       coords 154.849 1.906 174.375
-       angles 0 -43.761 0
-      }
-      {
-       coords 177.756 1.055 206.516
-       angles 0 -60.492 0
-      }
-      {
-       coords 178.664 1.116 208.119
-       angles 0 -60.492 0
-      }
-      {
-       coords 228.599 0.445 248.393
-       angles 0 -34.84 0
-      }
-      {
-       coords 237.674 -0.081 251.319
-       angles 0 -13.337 0
-      }
-     }
-     SCR_DestructibleEntity : "{D1A7F179B35C2F96}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Pole.et" {
-      coords 239.42 -0.231 251.733
-      angles 0 -13.337 0
-     }
-     $grp SCR_DestructibleEntity : "{FF9F22E572547ED5}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_8m.et" {
-      {
-       coords 7.399 -1.472 -0.604
-       angles 0 -48.338 0
-      }
-      {
-       coords 12.589 -1.945 5.229
-       angles 0 -48.338 0
-      }
-      {
-       coords 17.795 -2.406 11.049
-       angles 0 -53.71 0
-      }
-      {
-       coords 24.552 -2.566 20.388
-       angles 0 -31.756 0
-      }
-      {
-       coords 34.508 -3.101 26.52
-       angles 0 -38.846 0
-      }
-      {
-       coords 45.791 -3.272 33.712
-       angles 0 -59.839 0
-      }
-      {
-       coords 55.145 -2.649 49.514
-       angles 0 -103.109 0
-      }
-      {
-       coords 53.373 -2.262 57.124
-       angles 0 -103.109 0
-      }
-      {
-       coords 51.575 -1.587 64.734
-       angles 0 -96.346 0
-      }
-      {
-       coords 49.924 0.991 77.985
-       angles 0 -42.21 0
-      }
-      {
-       coords 55.72 0.221 83.242
-       angles 0 -42.21 0
-      }
-      {
-       coords 65.75 1.421 92.347
-       angles 0 -40.713 0
-      }
-      {
-       coords 71.671 1.893 97.442
-       angles 0 -40.713 0
-      }
-      {
-       coords 78.953 2.513 103.785
-       angles 0 -25.18 0
-      }
-      {
-       coords 86.034 2.619 107.115
-       angles 0 -25.18 0
-      }
-      {
-       coords 93.116 2.415 110.444
-       angles 0 -25.18 0
-      }
-      {
-       coords 101.912 1.786 114.491
-       angles 0 -46.872 0
-      }
-      {
-       coords 107.262 2.291 120.202
-       angles 0 -46.872 0
-      }
-      {
-       coords 120.326 1.121 132.936
-       angles 0 -39.374 0
-      }
-      {
-       coords 126.383 0.235 137.845
-       angles 0 -52.251 0
-      }
-      {
-       coords 134.701 0.351 148.544
-       angles 0 -59.29 0
-      }
-      {
-       coords 138.68 0.966 155.243
-       angles 0 -59.29 0
-      }
-      {
-       coords 143.549 1.938 163.553
-       angles 0 -43.761 0
-      }
-      {
-       coords 149.199 2.106 168.964
-       angles 0 -43.761 0
-      }
-      {
-       coords 156.197 1.947 175.632
-       angles 0 -50.121 0
-      }
-      {
-       coords 161.209 1.614 181.631
-       angles 0 -50.121 0
-      }
-      {
-       coords 168.739 1.049 190.583
-       angles 0 -60.492 0
-      }
-      {
-       coords 179.514 1.31 209.77
-       angles 0 -40.768 0
-      }
-      {
-       coords 185.441 0.983 214.88
-       angles 0 -40.768 0
-      }
-      {
-       coords 194.302 1.425 222.53
-       angles 0 -38.794 0
-      }
-      {
-       coords 200.402 1.329 227.433
-       angles 0 -38.794 0
-      }
-      {
-       coords 206.502 1.566 232.337
-       angles 0 -38.794 0
-      }
-      {
-       coords 212.593 0.977 237.253
-       angles 0 -34.84 0
-      }
-      {
-       coords 219.006 1.044 241.716
-       angles 0 -34.84 0
-      }
-      {
-       coords 230.075 0.318 249.518
-       angles 0 -13.337 0
-      }
-     }
-    }
+    FalloffStartWidth 0
+    RoadFalloffWidth 5
+   }
+   RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
+    coords 0 0 0
+    Width 0.5
+    ReverseFlow 1
+    Clearance 1
+    GUID "6A9102CBDE484697"
    }
   }
  }
