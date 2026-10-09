@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{2A3A4A44629510ED}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/Data/Porcelain.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

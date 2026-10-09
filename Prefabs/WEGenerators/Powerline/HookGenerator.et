@@ -1,0 +1,7 @@
+SCR_PowerlineGeneratorEntity : "{20E4877A07D28502}Prefabs/WEGenerators/Powerline/PG_PowerLine_01_WoodenSmall.et" {
+ ID "52A068E8AB785807"
+ m_DefaultPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
+ m_StartPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
+ m_EndPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
+ m_DefaultJunctionPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
+}

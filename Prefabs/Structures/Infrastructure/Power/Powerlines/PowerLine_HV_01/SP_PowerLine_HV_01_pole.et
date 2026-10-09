@@ -1,0 +1,19 @@
+SCR_PowerPole : "{6F5A4EE6070E4E25}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_HV_01/PowerLine_HV_01_base.et" {
+ ID "3A3226DBA8E84D7B"
+ m_aCableSlotGroups {
+  SCR_PoleCableSlotGroup "{6A927ADB39F6D706}" {
+   m_eCableType POWER_HV
+   m_aSlots {
+    SCR_PoleCableSlot "{6A927ADB39F6D4DB}" {
+     m_vPosition -1.38 9.15 0.075
+    }
+    SCR_PoleCableSlot "{6A927ADB39F6D4D9}" {
+     m_vPosition 0.02 9.15 0.075
+    }
+    SCR_PoleCableSlot "{6A927ADB39F6D4C6}" {
+     m_vPosition 1.42 9.15 0.075
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,54 @@
+MetaFileClass {
+ Name "{15390D36AA50DDCB}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/old_electrical_connector2.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{6A931DEE63D4254D}" {
+     SourceMaterial "Porcelain"
+     AssignedMaterial "{2A3A4A44629510ED}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/Data/Porcelain.emat"
+    }
+    MaterialAssignClass "{6A931DEE63D42526}" {
+     SourceMaterial "CableInsulation"
+     AssignedMaterial "{993FECF9FAB23D60}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/Data/CableInsulation.emat"
+    }
+    MaterialAssignClass "{6A931DEE63D42525}" {
+     SourceMaterial "WroughtIron"
+     AssignedMaterial "{B85855D68C5109D5}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/Data/WroughtIron.emat"
+    }
+   }
+   MeshParams {
+    MeshParam Insulator {
+    }
+   }
+   Common TXOCommonClass "{6A931DEE63C5F99D}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "4.5.14 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{6A931DEE63C5F60B}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{6A931DEE63C5F792}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{6A931DEE63C5F740}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{6A931DEE63C5F4F6}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{6A931DEE63C5F49D}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{6A931DEE63C5F431}" {
+   }
+  }
+ }
+}

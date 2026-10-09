@@ -1,0 +1,76 @@
+SCR_PowerPole : "{64EDA881A2C6291C}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_01/PowerLine_01_pole_small_hook.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{64D4F132CDC23B63}" {
+   Object "{15390D36AA50DDCB}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/old_electrical_connector2.xob"
+   LODFactors {
+    80 50 30 15
+   }
+  }
+  RigidBody "{64D4F132CDC23B77}" {
+   ResponseIndex "SmallDestructible"
+  }
+ }
+ m_eMaterialSoundType BREAK_CERAMIC
+ m_aCableSlotGroups {
+  SCR_PoleCableSlotGroup "{6106A44089A02E8A}" {
+   m_eCableType POWER_BUILDING
+   m_aSlots {
+    SCR_PoleCableSlot "{610960D3C66EBD3C}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E66440C9CD8}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E6644B19E41}" {
+     m_vPosition 0.07 0.1 0
+    }
+   }
+   m_vAnchorOverride 0.066 0.097 0
+  }
+  SCR_PoleCableSlotGroup "{6A932E66582B9FA2}" {
+   m_aSlots {
+    SCR_PoleCableSlot "{6A932E668A06FA1E}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E668AFDF6CA}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E668ADEA0F4}" {
+     m_vPosition 0.07 0.1 0
+    }
+   }
+   m_vAnchorOverride 0.066 0.097 0
+  }
+  SCR_PoleCableSlotGroup "{6A932E6658ED4E34}" {
+   m_eCableType POWER_HV
+   m_aSlots {
+    SCR_PoleCableSlot "{6A932E66BA560D07}" {
+     m_vPosition 0.07 0.1 0.07
+    }
+    SCR_PoleCableSlot "{6A932E66BA3FEC9D}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E66BA1D4691}" {
+     m_vPosition 0.07 0.1 0
+    }
+   }
+   m_vAnchorOverride 0.066 0.097 0
+  }
+  SCR_PoleCableSlotGroup "{6A932E6658F3B56E}" {
+   m_eCableType POWER_INSULATOR
+   m_aSlots {
+    SCR_PoleCableSlot "{6A932E66AAC55C94}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E66AAA2A355}" {
+     m_vPosition 0.07 0.1 0
+    }
+    SCR_PoleCableSlot "{6A932E66AA8802EC}" {
+     m_vPosition 0.07 0.1 0
+    }
+   }
+   m_vAnchorOverride 0.066 0.097 0
+  }
+ }
+}

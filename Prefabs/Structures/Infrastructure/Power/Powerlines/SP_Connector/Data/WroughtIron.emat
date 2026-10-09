@@ -1,0 +1,4 @@
+MatPBRBasic {
+ BCRMap "{337715363EAA58A9}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/metal_bc.edds"
+ NMOMap "{7021BB026611A23E}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/metal_n.edds"
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{7021BB026611A23E}Prefabs/Structures/Infrastructure/Power/Powerlines/SP_Connector/metal_n.edds"
+ Configurations {
+  TIFFResourceClass PC : "{CEA87F769FD618D2}Configs/System/ResourceTypes/PC/TextureNormalMap.conf" {
+  }
+  TIFFResourceClass XBOX_ONE : "{5B84FAB5D39FB8AA}Configs/System/ResourceTypes/XBOX_ONE/TextureNormalMap.conf" {
+  }
+  TIFFResourceClass XBOX_SERIES : "{1B409AA3788B720F}Configs/System/ResourceTypes/XBOX_SERIES/TextureNormalMap.conf" {
+  }
+  TIFFResourceClass PS4 : "{9533DFD9EDDCEDD2}Configs/System/ResourceTypes/PS4/TextureNormalMap.conf" {
+  }
+  TIFFResourceClass PS5 : "{30F530559C17A96E}Configs/System/ResourceTypes/PS5/TextureNormalMap.conf" {
+  }
+  TIFFResourceClass HEADLESS : "{FC84ABE4B37D0DA0}Configs/System/ResourceTypes/HEADLESS/TextureNormalMap.conf" {
+  }
+  TIFFResourceClass Xbox : PC {
+  }
+ }
+}
