@@ -444,13 +444,34 @@ SplineShapeEntity {
   }
  }
 }
-SCR_DestructibleBuildingEntity : "{08E7D4A8FDE0DB6E}Prefabs/Structures/Bulding/HouseL/House_L_1_EP1_Full.et" {
- coords 692.791 -17.831 998.698
- angles 0 -116.753 0
+$grp SCR_DestructibleBuildingEntity : "{08E7D4A8FDE0DB6E}Prefabs/Structures/Bulding/HouseL/House_L_1_EP1_Full.et" {
+ {
+  coords 692.791 -17.831 998.698
+  angles 0 -116.753 0
+ }
+ {
+  coords 530.119 -8.305 896.833
+  angles 0 -17.787 0
+ }
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/DesertCliff_NS_03.et" {
+ {
+  coords 541.478 -30.592 908.177
+  angles 0 -112.106 0
+ }
+ {
+  coords 503.556 -20.119 873.317
+  angles 0 80.12 0
+  scale 0.586
+ }
 }
 GenericEntity : "{17141C691DCD56C1}Prefabs/Structures/Wreck/bluecar1.et" {
  coords 870.775 -19.505 1017.692
  angles -7.266 147.107 -3.704
+}
+SCR_DestructibleBuildingEntity : "{195991A94FF1210A}Prefabs/Structures/PrefabComposition/afghan_house_set_01.et" {
+ coords 488.736 -10.838 939.07
+ angles 0 -16.682 0
 }
 Tree : "{1B72E3F82B36964B}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_3s.et" {
  coords 789.859 0.052 800.15
@@ -535,6 +556,10 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{7113C7839BD5D148}Prefabs/Structur
   angles 0 -17.868 90
  }
 }
+SCR_DestructibleBuildingEntity : "{750DA549F335AE24}Prefabs/Structures/PrefabComposition/afghan_house_set_02.et" {
+ coords 514.359 -15.503 888.141
+ angles 0 -5.641 0
+}
 $grp SCR_DestructibleBuildingEntity : "{77D9086CD1F98694}Prefabs/Structures/Bulding/HouseL/House_L_3_EP1_Full.et" {
  {
   coords 960.581 -21.177 1053
@@ -557,9 +582,23 @@ SCR_DestructibleBuildingEntity : "{89732831F26334E8}Prefabs/Structures/Bulding/H
  coords 588.214 -12.538 916.477
  angles 0 -132.582 0
 }
+SCR_DestructibleBuildingEntity : "{9091E9B0FFD0394F}Prefabs/Structures/PrefabComposition/afghan_house_set_03.et" {
+ coords 488.063 -15.659 880.709
+ angles 0 -7.218 0
+}
 SCR_DestructibleBuildingEntity : "{987B9E8B6F63F372}Prefabs/Structures/Bulding/HouseL/House_L_7_EP1.et" {
  coords 649.534 -17.831 1000.633
  angles 0 -10.668 0
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
+ {
+  coords 531.45 -29.884 887.358
+  angles 0 -15 0
+ }
+ {
+  coords 540.87 -9.032 918.79
+  angles 0 -109.319 180
+ }
 }
 StaticModelEntity : "{9C7477A3F066F74F}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_straight.et" {
  coords 963.317 -26.368 1027.107
@@ -598,6 +637,20 @@ $grp DecalEntity : "{B7AF69D585D9C715}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_0
   coords 552.562 0.038 880.067
   angles -90 0 -138.287
   scale 4.8
+ }
+}
+$grp SCR_DestructibleBuildingEntity : "{BBEDB6FD36970ECA}Prefabs/Structures/PrefabComposition/afghan_garden_set.et" {
+ {
+  coords 448.325 -8.307 901.445
+  angles 0 169.25 0
+ }
+ {
+  coords 422.51 -8.307 896.544
+  angles 0 169.25 0
+ }
+ {
+  coords 544.863 -8.283 899.256
+  angles 0 -105.363 0
  }
 }
 $grp DecalEntity : "{BCF98BBA87A30CEE}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_02.et" {
@@ -1254,6 +1307,21 @@ $grp DecalEntity : "{D0ADBF5A3B6783C0}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_0
   angles -90 -180 -180
   scale 4.8
  }
+ {
+  coords 1128.382 0.023 1076.744
+  angles -88.648 -108.435 62.864
+  scale 4.8
+ }
+ {
+  coords 1125.545 0.023 1074.891
+  angles -88.646 -108.438 -126.743
+  scale 4.8
+ }
+ {
+  coords 1130.232 0.014 1077.374
+  angles -88.648 -108.435 73.41
+  scale 4.8
+ }
 }
 GenericEntity : "{D5247F493225CA91}Prefabs/Props/Civilian/WateringCan_01.et" {
  coords 802.971 -21.879 982.591
@@ -1283,9 +1351,25 @@ GenericEntity : "{F47C56E3678C7D87}PrefabLibrary/DefaultLibrary/Props/Industrial
  coords 1554.16 -41.483 1154.859
  angles -0.65 -139.381 -0.557
 }
-SCR_DestructibleBuildingEntity : "{F636A0D25A021DFA}Prefabs/Structures/Bulding/HouseL/House_L_6_EP1.et" {
- coords 707.691 -17.447 990.51
- angles 0 -26.449 0
+$grp SCR_DestructibleBuildingEntity : "{F636A0D25A021DFA}Prefabs/Structures/Bulding/HouseL/House_L_6_EP1.et" {
+ {
+  coords 707.691 -17.447 990.51
+  angles 0 -26.449 0
+ }
+ {
+  coords 536.492 -8.207 908.097
+  angles 0 -105 0
+ }
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et" {
+ {
+  coords 544.665 -29.119 891.449
+  angles 0 -28.146 0
+ }
+ {
+  coords 470.168 -27.794 862.446
+  angles -20.337 0 0
+ }
 }
 SCR_IndestructibleEnvironmentalEntity : "{F8DBBF9A2BF4C90D}Prefabs/Structures/Rock/African_Rock/GraniteCliff_African_03.et" {
  coords 808.709 -50.221 978.039
@@ -1310,4 +1394,8 @@ GenericEntity : "{FA7D049A734AD1B5}PrefabLibrary/DefaultLibrary/Vegetation/Debri
  coords 1556.285 -41.683 1149.444
  angles 1.24 -42.056 -0.542
  scale 1.004
+}
+SCR_IndestructibleEnvironmentalEntity : "{FC0E9C67680FE8E2}Prefabs/Rocks/Desert/DesertRock_02.et" {
+ coords 603.274 -22.872 909.481
+ angles 0 -137.404 0
 }

@@ -1,3 +1,102 @@
+PolylineShapeEntity {
+ coords 1529.715 -38.532 1342.193
+ Points {
+  ShapePoint "{6A9528A8025D98BB}" {
+   Position 0 0 0
+  }
+  ShapePoint "{6A9528A8025DADA1}" {
+   Position -5.092 0.262 1.545
+  }
+  ShapePoint "{6A9528A83EDD35EB}" {
+   Position -11.978 0.562 2.641
+  }
+  ShapePoint "{6A9528A839218993}" {
+   Position -19.591 -0.137 0.94
+  }
+  ShapePoint "{6A9528A83870937E}" {
+   Position -26.536 -0.106 -2.708
+  }
+  ShapePoint "{6A9528A838EEB8A7}" {
+   Position -32.467 -0.144 -6.876
+  }
+  ShapePoint "{6A9528A83BAD653C}" {
+   Position -40.021 -0.032 -16.415
+  }
+  ShapePoint "{6A9528A83A5F5647}" {
+   Position -44.168 0.088 -24.301
+  }
+  ShapePoint "{6A9528A835336C3A}" {
+   Position -47.348 0.315 -30.084
+  }
+  ShapePoint "{6A9528A83478792B}" {
+   Position -50.603 1.309 -34.494
+  }
+ }
+ LineColor 0 0 0 0
+ {
+  WallGeneratorEntity : "{5CC5533D06EF5FF6}PrefabLibrary/DefaultLibrary/Generators/Walls/CrashBarrier/WG_CrashBarrier_01B.et" {
+   Flags 0x100003 0
+   coords 0 0 0
+   m_iSeed 30605
+   {
+    SCR_DestructibleEntity : "{02985B6E455AD79C}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_End2.et" {
+     coords -50.364 1.159 -34.137
+     angles 0 -236.162 0
+    }
+    $grp SCR_DestructibleEntity : "{04A36304123DADEF}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_8m_V1.et" {
+     {
+      coords -3.703 0.171 1.123
+      angles 0 -169.607 0
+     }
+     {
+      coords -11.564 0.609 2.565
+      angles 0 -191.445 0
+     }
+     {
+      coords -37.744 -0.056 -13.876
+      angles 0 -238.358 0
+     }
+    }
+    $grp SCR_DestructibleEntity : "{264B9F9E83A58187}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_4m_V2.et" {
+     {
+      coords -26.489 -0.105 -2.684
+      angles 0 -215.043 0
+     }
+     {
+      coords -35.073 -0.111 -10.898
+      angles 0 -228.108 0
+     }
+     {
+      coords -41.914 -0.005 -20.644
+      angles 0 -238.358 0
+     }
+     {
+      coords -44.013 0.073 -24.049
+      angles 0 -241.07 0
+     }
+    }
+    SCR_DestructibleEntity : "{32E1B4D5E24832D1}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_start2.et" {
+     coords -0.004 0 -0.014
+     angles 0 -163.126 0
+    }
+    $grp SCR_DestructibleEntity : "{68F757E4AEF922C1}PrefabLibrary/DefaultLibrary/Infrastructure/Roads/CrashBarrier_01_8m_V2.et" {
+     {
+      coords -19.379 -0.144 0.983
+      angles 0 -207.276 0
+     }
+     {
+      coords -29.764 -0.077 -4.98
+      angles 0 -228.108 0
+     }
+     {
+      coords -45.946 0.231 -27.548
+      angles 0 -236.162 0
+     }
+    }
+   }
+  }
+ }
+}
 $grp SplineShapeEntity {
  {
   coords 1516.751 -39.024 1301.64
@@ -153,6 +252,10 @@ $grp SplineShapeEntity {
   }
  }
 }
+SCR_DestructibleBuildingEntity : "{02610F2CD0597E3A}Prefabs/Structures/Bulding/Favella Shed/F_Blue_Shed_01.et" {
+ coords 1404.87 0.054 1249.404
+ angles 0 154.683 0
+}
 StaticModelEntity : "{07F043DD6AACCD0B}Prefabs/Structures/Infrastructure/Barriers/BarGate_01/BarGate_01.et" {
  coords 1503.485 0.1 1283.71
  angles 0 74.002 0
@@ -167,17 +270,35 @@ StaticModelEntity : "{07F043DD6AACCD0B}Prefabs/Structures/Infrastructure/Barrier
   }
  }
 }
+$grp SCR_DestructibleBuildingEntity : "{1E934D500642450B}Prefabs/Structures/Wall/CNCBlock.et" {
+ {
+  coords 1505.16 -0.035 1277.791
+  angles -8.465 71.831 1.044
+ }
+ {
+  coords 1501.205 -0.001 1289.887
+  angles -6.652 62.45 1.065
+ }
+ {
+  coords 1504.575 -0.091 1275.521
+  angles 0.602 137.171 -1.787
+ }
+}
 GenericEntity : "{2F67953E56F1D453}Prefabs/Structures/Wreck/Trailer.et" {
- coords 1500.176 -38.5 1332.018
- angles 0 -29.294 0
+ coords 1501.217 -38.361 1330.163
+ angles 3.226 -29.294 0
 }
 GenericEntity : "{36A03FA64BEEF78B}Prefabs/Structures/Wreck/uazminibus1.et" {
- coords 1515.323 -38.125 1343.19
+ coords 1516.542 -38.079 1343.355
  angles 0.387 78.903 8.582
 }
 SCR_DestructibleBuildingEntity : "{3F91DEEC9C78E473}Prefabs/Structures/Military/Houses/GuardHouse_01/GuardHouse_01.et" {
  coords 1503.483 -0.062 1302.442
  angles 0 160.152 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{52FC0B9A62441D1A}Prefabs/Rocks/Desert/Desert_Boulder_02.et" {
+ coords 1471.205 -3.076 1311.197
+ angles 0 38.637 0
 }
 GenericEntity : "{6401BFEA3B30EBF7}Prefabs/Structures/BuildingParts/Eletrical/ElectricityJunction_02/ElectricityJunction_02.et" {
  coords 1240.349 -24.955 1103.57
@@ -225,8 +346,8 @@ $grp DecalEntity : "{8D2E929A1C8D0AEE}PrefabLibrary/DefaultLibrary/Decals/Dirt/D
  }
 }
 GenericEntity : "{D6221D514F58856A}Prefabs/Structures/Wreck/Trailer_Green.et" {
- coords 1503.963 -38.577 1335.608
- angles 0 -32.988 0
+ coords 1504.986 -38.32 1334.033
+ angles 3.227 -32.988 0
 }
 $grp DecalEntity : "{E17AA67AA04985C0}PrefabLibrary/DefaultLibrary/Decals/Dirt/Decal_Dirt_Crossroad_02.et" {
  {
@@ -269,4 +390,8 @@ $grp DecalEntity : "{E17AA67AA04985C0}PrefabLibrary/DefaultLibrary/Decals/Dirt/D
   angles -89.98 0 -103.558
   scale 4.2
  }
+}
+SCR_IndestructibleEnvironmentalEntity : "{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et" {
+ coords 1466.449 -41.061 1289.656
+ angles 12.292 101.465 -81.695
 }

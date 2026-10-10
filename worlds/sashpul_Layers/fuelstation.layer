@@ -1,3 +1,13 @@
+$grp SCR_DestructibleBuildingEntity : "{0F87EF7B4C75F36A}Prefabs/Structures/Bulding/FuelStation/Ind_FuelStation_Sign_ep1.et" {
+ {
+  coords 1103.82 0.002 1052.377
+  angles 0 -19.987 0
+ }
+ {
+  coords 1088.828 0.002 1046.132
+  angles 0 -19.987 0
+ }
+}
 GenericEntity : "{3A113DD1929E18E5}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_Takistan_Blue.et" {
  coords 1076.426 -28.364 1031.664
  angles 0 -19.534 0
@@ -35,6 +45,10 @@ GenericEntity : "{B67A4797AED7B3BC}Prefabs/Structures/Wreck/ikarus.et" {
 SCR_DestructibleBuildingEntity : "{B6E9AA79B5C15161}Prefabs/Structures/Military/Houses/FuelStorage_E_01/FuelStorage_E_01_roof_V1.et" {
  coords 1096.526 0.159 1049.121
  angles 0 -23.545 0
+}
+SCR_DestructibleBuildingEntity : "{BC75DD14FA38D773}Prefabs/Structures/Bulding/Military/Toilet.et" {
+ coords 1406.813 -0.001 1251.16
+ angles 0 -115.51 0
 }
 SCR_DestructibleBuildingEntity : "{C7A59DCCFF7BF19F}Prefabs/Structures/Industrial/Containers/FuelTanks/FuelTank_02/FuelTank_02_Base.et" {
  coords 1125.674 0.055 1044.569

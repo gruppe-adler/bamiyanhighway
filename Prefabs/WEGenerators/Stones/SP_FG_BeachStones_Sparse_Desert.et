@@ -1,8 +1,11 @@
 ForestGeneratorEntity : "{532AED66429654F6}Prefabs/WEGenerators/Brushland/FG_Brushland_Sorbus_Dense.et" {
  ID "50DAEB90A9F4F719"
+ Flags 0x100003 0
  coords 2165.428 1.155 6475.002
  GeneratorType GeneratorType "{6A9102F4320C10FB}" {
  }
+ m_iSeed 20939
+ m_bAvoidRoads 1
  m_aLevels {
   ForestGeneratorBottomLevel intermediate {
    m_bGenerate 0
