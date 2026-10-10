@@ -1,5 +1,5 @@
 $grp SplineShapeEntity {
- mainriver {
+ river_main_river {
   coords 17.816 -31.003 583.094
   angles 0 5.763 0
   Points {
@@ -137,16 +137,20 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A5915321B20293A}" {
-    Position 536.225 -4.891 298.097
+    Position 562.162 -5.114 309.695
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915321BC7EDAC}" {
-    Position 591.541 -5.042 325.209
+    Position 612.553 -5.82 332.676
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+     SplinePointData SplinePointData {
+      InTangent 11.646 -0.47 5.486
+      OutTangent 13.003 -0.525 6.126
      }
     }
    }
@@ -158,196 +162,196 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A59153214CAE512}" {
-    Position 660.436 -6.849 360.393
+    Position 660.443 -7.941 360.396
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153217160E6D}" {
-    Position 702.404 -7.647 372.677
+    Position 702.404 -8.2 372.677
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153216CCFA1D}" {
-    Position 756.805 -7.684 384.975
+    Position 756.805 -8.3 384.975
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591532169B0CAA}" {
-    Position 797.621 -7.707 391.363
+    Position 797.621 -8.4 391.363
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153210638127}" {
-    Position 840.605 -7.737 394.876
+    Position 840.605 -8.4 394.876
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153210300F14}" {
-    Position 905.643 -7.781 400.463
+    Position 905.643 -8.5 400.463
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153213236234}" {
-    Position 933.793 -7.796 400.978
+    Position 933.793 -8.6 400.978
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591532127EB2DB}" {
-    Position 986.316 -7.834 409.31
+    Position 986.316 -8.6 409.31
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591532128B8773}" {
-    Position 1027.15 -7.864 422.257
+    Position 1027.15 -8.7 422.257
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320DAE00BD}" {
-    Position 1060.204 -7.886 438.056
+    Position 1060.204 -8.8 438.056
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320CC049D7}" {
-    Position 1110.374 -7.983 457.403
+    Position 1110.374 -8.9 457.403
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320F4A609B}" {
-    Position 1142.481 -8.128 466.148
+    Position 1142.484 -9 466.149
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320E773E74}" {
-    Position 1172.995 -8.162 479.495
+    Position 1172.995 -9.18 479.495
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320E175AEE}" {
-    Position 1208.506 -8.618 505.248
+    Position 1208.506 -9.19 505.248
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153209060436}" {
-    Position 1229.204 -8.64 523.418
+    Position 1229.204 -9.2 523.418
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153208CB2BDB}" {
-    Position 1254.793 -8.93 547.362
+    Position 1254.771 -9.953 547.347
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320B414955}" {
-    Position 1283.282 -9.855 559.834
+    Position 1283.254 -10.577 559.826
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320A46787E}" {
-    Position 1322.414 -11.116 567.256
+    Position 1322.414 -12.2 567.256
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320ACAB69E}" {
-    Position 1370.896 -12.002 568.775
+    Position 1370.896 -12.6 568.775
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153205BBF4F8}" {
-    Position 1400.519 -12.017 571.156
+    Position 1400.519 -12.6 571.156
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153204730E83}" {
-    Position 1432.6 -12.047 588.581
+    Position 1432.6 -12.65 588.581
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320763C43E}" {
-    Position 1454.691 -12.062 604.763
+    Position 1454.689 -12.6 604.762
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915320782765A}" {
-    Position 1486.921 -12.092 632.269
+    Position 1486.921 -12.55 632.269
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591532060FA4F0}" {
-    Position 1530.111 -12.129 669.976
+    Position 1530.108 -12.512 669.974
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153201D5E38C}" {
-    Position 1550.877 -12.144 688.241
+    Position 1550.864 -12.866 688.229
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591532005CC009}" {
-    Position 1588.121 -13.65 720.429
+    Position 1588.111 -14.026 720.421
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591532032AC41B}" {
-    Position 1608.282 -13.72 733.557
+    Position 1608.261 -14.612 733.537
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153202E14250}" {
-    Position 1636.167 -14.234 763.435
+    Position 1638.734 -15.902 767.301
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -359,57 +363,13 @@ $grp SplineShapeEntity {
    RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
     coords 0 0 0
     Width 9.9
-    SplineOffsetUp -0.6
     ReverseFlow 1
     Material "{73DE868F49EE7D23}Terrains/Common/Water/River/bamiyan_river.emat"
     GUID "6A8C785085686207"
    }
   }
  }
- {
-  coords 1366.438 -43.5 954.091
-  angles 0 -55.612 0
-  Points {
-   ShapePoint "{6A5D43E79AE67C78}" {
-    Position -9.162 0.094 1.865
-   }
-   ShapePoint "{6A5D43E79AE59257}" {
-    Position 6.129 0.1 1.502
-   }
-   ShapePoint "{6A5D43E79305623B}" {
-    Position 23.855 -0.429 1.599
-   }
-   ShapePoint "{6A5D43E792F616FD}" {
-    Position 48.178 0.86 -0.947
-   }
-   ShapePoint "{6A5D43E4F346F099}" {
-    Position 54.896 0.5 -0.977
-   }
-   ShapePoint "{6A5D43E4F396C4B8}" {
-    Position 60.733 -1.8 -0.919
-   }
-   ShapePoint "{6A5D43E4F2D247B4}" {
-    Position 69.28 -2.219 -2.043
-   }
-   ShapePoint "{6A5D43E4ECB3D24F}" {
-    Position 72.84 -2.181 -2.912
-   }
-   ShapePoint "{6A5D43E4EE57C1B6}" {
-    Position 79.296 -2.376 -10.807
-   }
-  }
-  {
-   RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
-    coords 0 0 0
-    Width 6
-    SplineOffsetUp 2.4
-    ReverseFlow 1
-    Clearance 0.8
-    GUID "6A5D43E7DE87E20A"
-   }
-  }
- }
- mainriver2 {
+ river_main_trail {
   coords 17.816 -32 583.094
   angles 0 5.763 0
   Points {
@@ -757,7 +717,7 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A59153202E14250}" {
-    Position 1633.405 -14.234 760.595
+    Position 1636.387 -16.318 766.147
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -923,7 +883,7 @@ $grp SplineShapeEntity {
         Position 1608.28 -13.72 733.557
        }
        ShapePoint "{6A66AB6DFDD3AC56}" {
-        Position 1633.41 -14.234 760.595
+        Position 1636.39 -16.318 766.147
        }
       }
       IsClosedSpline 0
@@ -933,17 +893,17 @@ $grp SplineShapeEntity {
    }
   }
  }
- bigriver {
+ river_combined_river {
   coords 1725.674 -47.747 1178.924
   Points {
    ShapePoint "{6A8C78430BB47369}" {
-    Position 1.084 0.326 -2.925
+    Position -0.359 0.831 3.041
    }
    ShapePoint "{6A8C784316E07A32}" {
-    Position 1.411 -1.017 63.492
+    Position 1.411 -0.341 63.509
    }
    ShapePoint "{6A8C7843173C8CDA}" {
-    Position 0.444 -1.204 86.027
+    Position 0.444 -0.743 86.033
    }
    ShapePoint "{6A8C784314988E0C}" {
     Position -1.637 -0.98 112.559
@@ -992,20 +952,20 @@ $grp SplineShapeEntity {
    RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
     coords 0 0 0
     Width 24.6
-    SplineOffsetUp 0.5
     ReverseFlow 1
+    Material "{73DE868F49EE7D23}Terrains/Common/Water/River/bamiyan_river.emat"
     GUID "6A8C78490260D6FF"
    }
   }
  }
- {
-  coords 1730.767 -45.333 1177.657
+ river_east_river {
+  coords 1730.767 -45 1177.657
   Points {
    ShapePoint "{6A8C785036E0DA79}" {
-    Position 1.058 -0.081 2
+    Position -5.452 -1.917 4.308
    }
    ShapePoint "{6A8C785036E0FDC8}" {
-    Position 4.269 0.064 -0.757
+    Position 8.452 -0.508 -5.249
     Data {
      SplinePointData SplinePointData {
       InTangent 2.386 0.194 -2.562
@@ -1081,9 +1041,98 @@ $grp SplineShapeEntity {
    }
   }
   {
+   RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
+    coords 0 0 0
+    Width 12.8
+    Material "{73DE868F49EE7D23}Terrains/Common/Water/River/bamiyan_river.emat"
+    GUID "6A8C7857BCDAA9FA"
+   }
+  }
+ }
+ river_east_trail_BAKEDalready {
+  coords 1730.767 -45.333 1177.657
+  Points {
+   ShapePoint "{6A8C785036E0DA79}" {
+    Position 1.058 -1.748 2
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 0 -1.667 0
+      OutTangent 0 -1.667 0
+     }
+    }
+   }
+   ShapePoint "{6A8C7850378F8348}" {
+    Position 24.479 1.755 -24.148
+   }
+   ShapePoint "{6A8C78503580B87F}" {
+    Position 47.591 2.632 -55.709
+   }
+   ShapePoint "{6A8C785032706898}" {
+    Position 64.408 2.089 -57.521
+   }
+   ShapePoint "{6A8C785033686FFD}" {
+    Position 102.852 2.166 -96.67
+   }
+   ShapePoint "{6A8C785033E1A3F6}" {
+    Position 114.582 2.395 -109.915
+   }
+   ShapePoint "{6A8C7850308851EE}" {
+    Position 145.635 3.437 -151.584
+   }
+   ShapePoint "{6A8C7850316E9668}" {
+    Position 149.211 3.942 -165.338
+   }
+   ShapePoint "{6A8C785031C1A743}" {
+    Position 148.373 3.72 -187.688
+   }
+   ShapePoint "{6A8C78503E85AAFC}" {
+    Position 142.655 4.312 -230.607
+   }
+   ShapePoint "{6A8C78503F58F6F0}" {
+    Position 147.261 5.555 -259.157
+   }
+   ShapePoint "{6A8C78503FE133C6}" {
+    Position 166.87 5.837 -280.697
+   }
+   ShapePoint "{6A8C78503C69AB96}" {
+    Position 191.75 6.047 -295.602
+   }
+   ShapePoint "{6A8C78503DDDD844}" {
+    Position 206.583 6.191 -310.081
+   }
+   ShapePoint "{6A8C78503A54AE29}" {
+    Position 205.117 7.231 -339.822
+   }
+   ShapePoint "{6A8C78503AD35C77}" {
+    Position 197.115 8.202 -377.171
+   }
+   ShapePoint "{6A8C78503AAD1D46}" {
+    Position 196.961 7.932 -401.713
+   }
+   ShapePoint "{6A8C78503B21E28B}" {
+    Position 212.225 8.54 -419.418
+   }
+   ShapePoint "{6A8C78503891F89A}" {
+    Position 245.7 8.566 -436.496
+   }
+   ShapePoint "{6A8C78503920B581}" {
+    Position 274.586 9.652 -456.296
+   }
+   ShapePoint "{6A8C7850399053BC}" {
+    Position 291.12 9.674 -478.504
+   }
+   ShapePoint "{6A8C7850067670C3}" {
+    Position 311.06 9.694 -500.999
+   }
+   ShapePoint "{6A8C7850072B03EB}" {
+    Position 316.676 9.729 -505.409
+   }
+  }
+  {
    RoadGeneratorEntity : "{98DF2267CDD17758}PrefabLibrary/DefaultLibrary/Generators/Roads/Dirt/RG_TrailGravel_01.et" {
     Flags 0 0x1
     coords 0 0 0
+    AdjustHeightMap 0
     GenerateRoad 0
     RoadWidth 1
     FalloffStartWidth 0
@@ -1175,12 +1224,6 @@ $grp SplineShapeEntity {
       Width 1.75
      }
     }
-   }
-   RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
-    coords 0 0 0
-    Width 12.8
-    SplineOffsetUp 0.1
-    GUID "6A8C7857BCDAA9FA"
    }
   }
  }
