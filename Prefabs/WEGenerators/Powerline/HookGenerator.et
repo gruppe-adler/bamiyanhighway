@@ -2,10 +2,16 @@ SCR_PowerlineGeneratorEntity : "{20E4877A07D28502}Prefabs/WEGenerators/Powerline
  ID "52A068E8AB785807"
  Flags 0x100003 0
  m_iSeed 9834
- m_vShapeOffset 0 0 -0.3
  m_bSnapOffsetShapeToTheGround 0
+ m_fDistance 500
  m_DefaultPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
  m_StartPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
  m_EndPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
  m_DefaultJunctionPole "{BBC3C070E6C03A5E}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLineHook/PowerlineHook.et"
+ Clearance 0
+ m_fRandomPitchAngle 0
+ m_fRandomRollAngle 0
+ m_bApplyPitchAndRollDefault 0
+ m_bApplyPitchAndRollStart 0
+ m_bApplyPitchAndRollEnd 0
 }

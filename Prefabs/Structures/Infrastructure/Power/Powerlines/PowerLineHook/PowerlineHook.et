@@ -11,16 +11,55 @@ SCR_PowerPole : "{64EDA881A2C6291C}Prefabs/Structures/Infrastructure/Power/Power
    ResponseIndex "SmallDestructible"
   }
  }
+ "Collision multiplier" 1
+ FirstDestructionPhase SCR_BaseDestructionPhase "{64CED1824136D935}" {
+  m_aPhaseDestroySpawnObjects {
+  }
+ }
+ LastDestructionPhase SCR_BaseDestructionPhase "{64CED18240FA11AB}" {
+  m_sPhaseModel ""
+ }
  m_eMaterialSoundType BREAK_CERAMIC
  m_aCableSlotGroups {
   SCR_PoleCableSlotGroup "{6106A44089A02E8A}" {
-   m_eCableType POWER_HV
+   m_eCableType POWER_LV
    m_aSlots {
     SCR_PoleCableSlot "{610960D3C66EBD3C}" {
-     m_vPosition 0.07 9.15 0
+     m_vPosition 0.066 0.097 0
     }
    }
-   m_vAnchorOverride 0.066 0.097 0
+  }
+  SCR_PoleCableSlotGroup "{2DACBEC1B3589355}" {
+   m_eCableType POWER_HV
+   m_aSlots {
+    SCR_PoleCableSlot "{5F013DE239702965}" {
+     m_vPosition 0.066 0.097 0
+    }
+   }
+  }
+  SCR_PoleCableSlotGroup "{6970528AF883DAF9}" {
+   m_eCableType POWER_EHV
+   m_aSlots {
+    SCR_PoleCableSlot "{7DC91FA12470E19A}" {
+     m_vPosition 0.066 0.097 0
+    }
+   }
+  }
+  SCR_PoleCableSlotGroup "{83C70449504FE8D0}" {
+   m_eCableType TELEPHONE
+   m_aSlots {
+    SCR_PoleCableSlot "{76CA8D154BED6F4C}" {
+     m_vPosition 0.066 0.097 0
+    }
+   }
+  }
+  SCR_PoleCableSlotGroup "{3261DA04AD593E57}" {
+   m_eCableType POWER_BUILDING
+   m_aSlots {
+    SCR_PoleCableSlot "{2C723476BB10D1CE}" {
+     m_vPosition 0.066 0.097 0
+    }
+   }
   }
  }
 }

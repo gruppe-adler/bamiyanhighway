@@ -983,6 +983,7 @@ $grp PolylineShapeEntity {
     coords 0 0 0
     Width 0.5
     SplineOffsetUp 2.1
+    Material "{D41A7FABFE897E82}Terrains/Common/Water/River/bamiyan_canal.emat"
     Clearance 1
     GUID "6A94A16CBEE85188"
    }
