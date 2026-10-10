@@ -4,7 +4,7 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A591533F94577AE}" {
-    Position -17.797 2.208 -0
+    Position -17.797 2.208 0
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -374,7 +374,7 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A591533F94577AE}" {
-    Position -16.959 2.44 -0
+    Position -16.959 2.44 0
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -736,10 +736,10 @@ $grp SplineShapeEntity {
       ID "526283EEB3C31502"
       SplinePoints {
        ShapePoint "{5256E6ED186CB7B5}" {
-        Position -16.959 2.44 -0
+        Position -16.959 2.44 0
        }
        ShapePoint "{5256E6ED186CB58D}" {
-        Position 5 -0.452 -0
+        Position 5 -0.452 0
        }
        ShapePoint "{6A66AB6DFDD3BE08}" {
         Position 17.423 -0.697 3.351
@@ -977,7 +977,7 @@ $grp SplineShapeEntity {
     Position 24.479 1.755 -24.148
    }
    ShapePoint "{6A8C78503580B87F}" {
-    Position 47.591 2.632 -55.709
+    Position 48.123 2.338 -54.716
    }
    ShapePoint "{6A8C785032706898}" {
     Position 64.408 2.089 -57.521
@@ -1742,6 +1742,16 @@ $grp SplineShapeEntity {
   }
  }
 }
+$grp SCR_IndestructibleEnvironmentalEntity : "{0D51E91E4EA4162A}Prefabs/Rocks/Desert/Desert_Cluster_05.et" {
+ {
+  coords 1716.827 -0 1253.247
+  angles 36.808 42.356 46.564
+ }
+ {
+  coords 1715.7 0 1253.507
+  angles 46.707 21.88 28.888
+ }
+}
 $grp DecalEntity : "{104C79BFAFEE06A9}Prefabs/Decals/Asphalt/Decal_Asphalt_Crossroad_02.et" {
  {
   coords 1545.212 0.05 1351.352
@@ -1767,6 +1777,33 @@ SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/
  coords 1479.159 -43.704 1332.079
  angles 2.716 141.716 -87.009
 }
+SCR_IndestructibleEnvironmentalEntity : "{1992D09E64EA7F89}Prefabs/Rocks/Desert/DesertRock_03.et" {
+ coords 1716.351 -50.717 1263.313
+ angles 0 67.003 0
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{3065CC263BC89F1D}Prefabs/Rocks/Desert/Desert_Cluster_02.et" {
+ {
+  coords 1720.175 -0.003 1250.16
+  angles -6.87 -1.599 13.134
+ }
+ {
+  coords 1711.214 0.001 1251.783
+  angles 23.66 8.469 20.357
+ }
+}
+SCR_IndestructibleEnvironmentalEntity : "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et" {
+ coords 1714.693 -1.502 1253.032
+}
+$grp SCR_IndestructibleEnvironmentalEntity : "{5C31F8C6870C1034}Prefabs/Rocks/Desert/Desert_Cluster_03.et" {
+ {
+  coords 1716.4 -0 1250.181
+  angles -2.326 -0.748 17.823
+ }
+ {
+  coords 1712.955 -0.25 1252.59
+  angles 37.034 17.804 22.115
+ }
+}
 $grp DecalEntity : "{7C184D5F132A8987}Prefabs/Decals/Asphalt/Decal_Asphalt_Crossroad_01.et" {
  {
   coords 1541.662 -0.073 1348.784
@@ -1779,8 +1816,14 @@ $grp DecalEntity : "{7C184D5F132A8987}Prefabs/Decals/Asphalt/Decal_Asphalt_Cross
   scale 3.5
  }
 }
-SCR_IndestructibleEnvironmentalEntity : "{905AA887D4CB67CC}Prefabs/Rocks/Desert/DesertRock_01.et" {
- coords 1487.674 -34.47 1349.457
+$grp SCR_IndestructibleEnvironmentalEntity : "{905AA887D4CB67CC}Prefabs/Rocks/Desert/DesertRock_01.et" {
+ {
+  coords 1487.674 -34.47 1349.457
+ }
+ {
+  coords 1717.311 -52.588 1261.559
+  angles 0 18.083 0
+ }
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
  {
@@ -1795,9 +1838,19 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/De
   coords 1476.466 -32.14 1332.837
   angles 41.04 126.901 92.087
  }
+ {
+  coords 1718.153 -66.198 1276.359
+  angles 0 79.529 0
+ }
 }
 SCR_DestructibleBuildingEntity : "{A548C1C5370D0734}Prefabs/Structures/Houses/Garage/Garage_E_01/Garage_E_01.et" {
  coords 1515.07 -1.074 1319.66
+}
+SCR_IndestructibleEnvironmentalEntity : "{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et" {
+ coords 1715.822 -1.56 1252.607
+}
+SCR_IndestructibleEnvironmentalEntity : "{D435306C5AD8F81E}Prefabs/Rocks/Desert/Desert_Stone_02.et" {
+ coords 1717.092 -2.313 1254.579
 }
 SCR_DestructibleBuildingEntity : "{D97095FEEDBD5613}Prefabs/Structures/Infrastructure/Bridges/ConcreteBridge_01/ConcreteBridge_01_Narrow_Long_PillarSmall.et" {
  coords 1726.14 -43.825 1272.853
@@ -1833,11 +1886,20 @@ DecalEntity : "{E17AA67AA04985C0}PrefabLibrary/DefaultLibrary/Decals/Dirt/Decal_
  angles -89.972 0 69.524
  scale 4.2
 }
+SCR_IndestructibleEnvironmentalEntity : "{E8CDA5E742418141}Prefabs/Rocks/Desert/Desert_Cluster_04.et" {
+ coords 1714.658 -0 1251.108
+ angles 17.474 6.915 22.977
+}
 SCR_IndestructibleEnvironmentalEntity : "{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et" {
  coords 1477.585 -42.337 1329.224
  angles 0.159 113.041 83.373
 }
-SCR_IndestructibleEnvironmentalEntity : "{FC0E9C67680FE8E2}Prefabs/Rocks/Desert/DesertRock_02.et" {
- coords 1478.081 -33.204 1338.33
- angles 0 103.469 0
+$grp SCR_IndestructibleEnvironmentalEntity : "{FC0E9C67680FE8E2}Prefabs/Rocks/Desert/DesertRock_02.et" {
+ {
+  coords 1478.081 -33.204 1338.33
+  angles 0 103.469 0
+ }
+ {
+  coords 1716.402 -51.332 1281.813
+ }
 }
