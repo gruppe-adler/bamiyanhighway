@@ -4,14 +4,14 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A591533F94577AE}" {
-    Position 0 0 0
+    Position -17.797 2.208 -0
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533F9457D0F}" {
-    Position 5 -0.452 0
+    Position 4.927 -1.348 -0.007
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -374,7 +374,7 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A591533F94577AE}" {
-    Position 0 0 0
+    Position -16.959 2.44 -0
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -736,10 +736,10 @@ $grp SplineShapeEntity {
       ID "526283EEB3C31502"
       SplinePoints {
        ShapePoint "{5256E6ED186CB7B5}" {
-        Position 0 0 0
+        Position -16.959 2.44 -0
        }
        ShapePoint "{5256E6ED186CB58D}" {
-        Position 5 -0.452 0
+        Position 5 -0.452 -0
        }
        ShapePoint "{6A66AB6DFDD3BE08}" {
         Position 17.423 -0.697 3.351
