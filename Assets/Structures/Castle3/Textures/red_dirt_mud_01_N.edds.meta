@@ -1,17 +1,17 @@
 MetaFileClass {
  Name "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
  Configurations {
-  PNGResourceClass PC : "{CEA87F769FD618D2}Configs/System/ResourceTypes/PC/TextureNormalMap.conf" {
+  PNGResourceClass PC : "{835E083C88C3D9C3}Configs/System/ResourceTypes/PC/TextureTerrainNormal.conf" {
   }
-  PNGResourceClass XBOX_ONE : "{5B84FAB5D39FB8AA}Configs/System/ResourceTypes/XBOX_ONE/TextureNormalMap.conf" {
+  PNGResourceClass XBOX_ONE : "{6C5EFFA712A52100}Configs/System/ResourceTypes/XBOX_ONE/TextureTerrainNormal.conf" {
   }
-  PNGResourceClass XBOX_SERIES : "{1B409AA3788B720F}Configs/System/ResourceTypes/XBOX_SERIES/TextureNormalMap.conf" {
+  PNGResourceClass XBOX_SERIES : "{90ADE65A903F3042}Configs/System/ResourceTypes/XBOX_SERIES/TextureTerrainNormal.conf" {
   }
-  PNGResourceClass PS4 : "{9533DFD9EDDCEDD2}Configs/System/ResourceTypes/PS4/TextureNormalMap.conf" {
+  PNGResourceClass PS4 : "{6F6E5A1432381FD2}Configs/System/ResourceTypes/PS4/TextureTerrainNormal.conf" {
   }
-  PNGResourceClass PS5 : "{30F530559C17A96E}Configs/System/ResourceTypes/PS5/TextureNormalMap.conf" {
+  PNGResourceClass PS5 : "{5CEA2418C9F889F8}Configs/System/ResourceTypes/PS5/TextureTerrainNormal.conf" {
   }
-  PNGResourceClass HEADLESS : "{FC84ABE4B37D0DA0}Configs/System/ResourceTypes/HEADLESS/TextureNormalMap.conf" {
+  PNGResourceClass HEADLESS : "{EAB38BDFD096C0A6}Configs/System/ResourceTypes/HEADLESS/TextureTerrainNormal.conf" {
   }
   PNGResourceClass Xbox : PC {
   }
