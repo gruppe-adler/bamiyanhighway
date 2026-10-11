@@ -1711,15 +1711,15 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/De
 }
 $grp SCR_DestructibleBuildingEntity : "{14AFDAC11CF3DE92}Prefabs/Structures/Bulding/Ind/Misc_Tram_EP1.et.et" {
  {
-  coords 20.116 -9.987 704.968
+  coords 32.244 -9.858 710.912
  }
  {
-  coords 19.584 -9.987 707.662
-  angles 0 -33.504 0
+  coords 33.71 -9.821 711.929
+  angles -3.082 -33.417 -1.609
  }
  {
-  coords 19.691 -9.987 702.472
-  angles 0 19.373 0
+  coords 29.85 -11.03 706.318
+  angles 0 19.373 -82.719
  }
 }
 GenericEntity : "{17141C691DCD56C1}Prefabs/Structures/Wreck/bluecar1.et" {
@@ -1740,16 +1740,6 @@ Tree : "{1B72E3F82B36964B}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragi
 SCR_IndestructibleEnvironmentalEntity : "{1D47F36327115E66}Prefabs/Structures/Rock/African_Rock/GraniteCliff_African_02.et" {
  coords 842.656 -47.359 985.445
  angles 0 -26.543 0
-}
-$grp SCR_DestructibleBuildingEntity : "{269BABBF987FF2E6}Prefabs/Structures/Bulding/Ind/Ind_Coltan_Tunnel_EP1.et" {
- {
-  coords 14.923 -9.729 717.879
-  angles 0 -29.962 0
- }
- {
-  coords 26.07 -9.729 724.305
-  angles 0 -29.962 0
- }
 }
 $grp SCR_DestructibleBuildingEntity : "{26D9ACB98DEC20C2}Prefabs/Structures/Wall/Wall_2_Door.et" {
  {

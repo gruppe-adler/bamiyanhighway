@@ -1,0 +1,5 @@
+MatPBRBasic {
+ Color 0.888 0.774 0.724 1
+ BCRMap "{01CD64C657979249}Assets/Clutter/Rocks/Data/c_stones_sharp_small_01_red_BCR.edds"
+ NMOMap "{3915DF548EE0C0D7}Assets/Clutter/Rocks/Data/c_stones_sharp_small_01_red_NMO.edds"
+}

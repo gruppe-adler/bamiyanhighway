@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "6A96D0ADE878E895"
+ components {
+  MeshObject "{6A96D0ADC832CBFA}" {
+   Object "{35E8D08E9ECD7158}Assets/Clutter/Rocks/c_stones_sharp_small_01.xob"
+   Materials {
+    MaterialAssignClass "{6A96D0ADF5AEE709}" {
+     SourceMaterial "c_stones_sharp_01"
+     AssignedMaterial "{EB86761FAF90C709}Assets/Clutter/Rocks/Data/c_stones_sharp_01_red.emat"
+    }
+   }
+  }
+ }
+ coords 1.82 3.083 3.006
+}

@@ -3261,7 +3261,6 @@ $grp SplineShapeEntity {
       {
        coords -16.674 76.868 389.013
        angles -1.62 129.467 2.031
-       scale 1
       }
       {
        coords -10.606 72.329 394.623
@@ -19988,7 +19987,6 @@ $grp SplineShapeEntity {
       {
        coords -130.69 10.021 -15.523
        angles -1.789 165.13 6.753
-       scale 1
       }
       {
        coords -147.996 11.521 -11.042
@@ -20738,7 +20736,6 @@ $grp SplineShapeEntity {
       {
        coords -301.033 91.292 201.403
        angles 3.479 -89.398 -0.337
-       scale 1
       }
       {
        coords -313.706 97.531 207.744
@@ -21950,7 +21947,6 @@ $grp SplineShapeEntity {
       {
        coords -83.716 70.74 335.071
        angles 8.134 176.56 -36.021
-       scale 1
       }
       {
        coords -320.041 139.209 305.267
@@ -24169,7 +24165,6 @@ $grp SplineShapeEntity {
       {
        coords -286.553 97.46 241.897
        angles -3.322 -95.87 3.276
-       scale 1
       }
       {
        coords -283.923 113.033 259.272
@@ -25444,7 +25439,6 @@ $grp SplineShapeEntity {
       {
        coords -132.01 91.427 190.621
        angles 3.303 115.283 -1.851
-       scale 1
       }
       {
        coords -362.276 141.535 270.596
@@ -25558,7 +25552,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -67.35 104.623 407.873
-       angles -4.713 -80.488 -0
+       angles -4.713 -80.488 0
        scale 0.607
       }
       {
@@ -28103,7 +28097,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -202.846 91.875 198.587
-       angles -0 -25.863 -1
+       angles 0 -25.863 -1
        scale 0.822
       }
       {
@@ -28494,7 +28488,6 @@ $grp SplineShapeEntity {
       {
        coords -235.847 122.92 268.522
        angles 1.263 117.48 -2.077
-       scale 1
       }
       {
        coords -221.6 119.418 257.392
@@ -28694,7 +28687,6 @@ $grp SplineShapeEntity {
       {
        coords -192.44 85.532 183.568
        angles 2.99 58.559 0.506
-       scale 1
       }
       {
        coords -195.048 84.918 182.785
@@ -57176,7 +57168,6 @@ $grp SplineShapeEntity {
       {
        coords -225.748 104.474 236.595
        angles -0.589 -31.389 1.5
-       scale 1
       }
       {
        coords -208.2 114.201 240.529
@@ -67168,7 +67159,30 @@ SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/
  angles 19.952 -40.435 174.919
  scale 0.7
 }
+GenericEntity : "{183EE3302F10853E}Prefabs/Props/Industrial/CrawlerCraneWreck_01/CrawlerCraneWreck_01_rusty.et" {
+ coords 13.234 -9.987 701.733
+ angles 0 16.3 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
+ coords 1535.648 -17.699 786.92
+ angles 2.973 82.966 87.776
+ scale 2
+}
+SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
+ coords 1576.856 -0.385 800.723
+ angles 71.385 -75.907 174.556
+ scale 1.54
+}
+SCR_DestructibleEntity : "{8CBA9D089278A4D7}Prefabs/Structures/Industrial/CoalMineShaft_01/CoalMineShaft_USSR_01_tippler.et" {
+ Flags 0 0x80000
+ coords 30.985 -9.99 715.426
+ angles 0 -28.215 0
+}
 SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
  coords 1194.466 -40.811 1131.865
  angles -10.545 -32.807 0
+}
+SCR_DestructibleBuildingEntity : "{EAF94EE6779EB1DE}Prefabs/Structures/Industrial/CoalMineShaft_01/Complete/CoalMineShaft_01_complete_base.et" {
+ coords 31.076 -9.987 715.246
+ angles 0 151.81 0
 }

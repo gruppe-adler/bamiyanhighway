@@ -1,7 +1,10 @@
 TerrainMaterial : "{A32410815EBEA300}Terrains/Common/Surfaces/DirtTakistan_Dark.emat" {
- Color 0.44 0.353 0.317 1
+ Color 0.44 0.352 0.319 1
  BCRMap "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
  NHOMap "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
+ ClutterConfig "{2F9CB89EC892FCA7}Configs/Clutter/Sets/c_set_Dirt_01_red.conf"
+ MiddleColor 0.44 0.352 0.319 1
  BCRMiddleMap "{1E725158449C2027}Assets/Structures/Castle3/Textures/red_dirt_mud_01_diff_4k.edds"
  NHOMiddleMap "{31304FA40303EE4B}Assets/Structures/Castle3/Textures/red_dirt_mud_01_N.edds"
+ MiddleScaleUV 12.3
 }
