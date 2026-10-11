@@ -92,7 +92,7 @@ $grp Tree : "{4B176F8E58FA9D53}Prefabs/Vegetation/Tree/t_carpinus_betulus/t_carp
   angles 0 -63.573 0
  }
  {
-  coords 1557.267 -0 1018.147
+  coords 1556.577 -0.044 1018.671
   angles -2.283 -142.673 -3.35
  }
  {
@@ -532,7 +532,7 @@ $grp Tree : "{B78F72C338993EA1}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula
   angles 0 19.079 0
  }
  {
-  coords 1467.529 -0.123 957.978
+  coords 1467.529 -0.084 956.174
   angles 0 -90.164 0
  }
 }

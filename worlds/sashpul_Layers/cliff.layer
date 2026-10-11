@@ -98,13 +98,13 @@ StaticModelEntity : "{20142DB5C4E8D026}Temppa/Prefabs/Structures/villa/tem_villa
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{28BA4EC52CBF7A35}Prefabs/Rocks/Granite/Granite_Cluster_02_V2.et" {
  {
-  coords 1577.973 -0.125 957.339
-  angles -21.617 79.639 -38.842
+  coords 1578.009 -0.207 957.243
+  angles -6.837 62.902 -42.881
   scale 0.7
  }
  {
-  coords 1578.766 -0.282 955.892
-  angles -21.617 79.639 -38.842
+  coords 1579.007 -0.189 955.465
+  angles 0.149 79.975 -9.461
   scale 0.7
  }
  {
