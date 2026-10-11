@@ -6,11 +6,33 @@ SCR_DestructibleBuildingEntity : "{3E5D56D7448CE0BD}Prefabs/Structures/Bulding/H
  coords 1195.715 0.653 1011.417
  angles 0 55.778 0
 }
+SCR_DestructibleBuildingEntity : "{4C2C7FEB6DE91EAF}Prefabs/Structures/Bulding/HouseK/House_K_7_EP1_Full_White.et" {
+ coords 1737.788 -40.255 1095.624
+ angles 0 -174.84 0
+}
+SCR_DestructibleBuildingEntity : "{63BF8604130E7FC1}Prefabs/Structures/Bulding/HouseL/House_L_3_EP1.et" {
+ coords 1722.9 -40.248 1095.26
+ angles 0 -89.723 0
+}
 SCR_DestructibleBuildingEntity : "{750DA549F335AE24}Prefabs/Structures/PrefabComposition/afghan_house_set_02.et" {
  coords 1004.632 -33.55 1070.035
  angles 0 -24.379 0
 }
-SCR_DestructibleBuildingEntity : "{77D9086CD1F98694}Prefabs/Structures/Bulding/HouseL/House_L_3_EP1_Full.et" {
- coords 1548.859 -40.952 1146.36
- angles 1.213 -44.891 -1.208
+$grp SCR_DestructibleBuildingEntity : "{77D9086CD1F98694}Prefabs/Structures/Bulding/HouseL/House_L_3_EP1_Full.et" {
+ {
+  coords 1548.859 -40.952 1146.36
+  angles 1.213 -44.891 -1.208
+ }
+ {
+  coords 1728.182 -39.883 1083.138
+  angles 0 -177.244 0
+ }
+}
+SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
+ coords 1744.949 -46.473 1097.332
+ angles 0 0 90.005
+}
+GenericEntity : "{F34E4A33FB471ECA}Prefabs/Structures/Wreck/tractor.et" {
+ coords 1734.002 -40.504 1090.549
+ angles -2.422 97.356 -4.614
 }
