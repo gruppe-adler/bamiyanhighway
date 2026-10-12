@@ -1,0 +1,5 @@
+MatRiver : "{53A33317B1C9B8E0}Terrains/Common/Water/River/RiverSurface_01.emat" {
+ FlowSpeed 0.078
+ CentralFlowAccent 0.1
+ OuterFlow 0.1
+}
