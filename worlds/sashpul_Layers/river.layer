@@ -1685,6 +1685,14 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{3065CC263BC89F1D}Prefabs/Rocks/De
 SCR_IndestructibleEnvironmentalEntity : "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et" {
  coords 1714.693 -1.502 1253.032
 }
+SCR_IndestructibleEnvironmentalEntity : "{39412454BDA355FF}Prefabs/Rocks/Desert/DesertSurfaceStone_04.et" {
+ coords 1735.755 -48.907 1199.532
+ angles 14.654 -88.771 0
+}
+SCR_DestructibleBuildingEntity : "{5B22476A7FA55A62}Prefabs/Structures/Bulding/HouseC/House_C_5_EP1.et" {
+ coords 1741.418 -45.47 1194.706
+ angles 0 87.34 0
+}
 $grp SCR_IndestructibleEnvironmentalEntity : "{5C31F8C6870C1034}Prefabs/Rocks/Desert/Desert_Cluster_03.et" {
  {
   coords 1716.4 0 1250.181

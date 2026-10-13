@@ -914,7 +914,7 @@ $grp PolylineShapeEntity {
     Position -10.567 1.669 -5.47
    }
    ShapePoint "{6A98E1469C76CC4E}" {
-    Position -0.193 -0 -0.016
+    Position -0.193 0 -0.016
    }
   }
   LineColor 0 0 0 0
@@ -928,7 +928,7 @@ $grp PolylineShapeEntity {
       angles 0 -27.731 0
      }
      SCR_DestructibleEntity : "{4EF4686F9F99FE80}PrefabLibrary/DefaultLibrary/Walls/Brick/BrickWall_02_Pole.et" {
-      coords -0.537 -0 -0.197
+      coords -0.537 0 -0.197
       angles 0 -27.731 0
      }
      SCR_DestructibleEntity : "{D4101A467FE8E7EE}PrefabLibrary/DefaultLibrary/Walls/Brick/BrickWall_02_8m.et" {
@@ -1117,6 +1117,16 @@ $grp StaticModelEntity : "{092D829CA26D983C}Prefabs/Structures/Infrastructure/Pa
   angles 0 177.9 -1.359
  }
 }
+$grp SCR_DestructibleBuildingEntity : "{11219C5E9D717E14}Prefabs/Structures/Infrastructure/Waterworks/WaterTreatmentPlant_01/WaterTreatmentPlant_01_small.et" {
+ {
+  coords 1295.759 -33.092 1122.967
+  angles 0 63.591 0
+ }
+ {
+  coords 1293.895 -33.092 1126.779
+  angles 0 63.591 0
+ }
+}
 $grp Tree : "{124518D13290A687}Prefabs/Vegetation/Bush/b_salix_cinerea_0.et" {
  {
   coords 1260.372 0.14 1049.182
@@ -1157,6 +1167,14 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/De
   coords 1307.697 -55.415 1104.636
   angles 0 -119.246 0
  }
+ {
+  coords 1298.946 -55.345 1134.438
+  angles 0 87.749 0
+ }
+}
+SCR_DestructibleBuildingEntity : "{1A9B605652C152DF}PrefabLibrary/DefaultLibrary/Structures/Industrial/FuelTank_02/FuelTank_02_grey.et" {
+ coords 1305.496 0.154 1107.179
+ angles 0 -117.507 0
 }
 $grp Tree : "{1B72E3F82B36964B}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_3s.et" {
  {
@@ -1201,6 +1219,10 @@ $grp Tree : "{1B72E3F82B36964B}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_
 }
 Tree : "{1C4EEFC81C19E4C6}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_0.et" {
  coords 1246.371 0 1061.02
+}
+SCR_DestructibleBuildingEntity : "{1D4AA0AA6AF86050}Prefabs/Structures/Infrastructure/Waterworks/WaterStation_01/WaterStation_01_base.et" {
+ coords 1286.637 -0.001 1096.751
+ angles 0 -27.668 0
 }
 $grp Tree : "{23C0BE9D80929DBD}Prefabs/Vegetation/Bush/b_salix_cinerea_1w.et" {
  {
@@ -1415,6 +1437,10 @@ $grp SCR_DestructibleEntity : "{559D2FB1A54441E7}Prefabs/Structures/Walls/Pipe/P
   angles 0 150.115 0
   placement none
  }
+}
+SCR_DestructibleBuildingEntity : "{5945D1EF6878D47C}PrefabLibrary/DefaultLibrary/Structures/Industrial/FuelTank_01/FuelTank_01.et" {
+ coords 1303.082 0.335 1097.552
+ angles 0 63.083 0
 }
 Tree : "{59CD4C0D8A6C586E}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_3s_aut.et" {
  coords 1268.513 -0.218 1060.769
@@ -1675,6 +1701,10 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/De
   angles 0 -121.812 90
  }
 }
+SCR_DestructibleBuildingEntity : "{A5439DD9F4F5400C}PrefabLibrary/DefaultLibrary/Structures/Industrial/FuelTank_02/FuelTank_02_green.et" {
+ coords 1299.777 0.201 1118.503
+ angles 0 63.793 0
+}
 $grp Tree : "{AD7EFA7B1214DD21}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_0l.et" {
  {
   coords 1710.136 0 1215.652
@@ -1836,6 +1866,9 @@ $grp GenericEntity : "{D16F58EC1C0027D7}Prefabs/Vegetation/Cuttings/Salix_cinere
   coords 1236.257 -37.527 1039.947
   angles -12.796 -173.133 0
  }
+}
+GenericEntity : "{D5247F493225CA91}Prefabs/Props/Civilian/WateringCan_01.et" {
+ coords 1288.091 -32.901 1099.744
 }
 Tree : "{DDE3E01CB952BF9E}Prefabs/Vegetation/Plant/Hedera_Helix/p_hedera_helix_corner_02.et" {
  coords 1240.414 -1.09 1080.412
