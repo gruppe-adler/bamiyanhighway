@@ -137,7 +137,7 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A5915321B20293A}" {
-    Position 567.732 -3.5 313.175
+    Position 550.199 -3.5 305.807
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -150,8 +150,17 @@ $grp SplineShapeEntity {
      }
     }
    }
+   ShapePoint "{6A9B0899CB94854D}" {
+    Position 564.771 -3.414 311.867
+    Data {
+     RiverPointData "{0000000031BA958C}" {
+      WidthOverride Fixed
+      FixedWidth 6
+     }
+    }
+   }
    ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.678 -3.5 321.399
+    Position 583.725 -3.5 321.42
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
@@ -332,7 +341,7 @@ $grp SplineShapeEntity {
         Position -16.959 2.44 0
        }
        ShapePoint "{5256E6ED186CB58D}" {
-        Position 5 -0.452 -0
+        Position 5 -0.452 0
        }
        ShapePoint "{6A66AB6DFDD3BE08}" {
         Position 17.423 -0.697 3.351
@@ -1139,13 +1148,13 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.673 -3.539 321.398
+    Position 583.673 -3.506 321.398
    }
    ShapePoint "{6A9ACE6A8E8D9D60}" {
     Position 585.363 -3.631 322.258
    }
    ShapePoint "{6A9ACE6A44307624}" {
-    Position 585.924 -5.47 322.507
+    Position 585.924 -5.537 322.507
    }
   }
   LineColor 0 0 0 0
@@ -1169,7 +1178,7 @@ $grp SplineShapeEntity {
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
-      FixedWidth 4.12
+      FixedWidth 6
      }
     }
    }
@@ -1179,11 +1188,12 @@ $grp SplineShapeEntity {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
      SplinePointData SplinePointData {
-      InTangent 11.646 -0.47 5.486
-      OutTangent 13.003 -0.525 6.126
+      InTangent 19.459 -0.47 4.483
+      OutTangent 19.459 -0.47 4.483
      }
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Base
+      FixedWidth 8
      }
     }
    }
