@@ -9,7 +9,7 @@ MatRiver {
  SunPower 1024
  SunInfluence 0.025
  BumpNormalEnabled 1
- WaterVisibility 1
+ WaterVisibility 3
  HalfLightDistance 30
  GeometryBlend 0
  RefractOffset 0

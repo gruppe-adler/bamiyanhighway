@@ -6560,7 +6560,7 @@ $grp SplineShapeEntity {
   angles -0.428 0.003 -0.428
   Points {
    ShapePoint "{6A9914A28D048360}" {
-    Position 0 -0 0
+    Position 0 0 0
    }
    ShapePoint "{6A9914A28D048F49}" {
     Position 13.254 -0.118 14.996
@@ -6837,6 +6837,19 @@ $grp SplineShapeEntity {
    }
   }
  }
+}
+StaticModelEntity : "{0DA90E5B79E762EF}Prefabs/Structures/Infrastructure/Waterworks/FloodGate_01/FloodGate_01_stone_open.et" {
+ coords 610.041 0.234 840.711
+ {
+  StaticModelEntity {
+   ID "56ECD2D2FC121A15"
+   coords 0 1.117 0
+  }
+ }
+}
+SCR_DestructibleBuildingEntity : "{1C87C72319097FC1}Prefabs/Structures/Walls/Concrete/ConcreteRetainingWall_01/ConcreteRetainingWall_01_4m.et" {
+ coords 631.631 -38.487 844.543
+ angles 0 67.669 0
 }
 SCR_DestructibleBuildingEntity : "{6DF062B77D4F27B5}Prefabs/Structures/Infrastructure/Bridges/BridgeConcrete_E_01_small/BridgeConcrete_E_01_small.et" {
  coords 1180.488 -1.008 1054.54
