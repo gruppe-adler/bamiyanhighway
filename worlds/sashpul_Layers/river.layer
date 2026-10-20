@@ -477,28 +477,49 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A8C7850378F8348}" {
-    Position 24.479 1.755 -24.148
+    Position 24.499 1.476 -24.174
    }
    ShapePoint "{6A8C78503580B87F}" {
-    Position 48.123 2.338 -54.716
+    Position 45.66 2.321 -54.165
+   }
+   ShapePoint "{6AA944EDB581B38C}" {
+    Position 54.726 2.1 -56.193
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 1.527 -0.008 0.038
+      OutTangent 1.527 -0.008 0.038
+     }
+    }
    }
    ShapePoint "{6A8C785032706898}" {
-    Position 64.408 2.089 -57.521
+    Position 68.988 2.15 -60.787
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 24.32 -0.072 -27.187
+      OutTangent 24.32 -0.072 -27.187
+     }
+    }
    }
    ShapePoint "{6A8C785033686FFD}" {
-    Position 102.852 2.166 -96.67
+    Position 102.852 2.2 -96.67
    }
    ShapePoint "{6A8C785033E1A3F6}" {
-    Position 114.582 2.395 -109.915
+    Position 114.595 2.3 -109.931
    }
    ShapePoint "{6A8C7850308851EE}" {
-    Position 145.635 3.437 -151.584
+    Position 145.627 3.3 -151.572
    }
    ShapePoint "{6A8C7850316E9668}" {
-    Position 149.211 3.942 -165.338
+    Position 149.682 3.85 -165.276
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 3.113 0.144 -25.976
+      OutTangent 3.113 0.144 -25.976
+     }
+    }
    }
    ShapePoint "{6A8C785031C1A743}" {
-    Position 148.373 3.72 -187.688
+    Position 148.373 3.9 -187.688
    }
    ShapePoint "{6A8C78503E85AAFC}" {
     Position 142.655 4.312 -230.607
@@ -522,22 +543,22 @@ $grp SplineShapeEntity {
     Position 197.115 8.202 -377.171
    }
    ShapePoint "{6A8C78503AAD1D46}" {
-    Position 196.961 7.932 -401.713
+    Position 196.961 8.11 -401.712
    }
    ShapePoint "{6A8C78503B21E28B}" {
     Position 212.225 8.54 -419.418
    }
    ShapePoint "{6A8C78503891F89A}" {
-    Position 245.7 8.566 -436.496
+    Position 245.697 8.746 -436.494
    }
    ShapePoint "{6A8C78503920B581}" {
-    Position 274.586 9.652 -456.296
+    Position 274.586 9.726 -456.296
    }
    ShapePoint "{6A8C7850399053BC}" {
-    Position 291.12 9.674 -478.504
+    Position 291.12 9.727 -478.504
    }
    ShapePoint "{6A8C7850067670C3}" {
-    Position 311.06 9.694 -500.999
+    Position 311.06 9.728 -500.999
    }
    ShapePoint "{6A8C7850072B03EB}" {
     Position 316.676 9.729 -505.409
@@ -568,7 +589,13 @@ $grp SplineShapeEntity {
     Position 24.479 1.755 -24.148
    }
    ShapePoint "{6A8C78503580B87F}" {
-    Position 47.591 2.632 -55.709
+    Position 47.591 2.15 -55.709
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 25.736 0.199 -17.557
+      OutTangent 25.736 0.199 -17.557
+     }
+    }
    }
    ShapePoint "{6A8C785032706898}" {
     Position 64.408 2.089 -57.521
@@ -583,7 +610,13 @@ $grp SplineShapeEntity {
     Position 145.635 3.437 -151.584
    }
    ShapePoint "{6A8C7850316E9668}" {
-    Position 149.211 3.942 -165.338
+    Position 149.582 3.941 -165.234
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 0.22 0.033 -4.158
+      OutTangent 0.22 0.033 -4.158
+     }
+    }
    }
    ShapePoint "{6A8C785031C1A743}" {
     Position 148.373 3.72 -187.688
@@ -1840,6 +1873,16 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{5C31F8C6870C1034}Prefabs/Rocks/De
   angles 37.034 17.804 22.115
  }
 }
+$grp StaticModelEntity : "{5E7DCD0C74688ADE}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_forest_turnin.et" {
+ {
+  coords 1660.988 -43.182 1099.001
+  angles 0 47.856 0
+ }
+ {
+  coords 1636.913 -43.201 1088.431
+  angles 0 -73.883 0
+ }
+}
 $grp DecalEntity : "{7C184D5F132A8987}Prefabs/Decals/Asphalt/Decal_Asphalt_Crossroad_01.et" {
  {
   coords 1541.662 -0.073 1348.784
@@ -1860,6 +1903,10 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{905AA887D4CB67CC}Prefabs/Rocks/De
   coords 1717.311 -52.588 1261.559
   angles 0 18.083 0
  }
+}
+StaticModelEntity : "{9AF0242036F3D3D3}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_dirt_straight.et" {
+ coords 1532.186 -43.367 1039.808
+ angles 0 140.135 0
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
  {
@@ -1882,8 +1929,31 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/De
 SCR_DestructibleBuildingEntity : "{A548C1C5370D0734}Prefabs/Structures/Houses/Garage/Garage_E_01/Garage_E_01.et" {
  coords 1515.07 -1.074 1319.66
 }
+$grp StaticModelEntity : "{AFC5471AE0EB8294}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_forest_straight.et" {
+ {
+  coords 1650.988 -44.852 1130.096
+  angles 0 -35.625 0
+ }
+ {
+  coords 1533.775 -43.575 1046.149
+  angles 0 -30.738 0
+ }
+ {
+  coords 1667.51 -42.95 1084.647
+  angles 0 57.027 0
+ }
+ {
+  coords 1665.248 -42.919 1091.552
+  angles 0 64.231 0
+ }
+}
 SCR_IndestructibleEnvironmentalEntity : "{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et" {
  coords 1715.822 -1.56 1252.607
+}
+SCR_DestructibleBuildingEntity : "{C7B5580451331562}PrefabLibrary/DefaultLibrary/Infrastructure/Bridges/ConcreteBridge_01_Narrow_PillarSmall.et" {
+ coords 1834.638 -40.953 1074.157
+ angles 0 -40.653 0
+ scale 0.73
 }
 SCR_IndestructibleEnvironmentalEntity : "{D435306C5AD8F81E}Prefabs/Rocks/Desert/Desert_Stone_02.et" {
  coords 1717.092 -2.313 1254.579

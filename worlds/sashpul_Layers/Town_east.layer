@@ -1,0 +1,28 @@
+GenericEntity {
+ components {
+  MeshObject "{6AA9548E2787BFE9}" {
+   Object "{33613D0EEFFCECF3}Assets/ME_Bulding/HouseC/House_C_12_EP2.xob"
+  }
+ }
+ coords 1835.516 -39.846 1241.883
+ angles 0 -97.017 0
+}
+SCR_DestructibleBuildingEntity : "{356F79334AC4B4E9}Prefabs/Structures/Bulding/HouseC/House_C_4_EP1.et" {
+ coords 1835.305 -39.923 1302.536
+}
+SCR_DestructibleBuildingEntity : "{724B854BCD6D4E8B}Prefabs/Structures/Bulding/HouseC/House_C_4_EP1_Base.et" {
+ coords 1833.396 -37.552 1282.911
+ angles 0 -89.276 0
+}
+SCR_DestructibleBuildingEntity : "{A0E65FE503C8D6D2}Prefabs/Structures/Bulding/HouseC/House_C_1_EP1.et" {
+ coords 1832.33 -39.83 1254.758
+ angles 0 83.936 0
+}
+SCR_DestructibleBuildingEntity : "{BCA7012AFAE5ACAC}Prefabs/Structures/Bulding/HouseC/House_C_4_EP3.et" {
+ coords 1841.975 -42.242 1318.49
+ angles 0 101.087 0
+}
+SCR_DestructibleBuildingEntity : "{CC978E65AF4A0678}Prefabs/Structures/Bulding/HouseC/House_C_3_EP1_Base.et" {
+ coords 1835.267 -42.452 1221.365
+ angles 0 83.876 0
+}
