@@ -67173,6 +67173,10 @@ SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite
  angles 71.385 -75.907 174.556
  scale 1.54
 }
+GenericEntity : "{6720CD0D5B7B7768}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Long.et" {
+ coords 1181.682 -32.835 1052.97
+ angles 0 -46.09 0
+}
 SCR_DestructibleEntity : "{8CBA9D089278A4D7}Prefabs/Structures/Industrial/CoalMineShaft_01/CoalMineShaft_USSR_01_tippler.et" {
  Flags 0 0x80000
  coords 30.985 -9.99 715.426

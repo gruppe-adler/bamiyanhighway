@@ -1358,8 +1358,8 @@ $grp StaticModelEntity : "{302CBF94736F3C34}Prefabs/Structures/Infrastructure/Pa
  }
 }
 SCR_IndestructibleEnvironmentalEntity : "{324A0E6F143AE290}Prefabs/Rocks/Granite/GraniteRock_03_MOG.et" {
- coords 1091.711 -35.797 1020.336
- angles 0 -20.888 0
+ coords 1133.049 -34.69 1042.927
+ angles 0 -57.873 0
 }
 StaticModelEntity : "{33A67D671F059565}Prefabs/Structures/BuildingParts/Entry/Doorstep_01_Stairs.et" {
  coords 1257.975 -31.319 1102.24
@@ -1451,7 +1451,7 @@ GenericEntity : "{5BAA975FE04E94EF}Prefabs/Props/Civilian/BenchStreet/StreetBenc
  angles 0 153.743 0
 }
 SCR_IndestructibleEnvironmentalEntity : "{5C073036215B0C18}Prefabs/Rocks/Granite/GraniteRock_02_MOG.et" {
- coords 1072.714 -36.431 1024.842
+ coords 1072.714 -36.082 1024.842
  angles 0 -17.931 0
 }
 Tree : "{5C388FCA613EA2D8}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_2s_aut.et" {
@@ -1681,7 +1681,7 @@ GameEntity : "{862432FB57C1C1B3}Prefabs/Props/Civilian/LampKerosene_01/LampKeros
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
  {
-  coords 1202.289 -38.847 1064.986
+  coords 1202.289 -39.453 1064.986
   angles 0 -31.141 90
  }
  {
@@ -1956,7 +1956,7 @@ $grp GameEntity : "{EC645B2E2123131F}Prefabs/Props/Civilian/LampKerosene_01/Lamp
  }
 }
 SCR_IndestructibleEnvironmentalEntity : "{EED072DD7EF93F80}Prefabs/Rocks/Granite/GraniteRock_01_MOG.et" {
- coords 1078.547 -35.249 1021.424
+ coords 1078.547 -34.61 1021.424
  angles -3.535 14.703 -0.918
  scale 0.9
 }
@@ -1982,7 +1982,7 @@ StaticModelEntity : "{F2415A706EED436C}Prefabs/Structures/Infrastructure/Pavemen
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et" {
  {
-  coords 1186.787 -40.722 1056.701
+  coords 1186.787 -41.528 1056.701
   angles 0 -26.502 90
  }
  {

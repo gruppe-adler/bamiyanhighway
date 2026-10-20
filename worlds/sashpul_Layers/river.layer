@@ -4,140 +4,140 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A591533F94577AE}" {
-    Position -17.797 -3.5 0
+    Position -17.797 -0.2 0
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533F9457D0F}" {
-    Position 4.927 -3.5 -0.007
+    Position 4.927 -0.2 -0.007
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533EFFBA787}" {
-    Position 17.423 -3.5 3.351
+    Position 17.423 -0.2 3.351
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E811FDE1}" {
-    Position 38.614 -3.5 16.803
+    Position 38.614 -0.2 16.803
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533EB6EDB6C}" {
-    Position 57.318 -3.5 48.542
+    Position 57.318 -0.2 48.542
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533EAB3BC0C}" {
-    Position 76.251 -3.5 67.825
+    Position 76.251 -0.2 67.825
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E4FC030B}" {
-    Position 106.365 -3.5 86.693
+    Position 106.365 -0.2 86.693
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E7D96844}" {
-    Position 145.58 -3.5 122.711
+    Position 145.58 -0.2 122.711
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E6E70DE6}" {
-    Position 170.259 -3.5 148.231
+    Position 170.259 -0.2 148.231
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E17FCD16}" {
-    Position 194.865 -3.5 169.37
+    Position 194.865 -0.2 169.37
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E035F1AB}" {
-    Position 224.029 -3.5 184.319
+    Position 224.029 -0.2 184.319
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E0A27F18}" {
-    Position 251.49 -3.5 198.538
+    Position 251.49 -0.2 198.538
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E3B85F4B}" {
-    Position 274.275 -3.5 202.389
+    Position 274.275 -0.2 202.389
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A591533E2F7E81D}" {
-    Position 307.958 -3.5 228.036
+    Position 307.958 -0.2 228.036
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915321DB2315C}" {
-    Position 335.533 -3.5 247.527
+    Position 335.533 -0.2 247.527
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915321CB0720F}" {
-    Position 364.276 -3.5 258.84
+    Position 364.276 -0.2 258.84
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915321F211BE9}" {
-    Position 393.976 -3.5 262.528
+    Position 393.976 -0.2 262.528
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915321E46EC8D}" {
-    Position 448.231 -3.5 268.028
+    Position 448.231 -0.2 268.028
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A59153219E91DA7}" {
-    Position 498.21 -3.5 281.545
+    Position 498.21 -0.2 281.545
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
     }
    }
    ShapePoint "{6A5915321B20293A}" {
-    Position 550.199 -3.5 305.807
+    Position 550.199 -0.2 305.807
     Data {
      ForestGeneratorPointData "{000000002C57B0BA}" {
      }
@@ -151,7 +151,7 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A9B0899CB94854D}" {
-    Position 564.771 -3.414 311.867
+    Position 564.771 -0.2 311.867
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
@@ -160,7 +160,7 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.725 -3.5 321.42
+    Position 583.725 -0.2 321.42
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
@@ -1148,10 +1148,16 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.673 -3.506 321.398
+    Position 583.673 -0.525 321.398
    }
    ShapePoint "{6A9ACE6A8E8D9D60}" {
-    Position 585.363 -3.631 322.258
+    Position 585.363 -0.876 322.258
+    Data {
+     SplinePointData SplinePointData {
+      InTangent -0.095 -1.328 -0.044
+      OutTangent -0.095 -1.328 -0.044
+     }
+    }
    }
    ShapePoint "{6A9ACE6A44307624}" {
     Position 585.924 -5.537 322.507

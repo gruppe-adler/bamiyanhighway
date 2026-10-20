@@ -107,6 +107,7 @@ $grp SplineShapeEntity {
   {
    RoadGeneratorEntity : "{47E7068FE332800D}PrefabLibrary/DefaultLibrary/Generators/Roads/Dirt/RG_TrailDirt_01.et" {
     coords 0 0.258 0
+    AdjustHeightMap 0
     RoadClearance 0
     RoadWidth 2
     FalloffStartWidth 0
