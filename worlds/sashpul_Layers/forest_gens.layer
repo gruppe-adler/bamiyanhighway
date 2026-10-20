@@ -34258,7 +34258,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -126.223 3.765 434.973
-       angles -0 179.223 -2.188
+       angles 0 179.223 -2.188
        scale 0.887
       }
       {
@@ -36398,7 +36398,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -216.954 8.688 999.086
-       angles -0 -69.252 -2.459
+       angles 0 -69.252 -2.459
        scale 1.138
       }
       {
@@ -37774,7 +37774,6 @@ $grp SplineShapeEntity {
       {
        coords -80.658 2.883 313.584
        angles -1.26 -128.613 0.724
-       scale 1
       }
       {
        coords -80.483 2.549 304.622
@@ -111232,7 +111231,6 @@ $grp SplineShapeEntity {
       {
        coords -98.055 3.647 347.211
        angles -0.551 -4.496 -0.714
-       scale 1
       }
       {
        coords -171.619 4.201 840.096
@@ -111295,7 +111293,7 @@ $grp SplineShapeEntity {
        scale 0.805
       }
       {
-       coords 32.161 -1.034 -32.547
+       coords 31.429 -0.16 -33.194
        angles -0.557 -128.063 -0.375
        scale 0.821
       }
@@ -111305,7 +111303,7 @@ $grp SplineShapeEntity {
        scale 0.954
       }
       {
-       coords 31.146 -0.91 -32.704
+       coords 30.664 -0.114 -32.406
        angles -1.94 -55.595 -1.877
        scale 0.813
       }
@@ -123513,4 +123511,46 @@ $grp SplineShapeEntity {
    }
   }
  }
+}
+DecalEntity : "{22F9041142B00E5A}PrefabLibrary/DefaultLibrary/Decals/Stains/Decal_OilStain_01_extralarge.et" {
+ coords 1282.937 0 1124.399
+ angles -90 -134.317 -180
+ scale 3.546
+}
+$grp StaticModelEntity : "{5E7DCD0C74688ADE}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_forest_turnin.et" {
+ {
+  coords 1660.988 -43.182 1099.001
+  angles 0 47.856 0
+ }
+ {
+  coords 1636.913 -43.201 1088.431
+  angles 0 -73.883 0
+ }
+}
+StaticModelEntity : "{9AF0242036F3D3D3}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_dirt_straight.et" {
+ coords 1532.186 -43.367 1039.808
+ angles 0 140.135 0
+}
+$grp StaticModelEntity : "{AFC5471AE0EB8294}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_forest_straight.et" {
+ {
+  coords 1650.988 -44.852 1130.096
+  angles 0 -35.625 0
+ }
+ {
+  coords 1533.775 -43.575 1046.149
+  angles 0 -30.738 0
+ }
+ {
+  coords 1667.51 -42.95 1084.647
+  angles 0 57.027 0
+ }
+ {
+  coords 1665.248 -42.919 1091.552
+  angles 0 64.231 0
+ }
+}
+DecalEntity : "{BD7194E89FF448BA}PrefabLibrary/DefaultLibrary/Decals/Stains/Decal_OilStain_01_large.et" {
+ coords 1279.408 0 1128.438
+ angles -90 -63.278 -180
+ scale 2.223
 }
