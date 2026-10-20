@@ -580,96 +580,108 @@ $grp PolylineShapeEntity {
     Position 1.048 -0.01 -1.045
    }
    ShapePoint "{6A9102DFD252E782}" {
-    Position -4.259 0.227 -3.103
+    Position -3.722 0.227 -3.764
    }
    ShapePoint "{6A9102DFCDB0DA92}" {
-    Position -10.618 0 -6.602
+    Position -10.175 0 -7.077
    }
    ShapePoint "{6A9102DFCE6D6E53}" {
-    Position -19.625 0 -11.201
+    Position -19.088 0 -11.862
    }
    ShapePoint "{6A9102DFCACDB0A5}" {
-    Position -26.711 0 -14.89
+    Position -26.174 0 -15.551
    }
    ShapePoint "{6A9102DFC5712165}" {
-    Position -33.255 0 -18.846
+    Position -32.718 0 -19.507
    }
    ShapePoint "{6A9102DFC5176A1B}" {
     Position -38.287 0 -22.499
    }
    ShapePoint "{6A9102DFC7D9A3F4}" {
-    Position -45.84 0 -25.73
+    Position -45.683 0 -26.287
    }
    ShapePoint "{6A9102DFC6CB57D8}" {
-    Position -55.479 0 -28.449
+    Position -54.09 -0.094 -30.257
+   }
+   ShapePoint "{6AA8E76E0C458C61}" {
+    Position -55.95 0.065 -27.89
    }
   }
   {
    WallGeneratorEntity : "{2781482CFE270E77}Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et" {
     Flags 0x100003 0
-    m_iSeed 16158
+    m_iSeed 22598
+    m_bSnapOffsetShapeToTheGround 0
     m_bEnableMiddleObject 0
     {
      $grp SCR_DestructibleEntity : "{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et" {
       {
-       coords 1.25 -0.037 -0.967
-       angles 0 -201.191 0
+       coords 1.236 -0.019 -0.938
+       angles 0 -209.684 0
       }
       {
-       coords -4.098 -0.006 -3.009
-       angles 0 -208.856 0
+       coords -3.726 0.244 -3.778
+       angles 0 -207.093 0
       }
       {
-       coords -16.063 0.004 -9.364
-       angles 0 -207.282 0
-      }
-      {
-       coords -33.172 -0.003 -18.774
-       angles 0 -216.057 0
+       coords -32.618 0 -19.459
+       angles 0 -208.198 0
       }
      }
      $grp SCR_DestructibleEntity : "{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et" {
       {
-       coords -2.368 -0.118 -2.37
-       angles 0 -201.191 0
+       coords -2.132 0.148 -2.858
+       angles 0 -209.684 0
       }
       {
-       coords -7.496 0.004 -4.882
-       angles 0 -208.856 0
+       coords -7.179 0.113 -5.544
+       angles 0 -207.093 0
       }
       {
-       coords -36.309 -0.006 -21.058
-       angles 0 -216.057 0
+       coords -15.724 0.015 -10.066
+       angles 0 -208.1 0
       }
       {
-       coords -52.438 -0.035 -27.559
-       angles 0 -196.321 0
+       coords -17.349 0.008 -10.933
+       angles 0 -208.1 0
+      }
+      {
+       coords -36.038 0 -21.293
+       angles 0 -208.198 0
+      }
+      {
+       coords -51.686 -0.07 -29.112
+       angles 0 -205.461 0
+      }
+      {
+       coords -53.382 -0.099 -30.14
+       angles 0 -138.775 0
       }
      }
      SCR_DestructibleEntity : "{D1A7F179B35C2F96}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Pole.et" {
-      coords -54.162 -0.136 -28.064
-      angles 0 -196.321 0
+      coords -54.733 -0.013 -28.957
+      angles 0 -138.775 0
      }
      $grp SCR_DestructibleEntity : "{FF9F22E572547ED5}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_8m.et" {
       {
-       coords -9.107 0.004 -5.776
-       angles 0 -207.282 0
+       coords -8.82 0.045 -6.379
+       angles 0 -208.1 0
       }
       {
-       coords -19.513 0.004 -11.142
-       angles 0 -207.505 0
+       coords -18.973 -0 -11.803
+       angles 0 -207.495 0
       }
       {
-       coords -26.461 -0.011 -14.744
-       angles 0 -211.124 0
+       coords -25.923 -0 -15.405
+       angles 0 -211.119 0
       }
       {
-       coords -37.775 -0.02 -22.183
-       angles 0 -203.741 0
+       coords -37.66 0 -22.167
+       angles 0 -207.178 0
       }
       {
-       coords -44.93 -0.106 -25.361
-       angles 0 -196.321 0
+       coords -44.619 0.002 -25.748
+       angles 0 -205.461 0
       }
      }
     }
@@ -1152,7 +1164,7 @@ $grp SCR_DestructibleEntity : "{12EE37D664E6FD36}Prefabs/Props/Decorations/Flowe
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/DesertCliff_NS_03.et" {
  {
-  coords 1227.359 -53.943 1081.908
+  coords 1224.899 -53.187 1085.84
   angles 0 -32.036 0
  }
  {
@@ -1681,7 +1693,7 @@ GameEntity : "{862432FB57C1C1B3}Prefabs/Props/Civilian/LampKerosene_01/LampKeros
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
  {
-  coords 1202.289 -39.453 1064.986
+  coords 1201.173 -39.453 1066.833
   angles 0 -31.141 90
  }
  {
@@ -1982,12 +1994,8 @@ StaticModelEntity : "{F2415A706EED436C}Prefabs/Structures/Infrastructure/Pavemen
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et" {
  {
-  coords 1186.787 -41.528 1056.701
+  coords 1187.392 -44.077 1057.003
   angles 0 -26.502 90
- }
- {
-  coords 1271.334 -52.832 1102.214
-  angles 0 -40.284 0
  }
  {
   coords 1289.368 -34.016 1086.369

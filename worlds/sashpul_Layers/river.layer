@@ -159,15 +159,6 @@ $grp SplineShapeEntity {
      }
     }
    }
-   ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.725 -0.2 321.42
-    Data {
-     RiverPointData "{0000000031BA958C}" {
-      WidthOverride Fixed
-      FixedWidth 3.8
-     }
-    }
-   }
   }
   LineColor 0 0 0 0
   {
@@ -1148,10 +1139,10 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.673 -0.525 321.398
+    Position 583.673 -0.19 321.398
    }
    ShapePoint "{6A9ACE6A8E8D9D60}" {
-    Position 585.363 -0.876 322.258
+    Position 585.384 -0.582 322.268
     Data {
      SplinePointData SplinePointData {
       InTangent -0.095 -1.328 -0.044
@@ -1169,7 +1160,7 @@ $grp SplineShapeEntity {
     coords 0 0 0
     Width 4
     ReverseFlow 1
-    Material "{73DE868F49EE7D23}Terrains/Common/Water/River/bamiyan_river.emat"
+    Material "{07EB465BC4A300DC}Terrains/Common/Water/River/bamiyan_river_weir.emat"
     Clearance 2.5
     GUID "6A9ACE6A7DF025BD"
    }
@@ -1740,6 +1731,41 @@ $grp SplineShapeEntity {
       Width 2
      }
     }
+   }
+  }
+ }
+ {
+  coords 17.816 -31.003 583.094
+  angles 0 5.763 0
+  Points {
+   ShapePoint "{6A9B0899CB94854D}" {
+    Position 564.468 -0.2 311.867
+    Data {
+     RiverPointData "{0000000031BA958C}" {
+      WidthOverride Fixed
+      FixedWidth 6
+     }
+    }
+   }
+   ShapePoint "{6A9ACE6A476F502A}" {
+    Position 583.725 -0.2 321.42
+    Data {
+     RiverPointData "{0000000031BA958C}" {
+      WidthOverride Fixed
+      FixedWidth 3.8
+     }
+    }
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   RiverEntity : "{DBFC6B2C12D5ED5A}PrefabLibrary/DefaultLibrary/Generators/Water/River/R_RiverMedium_01.et" {
+    coords 0 0 0
+    Width 9.9
+    ReverseFlow 1
+    Material "{208FD8E0209D5F44}Terrains/Common/Water/River/bamiyan_river_weir_pre.emat"
+    Clearance 2.5
+    GUID "6AA8E76D2E47C874"
    }
   }
  }

@@ -1,0 +1,7 @@
+MatRiver : "{07EB465BC4A300DC}Terrains/Common/Water/River/bamiyan_river_weir.emat" {
+ FoamMap 
+ DetailedFoamMap 
+ UserNormalMove 0.186
+ FlowSpeed 0.397
+ CentralFlowAccent 1.993
+}
