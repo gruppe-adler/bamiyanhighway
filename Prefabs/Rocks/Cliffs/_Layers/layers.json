@@ -1,0 +1,54 @@
+{
+  "CliffLayer_RockPorous": {
+    "source": "cracked_red_ground",
+    "size": [
+      4096,
+      4096
+    ],
+    "mean_albedo_linear": [
+      0.3028,
+      0.1177,
+      0.0631
+    ],
+    "mean_roughness": 0.951
+  },
+  "CliffLayer_SandstonePale": {
+    "source": "worn_rock_natural_01",
+    "size": [
+      4096,
+      4096
+    ],
+    "mean_albedo_linear": [
+      0.5258,
+      0.3348,
+      0.2171
+    ],
+    "mean_roughness": 0.962
+  },
+  "CliffLayer_Sand": {
+    "source": "sandy_gravel_02",
+    "size": [
+      4096,
+      4096
+    ],
+    "mean_albedo_linear": [
+      0.3602,
+      0.2133,
+      0.106
+    ],
+    "mean_roughness": 0.946
+  },
+  "CliffLayer_Scree": {
+    "source": "red_laterite_soil_stones",
+    "size": [
+      4096,
+      4096
+    ],
+    "mean_albedo_linear": [
+      0.198,
+      0.0668,
+      0.0379
+    ],
+    "mean_roughness": 0.934
+  }
+}

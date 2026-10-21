@@ -1,0 +1,197 @@
+{
+  "asset": "Cliff_CrimsonMesaCitadel",
+  "size_m": 50.0,
+  "uv": {
+    "charts": 809,
+    "islands": 806,
+    "split_rounds": [
+      29,
+      42,
+      59,
+      84,
+      103,
+      91,
+      57,
+      1
+    ],
+    "seam_edge_share": 0.0673,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.19,
+      "99": 1.43
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.53,
+      "5": 0.77,
+      "50": 1.03,
+      "95": 1.21,
+      "99": 1.42
+    },
+    "coverage": 0.473,
+    "m_per_uv_unit": 106.37,
+    "surface_m2": 5352.7,
+    "mask4096_px_per_m": 38.5
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_CrimsonMesaCitadel_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.271,
+    0.087,
+    0.188
+  ],
+  "dimensions_m": [
+    50.0,
+    40.86,
+    22.1
+  ],
+  "surface_m2": 5352.7,
+  "m_per_uv_unit": 106.37,
+  "mask_px_per_m": 38.5,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 53.2,
+      "TilingV": 53.2,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 39.4,
+      "TilingV": 39.4,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 32.2,
+      "TilingV": 32.2,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 25.9,
+      "TilingV": 25.9,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_CrimsonMesaCitadel_LOD0": {
+      "tris": 195000,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCitadel_LOD1": {
+      "tris": 97500,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCitadel_LOD2": {
+      "tris": 48750,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCitadel_LOD3": {
+      "tris": 24374,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCitadel_LOD4": {
+      "tris": 12186,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCitadel_LOD5": {
+      "tris": 6092,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCitadel_LOD6": {
+      "tris": 3046,
+      "material": "Cliff_CrimsonMesaCitadel",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_CrimsonMesaCitadel",
+    "path": "decimate",
+    "tris": 19926,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.025,
+      "p95": 0.064,
+      "max": 0.311
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      108,
+      90,
+      53
+    ],
+    "inside_voxels": 94350
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_CrimsonMesaCitadel_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        33.0,
+        6.0,
+        15.49
+      ]
+    },
+    {
+      "name": "OCC_Cliff_CrimsonMesaCitadel_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        34.5,
+        19.5,
+        6.49
+      ]
+    }
+  ],
+  "fbx": "Cliff_CrimsonMesaCitadel.fbx"
+}

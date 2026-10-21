@@ -5,18 +5,22 @@ EffectDef {
    ShapeType Ellipse
    ShapeSize 2 0 5
    MaxNum 100
-   BirthRateRND 50
-   Offset 0 4.5 0
+   BirthRate 10
+   BirthRateRND 5
+   Offset 0 3 0
    Angles 0 0 45
    LodMin 0
    LodMax 0
    ParticleType Prefab
    Material "{AFBC061B15B97CE5}Particles/_Materials/Gas/Smoke_cigarette.emat"
    Prefab "{7E8F4D1906873519}Particles/prefabs/Water_Drop.et"
-   SizeRND 1
+   SizeMultiplier 1.5
+   SizeRND 0.5
    RotMultiplier 5
    RotRND 10
    RandomRotDir 1
+   VelAngle 1
+   VelAngleCatchUp 1
    FlipU Random
    Velocity 3
    VelAffect 6.86
@@ -37,71 +41,147 @@ EffectDef {
   }
   EmitterDef Steam_LOD1 {
    ShapeType Ellipse
-   ShapeSize 60 0 70
-   MaxNum 50
-   BirthRateRND 1
+   ShapeSize 2 0 5
+   BirthRateRND 10
+   Offset 0 3 0
+   Angles 0 0 45
    LodMin 1
    LodMax 1
-   Material "{442703F925ADC2EE}Particles/_Materials/Gas/Smoke_Explosion_02_forImpacts.emat"
-   SizeMultiplier 11
-   SizeRND 16
+   ParticleType Prefab
+   Material "{AFBC061B15B97CE5}Particles/_Materials/Gas/Smoke_cigarette.emat"
+   Prefab "{7E8F4D1906873519}Particles/prefabs/Water_Drop.et"
+   SizeRND 1
    RotMultiplier 5
    RotRND 10
    RandomRotDir 1
-   RandomAngle 1
    FlipU Random
-   Velocity 0.2
-   VelocityRND 0.2
-   AirResistance 0.1
-   AirResistanceRND 0.1
+   Velocity 3
+   VelAffect 6.86
    WindInfluence 0.2
+   GravityMultiply 4.902
    AnimOnce 1
    AnimFPS 20
-   Lifetime 10
+   Lifetime 1
+   Color {
+    0 0 0 0
+   }
    Alpha {
     0 0 0.183 0.424 0.365 0.525 0.728 0.374 1 0
    }
-   EmittingTime 3
+   Emissivity {
+    0 0
+   }
+   RotationSpeed {
+    0 0
+   }
+   Size {
+    0 0
+   }
    ColorMast {
     0 0.6558 0.7008 0.8039
    }
    AlphaMast {
     0 0.2
+   }
+   RotationSpeedMast {
+    0 0
+   }
+   SizeMast {
+    0 0
+   }
+   BRateMast {
+    0 0
+   }
+   AirResistanceMast {
+    0 0
+   }
+   VelocityMast {
+    0 0
+   }
+   LightColorMast {
+    0 0 0 0
+   }
+   LightIntensityMast {
+    0 0
+   }
+   TemperatureCoefMast {
+    3213689969059037184 0
+   }
+   TemperatureCoef {
+    0 0
    }
   }
   EmitterDef Steam_LOD2 {
    ShapeType Ellipse
-   ShapeSize 60 0 70
-   MaxNum 50
-   BirthRate 1
-   BirthRateRND 0.5
+   ShapeSize 2 0 5
+   MaxNum 2
+   BirthRateRND 5
+   Offset 0 3 0
+   Angles 0 0 45
    LodMin 2
    LodMax 2
-   Material "{442703F925ADC2EE}Particles/_Materials/Gas/Smoke_Explosion_02_forImpacts.emat"
-   SizeMultiplier 12
-   SizeRND 17
+   ParticleType Prefab
+   Material "{AFBC061B15B97CE5}Particles/_Materials/Gas/Smoke_cigarette.emat"
+   Prefab "{7E8F4D1906873519}Particles/prefabs/Water_Drop.et"
+   SizeRND 1
    RotMultiplier 5
    RotRND 10
    RandomRotDir 1
-   RandomAngle 1
    FlipU Random
-   Velocity 0.2
-   VelocityRND 0.2
-   AirResistance 0.1
-   AirResistanceRND 0.1
+   Velocity 3
+   VelAffect 6.86
    WindInfluence 0.2
+   GravityMultiply 4.902
    AnimOnce 1
    AnimFPS 20
-   Lifetime 10
+   Lifetime 1
+   Color {
+    0 0 0 0
+   }
    Alpha {
     0 0 0.183 0.424 0.365 0.525 0.728 0.374 1 0
    }
-   EmittingTime 3
+   Emissivity {
+    0 0
+   }
+   RotationSpeed {
+    0 0
+   }
+   Size {
+    0 0
+   }
    ColorMast {
     0 0.6558 0.7008 0.8039
    }
    AlphaMast {
     0 0.2
+   }
+   RotationSpeedMast {
+    0 0
+   }
+   SizeMast {
+    0 0
+   }
+   BRateMast {
+    0 0
+   }
+   AirResistanceMast {
+    0 0
+   }
+   VelocityMast {
+    0 0
+   }
+   LightColorMast {
+    0 0 0 0
+   }
+   LightIntensityMast {
+    0 0
+   }
+   TemperatureCoefMast {
+    3213689969059037184 0
+   }
+   TemperatureCoef {
+    0 0
    }
   }
   EmitterDef Foam_Anim_LOD0 {
@@ -204,8 +284,8 @@ EffectDef {
    LodMin 0
    LodMax 0
    Material "{BD3CDEF641B331A6}Particles/_Materials/Fluid/Water_Foam_Anim.emat"
-   SizeMultiplier 19.3
-   SizeRND 12.3
+   SizeMultiplier 10
+   SizeRND 1
    RotMultiplier 10
    RotRND 15
    RandomRotDir 1
@@ -255,7 +335,7 @@ EffectDef {
    RotRND 25
    RandomRotDir 1
    RandomAngle 1
-   Velocity 8
+   Velocity 1
    RandomFrame 1
    Lifetime 1.8
   }

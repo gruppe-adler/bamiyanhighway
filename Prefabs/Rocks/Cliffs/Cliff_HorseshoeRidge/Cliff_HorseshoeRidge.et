@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "6AAB5BF324CE4088"
+ components {
+  MeshObject "{6AAB5BF33012FC72}" {
+   Object "{668C644DA459CA1B}Prefabs/Rocks/Cliffs/Cliff_HorseshoeRidge/Cliff_HorseshoeRidge.xob"
+  }
+  RigidBody "{6AAB5BF332E4F43B}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ResponseIndex "Normal"
+   ModelGeometry 1
+  }
+ }
+ coords 2.588 2.952 3.11
+}

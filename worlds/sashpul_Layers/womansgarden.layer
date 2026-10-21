@@ -668,11 +668,11 @@ $grp PolylineShapeEntity {
        angles 0 -208.1 0
       }
       {
-       coords -18.973 -0 -11.803
+       coords -18.973 0 -11.803
        angles 0 -207.495 0
       }
       {
-       coords -25.923 -0 -15.405
+       coords -25.923 0 -15.405
        angles 0 -211.119 0
       }
       {
@@ -707,20 +707,20 @@ $grp PolylineShapeEntity {
     Position 37.53 -1.432 -2.731
    }
    ShapePoint "{6A9102DE545B645D}" {
-    Position 31.564 -1.397 -7.528
+    Position 33.169 -1.397 -9.269
    }
    ShapePoint "{6A9102DE57449435}" {
-    Position 25.765 0 -9.392
+    Position 23.344 -0.233 -14.855
    }
    ShapePoint "{6A9102DE56AB7154}" {
-    Position 11.805 0 -20.415
+    Position 12.159 -0.361 -20.525
    }
   }
   LineColor 0 0 0 0
   {
    WallGeneratorEntity : "{C344BB14626BB0D1}PrefabLibrary/DefaultLibrary/Generators/Walls/Brick/WG_BrickWall_02.et" {
     Flags 0x100003 0
-    m_iSeed 6677
+    m_iSeed 13405
     m_bSnapOffsetShapeToTheGround 0
     m_bEnableMiddleObject 0
     FirstObjectOffsetRight -0.1
@@ -741,11 +741,15 @@ $grp PolylineShapeEntity {
       }
       {
        coords 35.744 -1.443 3.275
-       angles 0 73.436 0
+       angles 0 73.439 0
       }
       {
-       coords 31.734 -1.446 -7.491
-       angles 0 -197.663 0
+       coords 26.755 -0.633 -12.87
+       angles 0 -210.199 0
+      }
+      {
+       coords 16.442 -0.306 -18.357
+       angles 0 -206.849 0
       }
      }
      $grp SCR_DestructibleEntity : "{4546AD2CC984193B}PrefabLibrary/DefaultLibrary/Walls/Brick/BrickWall_02_2m.et" {
@@ -754,21 +758,13 @@ $grp PolylineShapeEntity {
        angles 0 -28.239 0
       }
       {
-       coords 36.85 -1.436 -0.444
-       angles 0 73.436 0
-      }
-      {
-       coords 28.131 -0.573 -8.639
-       angles 0 -197.663 0
-      }
-      {
-       coords 14.016 -0.017 -18.702
-       angles 0 -217.768 0
+       coords 36.85 -1.436 -0.445
+       angles 0 73.439 0
       }
      }
      SCR_DestructibleEntity : "{4EF4686F9F99FE80}PrefabLibrary/DefaultLibrary/Walls/Brick/BrickWall_02_Pole.et" {
-      coords 12.595 -0.006 -19.803
-      angles 0 -217.768 0
+      coords 13.02 -0.35 -20.09
+      angles 0 -206.849 0
      }
      $grp SCR_DestructibleEntity : "{D4101A467FE8E7EE}PrefabLibrary/DefaultLibrary/Walls/Brick/BrickWall_02_8m.et" {
       {
@@ -800,16 +796,16 @@ $grp PolylineShapeEntity {
        angles 0 -242.739 0
       }
       {
-       coords 37.601 -1.433 -2.276
-       angles 0 -221.023 0
+       coords 37.552 -1.434 -2.234
+       angles 0 -238.081 0
       }
       {
-       coords 26.391 -0.111 -9.115
-       angles 0 -217.768 0
+       coords 33.485 -1.42 -8.953
+       angles 0 -210.199 0
       }
       {
-       coords 20.203 -0.064 -13.908
-       angles 0 -217.768 0
+       coords 23.425 -0.218 -14.823
+       angles 0 -206.849 0
       }
      }
     }
@@ -1172,7 +1168,7 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/De
   angles 0 -62.934 0
  }
  {
-  coords 1279.574 -54.67 1098.987
+  coords 1279.574 -55.092 1098.987
   angles 0 26.808 0
  }
  {
@@ -1697,8 +1693,9 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/De
   angles 0 -31.141 90
  }
  {
-  coords 1246.934 -38.684 1089.524
-  angles 0 -35.762 90
+  coords 1251.997 -49.414 1095.45
+  angles 0 -35.762 6.896
+  scale 0.82
  }
  {
   coords 1305.068 -54.689 1116.926

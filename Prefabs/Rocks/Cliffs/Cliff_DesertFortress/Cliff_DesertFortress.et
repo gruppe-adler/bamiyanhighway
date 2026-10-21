@@ -1,0 +1,14 @@
+GenericEntity {
+ ID "6AAB5BF2D4541451"
+ components {
+  MeshObject "{6AAB5BF2A57E8C6D}" {
+   Object "{FB2F4B52004F8D67}Prefabs/Rocks/Cliffs/Cliff_DesertFortress/Cliff_DesertFortress.xob"
+  }
+  RigidBody "{6AAB5BF2A08B0D34}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ResponseIndex "Normal"
+   ModelGeometry 1
+  }
+ }
+}

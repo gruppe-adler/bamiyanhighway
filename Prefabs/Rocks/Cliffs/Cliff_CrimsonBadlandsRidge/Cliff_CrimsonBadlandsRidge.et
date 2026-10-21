@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "6AAB5BF22F2FE56B"
+ components {
+  MeshObject "{6AAB5BF200E698DF}" {
+   Object "{D251BFDD833CFDAD}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Cliff_CrimsonBadlandsRidge.xob"
+  }
+  RigidBody "{6AAB5BF25995D1D2}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

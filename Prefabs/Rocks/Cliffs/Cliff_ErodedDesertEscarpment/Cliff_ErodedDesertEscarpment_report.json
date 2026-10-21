@@ -1,0 +1,197 @@
+{
+  "asset": "Cliff_ErodedDesertEscarpment",
+  "size_m": 50.0,
+  "uv": {
+    "charts": 765,
+    "islands": 719,
+    "split_rounds": [
+      36,
+      51,
+      61,
+      60,
+      69,
+      61,
+      60,
+      33
+    ],
+    "seam_edge_share": 0.065,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.17,
+      "99": 1.43
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.5,
+      "5": 0.78,
+      "50": 1.03,
+      "95": 1.21,
+      "99": 1.41
+    },
+    "coverage": 0.476,
+    "m_per_uv_unit": 105.34,
+    "surface_m2": 5284.5,
+    "mask4096_px_per_m": 38.9
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_ErodedDesertEscarpment_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.27,
+    0.088,
+    0.192
+  ],
+  "dimensions_m": [
+    50.0,
+    41.47,
+    16.87
+  ],
+  "surface_m2": 5284.5,
+  "m_per_uv_unit": 105.34,
+  "mask_px_per_m": 38.9,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 52.7,
+      "TilingV": 52.7,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 39.0,
+      "TilingV": 39.0,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 31.9,
+      "TilingV": 31.9,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 25.7,
+      "TilingV": 25.7,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_ErodedDesertEscarpment_LOD0": {
+      "tris": 194999,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertEscarpment_LOD1": {
+      "tris": 97499,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertEscarpment_LOD2": {
+      "tris": 48749,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertEscarpment_LOD3": {
+      "tris": 24373,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertEscarpment_LOD4": {
+      "tris": 12187,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertEscarpment_LOD5": {
+      "tris": 6093,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertEscarpment_LOD6": {
+      "tris": 3045,
+      "material": "Cliff_ErodedDesertEscarpment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_ErodedDesertEscarpment",
+    "path": "decimate",
+    "tris": 19964,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.024,
+      "p95": 0.06,
+      "max": 0.167
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      108,
+      92,
+      42
+    ],
+    "inside_voxels": 83838
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_ErodedDesertEscarpment_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        34.0,
+        3.0,
+        15.0
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedDesertEscarpment_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        31.0,
+        19.0,
+        7.0
+      ]
+    }
+  ],
+  "fbx": "Cliff_ErodedDesertEscarpment.fbx"
+}

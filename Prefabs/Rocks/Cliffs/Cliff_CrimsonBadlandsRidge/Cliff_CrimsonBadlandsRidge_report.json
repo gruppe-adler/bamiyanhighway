@@ -1,0 +1,197 @@
+{
+  "asset": "Cliff_CrimsonBadlandsRidge",
+  "size_m": 50.0,
+  "uv": {
+    "charts": 741,
+    "islands": 734,
+    "split_rounds": [
+      40,
+      56,
+      75,
+      81,
+      81,
+      68,
+      16,
+      4
+    ],
+    "seam_edge_share": 0.063,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.17,
+      "99": 1.4
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.56,
+      "5": 0.79,
+      "50": 1.03,
+      "95": 1.21,
+      "99": 1.37
+    },
+    "coverage": 0.477,
+    "m_per_uv_unit": 108.85,
+    "surface_m2": 5650.0,
+    "mask4096_px_per_m": 37.6
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_CrimsonBadlandsRidge_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.277,
+    0.093,
+    0.198
+  ],
+  "dimensions_m": [
+    50.0,
+    41.3,
+    19.12
+  ],
+  "surface_m2": 5650.0,
+  "m_per_uv_unit": 108.85,
+  "mask_px_per_m": 37.6,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 54.4,
+      "TilingV": 54.4,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 40.3,
+      "TilingV": 40.3,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 33.0,
+      "TilingV": 33.0,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 26.5,
+      "TilingV": 26.5,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_CrimsonBadlandsRidge_LOD0": {
+      "tris": 195000,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_LOD1": {
+      "tris": 97500,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_LOD2": {
+      "tris": 48750,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_LOD3": {
+      "tris": 24374,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_LOD4": {
+      "tris": 12186,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_LOD5": {
+      "tris": 6092,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_LOD6": {
+      "tris": 3046,
+      "material": "Cliff_CrimsonBadlandsRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_CrimsonBadlandsRidge",
+    "path": "decimate",
+    "tris": 19914,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.023,
+      "p95": 0.056,
+      "max": 0.661
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      109,
+      91,
+      47
+    ],
+    "inside_voxels": 86592
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_CrimsonBadlandsRidge_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        28.5,
+        4.0,
+        17.48
+      ]
+    },
+    {
+      "name": "OCC_Cliff_CrimsonBadlandsRidge_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        1.5,
+        22.5,
+        13.48
+      ]
+    }
+  ],
+  "fbx": "Cliff_CrimsonBadlandsRidge.fbx"
+}

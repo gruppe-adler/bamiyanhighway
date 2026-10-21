@@ -1,0 +1,209 @@
+{
+  "asset": "Cliff_ErodedDesertCliffs",
+  "size_m": 50.0,
+  "uv": {
+    "charts": 874,
+    "islands": 857,
+    "split_rounds": [
+      39,
+      47,
+      59,
+      76,
+      91,
+      95,
+      75,
+      12
+    ],
+    "seam_edge_share": 0.0697,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.2,
+      "99": 1.48
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.52,
+      "5": 0.76,
+      "50": 1.04,
+      "95": 1.22,
+      "99": 1.43
+    },
+    "coverage": 0.476,
+    "m_per_uv_unit": 111.69,
+    "surface_m2": 5941.0,
+    "mask4096_px_per_m": 36.7
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_ErodedDesertCliffs_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.272,
+    0.079,
+    0.184
+  ],
+  "dimensions_m": [
+    50.0,
+    47.08,
+    15.75
+  ],
+  "surface_m2": 5941.0,
+  "m_per_uv_unit": 111.69,
+  "mask_px_per_m": 36.7,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 55.8,
+      "TilingV": 55.8,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 41.4,
+      "TilingV": 41.4,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 33.8,
+      "TilingV": 33.8,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 27.2,
+      "TilingV": 27.2,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_ErodedDesertCliffs_LOD0": {
+      "tris": 194999,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_LOD1": {
+      "tris": 97499,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_LOD2": {
+      "tris": 48749,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_LOD3": {
+      "tris": 24373,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_LOD4": {
+      "tris": 12187,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_LOD5": {
+      "tris": 6093,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_LOD6": {
+      "tris": 3045,
+      "material": "Cliff_ErodedDesertCliffs",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_ErodedDesertCliffs",
+    "path": "decimate",
+    "tris": 19910,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.027,
+      "p95": 0.068,
+      "max": 0.229
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      109,
+      103,
+      40
+    ],
+    "inside_voxels": 100887
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_ErodedDesertCliffs_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        35.0,
+        13.5,
+        10.99
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedDesertCliffs_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        0.5,
+        24.5,
+        13.99
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedDesertCliffs_03",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        34.0,
+        0.5,
+        14.99
+      ]
+    }
+  ],
+  "fbx": "Cliff_ErodedDesertCliffs.fbx"
+}

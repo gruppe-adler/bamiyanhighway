@@ -1,0 +1,56 @@
+MetaFileClass {
+ Name "{DC1DADD3E12C1C81}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Cliff_ErodedSandstoneWall.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{6AAB38BEC0332AF1}" {
+     SourceMaterial "Cliff_ErodedSandstoneWall"
+     AssignedMaterial "{C6B161E3C4FF3624}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Data/Cliff_ErodedSandstoneWall.emat"
+    }
+   }
+   MeshParams {
+    MeshParam Cliff_ErodedSandstoneWall {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_Cliff_ErodedSandstoneWall {
+     LayerPreset "RockFireView"
+     SurfaceProperties {
+      "{C409534F24447254}Rock.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{6AAB38BED24FDFC8}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "5.2.2 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{6AAB38BED24FDF3D}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{6AAB38BED24FDF05}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{6AAB38BED24FDCE7}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{6AAB38BED24FDCD8}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{6AAB38BED24FDCBF}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{6AAB38BED24FDC91}" {
+   }
+  }
+ }
+}

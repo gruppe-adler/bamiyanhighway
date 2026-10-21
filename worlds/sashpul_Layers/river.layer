@@ -151,11 +151,11 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A9B0899CB94854D}" {
-    Position 564.771 -0.2 311.867
+    Position 564.771 -0.2 312.322
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
-      FixedWidth 6
+      FixedWidth 7
      }
     }
    }
@@ -1184,7 +1184,7 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A9ACE6A44307624}" {
-    Position 585.924 -5.537 322.507
+    Position 585.924 -3.263 322.507
    }
   }
   LineColor 0 0 0 0
@@ -1204,26 +1204,11 @@ $grp SplineShapeEntity {
   angles 0 5.763 0
   Points {
    ShapePoint "{6A9ACE6A44307624}" {
-    Position 585.924 -5.47 322.507
+    Position 585.924 -3.201 322.507
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
       FixedWidth 6
-     }
-    }
-   }
-   ShapePoint "{6A5915321BC7EDAC}" {
-    Position 612.553 -5.82 332.676
-    Data {
-     ForestGeneratorPointData "{000000002C57B0BA}" {
-     }
-     SplinePointData SplinePointData {
-      InTangent 19.459 -0.47 4.483
-      OutTangent 19.459 -0.47 4.483
-     }
-     RiverPointData "{0000000031BA958C}" {
-      WidthOverride Base
-      FixedWidth 8
      }
     }
    }
@@ -1662,6 +1647,7 @@ $grp SplineShapeEntity {
   {
    RoadGeneratorEntity : "{E4FE524AD8080397}Prefabs/WEGenerators/Roads/Dirt/RG_TrailDirt_01.et" {
     coords 0 0 0
+    AdjustHeightMap 0
     RoadWidth 2
     FalloffStartWidth 0
     RoadFalloffWidth 2
@@ -1781,11 +1767,11 @@ $grp SplineShapeEntity {
     }
    }
    ShapePoint "{6A9ACE6A476F502A}" {
-    Position 583.725 -0.2 321.42
+    Position 583.725 -0.19 321.42
     Data {
      RiverPointData "{0000000031BA958C}" {
       WidthOverride Fixed
-      FixedWidth 3.8
+      FixedWidth 4
      }
     }
    }
@@ -1851,13 +1837,33 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{3065CC263BC89F1D}Prefabs/Rocks/De
   coords 1711.214 0.001 1251.783
   angles 23.66 8.469 20.357
  }
+ {
+  coords 647.101 -0.282 849.187
+  angles 0 49.57 0
+ }
 }
-SCR_IndestructibleEnvironmentalEntity : "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et" {
- coords 1714.693 -1.502 1253.032
+$grp SCR_IndestructibleEnvironmentalEntity : "{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et" {
+ {
+  coords 1714.693 -1.502 1253.032
+ }
+ {
+  coords 634.289 -0.65 847.75
+ }
 }
 SCR_IndestructibleEnvironmentalEntity : "{39412454BDA355FF}Prefabs/Rocks/Desert/DesertSurfaceStone_04.et" {
  coords 1735.755 -48.907 1199.532
  angles 14.654 -88.771 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{3EA83F7ADE809234}Prefabs/Rocks/Desert/Desert_Boulder_01.et" {
+ coords 645.23 -1.425 851.456
+ angles 0 -154.951 0
+}
+StaticModelEntity : "{528AB2322A646026}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_wave.et" {
+ coords 701.48 -39.153 872.818
+ angles 0 -7.348 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{52FC0B9A62441D1A}Prefabs/Rocks/Desert/Desert_Boulder_02.et" {
+ coords 637.307 -1.95 849.429
 }
 SCR_DestructibleBuildingEntity : "{5B22476A7FA55A62}Prefabs/Structures/Bulding/HouseC/House_C_5_EP1.et" {
  coords 1741.418 -45.47 1194.706
@@ -1883,6 +1889,10 @@ $grp StaticModelEntity : "{5E7DCD0C74688ADE}PrefabLibrary/DefaultLibrary/Terrain
   angles 0 -73.883 0
  }
 }
+StaticModelEntity : "{783A0981DA761AA9}Prefabs/Structures/Airport/AirfieldPipeline_01/AirfieldPipeline_01_end.et" {
+ coords 1283.524 -32.998 1108.62
+ angles 0 -31.295 0
+}
 $grp DecalEntity : "{7C184D5F132A8987}Prefabs/Decals/Asphalt/Decal_Asphalt_Crossroad_01.et" {
  {
   coords 1541.662 -0.073 1348.784
@@ -1902,6 +1912,10 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{905AA887D4CB67CC}Prefabs/Rocks/De
  {
   coords 1717.311 -52.588 1261.559
   angles 0 18.083 0
+ }
+ {
+  coords 651.882 -42.254 851.28
+  angles 0 53.492 0
  }
 }
 StaticModelEntity : "{9AF0242036F3D3D3}PrefabLibrary/DefaultLibrary/Terrain/Erosion/ErodedEmbankment_01_dirt_straight.et" {
@@ -1925,6 +1939,18 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/De
   coords 1718.153 -66.198 1276.359
   angles 0 79.529 0
  }
+ {
+  coords 658.958 -51.717 858.638
+  angles 0 -16.538 0
+ }
+ {
+  coords 683.767 -39.58 869.301
+  angles 0 -24.226 -90
+ }
+}
+StaticModelEntity : "{9C7477A3F066F74F}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_straight.et" {
+ coords 689.217 -37.894 868.696
+ angles 0 -29.271 0
 }
 SCR_DestructibleBuildingEntity : "{A548C1C5370D0734}Prefabs/Structures/Houses/Garage/Garage_E_01/Garage_E_01.et" {
  coords 1515.07 -1.074 1319.66
@@ -1947,8 +1973,13 @@ $grp StaticModelEntity : "{AFC5471AE0EB8294}PrefabLibrary/DefaultLibrary/Terrain
   angles 0 64.231 0
  }
 }
-SCR_IndestructibleEnvironmentalEntity : "{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et" {
- coords 1715.822 -1.56 1252.607
+$grp SCR_IndestructibleEnvironmentalEntity : "{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et" {
+ {
+  coords 1715.822 -1.56 1252.607
+ }
+ {
+  coords 642.516 -1.06 846.273
+ }
 }
 SCR_DestructibleBuildingEntity : "{C7B5580451331562}PrefabLibrary/DefaultLibrary/Infrastructure/Bridges/ConcreteBridge_01_Narrow_PillarSmall.et" {
  coords 1834.638 -40.953 1074.157
@@ -2008,4 +2039,11 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{FC0E9C67680FE8E2}Prefabs/Rocks/De
  {
   coords 1716.402 -51.332 1281.813
  }
+}
+SCR_IndestructibleEnvironmentalEntity : "{FD097CAA28268B10}Prefabs/Rocks/Desert/Desert_Cluster_Large_01.et" {
+ coords 636.789 -0.224 846.676
+}
+SCR_DestructibleEntity : "{FD30015A06179120}Prefabs/Structures/Infrastructure/Piping/DieselPipe_01_connector_low_high.et" {
+ coords 1278.942 -33.411 1106.079
+ angles 88.197 -119.715 -1.236
 }

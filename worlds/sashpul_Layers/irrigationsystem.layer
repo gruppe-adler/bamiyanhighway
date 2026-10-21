@@ -3,10 +3,19 @@ $grp PolylineShapeEntity {
   coords 1199.577 -36.005 1056.955
   Points {
    ShapePoint "{6AA8E76BB7645185}" {
-    Position 73.061 3.467 44.667
+    Position 83.443 3.079 51.347
+   }
+   ShapePoint "{6AAB38BE1DBDA954}" {
+    Position 72.586 3.273 45.334
+    Data {
+     RiverPointData "{0000000031BA958C}" {
+      WidthOverride Fixed
+      FixedWidth 1.21
+     }
+    }
    }
    ShapePoint "{6AA8E76BBAB8344E}" {
-    Position 61.303 3.467 40.083
+    Position 61.653 3.467 39.46
    }
    ShapePoint "{6A94A16C77D3C367}" {
     Position 40.5 3.467 28.396

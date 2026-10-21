@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{34DD0E02D5A50532}Prefabs/Rocks/Cliffs/_Layers/layers.json"
+ Configurations {
+  JSONResourceClass PC {
+  }
+  JSONResourceClass XBOX_ONE : PC {
+  }
+  JSONResourceClass XBOX_SERIES : PC {
+  }
+  JSONResourceClass PS4 : PC {
+  }
+  JSONResourceClass PS5 : PC {
+  }
+  JSONResourceClass HEADLESS : PC {
+  }
+  JSONResourceClass Xbox : PC {
+  }
+ }
+}

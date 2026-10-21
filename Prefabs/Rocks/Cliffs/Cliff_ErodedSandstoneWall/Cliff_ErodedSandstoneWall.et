@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "6AAB5BF3343F97BA"
+ components {
+  MeshObject "{6AAB5BF3001BCF94}" {
+   Object "{DC1DADD3E12C1C81}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Cliff_ErodedSandstoneWall.xob"
+  }
+  RigidBody "{6AAB5BF33C4D8C38}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

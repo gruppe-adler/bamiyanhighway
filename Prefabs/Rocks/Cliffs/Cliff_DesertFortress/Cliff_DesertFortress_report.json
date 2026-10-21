@@ -1,0 +1,209 @@
+{
+  "asset": "Cliff_DesertFortress",
+  "size_m": 50.0,
+  "uv": {
+    "charts": 702,
+    "islands": 655,
+    "split_rounds": [
+      26,
+      38,
+      49,
+      62,
+      71,
+      77,
+      56,
+      38
+    ],
+    "seam_edge_share": 0.0614,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.18,
+      "99": 1.44
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.56,
+      "5": 0.78,
+      "50": 1.03,
+      "95": 1.21,
+      "99": 1.4
+    },
+    "coverage": 0.501,
+    "m_per_uv_unit": 106.86,
+    "surface_m2": 5722.9,
+    "mask4096_px_per_m": 38.3
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_DesertFortress_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.302,
+    0.086,
+    0.194
+  ],
+  "dimensions_m": [
+    50.0,
+    47.04,
+    17.04
+  ],
+  "surface_m2": 5722.9,
+  "m_per_uv_unit": 106.86,
+  "mask_px_per_m": 38.3,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 53.4,
+      "TilingV": 53.4,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 39.6,
+      "TilingV": 39.6,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 32.4,
+      "TilingV": 32.4,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 26.1,
+      "TilingV": 26.1,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_DesertFortress_LOD0": {
+      "tris": 194912,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_LOD1": {
+      "tris": 97456,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_LOD2": {
+      "tris": 48728,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_LOD3": {
+      "tris": 24364,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_LOD4": {
+      "tris": 12182,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_LOD5": {
+      "tris": 6090,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_LOD6": {
+      "tris": 3044,
+      "material": "Cliff_DesertFortress",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_DesertFortress",
+    "path": "decimate",
+    "tris": 19944,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.026,
+      "p95": 0.066,
+      "max": 0.436
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      109,
+      103,
+      43
+    ],
+    "inside_voxels": 87081
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_DesertFortress_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        33.5,
+        13.0,
+        10.0
+      ]
+    },
+    {
+      "name": "OCC_Cliff_DesertFortress_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        31.5,
+        1.0,
+        16.0
+      ]
+    },
+    {
+      "name": "OCC_Cliff_DesertFortress_03",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        0.5,
+        26.0,
+        12.5
+      ]
+    }
+  ],
+  "fbx": "Cliff_DesertFortress.fbx"
+}

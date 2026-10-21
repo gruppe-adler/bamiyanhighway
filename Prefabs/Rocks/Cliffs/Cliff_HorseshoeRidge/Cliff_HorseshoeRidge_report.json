@@ -1,0 +1,198 @@
+{
+  "asset": "Cliff_HorseshoeRidge",
+  "size_m": 50.0,
+  "uv": {
+    "charts": 188,
+    "islands": 964,
+    "split_rounds": [
+      9,
+      13,
+      16,
+      21,
+      18,
+      12,
+      7,
+      3
+    ],
+    "planar_fixed_faces": 1136,
+    "seam_edge_share": 0.0363,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.13,
+      "99": 1.39
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.69,
+      "5": 0.8,
+      "50": 1.04,
+      "95": 1.23,
+      "99": 1.45
+    },
+    "coverage": 0.532,
+    "m_per_uv_unit": 98.58,
+    "surface_m2": 5174.3,
+    "mask4096_px_per_m": 41.6
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_HorseshoeRidge_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.38,
+    0.085,
+    0.155
+  ],
+  "dimensions_m": [
+    50.0,
+    48.05,
+    15.41
+  ],
+  "surface_m2": 5174.3,
+  "m_per_uv_unit": 98.58,
+  "mask_px_per_m": 41.5,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 49.3,
+      "TilingV": 49.3,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 36.5,
+      "TilingV": 36.5,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 29.9,
+      "TilingV": 29.9,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 24.0,
+      "TilingV": 24.0,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_HorseshoeRidge_LOD0": {
+      "tris": 132338,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_HorseshoeRidge_LOD1": {
+      "tris": 66168,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_HorseshoeRidge_LOD2": {
+      "tris": 33084,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_HorseshoeRidge_LOD3": {
+      "tris": 16542,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_HorseshoeRidge_LOD4": {
+      "tris": 8270,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_HorseshoeRidge_LOD5": {
+      "tris": 4134,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_HorseshoeRidge_LOD6": {
+      "tris": 2066,
+      "material": "Cliff_HorseshoeRidge",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_HorseshoeRidge",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.018,
+      "p95": 0.048,
+      "max": 0.579
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      109,
+      105,
+      39
+    ],
+    "inside_voxels": 68926
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_HorseshoeRidge_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        26.5,
+        5.0,
+        14.44
+      ]
+    },
+    {
+      "name": "OCC_Cliff_HorseshoeRidge_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        3.5,
+        21.0,
+        8.94
+      ]
+    }
+  ],
+  "fbx": "Cliff_HorseshoeRidge.fbx"
+}

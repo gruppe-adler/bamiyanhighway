@@ -1,12 +1,4 @@
 MatRiver : "{73DE868F49EE7D23}Terrains/Common/Water/River/bamiyan_river.emat" {
- FoamMap "{C5F6406AFDB03C4C}Particles/_Textures/Water/Water_Splash_01.edds"
- FoamTerrainBlend 8.6
- FoamMapping 14.3
- FoamMove 1
- FoamPower 0.23
- FoamMaskSharpness 0.213
- DetailedFoamMap "{A3B149218D8C5200}Terrains/Common/Water/foam.edds"
- DetailedFoamMapping 5.08
  FlowSpeed 0.667
  FlowNormalInfl 1.206
  CentralFlowAccent 0.1

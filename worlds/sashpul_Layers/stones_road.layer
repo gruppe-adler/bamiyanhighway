@@ -67198,7 +67198,9 @@ SCR_DestructibleEntity : "{A5C7908C71CFD97C}Prefabs/Structures/Walls/Concrete/Co
  angles 0 -25.078 0
 }
 ParticleEffectEntity : "{A9B17C22B4099625}Prefabs/Particles/Water/Waterfall_mist.et" {
- coords 626.659 -41.68 843.246
+ coords 632.271 -34.101 844.982
+ angles 0 -20.434 0
+ EffectPath "{07F1757FBC22EB2B}Particles/Enviroment/Water/Water_weir.ptc"
 }
 $grp SCR_DestructibleBuildingEntity : "{DB114F623141F302}Prefabs/Structures/Walls/Stone/StoneRetainingWall_01/StoneRetainingWall_01_8m_V2.et" {
  {
@@ -67302,8 +67304,8 @@ $grp SCR_DestructibleBuildingEntity : "{DB114F623141F302}Prefabs/Structures/Wall
   angles 0 149.744 -1.694
  }
  {
-  coords 1281.036 -36.766 1106.023
-  angles 0 149.744 -1.694
+  coords 1279.921 -36.693 1105.333
+  angles 0.019 150.378 -1.694
  }
  {
   coords 1262.3 -36.471 1098.372
@@ -67318,7 +67320,7 @@ $grp SCR_DestructibleBuildingEntity : "{DB114F623141F302}Prefabs/Structures/Wall
   angles 0 -28.224 2.096
  }
  {
-  coords 1280.086 -36.748 1107.918
+  coords 1278.904 -36.681 1107.283
   angles 0 -28.224 2.096
  }
 }
@@ -67329,12 +67331,6 @@ GenericEntity : "{DB17133F11B2B8C5}Prefabs/Props/Construction/ConcretePipe/Concr
 SCR_DestructibleBuildingEntity : "{EAF94EE6779EB1DE}Prefabs/Structures/Industrial/CoalMineShaft_01/Complete/CoalMineShaft_01_complete_base.et" {
  coords 31.076 -9.987 715.246
  angles 0 151.81 0
-}
-ParticleEffectEntity : "{EB5E524478DB619C}Prefabs/Particles/Water/Water_steam_01.et" {
- coords 633.062 -36.386 845.093
- angles 0 -15.451 0
- scale 0.01
- EffectPath "{07F1757FBC22EB2B}Particles/Enviroment/Water/Water_weir.ptc"
 }
 GenericEntity : "{F70A3289977E44EA}Prefabs/Sounds/Sources/SoundSource_WaterFall_Medium.et" {
  coords 632.297 -34.52 845.082
