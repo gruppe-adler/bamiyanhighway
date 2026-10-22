@@ -40,12 +40,17 @@
       "file": "Cliff_HorseshoeRidge_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_HorseshoeRidge_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.38,
-    0.085,
-    0.155
+    0.452,
+    0.101,
+    0.148
   ],
   "dimensions_m": [
     50.0,
@@ -55,6 +60,7 @@
   "surface_m2": 5174.3,
   "m_per_uv_unit": 98.58,
   "mask_px_per_m": 41.5,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

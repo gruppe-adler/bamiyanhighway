@@ -39,12 +39,17 @@
       "file": "Cliff_CrimsonBadlandsRidge_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_CrimsonBadlandsRidge_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.277,
-    0.093,
-    0.198
+    0.357,
+    0.12,
+    0.151
   ],
   "dimensions_m": [
     50.0,
@@ -54,6 +59,7 @@
   "surface_m2": 5650.0,
   "m_per_uv_unit": 108.85,
   "mask_px_per_m": 37.6,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

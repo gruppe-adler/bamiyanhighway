@@ -39,12 +39,17 @@
       "file": "Cliff_DesertFortress_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_DesertFortress_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.302,
-    0.086,
-    0.194
+    0.401,
+    0.114,
+    0.15
   ],
   "dimensions_m": [
     50.0,
@@ -54,6 +59,7 @@
   "surface_m2": 5722.9,
   "m_per_uv_unit": 106.86,
   "mask_px_per_m": 38.3,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

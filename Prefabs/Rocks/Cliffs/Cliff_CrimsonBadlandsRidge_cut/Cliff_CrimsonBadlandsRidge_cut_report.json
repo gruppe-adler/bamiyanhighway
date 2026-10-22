@@ -1,0 +1,217 @@
+{
+  "asset": "Cliff_CrimsonBadlandsRidge_cut",
+  "size_m": 40.0971,
+  "uv": {
+    "charts": 429,
+    "islands": 1399,
+    "split_rounds": [
+      20,
+      28,
+      45,
+      55,
+      55,
+      34,
+      6,
+      0
+    ],
+    "planar_fixed_faces": 2602,
+    "seam_edge_share": 0.062,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.17,
+      "99": 1.39
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.57,
+      "5": 0.77,
+      "50": 1.02,
+      "95": 1.2,
+      "99": 1.43
+    },
+    "coverage": 0.439,
+    "m_per_uv_unit": 81.13,
+    "surface_m2": 2889.2,
+    "mask4096_px_per_m": 50.5
+  },
+  "cut": {
+    "cut_m": 6.88,
+    "height_m": 19.12,
+    "cut_share": 0.359,
+    "island_faces_dropped": 116,
+    "tris": 113034,
+    "close": {
+      "bad_edges": 0,
+      "duplicate_faces": 0,
+      "pieces": 1
+    },
+    "export_size_m": 40.097
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_CrimsonBadlandsRidge_cut_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_CrimsonBadlandsRidge_cut_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.182,
+    0.048,
+    0.209
+  ],
+  "dimensions_m": [
+    40.1,
+    28.65,
+    12.25
+  ],
+  "surface_m2": 2889.2,
+  "m_per_uv_unit": 81.13,
+  "mask_px_per_m": 50.5,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 40.6,
+      "TilingV": 40.6,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 30.0,
+      "TilingV": 30.0,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 24.6,
+      "TilingV": 24.6,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 19.8,
+      "TilingV": 19.8,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_CrimsonBadlandsRidge_cut_LOD0": {
+      "tris": 113034,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_cut_LOD1": {
+      "tris": 56516,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_cut_LOD2": {
+      "tris": 28258,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_cut_LOD3": {
+      "tris": 14128,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_cut_LOD4": {
+      "tris": 7064,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_cut_LOD5": {
+      "tris": 3532,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonBadlandsRidge_cut_LOD6": {
+      "tris": 1766,
+      "material": "Cliff_CrimsonBadlandsRidge_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_CrimsonBadlandsRidge_cut",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.014,
+      "p95": 0.035,
+      "max": 0.099
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      89,
+      66,
+      33
+    ],
+    "inside_voxels": 34923
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_CrimsonBadlandsRidge_cut_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        28.5,
+        3.5,
+        10.95
+      ]
+    },
+    {
+      "name": "OCC_Cliff_CrimsonBadlandsRidge_cut_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        2.5,
+        16.0,
+        10.95
+      ]
+    }
+  ],
+  "fbx": "Cliff_CrimsonBadlandsRidge_cut.fbx"
+}

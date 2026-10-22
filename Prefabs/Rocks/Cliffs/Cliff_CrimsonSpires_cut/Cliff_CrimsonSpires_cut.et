@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "510F0DF50E85B010"
+ components {
+  MeshObject "{D3ACC25846CBDBAB}" {
+   Object "{AB5C79E214E5DC54}Prefabs/Rocks/Cliffs/Cliff_CrimsonSpires_cut/Cliff_CrimsonSpires_cut.xob"
+  }
+  RigidBody "{DA07B0A74171EC8C}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

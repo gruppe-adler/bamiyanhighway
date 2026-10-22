@@ -39,12 +39,17 @@
       "file": "Cliff_CrimsonMesaCitadel_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_CrimsonMesaCitadel_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.271,
-    0.087,
-    0.188
+    0.343,
+    0.111,
+    0.161
   ],
   "dimensions_m": [
     50.0,
@@ -54,6 +59,7 @@
   "surface_m2": 5352.7,
   "m_per_uv_unit": 106.37,
   "mask_px_per_m": 38.5,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

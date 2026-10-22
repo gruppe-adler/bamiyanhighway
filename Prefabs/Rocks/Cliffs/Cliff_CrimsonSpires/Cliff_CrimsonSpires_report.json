@@ -39,12 +39,17 @@
       "file": "Cliff_CrimsonSpires_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_CrimsonSpires_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.295,
-    0.086,
-    0.19
+    0.383,
+    0.111,
+    0.161
   ],
   "dimensions_m": [
     50.0,
@@ -54,6 +59,7 @@
   "surface_m2": 5413.8,
   "m_per_uv_unit": 105.01,
   "mask_px_per_m": 39.0,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

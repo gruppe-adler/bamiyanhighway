@@ -1,0 +1,217 @@
+{
+  "asset": "Cliff_DesertFortress_cut",
+  "size_m": 42.9071,
+  "uv": {
+    "charts": 412,
+    "islands": 1271,
+    "split_rounds": [
+      21,
+      27,
+      36,
+      36,
+      45,
+      31,
+      8,
+      1
+    ],
+    "planar_fixed_faces": 2384,
+    "seam_edge_share": 0.0612,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.18,
+      "99": 1.41
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.62,
+      "5": 0.79,
+      "50": 1.02,
+      "95": 1.2,
+      "99": 1.38
+    },
+    "coverage": 0.419,
+    "m_per_uv_unit": 84.61,
+    "surface_m2": 2997.6,
+    "mask4096_px_per_m": 48.4
+  },
+  "cut": {
+    "cut_m": 6.63,
+    "height_m": 17.04,
+    "cut_share": 0.389,
+    "island_faces_dropped": 20,
+    "tris": 110776,
+    "close": {
+      "bad_edges": 0,
+      "duplicate_faces": 0,
+      "pieces": 1
+    },
+    "export_size_m": 42.907
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_DesertFortress_cut_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_DesertFortress_cut_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.226,
+    0.048,
+    0.211
+  ],
+  "dimensions_m": [
+    42.91,
+    32.77,
+    10.41
+  ],
+  "surface_m2": 2997.6,
+  "m_per_uv_unit": 84.61,
+  "mask_px_per_m": 48.4,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 42.3,
+      "TilingV": 42.3,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 31.3,
+      "TilingV": 31.3,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 25.6,
+      "TilingV": 25.6,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 20.6,
+      "TilingV": 20.6,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_DesertFortress_cut_LOD0": {
+      "tris": 110776,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_cut_LOD1": {
+      "tris": 55388,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_cut_LOD2": {
+      "tris": 27694,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_cut_LOD3": {
+      "tris": 13846,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_cut_LOD4": {
+      "tris": 6922,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_cut_LOD5": {
+      "tris": 3460,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertFortress_cut_LOD6": {
+      "tris": 1730,
+      "material": "Cliff_DesertFortress_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_DesertFortress_cut",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.017,
+      "p95": 0.042,
+      "max": 0.134
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      94,
+      74,
+      29
+    ],
+    "inside_voxels": 30634
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_DesertFortress_cut_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        30.0,
+        1.5,
+        9.46
+      ]
+    },
+    {
+      "name": "OCC_Cliff_DesertFortress_cut_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        0.5,
+        21.5,
+        7.46
+      ]
+    }
+  ],
+  "fbx": "Cliff_DesertFortress_cut.fbx"
+}

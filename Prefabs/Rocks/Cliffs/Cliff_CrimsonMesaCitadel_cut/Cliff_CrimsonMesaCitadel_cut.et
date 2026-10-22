@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "16A8D418E3CC41B2"
+ components {
+  MeshObject "{1B7A804A987A54EF}" {
+   Object "{5F140D5C4D8D1A46}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel_cut/Cliff_CrimsonMesaCitadel_cut.xob"
+  }
+  RigidBody "{09C09EDCABA8A2E5}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

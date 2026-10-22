@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "5B830CC98C4EFD81"
+ components {
+  MeshObject "{7E20A43AA0E7BCE6}" {
+   Object "{AC58AB51E6ED2CD7}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertCliffs_cut/Cliff_ErodedDesertCliffs_cut.xob"
+  }
+  RigidBody "{2A67DC6BB33F1850}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

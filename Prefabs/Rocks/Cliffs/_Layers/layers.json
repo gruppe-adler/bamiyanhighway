@@ -19,11 +19,12 @@
       4096
     ],
     "mean_albedo_linear": [
-      0.5258,
-      0.3348,
-      0.2171
+      0.4327,
+      0.1935,
+      0.1126
     ],
-    "mean_roughness": 0.962
+    "mean_roughness": 0.962,
+    "luminance": 0.2385
   },
   "CliffLayer_Sand": {
     "source": "sandy_gravel_02",

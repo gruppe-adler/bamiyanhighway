@@ -1,0 +1,228 @@
+{
+  "asset": "Cliff_ErodedCanyonWall_cut",
+  "size_m": 47.0052,
+  "uv": {
+    "charts": 129,
+    "islands": 401,
+    "split_rounds": [
+      11,
+      9,
+      6,
+      9,
+      16,
+      15,
+      0
+    ],
+    "planar_fixed_faces": 417,
+    "seam_edge_share": 0.0327,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.01,
+      "95": 1.08,
+      "99": 1.2
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.72,
+      "5": 0.83,
+      "50": 1.02,
+      "95": 1.18,
+      "99": 1.33
+    },
+    "coverage": 0.505,
+    "m_per_uv_unit": 70.46,
+    "surface_m2": 2505.2,
+    "mask4096_px_per_m": 58.1
+  },
+  "cut": {
+    "cut_m": 4.13,
+    "height_m": 12.64,
+    "cut_share": 0.326,
+    "island_faces_dropped": 0,
+    "tris": 126410,
+    "close": {
+      "bad_edges": 0,
+      "duplicate_faces": 0,
+      "pieces": 1
+    },
+    "export_size_m": 47.005
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_ErodedCanyonWall_cut_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_ErodedCanyonWall_cut_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.169,
+    0.015,
+    0.222
+  ],
+  "dimensions_m": [
+    47.01,
+    36.21,
+    8.52
+  ],
+  "surface_m2": 2505.2,
+  "m_per_uv_unit": 70.46,
+  "mask_px_per_m": 58.1,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 35.2,
+      "TilingV": 35.2,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 26.1,
+      "TilingV": 26.1,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 21.4,
+      "TilingV": 21.4,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 17.2,
+      "TilingV": 17.2,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_ErodedCanyonWall_cut_LOD0": {
+      "tris": 126410,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedCanyonWall_cut_LOD1": {
+      "tris": 63204,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedCanyonWall_cut_LOD2": {
+      "tris": 31602,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedCanyonWall_cut_LOD3": {
+      "tris": 15800,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedCanyonWall_cut_LOD4": {
+      "tris": 7900,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedCanyonWall_cut_LOD5": {
+      "tris": 3950,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedCanyonWall_cut_LOD6": {
+      "tris": 1974,
+      "material": "Cliff_ErodedCanyonWall_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_ErodedCanyonWall_cut",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.009,
+      "p95": 0.024,
+      "max": 0.077
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      103,
+      81,
+      26
+    ],
+    "inside_voxels": 27489
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_ErodedCanyonWall_cut_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        14.0,
+        9.0,
+        8.47
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedCanyonWall_cut_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        9.0,
+        7.5,
+        8.97
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedCanyonWall_cut_03",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        11.5,
+        3.0,
+        8.97
+      ]
+    }
+  ],
+  "fbx": "Cliff_ErodedCanyonWall_cut.fbx"
+}

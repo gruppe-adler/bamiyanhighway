@@ -1,0 +1,217 @@
+{
+  "asset": "Cliff_ErodedDesertCliffs_cut",
+  "size_m": 44.9317,
+  "uv": {
+    "charts": 523,
+    "islands": 1727,
+    "split_rounds": [
+      29,
+      31,
+      43,
+      56,
+      53,
+      39,
+      28,
+      12
+    ],
+    "planar_fixed_faces": 3249,
+    "seam_edge_share": 0.0718,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.01,
+      "95": 1.2,
+      "99": 1.46
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.52,
+      "5": 0.76,
+      "50": 1.03,
+      "95": 1.21,
+      "99": 1.43
+    },
+    "coverage": 0.454,
+    "m_per_uv_unit": 87.98,
+    "surface_m2": 3517.4,
+    "mask4096_px_per_m": 46.6
+  },
+  "cut": {
+    "cut_m": 5.62,
+    "height_m": 15.75,
+    "cut_share": 0.357,
+    "island_faces_dropped": 851,
+    "tris": 112706,
+    "close": {
+      "bad_edges": 0,
+      "duplicate_faces": 0,
+      "pieces": 1
+    },
+    "export_size_m": 44.932
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_ErodedDesertCliffs_cut_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_ErodedDesertCliffs_cut_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.232,
+    0.051,
+    0.215
+  ],
+  "dimensions_m": [
+    44.93,
+    36.87,
+    10.12
+  ],
+  "surface_m2": 3517.4,
+  "m_per_uv_unit": 87.98,
+  "mask_px_per_m": 46.6,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 44.0,
+      "TilingV": 44.0,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 32.6,
+      "TilingV": 32.6,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 26.7,
+      "TilingV": 26.7,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 21.5,
+      "TilingV": 21.5,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_ErodedDesertCliffs_cut_LOD0": {
+      "tris": 112706,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_cut_LOD1": {
+      "tris": 56352,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_cut_LOD2": {
+      "tris": 28176,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_cut_LOD3": {
+      "tris": 14088,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_cut_LOD4": {
+      "tris": 7044,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_cut_LOD5": {
+      "tris": 3522,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedDesertCliffs_cut_LOD6": {
+      "tris": 1760,
+      "material": "Cliff_ErodedDesertCliffs_cut",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_ErodedDesertCliffs_cut",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.018,
+      "p95": 0.044,
+      "max": 0.196
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      98,
+      83,
+      29
+    ],
+    "inside_voxels": 43476
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_ErodedDesertCliffs_cut_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        31.5,
+        8.5,
+        8.48
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedDesertCliffs_cut_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        0.5,
+        23.0,
+        8.98
+      ]
+    }
+  ],
+  "fbx": "Cliff_ErodedDesertCliffs_cut.fbx"
+}

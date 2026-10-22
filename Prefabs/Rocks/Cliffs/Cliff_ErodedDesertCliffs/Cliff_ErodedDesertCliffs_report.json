@@ -39,12 +39,17 @@
       "file": "Cliff_ErodedDesertCliffs_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_ErodedDesertCliffs_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.272,
-    0.079,
-    0.184
+    0.357,
+    0.104,
+    0.167
   ],
   "dimensions_m": [
     50.0,
@@ -54,6 +59,7 @@
   "surface_m2": 5941.0,
   "m_per_uv_unit": 111.69,
   "mask_px_per_m": 36.7,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

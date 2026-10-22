@@ -39,12 +39,17 @@
       "file": "Cliff_ErodedSandstoneWall_MASK.tif",
       "size": 4096,
       "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_ErodedSandstoneWall_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
     }
   },
   "mask_mean_rgb": [
-    0.237,
-    0.091,
-    0.231
+    0.296,
+    0.114,
+    0.156
   ],
   "dimensions_m": [
     50.0,
@@ -54,6 +59,7 @@
   "surface_m2": 3744.0,
   "m_per_uv_unit": 87.89,
   "mask_px_per_m": 46.6,
+  "global_nmo": true,
   "emat": [
     {
       "slot": 1,

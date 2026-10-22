@@ -1,0 +1,56 @@
+MetaFileClass {
+ Name "{1DBAD00A789DD531}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge_cut/Cliff_CrimsonBadlandsRidge_cut.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{6AACBAA36FB7860A}" {
+     SourceMaterial "Cliff_CrimsonBadlandsRidge_cut"
+     AssignedMaterial "{99E5388443C92379}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge_cut/Data/Cliff_CrimsonBadlandsRidge_cut.emat"
+    }
+   }
+   MeshParams {
+    MeshParam Cliff_CrimsonBadlandsRidge_cut {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_Cliff_CrimsonBadlandsRidge_cut {
+     LayerPreset "RockFireView"
+     SurfaceProperties {
+      "{C409534F24447254}Rock.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{6AACBAA36DB10B39}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "5.2.2 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{6AACBAA36DB108D9}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{6AACBAA36DB108B9}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{6AACBAA36DB1089C}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{6AACBAA36DB1087E}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{6AACBAA36DB10857}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{6AACBAA36DB10848}" {
+   }
+  }
+ }
+}
