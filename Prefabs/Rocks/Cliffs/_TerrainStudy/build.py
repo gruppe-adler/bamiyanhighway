@@ -97,12 +97,12 @@ def tgt(lum,chroma=EFF):
     c=chroma/(chroma@LUMW); return c*lum
 SANDC=np.array([0.3444,0.2046,0.1018],np.float32)
 RECIPES={
- 'FootDebris':dict(base='Scree',over=[('Rock',0.34,5,2.2,0.07),('Sand',0.20,3,2.4,0.08),('Pale',0.07,7,2.0,0.06)],
-                   target=tgt(0.128),depth=0.30,hmix=1.0,contrast=1.0,nstrength=1.0),
- 'DustyTransition':dict(base='Sand',over=[('Rock',0.20,4,2.2,0.08),('Scree',0.16,8,2.0,0.06),('Pale',0.14,3,2.4,0.10)],
-                   target=tgt(0.185,0.65*EFF/(EFF@LUMW)+0.35*SANDC/(SANDC@LUMW)),depth=0.18,hmix=0.8,contrast=0.8,nstrength=0.75,rough_off=0.0),
- 'CliffMatch':dict(base='Rock',over=[('Sand',0.24,3,2.4,0.09),('Scree',0.08,6,2.2,0.06),('Pale',0.10,3,2.4,0.09)],
-                   target=tgt(0.1626),depth=0.22,hmix=1.0,contrast=1.0,nstrength=1.0),
+ 'FootDebris':dict(base='Scree',over=[('Rock',0.28,8,1.8,0.14),('Sand',0.14,6,1.8,0.12),('Pale',0.06,10,1.6,0.10)],
+                   target=tgt(0.128),depth=0.55,hmix=0.45,contrast=1.0,nstrength=1.0),
+ 'DustyTransition':dict(base='Sand',over=[('Rock',0.14,8,1.8,0.14),('Scree',0.14,10,1.7,0.12),('Pale',0.12,6,1.8,0.14)],
+                   target=tgt(0.185,0.65*EFF/(EFF@LUMW)+0.35*SANDC/(SANDC@LUMW)),depth=0.6,hmix=0.35,contrast=0.8,nstrength=0.75,rough_off=0.0),
+ 'CliffMatch':dict(base='Rock',over=[('Sand',0.24,6,1.8,0.14),('Scree',0.08,8,1.7,0.10),('Pale',0.10,6,1.8,0.14)],
+                   target=tgt(0.1626),depth=0.55,hmix=0.45,contrast=1.0,nstrength=1.0),
 }
 if __name__=='__main__':
     R=int(sys.argv[1]); od=sys.argv[2]; names=sys.argv[3:] or list(RECIPES)
