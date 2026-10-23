@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_CrimsonBadlandsRidge"
      AssignedMaterial "{077703F1203A78C6}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Data/Cliff_CrimsonBadlandsRidge.emat"
     }
+    MaterialAssignClass "{6AACBAA36DEBDB87}" {
+     SourceMaterial "Cliff_CrimsonBadlandsRidge_terrain"
+     AssignedMaterial "{CFB4E97A71E79548}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Data/Cliff_CrimsonBadlandsRidge_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_CrimsonBadlandsRidge {

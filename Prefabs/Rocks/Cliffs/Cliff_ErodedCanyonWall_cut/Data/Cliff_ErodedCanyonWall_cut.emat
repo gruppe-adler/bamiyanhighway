@@ -19,8 +19,8 @@ MatPBRMulti {
   TilingV 21.4
  }
  Enabled_2 1
- BCR_2 "{400909965D675648}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_BCR.edds"
- NMO_2 "{78D1B204841004D6}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NMO.edds"
+ BCR_2 "{2C7746265F1497BF}system/terrain/terrain_BCR.edds"
+ NMO_2 "{0B400D625C52D1A8}system/terrain/terrain_NHO.edds"
  UVTransform_2 MatUVTransform "{6AACC51F22FEBFA4}" {
   TilingU 26.1
   TilingV 26.1

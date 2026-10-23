@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_ErodedSandstoneWall"
      AssignedMaterial "{C6B161E3C4FF3624}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Data/Cliff_ErodedSandstoneWall.emat"
     }
+    MaterialAssignClass "{8EB327540279299D}" {
+     SourceMaterial "Cliff_ErodedSandstoneWall_terrain"
+     AssignedMaterial "{3E122A3BECCED3DE}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Data/Cliff_ErodedSandstoneWall_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_ErodedSandstoneWall {

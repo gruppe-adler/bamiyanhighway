@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_ErodedCanyonWall_cut"
      AssignedMaterial "{ACDC3E6F741FFE29}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Data/Cliff_ErodedCanyonWall_cut.emat"
     }
+    MaterialAssignClass "{C4703A643D2FA9AC}" {
+     SourceMaterial "Cliff_ErodedCanyonWall_cut_terrain"
+     AssignedMaterial "{2638423B6BB62743}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Data/Cliff_ErodedCanyonWall_cut_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_ErodedCanyonWall_cut {

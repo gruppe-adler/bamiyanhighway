@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_HorseshoeRidge"
      AssignedMaterial "{010176BDD1E0E0C9}Prefabs/Rocks/Cliffs/Cliff_HorseshoeRidge/Data/Cliff_HorseshoeRidge.emat"
     }
+    MaterialAssignClass "{E47988ABBE529303}" {
+     SourceMaterial "Cliff_HorseshoeRidge_terrain"
+     AssignedMaterial "{6B818C61C86554A6}Prefabs/Rocks/Cliffs/Cliff_HorseshoeRidge/Data/Cliff_HorseshoeRidge_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_HorseshoeRidge {

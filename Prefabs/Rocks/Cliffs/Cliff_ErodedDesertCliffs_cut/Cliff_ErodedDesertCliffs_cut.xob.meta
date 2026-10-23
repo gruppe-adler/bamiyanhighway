@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_ErodedDesertCliffs_cut"
      AssignedMaterial "{6B2C2928B9164299}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertCliffs_cut/Data/Cliff_ErodedDesertCliffs_cut.emat"
     }
+    MaterialAssignClass "{7B3FD75D74534C49}" {
+     SourceMaterial "Cliff_ErodedDesertCliffs_cut_terrain"
+     AssignedMaterial "{961C344F590528C9}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertCliffs_cut/Data/Cliff_ErodedDesertCliffs_cut_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_ErodedDesertCliffs_cut {

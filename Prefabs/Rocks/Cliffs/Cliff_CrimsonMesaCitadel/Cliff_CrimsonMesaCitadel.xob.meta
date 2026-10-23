@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_CrimsonMesaCitadel"
      AssignedMaterial "{1F8397833C432C64}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Data/Cliff_CrimsonMesaCitadel.emat"
     }
+    MaterialAssignClass "{718D6BAD2FC35881}" {
+     SourceMaterial "Cliff_CrimsonMesaCitadel_terrain"
+     AssignedMaterial "{5E61171E8E08A0B3}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Data/Cliff_CrimsonMesaCitadel_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_CrimsonMesaCitadel {

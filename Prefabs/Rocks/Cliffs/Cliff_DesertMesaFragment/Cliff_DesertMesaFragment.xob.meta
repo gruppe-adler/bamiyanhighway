@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_DesertMesaFragment"
      AssignedMaterial "{416D082C2AB8F5DA}Prefabs/Rocks/Cliffs/Cliff_DesertMesaFragment/Data/Cliff_DesertMesaFragment.emat"
     }
+    MaterialAssignClass "{D99F139DB85757C6}" {
+     SourceMaterial "Cliff_DesertMesaFragment_terrain"
+     AssignedMaterial "{268E1D296DB9D20C}Prefabs/Rocks/Cliffs/Cliff_DesertMesaFragment/Data/Cliff_DesertMesaFragment_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_DesertMesaFragment {

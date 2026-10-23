@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_DesertFortress_cut"
      AssignedMaterial "{DC63BFEDC6C17A13}Prefabs/Rocks/Cliffs/Cliff_DesertFortress_cut/Data/Cliff_DesertFortress_cut.emat"
     }
+    MaterialAssignClass "{FE57F55F9C430E03}" {
+     SourceMaterial "Cliff_DesertFortress_cut_terrain"
+     AssignedMaterial "{7613639C3D7692A7}Prefabs/Rocks/Cliffs/Cliff_DesertFortress_cut/Data/Cliff_DesertFortress_cut_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_DesertFortress_cut {

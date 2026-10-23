@@ -1,0 +1,11 @@
+StaticModelEntity : "{B337A57E622168FA}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_base.et" {
+ ID "59F8B580DA47FB53"
+ components {
+  MeshObject "{59F8B580E1C2C938}" {
+   Object "{5102DBF98C093773}Assets/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_straight.xob"
+   LODFactors {
+    50 20 8 1
+   }
+  }
+ }
+}

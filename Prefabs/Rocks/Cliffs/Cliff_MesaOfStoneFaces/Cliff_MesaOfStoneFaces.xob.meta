@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_MesaOfStoneFaces"
      AssignedMaterial "{8B108DCDBDDBBC8D}Prefabs/Rocks/Cliffs/Cliff_MesaOfStoneFaces/Data/Cliff_MesaOfStoneFaces.emat"
     }
+    MaterialAssignClass "{D2EFC6F13772684C}" {
+     SourceMaterial "Cliff_MesaOfStoneFaces_terrain"
+     AssignedMaterial "{0ECBD3C4D22DF83A}Prefabs/Rocks/Cliffs/Cliff_MesaOfStoneFaces/Data/Cliff_MesaOfStoneFaces_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_MesaOfStoneFaces {

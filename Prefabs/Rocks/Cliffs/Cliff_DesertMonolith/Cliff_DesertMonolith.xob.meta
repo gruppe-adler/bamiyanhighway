@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Cliff_DesertMonolith"
      AssignedMaterial "{D0F5A5B5B9FD10E2}Prefabs/Rocks/Cliffs/Cliff_DesertMonolith/Data/Cliff_DesertMonolith.emat"
     }
+    MaterialAssignClass "{1788FCE4AC9EF0CF}" {
+     SourceMaterial "Cliff_DesertMonolith_terrain"
+     AssignedMaterial "{21D89E7E915ADDB9}Prefabs/Rocks/Cliffs/Cliff_DesertMonolith/Data/Cliff_DesertMonolith_terrain.emat"
+    }
    }
    MeshParams {
     MeshParam Cliff_DesertMonolith {
