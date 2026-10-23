@@ -67,7 +67,7 @@ $grp GenericEntity : "{F92C7BF71226756B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonB
   scale 3
  }
  {
-  coords 1514.989 -40.803 861.485
+  coords 1527.139 -40.86 872.165
   angles 0 -26.712 0
  }
 }

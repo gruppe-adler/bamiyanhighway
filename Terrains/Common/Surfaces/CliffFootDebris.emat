@@ -1,0 +1,15 @@
+TerrainMaterial {
+ Color 0.694 0.694 0.694 1
+ BCRMap "{DFA1D54457B6478A}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_T_BCR.edds"
+ NHOMap "{6258D1801D84A7DD}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NHO.edds"
+ ScaleUV 2
+ SatMapBlend 0
+ DetailMaxDistance 150
+ DetailBlendDistance 150
+ ClutterConfig "{2F9CB89EC892FCA7}Configs/Clutter/Sets/c_set_Dirt_01_red.conf"
+ MiddleColor 0.546 0.532 0.436 1
+ BCRMiddleMap "{DFA1D54457B6478A}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_T_BCR.edds"
+ NHOMiddleMap "{6258D1801D84A7DD}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NHO.edds"
+ MiddleScaleUV 12
+ MiddleBCRBlend 1
+}

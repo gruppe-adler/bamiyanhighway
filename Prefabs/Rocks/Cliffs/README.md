@@ -1,6 +1,6 @@
 # Cliffs for Enfusion Workbench — MatPBRMulti, guide set-up
 
-Nine static cliffs, 50 m along the longest horizontal side, pivot at the base centre, plus eight foot-less `_cut` variants for stacking (see below). Set up per the "Terrain-Klippen: Masken-Setup für MatPBRMulti" guide: **one UV set**, **one 4096 RGB mask per cliff**, the **original tiling PBR textures** as the four layers, plus one **global NMO** (rock-scale normal + ambient occlusion) per cliff for shadow depth. No pre-baked colour or macro maps.
+Twelve static cliffs (up to 50 m along the longest horizontal side, pivot at the base centre), plus six foot-less `_cut` variants for stacking (see below). Each has a ready-to-place prefab (`Cliff_Base_<Name>.et`, `Cliff_Cut_<Name>.et`, next to this file), and a second material on its open top surfaces that takes the terrain texture (see "Terrain slot"). Set up per the "Terrain-Klippen: Masken-Setup für MatPBRMulti" guide: **one UV set**, **one 4096 RGB mask per cliff**, the **original tiling PBR textures** as the four layers, plus one **global NMO** (rock-scale normal + ambient occlusion) per cliff for shadow depth. No pre-baked colour or macro maps.
 
 ## Folder layout
 
@@ -19,7 +19,13 @@ _Layers/   shared by all cliffs, 4K, seamless
   <Asset>_NMO.tif         4096, linear: normal from the 2M-tri source (DirectX RG), metalness 0 (B), AO ~2.5 m (A)
   <Asset>_enfusion.blend  preview scene: Blender imitation of the MatPBRMulti set-up below
   <Asset>_report.json     UV stats, tiling, collider/occluder stats
+  Data/<Asset>.emat           MatPBRMulti for the rock (material 1)
+  Data/<Asset>_terrain.emat   MatTerrainObject for the top surfaces (material 2, see "Terrain slot")
+Cliff_Base_<Name>.et / Cliff_Cut_<Name>.et   prefabs (MeshObject + RigidBody, layer preset BuildingFireView), one folder up from the assets
+_Tools/split_terrain_slot.py                 Blender script that adds the terrain slot and vertex colours to an FBX
 ```
+
+Prefab names group by kind: all `Cliff_Base_*` are the full cliffs, all `Cliff_Cut_*` are the stackable variants.
 
 ## Import steps
 
@@ -48,12 +54,10 @@ Common settings: Det Normal 1.0 (keep moderate on steep faces), Mask Sharpness /
 |---|---|---|---|
 | Cliff_CrimsonBadlandsRidge_cut | 6.88 of 19.12 | 36% | 116 |
 | Cliff_CrimsonMesaCitadel_cut | 8.84 of 22.1 | 40% | 74 |
-| Cliff_CrimsonSpires_cut | 8.12 of 22.21 | 37% | 38 |
 | Cliff_DesertFortress_cut | 6.63 of 17.04 | 39% | 20 |
 | Cliff_ErodedCanyonWall_cut | 4.13 of 12.64 | 33% | 0 |
 | Cliff_ErodedDesertCliffs_cut | 5.62 of 15.75 | 36% | 851 |
 | Cliff_ErodedDesertEscarpment_cut | 6.38 of 16.87 | 38% | 272 |
-| Cliff_ErodedSandstoneWall_cut | 3.88 of 12.8 | 30% | 0 |
 
 ## Per asset
 
@@ -63,8 +67,6 @@ Common settings: Det Normal 1.0 (keep moderate on steep faces), Mask Sharpness /
 | Cliff_CrimsonBadlandsRidge_cut | 40.1 × 28.6 × 12.2 | 113,034 | 1399 | 81.13 m | 50.5 | 40.6 / 30.0 / 24.6 / 19.8 | 20,000 tris, decimate, dev. 0.014 m mean | 28.5 × 3.5 × 10.9; 2.5 × 16.0 × 10.9 |
 | Cliff_CrimsonMesaCitadel | 50.0 × 40.9 × 22.1 | 195,000 | 806 | 106.37 m | 38.5 | 53.2 / 39.4 / 32.2 / 25.9 | 19,926 tris, decimate, dev. 0.025 m mean | 33.0 × 6.0 × 15.5; 34.5 × 19.5 × 6.5 |
 | Cliff_CrimsonMesaCitadel_cut | 41.3 × 24.1 × 13.3 | 103,202 | 1157 | 74.32 m | 55.1 | 37.2 / 27.5 / 22.5 / 18.1 | 20,000 tris, decimate, dev. 0.014 m mean | 32.5 × 2.5 × 8.4; 10.0 × 8.0 × 12.4 |
-| Cliff_CrimsonSpires | 50.0 × 42.4 × 22.2 | 194,932 | 631 | 105.01 m | 39.0 | 52.5 / 38.9 / 31.8 / 25.6 | 20,000 tris, decimate, dev. 0.022 m mean | 34.0 × 3.0 × 15.5; 0.5 × 26.5 × 13.5; 38.5 × 13.0 × 6.5 |
-| Cliff_CrimsonSpires_cut | 43.1 × 31.5 × 14.1 | 102,448 | 1233 | 78.33 m | 52.3 | 39.2 / 29.0 / 23.7 / 19.1 | 20,000 tris, decimate, dev. 0.013 m mean | 33.5 × 3.0 × 7.5; 16.0 × 8.5 × 6.5 |
 | Cliff_DesertFortress | 50.0 × 47.0 × 17.0 | 194,912 | 655 | 106.86 m | 38.3 | 53.4 / 39.6 / 32.4 / 26.1 | 19,944 tris, decimate, dev. 0.026 m mean | 33.5 × 13.0 × 10.0; 31.5 × 1.0 × 16.0; 0.5 × 26.0 × 12.5 |
 | Cliff_DesertFortress_cut | 42.9 × 32.8 × 10.4 | 110,776 | 1271 | 84.61 m | 48.4 | 42.3 / 31.3 / 25.6 / 20.6 | 20,000 tris, decimate, dev. 0.017 m mean | 30.0 × 1.5 × 9.5; 0.5 × 21.5 × 7.5 |
 | Cliff_ErodedCanyonWall | 50.0 × 41.8 × 12.6 | 194,148 | 165 | 80.83 m | 50.7 | 40.4 / 29.9 / 24.5 / 19.7 | 20,000 tris, decimate, dev. 0.014 m mean | 14.5 × 8.5 × 12.5; 8.5 × 8.0 × 13.0; 17.0 × 4.5 × 11.0 |
@@ -74,10 +76,47 @@ Common settings: Det Normal 1.0 (keep moderate on steep faces), Mask Sharpness /
 | Cliff_ErodedDesertEscarpment | 50.0 × 41.5 × 16.9 | 194,999 | 719 | 105.34 m | 38.9 | 52.7 / 39.0 / 31.9 / 25.7 | 19,964 tris, decimate, dev. 0.024 m mean | 34.0 × 3.0 × 15.0; 31.0 × 19.0 × 7.0 |
 | Cliff_ErodedDesertEscarpment_cut | 44.0 × 29.8 × 10.5 | 100,272 | 1024 | 81.1 m | 50.5 | 40.6 / 30.0 / 24.6 / 19.8 | 20,000 tris, decimate, dev. 0.014 m mean | 33.0 × 3.0 × 9.0; 1.0 × 17.0 × 8.5 |
 | Cliff_ErodedSandstoneWall | 50.0 × 37.9 × 12.8 | 194,822 | 643 | 87.89 m | 46.6 | 43.9 / 32.6 / 26.6 / 21.4 | 19,942 tris, decimate, dev. 0.021 m mean | 23.5 × 0.5 × 12.5; 8.0 × 8.0 × 13.0; 7.5 × 9.5 × 13.0 |
-| Cliff_ErodedSandstoneWall_cut | 47.1 × 30.9 × 8.9 | 128,772 | 1071 | 70.84 m | 57.8 | 35.4 / 26.2 / 21.5 / 17.3 | 20,000 tris, decimate, dev. 0.014 m mean | 23.0 × 0.5 × 9.0; 9.0 × 7.5 × 9.5; 5.0 × 10.0 × 9.5 |
 | Cliff_HorseshoeRidge | 50.0 × 48.0 × 15.4 | 132,338 | 964 | 98.58 m | 41.5 | 49.3 / 36.5 / 29.9 / 24.0 | 20,000 tris, decimate, dev. 0.018 m mean | 26.5 × 5.0 × 14.4; 3.5 × 21.0 × 8.9 |
+| Cliff_DesertMesaFragment | 48.5 × 22.0 × 25.1 | 194,788 | 1653 | 99.67 m | 41.1 | 49.8 / 36.9 / 30.2 / 24.3 | 19,984 tris, decimate, dev. 0.028 m mean | 39.5 × 10.0 × 20.5 |
+| Cliff_DesertMonolith | 44.0 × 45.1 × 39.1 | 163,890 | 1047 | 134.82 m | 30.4 | 67.4 / 49.9 / 40.9 / 32.9 | 20,000 tris, decimate, dev. 0.030 m mean | 27.5 × 28.5 × 35.5 |
+| Cliff_ErodedSandstoneWall02 | 48.4 × 21.3 × 26.8 | 179,560 | 370 | 84.17 m | 48.7 | 42.1 / 31.2 / 25.5 / 20.5 | 20,000 tris, decimate, dev. 0.017 m mean | 39.5 × 0.5 × 23.0 |
+| Cliff_MesaOfStoneFaces | 49.4 × 20.6 × 29.2 | 194,666 | 260 | 95.63 m | 42.8 | 47.8 / 35.4 / 29.0 / 23.3 | 20,000 tris, decimate, dev. 0.019 m mean | 40.0 × 7.5 × 25.5 |
 
 Tiling = metres per UV unit ÷ repeat, with repeats of 2.0 m (base), 2.7 m (sand), 3.3 m (scree) and 4.1 m (pale sandstone): no common divisor, so the layers don't line up. At 4K every layer is ≥1000 px/m.
+
+## Terrain slot (second material on the top surfaces)
+
+Every cliff FBX carries two materials: `<Asset>` (the rock, `MatPBRMulti`) and `<Asset>_terrain` (`Data/<Asset>_terrain.emat`, a `MatTerrainObject` child of `Common/Materials/default_MatTerrainObj_TerrShadows.emat`). The second slot covers the open, flat tops of the cliff and shows the terrain texture that is painted underneath, so the plateau reads as ground instead of bare rock. The `<Asset>.xob.meta` maps the source material `<material>_terrain` to that emat (a second `MaterialAssignClass`); after changing an FBX, reimport it and check that the `.xob` lists both materials.
+
+**Blend.** The terrain slot fades from terrain to rock with vertex colour: `MaterialBlendUseVertexColor R` and `MaterialBlendUseTerrainDistance 1` in the emat. In the terrain faces R is 0 on the plateau (shows the terrain) and rises to 1 at the soft edge (shows the emat's own BCR/NMO, which should look like the rock). **All rock faces carry white (1.0).** The vertex colour multiplies the `MatPBRMulti` colour as well, so writing 0 there turns the cliff black.
+
+**Which faces.** Made by `_Tools/split_terrain_slot.py` from the original FBX (usage and defaults are in the file header): smoothed up-facing at least 0.7, above 40% of the cliff's height, ambient occlusion (the global NMO alpha) at least 0.7 so crack interiors, lips and overhangs stay on the rock, islands of at least 20 m2. The plateau is then blurred mostly sideways into a smooth field, which gives rounded blend contours instead of the faceted ones a shortest-path distance along mesh edges produces. The terrain slot covers the faces where the field is above a small threshold; coarser LODs follow LOD0 per vertex. Terrain slot area is about 360–1,340 m2 per cliff (6–15% of the surface); Desert Monolith and Desert Mesa Fragment have the largest summits.
+
+**Terrain emat.** All cliffs use the Sandstone Pale layer (`CliffLayer_SandstonePale_BCR/NMO`) with that layer's tiling from the cliff's table and rotation 90, and `Color 0.791 0.703 0.703 1`. `Color` clamps at 1 in Workbench, so it can only darken; if the rock beside it is lighter, use a lighter texture, not a value above 1.
+
+**Known limits.**
+- A material border follows triangles: the terrain/rock edge steps at about 0.3 m on LOD0 and at the triangle size on coarser LODs.
+- The terrain slot has no mask and no global NMO, so where the soft edge ends in plain rock BCR there can be a tone step against the masked rock, and its crevices lack the cliff's ambient occlusion. That is why the tops are restricted to open, lit areas.
+- What the terrain slot picks up is the terrain texture under the cliff's footprint; if that differs from the ground around the cliff, paint it.
+
+## Terrain surfaces for painting (`Terrains/Common/Surfaces/`)
+
+Two `TerrainMaterial` surfaces built straight from the cliff layers, so the painted ground has the cliff's own grain:
+
+| Surface | BCR | NHO | `ScaleUV` / `MiddleScaleUV` | Paint |
+|---|---|---|---|---|
+| `CliffFootDebris.emat` | `CliffLayer_RockPorous_T_BCR` | `CliffLayer_RockPorous_NHO` | 2 / 12 | 0–4 m around the cliff foot |
+| `CliffDustyTransition.emat` | `CliffLayer_Sand_T_BCR` | `CliffLayer_Sand_NHO` | 2.7 / 16 | about 3–15 m out, bridging to the map ground |
+
+- **NHO** files sit in `_Layers/` (`CliffLayer_RockPorous_NHO.tif`, `CliffLayer_Sand_NHO.tif`, 2048): R, G = normal from the layer's NMO, **B = height** (the layer's `_DETAIL_MASK`, stretched to 0..1), A = ambient occlusion. Import as linear, like the NMO files.
+- **`_T_BCR`** files (`CliffLayer_RockPorous_T_BCR.tif`, `CliffLayer_Sand_T_BCR.tif`, 2048, colour sRGB) are the layer BCRs prepared for ground use: the slow row and column brightness drift is removed (the Sand layer drifted about 8x more than the rock layer, which showed as stripes from a distance once the tile repeats every few metres) and they are half the resolution. The cliffs keep using the untouched `_BCR` files.
+- **Colour.** `Color` is tinted by eye against the cliff wall (foot about `0.55 0.53 0.44`, dust `0.7 0.55 0.5`); check both in the same light as the wall. The middle pair reuses the same textures at a larger scale with `MiddleColor` equal to `Color`.
+
+**What went wrong on the way (so it is not repeated).**
+- **`SatMapBlend`: keep it at 0.** At 0.3 the satellite colour washed the whole surface pale pink, and no `Color` value could fix it (the blue channel stayed high even with `Color` blue at 0.012).
+- **NHO height channel.** With the layers' NMO in the NHO slot (B = metalness = 0), two surfaces blended as speckles and dark dashes appeared along the tile borders. With a real height in B the overlap blends cleanly. The B = height, A = occlusion layout is a working assumption that behaved correctly in Workbench; it was not checked against BI documentation (the wiki pages return 403 here).
+- **Baked or remixed textures** (a mesh-UV BCR baked from the four layers, and blended "terrain candidate" textures built from the layers) looked blurry or patchy against the cliff and were abandoned and deleted. The cliff layers used directly, with a colour tint, match the cliff far better.
+- Middle maps were added last and have not yet been judged from a distance.
 
 ## Example `.emat` block (first asset)
 
@@ -106,4 +145,4 @@ MatPBRMulti {
 - Pale sandstone layer (B) is graded to ~1.6× the rock's brightness and warm red-brown (`#b07a5e` average), so the patches read as lighter sandstone, not chalk.
 - Canyon Wall and Horseshoe Ridge are hollow, double-skinned Meshy meshes: their LOD0 is rebuilt from the flood-filled voxel solid (12 cm), shrink-wrapped onto the outer surface, then decimated. Source surface outside it by more than 10 cm: none on Canyon Wall; on Horseshoe Ridge 16% of the source area, almost all of it the source's ground plate in the bottom 0.5 m (0.4% higher up). Horseshoe Ridge also has a few long, downward-facing triangles under overhangs 0.5–1.3 m above its base: sink it at least 1.5 m into the terrain.
 - Checked for every cliff: FBX re-import (collider closed, OCC_ quads), share of inward-facing faces (≤0.4%, small scattered faces, i.e. no back-face-culling holes), back-face-culled renders from six sides, UV stretch/density, and long thin triangles measured against the 2M-tri source (above 0.3 m only on Horseshoe Ridge, see above).
-- Not checked inside Workbench (Windows-only); the Blender preview is an imitation of the shader.
+- The rock material and the terrain slot were checked in Workbench on Crimson Badlands Ridge; the other cliffs use the same set-up but were checked less. The Blender preview is an imitation of the shader.

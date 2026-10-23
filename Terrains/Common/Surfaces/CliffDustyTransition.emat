@@ -1,0 +1,16 @@
+TerrainMaterial {
+ Color 0.7 0.55 0.5 1
+ BCRMap "{00AE8088386C2289}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_T_BCR.edds"
+ NHOMap "{673E42D25E21105F}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NHO.edds"
+ ScaleUV 2.7
+ SatMapBlend 0
+ DetailMaxDistance 150
+ DetailBlendDistance 150
+ PlantMat "{028436859D6FC4D3}Assets/Clutter/Procedural/Takistan_Grass.emat"
+ ClutterConfig "{2F9CB89EC892FCA7}Configs/Clutter/Sets/c_set_Dirt_01_red.conf"
+ MiddleColor 0.7 0.55 0.5 1
+ BCRMiddleMap "{00AE8088386C2289}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_T_BCR.edds"
+ NHOMiddleMap "{673E42D25E21105F}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NHO.edds"
+ MiddleScaleUV 16
+ MiddleBCRBlend 1
+}
