@@ -92,7 +92,9 @@ Every cliff FBX carries two materials: `<Asset>` (the rock, `MatPBRMulti`) and `
 
 **Which faces.** Made by `_Tools/split_terrain_slot.py` from the original FBX (usage and defaults are in the file header): smoothed up-facing at least 0.7, above 40% of the cliff's height, ambient occlusion (the global NMO alpha) at least 0.7 so crack interiors, lips and overhangs stay on the rock, islands of at least 20 m2. The plateau is then blurred mostly sideways into a smooth field, which gives rounded blend contours instead of the faceted ones a shortest-path distance along mesh edges produces. The terrain slot covers the faces where the field is above a small threshold; coarser LODs follow LOD0 per vertex. Terrain slot area is about 360–1,340 m2 per cliff (6–15% of the surface); Desert Monolith and Desert Mesa Fragment have the largest summits.
 
-**Terrain emat.** All cliffs use the Sandstone Pale layer (`CliffLayer_SandstonePale_BCR/NMO`) with that layer's tiling from the cliff's table and rotation 90, and `Color 0.791 0.703 0.703 1`. `Color` clamps at 1 in Workbench, so it can only darken; if the rock beside it is lighter, use a lighter texture, not a value above 1.
+**Terrain emat.** All cliffs use the Sandstone Pale layer (`CliffLayer_SandstonePale_BCR/NMO`) with that layer's tiling from the cliff's table and rotation 90, `Color 0.791 0.703 0.703 1` and `ClutterThresholdAngle 20`. `Color` clamps at 1 in Workbench, so it can only darken; if the rock beside it is lighter, use a lighter texture, not a value above 1.
+
+**Clutter.** Clutter from the terrain surface painted under a cliff also appears on the terrain slot, and on steep faces it stands crooked. `ClutterThresholdAngle 20` in every `<Asset>_terrain.emat` keeps it off anything steeper than that. If it is still not enough, `_Tools/split_terrain_slot.py` has an optional `FZMIN` slope gate (off by default) that removes the steeper faces from the terrain slot itself.
 
 **Known limits.**
 - A material border follows triangles: the terrain/rock edge steps at about 0.3 m on LOD0 and at the triangle size on coarser LODs.

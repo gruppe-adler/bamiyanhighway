@@ -12,7 +12,10 @@ What it does (LOD0 decides, coarser LODs follow it per vertex):
   3. faces where the field is above LO go into a second material "<material>_terrain"; the rest keep slot 1
   4. writes a vertex colour: terrain faces = 1 - field (0 on the plateau, 1 at the soft edge); rock faces = 1 (white)
   5. exports the FBX with custom props kept (the collider's `usage`)
-Defaults (the values used for all cliffs): AO 0.7, NZ 0.7, SM 12, MI 20, TRIM 0.15, VOTE 3, BLUR 40, HP 3, LO 0.06, SPAN 0.6.
+Defaults (the values used for all cliffs): AO 0.7, NZ 0.7, SM 12, MI 20, TRIM 0.15, VOTE 3, BLUR 40, HP 3, LO 0.06, SPAN 0.6,
+FZSM 3. Optional FZMIN (off by default): cos of the steepest slope allowed, e.g. 0.82 = about 35 deg; it also fades the blend
+out toward steeper ground (tested: plateau on Crimson Badlands Ridge 253 -> 209 m2). The installed FBXs were made without it, with
+ClutterThresholdAngle 20 in the terrain emats doing that job instead.
 Writes nothing if no top qualifies (exit code 3). Always keep a copy of the original FBX; the xob.meta also needs a second
 MaterialAssignClass mapping "<material>_terrain" to Data/<Asset>_terrain.emat.
 """
@@ -41,12 +44,22 @@ vz=np.zeros(nv);vw=np.zeros(nv)
 for k in range(3):
     np.add.at(vz,fv[:,k],fn[:,2]*fa);np.add.at(vw,fv[:,k],fa)
 vz/=np.maximum(vw,1e-12)
+vz_light=vz.copy()
 e=np.concatenate([fv[:,[0,1]],fv[:,[1,2]],fv[:,[2,0]]]);e=np.unique(np.sort(e,axis=1),axis=0)
 deg=np.bincount(e.ravel(),minlength=nv).astype(float)
 for _ in range(SMOOTH):
     s=np.zeros(nv);np.add.at(s,e[:,0],vz[e[:,1]]);np.add.at(s,e[:,1],vz[e[:,0]])
     vz=(vz+s)/(1+deg)
 fz=vz[fv].mean(1)
+# steepness gate: lightly smoothed (3 passes ~ 0.5 m) so small steep areas are not averaged away by the heavy smoothing above
+_e=np.unique(np.sort(np.concatenate([fv[:,[0,1]],fv[:,[1,2]],fv[:,[2,0]]]),axis=1),axis=0)
+_d=np.bincount(_e.ravel(),minlength=nv).astype(float)
+for _ in range(int(os.environ.get('FZSM',3))):
+    _s=np.zeros(nv);np.add.at(_s,_e[:,0],vz_light[_e[:,1]]);np.add.at(_s,_e[:,1],vz_light[_e[:,0]])
+    vz_light=(vz_light+_s)/(1+_d)
+FZMIN=float(os.environ.get('FZMIN',0))   # optional: cos of the steepest slope that may carry terrain (0.82 ~ 35 deg). Off by default; the installed FBXs were made without it
+fzl=vz_light[fv].mean(1)
+_st=np.clip((vz_light-(FZMIN-0.12))/0.12,0,1);steep_v=_st*_st*(3-2*_st)   # 1 on flat ground, 0 on steep ground, smooth between
 AO_THR=float(os.environ.get('AO',0.7))
 _ao=np.load(os.environ['NMO']).astype(np.float32)/255
 _uv=np.empty(len(me.loops)*2,dtype=np.float32);me.uv_layers[0].data.foreach_get('uv',_uv);_uv=_uv.reshape(-1,2)
@@ -57,7 +70,7 @@ for _ in range(int(os.environ.get('AOSM',6))):
     q=np.zeros(nv);np.add.at(q,e[:,0],vao[e[:,1]]);np.add.at(q,e[:,1],vao[e[:,0]]);vao=(vao+q)/(1+deg)
 fao=vao[fv].mean(1)
 P('AO face mean',round(float(fao.mean()),3),'share<thr',round(float((fao<AO_THR).mean()),3))
-sel=(fz>NZ)&(fc[:,2]>zmin+HFRAC*(zmax-zmin))&(fao>AO_THR)
+sel=(fz>NZ)&(fzl>=FZMIN)&(fc[:,2]>zmin+HFRAC*(zmax-zmin))&(fao>AO_THR)
 # face adjacency via shared edges
 def comps(mask):
     ed={}
@@ -97,6 +110,7 @@ we=(np.hypot(ev[:,0],ev[:,1])/el)**float(os.environ.get('HP',3))
 sw=np.zeros(nv);np.add.at(sw,e[:,0],we);np.add.at(sw,e[:,1],we)
 for _ in range(int(os.environ.get('BLUR',40))):
     q=np.zeros(nv);np.add.at(q,e[:,0],we*ind[e[:,1]]);np.add.at(q,e[:,1],we*ind[e[:,0]]);ind=(ind+q)/(1+sw)
+ind=ind*steep_v   # fade the blend out toward steep ground
 t=np.clip((ind-float(os.environ.get('LO',0.06)))/float(os.environ.get('SPAN',0.6)),0,1);vw_=t*t*(3-2*t)
 grown=(vw_[fv].max(1)>0.02)&(fao>AO_THR)
 grown&=(vw_[fv].max(1)>=float(os.environ.get('TRIM',0.15)))|sel
