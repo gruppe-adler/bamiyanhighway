@@ -1,6 +1,5 @@
 MatPBRMulti {
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
- GlobalLayerMode Manual
  MCROpacityBlend 0.282
  MCRBrightness 5
  MaskMap "{62BE614EE7FAC479}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall/Cliff_ErodedCanyonWall_MASK.edds"

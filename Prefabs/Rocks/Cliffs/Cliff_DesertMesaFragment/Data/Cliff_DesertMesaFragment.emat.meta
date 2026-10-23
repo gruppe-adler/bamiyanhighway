@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{416D082C2AB8F5DA}Prefabs/Rocks/Cliffs/Cliff_DesertMesaFragment/Data/Cliff_DesertMesaFragment.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

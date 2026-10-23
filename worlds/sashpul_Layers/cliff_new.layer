@@ -1,0 +1,35 @@
+GenericEntity : "{43AB727BE583ACCE}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertEscarpment/Cliff_ErodedDesertEscarpment.et" {
+ coords 1641.836 -38.235 919.045
+ angles 0 -26.159 0
+ scale 3
+}
+GenericEntity : "{496343304142FBC9}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel_cut/Cliff_CrimsonMesaCitadel_cut.et" {
+ coords 1716.076 -0.538 915.639
+ angles 0 63.548 0
+ scale 3
+}
+GenericEntity : "{6399C82133269916}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Cliff_CrimsonMesaCitadel.et" {
+ coords 1750.085 -39.086 864.385
+ angles 0 69.812 0
+ scale 3
+}
+GenericEntity : "{866903007B16B1DA}Prefabs/Rocks/Cliffs/Cliff_DesertFortress/Cliff_DesertFortress.et" {
+ coords 1697.399 -37.741 958.738
+ angles 0 -70.068 0
+ scale 3
+}
+GenericEntity : "{9AE7B8E4AA7EDFCA}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge_cut/Cliff_CrimsonBadlandsRidge_cut.et" {
+ coords 1686.455 -12.059 931.359
+ angles 0 -38.056 0
+ scale 3
+}
+GenericEntity : "{D477E85FC7DE8B82}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Cliff_ErodedSandstoneWall.et" {
+ coords 1648.865 -37.998 958.966
+ angles 0 -9.213 0
+ scale 3
+}
+GenericEntity : "{F92C7BF71226756B}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Cliff_CrimsonBadlandsRidge.et" {
+ coords 1723.638 -35.002 917.536
+ angles 0 62.311 0
+ scale 3
+}

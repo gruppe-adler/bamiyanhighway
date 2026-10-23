@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "2704E59E3346052B"
+ components {
+  MeshObject "{22813E8317B6F81F}" {
+   Object "{28E83ADE5BA291ED}Prefabs/Rocks/Cliffs/Cliff_MesaOfStoneFaces/Cliff_MesaOfStoneFaces.xob"
+  }
+  RigidBody "{D036A999AD063DD1}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

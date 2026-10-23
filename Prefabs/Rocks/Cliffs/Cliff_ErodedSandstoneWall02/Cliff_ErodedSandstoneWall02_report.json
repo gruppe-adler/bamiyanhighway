@@ -1,0 +1,192 @@
+{
+  "asset": "Cliff_ErodedSandstoneWall02",
+  "size_m": 48.44,
+  "uv": {
+    "charts": 133,
+    "islands": 370,
+    "split_rounds": [
+      5,
+      8,
+      10,
+      12,
+      14,
+      12,
+      8,
+      4
+    ],
+    "planar_fixed_faces": 265,
+    "seam_edge_share": 0.0296,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.09,
+      "99": 1.21
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.7,
+      "5": 0.8,
+      "50": 1.01,
+      "95": 1.2,
+      "99": 1.36
+    },
+    "coverage": 0.572,
+    "m_per_uv_unit": 84.17,
+    "surface_m2": 4054.8,
+    "mask4096_px_per_m": 48.7
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_ErodedSandstoneWall02_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_ErodedSandstoneWall02_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.097,
+    0.025,
+    0.165
+  ],
+  "dimensions_m": [
+    48.44,
+    21.31,
+    26.76
+  ],
+  "surface_m2": 4054.8,
+  "m_per_uv_unit": 84.17,
+  "mask_px_per_m": 48.7,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 42.1,
+      "TilingV": 42.1,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 31.2,
+      "TilingV": 31.2,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 25.5,
+      "TilingV": 25.5,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 20.5,
+      "TilingV": 20.5,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_ErodedSandstoneWall02_LOD0": {
+      "tris": 179560,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedSandstoneWall02_LOD1": {
+      "tris": 89780,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedSandstoneWall02_LOD2": {
+      "tris": 44890,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedSandstoneWall02_LOD3": {
+      "tris": 22444,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedSandstoneWall02_LOD4": {
+      "tris": 11222,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedSandstoneWall02_LOD5": {
+      "tris": 5610,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedSandstoneWall02_LOD6": {
+      "tris": 2804,
+      "material": "Cliff_ErodedSandstoneWall02",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_ErodedSandstoneWall02",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.017,
+      "p95": 0.044,
+      "max": 0.133
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      105,
+      51,
+      62
+    ],
+    "inside_voxels": 85236
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_ErodedSandstoneWall02_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        39.5,
+        0.5,
+        23.0
+      ]
+    }
+  ],
+  "fbx": "Cliff_ErodedSandstoneWall02.fbx"
+}

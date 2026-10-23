@@ -1,0 +1,192 @@
+{
+  "asset": "Cliff_DesertMesaFragment",
+  "size_m": 48.53,
+  "uv": {
+    "charts": 489,
+    "islands": 1653,
+    "split_rounds": [
+      6,
+      9,
+      16,
+      31,
+      53,
+      83,
+      104,
+      56
+    ],
+    "planar_fixed_faces": 2062,
+    "seam_edge_share": 0.0479,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.03,
+      "95": 1.2,
+      "99": 1.44
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.58,
+      "5": 0.76,
+      "50": 1.03,
+      "95": 1.28,
+      "99": 1.59
+    },
+    "coverage": 0.532,
+    "m_per_uv_unit": 99.67,
+    "surface_m2": 5287.6,
+    "mask4096_px_per_m": 41.1
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_DesertMesaFragment_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_DesertMesaFragment_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.115,
+    0.058,
+    0.142
+  ],
+  "dimensions_m": [
+    48.53,
+    22.01,
+    25.11
+  ],
+  "surface_m2": 5287.6,
+  "m_per_uv_unit": 99.67,
+  "mask_px_per_m": 41.1,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 49.8,
+      "TilingV": 49.8,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 36.9,
+      "TilingV": 36.9,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 30.2,
+      "TilingV": 30.2,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 24.3,
+      "TilingV": 24.3,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_DesertMesaFragment_LOD0": {
+      "tris": 194788,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertMesaFragment_LOD1": {
+      "tris": 97394,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertMesaFragment_LOD2": {
+      "tris": 48696,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertMesaFragment_LOD3": {
+      "tris": 24348,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertMesaFragment_LOD4": {
+      "tris": 12174,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertMesaFragment_LOD5": {
+      "tris": 6086,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_DesertMesaFragment_LOD6": {
+      "tris": 3042,
+      "material": "Cliff_DesertMesaFragment",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_DesertMesaFragment",
+    "path": "decimate",
+    "tris": 19984,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.028,
+      "p95": 0.07,
+      "max": 0.188
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      106,
+      53,
+      59
+    ],
+    "inside_voxels": 133146
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_DesertMesaFragment_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        39.5,
+        10.0,
+        20.5
+      ]
+    }
+  ],
+  "fbx": "Cliff_DesertMesaFragment.fbx"
+}
