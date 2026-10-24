@@ -3,7 +3,7 @@ MetaFileClass {
  Configurations {
   FBXResourceClass PC {
    MaterialAssigns {
-    MaterialAssignClass "{6AB12588AAF85CB1}" {
+    MaterialAssignClass "{6AB125854FE67266}" {
      SourceMaterial "Cliff_CrimsonMonolith"
      AssignedMaterial "{3770B915E008B9FA}Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Data/Cliff_CrimsonMonolith.emat"
     }

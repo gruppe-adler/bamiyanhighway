@@ -1,7 +1,7 @@
 MatPBRMulti {
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
- MaskMap "Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Cliff_CrimsonMonolith_MASK.edds"
- GlobalNMOMap "Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Cliff_CrimsonMonolith_NMO.edds"
+ MaskMap "{6B4FE438A1E718D2}Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Cliff_CrimsonMonolith_MASK.edds"
+ GlobalNMOMap "{25072659B79E555D}Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Cliff_CrimsonMonolith_NMO.edds"
  BCR_1 "{456F9AC41EC2E1CA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_BCR.edds"
  NMO_1 "{7DB72156C7B5B354}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NMO.edds"
  UVTransform_1 MatUVTransform {
