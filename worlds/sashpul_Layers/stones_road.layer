@@ -67168,10 +67168,6 @@ SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite
  angles 2.973 82.966 87.776
  scale 2
 }
-SCR_DestructibleEntity : "{55EE2609E6830942}Prefabs/Structures/Walls/Concrete/ConcreteWall_USSR_01/ConcreteWall_USSR_01_base.et" {
- coords 1186.952 -0.342 1058.239
- angles 0 -27.579 0
-}
 SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
  coords 1576.856 -0.385 800.723
  angles 71.385 -75.907 174.556
@@ -67192,10 +67188,6 @@ SCR_DestructibleEntity : "{8CBA9D089278A4D7}Prefabs/Structures/Industrial/CoalMi
 SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et" {
  coords 1194.466 -40.811 1131.865
  angles -10.545 -32.807 0
-}
-SCR_DestructibleEntity : "{A5C7908C71CFD97C}Prefabs/Structures/Walls/Concrete/ConcreteWall_02/ConcreteWall_02_V1_2m.et" {
- coords 1188.064 -1.532 1058.719
- angles 0 -25.078 0
 }
 ParticleEffectEntity : "{A9B17C22B4099625}Prefabs/Particles/Water/Waterfall_mist.et" {
  coords 632.271 -34.101 844.982

@@ -577,111 +577,116 @@ $grp PolylineShapeEntity {
   coords 1240.566 -31.341 1088.254
   Points {
    ShapePoint "{6A9102DFD252CF10}" {
-    Position 1.048 -0.01 -1.045
+    Position 1.067 -0.372 -1.034
    }
    ShapePoint "{6A9102DFD252E782}" {
-    Position -3.722 0.227 -3.764
+    Position -3.672 -0.338 -3.739
    }
    ShapePoint "{6A9102DFCDB0DA92}" {
-    Position -10.175 0 -7.077
+    Position -10.154 -0.485 -7.066
    }
    ShapePoint "{6A9102DFCE6D6E53}" {
-    Position -19.088 0 -11.862
+    Position -19.096 -0.493 -11.866
    }
    ShapePoint "{6A9102DFCACDB0A5}" {
-    Position -26.174 0 -15.551
+    Position -26.154 -0.497 -15.539
    }
    ShapePoint "{6A9102DFC5712165}" {
-    Position -32.718 0 -19.507
+    Position -32.691 -0.455 -19.493
    }
    ShapePoint "{6A9102DFC5176A1B}" {
-    Position -38.287 0 -22.499
+    Position -38.289 -0.424 -22.5
    }
    ShapePoint "{6A9102DFC7D9A3F4}" {
-    Position -45.683 0 -26.287
+    Position -45.684 -0.31 -26.287
    }
    ShapePoint "{6A9102DFC6CB57D8}" {
-    Position -54.09 -0.094 -30.257
+    Position -54.484 -0.323 -30.551
    }
    ShapePoint "{6AA8E76E0C458C61}" {
-    Position -55.95 0.065 -27.89
+    Position -55.804 0.07 -27.654
    }
   }
   {
    WallGeneratorEntity : "{2781482CFE270E77}Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et" {
     Flags 0x100003 0
-    m_iSeed 22598
+    m_iSeed 20924
+    m_bRandomiseSeedOnUse 0
     m_bSnapOffsetShapeToTheGround 0
     m_bEnableMiddleObject 0
     {
      $grp SCR_DestructibleEntity : "{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et" {
       {
-       coords 1.236 -0.019 -0.938
-       angles 0 -209.684 0
+       coords 1.255 -0.373 -0.927
+       angles 0 -209.711 0
       }
       {
-       coords -3.726 0.244 -3.778
-       angles 0 -207.093 0
+       coords -3.71 -0.332 -3.772
+       angles 0 -207.076 0
       }
       {
-       coords -32.618 0 -19.459
-       angles 0 -208.198 0
+       coords -15.711 -0.481 -10.059
+       angles 0 -208.098 0
       }
+      {
+       coords -26.085 -0.498 -15.487
+       angles 0 -211.23 0
+      }
+      {
+       coords -29.403 -0.476 -17.499
+       angles 0 -211.23 0
+      }
+      {
+       coords -32.715 -0.454 -19.521
+       angles 0 -208.124 0
+      }
+     }
+     SCR_DestructibleEntity : "{37382E22EACF3E8A}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m_D.et" {
+      coords -37.761 -0.429 -22.222
+      angles 0 -207.164 0
      }
      $grp SCR_DestructibleEntity : "{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et" {
       {
-       coords -2.132 0.148 -2.858
-       angles 0 -209.684 0
+       coords -2.115 -0.349 -2.85
+       angles 0 -209.711 0
       }
       {
-       coords -7.179 0.113 -5.544
-       angles 0 -207.093 0
+       coords -7.165 -0.414 -5.538
+       angles 0 -207.076 0
       }
       {
-       coords -15.724 0.015 -10.066
-       angles 0 -208.1 0
+       coords -36.138 -0.436 -21.35
+       angles 0 -208.124 0
       }
       {
-       coords -17.349 0.008 -10.933
-       angles 0 -208.1 0
+       coords -43.634 -0.341 -25.236
+       angles 0 -207.164 0
       }
       {
-       coords -36.038 0 -21.293
-       angles 0 -208.198 0
+       coords -52.313 -0.32 -29.498
+       angles 0 -205.882 0
       }
       {
-       coords -51.686 -0.07 -29.112
-       angles 0 -205.461 0
-      }
-      {
-       coords -53.382 -0.099 -30.14
-       angles 0 -138.775 0
+       coords -54.055 -0.349 -30.581
+       angles 0 -120.867 0
       }
      }
      SCR_DestructibleEntity : "{D1A7F179B35C2F96}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Pole.et" {
-      coords -54.733 -0.013 -28.957
-      angles 0 -138.775 0
+      coords -54.97 -0.13 -29.049
+      angles 0 -120.867 0
      }
      $grp SCR_DestructibleEntity : "{FF9F22E572547ED5}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_8m.et" {
       {
-       coords -8.82 0.045 -6.379
-       angles 0 -208.1 0
+       coords -8.807 -0.457 -6.373
+       angles 0 -208.098 0
       }
       {
-       coords -18.973 0 -11.803
-       angles 0 -207.495 0
+       coords -19.133 -0.494 -11.889
+       angles 0 -207.47 0
       }
       {
-       coords -25.923 0 -15.405
-       angles 0 -211.119 0
-      }
-      {
-       coords -37.66 0 -22.167
-       angles 0 -207.178 0
-      }
-      {
-       coords -44.619 0.002 -25.748
-       angles 0 -205.461 0
+       coords -45.271 -0.313 -26.081
+       angles 0 -205.882 0
       }
      }
     }
@@ -1638,38 +1643,44 @@ $grp Tree : "{80C2B17EB509D6CF}Prefabs/Vegetation/Plant/p_echium_vulgare_0s.et" 
   angles 0 127.609 0
  }
 }
-StaticModelEntity : "{85C71F17C37D274C}Prefabs/Structures/BuildingParts/Entry/Entry_Block_Platform_01_3x6.et" {
- coords 1245.203 -31.594 1086.504
- angles 0 60.237 0
+$grp StaticModelEntity : "{85C71F17C37D274C}Prefabs/Structures/BuildingParts/Entry/Entry_Block_Platform_01_3x6.et" {
  {
-  StaticModelEntity : "{12B4245713CD7839}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v1.et" {
-   coords 2.011 -0.033 2.088
-   angles 0 1.61 0
-  }
-  $grp StaticModelEntity : "{390BAFB276DF1AE3}Prefabs/Structures/BuildingParts/Entry/Doorstep_01_5m.et" {
-   {
-    coords 3.956 -3.516 7.804
-    angles 0 -88.404 0
+  coords 1245.203 -31.594 1086.504
+  angles 0 60.237 0
+  {
+   StaticModelEntity : "{12B4245713CD7839}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v1.et" {
+    coords 2.011 -0.033 2.088
+    angles 0 1.61 0
    }
-   {
-    coords 3.489 -3.513 -8.199
-    angles 0 -88.404 0
+   $grp StaticModelEntity : "{390BAFB276DF1AE3}Prefabs/Structures/BuildingParts/Entry/Doorstep_01_5m.et" {
+    {
+     coords 3.956 -3.516 7.804
+     angles 0 -88.404 0
+    }
+    {
+     coords 3.489 -3.513 -8.199
+     angles 0 -88.404 0
+    }
+   }
+   $grp StaticModelEntity : "{8F5A2765D06D0E21}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_base.et" {
+    {
+     coords 5.517 -3.552 6.715
+     angles 0 -177.513 0
+    }
+    {
+     coords 4.895 -3.602 -7.212
+     angles 0 2.487 0
+    }
+   }
+   StaticModelEntity : "{B9BD7523E6370435}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v2.et" {
+    coords 2.133 -0.164 -2.289
+    angles 0 -179.116 0
    }
   }
-  $grp StaticModelEntity : "{8F5A2765D06D0E21}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_base.et" {
-   {
-    coords 5.517 -3.552 6.715
-    angles 0 -177.513 0
-   }
-   {
-    coords 4.895 -3.602 -7.212
-    angles 0 2.487 0
-   }
-  }
-  StaticModelEntity : "{B9BD7523E6370435}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_03_narrow_v2.et" {
-   coords 2.133 -0.164 -2.289
-   angles 0 -179.116 0
-  }
+ }
+ {
+  coords 1186.338 -31.607 1061.189
+  angles 0 60.621 0
  }
 }
 $grp StaticModelEntity : "{85D2D402637D9C5D}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_C.et" {
@@ -1754,6 +1765,14 @@ $grp StaticModelEntity : "{AE73676ABA995907}Prefabs/Structures/BuildingParts/Ent
  }
  {
   coords 1214.784 -31.601 1074.56
+  angles 0 -27.946 0
+ }
+ {
+  coords 1204.415 -31.601 1068.562
+  angles 0 -27.946 0
+ }
+ {
+  coords 1193.594 -31.601 1063.169
   angles 0 -27.946 0
  }
 }
