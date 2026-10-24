@@ -1,0 +1,32 @@
+MatPBRMulti {
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ MaskMap "{63CFDDD2777F6BD7}Prefabs/Rocks/Cliffs/Stairs_RedStone_01/Stairs_RedStone_01_MASK.edds"
+ GlobalNMOMap "{939FC9A90FD94B55}Prefabs/Rocks/Cliffs/Stairs_RedStone_01/Stairs_RedStone_01_NMO.edds"
+ BCR_1 "{456F9AC41EC2E1CA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_BCR.edds"
+ NMO_1 "{7DB72156C7B5B354}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NMO.edds"
+ UVTransform_1 MatUVTransform {
+  TilingU 4.9
+  TilingV 4.9
+ }
+ Enabled_2 1
+ BCR_2 "{400909965D675648}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_BCR.edds"
+ NMO_2 "{78D1B204841004D6}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NMO.edds"
+ UVTransform_2 MatUVTransform {
+  TilingU 3.6
+  TilingV 3.6
+ }
+ Enabled_3 1
+ BCR_3 "{695F589A45B69C59}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_StoneDark_BCR.edds"
+ NMO_3 "{5187E3089CC1CEC7}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_StoneDark_NMO.edds"
+ UVTransform_3 MatUVTransform {
+  TilingU 6.1
+  TilingV 6.1
+ }
+ Enabled_4 1
+ BCR_4 "{88C99B64B7A637E7}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_StoneTan_BCR.edds"
+ NMO_4 "{B01120F66ED16579}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_StoneTan_NMO.edds"
+ UVTransform_4 MatUVTransform {
+  TilingU 6.1
+  TilingV 6.1
+ }
+}

@@ -1,0 +1,7 @@
+MatPBRMulti : "{18C96EB2CC186304}Assets/Structures/Walls/Stone/Data/StoneWall_02.emat" {
+ MudUserOpacity 1
+ Enabled_4 0
+ Enabled_3 0
+ Enabled_2 0
+ Color_1 1 0.86 0.799 1
+}

@@ -13,8 +13,9 @@ for e in rep["emat"]:
     n, l = e["slot"], e["layer"]
     if n > 1:
         lines.append(f" Enabled_{n} 1")
-    lines += [f' BCR_{n} "{{{L[l][0]}}}Prefabs/Rocks/Cliffs/_Layers/{l}_BCR.edds"',
-              f' NMO_{n} "{{{L[l][1]}}}Prefabs/Rocks/Cliffs/_Layers/{l}_NMO.edds"',
+    gb, gn = (f"{{{L[l][0]}}}", f"{{{L[l][1]}}}") if l in L else ("", "")   # new layers: path only until Workbench imports them
+    lines += [f' BCR_{n} "{gb}Prefabs/Rocks/Cliffs/_Layers/{l}_BCR.edds"',
+              f' NMO_{n} "{gn}Prefabs/Rocks/Cliffs/_Layers/{l}_NMO.edds"',
               f" UVTransform_{n} MatUVTransform {{", f"  TilingU {e['TilingU']}", f"  TilingV {e['TilingV']}"]
     if e["Rotation"]:
         lines.append(f"  Rotation {e['Rotation']}")
@@ -36,5 +37,5 @@ et = f'''GenericEntity {{
   }}
  }}
 }}'''
-open(os.path.join(root, f"Cliff_Base_{name[6:]}.et"), "w", newline="\n").write(et)
+open(os.path.join(root, f"{name}.et" if name.startswith("Stairs") else f"Cliff_Base_{name[6:]}.et"), "w", newline="\n").write(et)
 print("wrote", name)

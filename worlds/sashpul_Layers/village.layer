@@ -1932,6 +1932,10 @@ StaticModelEntity : "{9C7477A3F066F74F}Prefabs/Terrain/Erosion/ErodedEmbankment_
  angles 0 -14.557 0
  scale 1.6
 }
+SCR_DestructibleEntity : "{A20F29C2A16B2AC5}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_4m_v1_sand.et" {
+ coords 1864.351 -0.382 1101.457
+ angles 0 -32.285 0
+}
 SCR_DestructibleBuildingEntity : "{A53CF2AC7B5F0931}Prefabs/Structures/Bulding/DumIstan/dum_istan3_hromada_01.et" {
  coords 888.706 -18.608 1065.126
  angles 0 -14.569 0
@@ -2697,6 +2701,18 @@ GenericEntity : "{D7787456BDF1D199}PrefabLibrary/DefaultLibrary/Props/Agricultur
 SCR_DestructibleBuildingEntity : "{E37664A99BA0A360}Prefabs/Structures/Bulding/HouseK/House_K_1_EP1_Fulll.et" {
  coords 619.603 -31.299 870.608
  angles 0 -27.514 0
+}
+$grp StaticModelEntity : "{E5155014665F195A}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_Entry.et" {
+ {
+  coords 1259.649 -0.026 1099.277
+  angles 0 -31.27 0
+  placement none
+ }
+ {
+  coords 1263.054 0.096 1101.252
+  angles 0 -31.27 0
+  placement none
+ }
 }
 GenericEntity : "{E9FA4D7B531C7FF0}PrefabLibrary/DefaultLibrary/Props/Agricultural/WaterTank_01/WaterTank_01.et" {
  coords 1537.82 -41.548 1134.905

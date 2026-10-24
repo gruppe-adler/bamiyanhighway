@@ -1923,8 +1923,8 @@ SCR_DestructibleEntity : "{B3B2276014D9454C}Prefabs/Props/Commercial/SignPub_01_
    }
   }
  }
- coords 1260.787 -31.778 1102.217
- angles 0 108.608 0
+ coords 1261.094 -31.873 1100.546
+ angles 0 79.598 0
 }
 GenericEntity : "{B67255F5360C6DBD}Prefabs/Structures/Misc/Bots.et" {
  coords 1266.875 -31.471 1112.946

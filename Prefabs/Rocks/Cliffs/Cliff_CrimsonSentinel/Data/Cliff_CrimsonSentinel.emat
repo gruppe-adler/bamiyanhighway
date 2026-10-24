@@ -2,32 +2,32 @@ MatPBRMulti {
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MaskMap "{F1E33EFB1315CB16}Prefabs/Rocks/Cliffs/Cliff_CrimsonSentinel/Cliff_CrimsonSentinel_MASK.edds"
  GlobalNMOMap "{E73494A776E82DB6}Prefabs/Rocks/Cliffs/Cliff_CrimsonSentinel/Cliff_CrimsonSentinel_NMO.edds"
- BCR_1 "{456F9AC41EC2E1CA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_BCR.edds"
- NMO_1 "{7DB72156C7B5B354}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NMO.edds"
- UVTransform_1 MatUVTransform {
-  TilingU 24.7
-  TilingV 24.7
- }
- Enabled_2 1
- BCR_2 "{400909965D675648}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_BCR.edds"
- NMO_2 "{78D1B204841004D6}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NMO.edds"
- UVTransform_2 MatUVTransform {
-  TilingU 18.3
-  TilingV 18.3
+ Enabled_4 1
+ BCR_4 "{0A95F13AD8712A95}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_BCR.edds"
+ NMO_4 "{324D4AA80106780B}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_NMO.edds"
+ UVTransform_4 MatUVTransform "{6AB14A47A3B33AC3}" {
+  TilingU 12
+  TilingV 12
+  Rotation 90
  }
  Enabled_3 1
  BCR_3 "{6278EAA54D460434}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Scree_BCR.edds"
  NMO_3 "{5AA05137943156AA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Scree_NMO.edds"
- UVTransform_3 MatUVTransform {
+ UVTransform_3 MatUVTransform "{6AB14A47A3B33AEF}" {
   TilingU 14.9
   TilingV 14.9
  }
- Enabled_4 1
- BCR_4 "{0A95F13AD8712A95}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_BCR.edds"
- NMO_4 "{324D4AA80106780B}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_NMO.edds"
- UVTransform_4 MatUVTransform {
-  TilingU 12.0
-  TilingV 12.0
-  Rotation 90
+ Enabled_2 1
+ BCR_2 "{400909965D675648}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_BCR.edds"
+ NMO_2 "{78D1B204841004D6}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NMO.edds"
+ UVTransform_2 MatUVTransform "{6AB14A47A3B33D02}" {
+  TilingU 18.3
+  TilingV 18.3
+ }
+ BCR_1 "{456F9AC41EC2E1CA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_BCR.edds"
+ NMO_1 "{7DB72156C7B5B354}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NMO.edds"
+ UVTransform_1 MatUVTransform "{6AB14A47A3B33D4C}" {
+  TilingU 24.7
+  TilingV 24.7
  }
 }
