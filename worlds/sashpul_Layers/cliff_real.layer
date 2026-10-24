@@ -1,13 +1,3 @@
-GenericEntity cliff_template {
- components {
-  MeshObject "{6AB074BA991CF5A9}" {
-   Object "{A0DB05CFD910106F}Prefabs/Rocks/Granite/cliff_v6_holefilled_baked.xob"
-  }
- }
- coords 1619.058 -46.91 877.454
- angles -2.412 -168.658 -8.69
- scale 48.479
-}
 GenericEntity : "{35A63D8A99E49079}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedCanyonWall.et" {
  coords 1489.703 -28.958 790.741
  angles 0 124.624 0

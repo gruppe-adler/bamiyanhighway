@@ -1763,11 +1763,6 @@ GenericEntity : "{2EA17F3C79DF529E}Prefabs/Structures/Misc/barrel_water.et" {
  coords 802.366 -21.947 983.028
  angles 0.296 -0.009 -1.712
 }
-SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
- coords 1528.358 -40.944 805.756
- angles -22.353 96.543 4.73
- scale 2
-}
 SCR_DestructibleBuildingEntity : "{446671DE9607E741}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_03.et" {
  coords 1515.305 0 1193.022
  angles -0.063 -43.511 2.419
@@ -1782,6 +1777,20 @@ $grp StaticModelEntity : "{528AB2322A646026}Prefabs/Terrain/Erosion/ErodedEmbank
   angles 0 -38.584 0
   scale 1.57
  }
+}
+SCR_DestructibleBuildingEntity : "{54BA699A842FA64F}Prefabs/Structures/Billboard/Billboard_kiok.et" {
+ components {
+  MeshObject "{5CB519DA26799362}" {
+   Materials {
+    MaterialAssignClass "{66BD3E45BF48DDBD}" {
+     SourceMaterial "board_front"
+     AssignedMaterial "{4B2E863FED557778}Assets/ME_Sign/Billboard/billboard_kunar_01.emat"
+    }
+   }
+  }
+ }
+ coords 743.254 -19.924 953.127
+ angles 0 -78.137 0
 }
 Tree : "{59CD4C0D8A6C586E}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_3s_aut.et" {
  coords 697.328 0.161 706.229
@@ -1831,6 +1840,22 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{7113C7839BD5D148}Prefabs/Structur
   coords 889.591 -30.83 1005.118
   angles 0 -17.868 90
  }
+ {
+  coords 764.481 -23.076 956.547
+  angles -14.819 63.031 -87.654
+ }
+ {
+  coords 768.972 -24.566 958.839
+  angles 3.704 -116.515 87.727
+ }
+ {
+  coords 761.018 -24.937 981.889
+  angles -3.626 61.552 92.396
+ }
+ {
+  coords 639.953 -29.11 923.899
+  angles -18.079 19.714 -76.695
+ }
 }
 SCR_DestructibleBuildingEntity : "{750DA549F335AE24}Prefabs/Structures/PrefabComposition/afghan_house_set_02.et" {
  coords 514.359 -15.503 888.141
@@ -1863,6 +1888,10 @@ $grp SCR_DestructibleBuildingEntity : "{89732831F26334E8}Prefabs/Structures/Buld
   coords 41.95 -26.912 634.724
   angles 0 57.183 0
  }
+}
+SCR_DestructibleBuildingEntity : "{8B3C00CD3F95D17F}Prefabs/Structures/Bulding/HouseK/House_K_5_EP1_Full.et" {
+ coords 630.514 -31.299 876.514
+ angles 0 -25.556 0
 }
 SCR_DestructibleBuildingEntity : "{9091E9B0FFD0394F}Prefabs/Structures/PrefabComposition/afghan_house_set_03.et" {
  coords 488.063 -15.659 880.709
@@ -2664,6 +2693,10 @@ GenericEntity : "{D5247F493225CA91}Prefabs/Props/Civilian/WateringCan_01.et" {
 GenericEntity : "{D7787456BDF1D199}PrefabLibrary/DefaultLibrary/Props/Agricultural/Scarecrow_01.et" {
  coords 1624.492 -42.027 1181.06
  angles 0 0 0
+}
+SCR_DestructibleBuildingEntity : "{E37664A99BA0A360}Prefabs/Structures/Bulding/HouseK/House_K_1_EP1_Fulll.et" {
+ coords 619.603 -31.299 870.608
+ angles 0 -27.514 0
 }
 GenericEntity : "{E9FA4D7B531C7FF0}PrefabLibrary/DefaultLibrary/Props/Agricultural/WaterTank_01/WaterTank_01.et" {
  coords 1537.82 -41.548 1134.905

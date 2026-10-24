@@ -1,0 +1,9 @@
+RoadGeneratorEntity : "{41CEDBF0493A26A5}PrefabLibrary/DefaultLibrary/Generators/Roads/Dirt/RG_Road_Dirt_02.et" {
+ ID "556C65569DF40D04"
+ {
+  RoadEntity {
+   ID "556C65569DF42CF7"
+   Material "{ACAFCF91D02B9A25}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_red.emat"
+  }
+ }
+}

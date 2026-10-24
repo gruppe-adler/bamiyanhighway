@@ -1441,6 +1441,13 @@ $grp GenericEntity : "{4E34BE8E9CC1D47B}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedRe
   coords 1632.015 -36.628 964.924
   angles 0 65.565 0
  }
+ {
+  coords 1542.616 -21.008 807.144
+ }
+ {
+  coords 1541.039 -26.006 765.401
+  angles 0 -104.927 0
+ }
 }
 $grp GenericEntity : "{53506DCB398C7EBE}Prefabs/Props/Furniture/Table_01.et" {
  {
@@ -1527,6 +1534,10 @@ $grp SCR_DestructibleEntity : "{5E657E157968B1A5}Prefabs/Structures/Walls/Pipe/P
    }
   }
  }
+}
+GenericEntity : "{6399C82133269916}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCitadel.et" {
+ coords 1534.874 -32.015 796.17
+ angles 0 91.572 0
 }
 $grp Tree : "{6C788B70DF94793B}Prefabs/Vegetation/Tree/t_salix_fragilis/t_salix_fragilis_2s.et" {
  {
@@ -1652,6 +1663,10 @@ $grp GenericEntity : "{74AF3EB0FC1B930B}Prefabs/Rocks/Cliffs/Cliff_Base_Weathere
  {
   coords 1481.732 -15.68 831.503
  }
+ {
+  coords 1530.811 -23.265 770.105
+  angles 0 -164.849 0
+ }
 }
 SCR_DestructibleBuildingEntity : "{7604C48560B0F17D}Prefabs/Structures/Bulding/DumIstan/dum_istan2_B.et" {
  coords 1248.003 -31.337 1105.027
@@ -1708,6 +1723,10 @@ $grp GenericEntity : "{84D5238968E7F447}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonS
   coords 1488.946 -32.46 841.131
   angles 0 -6.297 0
   scale 1.25
+ }
+ {
+  coords 1523.697 -23.867 743.013
+  angles 0 17.086 0
  }
 }
 $grp StaticModelEntity : "{85C71F17C37D274C}Prefabs/Structures/BuildingParts/Entry/Entry_Block_Platform_01_3x6.et" {
@@ -1797,6 +1816,10 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{9B3485F7C995A370}Prefabs/Rocks/De
   coords 1302.968 -41.06 1123.137
   angles 0 -121.812 90
  }
+}
+GenericEntity : "{9FB14E3818BC8658}Prefabs/Rocks/Cliffs/Cliff_Cut_ErodedDesertEscarpment.et" {
+ coords 1536.47 -12.71 750.506
+ angles 0 103.911 0
 }
 $grp GenericEntity : "{A2EB157CA8B7B807}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith.et" {
  {
@@ -2002,9 +2025,15 @@ $grp GenericEntity : "{D16F58EC1C0027D7}Prefabs/Vegetation/Cuttings/Salix_cinere
 GenericEntity : "{D5247F493225CA91}Prefabs/Props/Civilian/WateringCan_01.et" {
  coords 1288.091 -32.901 1099.744
 }
-GenericEntity : "{DAC33788C4D87F57}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfStoneFaces.et" {
- coords 1600.979 -42.264 935.72
- angles 0 -36.317 0
+$grp GenericEntity : "{DAC33788C4D87F57}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfStoneFaces.et" {
+ {
+  coords 1600.979 -42.264 935.72
+  angles 0 -36.317 0
+ }
+ {
+  coords 1532.779 -39.378 762.149
+  angles 0 -74.705 0
+ }
 }
 Tree : "{DDE3E01CB952BF9E}Prefabs/Vegetation/Plant/Hedera_Helix/p_hedera_helix_corner_02.et" {
  coords 1240.414 -1.09 1080.412

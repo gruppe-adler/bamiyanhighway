@@ -1,0 +1,34 @@
+MatPBRRoad {
+ Color 1 0.429 0.254 1
+ SurfaceProperties "{7C49B6F04E7320A3}Common/Materials/Game/dirt_road.gamemat"
+ SpecularMul 0.5
+ WetnessScale 0.85
+ AlphaTest 0.4
+ AlphaMul 2
+ BlendMode AlphaBlend
+ RoughnessScale 1.1
+ CavityFromAO 1
+ BCRMap "{164F221A022E70D5}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_BCR.edds"
+ OpacityMap "{E073C53523EFB026}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_A.edds"
+ NormalPower 1.2
+ NMOMap "{2E979988DB59224B}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_NMO.edds"
+ GlobalMapsUVTransform MatUVTransform "{98932823DA0BA6B2}" {
+  TilingV 0.5
+ }
+ DetailNormalPower 1
+ DetailNormalMap "{96EF3CD8C8E643BA}Assets/_SharedData/Dirt/ST_Mud_01_NMO.edds"
+ DetailNormalMapUVTransform MatUVTransform "{550C6A5C5A329C46}" {
+  TilingU 2
+  TilingV 2
+ }
+ HeightMap "{3A1BFA14B4A52C98}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_H.edds"
+ ParallaxScale 0.01
+ ParallaxMidlePlane 0.5
+ PuddleHeightMap "{3A1BFA14B4A52C98}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_H.edds"
+ PuddleNoiseMap "{490DFFF4475F7EC7}Assets/_SharedData/DetailMask/ST_Dirt_09_Mask1.edds"
+ PuddleNoiseMapSize 70
+ PuddleWaterAccum 1.6
+ NumVersions "2"
+ RoadEndingMaterial "{35AEA4C4B9582669}Assets/Structures/Infrastructure/Roads/Data/Road_Dirt_02_End.emat"
+ DefaultEnd "2nd version"
+}

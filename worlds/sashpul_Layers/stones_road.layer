@@ -67163,16 +67163,6 @@ GenericEntity : "{183EE3302F10853E}Prefabs/Props/Industrial/CrawlerCraneWreck_01
  coords 13.234 -9.987 701.733
  angles 0 16.3 0
 }
-SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
- coords 1535.648 -17.699 786.92
- angles 2.973 82.966 87.776
- scale 2
-}
-SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
- coords 1576.856 -0.385 800.723
- angles 71.385 -75.907 174.556
- scale 1.54
-}
 GenericEntity : "{6720CD0D5B7B7768}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Long.et" {
  coords 1181.682 -32.835 1052.97
  angles 0 -46.09 0

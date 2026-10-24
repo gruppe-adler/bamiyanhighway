@@ -44,6 +44,15 @@ $grp PolylineShapeEntity {
  {
   coords 889.233 -20.353 1015.028
   Points {
+   ShapePoint "{6AB14A454E1A68A6}" {
+    Position -78.996 -0.006 48.802
+   }
+   ShapePoint "{6AB14A455999A46B}" {
+    Position -112.611 -0.137 -22.086
+   }
+   ShapePoint "{6AB14A4523333180}" {
+    Position -75.383 -2.969 -8.028
+   }
    ShapePoint "{6A94C901648F095D}" {
     Position -34.092 5.822 9.34
    }
@@ -58,38 +67,96 @@ $grp PolylineShapeEntity {
   {
    SCR_PowerlineGeneratorEntity : "{15D9F0EBA2E2DDFF}PrefabLibrary/DefaultLibrary/Generators/Powerlines/PG_PowerLine_01_WoodenSmall.et" {
     Flags 0x100003 0
-    m_iSeed 9029
+    m_iSeed 31052
     m_fDistance 38.8
     {
      SCR_PowerPole : "{17F4D13D8E2E43C1}PrefabLibrary/DefaultLibrary/Infrastructure/Powerline/PowerLine_01_pole_small_hook_end.et" {
-      coords -34.092 5.822 9.34
-      angles 3.208 109.127 3.088
+      coords -78.996 10.971 48.802
+      angles -3.234 205.37 2.141
      }
      $grp PowerlineEntity : "{613763D114E7CD1C}Prefabs/WEGenerators/Powerline/Powerline.et" {
       {
-       coords -34.092 5.822 9.34
+       coords -78.996 10.971 48.802
        Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
        Cables {
-        Cable "{6A94C90014A2B06B}" {
-         StartPoint -0.546 7.727 -0.253
-         EndPoint 36.124 1.941 -12.374
+        Cable "{6AB14A454AC10F4F}" {
+         StartPoint -0.449 7.732 -0.271
+         EndPoint -16.68 6.601 -35.269
         }
        }
       }
       {
-       coords 2.566 -0.116 -3.373
+       coords -95.621 9.671 13.744
        Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
        Cables {
-        Cable "{6A94C90014A2AE48}" {
-         StartPoint -0.534 7.879 0.34
-         EndPoint -8.874 1.336 -31.171
+        Cable "{6AB14A454AC10BAA}" {
+         StartPoint -0.055 7.901 -0.211
+         EndPoint -16.913 3.646 -35.04
+        }
+       }
+      }
+      {
+       coords -112.245 5.419 -21.314
+       Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
+       Cables {
+        Cable "{6AB14A454AC10967}" {
+         StartPoint -0.288 7.899 0.018
+         EndPoint 36.178 7.97 13.34
+        }
+       }
+      }
+      {
+       coords -75.742 5.493 -8.164
+       Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
+       Cables {
+        Cable "{6AB14A454AC1075A}" {
+         StartPoint -0.326 7.895 0.189
+         EndPoint 36.123 7.956 14.447
+        }
+       }
+      }
+      {
+       coords -39.972 5.575 6.867
+       Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
+       Cables {
+        Cable "{6AB14A454AC10526}" {
+         StartPoint 0.353 7.874 -0.584
+         EndPoint 37.851 2.429 -9.249
+        }
+       }
+      }
+      {
+       coords -2.139 0.126 -1.742
+       Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
+       Cables {
+        Cable "{6AB14A454AC1037E}" {
+         StartPoint 0.018 7.878 -0.64
+         EndPoint -4.169 1.094 -32.802
         }
        }
       }
      }
-     SCR_PowerPole : "{62DECEC65C1043AB}PrefabLibrary/DefaultLibrary/Infrastructure/Powerline/PowerLine_02_pole_small_hook.et" {
-      coords 2.566 -0.116 -3.373
-      angles 3.995 152.107 0.457
+     $grp SCR_PowerPole : "{62DECEC65C1043AB}PrefabLibrary/DefaultLibrary/Infrastructure/Powerline/PowerLine_02_pole_small_hook.et" {
+      {
+       coords -95.621 9.671 13.744
+       angles -1.554 205.37 -2.108
+      }
+      {
+       coords -112.245 5.419 -21.314
+       angles 1.515 137.355 -0.366
+      }
+      {
+       coords -75.742 5.493 -8.164
+       angles 1.704 68.698 -3.949
+      }
+      {
+       coords -39.972 5.575 6.867
+       angles -2.18 84.938 2.636
+      }
+      {
+       coords -2.139 0.126 -1.742
+       angles -3.856 144.443 0.781
+      }
      }
     }
    }

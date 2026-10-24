@@ -1,0 +1,204 @@
+{
+  "asset": "Cliff_CrimsonMesaCrown",
+  "size_m": 25.0,
+  "uv": {
+    "charts": 188,
+    "islands": 287,
+    "split_rounds": [
+      11,
+      14,
+      16,
+      19,
+      18,
+      13,
+      7,
+      0
+    ],
+    "planar_fixed_faces": 100,
+    "seam_edge_share": 0.0478,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.02,
+      "95": 1.12,
+      "99": 1.27
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.66,
+      "5": 0.78,
+      "50": 1.01,
+      "95": 1.19,
+      "99": 1.35
+    },
+    "coverage": 0.531,
+    "m_per_uv_unit": 64.55,
+    "surface_m2": 2211.5,
+    "mask4096_px_per_m": 63.5
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_CrimsonMesaCrown_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_CrimsonMesaCrown_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.189,
+    0.048,
+    0.15
+  ],
+  "dimensions_m": [
+    25.0,
+    24.88,
+    23.94
+  ],
+  "surface_m2": 2211.5,
+  "m_per_uv_unit": 64.55,
+  "mask_px_per_m": 63.5,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 32.3,
+      "TilingV": 32.3,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 23.9,
+      "TilingV": 23.9,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 19.6,
+      "TilingV": 19.6,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 15.7,
+      "TilingV": 15.7,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_CrimsonMesaCrown_LOD0": {
+      "tris": 95420,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCrown_LOD1": {
+      "tris": 47710,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCrown_LOD2": {
+      "tris": 23854,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCrown_LOD3": {
+      "tris": 11926,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCrown_LOD4": {
+      "tris": 5962,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCrown_LOD5": {
+      "tris": 2980,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMesaCrown_LOD6": {
+      "tris": 1490,
+      "material": "Cliff_CrimsonMesaCrown",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_CrimsonMesaCrown",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.011,
+      "p95": 0.029,
+      "max": 0.138
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      59,
+      58,
+      56
+    ],
+    "inside_voxels": 32126
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_CrimsonMesaCrown_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        11.0,
+        7.0,
+        19.47
+      ]
+    },
+    {
+      "name": "OCC_Cliff_CrimsonMesaCrown_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        1.0,
+        17.5,
+        11.47
+      ]
+    }
+  ],
+  "fbx": "Cliff_CrimsonMesaCrown.fbx"
+}

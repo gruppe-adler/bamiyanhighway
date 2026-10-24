@@ -7,9 +7,6 @@ GenericEntity : "{496343304142FBC9}Prefabs/Rocks/Cliffs/Cliff_Cut_CrimsonMesaCit
  angles 0 63.548 0
  scale 3
 }
-StaticModelEntity : "{53CF78A46139AA55}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_dirt_wave.et" {
- coords 1488.143 -34.286 871.007
-}
 GenericEntity : "{6399C82133269916}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCitadel.et" {
  coords 1750.085 -39.086 864.385
  angles 0 69.812 0
@@ -28,9 +25,6 @@ GenericEntity : "{9AE7B8E4AA7EDFCA}Prefabs/Rocks/Cliffs/Cliff_Cut_CrimsonBadland
  coords 1682.632 -22.805 928.366
  angles 0 -38.056 0
  scale 3
-}
-StaticModelEntity : "{9C7477A3F066F74F}Prefabs/Terrain/Erosion/ErodedEmbankment_01/ErodedEmbankment_01_forest_straight.et" {
- coords 1484.943 -33.775 869.207
 }
 $grp GenericEntity : "{DAC33788C4D87F57}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfStoneFaces.et" {
  {
