@@ -1,0 +1,204 @@
+{
+  "asset": "Cliff_ErodedRedstoneMonolith",
+  "size_m": 20.6,
+  "uv": {
+    "charts": 463,
+    "islands": 1322,
+    "split_rounds": [
+      17,
+      21,
+      29,
+      47,
+      49,
+      57,
+      34,
+      2
+    ],
+    "planar_fixed_faces": 1337,
+    "seam_edge_share": 0.0706,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.03,
+      "95": 1.23,
+      "99": 1.54
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.49,
+      "5": 0.73,
+      "50": 1.03,
+      "95": 1.22,
+      "99": 1.41
+    },
+    "coverage": 0.493,
+    "m_per_uv_unit": 65.07,
+    "surface_m2": 2089.0,
+    "mask4096_px_per_m": 62.9
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_ErodedRedstoneMonolith_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_ErodedRedstoneMonolith_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.084,
+    0.091,
+    0.133
+  ],
+  "dimensions_m": [
+    19.58,
+    20.6,
+    24.94
+  ],
+  "surface_m2": 2089.0,
+  "m_per_uv_unit": 65.07,
+  "mask_px_per_m": 62.9,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 32.5,
+      "TilingV": 32.5,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 24.1,
+      "TilingV": 24.1,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 19.7,
+      "TilingV": 19.7,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 15.9,
+      "TilingV": 15.9,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_ErodedRedstoneMonolith_LOD0": {
+      "tris": 95008,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedRedstoneMonolith_LOD1": {
+      "tris": 47504,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedRedstoneMonolith_LOD2": {
+      "tris": 23752,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedRedstoneMonolith_LOD3": {
+      "tris": 11876,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedRedstoneMonolith_LOD4": {
+      "tris": 5938,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedRedstoneMonolith_LOD5": {
+      "tris": 2968,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_ErodedRedstoneMonolith_LOD6": {
+      "tris": 1484,
+      "material": "Cliff_ErodedRedstoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_ErodedRedstoneMonolith",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.017,
+      "p95": 0.044,
+      "max": 0.125
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      48,
+      50,
+      58
+    ],
+    "inside_voxels": 28232
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_ErodedRedstoneMonolith_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        9.0,
+        9.0,
+        18.49
+      ]
+    },
+    {
+      "name": "OCC_Cliff_ErodedRedstoneMonolith_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        12.5,
+        0.5,
+        20.99
+      ]
+    }
+  ],
+  "fbx": "Cliff_ErodedRedstoneMonolith.fbx"
+}

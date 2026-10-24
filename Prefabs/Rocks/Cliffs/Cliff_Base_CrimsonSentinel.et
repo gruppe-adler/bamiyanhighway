@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "D30618E79C7B0A4C"
+ components {
+  MeshObject "{4F444EEF4AF73F57}" {
+   Object "Prefabs/Rocks/Cliffs/Cliff_CrimsonSentinel/Cliff_CrimsonSentinel.xob"
+  }
+  RigidBody "{A79F0EC756F0AB7E}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

@@ -1446,6 +1446,16 @@ $grp SCR_DestructibleEntity : "{559D2FB1A54441E7}Prefabs/Structures/Walls/Pipe/P
   placement none
  }
 }
+$grp StaticModelEntity : "{58377885A4175A59}Prefabs/Structures/Airport/AirfieldPipeline_01/AirfieldPipeline_01_30.et" {
+ {
+  coords 1246.036 -32.971 1088.265
+  angles -7.217 -29.061 3.993
+ }
+ {
+  coords 1242.804 -32.965 1086.734
+  angles 7.217 150.939 -3.993
+ }
+}
 SCR_DestructibleBuildingEntity : "{5945D1EF6878D47C}PrefabLibrary/DefaultLibrary/Structures/Industrial/FuelTank_01/FuelTank_01.et" {
  coords 1303.082 0.335 1097.552
  angles 0 63.083 0
@@ -1731,6 +1741,20 @@ $grp Tree : "{AD7EFA7B1214DD21}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_
   angles -6.234 26.226 9.649
   scale 0.84
   placement slopelandcontact
+ }
+}
+$grp StaticModelEntity : "{AE73676ABA995907}Prefabs/Structures/BuildingParts/Entry/Entry_Block_Platform_01_3x12.et" {
+ {
+  coords 1236.142 -31.601 1085.891
+  angles 0 -27.946 0
+ }
+ {
+  coords 1225.464 -31.601 1080.227
+  angles 0 -27.946 0
+ }
+ {
+  coords 1214.784 -31.601 1074.56
+  angles 0 -27.946 0
  }
 }
 $grp StaticModelEntity : "{B08DF585ECD2CF4D}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_02_SideSquareNarrow.et" {

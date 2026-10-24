@@ -1,0 +1,216 @@
+{
+  "asset": "Cliff_CrimsonMonolith",
+  "size_m": 20.1,
+  "uv": {
+    "charts": 480,
+    "islands": 1287,
+    "split_rounds": [
+      26,
+      30,
+      49,
+      60,
+      58,
+      57,
+      23,
+      0
+    ],
+    "planar_fixed_faces": 1386,
+    "seam_edge_share": 0.0755,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.05,
+      "95": 1.29,
+      "99": 1.6
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.48,
+      "5": 0.7,
+      "50": 1.03,
+      "95": 1.27,
+      "99": 1.54
+    },
+    "coverage": 0.454,
+    "m_per_uv_unit": 65.08,
+    "surface_m2": 1922.4,
+    "mask4096_px_per_m": 62.9
+  },
+  "textures": {
+    "MASK": {
+      "file": "Cliff_CrimsonMonolith_MASK.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Cliff_CrimsonMonolith_NMO.tif",
+      "size": 4096,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.142,
+    0.11,
+    0.128
+  ],
+  "dimensions_m": [
+    20.1,
+    18.4,
+    25.01
+  ],
+  "surface_m2": 1922.4,
+  "m_per_uv_unit": 65.08,
+  "mask_px_per_m": 62.9,
+  "global_nmo": true,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "CliffLayer_RockPorous",
+      "repeat_m": 2.0,
+      "TilingU": 32.5,
+      "TilingV": 32.5,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 24.1,
+      "TilingV": 24.1,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 19.7,
+      "TilingV": 19.7,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 15.9,
+      "TilingV": 15.9,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Cliff_CrimsonMonolith_LOD0": {
+      "tris": 99940,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMonolith_LOD1": {
+      "tris": 49970,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMonolith_LOD2": {
+      "tris": 24984,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMonolith_LOD3": {
+      "tris": 12492,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMonolith_LOD4": {
+      "tris": 6246,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMonolith_LOD5": {
+      "tris": 3122,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Cliff_CrimsonMonolith_LOD6": {
+      "tris": 1560,
+      "material": "Cliff_CrimsonMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Cliff_CrimsonMonolith",
+    "path": "decimate",
+    "tris": 20000,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_m": {
+      "mean": 0.021,
+      "p95": 0.052,
+      "max": 0.462
+    }
+  },
+  "occluder_grid": {
+    "voxel_m": 0.5,
+    "shape": [
+      49,
+      45,
+      59
+    ],
+    "inside_voxels": 15165
+  },
+  "occluders": [
+    {
+      "name": "OCC_Cliff_CrimsonMonolith_01",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        4.0,
+        6.0,
+        18.99
+      ]
+    },
+    {
+      "name": "OCC_Cliff_CrimsonMonolith_02",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        13.0,
+        0.5,
+        12.99
+      ]
+    },
+    {
+      "name": "OCC_Cliff_CrimsonMonolith_03",
+      "faces": 6,
+      "verts_per_face": [
+        4
+      ],
+      "size_m": [
+        0.5,
+        12.0,
+        10.99
+      ]
+    }
+  ],
+  "fbx": "Cliff_CrimsonMonolith.fbx"
+}

@@ -67324,10 +67324,6 @@ $grp SCR_DestructibleBuildingEntity : "{DB114F623141F302}Prefabs/Structures/Wall
   angles 0 -28.224 2.096
  }
 }
-GenericEntity : "{DB17133F11B2B8C5}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Short.et" {
- coords 1242.734 -32.977 1086.72
- angles 0 -26.196 0
-}
 SCR_DestructibleBuildingEntity : "{EAF94EE6779EB1DE}Prefabs/Structures/Industrial/CoalMineShaft_01/Complete/CoalMineShaft_01_complete_base.et" {
  coords 31.076 -9.987 715.246
  angles 0 151.81 0
