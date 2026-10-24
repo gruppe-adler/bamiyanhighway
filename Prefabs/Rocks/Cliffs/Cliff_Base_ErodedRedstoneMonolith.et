@@ -2,7 +2,7 @@ GenericEntity {
  ID "75C13CB8EE5F9A7F"
  components {
   MeshObject "{B1933498A0C8D34C}" {
-   Object "Prefabs/Rocks/Cliffs/Cliff_ErodedRedstoneMonolith/Cliff_ErodedRedstoneMonolith.xob"
+   Object "{44631C65D2E72A73}Prefabs/Rocks/Cliffs/Cliff_ErodedRedstoneMonolith/Cliff_ErodedRedstoneMonolith.xob"
   }
   RigidBody "{B7314E5FB5BDADC8}" {
    LayerPreset "BuildingFireView"

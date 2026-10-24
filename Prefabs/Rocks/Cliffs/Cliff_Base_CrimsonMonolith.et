@@ -2,7 +2,7 @@ GenericEntity {
  ID "5B4CDCB4EA39AA57"
  components {
   MeshObject "{BFFB985EEDDD1E77}" {
-   Object "Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Cliff_CrimsonMonolith.xob"
+   Object "{D7C514759BC18EA3}Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Cliff_CrimsonMonolith.xob"
   }
   RigidBody "{D4151A65AAC5657C}" {
    LayerPreset "BuildingFireView"

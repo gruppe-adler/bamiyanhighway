@@ -1763,17 +1763,10 @@ GenericEntity : "{2EA17F3C79DF529E}Prefabs/Structures/Misc/barrel_water.et" {
  coords 802.366 -21.947 983.028
  angles 0.296 -0.009 -1.712
 }
-$grp SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
- {
-  coords 1544.795 -44.183 830.961
-  angles 0.143 -96.711 -4.567
-  scale 2
- }
- {
-  coords 1528.358 -40.944 805.756
-  angles -22.353 96.543 4.73
-  scale 2
- }
+SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
+ coords 1528.358 -40.944 805.756
+ angles -22.353 96.543 4.73
+ scale 2
 }
 SCR_DestructibleBuildingEntity : "{446671DE9607E741}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_03.et" {
  coords 1515.305 0 1193.022
