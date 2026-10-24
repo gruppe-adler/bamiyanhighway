@@ -3,9 +3,9 @@ MetaFileClass {
  Configurations {
   FBXResourceClass PC {
    MaterialAssigns {
-    MaterialAssignClass "{6A730D2545F1E9D4}" {
+    MaterialAssignClass "{6AB074BA8F2249FE}" {
      SourceMaterial "material_01"
-     AssignedMaterial "{FF8355435B98937A}Prefabs/Rocks/Granite/Data/material_01.emat"
+     AssignedMaterial "{CFB4E97A71E79548}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Data/Cliff_CrimsonBadlandsRidge_terrain.emat"
     }
    }
    MeshParams {

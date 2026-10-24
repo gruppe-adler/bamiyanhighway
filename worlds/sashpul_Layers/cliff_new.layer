@@ -1,15 +1,6 @@
-GenericEntity {
- components {
-  MeshObject "{6AAEE236396FF02E}" {
-   Object "{1DBAD00A789DD531}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge_cut/Cliff_CrimsonBadlandsRidge_cut.xob"
-  }
- }
- coords 1508.782 -36.243 891.378
- angles 0 -13.895 0
-}
 GenericEntity : "{3AEDD475C0062C4C}Prefabs/Rocks/Cliffs/Cliff_Base_DesertMesaFragment.et" {
  coords 1634.419 -11.34 961.317
- angles 0 -32.468 0
+ angles 0 -35.738 0
 }
 GenericEntity : "{43AB727BE583ACCE}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedDesertEscarpment.et" {
  coords 1641.836 -38.235 919.045
@@ -31,15 +22,15 @@ GenericEntity : "{6399C82133269916}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCi
 }
 GenericEntity : "{838D91DAAE7CD279}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandstoneWall02.et" {
  coords 1632.721 -25.749 965.239
- angles 0 -26.948 0
+ angles 0 -29.048 0
 }
 GenericEntity : "{866903007B16B1DA}Prefabs/Rocks/Cliffs/Cliff_Base_DesertFortress.et" {
- coords 1693.235 -38.597 990.414
+ coords 1693.235 -39.289 990.414
  angles 0 -64.314 0
  scale 2
 }
 GenericEntity : "{9AE7B8E4AA7EDFCA}Prefabs/Rocks/Cliffs/Cliff_Cut_CrimsonBadlandsRidge.et" {
- coords 1686.455 -12.059 931.359
+ coords 1682.632 -22.805 928.366
  angles 0 -38.056 0
  scale 3
 }
@@ -62,12 +53,12 @@ $grp GenericEntity : "{DAC33788C4D87F57}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfSt
 }
 $grp GenericEntity : "{F92C7BF71226756B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge.et" {
  {
-  coords 1723.638 -35.002 917.536
+  coords 1723.638 -37.342 917.536
   angles 0 62.311 0
   scale 3
  }
  {
-  coords 1527.139 -40.86 872.165
-  angles 0 -26.712 0
+  coords 1537.04 -40.86 834.487
+  angles 0 26.671 0
  }
 }

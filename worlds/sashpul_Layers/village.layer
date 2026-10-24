@@ -1765,11 +1765,6 @@ GenericEntity : "{2EA17F3C79DF529E}Prefabs/Structures/Misc/barrel_water.et" {
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
  {
-  coords 1489.224 -43.441 832.048
-  angles 0.143 -96.711 -4.567
-  scale 2
- }
- {
   coords 1544.795 -44.183 830.961
   angles 0.143 -96.711 -4.567
   scale 2
@@ -1778,11 +1773,6 @@ $grp SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Gr
   coords 1528.358 -40.944 805.756
   angles -22.353 96.543 4.73
   scale 2
- }
- {
-  coords 1500.742 -34.083 778.896
-  angles 18.089 94.111 9.055
-  scale 1.4
  }
 }
 SCR_DestructibleBuildingEntity : "{446671DE9607E741}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_03.et" {
@@ -1811,11 +1801,6 @@ SCR_DestructibleBuildingEntity : "{5B22476A7FA55A62}Prefabs/Structures/Bulding/H
 SCR_DestructibleBuildingEntity : "{5D77E0AF308E0642}Prefabs/Structures/Bulding/Mosque/Minaret.et" {
  coords 28.485 -27.35 602.891
  angles 0 0 0
-}
-SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
- coords 1489.724 -35.056 812.269
- angles 0 73.897 0
- scale 1.54
 }
 $grp GenericEntity : "{62D08E8600994BA3}Prefabs/Structures/Misc/Canister.et" {
  {
@@ -1974,11 +1959,6 @@ $grp DecalEntity : "{B7AF69D585D9C715}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_0
 SCR_DestructibleBuildingEntity : "{B8485FACC6780FEC}Prefabs/Structures/Bulding/Mosque/A_Mosque_small_1_EP2_Full.et" {
  coords 26.24 -26.636 623.068
  angles 0 54.68 0
-}
-SCR_IndestructibleEnvironmentalEntity : "{BB0CABEFA5D3D5EB}Prefabs/Rocks/Granite/SP_GraniteCliff_03.et" {
- coords 1491.447 -40.783 792.381
- angles 0 103.903 0
- scale 1.49
 }
 $grp SCR_DestructibleBuildingEntity : "{BBEDB6FD36970ECA}Prefabs/Structures/PrefabComposition/afghan_garden_set.et" {
  {
