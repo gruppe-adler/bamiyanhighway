@@ -2241,7 +2241,7 @@ GenericEntity : "{7A6CC1BD51EC16C5}Prefabs/Rocks/Cliffs/Cliff_Base_DesertMesaFra
  angles 0 -0.494 0
 }
 GenericEntity : "{7ED0D2134F2C0BDA}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfStoneFaces_Sandstone.et" {
- coords 512.783 -46.227 825.989
+ coords 512.783 -46.897 825.989
  angles 0 -13.177 0
 }
 SCR_DestructibleBuildingEntity : "{810FC4D515FB00F2}PrefabLibrary/DefaultLibrary/Structures/Houses/Shed_02_square.et" {
