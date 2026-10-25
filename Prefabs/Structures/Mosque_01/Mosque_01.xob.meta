@@ -1,0 +1,76 @@
+MetaFileClass {
+ Name "{16C11A3943994961}Prefabs/Structures/Mosque_01/Mosque_01.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{6AB17DCA45906CDD}" {
+     SourceMaterial "Mosque_01_Plaster"
+     AssignedMaterial "{939F2B98316963FC}Prefabs/Structures/Mosque_01/Data/Mosque_01_Plaster.emat"
+    }
+    MaterialAssignClass "{6AB17DCA45906CB3}" {
+     SourceMaterial "Mosque_01_Stone"
+     AssignedMaterial "{1590D28A07F8E0D7}Prefabs/Structures/Mosque_01/Data/Mosque_01_Stone.emat"
+    }
+    MaterialAssignClass "{6AB17DCA45906CBF}" {
+     SourceMaterial "Mosque_01_Gold"
+     AssignedMaterial "{3E23A4CACC7EC031}Prefabs/Structures/Mosque_01/Data/Mosque_01_Gold.emat"
+    }
+    MaterialAssignClass "{6AB17DCA45906CB8}" {
+     SourceMaterial "Mosque_01_Paint"
+     AssignedMaterial "{9788D1DF6C8E09DD}Prefabs/Structures/Mosque_01/Data/Mosque_01_Paint.emat"
+    }
+    MaterialAssignClass "{6AB17DCA45906CA4}" {
+     SourceMaterial "Mosque_01_Wood"
+     AssignedMaterial "{6BDAC8F9CF4198D6}Prefabs/Structures/Mosque_01/Data/Mosque_01_Wood.emat"
+    }
+    MaterialAssignClass "{6AB17DCA45906CAE}" {
+     SourceMaterial "Mosque_01_Carpet"
+     AssignedMaterial "{5F51CC1EBC288A0D}Prefabs/Structures/Mosque_01/Data/Mosque_01_Carpet.emat"
+    }
+   }
+   MeshParams {
+    MeshParam Mosque_01 {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_Mosque_01 {
+     LayerPreset "BuildingFireView"
+     SurfaceProperties {
+      "{C409534F24447254}Rock.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{6AB17DCA48A96A38}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "4.5.14 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{6AB17DCA48A96BB5}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{6AB17DCA48A96B90}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{6AB17DCA48A96B7D}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{6AB17DCA48A96B5A}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{6AB17DCA48A96B27}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{6AB17DCA48A96B0E}" {
+   }
+  }
+ }
+}

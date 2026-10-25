@@ -1,0 +1,27 @@
+MatPBRMulti {
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ MaskMap "{076F2B80C00AE4DA}Prefabs/Structures/Mosque_01/Mosque_01_MASK.edds"
+ MaskGreenScale 0.211
+ MaskBlueScale 0.352
+ GlobalNMOMap "{43B1ABC07769810A}Prefabs/Structures/Mosque_01/Mosque_01_NMO.edds"
+ Enabled_4 1
+ BCR_4 "{828438D2FC5632C6}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Grime_BCR.edds"
+ NMO_4 "{BA5C834025216058}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Grime_NMO.edds"
+ UVTransform_4 MatUVTransform "{6AB17DCB63DE30B6}" {
+  TilingU 58.43
+  TilingV 58.43
+ }
+ Enabled_3 1
+ BCR_3 "{14CF1B5189561166}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWorn_BCR.edds"
+ NMO_3 "{2C17A0C3502143F8}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWorn_NMO.edds"
+ UVTransform_3 MatUVTransform "{6AB17DCB63DE30D4}" {
+  TilingU 43.82
+  TilingV 43.82
+ }
+ BCR_1 "{80D42DB41E719D4A}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWhite_BCR.edds"
+ NMO_1 "{B80C9626C706CFD4}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWhite_NMO.edds"
+ UVTransform_1 MatUVTransform "{6AB17DCB63DE3304}" {
+  TilingU 58.43
+  TilingV 58.43
+ }
+}

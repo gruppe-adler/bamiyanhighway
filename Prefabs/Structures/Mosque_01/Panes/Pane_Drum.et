@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "0D87DB23AE970760"
+ components {
+  MeshObject "{2AE72BB5B8C5CA37}" {
+   Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
+  }
+  RigidBody "{24E62AC410470AD2}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

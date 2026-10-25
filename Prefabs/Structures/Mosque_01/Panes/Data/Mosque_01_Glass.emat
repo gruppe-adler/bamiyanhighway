@@ -1,0 +1,8 @@
+MatPBRMulti {
+ BCR_1 "{57126CC1E04B45BE}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Glass_BCR.edds"
+ NMO_1 "{6FCAD753393C1720}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Glass_NMO.edds"
+ UVTransform_1 MatUVTransform {
+  TilingU 1
+  TilingV 1
+ }
+}

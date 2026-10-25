@@ -1675,6 +1675,10 @@ $grp SCR_DestructibleBuildingEntity : "{08E7D4A8FDE0DB6E}Prefabs/Structures/Buld
   angles 0 -17.787 0
  }
 }
+GenericEntity : "{0FE68974238CC78D}Prefabs/Structures/Mosque_01.et" {
+ coords 625.833 -31.736 870.378
+ angles 0 75 0
+}
 $grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/DesertCliff_NS_03.et" {
  {
   coords 541.478 -30.592 908.177
@@ -1888,10 +1892,6 @@ $grp SCR_DestructibleBuildingEntity : "{89732831F26334E8}Prefabs/Structures/Buld
   coords 41.95 -26.912 634.724
   angles 0 57.183 0
  }
-}
-SCR_DestructibleBuildingEntity : "{8B3C00CD3F95D17F}Prefabs/Structures/Bulding/HouseK/House_K_5_EP1_Full.et" {
- coords 630.514 -31.299 876.514
- angles 0 -25.556 0
 }
 SCR_DestructibleBuildingEntity : "{9091E9B0FFD0394F}Prefabs/Structures/PrefabComposition/afghan_house_set_03.et" {
  coords 488.063 -15.659 880.709
@@ -2697,10 +2697,6 @@ GenericEntity : "{D5247F493225CA91}Prefabs/Props/Civilian/WateringCan_01.et" {
 GenericEntity : "{D7787456BDF1D199}PrefabLibrary/DefaultLibrary/Props/Agricultural/Scarecrow_01.et" {
  coords 1624.492 -42.027 1181.06
  angles 0 0 0
-}
-SCR_DestructibleBuildingEntity : "{E37664A99BA0A360}Prefabs/Structures/Bulding/HouseK/House_K_1_EP1_Fulll.et" {
- coords 619.603 -31.299 870.608
- angles 0 -27.514 0
 }
 $grp StaticModelEntity : "{E5155014665F195A}Prefabs/Structures/Infrastructure/Pavements/TilePavement_01/TilePavement_01_Wide_4m_Entry.et" {
  {

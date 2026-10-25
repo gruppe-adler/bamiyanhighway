@@ -1,0 +1,9 @@
+MatPBRMulti {
+ GlobalNMOMap "{43B1ABC07769810A}Prefabs/Structures/Mosque_01/Mosque_01_NMO.edds"
+ BCR_1 "{B55CF521542C1AB4}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Wood_BCR.edds"
+ NMO_1 "{8D844EB38D5B482A}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Wood_NMO.edds"
+ UVTransform_1 MatUVTransform {
+  TilingU 73.04
+  TilingV 73.04
+ }
+}
