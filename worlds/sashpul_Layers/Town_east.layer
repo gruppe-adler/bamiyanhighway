@@ -4,25 +4,273 @@ GenericEntity {
    Object "{33613D0EEFFCECF3}Assets/ME_Bulding/HouseC/House_C_12_EP2.xob"
   }
  }
- coords 1835.516 -39.846 1241.883
+ coords 1835.516 -41.21 1241.883
  angles 0 -97.017 0
 }
-SCR_DestructibleBuildingEntity : "{356F79334AC4B4E9}Prefabs/Structures/Bulding/HouseC/House_C_4_EP1.et" {
- coords 1835.305 -39.923 1302.536
+$grp SplineShapeEntity {
+ {
+  coords 1834.435 -40.181 1273.92
+  Points {
+   ShapePoint "{6AB365C8DDB65472}" {
+    Position -2.147 0 2.013
+   }
+   ShapePoint "{6AB365C8DDB64CEB}" {
+    Position 5.805 -0.187 1.931
+   }
+   ShapePoint "{6AB365C8DAA31E2A}" {
+    Position 12.239 0.448 6.199
+   }
+   ShapePoint "{6AB365C8DBB66E85}" {
+    Position 21.649 1.257 13.966
+   }
+   ShapePoint "{6AB365C8D804A6D8}" {
+    Position 30.359 2.532 14.465
+   }
+   ShapePoint "{6AB365C8D8F0B903}" {
+    Position 36.278 4.508 14.231
+   }
+   ShapePoint "{6AB365C82619F5B0}" {
+    Position 42.962 7.468 13.365
+   }
+   ShapePoint "{6AB365C826FB9FD3}" {
+    Position 50.061 9.093 10.45
+   }
+   ShapePoint "{6AB365C8273A9787}" {
+    Position 61.513 11.974 7.768
+   }
+   ShapePoint "{6AB365C82392C4D0}" {
+    Position 86.326 15.538 0.585
+   }
+   ShapePoint "{6AB365C820664DB9}" {
+    Position 96.752 15.445 -23.158
+   }
+   ShapePoint "{6AB365C820C4994E}" {
+    Position 109.142 14.628 -49.187
+   }
+   ShapePoint "{6AB365C8219AE590}" {
+    Position 128.122 19.498 -83.808
+   }
+   ShapePoint "{6AB365C82E1A6BAD}" {
+    Position 145.62 27.088 -110.963
+   }
+   ShapePoint "{6AB365C82F01B019}" {
+    Position 163.472 36.45 -139.896
+   }
+   ShapePoint "{6AB365C82FF2B4C4}" {
+    Position 180.502 43.27 -173.268
+   }
+  }
+  {
+   RoadGeneratorEntity : "{C462022ADF8F958A}Prefabs/WEGenerators/Roads/Dirt/RG_TrailGravel_Takistan.et" {
+    coords 0 0 0
+    AdjustHeightMap 1
+    AdjustHeightMapPriority 39
+    RoadClearance 1.5
+    FalloffStartWidth 1.5
+    RoadFalloffWidth 1.8
+    {
+     RoadEntity {
+      ID "627325778D27D68F"
+      SplinePoints {
+       ShapePoint "{5256DA7852E4536F}" {
+        Position -2.147 0 2.013
+       }
+       ShapePoint "{5256DA7852E450A5}" {
+        Position 5.805 -0.187 1.931
+       }
+       ShapePoint "{6AB365CFF39792C9}" {
+        Position 12.238 0.448 6.199
+       }
+       ShapePoint "{6AB365CFF39792BB}" {
+        Position 21.649 1.257 13.966
+       }
+       ShapePoint "{6AB365CFF3979366}" {
+        Position 30.36 2.532 14.465
+       }
+       ShapePoint "{6AB365CFF397932F}" {
+        Position 36.278 4.508 14.231
+       }
+       ShapePoint "{6AB365CFF3979394}" {
+        Position 42.962 7.468 13.365
+       }
+       ShapePoint "{6AB365CFF3979051}" {
+        Position 50.061 9.093 10.45
+       }
+       ShapePoint "{6AB365CFF3979012}" {
+        Position 61.513 11.974 7.768
+       }
+       ShapePoint "{6AB365CFF39790D3}" {
+        Position 86.326 15.538 0.585
+       }
+       ShapePoint "{6AB365CFF3979091}" {
+        Position 96.752 15.445 -23.158
+       }
+       ShapePoint "{6AB365CFF3979150}" {
+        Position 109.142 14.628 -49.187
+       }
+       ShapePoint "{6AB365CFF3979112}" {
+        Position 128.122 19.498 -83.808
+       }
+       ShapePoint "{6AB365CFF39791DA}" {
+        Position 145.62 27.088 -110.963
+       }
+       ShapePoint "{6AB365CFF3979183}" {
+        Position 163.472 36.45 -139.896
+       }
+       ShapePoint "{6AB365CFF397967E}" {
+        Position 180.502 43.27 -173.268
+       }
+      }
+      IsClosedSpline 0
+      Width 2
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1834.557 -40.181 1323.754
+  Points {
+   ShapePoint "{6AB365CCB1F73259}" {
+    Position -0.099 -0 2.197
+    Data {
+     SplinePointData SplinePointData {
+      InTangent -2.204 -0 -5.841
+      OutTangent -2.204 -0 -5.841
+     }
+    }
+   }
+   ShapePoint "{6AB365CD1D67AD51}" {
+    Position -6.498 0 -19.653
+   }
+   ShapePoint "{6AB365CD1D95E92B}" {
+    Position -6.993 0 -33.949
+   }
+   ShapePoint "{6AB365CD1ABFBD1C}" {
+    Position -7.958 0 -54.072
+   }
+   ShapePoint "{6AB365CD787A474E}" {
+    Position -9.66 -0.809 -76.818
+   }
+   ShapePoint "{6AB365CD79C46747}" {
+    Position -11.47 -2.298 -97.878
+   }
+  }
+  {
+   RoadGeneratorEntity : "{9495F43BDE130455}Prefabs/WEGenerators/Roads/Dirt/RG_Road_Dirt_Takistan.et" {
+    coords 0 0 0
+    AdjustHeightMap 1
+    {
+     RoadEntity {
+      ID "6272EE997FB954C5"
+      SplinePoints {
+       ShapePoint "{556C65561A62B78A}" {
+        Position -0.099 -0 2.197
+        Data {
+         SplinePointData "{00000000D8F1BA4F}" {
+          InTangent -2.204 -0 -5.841
+          OutTangent -2.204 -0 -5.841
+         }
+        }
+       }
+       ShapePoint "{556C65561A62EBA9}" {
+        Position -6.498 0 -19.653
+       }
+       ShapePoint "{6AB365CD5DEDF18C}" {
+        Position -6.993 0 -33.95
+       }
+       ShapePoint "{6AB365CD5DEDF61C}" {
+        Position -7.958 0 -54.072
+       }
+       ShapePoint "{6AB365CD5DEDF6F6}" {
+        Position -9.66 -0.809 -76.818
+       }
+       ShapePoint "{6AB365CD5DEDF6A9}" {
+        Position -11.47 -2.298 -97.878
+       }
+      }
+      IsClosedSpline 0
+      Width 4.5
+     }
+    }
+   }
+  }
+ }
 }
-SCR_DestructibleBuildingEntity : "{724B854BCD6D4E8B}Prefabs/Structures/Bulding/HouseC/House_C_4_EP1_Base.et" {
- coords 1833.396 -37.552 1282.911
- angles 0 -89.276 0
+$grp GenericEntity : "{21C62EE06F719B37}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandstoneWall02_Sandstone.et" {
+ {
+  coords 1870 -51.63 1235.093
+  angles 0 78.332 0
+ }
+ {
+  coords 1887.67 -50.899 1204.275
+  angles 0 63.297 0
+ }
+ {
+  coords 1879.834 -51.654 1277.502
+  angles 0 -158.03 0
+ }
+}
+GenericEntity : "{2B4FE1031B8AB5FE}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedCanyonWall_Sandstone.et" {
+ coords 1830.213 -52.821 1306.339
+ angles 0 -45.356 0
+}
+GenericEntity : "{3241B28065F469EF}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedDesertEscarpment_Sandstone.et" {
+ coords 1865.419 -41.687 1268.951
+ angles 0 -12.313 0
+}
+$grp SCR_DestructibleBuildingEntity : "{356F79334AC4B4E9}Prefabs/Structures/Bulding/HouseC/House_C_4_EP1.et" {
+ {
+  coords 1836.154 -40.181 1302.37
+ }
+ {
+  coords 1836.667 -40.305 1283.603
+  angles 0 -91.65 0
+ }
+}
+$grp GenericEntity : "{5D46AF783B52901A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonSentinel_Sandstone.et" {
+ {
+  coords 1840.497 -61.808 1328.82
+ }
+ {
+  coords 1844.025 -49.019 1261.243
+  angles 0 85.016 0
+ }
+}
+GenericEntity : "{665493635526502A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge_Sandstone.et" {
+ coords 1880.932 -43.448 1343.418
+ angles 0 138.303 0
+}
+GenericEntity : "{876AB60A8BF5D37B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith_Sandstone.et" {
+ coords 1854.26 -54.702 1329.906
 }
 SCR_DestructibleBuildingEntity : "{A0E65FE503C8D6D2}Prefabs/Structures/Bulding/HouseC/House_C_1_EP1.et" {
  coords 1832.33 -39.83 1254.758
  angles 0 83.936 0
 }
+GenericEntity : "{A56DBAAA8D2B932A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCitadel_Sandstone.et" {
+ coords 1867.816 -42.43 1311.436
+ angles 0 98.059 0
+}
+GenericEntity : "{B9658D7DBC036095}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedRedstoneMonolith_Sandstone.et" {
+ coords 1854.808 -48.675 1299.137
+}
+GenericEntity : "{BA34EEB7C77A6DF4}Prefabs/Rocks/Cliffs/Cliff_Base_DesertFortress_Sandstone.et" {
+ coords 1863.103 -41.858 1253.518
+ angles 0 -168.945 0
+}
 SCR_DestructibleBuildingEntity : "{BCA7012AFAE5ACAC}Prefabs/Structures/Bulding/HouseC/House_C_4_EP3.et" {
- coords 1841.975 -42.242 1318.49
+ coords 1842.824 -40.181 1318.324
  angles 0 101.087 0
+}
+GenericEntity : "{C64E5A22FAC180D6}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCrown_Sandstone.et" {
+ coords 1847.041 -49.337 1267.5
 }
 SCR_DestructibleBuildingEntity : "{CC978E65AF4A0678}Prefabs/Structures/Bulding/HouseC/House_C_3_EP1_Base.et" {
  coords 1835.267 -42.452 1221.365
  angles 0 83.876 0
+}
+GenericEntity : "{CEA9B08AB91F2C19}Prefabs/Rocks/Cliffs/Cliff_Base_DesertMonolith_Sandstone.et" {
+ coords 1890.614 -59.487 1304.407
+ angles 0 -71.83 0
 }

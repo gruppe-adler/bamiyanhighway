@@ -5888,23 +5888,6 @@ $grp SplineShapeEntity {
    }
   }
  }
- {
-  coords 1828.561 -42.394 1209.372
-  Points {
-   ShapePoint "{6AA9548C3AD62E60}" {
-    Position -0.117 0.821 5.824
-   }
-   ShapePoint "{6AA9548C3AD1C595}" {
-    Position -2.882 1.59 14.594
-   }
-   ShapePoint "{6AA9548C3B068AFB}" {
-    Position -2.223 2.294 34.16
-   }
-   ShapePoint "{6AA9548C3BBE04D5}" {
-    Position -2.392 6.207 48.458
-   }
-  }
- }
 }
 GenericEntity : "{01EB4A20B6BB6390}Prefabs/Structures/Misc/Nargile.et" {
  coords 839.622 -20.841 1000.843
