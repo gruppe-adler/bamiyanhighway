@@ -1,0 +1,17 @@
+SCR_DestructibleEntity : "{54299DFAE98A820B}Prefabs/Structures/Walls/Stone/StoneWall_03/StoneWall_03_Start.et" {
+ ID "0000000000000001"
+ components {
+  MeshObject "{56DE7C8DCD0F4E0A}" {
+   Materials {
+    MaterialAssignClass "{BFDC13B891277B92}" {
+     SourceMaterial "StoneWall_03"
+     AssignedMaterial "{374FC20CBAA68FAB}Assets/Structures/Walls/Stone/StoneWall_03/Data/StoneWall_03_sand.emat"
+    }
+    MaterialAssignClass "{AF3D52ABD52CAC01}" {
+     SourceMaterial "StoneWall_03_MLOD"
+     AssignedMaterial "{16BF6F4CD96CDA92}Assets/Structures/Walls/Stone/StoneWall_03/Data/StoneWall_03_MLOD_sand.emat"
+    }
+   }
+  }
+ }
+}

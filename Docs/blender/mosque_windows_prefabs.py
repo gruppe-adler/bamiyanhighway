@@ -84,6 +84,7 @@ out = ['GenericEntity {', ' ID "75A70139AF7B1025"', ' components {', '  MeshObje
        '   Object "{16C11A3943994961}Prefabs/Structures/Mosque_01/Mosque_01.xob"', '  }', '  RigidBody "{1CF94F20E788D787}" {',
        '   LayerPreset "BuildingFireView"', '   SimState Collision', '   ModelGeometry 1', '  }', ' }', ' coords 0 0 0', ' {',
        '  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {', '   ID "D40CCA85F0F54F30"', '   coords 0 2.8 0', '  }',
+       '  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {', '   ID "D40CCA85F0F54F31"', '   coords 0 9.5 0', '  }',   # second probe in the drum/dome space (lighting report)
        ]
 CARPET = '{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et'        # vanilla carpet (user's copy)
 DOOR_R = '{06E20E31504A8381}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_right_EXT_COV_mosque.et'   # mirrored leaf: hinge on the right, opens like the left one (both prefabs extend +x from their hinge; the church socket for the right leaf is rotated 180)

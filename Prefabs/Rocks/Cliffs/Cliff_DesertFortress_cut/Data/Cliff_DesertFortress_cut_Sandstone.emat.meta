@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{65E35C4B68B5702C}Prefabs/Rocks/Cliffs/Cliff_DesertFortress_cut/Data/Cliff_DesertFortress_cut_Sandstone.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

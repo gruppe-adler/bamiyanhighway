@@ -1,0 +1,26 @@
+WallGeneratorEntity {
+ ID "6AB2E31CD9F20F51"
+ Flags 0x100003 0
+ FirstObject "{9A7FC9D9A8206B74}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_start.et"
+ FirstObjectPostPadding -0.5
+ LastObject "{3E1FF1C56363D645}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_end.et"
+ LastObjectPrePadding -0.125
+ PrePadding -0.175
+ PostPadding -0.373
+ m_aWallGroups {
+  WallLengthGroup "{6AB2E31CD9F20F36}" {
+   m_aWallPrefabs {
+    WallWeightPair "{6AB2E31CD9F20F2E}" {
+     m_sWallAsset "{20304FC74D23C37F}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_4m_A.et"
+    }
+    WallWeightPair "{6AB2E31CD9F20F29}" {
+     m_sWallAsset "{781EA3F923020334}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_4m_B.et"
+    }
+    WallWeightPair "{6AB2E31CD9F20F16}" {
+     m_sWallAsset "{A0B6CA385A8B1D68}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_4m_D.et"
+     m_fWeight 0.05
+    }
+   }
+  }
+ }
+}

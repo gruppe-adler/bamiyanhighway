@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{A3B332951B623203}Prefabs/Rocks/Cliffs/Cliff_HorseshoeRidge/Data/Cliff_HorseshoeRidge_Sandstone_terrain.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

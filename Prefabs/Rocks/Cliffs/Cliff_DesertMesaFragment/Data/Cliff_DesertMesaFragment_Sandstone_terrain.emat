@@ -1,0 +1,13 @@
+MatTerrainObject : "{003244BB00581E06}Common/Materials/default_MatTerrainObj_TerrShadows.emat" {
+ Color 1 1 1 1
+ BCRMap "{9598FAFD0CDD8E8F}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePaleCream_BCR.edds"
+ NMOMap "{324D4AA80106780B}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_NMO.edds"
+ GlobalMapsUVTransform MatUVTransform {
+  TilingU 24.3
+  TilingV 24.3
+  Rotation 90
+ }
+ ClutterThresholdAngle 20
+ MaterialBlendUseVertexColor R
+ MaterialBlendUseTerrainDistance 1
+}

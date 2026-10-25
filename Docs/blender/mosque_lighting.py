@@ -93,15 +93,22 @@ def octagon_prism(name, apothem, z0, z1):
     for i in range(8): bm.faces.new((lo[i], lo[(i + 1) % 8], hi[(i + 1) % 8], hi[i]))
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces); bm.to_mesh(me); bm.free(); me.materials.append(dummy)
     ob = bpy.data.objects.new(name, me); link(ob); return ob
-octagon_prism('PRTVOL_01', A_I, Z_FLOOR, Z_TOP)          # hall
-octagon_prism('PRTVOL_02', DR_A, Z_TOP + 0.05, Z_DOME)                                # drum + dome space
-for i, rot in enumerate((0, 45, 90, 135), 1):                                  # an octagon = union of 4 boxes (16.86 x 6.98), also used as probe volumes / BSP
-    side = 2 * A_I * math.tan(math.radians(22.5)); h = Z_TOP - Z_FLOOR
-    box(f'BOXVOL_{i:02d}', (2 * A_I, side, h), (0, 0, Z_FLOOR + h / 2), rot)
-for i, rot in enumerate((0, 45, 90, 135), 5):
-    side = 2 * DR_A * math.tan(math.radians(22.5)); h = Z_DOME - Z_TOP
-    box(f'BOXVOL_{i:02d}', (2 * DR_A, side, h), (0, 0, Z_TOP + h / 2), rot)
-# BSP: overlapping boxes make the FBX build fail in Workbench ("Build failed") -> two non-overlapping convex prisms
-octagon_prism('BSP_01', A_I, Z_FLOOR, Z_TOP)
-octagon_prism('BSP_02', DR_A, Z_TOP + 0.05, Z_DOME)
+# stepped volumes that follow the real inner space (hole in the ceiling r 4.96, drum inner r 5.36, dome inner radius shrinking above z 10); lighting report 2026-10-25:
+# the old single dome octagon (apothem 4.4) left the drum windows and the lower dome shell outside every volume, and hall/dome volumes did not touch.
+TIERS = [(4.5, 5.0, 6.2), (4.95, 6.15, 8.7), (3.9, 8.65, 12.0)]          # (apothem, z0, z1) above the hall: ceiling hole, drum, dome; PRTVOL/BOXVOL may overlap
+BSP_TIERS = [(4.5, Z_TOP + 0.05, 6.13), (4.95, 6.18, 8.65), (3.9, 8.7, 12.0)]   # BSP must not overlap
+Z_FLOOR_V = 0.85                                                          # volume floor below the floor (carpets at 0.945 were outside the 0.95 volumes)
+octagon_prism('PRTVOL_01', A_I, Z_FLOOR_V, Z_TOP)          # hall
+for n, (a_, z0, z1) in enumerate(TIERS, 2): octagon_prism(f'PRTVOL_{n:02d}', a_, z0, z1)
+bn = 1
+for i, rot in enumerate((0, 45, 90, 135), 1):                                  # an octagon = union of 4 boxes, also used as probe volumes
+    side = 2 * A_I * math.tan(math.radians(22.5)); h = Z_TOP - Z_FLOOR_V
+    box(f'BOXVOL_{bn:02d}', (2 * A_I, side, h), (0, 0, Z_FLOOR_V + h / 2), rot); bn += 1
+for a_, z0, z1 in TIERS:
+    for rot in (0, 45, 90, 135):
+        side = 2 * a_ * math.tan(math.radians(22.5)); h = z1 - z0
+        box(f'BOXVOL_{bn:02d}', (2 * a_, side, h), (0, 0, z0 + h / 2), rot); bn += 1
+# BSP: overlapping boxes make the FBX build fail in Workbench ("Build failed") -> non-overlapping convex prisms
+octagon_prism('BSP_01', A_I, Z_FLOOR_V, Z_TOP)
+for n, (a_, z0, z1) in enumerate(BSP_TIERS, 2): octagon_prism(f'BSP_{n:02d}', a_, z0, z1)
 print('volumes done:', [o.name for o in bpy.data.objects if o.name.startswith(('PRTVOL_', 'BOXVOL_', 'BSP_'))])

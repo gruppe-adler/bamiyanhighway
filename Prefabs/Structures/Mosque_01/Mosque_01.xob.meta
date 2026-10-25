@@ -82,6 +82,46 @@ MetaFileClass {
      Ev 0
      FarEvBias 0
     }
+    VolumeParam BOXVOL_09 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_10 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_11 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_12 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_13 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_14 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_15 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_16 {
+     Lerp 0
+     Ev 0
+     FarEvBias 0
+    }
    }
    MeshParams {
     MeshParam Mosque_01 {
@@ -89,14 +129,9 @@ MetaFileClass {
    }
    GeometryParams {
     GeometryParam UTM_Mosque_01 {
+     LayerPreset "BuildingFireView"
      SurfaceProperties {
-      "{9015D957766A718B}Mosque_01_Plaster.gamemat"
-      "{950733F00B3CD05A}Mosque_01_Stone.gamemat"
-      "{0729A38E90490C91}Mosque_01_Paint.gamemat"
-      "{FE4A40349197FBF6}Mosque_01_Wood.gamemat"
-      "{204AF5211DBD4DAC}Mosque_01_Gold.gamemat"
-      "{E997ADB51DE4CA33}Mosque_01_Carpet.gamemat"
-      "{15896B7D50C17AC7}Mosque_01_Rib.gamemat"
+      "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
      }
      Mass 0
      Margin 0

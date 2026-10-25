@@ -1,0 +1,13 @@
+GenericEntity : "{A2EB157CA8B7B807}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith.et" {
+ ID "FF4E62F9F2F2D59A"
+ components {
+  MeshObject "{BFFB985EEDDD1E77}" {
+   Materials {
+    MaterialAssignClass "{05522E40B74CAA6C}" {
+     SourceMaterial "Cliff_CrimsonMonolith"
+     AssignedMaterial "{1FB578529967DD24}Prefabs/Rocks/Cliffs/Cliff_CrimsonMonolith/Data/Cliff_CrimsonMonolith_Sandstone.emat"
+    }
+   }
+  }
+ }
+}

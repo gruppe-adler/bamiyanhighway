@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{79F27685B54FF43C}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertCliffs_cut/Data/Cliff_ErodedDesertCliffs_cut_Sandstone.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

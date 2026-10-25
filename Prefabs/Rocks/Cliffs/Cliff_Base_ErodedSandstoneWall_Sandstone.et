@@ -1,0 +1,17 @@
+GenericEntity : "{D477E85FC7DE8B82}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandstoneWall.et" {
+ ID "40F9929DF6C47520"
+ components {
+  MeshObject "{6AAB5BF3001BCF94}" {
+   Materials {
+    MaterialAssignClass "{40F2E239AB17B0C7}" {
+     SourceMaterial "Cliff_ErodedSandstoneWall"
+     AssignedMaterial "{28ED2774E58DDDC7}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Data/Cliff_ErodedSandstoneWall_Sandstone.emat"
+    }
+    MaterialAssignClass "{42D0C3A81E0B4BF6}" {
+     SourceMaterial "Cliff_ErodedSandstoneWall_terrain"
+     AssignedMaterial "{5A6191621B608DE4}Prefabs/Rocks/Cliffs/Cliff_ErodedSandstoneWall/Data/Cliff_ErodedSandstoneWall_Sandstone_terrain.emat"
+    }
+   }
+  }
+ }
+}

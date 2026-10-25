@@ -1,0 +1,17 @@
+GenericEntity : "{E2C0E0151447411D}Prefabs/Rocks/Cliffs/Cliff_Cut_ErodedCanyonWall.et" {
+ ID "FF1F43E30D51A43B"
+ components {
+  MeshObject "{FF2486B0E42690D3}" {
+   Materials {
+    MaterialAssignClass "{68E4768127F08B7F}" {
+     SourceMaterial "Cliff_ErodedCanyonWall_cut"
+     AssignedMaterial "{03741C676CB8DEAD}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Data/Cliff_ErodedCanyonWall_cut_Sandstone.emat"
+    }
+    MaterialAssignClass "{7A1B46EC7E5D6921}" {
+     SourceMaterial "Cliff_ErodedCanyonWall_cut_terrain"
+     AssignedMaterial "{8D3A60E3D0BF9DE8}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Data/Cliff_ErodedCanyonWall_cut_Sandstone_terrain.emat"
+    }
+   }
+  }
+ }
+}

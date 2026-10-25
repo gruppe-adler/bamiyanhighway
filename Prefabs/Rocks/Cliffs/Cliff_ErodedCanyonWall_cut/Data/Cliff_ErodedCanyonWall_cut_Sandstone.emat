@@ -1,0 +1,34 @@
+MatPBRMulti {
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ GlobalLayerGlobalAO 1.5
+ MaskMap "{B0221E64BF6A4DEA}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Cliff_ErodedCanyonWall_cut_MASK.edds"
+ GlobalNMOMap "{5729E8EB298842CA}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Cliff_ErodedCanyonWall_cut_NMO.edds"
+ Enabled_4 1
+ BCR_4 "{9598FAFD0CDD8E8F}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePaleCream_BCR.edds"
+ NMO_4 "{324D4AA80106780B}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_NMO.edds"
+ UVTransform_4 MatUVTransform "{6AACC51F22FEBF67}" {
+  TilingU 17.2
+  TilingV 17.2
+  Rotation 90
+ }
+ Enabled_3 1
+ BCR_3 "{CD36E21BA524C7F7}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_ScreeCream_BCR.edds"
+ NMO_3 "{5AA05137943156AA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Scree_NMO.edds"
+ UVTransform_3 MatUVTransform "{6AACC51F22FEBF84}" {
+  TilingU 21.4
+  TilingV 21.4
+ }
+ Enabled_2 1
+ BCR_2 "{C3D92DD62386816E}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandCream_BCR.edds"
+ NMO_2 "{78D1B204841004D6}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NMO.edds"
+ UVTransform_2 MatUVTransform "{6AACC51F22FEBFA4}" {
+  TilingU 26.1
+  TilingV 26.1
+ }
+ BCR_1 "{2EE5E5D67EC32C05}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorousCream_BCR.edds"
+ NMO_1 "{7DB72156C7B5B354}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_RockPorous_NMO.edds"
+ UVTransform_1 MatUVTransform "{6AACC51F22FEBFE9}" {
+  TilingU 35.2
+  TilingV 35.2
+ }
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{16BF6F4CD96CDA92}Assets/Structures/Walls/Stone/StoneWall_03/Data/StoneWall_03_MLOD_sand.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

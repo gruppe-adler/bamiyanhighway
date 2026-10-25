@@ -12,241 +12,240 @@ GenericEntity {
  }
  coords 0 0 0
  {
-  GenericEntity : "{06E20E31504A8381}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_right_EXT_COV_mosque.et" {
-   ID "EEC407B5A2DA9F66"
-   coords 1.15 1.043 8.68
-   angles 0 180 0
-   scale 1.14
-  }
-  $grp Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
-   {
-    ID "05C92C05902E8A7F"
-    coords -4.034 6.5 -3.217
-    angles 0 231.43 0
-   }
-   {
-    ID "0B178D5FB327E5EE"
-    coords -5.031 6.5 -1.148
-    angles 0 257.14 0
-   }
-   {
-    ID "19281687DF556803"
-    coords 4.034 6.5 -3.217
-    angles 0 128.57 0
-   }
-   {
-    ID "22D4977A653F6D46"
-    coords 2.239 6.5 -4.649
-    angles 0 154.29 0
-   }
-   {
-    ID "4CA06C01CDDB7C03"
-    coords -4.034 6.5 3.217
-    angles 0 308.57 0
-   }
-   {
-    ID "5B047C5BB775FF27"
-    coords 0 6.5 5.16
-   }
-   {
-    ID "619E9CD8CFE5694E"
-    coords 4.034 6.5 3.217
-    angles 0 51.43 0
-   }
-   {
-    ID "82292129995AD02E"
-    coords -5.031 6.5 1.148
-    angles 0 282.86 0
-   }
-   {
-    ID "A172B21FD7A12A8A"
-    coords 5.031 6.5 -1.148
-    angles 0 102.86 0
-   }
-   {
-    ID "A3E3554BA9D8D4CB"
-    coords -2.239 6.5 -4.649
-    angles 0 205.71 0
-   }
-   {
-    ID "B31C85D6468CB4F0"
-    coords -2.239 6.5 4.649
-    angles 0 334.29 0
-   }
-   {
-    ID "B8760C193B2419EB"
-    coords 2.239 6.5 4.649
-    angles 0 25.71 0
-   }
-   {
-    ID "D9C74D140C7431B1"
-    coords 5.031 6.5 1.148
-    angles 0 77.14 0
-   }
-   {
-    ID "EF3702A785E6B279"
-    coords 0 6.5 -5.16
-    angles 0 180 0
-   }
-  }
-  $grp Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
-   {
-    ID "0042737E0C6DC964"
-    coords -6.159 2.88 -6.159
-    angles 0 225 0
-   }
-   {
-    ID "008FFE8ACE1EBC9D"
-    coords 7.326 2.88 4.992
-    angles 0 45 0
-   }
-   {
-    ID "0BC0EE18433C25B8"
-    coords 7.326 2.88 -4.992
-    angles 0 135 0
-   }
-   {
-    ID "111C370CC7E4AD90"
-    coords 4.992 2.88 7.326
-    angles 0 45 0
-   }
-   {
-    ID "231EDB1B0DD808B3"
-    coords -8.71 2.88 -1.65
-    angles 0 270 0
-   }
-   {
-    ID "3B2DB78479576935"
-    coords 0 2.88 -8.71
-    angles 0 180 0
-   }
-   {
-    ID "442011556DA84EEC"
-    coords -4.992 2.88 7.326
-    angles 0 315 0
-   }
-   {
-    ID "5661C8903B7A7596"
-    coords 8.71 2.88 0
-    angles 0 90 0
-   }
-   {
-    ID "59E074692A9F9E62"
-    coords 6.159 2.88 -6.159
-    angles 0 135 0
-   }
-   {
-    ID "5F92F44F2FB97ACA"
-    coords -7.326 2.88 -4.992
-    angles 0 225 0
-   }
-   {
-    ID "685AABCEB4D0C126"
-    coords 8.71 2.88 1.65
-    angles 0 90 0
-   }
-   {
-    ID "6A7C5BC8F98651A9"
-    coords 6.159 2.88 6.159
-    angles 0 45 0
-   }
-   {
-    ID "6E03515DD9051BA5"
-    coords 4.992 2.88 -7.326
-    angles 0 135 0
-   }
-   {
-    ID "6EB1C2F3C7C8FC21"
-    coords 1.65 2.88 -8.71
-    angles 0 180 0
-   }
-   {
-    ID "854B633CD7F3B809"
-    coords -4.992 2.88 -7.326
-    angles 0 225 0
-   }
-   {
-    ID "9E9996E289E9B54B"
-    coords -1.65 2.88 -8.71
-    angles 0 180 0
-   }
-   {
-    ID "C3959089C892F657"
-    coords -6.159 2.88 6.159
-    angles 0 315 0
-   }
-   {
-    ID "D02EF0EF0F1CB899"
-    coords 8.71 2.88 -1.65
-    angles 0 90 0
-   }
-   {
-    ID "DA8793213F21D8B1"
-    coords -8.71 2.88 1.65
-    angles 0 270 0
-   }
-   {
-    ID "E58402FA621868AC"
-    coords -7.326 2.88 4.992
-    angles 0 315 0
-   }
-   {
-    ID "F81B0DAD61294791"
-    coords -8.71 2.88 0
-    angles 0 270 0
-   }
-  }
-  $grp GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
-   {
-    ID "00258C95A50FD0C3"
-    coords -2.2 0.945 3.2
-   }
-   {
-    ID "1F1050885FD6E827"
-    coords 0 0.945 -3.2
-   }
-   {
-    ID "3C3CE879F739119E"
-    coords 2.2 0.945 3.2
-   }
-   {
-    ID "62AEFF56BE059AE1"
-    coords 2.2 0.945 -3.2
-   }
-   {
-    ID "78DBDDB36EB321F2"
-    coords 0 0.96 11
-    angles 0 90 0
-   }
-   {
-    ID "837AC97970E821F1"
-    coords 0 0.945 3.2
-   }
-   {
-    ID "9CB795DBA25D2297"
-    coords -2.2 0.945 -3.2
-   }
-   {
-    ID "DE344006614F7A33"
-    coords -2.2 0.945 0
-   }
-   {
-    ID "E7F1BBDDE1D15954"
-    coords 0 0.945 0
-   }
-   {
-    ID "E89CF10ED3E4B189"
-    coords 2.2 0.945 0
-   }
-  }
   GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
    ID "D40CCA85F0F54F30"
    coords 0 2.8 0
   }
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "D40CCA85F0F54F31"
+   coords 0 9.5 0
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "9CB795DBA25D2297"
+   coords -2.200 0.945 -3.200
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "DE344006614F7A33"
+   coords -2.200 0.945 0.000
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "00258C95A50FD0C3"
+   coords -2.200 0.945 3.200
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "1F1050885FD6E827"
+   coords 0.000 0.945 -3.200
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "E7F1BBDDE1D15954"
+   coords 0.000 0.945 0.000
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "837AC97970E821F1"
+   coords 0.000 0.945 3.200
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "62AEFF56BE059AE1"
+   coords 2.200 0.945 -3.200
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "E89CF10ED3E4B189"
+   coords 2.200 0.945 0.000
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "3C3CE879F739119E"
+   coords 2.200 0.945 3.200
+  }
+  GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   ID "78DBDDB36EB321F2"
+   coords 0.000 0.960 11.000
+   angles 0 90.00 0
+  }
   GenericEntity : "{8A0A9BE2DAAC5D51}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_left_EXT_COV_mosque.et" {
    ID "2F01E0DB25C02857"
-   coords -1.15 1.034 8.68
-   scale 1.14
+   coords -1.150 0.950 8.680
+   scale 1.140
+  }
+  GenericEntity : "{06E20E31504A8381}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_right_EXT_COV_mosque.et" {
+   ID "EEC407B5A2DA9F66"
+   coords 1.150 0.950 8.680
+   angles 0 180.00 0
+   scale 1.140
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "442011556DA84EEC"
+   coords -4.992 2.880 7.326
+   angles 0 315.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "C3959089C892F657"
+   coords -6.159 2.880 6.159
+   angles 0 315.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "E58402FA621868AC"
+   coords -7.326 2.880 4.992
+   angles 0 315.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "DA8793213F21D8B1"
+   coords -8.710 2.880 1.650
+   angles 0 270.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "F81B0DAD61294791"
+   coords -8.710 2.880 0.000
+   angles 0 270.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "231EDB1B0DD808B3"
+   coords -8.710 2.880 -1.650
+   angles 0 270.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "5F92F44F2FB97ACA"
+   coords -7.326 2.880 -4.992
+   angles 0 225.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "0042737E0C6DC964"
+   coords -6.159 2.880 -6.159
+   angles 0 225.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "854B633CD7F3B809"
+   coords -4.992 2.880 -7.326
+   angles 0 225.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "9E9996E289E9B54B"
+   coords -1.650 2.880 -8.710
+   angles 0 180.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "3B2DB78479576935"
+   coords -0.000 2.880 -8.710
+   angles 0 180.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "6EB1C2F3C7C8FC21"
+   coords 1.650 2.880 -8.710
+   angles 0 180.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "6E03515DD9051BA5"
+   coords 4.992 2.880 -7.326
+   angles 0 135.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "59E074692A9F9E62"
+   coords 6.159 2.880 -6.159
+   angles 0 135.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "0BC0EE18433C25B8"
+   coords 7.326 2.880 -4.992
+   angles 0 135.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "D02EF0EF0F1CB899"
+   coords 8.710 2.880 -1.650
+   angles 0 90.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "5661C8903B7A7596"
+   coords 8.710 2.880 -0.000
+   angles 0 90.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "685AABCEB4D0C126"
+   coords 8.710 2.880 1.650
+   angles 0 90.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "008FFE8ACE1EBC9D"
+   coords 7.326 2.880 4.992
+   angles 0 45.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "6A7C5BC8F98651A9"
+   coords 6.159 2.880 6.159
+   angles 0 45.00 0
+  }
+  Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   ID "111C370CC7E4AD90"
+   coords 4.992 2.880 7.326
+   angles 0 45.00 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "5B047C5BB775FF27"
+   coords 0.000 6.500 5.160
+   angles 0 0.00 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "B31C85D6468CB4F0"
+   coords -2.239 6.500 4.649
+   angles 0 334.29 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "A172B21FD7A12A8A"
+   coords 5.031 6.500 -1.148
+   angles 0 102.86 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "D9C74D140C7431B1"
+   coords 5.031 6.500 1.148
+   angles 0 77.14 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "619E9CD8CFE5694E"
+   coords 4.034 6.500 3.217
+   angles 0 51.43 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "B8760C193B2419EB"
+   coords 2.239 6.500 4.649
+   angles 0 25.71 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "4CA06C01CDDB7C03"
+   coords -4.034 6.500 3.217
+   angles 0 308.57 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "82292129995AD02E"
+   coords -5.031 6.500 1.148
+   angles 0 282.86 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "0B178D5FB327E5EE"
+   coords -5.031 6.500 -1.148
+   angles 0 257.14 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "05C92C05902E8A7F"
+   coords -4.034 6.500 -3.217
+   angles 0 231.43 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "A3E3554BA9D8D4CB"
+   coords -2.239 6.500 -4.649
+   angles 0 205.71 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "EF3702A785E6B279"
+   coords -0.000 6.500 -5.160
+   angles 0 180.00 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "22D4977A653F6D46"
+   coords 2.239 6.500 -4.649
+   angles 0 154.29 0
+  }
+  Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   ID "19281687DF556803"
+   coords 4.034 6.500 -3.217
+   angles 0 128.57 0
   }
  }
 }

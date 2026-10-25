@@ -1,0 +1,17 @@
+GenericEntity : "{F92C7BF71226756B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge.et" {
+ ID "BA3213AE54EBCF03"
+ components {
+  MeshObject "{6AAB5BF200E698DF}" {
+   Materials {
+    MaterialAssignClass "{D164EE339AEBE665}" {
+     SourceMaterial "Cliff_CrimsonBadlandsRidge"
+     AssignedMaterial "{B1A4425066120C30}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Data/Cliff_CrimsonBadlandsRidge_Sandstone.emat"
+    }
+    MaterialAssignClass "{C2756C4DFF214F9B}" {
+     SourceMaterial "Cliff_CrimsonBadlandsRidge_terrain"
+     AssignedMaterial "{153C86418A58DDE6}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Data/Cliff_CrimsonBadlandsRidge_Sandstone_terrain.emat"
+    }
+   }
+  }
+ }
+}

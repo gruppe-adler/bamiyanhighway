@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{32C5ABD0D3A35017}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall/Data/Cliff_ErodedCanyonWall_Sandstone_terrain.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

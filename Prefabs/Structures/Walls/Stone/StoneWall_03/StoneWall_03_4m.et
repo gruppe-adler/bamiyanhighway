@@ -1,0 +1,22 @@
+SCR_DestructibleEntity : "{45084D349C84A865}Prefabs/Structures/Walls/Stone/StoneWall_03/StoneWall_03_Base.et" {
+ ID "51E2F0F09703F07B"
+ components {
+  MeshObject "{56DE7C8DCD0F4E0A}" {
+   Object "{9C643EA0EE9FBA8D}Assets/Structures/Walls/Stone/StoneWall_03/StoneWall_03_4m.xob"
+  }
+ }
+ coords 1032.56 0.011 2644.633
+ FirstDestructionPhase SCR_BaseDestructionPhase "{5A18F297698A2425}" {
+  m_sPhaseModel "{41AD597A2591E61F}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_00.xob"
+  m_aPhaseDestroySpawnObjects {
+   SCR_DebrisSpawnable "{6226B74262434483}" {
+    m_ModelPrefabs {
+     "{36A731F2D133096F}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_01.xob" "{AFB9886BCCD438FF}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_02.xob" "{D8B3E0E33876D78F}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_03.xob" "{DF741AB25EF06D4C}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_04.xob" "{A87E723AAA52823C}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_05.xob" "{3160CBA3B7B5B3AC}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_06.xob" "{466AA32B43175CDC}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_07.xob"
+    }
+   }
+  }
+ }
+ LastDestructionPhase SCR_BaseDestructionPhase "{5A18F297606BF928}" {
+  m_sPhaseModel "{41AD597A2591E61F}Assets/Structures/Walls/Stone/StoneWall_03/dst/StoneWall_03_4m_dst_00.xob"
+ }
+}

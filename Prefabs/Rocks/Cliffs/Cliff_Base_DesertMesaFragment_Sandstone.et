@@ -1,0 +1,17 @@
+GenericEntity : "{3AEDD475C0062C4C}Prefabs/Rocks/Cliffs/Cliff_Base_DesertMesaFragment.et" {
+ ID "C15593297D83053F"
+ components {
+  MeshObject "{AC22503E679C1683}" {
+   Materials {
+    MaterialAssignClass "{255CEC6E675C30DC}" {
+     SourceMaterial "Cliff_DesertMesaFragment"
+     AssignedMaterial "{7216ADC82EE03B7B}Prefabs/Rocks/Cliffs/Cliff_DesertMesaFragment/Data/Cliff_DesertMesaFragment_Sandstone.emat"
+    }
+    MaterialAssignClass "{D028DFF50B59725C}" {
+     SourceMaterial "Cliff_DesertMesaFragment_terrain"
+     AssignedMaterial "{F15DD4A571F6CB28}Prefabs/Rocks/Cliffs/Cliff_DesertMesaFragment/Data/Cliff_DesertMesaFragment_Sandstone_terrain.emat"
+    }
+   }
+  }
+ }
+}

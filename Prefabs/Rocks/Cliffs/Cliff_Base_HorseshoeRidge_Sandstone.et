@@ -1,0 +1,17 @@
+GenericEntity : "{97D06DB6708BAC2E}Prefabs/Rocks/Cliffs/Cliff_Base_HorseshoeRidge.et" {
+ ID "D5BC260B057BB59F"
+ components {
+  MeshObject "{6AAB5BF33012FC72}" {
+   Materials {
+    MaterialAssignClass "{5BF2A8B7165A4179}" {
+     SourceMaterial "Cliff_HorseshoeRidge"
+     AssignedMaterial "{B1184CF898DA9794}Prefabs/Rocks/Cliffs/Cliff_HorseshoeRidge/Data/Cliff_HorseshoeRidge_Sandstone.emat"
+    }
+    MaterialAssignClass "{5A0E15521250E703}" {
+     SourceMaterial "Cliff_HorseshoeRidge_terrain"
+     AssignedMaterial "{A3B332951B623203}Prefabs/Rocks/Cliffs/Cliff_HorseshoeRidge/Data/Cliff_HorseshoeRidge_Sandstone_terrain.emat"
+    }
+   }
+  }
+ }
+}

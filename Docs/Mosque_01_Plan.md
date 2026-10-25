@@ -282,3 +282,11 @@ Triangulate everything; never remove materials from the FBX (modal dialog freeze
 - Interior black carpets/dome = lighting (probe) problem per user, not geometry. Next: probe recapture / BOXVOL check.
 - Hall ceiling: a leftover full octagon face (235 m2 at z 5.65) covered the dome opening and overlapped the real ceiling ring (8 trapezoids, hole r 4.96) -> deleted (z-fight + closed dome). Rays from the hall now reach the dome. Door: right leaf prefab yaw 180 at x +1.15.
 - User confirmed: doors (left prefab yaw 0 at x -1.15, right prefab yaw 180 at x +1.15) and carpets are fine now.
+
+### Status 2026-10-25 (lighting pass, prepared - NOT yet exported)
+Subagent report: `Docs/Mosque_01_Lighting_Report.md` (partly inference; wiki gave no details on portal normals / overlap rules / probe regeneration button).
+Applied to the generators (needs Blender: open `mosque_v4_baked.blend`, run lighting+export, ExportFBXResource, fix_meta, prefab writer):
+- volume floor 0.95 -> 0.85 (carpets at 0.945 were outside every volume = likely black carpets inside)
+- dome space split in 3 stepped tiers (apothem 4.5 z5.0-6.2 ceiling hole, 4.95 z6.15-8.7 drum incl. drum windows, 3.9 z8.65-12 dome); PRTVOL_01..04, BOXVOL_01..16, BSP_01..04 (BSP tiers do not overlap)
+- second `ProbeHouse_Base` at (0, 9.5, 0) for the dome
+- still manual: regenerate probes in Workbench after re-import; if still too bright lower BOXVOL Ev by 1-2; try flipping portal normals on two windows; portal height (2.2 m) vs opening (~2.9 m)

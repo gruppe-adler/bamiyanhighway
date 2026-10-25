@@ -1,0 +1,17 @@
+GenericEntity : "{DAC33788C4D87F57}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfStoneFaces.et" {
+ ID "8A1C31A822C86DA9"
+ components {
+  MeshObject "{22813E8317B6F81F}" {
+   Materials {
+    MaterialAssignClass "{54739ED05154B8DE}" {
+     SourceMaterial "Cliff_MesaOfStoneFaces"
+     AssignedMaterial "{1A5FA29EA4157543}Prefabs/Rocks/Cliffs/Cliff_MesaOfStoneFaces/Data/Cliff_MesaOfStoneFaces_Sandstone.emat"
+    }
+    MaterialAssignClass "{C1341F64F978CE8D}" {
+     SourceMaterial "Cliff_MesaOfStoneFaces_terrain"
+     AssignedMaterial "{9BBC391C49BFB66E}Prefabs/Rocks/Cliffs/Cliff_MesaOfStoneFaces/Data/Cliff_MesaOfStoneFaces_Sandstone_terrain.emat"
+    }
+   }
+  }
+ }
+}

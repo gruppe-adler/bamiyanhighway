@@ -1,0 +1,106 @@
+SCR_DestructibleEntity : "{396D0C41658C8B16}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_base.et" {
+ ID "51E2F0F09703F07B"
+ components {
+  MeshObject "{56DE7C8DCD0F4E0A}" {
+   Object "{5CDD10ECCA91BF5F}Assets/Structures/Walls/Stone/StoneWall_01_4m_A.xob"
+  }
+ }
+ FirstDestructionPhase SCR_BaseDestructionPhase "{6AB2E31A78DB6746}" {
+  m_sPhaseModel "{5CDD10ECCA91BF5F}Assets/Structures/Walls/Stone/StoneWall_01_4m_A.xob"
+  m_aPhaseDestroySpawnObjects {
+   SCR_ParticleSpawnable "{6AB2E31A78DB674B}" {
+    m_vOffsetPosition 0 0 0
+    m_vOffsetRotation 0 0 0
+    m_Particle "{8BF4300C0BD96ED7}Particles/Props/Dest_ConcreteWall.ptc"
+    m_bAtCenter 1
+    m_bDirectional 1
+   }
+   SCR_DebrisSpawnable "{6AB2E31A78DB6749}" {
+    m_vOffsetPosition 1 0.5 0
+    m_vOffsetRotation 0 0 0
+    m_ModelPrefabs {
+     "{1C097B564614ED28}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_01.xob" "{8517C2CF5BF3DCB8}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_02.xob" "{F21DAA47AF5133C8}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_03.xob" "{F5DA5016C9D7890B}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_04.xob" "{82D0389E3D75667B}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_05.xob" "{1BCE8107209257EB}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_06.xob"
+    }
+    m_fMass 15
+    m_fLifetimeMin 5
+    m_fLifetimeMax 10
+    m_fDistanceMax 200
+    m_fPriority 0
+    m_fDamageToImpulse 0.1
+    m_fMaxDamageToSpeedMultiplier 2
+    m_fRandomVelocityLinear 1
+    m_fRandomVelocityAngular 180
+    m_eMaterialSoundType ROCK
+   }
+   SCR_DebrisSpawnable "{6AB2E31A78DB6730}" {
+    m_vOffsetPosition 3 1 0
+    m_vOffsetRotation 0 0 0
+    m_ModelPrefabs {
+     "{1C097B564614ED28}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_01.xob" "{8517C2CF5BF3DCB8}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_02.xob" "{F21DAA47AF5133C8}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_03.xob" "{F5DA5016C9D7890B}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_04.xob" "{82D0389E3D75667B}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_05.xob" "{1BCE8107209257EB}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_06.xob"
+    }
+    m_fMass 15
+    m_fLifetimeMin 5
+    m_fLifetimeMax 10
+    m_fDistanceMax 200
+    m_fPriority 0
+    m_fDamageToImpulse 0.1
+    m_fMaxDamageToSpeedMultiplier 2
+    m_fRandomVelocityLinear 1
+    m_fRandomVelocityAngular 180
+    m_eMaterialSoundType ROCK
+   }
+  }
+ }
+ DamagePhases {
+  SCR_BaseDestructionPhase "{5A18F296B7186469}" {
+   Threshold 0.6
+  }
+ }
+ LastDestructionPhase SCR_BaseDestructionPhase "{6AB2E31A78DB673D}" {
+  Threshold 0
+  m_sPhaseModel "{942B0A890E452641}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_4m_A_dst_02.xob"
+  m_aPhaseDestroySpawnObjects {
+   SCR_ParticleSpawnable "{6AB2E31A78DB673A}" {
+    m_vOffsetPosition 0 0.2 0
+    m_vOffsetRotation 0 0 0
+    m_Particle "{8BF4300C0BD96ED7}Particles/Props/Dest_ConcreteWall.ptc"
+    m_bAtCenter 1
+    m_bDirectional 1
+   }
+   SCR_DebrisSpawnable "{6AB2E31A78DB673B}" {
+    m_vOffsetPosition 3 1 0
+    m_vOffsetRotation 0 0 0
+    m_ModelPrefabs {
+     "{1C097B564614ED28}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_01.xob"
+    }
+    m_fMass 5
+    m_fLifetimeMin 5
+    m_fLifetimeMax 10
+    m_fDistanceMax 200
+    m_fPriority 0
+    m_fDamageToImpulse 0.1
+    m_fMaxDamageToSpeedMultiplier 2
+    m_fRandomVelocityLinear 1
+    m_fRandomVelocityAngular 180
+    m_eMaterialSoundType ROCK
+   }
+   SCR_DebrisSpawnable "{6AB2E31A78DB6738}" {
+    m_vOffsetPosition 1 1 0
+    m_vOffsetRotation 0 0 0
+    m_ModelPrefabs {
+     "{1C097B564614ED28}Assets/Structures/Walls/Stone/DST/StoneWall_01_dst/StoneWall_01_Debris_01.xob"
+    }
+    m_fMass 50
+    m_fLifetimeMin 5
+    m_fLifetimeMax 10
+    m_fDistanceMax 200
+    m_fPriority 0
+    m_fDamageToImpulse 0.1
+    m_fMaxDamageToSpeedMultiplier 2
+    m_fRandomVelocityLinear 1
+    m_fRandomVelocityAngular 180
+    m_eMaterialSoundType ROCK
+   }
+  }
+ }
+}
