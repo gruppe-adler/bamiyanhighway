@@ -1,4 +1,5 @@
 MatPBRMulti {
+ Color 0.15 0.15 0.15 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MCROpacityBlend 0.282
  MCRBrightness 5

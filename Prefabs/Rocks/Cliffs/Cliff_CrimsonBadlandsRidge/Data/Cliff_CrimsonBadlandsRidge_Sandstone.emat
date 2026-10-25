@@ -1,4 +1,5 @@
 MatPBRMulti {
+ Color 0.15 0.15 0.15 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MaskMap "{2B2E9BDE41BA36CF}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Cliff_CrimsonBadlandsRidge_MASK.edds"
  GlobalNMOMap "{38B8DF158A55C4F5}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge/Cliff_CrimsonBadlandsRidge_NMO.edds"

@@ -1737,10 +1737,38 @@ $grp SplineShapeEntity {
     m_iSeed 25143
     {
      SCR_DestructibleEntity : "{7BA66F042CB0C922}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_end_sand.et" {
+      components {
+       MeshObject "{56DE7C8DCD0F4E0A}" {
+        LODFactors {
+         250
+         100
+         50
+         25
+         3
+         3
+         3
+         3
+        }
+       }
+      }
       coords 19.079 0.004 -11.391
       angles 0 30.839 0
      }
      SCR_DestructibleEntity : "{8CF10DA4EACE0BEB}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_start_sand.et" {
+      components {
+       MeshObject "{56DE7C8DCD0F4E0A}" {
+        LODFactors {
+         250
+         100
+         50
+         25
+         3
+         3
+         3
+         3
+        }
+       }
+      }
       coords 0 0 0
       angles 0 30.839 0
      }
@@ -1750,6 +1778,20 @@ $grp SplineShapeEntity {
        angles 0 30.839 0
       }
       {
+       components {
+        MeshObject "{56DE7C8DCD0F4E0A}" {
+         LODFactors {
+          200
+          100
+          50
+          25
+          10
+          3
+          3
+          3
+         }
+        }
+       }
        coords 15.595 0.004 -9.311
        angles 0 30.839 0
       }

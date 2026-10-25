@@ -34,3 +34,14 @@ Slots: `StoneWall_03` = `{DB00C2550E460229}Assets/Structures/Walls/Stone/StoneWa
 
 ## Fix: MLOD emats are MatPBRBasic
 The distant-LOD (MLOD) materials are baked single-texture materials, so the MatPBRMulti layer fields (Color_1, Enabled_n) had no effect. `StoneWall_0{1,2,3}_MLOD_sand.emat` are now `MatPBRBasic : "<vanilla MLOD emat>" { Color 1 0.86 0.799 1 }` (same pattern as Assets/Clutter/Rocks/Data/c_stones_sharp_01_red.emat). If the vanilla MLOD turns out to be another class, check its properties in the Workbench material editor.
+
+## Fix 2: StoneWall_02 MLOD
+Vanilla `StoneWall_02_MLOD` is a MatPBRBasic with an olive-green baked `StoneWall_02_MLOD_BCR` and an NMO map (01's MLOD has no NMO and works). A `Color` tint can only darken, so green stays green. `StoneWall_02_MLOD_sand.emat` now overrides `BCRMap` with a generated grey-beige texture (`StoneWall_02_MLOD_sand_BCR.tif`, 512 px, mean 72/72/70 (darkened after the first try looked too sandy next to the full-detail wall), stronger blotches) and clears `NMOMap`; `Color 1 0.86 0.799 1` is kept. If the distant colour is off, change the mean in the texture or `Color` in the emat.
+
+Round 3 (02 MLOD): user target #ffefe7 -> emat Color 1 0.937 0.906 (=#ffefe7), BCR mean 108/104/98 (between too-sandy 142/133/119 and too-grey 72/72/70).
+
+## LOD switching (02)
+Measured by the user: raising entry 0 to ~20 already moves the first LOD switch out significantly (200 was far too much). All `StoneWall_02_*_sand.et` now use descending factors `LODFactors { 20 10 6 4 3 3 3 3 }` (vanilla: 40 15 10 3 3 3 3 3; other vanilla assets also descend per LOD). Tune entry 0 (first LOD) first; later entries follow roughly half of the previous.
+
+## StoneWall_01 MLOD + LOD factors
+01's vanilla MLOD also rendered dark/green after the LOD switch: `StoneWall_01_MLOD_sand.emat` now uses the same generated neutral BCR as 02 (`StoneWall_01_MLOD_sand_BCR.tif`, mean 108/104/98) with `Color 1 0.937 0.906`, NMO cleared. All 14 `StoneWall_01_*_sand.et` now carry `LODFactors { 20 10 6 4 3 3 3 3 }` like 02 so both families switch at comparable distances (tune entry 0).

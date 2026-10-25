@@ -1,4 +1,5 @@
 MatPBRMulti {
+ Color 0.15 0.15 0.15 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MaskMap "{B14101119DC64E0C}Prefabs/Rocks/Cliffs/Cliff_DesertFortress_cut/Cliff_DesertFortress_cut_MASK.edds"
  GlobalNMOMap "{0511524D6183B700}Prefabs/Rocks/Cliffs/Cliff_DesertFortress_cut/Cliff_DesertFortress_cut_NMO.edds"

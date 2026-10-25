@@ -12,6 +12,9 @@ SCR_DestructibleEntity : "{D84A36F4699A8743}Prefabs/Structures/Walls/Stone/Stone
      AssignedMaterial "{445A3577E18A0A5A}Assets/Structures/Walls/Stone/Data/StoneWall_02_MLOD_sand.emat"
     }
    }
+   LODFactors {
+    20 10 6 4 3 3 3 3
+   }
   }
  }
 }

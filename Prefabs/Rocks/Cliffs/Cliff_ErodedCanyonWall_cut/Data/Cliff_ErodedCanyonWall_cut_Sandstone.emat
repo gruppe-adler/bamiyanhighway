@@ -1,4 +1,5 @@
 MatPBRMulti {
+ Color 0.15 0.15 0.15 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  GlobalLayerGlobalAO 1.5
  MaskMap "{B0221E64BF6A4DEA}Prefabs/Rocks/Cliffs/Cliff_ErodedCanyonWall_cut/Cliff_ErodedCanyonWall_cut_MASK.edds"

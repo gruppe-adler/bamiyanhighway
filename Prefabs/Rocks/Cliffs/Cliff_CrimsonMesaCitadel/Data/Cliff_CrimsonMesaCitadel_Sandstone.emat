@@ -1,4 +1,5 @@
 MatPBRMulti {
+ Color 0.15 0.15 0.15 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MaskMap "{EBFFF70246056CFE}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Cliff_CrimsonMesaCitadel_MASK.edds"
  GlobalNMOMap "{08D249F056E35921}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Cliff_CrimsonMesaCitadel_NMO.edds"

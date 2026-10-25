@@ -20,3 +20,15 @@ Swap the prefab in the world/layer from `Cliff_Base_X.et` to `Cliff_Base_X_Sands
 
 ## To do in Workbench
 Open the addon so it imports the 4 new `*Cream_BCR.tif` (hand-copied `.edds.meta` use the colour-map config; Workbench builds the .edds), then check one `_Sandstone` prefab. If a texture import config is flagged, re-register the tif. Not rebuilt/verified in the engine by this task.
+
+## Update: in-world colour (2026-10-25)
+The cream layers looked right in the prefab view but white in the world (strong sun/exposure; `Color` can only darken). The red originals get their red from `Color 0.791 0.703 0.703` on the `_terrain` emats. The `*_Sandstone_terrain.emat` files now use `Color 0.86 0.77 0.6 1` (yellowish, darker). Tune: lower all three for darker, lower B for more yellow.
+
+## Update: grey #6c6c6c (user request)
+All `*_Sandstone.emat` (Color_1..4 per layer) and `*_Sandstone_terrain.emat` (Color) are tinted so layer mean x Color = 108/108/108: Color = 108 / layer mean (terrain: 0.434 0.45 0.478; layers RockPorous 0.444 0.476 0.519, Sand 0.437 0.462 0.5, Scree 0.474 0.519 0.6, Pale 0.434 0.45 0.478). Engine lighting will shift the absolute brightness; scale all numbers up/down to match.
+
+## Revert (user: grey #6c6c6c too dark)
+Back to the state before the grey attempt: `_Sandstone_terrain.emat` `Color 0.86 0.77 0.6 1`, `_Sandstone.emat` without `Color_n`. Note: the grey pass overwrote one cliff the user had edited by hand; that value is lost.
+
+## Final (user's own value): Color 0.15 0.15 0.15 1
+The user set `Color 0.15 0.15 0.15 1` (38,38,38 in the editor) on `Cliff_CrimsonMonolith_Sandstone.emat` and liked the result. Applied to every `*_Sandstone.emat` (global `Color`) and `*_Sandstone_terrain.emat`. Color fields are linear: 0.15 = about 108/255 sRGB (#6c6c6c).

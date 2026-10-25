@@ -1,3 +1,5 @@
 MatPBRBasic : "{EE3201F1138AD67A}Assets/Structures/Walls/Stone/Data/StoneWall_01_MLOD.emat" {
- Color 1 0.86 0.799 1
+ Color 1 0.937 0.906 1
+ BCRMap "{5D27F5B93F00B1FC}Assets/Structures/Walls/Stone/Data/StoneWall_01_MLOD_sand_BCR.edds"
+ NMOMap ""
 }
