@@ -3,6 +3,12 @@ GenericEntity {
  components {
   MeshObject "{CD1197B7D257EAA4}" {
    Object "{FFE3E44EE2B150DD}Prefabs/Rocks/Cliffs/Cliff_WeatheredSandstone/Cliff_WeatheredSandstone.xob"
+   Materials {
+    MaterialAssignClass "{6AB34BC50B971DA7}" {
+     SourceMaterial "Cliff_WeatheredSandstone"
+     AssignedMaterial "{868EC5FF527E03AF}Prefabs/Rocks/Cliffs/Cliff_WeatheredSandstone/Data/Cliff_WeatheredSandstone_Sandstone.emat"
+    }
+   }
   }
   RigidBody "{74D5502E201F907C}" {
    LayerPreset "BuildingFireView"

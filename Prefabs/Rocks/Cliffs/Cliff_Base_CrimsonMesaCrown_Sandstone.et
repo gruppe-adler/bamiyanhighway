@@ -1,0 +1,13 @@
+GenericEntity : "{8165B83B053881DF}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCrown.et" {
+ ID "B2E6E1B465E55130"
+ components {
+  MeshObject "{15B1D744104FA947}" {
+   Materials {
+    MaterialAssignClass "{5FD2D2490CA4C616}" {
+     SourceMaterial "Cliff_CrimsonMesaCrown"
+     AssignedMaterial "{CC6577428C2F6D6B}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCrown/Data/Cliff_CrimsonMesaCrown_Sandstone.emat"
+    }
+   }
+  }
+ }
+}

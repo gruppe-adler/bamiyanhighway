@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{E8C4BF144D333495}Prefabs/Rocks/Cliffs/Cliff_CrimsonSentinel/Data/Cliff_CrimsonSentinel_Sandstone.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

@@ -32,3 +32,6 @@ Back to the state before the grey attempt: `_Sandstone_terrain.emat` `Color 0.86
 
 ## Final (user's own value): Color 0.15 0.15 0.15 1
 The user set `Color 0.15 0.15 0.15 1` (38,38,38 in the editor) on `Cliff_CrimsonMonolith_Sandstone.emat` and liked the result. Applied to every `*_Sandstone.emat` (global `Color`) and `*_Sandstone_terrain.emat`. Color fields are linear: 0.15 = about 108/255 sRGB (#6c6c6c).
+
+## Completion (2026-10-25)
+Added the four skipped cliffs: `Cliff_Base_{CrimsonMesaCrown,CrimsonSentinel,ErodedRedstoneMonolith,WeatheredSandstone}_Sandstone.et` + `Data/Cliff_<Name>_Sandstone.emat` (copy of the red emat with the Cream layer textures and `Color 0.15 0.15 0.15 1`, new emat GUIDs/metas). Every cliff with a prefab now has a sandstone variant: 17 Base + 6 Cut. Not covered: `Cliff_CrimsonSpireCanyon` (no prefab in the addon), `Stairs_RedStone_01` (stairs, not a cliff).

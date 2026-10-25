@@ -1,0 +1,13 @@
+GenericEntity : "{84D5238968E7F447}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonSentinel.et" {
+ ID "6CCACCDB251BCE79"
+ components {
+  MeshObject "{4F444EEF4AF73F57}" {
+   Materials {
+    MaterialAssignClass "{793A67C9E2ED829A}" {
+     SourceMaterial "Cliff_CrimsonSentinel"
+     AssignedMaterial "{E8C4BF144D333495}Prefabs/Rocks/Cliffs/Cliff_CrimsonSentinel/Data/Cliff_CrimsonSentinel_Sandstone.emat"
+    }
+   }
+  }
+ }
+}
