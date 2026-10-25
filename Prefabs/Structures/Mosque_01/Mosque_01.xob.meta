@@ -2,6 +2,7 @@ MetaFileClass {
  Name "{16C11A3943994961}Prefabs/Structures/Mosque_01/Mosque_01.xob"
  Configurations {
   FBXResourceClass PC {
+   ExportSceneHierarchy 1
    MaterialAssigns {
     MaterialAssignClass "{6AB17DCA45906CDD}" {
      SourceMaterial "Mosque_01_Plaster"
@@ -13,19 +14,73 @@ MetaFileClass {
     }
     MaterialAssignClass "{6AB17DCA45906CBF}" {
      SourceMaterial "Mosque_01_Gold"
-     AssignedMaterial "{3E23A4CACC7EC031}Prefabs/Structures/Mosque_01/Data/Mosque_01_Gold.emat"
+     AssignedMaterial "{0C97B4386EDE9A99}Assets/Props/Furniture/Faucet_01/data/Faucet_01_golden.emat"
     }
     MaterialAssignClass "{6AB17DCA45906CB8}" {
      SourceMaterial "Mosque_01_Paint"
      AssignedMaterial "{9788D1DF6C8E09DD}Prefabs/Structures/Mosque_01/Data/Mosque_01_Paint.emat"
     }
-    MaterialAssignClass "{6AB17DCA45906CA4}" {
-     SourceMaterial "Mosque_01_Wood"
-     AssignedMaterial "{6BDAC8F9CF4198D6}Prefabs/Structures/Mosque_01/Data/Mosque_01_Wood.emat"
+    MaterialAssignClass "{6AB2B801DBBE0766}" {
+     SourceMaterial "PRT_70x142_A_EM_"
+     AssignedMaterial "{20542C2073AA13C3}Prefabs/Structures/Mosque_01/Data/PRT_70x142_A_EM_.emat"
     }
-    MaterialAssignClass "{6AB17DCA45906CAE}" {
-     SourceMaterial "Mosque_01_Carpet"
-     AssignedMaterial "{5F51CC1EBC288A0D}Prefabs/Structures/Mosque_01/Data/Mosque_01_Carpet.emat"
+    MaterialAssignClass "{6AB2B801DC478F89}" {
+     SourceMaterial "dummyvolume_D3975B51F51E6BD5"
+     AssignedMaterial "{D3975B51F51E6BD5}Common/Materials/dummyvolume.emat"
+    }
+    MaterialAssignClass "{6AB2B801DBBE077B}" {
+     SourceMaterial "PRT_130x182_ARCH_A_EM_"
+     AssignedMaterial "{F0760444DEDEAEBA}Prefabs/Structures/Mosque_01/Data/PRT_130x182_ARCH_A_EM_.emat"
+    }
+    MaterialAssignClass "{6AB2BB4375DBD268}" {
+     SourceMaterial "PRT_195x182_A_EM_"
+     AssignedMaterial "{4879940316515F53}Prefabs/Structures/Mosque_01/Data/PRT_195x182_A_EM_.emat"
+    }
+    MaterialAssignClass "{6AB2DC06A65E7404}" {
+     SourceMaterial "Mosque_01_Rib"
+     AssignedMaterial "{C949EDAE0DBF21AA}Prefabs/Structures/Mosque_01/Data/Mosque_01_Rib.emat"
+    }
+   }
+   VolumeParams {
+    VolumeParam BOXVOL_01 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_02 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_03 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_04 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_05 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_06 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_07 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
+    }
+    VolumeParam BOXVOL_08 {
+     Lerp 100
+     Ev 0
+     FarEvBias 0
     }
    }
    MeshParams {
@@ -34,9 +89,14 @@ MetaFileClass {
    }
    GeometryParams {
     GeometryParam UTM_Mosque_01 {
-     LayerPreset "BuildingFireView"
      SurfaceProperties {
-      "{C409534F24447254}Rock.gamemat"
+      "{9015D957766A718B}Mosque_01_Plaster.gamemat"
+      "{950733F00B3CD05A}Mosque_01_Stone.gamemat"
+      "{0729A38E90490C91}Mosque_01_Paint.gamemat"
+      "{FE4A40349197FBF6}Mosque_01_Wood.gamemat"
+      "{204AF5211DBD4DAC}Mosque_01_Gold.gamemat"
+      "{E997ADB51DE4CA33}Mosque_01_Carpet.gamemat"
+      "{15896B7D50C17AC7}Mosque_01_Rib.gamemat"
      }
      Mass 0
      Margin 0

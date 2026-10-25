@@ -1,0 +1,9 @@
+MatPBRMulti {
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ BCR_1 "{01B09F8DCC870BA5}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_BandPaint_BCR.edds"
+ NMO_1 "{3968241F15F0593B}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_BandPaint_NMO.edds"
+ UVTransform_1 MatUVTransform "{6AB17DCAD1FCAEB1}" {
+  TilingU 87.65
+  TilingV 87.65
+ }
+}

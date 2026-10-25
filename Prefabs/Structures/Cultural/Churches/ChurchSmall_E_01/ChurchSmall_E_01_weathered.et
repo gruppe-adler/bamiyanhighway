@@ -1,0 +1,221 @@
+SCR_DestructibleBuildingEntity : "{8E796437146BA2D2}Prefabs/Structures/Cultural/Churches/ChurchSmall_E_01/ChurchSmall_E_01_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{506EDA9D46FC6C06}" {
+   Object "{36BDC5BC8BFE7CF7}Assets/Structures/Cultural/Church/ChurchSmall_E_01/ChurchSmall_E_01.xob"
+   Materials {
+    MaterialAssignClass "{6AB202EA01DBA075}" {
+     SourceMaterial "ChurchSmall_01_walls"
+     AssignedMaterial "{E1CF4263FABD0451}Assets/Structures/Cultural/Church/ChurchSmall_E_01/Data/ChurchSmall_01_walls_02_weathered.emat"
+    }
+    MaterialAssignClass "{6AB202EA01DBA03D}" {
+     SourceMaterial "ChurchSmall_01_Ext_MLOD"
+     AssignedMaterial "{C989433104439FCA}Assets/Structures/Cultural/Church/ChurchSmall_E_01/Data/ChurchSmall_01_Ext_weathered_MLOD.emat"
+    }
+   }
+  }
+ }
+ coords -28.095 12.7 65.836
+ {
+  Building : "{07687F7FF1CF5071}Prefabs/Structures/BuildingParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_40x80_B.et" {
+   ID "6AB202EA01D9C00E"
+   components {
+    Hierarchy "{6AB202EA01DBA029}" {
+     Enabled 1
+     PivotID "socket_win4_01"
+     AutoTransform 1
+    }
+   }
+   coords 0 0 0
+  }
+  Building : "{4EB06A608309241B}Prefabs/Structures/BuildingParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_124x196_B.et" {
+   ID "6AB202EA01D9C00F"
+   components {
+    Hierarchy "{6AB202EA01DBA0D0}" {
+     Enabled 1
+     PivotID "socket_win3_01"
+     AutoTransform 1
+    }
+   }
+   coords 0 0 0
+  }
+  $grp GenericEntity : "{5C3CEA6DCBD6DE98}Prefabs/Structures/BuildingParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_shutter_left.et" {
+   {
+    ID "6AB202EA01D91168"
+    components {
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "socekt_shutter_left_03"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "6AB202EA01D91169"
+    components {
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "socekt_shutter_left_01"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "6AB202EA01D9C00A"
+    components {
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "socekt_shutter_left_02"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+  }
+  $grp GenericEntity : "{5CDC0E8061312C1D}Prefabs/Structures/BuildingParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_shutter_right.et" {
+   {
+    ID "6AB202EA01D8EFD8"
+    components {
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "socekt_shutter_right_02"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "6AB202EA01D8EFDB"
+    components {
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "socekt_shutter_right_01"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "6AB202EA01D95251"
+    components {
+     Hierarchy "{7642683606C70747}" {
+      Enabled 1
+      PivotID "socekt_shutter_right_03"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+  }
+  $grp GameEntity : "{5DA5DF7405DF4B7D}Prefabs/Structures/BuildingParts/Ladders/Ladder_ChurchSmall_E_435_B.et" {
+   {
+    ID "6AB202EA01D8E3FA"
+    components {
+     Hierarchy "{557E8CF8B87AB6F6}" {
+      Enabled 1
+      PivotID "socket_ladder_01"
+      AutoTransform 1
+     }
+    }
+   }
+   {
+    ID "6AB202EA01D8EE26"
+    components {
+     Hierarchy "{557E8CF8B87AB6F6}" {
+      Enabled 1
+      PivotID "socket_ladder_02"
+      AutoTransform 1
+     }
+    }
+   }
+  }
+  GenericEntity : "{672B49902D484FBE}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_left_EXT_COV.et" {
+   ID "6AB202EA01D8E3F8"
+   components {
+    DoorComponent "{221C667A9F7D4B69}" {
+     AngleRange -100
+    }
+    Hierarchy "{7642683606C70747}" {
+     Enabled 1
+     PivotID "socket_door_ext_01"
+     AutoTransform 1
+    }
+   }
+   coords 0 0 0
+  }
+  StaticModelEntity : "{69A8FFE5527CB776}Prefabs/Structures/BuildingParts/Entry/Entry_Direct_01.et" {
+   ID "6AB202EA01D8E3F9"
+   components {
+    Hierarchy "{5488F0388A297CDE}" {
+     Enabled 1
+     PivotID "socket_entry_01"
+     AutoTransform 1
+    }
+   }
+   coords 0 0 0
+  }
+  $grp Building : "{B4C09E3EB1924833}Prefabs/Structures/BuildingParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_118x319_B.et" {
+   {
+    ID "6AB202EA01D87170"
+    components {
+     Hierarchy "{6AB202EA01DBA0F5}" {
+      Enabled 1
+      PivotID "socket_win1_01"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "6AB202EA01D87176"
+    components {
+     Hierarchy "{6AB202EA01DBA0FA}" {
+      Enabled 1
+      PivotID "socket_win1_02"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+   {
+    ID "6AB202EA01D87177"
+    components {
+     Hierarchy "{6AB202EA01DBA0FE}" {
+      Enabled 1
+      PivotID "socket_win1_03"
+      AutoTransform 1
+     }
+    }
+    coords 0 0 0
+   }
+  }
+  Building : "{BA6FC8B28508DD4A}Prefabs/Structures/BuildingParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_74x159_B.et" {
+   ID "6AB202EA01DBA053"
+   components {
+    Hierarchy "{6AB202EA01DBA0E6}" {
+     Enabled 1
+     PivotID "socket_win2_01"
+     AutoTransform 1
+    }
+   }
+   coords 0 0 0
+   angles 0 0 0
+  }
+  GenericEntity : "{EAE10A0BD7754047}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_right_EXT_COV.et" {
+   ID "6AB202EA01DBA051"
+   components {
+    DoorComponent "{221C667A9F7D4B69}" {
+     AngleRange 100
+    }
+    Hierarchy "{7642683606C70747}" {
+     Enabled 1
+     PivotID "socket_door_ext_02"
+     AutoTransform 1
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}

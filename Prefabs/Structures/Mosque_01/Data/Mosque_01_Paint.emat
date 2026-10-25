@@ -8,20 +8,21 @@ MatPBRMulti {
  BCR_4 "{828438D2FC5632C6}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Grime_BCR.edds"
  NMO_4 "{BA5C834025216058}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Grime_NMO.edds"
  UVTransform_4 MatUVTransform "{6AB17DCB63DE30B6}" {
-  TilingU 58.43
-  TilingV 58.43
+  TilingU 63.66
+  TilingV 63.66
  }
  Enabled_3 1
  BCR_3 "{14CF1B5189561166}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWorn_BCR.edds"
  NMO_3 "{2C17A0C3502143F8}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWorn_NMO.edds"
  UVTransform_3 MatUVTransform "{6AB17DCB63DE30D4}" {
-  TilingU 43.82
-  TilingV 43.82
+  TilingU 43.8
+  TilingV 43.8
  }
  BCR_1 "{80D42DB41E719D4A}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWhite_BCR.edds"
  NMO_1 "{B80C9626C706CFD4}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_PaintWhite_NMO.edds"
  UVTransform_1 MatUVTransform "{6AB17DCB63DE3304}" {
-  TilingU 58.43
-  TilingV 58.43
+  TilingU 40
+  TilingV 40
  }
+ DetNormal_1 4.554
 }

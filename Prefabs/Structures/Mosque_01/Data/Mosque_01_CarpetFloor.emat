@@ -1,0 +1,5 @@
+MatPBRBasic {
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ BCRMap "{5B8208AF9C90D96A}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Carpet_BCR.edds"
+ NMOMap "{635AB33D45E78BF4}Prefabs/Structures/Mosque_01/_Layers/MosqueLayer_Carpet_NMO.edds"
+}

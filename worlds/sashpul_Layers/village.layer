@@ -1678,6 +1678,12 @@ $grp SCR_DestructibleBuildingEntity : "{08E7D4A8FDE0DB6E}Prefabs/Structures/Buld
 GenericEntity : "{0FE68974238CC78D}Prefabs/Structures/Mosque_01.et" {
  coords 625.833 -31.736 870.378
  angles 0 75 0
+ {
+  GenericEntity {
+   ID "00258C95A50FD0C3"
+   coords -2.2 0.934 3.2
+  }
+ }
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/DesertCliff_NS_03.et" {
  {

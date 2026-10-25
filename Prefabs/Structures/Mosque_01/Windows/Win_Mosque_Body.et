@@ -1,0 +1,17 @@
+Building {
+ ID "921FD59E8E753C9B"
+ components {
+  MeshObject "{C193EC310727BD0C}" {
+   Object "{8AC51F8A6232AAF6}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.xob"
+  }
+  RigidBody "{2F1CBC61EC8C2CBB}" {
+   ModelGeometry 1
+   Static 1
+  }
+ }
+ {
+  GenericEntity : "{3894198B59BF13E1}Prefabs/Structures/Mosque_01/Windows/Glass_Mosque_Body.et" {
+   ID "46F65CFA333EDD60"
+  }
+ }
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{79E277734BA2ACB8}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_01_mosque.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
+  }
+ }
+}

@@ -7,6 +7,10 @@ MetaFileClass {
      SourceMaterial "Mosque_01_Glass"
      AssignedMaterial "{0A11BCBCE1D63AB2}Assets/Structures/BuildingsParts/Windows/Data/window_glass_uneven_EXT.emat"
     }
+    MaterialAssignClass "{6AB20593982205EA}" {
+     SourceMaterial "Mosque_01_PaneFrame"
+     AssignedMaterial "{5D11FDD2580C842A}Prefabs/Structures/Mosque_01/Panes/Data/Mosque_01_PaneFrame.emat"
+    }
    }
    MeshParams {
     MeshParam Pane_Drum {
@@ -16,7 +20,7 @@ MetaFileClass {
     GeometryParam UTM_Pane_Drum {
      LayerPreset "BuildingFireView"
      SurfaceProperties {
-      "{ACCF667A42CDB8B8}Glass_col.gamemat"
+      "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
      }
      Mass 0
      Margin 0

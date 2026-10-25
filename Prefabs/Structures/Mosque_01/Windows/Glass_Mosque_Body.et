@@ -1,0 +1,18 @@
+GenericEntity : "{86834A0D5920F32F}Prefabs/Structures/Core/DestructibleGlass_Base.et" {
+ ID "9F6B7EE33A7C46C5"
+ components {
+  MeshObject "{51C4DA208DB0E200}" {
+   Object "{8E58BE19F86AAE65}Prefabs/Structures/Mosque_01/Windows/Glass_Mosque_Body.xob"
+  }
+  RigidBody "{51C4DA2091875CD5}" {
+   ResponseIndex "TinyDestructible"
+  }
+  SCR_DestructionMultiPhaseComponent "{51C4DA20F6C21A24}" {
+   m_aDamagePhases {
+    SCR_DamagePhaseData "{52B6E4A66D596523}" {
+     m_PhaseModel "{0B60D3CA8DDE9937}Prefabs/Structures/Mosque_01/Windows/Glass_Mosque_Body_dst.xob"
+    }
+   }
+  }
+ }
+}

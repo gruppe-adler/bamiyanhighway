@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{F0760444DEDEAEBA}Prefabs/Structures/Mosque_01/Data/PRT_130x182_ARCH_A_EM_.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

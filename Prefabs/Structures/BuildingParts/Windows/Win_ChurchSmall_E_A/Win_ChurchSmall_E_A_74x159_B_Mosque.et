@@ -1,0 +1,38 @@
+Building {
+ ID "6AB20598A530B701"
+ components {
+  MeshObject "{6AB20598A531C4E4}" {
+   Object "{59CB7DE71B7DD5E9}Assets/Structures/BuildingsParts/Windows/Win_ChurchSmall_E_A/Win_ChurchSmall_E_A_74x159_B.xob"
+  }
+  RigidBody "{6AB20598A531C4C0}" {
+   ModelGeometry 1
+   Static 1
+  }
+ }
+ angles 0 -34.136 0
+ SlotBoneMappings {
+  SlotBoneMappingObject "{6AB20598A531C4C3}" {
+   Prefab "{1F257BF674F5D878}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_03.et"
+  }
+  SlotBoneMappingObject "{6AB20598A531C4C5}" {
+   Prefab "{06EC30A1E4493D7A}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_04.et"
+  }
+  SlotBoneMappingObject "{6AB20598A531C4C7}" {
+   Prefab "{14CEFC79A2502D14}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_01.et"
+  }
+ }
+ {
+  GenericEntity : "{06EC30A1E4493D7A}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_04.et" {
+   ID "6AB20598A530B70E"
+  }
+  GenericEntity : "{14CEFC79A2502D14}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_01.et" {
+   ID "6AB20598A5305D42"
+  }
+  GenericEntity : "{1AD0B8319FA722CE}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_02.et" {
+   ID "6AB20598A5305D43"
+  }
+  GenericEntity : "{1F257BF674F5D878}Prefabs/Structures/BuildingParts/Windows/Glass_ChurchSmall_E/Glass_ChurchSmall_E_74x159_03.et" {
+   ID "6AB20598A531C701"
+  }
+ }
+}

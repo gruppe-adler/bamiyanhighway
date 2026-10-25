@@ -1,0 +1,17 @@
+Building {
+ ID "64F38B48BADC48A0"
+ components {
+  MeshObject "{2B88117766DA5CFB}" {
+   Object "{2FCB30D9E3EB393D}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.xob"
+  }
+  RigidBody "{8632539DDCDAA392}" {
+   ModelGeometry 1
+   Static 1
+  }
+ }
+ {
+  GenericEntity : "{83C4BFEFA2F0FF9A}Prefabs/Structures/Mosque_01/Windows/Glass_Mosque_Drum.et" {
+   ID "E33CA4A4225EEBE9"
+  }
+ }
+}

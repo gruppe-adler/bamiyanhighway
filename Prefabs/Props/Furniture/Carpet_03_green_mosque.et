@@ -1,0 +1,8 @@
+GenericEntity : "{56FB185A7697E02A}Prefabs/Props/Furniture/Carpet_03_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{0DDB28F8364B8EA1}Assets/Props/Furniture/Carpet_03/Carpet_03.xob"
+  }
+ }
+}

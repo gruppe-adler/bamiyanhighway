@@ -1,0 +1,53 @@
+GenericEntity : "{F1793FE006FDF888}Prefabs/Structures/BuildingParts/Doors/Door_Base.et" {
+ ID "627CE52CCB2692FE"
+ components {
+  DoorComponent "{221C667A9F7D4B69}" {
+   SoundFilename "{167024357EF80532}Sounds/Structures/_ShaderData/Doors/Structures_Gate_Wooden_Large_Old_NoHandle.acp"
+   SoundPoints {
+    SoundPointEventInfo "{6AB2C0BF6F74E4A9}" {
+     Offset 1.0194 0.5015 0
+    }
+    SoundPointEventInfo "{6AB2C0BF6F74E480}" {
+     Offset 1.0194 0.5015 0
+     Event SOUND_OPEN_FINISH
+    }
+    SoundPointEventInfo "{6AB2C0BF6F74E481}" {
+     Offset 1.0194 0.5015 0
+     Event SOUND_CLOSE_START
+    }
+    SoundPointEventInfo "{6AB2C0BF6F74E48F}" {
+     Offset 1.0194 0.5015 0
+     Event SOUND_CLOSE_FINISH
+    }
+    SoundPointEventInfo "{6AB2C0BF6F74E48C}" {
+     Offset 0 0.6962 0
+     Event SOUND_MOVEMENT
+    }
+   }
+   TestContacts 1
+   TestCollider "UCX_doorright001"
+  }
+  MeshObject "{309366462BDAFB24}" {
+   Object "{59D0970C09967D48}Assets/Structures/BuildingsParts/Doors/Door_ChurchSmall_01/ChurchSmall_door_right_E.xob"
+  }
+  NavmeshCustomLinkComponent "{559E7AC91AFA25BA}" {
+   LinkType NavmeshDoorLink "{559E7AC9151D5867}" {
+    "Navmesh setting presets" {
+     NavmeshCustomLinkSetting "{5C90F7CD794C3D21}" {
+      BeginPoint 0.5 0 -1.5
+      EndPoint 0.5 0 1.5
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{F32B667C3C823800}" {
+   ActionContexts {
+    UserActionContext "{50888D37F529F720}" {
+     Position PointInfo "{50888D37F0EB77E0}" {
+      Offset 0.65 0.8 0
+     }
+    }
+   }
+  }
+ }
+}

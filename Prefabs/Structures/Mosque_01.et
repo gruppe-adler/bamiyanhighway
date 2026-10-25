@@ -12,560 +12,241 @@ GenericEntity {
  }
  coords 0 0 0
  {
-  GenericEntity {
-   ID "18375A6D7CDAC8FB"
-   components {
-    MeshObject "{C45095FE5A4AFFC0}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{3CFD378A05741E9E}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -4.476 2.900 7.842
-   angles 0 -45.00 0
+  GenericEntity : "{06E20E31504A8381}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_right_EXT_COV_mosque.et" {
+   ID "EEC407B5A2DA9F66"
+   coords 1.15 1.043 8.68
+   angles 0 180 0
+   scale 1.14
   }
-  GenericEntity {
-   ID "2AC1C45E2F0F0864"
-   components {
-    MeshObject "{EBA5DC32815A4B17}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{128D2C680582EC47}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
+  $grp Building : "{2C9A33F5D8376CCC}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Drum.et" {
+   {
+    ID "05C92C05902E8A7F"
+    coords -4.034 6.5 -3.217
+    angles 0 231.43 0
    }
-   coords -6.159 2.900 6.159
-   angles 0 -45.00 0
+   {
+    ID "0B178D5FB327E5EE"
+    coords -5.031 6.5 -1.148
+    angles 0 257.14 0
+   }
+   {
+    ID "19281687DF556803"
+    coords 4.034 6.5 -3.217
+    angles 0 128.57 0
+   }
+   {
+    ID "22D4977A653F6D46"
+    coords 2.239 6.5 -4.649
+    angles 0 154.29 0
+   }
+   {
+    ID "4CA06C01CDDB7C03"
+    coords -4.034 6.5 3.217
+    angles 0 308.57 0
+   }
+   {
+    ID "5B047C5BB775FF27"
+    coords 0 6.5 5.16
+   }
+   {
+    ID "619E9CD8CFE5694E"
+    coords 4.034 6.5 3.217
+    angles 0 51.43 0
+   }
+   {
+    ID "82292129995AD02E"
+    coords -5.031 6.5 1.148
+    angles 0 282.86 0
+   }
+   {
+    ID "A172B21FD7A12A8A"
+    coords 5.031 6.5 -1.148
+    angles 0 102.86 0
+   }
+   {
+    ID "A3E3554BA9D8D4CB"
+    coords -2.239 6.5 -4.649
+    angles 0 205.71 0
+   }
+   {
+    ID "B31C85D6468CB4F0"
+    coords -2.239 6.5 4.649
+    angles 0 334.29 0
+   }
+   {
+    ID "B8760C193B2419EB"
+    coords 2.239 6.5 4.649
+    angles 0 25.71 0
+   }
+   {
+    ID "D9C74D140C7431B1"
+    coords 5.031 6.5 1.148
+    angles 0 77.14 0
+   }
+   {
+    ID "EF3702A785E6B279"
+    coords 0 6.5 -5.16
+    angles 0 180 0
+   }
   }
-  GenericEntity {
-   ID "3ADD8313406BFF6D"
-   components {
-    MeshObject "{171585442061313D}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{70BA0FCA69A0BC31}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
+  $grp Building : "{49ADC848E8FF5966}Prefabs/Structures/Mosque_01/Windows/Win_Mosque_Body.et" {
+   {
+    ID "0042737E0C6DC964"
+    coords -6.159 2.88 -6.159
+    angles 0 225 0
    }
-   coords -7.842 2.900 4.476
-   angles 0 -45.00 0
+   {
+    ID "008FFE8ACE1EBC9D"
+    coords 7.326 2.88 4.992
+    angles 0 45 0
+   }
+   {
+    ID "0BC0EE18433C25B8"
+    coords 7.326 2.88 -4.992
+    angles 0 135 0
+   }
+   {
+    ID "111C370CC7E4AD90"
+    coords 4.992 2.88 7.326
+    angles 0 45 0
+   }
+   {
+    ID "231EDB1B0DD808B3"
+    coords -8.71 2.88 -1.65
+    angles 0 270 0
+   }
+   {
+    ID "3B2DB78479576935"
+    coords 0 2.88 -8.71
+    angles 0 180 0
+   }
+   {
+    ID "442011556DA84EEC"
+    coords -4.992 2.88 7.326
+    angles 0 315 0
+   }
+   {
+    ID "5661C8903B7A7596"
+    coords 8.71 2.88 0
+    angles 0 90 0
+   }
+   {
+    ID "59E074692A9F9E62"
+    coords 6.159 2.88 -6.159
+    angles 0 135 0
+   }
+   {
+    ID "5F92F44F2FB97ACA"
+    coords -7.326 2.88 -4.992
+    angles 0 225 0
+   }
+   {
+    ID "685AABCEB4D0C126"
+    coords 8.71 2.88 1.65
+    angles 0 90 0
+   }
+   {
+    ID "6A7C5BC8F98651A9"
+    coords 6.159 2.88 6.159
+    angles 0 45 0
+   }
+   {
+    ID "6E03515DD9051BA5"
+    coords 4.992 2.88 -7.326
+    angles 0 135 0
+   }
+   {
+    ID "6EB1C2F3C7C8FC21"
+    coords 1.65 2.88 -8.71
+    angles 0 180 0
+   }
+   {
+    ID "854B633CD7F3B809"
+    coords -4.992 2.88 -7.326
+    angles 0 225 0
+   }
+   {
+    ID "9E9996E289E9B54B"
+    coords -1.65 2.88 -8.71
+    angles 0 180 0
+   }
+   {
+    ID "C3959089C892F657"
+    coords -6.159 2.88 6.159
+    angles 0 315 0
+   }
+   {
+    ID "D02EF0EF0F1CB899"
+    coords 8.71 2.88 -1.65
+    angles 0 90 0
+   }
+   {
+    ID "DA8793213F21D8B1"
+    coords -8.71 2.88 1.65
+    angles 0 270 0
+   }
+   {
+    ID "E58402FA621868AC"
+    coords -7.326 2.88 4.992
+    angles 0 315 0
+   }
+   {
+    ID "F81B0DAD61294791"
+    coords -8.71 2.88 0
+    angles 0 270 0
+   }
   }
-  GenericEntity {
-   ID "33C1F6E426CFB84C"
-   components {
-    MeshObject "{8D7C39BF4955D17C}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{B7B668509C995A43}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
+  $grp GenericEntity : "{4DBC98809F18079A}Prefabs/Props/Furniture/Carpet_03_green_mosque.et" {
+   {
+    ID "00258C95A50FD0C3"
+    coords -2.2 0.945 3.2
    }
-   coords -8.710 2.900 2.380
-   angles 0 -90.00 0
+   {
+    ID "1F1050885FD6E827"
+    coords 0 0.945 -3.2
+   }
+   {
+    ID "3C3CE879F739119E"
+    coords 2.2 0.945 3.2
+   }
+   {
+    ID "62AEFF56BE059AE1"
+    coords 2.2 0.945 -3.2
+   }
+   {
+    ID "78DBDDB36EB321F2"
+    coords 0 0.96 11
+    angles 0 90 0
+   }
+   {
+    ID "837AC97970E821F1"
+    coords 0 0.945 3.2
+   }
+   {
+    ID "9CB795DBA25D2297"
+    coords -2.2 0.945 -3.2
+   }
+   {
+    ID "DE344006614F7A33"
+    coords -2.2 0.945 0
+   }
+   {
+    ID "E7F1BBDDE1D15954"
+    coords 0 0.945 0
+   }
+   {
+    ID "E89CF10ED3E4B189"
+    coords 2.2 0.945 0
+   }
   }
-  GenericEntity {
-   ID "7614924658A2874E"
-   components {
-    MeshObject "{D9FEA87400FDFDE4}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{E166AD4645FC3736}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -8.710 2.900 0.000
-   angles 0 -90.00 0
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "D40CCA85F0F54F30"
+   coords 0 2.8 0
   }
-  GenericEntity {
-   ID "B37525F2ACCBCA0C"
-   components {
-    MeshObject "{B86C418CFD6E234C}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{4723E83D28AAE124}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -8.710 2.900 -2.380
-   angles 0 -90.00 0
-  }
-  GenericEntity {
-   ID "AC91051BBC3CCCEE"
-   components {
-    MeshObject "{6C158903C00344BD}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{50ED0A87C6167692}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -7.842 2.900 -4.476
-   angles 0 -135.00 0
-  }
-  GenericEntity {
-   ID "51638308AB6F447E"
-   components {
-    MeshObject "{C67BD4BDEE6E5375}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{E74242D941F7196B}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -6.159 2.900 -6.159
-   angles 0 -135.00 0
-  }
-  GenericEntity {
-   ID "F47DC4C6B46FE915"
-   components {
-    MeshObject "{6669641CA5406E4D}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{F708AD3B5CC4319F}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -4.476 2.900 -7.842
-   angles 0 -135.00 0
-  }
-  GenericEntity {
-   ID "82E1C17CBC0D32FD"
-   components {
-    MeshObject "{0BD3D381B08C3F32}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{ABFE5E651EA9DA3C}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -2.380 2.900 -8.710
-   angles 0 -180.00 0
-  }
-  GenericEntity {
-   ID "4FAEE185C609832E"
-   components {
-    MeshObject "{4D2BA9A9C7C97561}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{796B8CB7B99B8238}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -0.000 2.900 -8.710
-   angles 0 -180.00 0
-  }
-  GenericEntity {
-   ID "318AA58BE0248BFF"
-   components {
-    MeshObject "{81CA3B3BF736D482}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{FC2648679F769A26}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 2.380 2.900 -8.710
-   angles 0 -180.00 0
-  }
-  GenericEntity {
-   ID "E9622EC6876BA870"
-   components {
-    MeshObject "{D76CE1BD8957D401}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{9E059831E8B66682}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 4.476 2.900 -7.842
-   angles 0 -225.00 0
-  }
-  GenericEntity {
-   ID "A7B6264FE06D7C66"
-   components {
-    MeshObject "{249B48DD6C79ED2D}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{F711743565367264}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 6.159 2.900 -6.159
-   angles 0 -225.00 0
-  }
-  GenericEntity {
-   ID "4B7644EB7DCAB039"
-   components {
-    MeshObject "{548CC4FC4A555A0A}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{D7B754D2C666936D}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 7.842 2.900 -4.476
-   angles 0 -225.00 0
-  }
-  GenericEntity {
-   ID "EEFE8A0104A7CBC5"
-   components {
-    MeshObject "{4F13A95F9365398A}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{5AC74AE3C3D2C3D8}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 8.710 2.900 -2.380
-   angles 0 -270.00 0
-  }
-  GenericEntity {
-   ID "66A7B4D5D75C40C0"
-   components {
-    MeshObject "{BADF946F79C7852E}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{19E2B3E55B0268CB}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 8.710 2.900 -0.000
-   angles 0 -270.00 0
-  }
-  GenericEntity {
-   ID "0F4C5582A2E2D9BB"
-   components {
-    MeshObject "{5CBE4342A834D9BF}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{2AF0C973D0FAAA97}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 8.710 2.900 2.380
-   angles 0 -270.00 0
-  }
-  GenericEntity {
-   ID "84540F2F6F9AFA1A"
-   components {
-    MeshObject "{C7D94819A7652D49}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{328B5726567A655B}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 7.842 2.900 4.476
-   angles 0 -315.00 0
-  }
-  GenericEntity {
-   ID "CD5AA388F6C70A85"
-   components {
-    MeshObject "{723778C4C2130ECF}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{458C7959899B0328}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 6.159 2.900 6.159
-   angles 0 -315.00 0
-  }
-  GenericEntity {
-   ID "0D4D311569B424C5"
-   components {
-    MeshObject "{89FC19CD262E5A28}" {
-     Object "{5276EAB3D29C2206}Prefabs/Structures/Mosque_01/Panes/Pane_Body.xob"
-    }
-    RigidBody "{C71FBDBDCB3292DF}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 4.476 2.900 7.842
-   angles 0 -315.00 0
-  }
-  GenericEntity {
-   ID "F4501249500C41DF"
-   components {
-    MeshObject "{6F9EF504C54F1F4E}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{5DA28FB26E837A44}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 5.080 9.540 1.011
-   angles 0 78.75 0
-  }
-  GenericEntity {
-   ID "B7CA257C11E30064"
-   components {
-    MeshObject "{46FB823E74254BA0}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{4D3B1C50D18362A2}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 4.307 9.540 2.878
-   angles 0 56.25 0
-  }
-  GenericEntity {
-   ID "7F24344992229979"
-   components {
-    MeshObject "{969C1570530C81A2}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{1B7C6762D245DC6A}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 2.878 9.540 4.307
-   angles 0 33.75 0
-  }
-  GenericEntity {
-   ID "65A933FAC222EC24"
-   components {
-    MeshObject "{CC47C6213B30D4AB}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{7D0DD54B878031AB}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 1.011 9.540 5.080
-   angles 0 11.25 0
-  }
-  GenericEntity {
-   ID "59D97E391ECD9395"
-   components {
-    MeshObject "{A5B4C89CDA742B79}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{7B2C2CAEE72AC342}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -1.011 9.540 5.080
-   angles 0 -11.25 0
-  }
-  GenericEntity {
-   ID "1248619D31D2C0AD"
-   components {
-    MeshObject "{6260865F2C990EBD}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{5C200D7F5F243E36}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -2.878 9.540 4.307
-   angles 0 -33.75 0
-  }
-  GenericEntity {
-   ID "75BAE784298B25B6"
-   components {
-    MeshObject "{BBA766E3996ECE51}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{338079A84C2ECB06}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -4.307 9.540 2.878
-   angles 0 -56.25 0
-  }
-  GenericEntity {
-   ID "6D57B751605A91D9"
-   components {
-    MeshObject "{E42E6911B6DB39F9}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{3DAEDCC4DF10EF9D}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -5.080 9.540 1.011
-   angles 0 -78.75 0
-  }
-  GenericEntity {
-   ID "2540FFDE28CDA358"
-   components {
-    MeshObject "{15127E846A0288C9}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{8938B0E656FC8A26}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -5.080 9.540 -1.011
-   angles 0 -101.25 0
-  }
-  GenericEntity {
-   ID "19621ED73A5A4DA5"
-   components {
-    MeshObject "{74678E95604B0478}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{191B3822DB5A8856}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -4.307 9.540 -2.878
-   angles 0 -123.75 0
-  }
-  GenericEntity {
-   ID "B448363E521E4F78"
-   components {
-    MeshObject "{3643AEA971851170}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{9C9E5E343FCE8274}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -2.878 9.540 -4.307
-   angles 0 -146.25 0
-  }
-  GenericEntity {
-   ID "3993C5CBF8742D93"
-   components {
-    MeshObject "{DE99C1E9566917D0}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{A95AC5EEFB3FD289}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords -1.011 9.540 -5.080
-   angles 0 -168.75 0
-  }
-  GenericEntity {
-   ID "1ECB4948BE345FEF"
-   components {
-    MeshObject "{24BEA17A6F292C0B}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{CD525513F1EB1F5F}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 1.011 9.540 -5.080
-   angles 0 -191.25 0
-  }
-  GenericEntity {
-   ID "F6AE958D74DEB09A"
-   components {
-    MeshObject "{A950549FCC872327}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{607B09E63C18CD2C}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 2.878 9.540 -4.307
-   angles 0 -213.75 0
-  }
-  GenericEntity {
-   ID "5B88F42D84753111"
-   components {
-    MeshObject "{F01810A11D0BE0AC}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{EB4906EF7953C966}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 4.307 9.540 -2.878
-   angles 0 -236.25 0
-  }
-  GenericEntity {
-   ID "594330F3561DCF8E"
-   components {
-    MeshObject "{5F48228BD650C90A}" {
-     Object "{F778C5E05345B1CD}Prefabs/Structures/Mosque_01/Panes/Pane_Drum.xob"
-    }
-    RigidBody "{7E7B026DF7001145}" {
-     LayerPreset "BuildingFireView"
-     SimState Collision
-     ModelGeometry 1
-    }
-   }
-   coords 5.080 9.540 -1.011
-   angles 0 -258.75 0
+  GenericEntity : "{8A0A9BE2DAAC5D51}Prefabs/Structures/BuildingParts/Doors/Door_ChurchSmall_E_01_left_EXT_COV_mosque.et" {
+   ID "2F01E0DB25C02857"
+   coords -1.15 1.034 8.68
+   scale 1.14
   }
  }
 }
