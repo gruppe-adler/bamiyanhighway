@@ -27,9 +27,9 @@ $grp PolylineShapeEntity {
       coords -0.438 10.236 -2.546
       Material "{DEA1487EB64DB0C9}Assets/Structures/Infrastructure/Power/Powerlines/data/WoodenSmall_01_powerline.emat"
       Cables {
-       Cable "{6A94C9014F2B14DB}" {
+       Cable "{6AB34BCCAD79F989}" {
         StartPoint 0.01 0.097 -0.065
-        EndPoint 15.467 -10.141 -20.163
+        EndPoint 15.041 -10.086 -20.194
        }
       }
      }
@@ -232,7 +232,7 @@ $grp SplineShapeEntity {
     Position 352.862 -6.17 115.432
    }
    ShapePoint "{6A9102E247F79BFB}" {
-    Position 416.356 -10.724 113.055
+    Position 416.465 -8.445 116.219
    }
    ShapePoint "{6A9102E24654CE64}" {
     Position 450.161 -10.922 113.99
@@ -284,7 +284,7 @@ $grp SplineShapeEntity {
   {
    SCR_PowerlineGeneratorEntity : "{F7A0B898923384BA}PrefabLibrary/DefaultLibrary/Generators/Powerlines/PG_PowerLine_HV_03_Wooden.et" {
     Flags 0x100003 0
-    m_iSeed 31905
+    m_iSeed 19911
     m_fDistance 55
     m_DefaultPole "{F2441CDA323B4393}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_HV_01/PowerLine_HV_01_pole.et"
     m_StartPole "{9FF9DF431F4402CD}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_HV_01/PowerLine_HV_01_pole_end.et"
@@ -293,24 +293,24 @@ $grp SplineShapeEntity {
     {
      SCR_JunctionPowerPole : "{03930BA0AAE5473A}PrefabLibrary/DefaultLibrary/Infrastructure/Powerline/PowerLine_HV_01_pole_junction.et" {
       coords 817.609 -22.275 231.335
-      angles -1.277 70.881 0.259
+      angles 1.942 70.881 -0.605
      }
      $grp PowerlineEntity : "{613763D114E7CD1C}Prefabs/WEGenerators/Powerline/Powerline.et" {
       {
-       coords 0 32.233 0
+       coords 0 0 0
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B566B}" {
-         StartPoint -0.743 9.143 1.216
-         EndPoint 50.105 -23.034 23.137
+        Cable "{6AB34BCCAD794286}" {
+         StartPoint -0.429 9.177 1.105
+         EndPoint 49.784 9.175 23.178
         }
-        Cable "{6A94C9014F2B542A}" {
-         StartPoint -0.188 9.148 -0.064
-         EndPoint 50.667 -23.048 21.855
+        Cable "{6AB34BCCAD7941E6}" {
+         StartPoint 0.126 9.148 -0.175
+         EndPoint 50.346 9.187 21.896
         }
-        Cable "{6A94C9014F2B52E5}" {
-         StartPoint 0.369 9.154 -1.348
-         EndPoint 51.229 -23.062 20.573
+        Cable "{6AB34BCCAD794141}" {
+         StartPoint 0.683 9.119 -1.459
+         EndPoint 50.908 9.198 20.614
         }
        }
       }
@@ -318,17 +318,17 @@ $grp SplineShapeEntity {
        coords 50.459 0.037 21.884
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B5085}" {
-         StartPoint -0.354 9.162 1.254
-         EndPoint 49.982 10.216 23.575
+        Cable "{6AB34BCCAD793CB3}" {
+         StartPoint -0.675 9.138 1.294
+         EndPoint 49.701 10.18 23.728
         }
-        Cable "{6A94C9014F2B5180}" {
-         StartPoint 0.208 9.148 -0.029
-         EndPoint 50.573 10.199 22.306
+        Cable "{6AB34BCCAD793C06}" {
+         StartPoint -0.113 9.15 0.012
+         EndPoint 50.292 10.203 22.459
         }
-        Cable "{6A94C9014F2B510D}" {
-         StartPoint 0.771 9.134 -1.311
-         EndPoint 51.164 10.182 21.036
+        Cable "{6AB34BCCAD793D73}" {
+         StartPoint 0.449 9.161 -1.27
+         EndPoint 50.882 10.226 21.19
         }
        }
       }
@@ -336,17 +336,17 @@ $grp SplineShapeEntity {
        coords 100.731 1.091 44.193
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B4CD5}" {
-         StartPoint -0.29 9.162 1.265
-         EndPoint 48.875 9.584 25.172
+        Cable "{6AB34BCCAD793B04}" {
+         StartPoint -0.572 9.127 1.419
+         EndPoint 48.93 9.519 25.655
         }
-        Cable "{6A94C9014F2B4C5D}" {
-         StartPoint 0.301 9.145 -0.004
-         EndPoint 49.448 9.554 23.895
+        Cable "{6AB34BCCAD793861}" {
+         StartPoint 0.019 9.149 0.15
+         EndPoint 49.503 9.553 24.378
         }
-        Cable "{6A94C9014F2B4DDC}" {
-         StartPoint 0.891 9.128 -1.273
-         EndPoint 50.02 9.524 22.617
+        Cable "{6AB34BCCAD7939DE}" {
+         StartPoint 0.61 9.172 -1.119
+         EndPoint 50.075 9.587 23.1
         }
        }
       }
@@ -354,35 +354,35 @@ $grp SplineShapeEntity {
        coords 150.16 1.498 68.314
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B4BCB}" {
-         StartPoint -0.553 9.177 1.051
-         EndPoint 50.832 9.406 22.056
+        Cable "{6AB34BCCAD793781}" {
+         StartPoint -0.498 9.112 1.534
+         EndPoint 50.641 9.358 22.097
         }
-        Cable "{6A94C9014F2B4B3F}" {
-         StartPoint 0.019 9.148 -0.227
-         EndPoint 51.323 9.378 20.746
+        Cable "{6AB34BCCAD7934FB}" {
+         StartPoint 0.074 9.146 0.256
+         EndPoint 51.133 9.346 20.786
         }
-        Cable "{6A94C9014F2B48BD}" {
-         StartPoint 0.592 9.118 -1.504
-         EndPoint 51.814 9.35 19.435
+        Cable "{6AB34BCCAD793462}" {
+         StartPoint 0.647 9.181 -1.021
+         EndPoint 51.625 9.334 19.476
         }
        }
       }
       {
-       coords 201.071 1.734 89.122
+       coords 201.071 1.696 89.122
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B46AF}" {
-         StartPoint -0.08 9.169 1.248
-         EndPoint 52.008 6.328 19.112
+        Cable "{6AB34BCCAD793239}" {
+         StartPoint -0.271 9.16 1.289
+         EndPoint 51.771 6.311 19.449
         }
-        Cable "{6A94C9014F2B4629}" {
-         StartPoint 0.411 9.141 -0.062
-         EndPoint 52.342 6.304 17.753
+        Cable "{6AB34BCCAD793391}" {
+         StartPoint 0.221 9.148 -0.022
+         EndPoint 52.105 6.346 18.09
         }
-        Cable "{6A94C9014F2B47AC}" {
-         StartPoint 0.903 9.113 -1.373
-         EndPoint 52.675 6.281 16.394
+        Cable "{6AB34BCCAD793303}" {
+         StartPoint 0.713 9.136 -1.332
+         EndPoint 52.439 6.381 16.731
         }
        }
       }
@@ -390,197 +390,197 @@ $grp SplineShapeEntity {
        coords 253.092 -1.105 106.978
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B459B}" {
-         StartPoint -0.013 9.168 1.257
-         EndPoint 54.126 7.915 9.618
+        Cable "{6AB34BCCAD792E70}" {
+         StartPoint -0.25 9.112 1.594
+         EndPoint 54.431 7.662 9.535
         }
-        Cable "{6A94C9014F2B4502}" {
-         StartPoint 0.321 9.144 -0.102
-         EndPoint 54.23 7.909 8.222
+        Cable "{6AB34BCCAD792FB1}" {
+         StartPoint 0.084 9.147 0.234
+         EndPoint 54.54 7.64 8.14
         }
-        Cable "{6A94C9014F2B4284}" {
-         StartPoint 0.654 9.12 -1.462
-         EndPoint 54.334 7.903 6.826
-        }
-       }
-      }
-      {
-       coords 307.464 -2.345 115.269
-       Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
-       Cables {
-        Cable "{6A94C9014F2B4083}" {
-         StartPoint -0.246 9.155 1.327
-         EndPoint 55.211 4.569 0.942
-        }
-        Cable "{6A94C9014F2B4001}" {
-         StartPoint -0.141 9.149 -0.069
-         EndPoint 55.182 4.525 -0.457
-        }
-        Cable "{6A94C9014F2B4187}" {
-         StartPoint -0.037 9.143 -1.465
-         EndPoint 55.154 4.482 -1.856
+        Cable "{6AB34BCCAD792F26}" {
+         StartPoint 0.418 9.182 -1.125
+         EndPoint 54.65 7.618 6.744
         }
        }
       }
       {
-       coords 362.464 -6.963 115.122
+       coords 307.464 -2.613 115.269
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B3F8C}" {
-         StartPoint 0.212 9.187 1.088
-         EndPoint 54.735 5.359 -0.87
+        Cable "{6AB34BCCAD792AFA}" {
+         StartPoint 0.06 9.17 1.244
+         EndPoint 54.847 4.921 1.575
         }
-        Cable "{6A94C9014F2B3CFC}" {
-         StartPoint 0.183 9.143 -0.311
-         EndPoint 54.736 5.333 -2.27
+        Cable "{6AB34BCCAD792A50}" {
+         StartPoint 0.169 9.148 -0.151
+         EndPoint 54.86 4.909 0.175
         }
-        Cable "{6A94C9014F2B3C71}" {
-         StartPoint 0.154 9.099 -1.71
-         EndPoint 54.737 5.307 -3.67
+        Cable "{6AB34BCCAD792BC0}" {
+         StartPoint 0.278 9.125 -1.547
+         EndPoint 54.872 4.897 -1.225
         }
        }
       }
       {
-       coords 417.424 -10.776 113.043
+       coords 362.463 -6.853 115.543
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B3A61}" {
-         StartPoint -0.226 9.172 1.209
-         EndPoint 54.774 7.657 3.441
+        Cable "{6AB34BCCAD79298A}" {
+         StartPoint -0.152 9.161 1.301
+         EndPoint 55.074 7.533 1.796
         }
-        Cable "{6A94C9014F2B3BE8}" {
-         StartPoint -0.225 9.146 -0.191
-         EndPoint 54.981 7.651 2.056
+        Cable "{6AB34BCCAD7926F9}" {
+         StartPoint -0.14 9.149 -0.099
+         EndPoint 55.069 7.496 0.396
         }
-        Cable "{6A94C9014F2B3B6E}" {
-         StartPoint -0.223 9.12 -1.59
-         EndPoint 55.189 7.646 0.672
+        Cable "{6AB34BCCAD79266A}" {
+         StartPoint -0.128 9.137 -1.499
+         EndPoint 55.064 7.46 -1.003
         }
        }
       }
       {
-       coords 472.384 -12.275 115.153
+       coords 417.459 -8.503 116.197
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B395D}" {
-         StartPoint -0.185 9.156 1.331
-         EndPoint 52.788 7.196 15.609
+        Cable "{6AB34BCCAD792421}" {
+         StartPoint 0.078 9.183 1.141
+         EndPoint 55.167 5.355 0.193
         }
-        Cable "{6A94C9014F2B36C3}" {
-         StartPoint 0.022 9.15 -0.054
-         EndPoint 53.19 7.226 14.268
+        Cable "{6AB34BCCAD79259E}" {
+         StartPoint 0.073 9.146 -0.258
+         EndPoint 55.335 5.331 -1.196
         }
-        Cable "{6A94C9014F2B3645}" {
-         StartPoint 0.229 9.145 -1.438
-         EndPoint 53.592 7.256 12.928
+        Cable "{6AB34BCCAD79250E}" {
+         StartPoint 0.068 9.11 -1.658
+         EndPoint 55.502 5.308 -2.586
         }
        }
       }
       {
-       coords 525.551 -14.197 129.232
+       coords 472.449 -12.314 115.134
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B3435}" {
-         StartPoint -0.38 9.119 1.53
-         EndPoint 52.045 5.336 18.84
+        Cable "{6AB34BCCAD7920CC}" {
+         StartPoint 0.178 9.166 1.256
+         EndPoint 52.943 7.601 15.75
         }
-        Cable "{6A94C9014F2B35A4}" {
-         StartPoint 0.022 9.148 0.189
-         EndPoint 52.521 5.321 17.523
+        Cable "{6AB34BCCAD792006}" {
+         StartPoint 0.345 9.143 -0.133
+         EndPoint 53.346 7.639 14.41
         }
-        Cable "{6A94C9014F2B3538}" {
-         StartPoint 0.424 9.178 -1.151
-         EndPoint 52.996 5.307 16.206
+        Cable "{6AB34BCCAD792175}" {
+         StartPoint 0.512 9.119 -1.523
+         EndPoint 53.749 7.678 13.07
         }
        }
       }
       {
-       coords 577.691 -18.018 146.738
+       coords 525.607 -13.819 129.248
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B3308}" {
-         StartPoint -0.094 9.157 1.334
-         EndPoint 50.646 5.162 21.061
+        Cable "{6AB34BCCAD791F3F}" {
+         StartPoint -0.216 9.105 1.636
+         EndPoint 51.583 5.132 18.609
         }
-        Cable "{6A94C9014F2B307D}" {
-         StartPoint 0.381 9.142 0.017
-         EndPoint 51.11 5.155 19.74
+        Cable "{6AB34BCCAD791C98}" {
+         StartPoint 0.187 9.144 0.296
+         EndPoint 52.06 5.108 17.293
         }
-        Cable "{6A94C9014F2B31FC}" {
-         StartPoint 0.856 9.128 -1.3
-         EndPoint 51.574 5.149 18.419
+        Cable "{6AB34BCCAD791DB1}" {
+         StartPoint 0.591 9.182 -1.044
+         EndPoint 52.536 5.084 15.977
         }
        }
       }
       {
-       coords 628.976 -22.011 166.608
+       coords 577.745 -17.858 146.759
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B2FD7}" {
-         StartPoint -0.64 9.155 1.191
-         EndPoint 52.317 10.634 17.767
+        Cable "{6AB34BCCAD791B3E}" {
+         StartPoint -0.555 9.172 1.098
+         EndPoint 50.726 4.965 21.283
         }
-        Cable "{6A94C9014F2B2F50}" {
-         StartPoint -0.175 9.148 -0.13
-         EndPoint 52.746 10.601 16.435
+        Cable "{6AB34BCCAD791884}" {
+         StartPoint -0.078 9.147 -0.218
+         EndPoint 51.189 4.986 19.962
         }
-        Cable "{6A94C9014F2B2CD5}" {
-         StartPoint 0.289 9.141 -1.451
-         EndPoint 53.175 10.568 15.103
+        Cable "{6AB34BCCAD79180B}" {
+         StartPoint 0.398 9.123 -1.534
+         EndPoint 51.653 5.008 18.641
         }
        }
       }
       {
-       coords 681.416 -20.553 183.193
+       coords 629.031 -22.021 166.627
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B2AD8}" {
-         StartPoint -0.123 9.177 1.183
-         EndPoint 52.051 10.286 18.783
+        Cable "{6AB34BCCAD7917B0}" {
+         StartPoint -0.561 9.128 1.415
+         EndPoint 52.198 10.545 17.838
         }
-        Cable "{6A94C9014F2B2A43}" {
-         StartPoint 0.306 9.144 -0.149
-         EndPoint 52.514 10.318 17.462
+        Cable "{6AB34BCCAD791711}" {
+         StartPoint -0.097 9.149 0.094
+         EndPoint 52.628 10.528 16.506
         }
-        Cable "{6A94C9014F2B2BC4}" {
-         StartPoint 0.735 9.111 -1.482
-         EndPoint 52.977 10.35 16.141
+        Cable "{6AB34BCCAD791489}" {
+         StartPoint 0.367 9.171 -1.226
+         EndPoint 53.057 10.511 15.174
         }
        }
       }
       {
-       coords 733.667 -19.377 200.364
+       coords 681.472 -20.64 183.211
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B29B4}" {
-         StartPoint -0.2 9.11 1.611
-         EndPoint 50.773 7.268 20.608
+        Cable "{6AB34BCCAD791237}" {
+         StartPoint -0.242 9.165 1.255
+         EndPoint 51.822 10.41 18.517
         }
-        Cable "{6A94C9014F2B293F}" {
-         StartPoint 0.263 9.142 0.29
-         EndPoint 51.256 7.308 19.294
+        Cable "{6AB34BCCAD7913A5}" {
+         StartPoint 0.187 9.148 -0.078
+         EndPoint 52.285 10.415 17.195
         }
-        Cable "{6A94C9014F2B2690}" {
-         StartPoint 0.726 9.174 -1.03
-         EndPoint 51.738 7.348 17.98
+        Cable "{6AB34BCCAD79132C}" {
+         StartPoint 0.617 9.131 -1.41
+         EndPoint 52.747 10.419 15.874
         }
        }
       }
       {
-       coords 785.226 -21.213 219.512
+       coords 733.722 -19.376 200.384
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B24F9}" {
-         StartPoint -0.786 9.104 1.459
-         EndPoint 32.208 8.09 13.179
+        Cable "{6AB34BCCAD790EE7}" {
+         StartPoint -0.428 9.146 1.343
+         EndPoint 51.422 7.293 20.632
         }
-        Cable "{6A94C9014F2B2466}" {
-         StartPoint -0.303 9.144 0.146
-         EndPoint 32.668 8.084 11.851
+        Cable "{6AB34BCCAD790E53}" {
+         StartPoint 0.034 9.15 0.022
+         EndPoint 51.906 7.302 19.319
         }
-        Cable "{6A94C9014F2B25FA}" {
-         StartPoint 0.179 9.184 -1.168
-         EndPoint 33.127 8.078 10.528
+        Cable "{6AB34BCCAD790FCD}" {
+         StartPoint 0.497 9.155 -1.299
+         EndPoint 52.39 7.311 18.005
+        }
+       }
+      }
+      {
+       coords 785.281 -21.216 219.533
+       Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
+       Cables {
+        Cable "{6AB34BCCAD790DC9}" {
+         StartPoint -0.137 9.133 1.483
+         EndPoint 31.623 8.073 13.12
+        }
+        Cable "{6AB34BCCAD790D39}" {
+         StartPoint 0.347 9.142 0.169
+         EndPoint 32.083 8.088 11.793
+        }
+        Cable "{6AB34BCCAD790AA0}" {
+         StartPoint 0.831 9.151 -1.144
+         EndPoint 32.541 8.103 10.47
         }
        }
       }
@@ -588,85 +588,89 @@ $grp SplineShapeEntity {
        coords 817.609 -22.275 231.335
        Material "{DBCB509A5CEE0488}Assets/Structures/Infrastructure/Power/Powerlines/data/HV_03_powerline_wire.emat"
        Cables {
-        Cable "{6A94C9014F2B2380}" {
-         StartPoint -0.175 9.152 1.356
-         EndPoint 48.314 8.79 17.032
+        Cable "{6AB34BCCAD790821}" {
+         StartPoint -0.705 9.132 1.318
+         EndPoint 48.675 8.733 17.534
         }
-        Cable "{6A94C9014F2B20F0}" {
-         StartPoint 0.285 9.146 0.029
-         EndPoint 48.747 8.772 15.701
+        Cable "{6AB34BCCAD790987}" {
+         StartPoint -0.246 9.147 -0.009
+         EndPoint 49.107 8.771 16.203
         }
-        Cable "{6A94C9014F2B207E}" {
-         StartPoint 0.744 9.14 -1.294
-         EndPoint 49.177 8.754 14.374
+        Cable "{6AB34BCCAD7906F3}" {
+         StartPoint 0.212 9.162 -1.332
+         EndPoint 49.539 8.809 14.877
         }
        }
       }
      }
      SCR_PowerPole : "{741EAE31269CCF94}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_HV_01/PowerLine_HV_01_pole_end_step_down.et" {
       coords 866.607 -22.648 247.22
-      angles -1.353 252.037 -0.739
+      angles 1.767 252.037 1.556
+     }
+     SCR_PowerPole : "{9FF9DF431F4402CD}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_HV_01/PowerLine_HV_01_pole_end.et" {
+      coords 0 0 0
+      angles 0.211 66.554 1.192
      }
      $grp SCR_PowerPole : "{F2441CDA323B4393}Prefabs/Structures/Infrastructure/Power/Powerlines/PowerLine_HV_01/PowerLine_HV_01_pole.et" {
       {
        coords 50.459 0.037 21.884
-       angles -0.653 66.312 0.562
+       angles 1.087 66.312 -0.478
       }
       {
        coords 100.731 1.091 44.193
-       angles -1.228 65.028 0.692
+       angles -0.036 65.028 -0.923
       }
       {
        coords 150.16 1.498 68.314
-       angles 0.939 65.879 1.22
+       angles -0.611 65.879 -1.4
       }
       {
-       coords 201.071 1.734 89.122
-       angles -1.804 69.412 1.145
+       coords 201.071 1.696 89.122
+       angles -0.778 69.412 0.488
       }
       {
        coords 253.092 -1.105 106.978
-       angles -1.329 76.195 0.977
+       angles -0.394 76.195 -1.425
       }
       {
-       coords 307.464 -2.345 115.269
-       angles 1.385 85.734 0.238
+       coords 307.464 -2.613 115.269
+       angles -0.51 85.517 0.901
       }
       {
-       coords 362.464 -6.963 115.122
-       angles -0.714 91.16 1.797
+       coords 362.463 -6.853 115.543
+       angles 1.35 89.516 0.489
       }
       {
-       coords 417.424 -10.776 113.043
-       angles 1.878 89.982 1.068
+       coords 417.459 -8.503 116.197
+       angles 0.006 90.212 1.491
       }
       {
-       coords 472.384 -12.275 115.153
-       angles 0.383 81.485 0.227
+       coords 472.449 -12.314 115.134
+       angles -1.575 83.111 0.963
       }
       {
-       coords 525.551 -14.197 129.232
-       angles -0.005 73.306 -1.221
+       coords 525.607 -13.819 129.248
+       angles -1.189 73.285 -1.565
       }
       {
-       coords 577.691 -18.018 146.738
-       angles -1.811 70.131 0.587
+       coords 577.745 -17.858 146.759
+       angles 1.395 70.13 0.993
       }
       {
-       coords 628.976 -22.011 166.608
-       angles 1.775 70.638 0.279
+       coords 629.031 -22.021 166.627
+       angles 0.846 70.64 -0.884
       }
       {
-       coords 681.416 -20.553 183.193
-       angles -1.067 72.129 1.352
+       coords 681.472 -20.64 183.211
+       angles -0.498 72.128 0.698
       }
       {
-       coords 733.667 -19.377 200.364
-       angles -1.688 70.717 -1.297
+       coords 733.722 -19.376 200.384
+       angles 0.221 70.715 -0.184
       }
       {
-       coords 785.226 -21.213 219.512
-       angles 1.938 69.785 -1.637
+       coords 785.281 -21.216 219.533
+       angles -1.936 69.784 -0.37
       }
      }
     }

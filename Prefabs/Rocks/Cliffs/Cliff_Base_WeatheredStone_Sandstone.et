@@ -1,0 +1,13 @@
+GenericEntity : "{74AF3EB0FC1B930B}Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredStone.et" {
+ ID "5EBC22CF7E047101"
+ components {
+  MeshObject "{CD1197B7D257EAA4}" {
+   Materials {
+    MaterialAssignClass "{86517A85D1B23388}" {
+     SourceMaterial "Cliff_WeatheredSandstone"
+     AssignedMaterial "{59165A3DAA4028F5}Prefabs/Rocks/Cliffs/Cliff_WeatheredSandstone/Data/Cliff_WeatheredStone_Sandstone.emat"
+    }
+   }
+  }
+ }
+}

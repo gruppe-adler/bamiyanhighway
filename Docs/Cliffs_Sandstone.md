@@ -35,3 +35,9 @@ The user set `Color 0.15 0.15 0.15 1` (38,38,38 in the editor) on `Cliff_Crimson
 
 ## Completion (2026-10-25)
 Added the four skipped cliffs: `Cliff_Base_{CrimsonMesaCrown,CrimsonSentinel,ErodedRedstoneMonolith,WeatheredSandstone}_Sandstone.et` + `Data/Cliff_<Name>_Sandstone.emat` (copy of the red emat with the Cream layer textures and `Color 0.15 0.15 0.15 1`, new emat GUIDs/metas). Every cliff with a prefab now has a sandstone variant: 17 Base + 6 Cut. Not covered: `Cliff_CrimsonSpireCanyon` (no prefab in the addon), `Stairs_RedStone_01` (stairs, not a cliff).
+
+## Weathered stone back to red (user request)
+`Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredStone.et` (user-made prefab) now uses the original red `Cliff_WeatheredSandstone.emat` again. My sandstone variant of this cliff (`Cliff_Base_WeatheredSandstone_Sandstone.et` + emat) was removed; 16 Base + 6 Cut sandstone variants remain.
+
+## Correction: real sandstone variant of WeatheredStone
+`Cliff_Base_WeatheredStone.et` (user's prefab, original red material) stays red. New: `Cliff_Base_WeatheredStone_Sandstone.et` inheriting it, with `Cliff_WeatheredSandstone/Data/Cliff_WeatheredStone_Sandstone.emat` (Cream layers, `Color 0.15 0.15 0.15 1`). The old red cliff mesh is called "WeatheredSandstone" although it is red, hence the confusion; the new emat is named `WeatheredStone_Sandstone`.

@@ -1955,7 +1955,7 @@ SCR_IndestructibleEnvironmentalEntity : "{7113C7839BD5D148}Prefabs/Structures/Ro
  coords 594.548 -32.176 872.88
  angles 25.553 147.255 -96.271
 }
-$grp GenericEntity : "{74AF3EB0FC1B930B}Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredSandstone.et" {
+$grp GenericEntity : "{74AF3EB0FC1B930B}Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredStone.et" {
  {
   coords 1648.444 -37.219 982.364
   angles 0 131.421 0
@@ -2019,14 +2019,6 @@ $grp Tree : "{80C2B17EB509D6CF}Prefabs/Vegetation/Plant/p_echium_vulgare_0s.et" 
  {
   coords 1266.509 0.605 1109.316
   angles 0 127.609 0
- }
-}
-$grp SCR_DestructibleEntity : "{81D6F7E82EE599E4}Prefabs/Structures/Walls/Pipe/PipeRailing_02/PipeRailing_02.et" {
- {
-  coords 597.663 -28.671 863.448
- }
- {
-  coords 592.713 -25.523 863.441
  }
 }
 $grp GenericEntity : "{84D5238968E7F447}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonSentinel.et" {
@@ -2227,7 +2219,7 @@ $grp StaticModelEntity : "{AE73676ABA995907}Prefabs/Structures/BuildingParts/Ent
  }
 }
 DecalEntity : "{AF61766AF84BE75A}Prefabs/Decals/Asphalt/Decal_Asphalt_Cracks_04.et" {
- coords 549.94 -0 861.978
+ coords 549.94 0 861.978
  angles -90 -180 -180
 }
 $grp StaticModelEntity : "{B08DF585ECD2CF4D}Prefabs/Structures/BuildingParts/Entry/ConcreteStairs_02_SideSquareNarrow.et" {
@@ -2543,6 +2535,6 @@ GenericEntity : "{F92C7BF71226756B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlan
  angles 0 108.596 0
 }
 DecalEntity : "{FAAC5EB6982D4ACD}Prefabs/Decals/Asphalt/Decal_Asphalt_Patch_Blob_02.et" {
- coords 554.026 -0 860.113
+ coords 554.026 0 860.113
  angles -90 -180 -180
 }

@@ -6,7 +6,7 @@ GenericEntity {
    Materials {
     MaterialAssignClass "{6AB34BC50B971DA7}" {
      SourceMaterial "Cliff_WeatheredSandstone"
-     AssignedMaterial "{868EC5FF527E03AF}Prefabs/Rocks/Cliffs/Cliff_WeatheredSandstone/Data/Cliff_WeatheredSandstone_Sandstone.emat"
+     AssignedMaterial "{D30E46D0CF7D156F}Prefabs/Rocks/Cliffs/Cliff_WeatheredSandstone/Data/Cliff_WeatheredSandstone.emat"
     }
    }
   }
