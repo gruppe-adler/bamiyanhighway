@@ -1,12 +1,12 @@
 WallGeneratorEntity {
  ID "29FA283962C00EED"
  Flags 0x100003 0
- FirstObject "{8160F7D0ABDD7121}Prefabs/Structures/Walls/Stone/StoneWall_03/StoneWall_03_Start_sand.et"
- FirstObjectPostPadding 0
- LastObject "{FE33BE5DB5130DB5}Prefabs/Structures/Walls/Stone/StoneWall_03/StoneWall_03_End_sand.et"
- LastObjectPrePadding 0
- PrePadding 0
- PostPadding 0
+ FirstObject "{FE33BE5DB5130DB5}Prefabs/Structures/Walls/Stone/StoneWall_03/StoneWall_03_End_sand.et"
+ FirstObjectPostPadding -3.38
+ LastObject "{8160F7D0ABDD7121}Prefabs/Structures/Walls/Stone/StoneWall_03/StoneWall_03_Start_sand.et"
+ LastObjectPrePadding 3.21
+ PrePadding -0.16
+ PostPadding -0.16
  m_aWallGroups {
   WallLengthGroup "{D19F5359FC591CE4}" {
    m_aWallPrefabs {
