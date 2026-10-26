@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{F7B7E74052A359E7}Prefabs/Rocks/Debris/Rock_RuststoneMonolith/Data/Rock_RuststoneMonolith.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

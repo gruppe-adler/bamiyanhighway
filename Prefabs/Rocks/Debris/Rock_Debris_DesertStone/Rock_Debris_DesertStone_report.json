@@ -1,0 +1,186 @@
+{
+  "asset": "Rock_Debris_DesertStone",
+  "size_m": 0.15,
+  "sculpt": {
+    "source": "Meshy_AI_model.blend",
+    "asset": "Rock_Debris_DesertStone",
+    "scale_from_meshy": 0.07888,
+    "shell": {
+      "cavity_voxels": 0,
+      "inner_faces": 0,
+      "inner_share": 0.0,
+      "hollow": false
+    },
+    "tris": 528603,
+    "dims_m": [
+      0.15,
+      0.128,
+      0.059
+    ]
+  },
+  "uv": {
+    "charts": 4,
+    "islands": 4,
+    "split_rounds": [
+      1,
+      2,
+      0
+    ],
+    "planar_fixed_faces": 0,
+    "distorted_area_share": 0.0,
+    "seam_edge_share": 0.0533,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.04,
+      "95": 1.14,
+      "99": 1.25
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.82,
+      "5": 0.88,
+      "50": 1.01,
+      "95": 1.14,
+      "99": 1.23
+    },
+    "coverage": 0.499,
+    "m_per_uv_unit": 0.28,
+    "surface_m2": 0.0,
+    "lod0": {
+      "lod0_tris": 1000,
+      "high_tris": 528603,
+      "against_source": {
+        "faces": 3,
+        "area_share": 0.00131
+      },
+      "lod0_to_high": {
+        "mean_mm": 0.19,
+        "p95_mm": 0.57,
+        "max_mm": 1.45
+      },
+      "high_to_lod0": {
+        "mean_mm": 0.39,
+        "p95_mm": 1.05,
+        "max_mm": 3.03
+      }
+    }
+  },
+  "textures": {
+    "MASK": {
+      "file": "Rock_Debris_DesertStone_MASK.tif",
+      "size": 1024,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Rock_Debris_DesertStone_NMO.tif",
+      "size": 2048,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.022,
+    0.014,
+    0.078
+  ],
+  "scale_from_sculpt": 1.0176,
+  "dimensions_m": [
+    0.15,
+    0.13,
+    0.06
+  ],
+  "surface_m2": 0.041,
+  "m_per_uv_unit": 0.286,
+  "mask_px_per_m": 3574.3,
+  "nmo_px_per_m": 7148.6,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "RockLayer_Rock05",
+      "repeat_m": 2.0,
+      "TilingU": 0.143,
+      "TilingV": 0.143,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 0.106,
+      "TilingV": 0.106,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 0.087,
+      "TilingV": 0.087,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 0.07,
+      "TilingV": 0.07,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Rock_Debris_DesertStone_LOD0": {
+      "tris": 1000,
+      "material": "Rock_Debris_DesertStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_DesertStone_LOD1": {
+      "tris": 500,
+      "material": "Rock_Debris_DesertStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_DesertStone_LOD2": {
+      "tris": 250,
+      "material": "Rock_Debris_DesertStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_DesertStone_LOD3": {
+      "tris": 124,
+      "material": "Rock_Debris_DesertStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_DesertStone_LOD4": {
+      "tris": 62,
+      "material": "Rock_Debris_DesertStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Rock_Debris_DesertStone",
+    "path": "decimate",
+    "tris": 150,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_mm": {
+      "mean": 0.6,
+      "p95": 1.3,
+      "max": 2.1
+    }
+  },
+  "fbx": "Rock_Debris_DesertStone.fbx"
+}

@@ -1,0 +1,187 @@
+{
+  "asset": "Rock_RuststoneMonolith",
+  "size_m": 1.0,
+  "sculpt": {
+    "source": "Meshy_AI_Ruststone_Monolith_1026130110_generate.blend",
+    "asset": "Rock_RuststoneMonolith",
+    "scale_from_meshy": 0.52643,
+    "shell": {
+      "cavity_voxels": 17795,
+      "inner_faces": 6000,
+      "inner_share": 0.003,
+      "hollow": false
+    },
+    "tris": 1873021,
+    "dims_m": [
+      1.0,
+      0.886,
+      0.562
+    ]
+  },
+  "uv": {
+    "charts": 16,
+    "islands": 16,
+    "split_rounds": [
+      4,
+      3,
+      1,
+      0
+    ],
+    "planar_fixed_faces": 0,
+    "distorted_area_share": 0.0004,
+    "seam_edge_share": 0.0377,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.03,
+      "95": 1.17,
+      "99": 1.33
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.66,
+      "5": 0.8,
+      "50": 1.03,
+      "95": 1.26,
+      "99": 1.44
+    },
+    "coverage": 0.581,
+    "m_per_uv_unit": 1.96,
+    "surface_m2": 2.2,
+    "lod0": {
+      "lod0_tris": 15000,
+      "high_tris": 1873021,
+      "against_source": {
+        "faces": 10,
+        "area_share": 0.00034
+      },
+      "lod0_to_high": {
+        "mean_mm": 0.56,
+        "p95_mm": 1.76,
+        "max_mm": 4.91
+      },
+      "high_to_lod0": {
+        "mean_mm": 1.03,
+        "p95_mm": 3.3,
+        "max_mm": 21.33
+      }
+    }
+  },
+  "textures": {
+    "MASK": {
+      "file": "Rock_RuststoneMonolith_MASK.tif",
+      "size": 1024,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Rock_RuststoneMonolith_NMO.tif",
+      "size": 2048,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.071,
+    0.054,
+    0.15
+  ],
+  "scale_from_sculpt": 1.0013,
+  "dimensions_m": [
+    1.0,
+    0.883,
+    0.561
+  ],
+  "surface_m2": 2.242,
+  "m_per_uv_unit": 1.964,
+  "mask_px_per_m": 521.3,
+  "nmo_px_per_m": 1042.7,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "RockLayer_Rock05",
+      "repeat_m": 2.0,
+      "TilingU": 0.982,
+      "TilingV": 0.982,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 0.727,
+      "TilingV": 0.727,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 0.595,
+      "TilingV": 0.595,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 0.479,
+      "TilingV": 0.479,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Rock_RuststoneMonolith_LOD0": {
+      "tris": 15000,
+      "material": "Rock_RuststoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RuststoneMonolith_LOD1": {
+      "tris": 7500,
+      "material": "Rock_RuststoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RuststoneMonolith_LOD2": {
+      "tris": 3750,
+      "material": "Rock_RuststoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RuststoneMonolith_LOD3": {
+      "tris": 1874,
+      "material": "Rock_RuststoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RuststoneMonolith_LOD4": {
+      "tris": 936,
+      "material": "Rock_RuststoneMonolith",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Rock_RuststoneMonolith",
+    "path": "decimate",
+    "tris": 500,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_mm": {
+      "mean": 4.1,
+      "p95": 10.7,
+      "max": 29.3
+    }
+  },
+  "fbx": "Rock_RuststoneMonolith.fbx"
+}

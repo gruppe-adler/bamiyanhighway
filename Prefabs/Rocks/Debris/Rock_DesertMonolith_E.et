@@ -1,0 +1,19 @@
+GenericEntity {
+ ID "AC1F0D5F88858979"
+ components {
+  MeshObject "{39E4483F965CE060}" {
+   Object "{B8C1B6097571601C}Prefabs/Rocks/Debris/Rock_DesertMonolith_E/Rock_DesertMonolith_E.xob"
+   Materials {
+    MaterialAssignClass "{C0C68A89EB6E98D4}" {
+     SourceMaterial "Rock_DesertMonolith_E"
+     AssignedMaterial "{0A1C614F46C39AE2}Prefabs/Rocks/Debris/Rock_DesertMonolith_E/Data/Rock_DesertMonolith_E.emat"
+    }
+   }
+  }
+  RigidBody "{0A7CC1131413D2B7}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

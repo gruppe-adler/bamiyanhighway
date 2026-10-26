@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{FB82D5804503483B}Prefabs/Rocks/Debris/Rock_DesertMonolith_A/Data/Rock_DesertMonolith_A_Sandstone.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

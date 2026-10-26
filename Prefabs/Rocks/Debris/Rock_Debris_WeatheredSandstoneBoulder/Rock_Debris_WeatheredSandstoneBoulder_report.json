@@ -1,0 +1,187 @@
+{
+  "asset": "Rock_Debris_WeatheredSandstoneBoulder",
+  "size_m": 0.15,
+  "sculpt": {
+    "source": "Meshy_AI_model.blend",
+    "asset": "Rock_Debris_WeatheredSandstoneBoulder",
+    "scale_from_meshy": 0.08234,
+    "shell": {
+      "cavity_voxels": 0,
+      "inner_faces": 0,
+      "inner_share": 0.0,
+      "hollow": false
+    },
+    "tris": 899909,
+    "dims_m": [
+      0.15,
+      0.143,
+      0.07
+    ]
+  },
+  "uv": {
+    "charts": 6,
+    "islands": 6,
+    "split_rounds": [
+      1,
+      2,
+      1,
+      0
+    ],
+    "planar_fixed_faces": 0,
+    "distorted_area_share": 0.0017,
+    "seam_edge_share": 0.058,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.0,
+      "50": 1.06,
+      "95": 1.23,
+      "99": 1.39
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.64,
+      "5": 0.79,
+      "50": 1.01,
+      "95": 1.24,
+      "99": 1.4
+    },
+    "coverage": 0.566,
+    "m_per_uv_unit": 0.21,
+    "surface_m2": 0.0,
+    "lod0": {
+      "lod0_tris": 1000,
+      "high_tris": 899909,
+      "against_source": {
+        "faces": 29,
+        "area_share": 0.01194
+      },
+      "lod0_to_high": {
+        "mean_mm": 0.47,
+        "p95_mm": 2.09,
+        "max_mm": 3.09
+      },
+      "high_to_lod0": {
+        "mean_mm": 5.53,
+        "p95_mm": 21.49,
+        "max_mm": 66.62
+      }
+    }
+  },
+  "textures": {
+    "MASK": {
+      "file": "Rock_Debris_WeatheredSandstoneBoulder_MASK.tif",
+      "size": 1024,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Rock_Debris_WeatheredSandstoneBoulder_NMO.tif",
+      "size": 2048,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.033,
+    0.075,
+    0.023
+  ],
+  "scale_from_sculpt": 1.3843,
+  "dimensions_m": [
+    0.15,
+    0.13,
+    0.096
+  ],
+  "surface_m2": 0.05,
+  "m_per_uv_unit": 0.297,
+  "mask_px_per_m": 3446.6,
+  "nmo_px_per_m": 6893.2,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "RockLayer_Rock05",
+      "repeat_m": 2.0,
+      "TilingU": 0.149,
+      "TilingV": 0.149,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 0.11,
+      "TilingV": 0.11,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 0.09,
+      "TilingV": 0.09,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 0.072,
+      "TilingV": 0.072,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Rock_Debris_WeatheredSandstoneBoulder_LOD0": {
+      "tris": 1000,
+      "material": "Rock_Debris_WeatheredSandstoneBoulder",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_WeatheredSandstoneBoulder_LOD1": {
+      "tris": 500,
+      "material": "Rock_Debris_WeatheredSandstoneBoulder",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_WeatheredSandstoneBoulder_LOD2": {
+      "tris": 250,
+      "material": "Rock_Debris_WeatheredSandstoneBoulder",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_WeatheredSandstoneBoulder_LOD3": {
+      "tris": 124,
+      "material": "Rock_Debris_WeatheredSandstoneBoulder",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_Debris_WeatheredSandstoneBoulder_LOD4": {
+      "tris": 62,
+      "material": "Rock_Debris_WeatheredSandstoneBoulder",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Rock_Debris_WeatheredSandstoneBoulder",
+    "path": "decimate",
+    "tris": 150,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_mm": {
+      "mean": 0.9,
+      "p95": 2.0,
+      "max": 4.3
+    }
+  },
+  "fbx": "Rock_Debris_WeatheredSandstoneBoulder.fbx"
+}

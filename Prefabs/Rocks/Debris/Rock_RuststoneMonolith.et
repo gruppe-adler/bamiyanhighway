@@ -1,0 +1,19 @@
+GenericEntity {
+ ID "D6360969B3B81BD7"
+ components {
+  MeshObject "{EE2A4D632EC4C013}" {
+   Object "{95D75583D3A3A6E6}Prefabs/Rocks/Debris/Rock_RuststoneMonolith/Rock_RuststoneMonolith.xob"
+   Materials {
+    MaterialAssignClass "{8C69BB4631AC7F0F}" {
+     SourceMaterial "Rock_RuststoneMonolith"
+     AssignedMaterial "{F7B7E74052A359E7}Prefabs/Rocks/Debris/Rock_RuststoneMonolith/Data/Rock_RuststoneMonolith.emat"
+    }
+   }
+  }
+  RigidBody "{90DDD5424BAC3E37}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

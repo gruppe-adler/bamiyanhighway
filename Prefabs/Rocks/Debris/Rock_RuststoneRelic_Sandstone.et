@@ -1,0 +1,13 @@
+GenericEntity : "{633DB9E5BC686100}Prefabs/Rocks/Debris/Rock_RuststoneRelic.et" {
+ ID "A3550797FBAFC800"
+ components {
+  MeshObject "{37FF545E819A86BA}" {
+   Materials {
+    MaterialAssignClass "{B6CA90C21F1E9B8E}" {
+     SourceMaterial "Rock_RuststoneRelic"
+     AssignedMaterial "{B79EF2B5709B3CD8}Prefabs/Rocks/Debris/Rock_RuststoneRelic/Data/Rock_RuststoneRelic_Sandstone.emat"
+    }
+   }
+  }
+ }
+}

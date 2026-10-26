@@ -1,0 +1,13 @@
+GenericEntity : "{EFC6D0CAE170D68F}Prefabs/Rocks/Debris/Rock_Debris_WeatheredStoneChunk.et" {
+ ID "C069C1F50C50EC95"
+ components {
+  MeshObject "{D76B0B3B1EFE37F9}" {
+   Materials {
+    MaterialAssignClass "{C92845DBD1850EC4}" {
+     SourceMaterial "Rock_Debris_WeatheredStoneChunk"
+     AssignedMaterial "{D62180C9CD396F94}Prefabs/Rocks/Debris/Rock_Debris_WeatheredStoneChunk/Data/Rock_Debris_WeatheredStoneChunk_Sandstone.emat"
+    }
+   }
+  }
+ }
+}

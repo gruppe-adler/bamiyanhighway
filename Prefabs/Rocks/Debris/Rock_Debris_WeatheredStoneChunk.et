@@ -1,0 +1,19 @@
+GenericEntity {
+ ID "D1EB22B35ABF9D73"
+ components {
+  MeshObject "{D76B0B3B1EFE37F9}" {
+   Object "{F68BCA953CB25955}Prefabs/Rocks/Debris/Rock_Debris_WeatheredStoneChunk/Rock_Debris_WeatheredStoneChunk.xob"
+   Materials {
+    MaterialAssignClass "{2B8524C5F9AE7413}" {
+     SourceMaterial "Rock_Debris_WeatheredStoneChunk"
+     AssignedMaterial "{696532CA6173EED7}Prefabs/Rocks/Debris/Rock_Debris_WeatheredStoneChunk/Data/Rock_Debris_WeatheredStoneChunk.emat"
+    }
+   }
+  }
+  RigidBody "{BDB5B246EC13367E}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

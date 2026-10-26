@@ -1,0 +1,185 @@
+{
+  "asset": "Rock_RoseMesaStone",
+  "size_m": 1.0,
+  "sculpt": {
+    "source": "Meshy_AI_Rose_Mesa_Stone_1026130103_generate.blend",
+    "asset": "Rock_RoseMesaStone",
+    "scale_from_meshy": 0.52802,
+    "shell": {
+      "cavity_voxels": 21771,
+      "inner_faces": 12652,
+      "inner_share": 0.004,
+      "hollow": false
+    },
+    "tris": 3410415,
+    "dims_m": [
+      0.793,
+      1.0,
+      0.625
+    ]
+  },
+  "uv": {
+    "charts": 8,
+    "islands": 8,
+    "split_rounds": [
+      2,
+      0
+    ],
+    "planar_fixed_faces": 0,
+    "distorted_area_share": 0.0001,
+    "seam_edge_share": 0.0259,
+    "anisotropy_area_pct": {
+      "1": 1.0,
+      "5": 1.01,
+      "50": 1.04,
+      "95": 1.17,
+      "99": 1.31
+    },
+    "texel_scale_vs_median_area_pct": {
+      "1": 0.59,
+      "5": 0.7,
+      "50": 1.01,
+      "95": 1.36,
+      "99": 1.66
+    },
+    "coverage": 0.581,
+    "m_per_uv_unit": 2.04,
+    "surface_m2": 2.4,
+    "lod0": {
+      "lod0_tris": 15000,
+      "high_tris": 3410415,
+      "against_source": {
+        "faces": 10,
+        "area_share": 0.00015
+      },
+      "lod0_to_high": {
+        "mean_mm": 0.56,
+        "p95_mm": 1.71,
+        "max_mm": 4.51
+      },
+      "high_to_lod0": {
+        "mean_mm": 1.05,
+        "p95_mm": 3.21,
+        "max_mm": 23.96
+      }
+    }
+  },
+  "textures": {
+    "MASK": {
+      "file": "Rock_RoseMesaStone_MASK.tif",
+      "size": 1024,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    },
+    "NMO": {
+      "file": "Rock_RoseMesaStone_NMO.tif",
+      "size": 2048,
+      "roundtrip_max_err_8bit": 1.519918441772461e-05
+    }
+  },
+  "mask_mean_rgb": [
+    0.085,
+    0.06,
+    0.177
+  ],
+  "scale_from_sculpt": 1.0015,
+  "dimensions_m": [
+    0.791,
+    1.0,
+    0.626
+  ],
+  "surface_m2": 2.438,
+  "m_per_uv_unit": 2.048,
+  "mask_px_per_m": 500.0,
+  "nmo_px_per_m": 1000.0,
+  "emat": [
+    {
+      "slot": 1,
+      "layer": "RockLayer_Rock05",
+      "repeat_m": 2.0,
+      "TilingU": 1.024,
+      "TilingV": 1.024,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 2048.0
+    },
+    {
+      "slot": 2,
+      "layer": "CliffLayer_Sand",
+      "repeat_m": 2.7,
+      "TilingU": 0.759,
+      "TilingV": 0.759,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1517.0
+    },
+    {
+      "slot": 3,
+      "layer": "CliffLayer_Scree",
+      "repeat_m": 3.3,
+      "TilingU": 0.621,
+      "TilingV": 0.621,
+      "Rotation": 0,
+      "texel_px_per_m_4k": 1241.2
+    },
+    {
+      "slot": 4,
+      "layer": "CliffLayer_SandstonePale",
+      "repeat_m": 4.1,
+      "TilingU": 0.5,
+      "TilingV": 0.5,
+      "Rotation": 90,
+      "texel_px_per_m_4k": 999.0
+    }
+  ],
+  "lods": {
+    "Rock_RoseMesaStone_LOD0": {
+      "tris": 15000,
+      "material": "Rock_RoseMesaStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RoseMesaStone_LOD1": {
+      "tris": 7500,
+      "material": "Rock_RoseMesaStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RoseMesaStone_LOD2": {
+      "tris": 3750,
+      "material": "Rock_RoseMesaStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RoseMesaStone_LOD3": {
+      "tris": 1874,
+      "material": "Rock_RoseMesaStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    },
+    "Rock_RoseMesaStone_LOD4": {
+      "tris": 936,
+      "material": "Rock_RoseMesaStone",
+      "uv_sets": [
+        "UVMap"
+      ]
+    }
+  },
+  "collider": {
+    "name": "UTM_Rock_RoseMesaStone",
+    "path": "decimate",
+    "tris": 500,
+    "boundary_edges": 0,
+    "duplicate_faces": 0,
+    "pieces": 1,
+    "nonmanifold_edges": 0,
+    "usage": "RockFireView",
+    "deviation_from_LOD0_mm": {
+      "mean": 4.7,
+      "p95": 12.0,
+      "max": 27.0
+    }
+  },
+  "fbx": "Rock_RoseMesaStone.fbx"
+}

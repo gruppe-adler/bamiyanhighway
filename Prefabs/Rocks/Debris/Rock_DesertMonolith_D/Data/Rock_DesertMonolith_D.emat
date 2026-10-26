@@ -1,0 +1,33 @@
+MatPBRMulti {
+ SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
+ MaskMap "{798EF9981975F35D}Prefabs/Rocks/Debris/Rock_DesertMonolith_D/Rock_DesertMonolith_D_MASK.edds"
+ GlobalNMOMap "{68B43A0AC1F8A91A}Prefabs/Rocks/Debris/Rock_DesertMonolith_D/Rock_DesertMonolith_D_NMO.edds"
+ BCR_1 "{CCC786391D0CC456}Prefabs/Rocks/Debris/_Layers/RockLayer_Rock05_BCR.edds"
+ NMO_1 "{AC43ABAC3A456CC0}Prefabs/Rocks/Debris/_Layers/RockLayer_Rock05_NMO.edds"
+ UVTransform_1 MatUVTransform {
+  TilingU 0.955
+  TilingV 0.955
+ }
+ Enabled_2 1
+ BCR_2 "{400909965D675648}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_BCR.edds"
+ NMO_2 "{78D1B204841004D6}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Sand_NMO.edds"
+ UVTransform_2 MatUVTransform {
+  TilingU 0.707
+  TilingV 0.707
+ }
+ Enabled_3 1
+ BCR_3 "{6278EAA54D460434}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Scree_BCR.edds"
+ NMO_3 "{5AA05137943156AA}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_Scree_NMO.edds"
+ UVTransform_3 MatUVTransform {
+  TilingU 0.579
+  TilingV 0.579
+ }
+ Enabled_4 1
+ BCR_4 "{0A95F13AD8712A95}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_BCR.edds"
+ NMO_4 "{324D4AA80106780B}Prefabs/Rocks/Cliffs/_Layers/CliffLayer_SandstonePale_NMO.edds"
+ UVTransform_4 MatUVTransform {
+  TilingU 0.466
+  TilingV 0.466
+  Rotation 90
+ }
+}

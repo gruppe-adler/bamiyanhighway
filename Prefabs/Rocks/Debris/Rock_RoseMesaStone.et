@@ -1,0 +1,19 @@
+GenericEntity {
+ ID "7B7B802C2F929312"
+ components {
+  MeshObject "{400F885819B0C3D2}" {
+   Object "{29CDEC26EF491B4F}Prefabs/Rocks/Debris/Rock_RoseMesaStone/Rock_RoseMesaStone.xob"
+   Materials {
+    MaterialAssignClass "{4312B5FE5A047293}" {
+     SourceMaterial "Rock_RoseMesaStone"
+     AssignedMaterial "{0CC2A850F8E42790}Prefabs/Rocks/Debris/Rock_RoseMesaStone/Data/Rock_RoseMesaStone.emat"
+    }
+   }
+  }
+  RigidBody "{EAA499C92D45C70C}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

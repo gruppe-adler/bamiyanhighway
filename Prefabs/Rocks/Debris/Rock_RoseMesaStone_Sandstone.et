@@ -1,0 +1,13 @@
+GenericEntity : "{580707F3A7C9D04E}Prefabs/Rocks/Debris/Rock_RoseMesaStone.et" {
+ ID "521157188678AF6A"
+ components {
+  MeshObject "{400F885819B0C3D2}" {
+   Materials {
+    MaterialAssignClass "{6C7BEB26747FA55B}" {
+     SourceMaterial "Rock_RoseMesaStone"
+     AssignedMaterial "{D034DFADD53686EA}Prefabs/Rocks/Debris/Rock_RoseMesaStone/Data/Rock_RoseMesaStone_Sandstone.emat"
+    }
+   }
+  }
+ }
+}

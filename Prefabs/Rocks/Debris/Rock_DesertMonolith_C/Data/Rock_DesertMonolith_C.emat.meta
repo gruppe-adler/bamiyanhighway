@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{DC29237C13C73895}Prefabs/Rocks/Debris/Rock_DesertMonolith_C/Data/Rock_DesertMonolith_C.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

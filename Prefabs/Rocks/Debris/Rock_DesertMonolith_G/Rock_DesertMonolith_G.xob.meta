@@ -1,0 +1,56 @@
+MetaFileClass {
+ Name "{0359DA55662EFAFC}Prefabs/Rocks/Debris/Rock_DesertMonolith_G/Rock_DesertMonolith_G.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{72A4DE18776133A2}" {
+     SourceMaterial "Rock_DesertMonolith_G"
+     AssignedMaterial "{B50276AF8EEC6E78}Prefabs/Rocks/Debris/Rock_DesertMonolith_G/Data/Rock_DesertMonolith_G.emat"
+    }
+   }
+   MeshParams {
+    MeshParam Rock_DesertMonolith_G {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_Rock_DesertMonolith_G {
+     LayerPreset "RockFireView"
+     SurfaceProperties {
+      "{C409534F24447254}Rock.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{C387EB781ED0CA32}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "5.2.2 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{D286E4641577A732}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{51C09B43BB46A2A4}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{6A83DFC5FAE53915}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{18B7FCA2906C9300}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{0F424F4155390C00}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{51EC2680F3FBD1D8}" {
+   }
+  }
+ }
+}

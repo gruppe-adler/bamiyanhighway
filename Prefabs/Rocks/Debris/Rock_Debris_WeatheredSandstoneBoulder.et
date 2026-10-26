@@ -1,0 +1,19 @@
+GenericEntity {
+ ID "F21B53879F08AB71"
+ components {
+  MeshObject "{A770C69E2C961C7F}" {
+   Object "{EB4D301DDCDA5B45}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder/Rock_Debris_WeatheredSandstoneBoulder.xob"
+   Materials {
+    MaterialAssignClass "{725E8918C56AA23D}" {
+     SourceMaterial "Rock_Debris_WeatheredSandstoneBoulder"
+     AssignedMaterial "{507F916D9EA33905}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder/Data/Rock_Debris_WeatheredSandstoneBoulder.emat"
+    }
+   }
+  }
+  RigidBody "{E0FCA215ECABB721}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}
