@@ -243,10 +243,24 @@ $grp GenericEntity : "{5D46AF783B52901A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonS
   coords 1938.866 -49.629 1106.311
   angles 0 -41.981 0
  }
+ {
+  coords 1860.095 -62.646 1354.06
+  angles 0 19.112 0
+ }
 }
-GenericEntity : "{665493635526502A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge_Sandstone.et" {
- coords 1880.932 -43.448 1343.418
- angles 0 138.303 0
+$grp GenericEntity : "{665493635526502A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge_Sandstone.et" {
+ {
+  coords 1880.932 -43.448 1343.418
+  angles 0 138.303 0
+ }
+ {
+  coords 1903.577 -45.151 1383.86
+  angles 0 148.081 0
+ }
+}
+GenericEntity : "{7A6CC1BD51EC16C5}Prefabs/Rocks/Cliffs/Cliff_Base_DesertMesaFragment_Sandstone.et" {
+ coords 1830.473 -65.004 1291.065
+ angles 0 -86.559 0
 }
 $grp GenericEntity : "{876AB60A8BF5D37B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith_Sandstone.et" {
  {
@@ -254,6 +268,9 @@ $grp GenericEntity : "{876AB60A8BF5D37B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonM
  }
  {
   coords 1931.396 -47.292 1102.436
+ }
+ {
+  coords 1852.577 -61.197 1347.282
  }
 }
 SCR_DestructibleBuildingEntity : "{A0E65FE503C8D6D2}Prefabs/Structures/Bulding/HouseC/House_C_1_EP1.et" {
@@ -284,8 +301,14 @@ SCR_DestructibleBuildingEntity : "{BCA7012AFAE5ACAC}Prefabs/Structures/Bulding/H
  coords 1842.824 -40.181 1318.324
  angles 0 101.087 0
 }
-GenericEntity : "{C64E5A22FAC180D6}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCrown_Sandstone.et" {
- coords 1847.041 -49.337 1267.5
+$grp GenericEntity : "{C64E5A22FAC180D6}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCrown_Sandstone.et" {
+ {
+  coords 1847.041 -49.337 1267.5
+ }
+ {
+  coords 1846.377 -62.213 1339.892
+  angles 0 140.307 0
+ }
 }
 SCR_DestructibleBuildingEntity : "{CC978E65AF4A0678}Prefabs/Structures/Bulding/HouseC/House_C_3_EP1_Base.et" {
  coords 1835.267 -42.452 1221.365
