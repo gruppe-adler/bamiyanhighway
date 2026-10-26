@@ -132,11 +132,11 @@ $grp SplineShapeEntity {
   coords 1834.557 -40.181 1323.754
   Points {
    ShapePoint "{6AB365CCB1F73259}" {
-    Position -0.099 -0 2.197
+    Position -0.099 0 2.197
     Data {
      SplinePointData SplinePointData {
-      InTangent -2.204 -0 -5.841
-      OutTangent -2.204 -0 -5.841
+      InTangent -2.204 0 -5.841
+      OutTangent -2.204 0 -5.841
      }
     }
    }
@@ -165,11 +165,11 @@ $grp SplineShapeEntity {
       ID "6272EE997FB954C5"
       SplinePoints {
        ShapePoint "{556C65561A62B78A}" {
-        Position -0.099 -0 2.197
+        Position -0.099 0 2.197
         Data {
          SplinePointData "{00000000D8F1BA4F}" {
-          InTangent -2.204 -0 -5.841
-          OutTangent -2.204 -0 -5.841
+          InTangent -2.204 0 -5.841
+          OutTangent -2.204 0 -5.841
          }
         }
        }
@@ -196,6 +196,9 @@ $grp SplineShapeEntity {
    }
   }
  }
+}
+GenericEntity : "{04E5F5AB6A45AB1D}Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredStone_Sandstone.et" {
+ coords 1952.393 -39.718 1124.898
 }
 $grp GenericEntity : "{21C62EE06F719B37}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandstoneWall02_Sandstone.et" {
  {
@@ -236,13 +239,22 @@ $grp GenericEntity : "{5D46AF783B52901A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonS
   coords 1844.025 -49.019 1261.243
   angles 0 85.016 0
  }
+ {
+  coords 1938.866 -49.629 1106.311
+  angles 0 -41.981 0
+ }
 }
 GenericEntity : "{665493635526502A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge_Sandstone.et" {
  coords 1880.932 -43.448 1343.418
  angles 0 138.303 0
 }
-GenericEntity : "{876AB60A8BF5D37B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith_Sandstone.et" {
- coords 1854.26 -54.702 1329.906
+$grp GenericEntity : "{876AB60A8BF5D37B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith_Sandstone.et" {
+ {
+  coords 1854.26 -54.702 1329.906
+ }
+ {
+  coords 1931.396 -47.292 1102.436
+ }
 }
 SCR_DestructibleBuildingEntity : "{A0E65FE503C8D6D2}Prefabs/Structures/Bulding/HouseC/House_C_1_EP1.et" {
  coords 1832.33 -39.83 1254.758
@@ -252,8 +264,17 @@ GenericEntity : "{A56DBAAA8D2B932A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCi
  coords 1867.816 -42.43 1311.436
  angles 0 98.059 0
 }
-GenericEntity : "{B9658D7DBC036095}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedRedstoneMonolith_Sandstone.et" {
- coords 1854.808 -48.675 1299.137
+$grp GenericEntity : "{B9658D7DBC036095}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedRedstoneMonolith_Sandstone.et" {
+ {
+  coords 1854.808 -48.675 1299.137
+ }
+ {
+  coords 1944.037 -43.913 1130.058
+ }
+ {
+  coords 1960.748 -39.718 1128.121
+  angles 0 -34.406 0
+ }
 }
 GenericEntity : "{BA34EEB7C77A6DF4}Prefabs/Rocks/Cliffs/Cliff_Base_DesertFortress_Sandstone.et" {
  coords 1863.103 -41.858 1253.518
