@@ -9,6 +9,11 @@ GenericEntity {
      AssignedMaterial "{FF287098B5033757}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab/Data/Rock_Debris_DesertSlab.emat"
     }
    }
+   LODFactors {
+    4 4 4 4 4
+   }
+   PixelSizeScale 4
+   ObjectHeightmapBias 1
   }
   RigidBody "{441191438A044E73}" {
    LayerPreset "BuildingFireView"

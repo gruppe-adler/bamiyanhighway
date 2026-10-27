@@ -9,6 +9,11 @@ GenericEntity {
      AssignedMaterial "{696532CA6173EED7}Prefabs/Rocks/Debris/Rock_Debris_WeatheredStoneChunk/Data/Rock_Debris_WeatheredStoneChunk.emat"
     }
    }
+   LODFactors {
+    4 4 4 4 4
+   }
+   PixelSizeScale 4
+   ObjectHeightmapBias 1
   }
   RigidBody "{BDB5B246EC13367E}" {
    LayerPreset "BuildingFireView"

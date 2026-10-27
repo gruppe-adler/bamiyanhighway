@@ -1,0 +1,134 @@
+ForestGeneratorEntity {
+ ID "6ABD78695548086F"
+ Flags 0x100003 0
+ coords 3.531 -1.977 0.52
+ m_iSeed 91467
+ m_bAvoidObjects 1
+ m_bAvoidRoads 1
+ m_bAvoidRivers 1
+ m_bAvoidPowerLines 1
+ m_bAvoidTracks 1
+ m_bAvoidLakes 1
+ m_aLevels {
+  ForestGeneratorBottomLevel intermediate {
+  }
+ }
+ m_aClusters {
+  ForestGeneratorCircleCluster Rocks {
+   m_aObjects {
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_A_Sandstone {
+     m_fMinScale 0.5
+     m_fMaxScale 1.2
+     m_Prefab "{943FF0F6B6BFC14C}Prefabs/Rocks/Debris/Rock_DesertMonolith_A_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_B_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{967DBE542809555A}Prefabs/Rocks/Debris/Rock_DesertMonolith_B_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_C_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{975DE3B8CB51C321}Prefabs/Rocks/Debris/Rock_DesertMonolith_C_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_D_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{B3D49093CE4DEB4C}Prefabs/Rocks/Debris/Rock_DesertMonolith_D_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_E_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{79BC0BDE02855163}Prefabs/Rocks/Debris/Rock_DesertMonolith_E_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_F_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{C56EB89D4D67A404}Prefabs/Rocks/Debris/Rock_DesertMonolith_F_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_DesertMonolith_G_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{75F1550A245FBB10}Prefabs/Rocks/Debris/Rock_DesertMonolith_G_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_RoseMesaStone_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{18A780A378858400}Prefabs/Rocks/Debris/Rock_RoseMesaStone_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_RuststoneMonolith_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{A65DB21EBF6D877B}Prefabs/Rocks/Debris/Rock_RuststoneMonolith_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+    SmallForestGeneratorClusterObject Rock_RuststoneRelic_Sandstone {
+     m_fMinScale 0.9
+     m_fMaxScale 1.2
+     m_Prefab "{B84361CE05171B1B}Prefabs/Rocks/Debris/Rock_RuststoneRelic_Sandstone.et"
+     m_fRandomPitchAngle 5
+     m_fRandomRollAngle 5
+     m_fVerticalOffset -0.08
+     m_fMaxTerrainSlope 30
+     m_fMinRadius 3
+     m_fMaxRadius 4
+    }
+   }
+   m_fMinCDENSHA 149.8
+   m_fMaxCDENSHA 200
+  }
+ }
+}

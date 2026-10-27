@@ -1,0 +1,84 @@
+ForestGeneratorEntity {
+ ID "7D9F9184D80D6D63"
+ Flags 0x100003 0
+ coords 0 0 0
+ m_iSeed 87939
+ m_bAvoidObjects 1
+ m_bAvoidRoads 1
+ m_bAvoidRivers 1
+ m_bAvoidPowerLines 1
+ m_bAvoidTracks 1
+ m_bAvoidLakes 1
+ m_aLevels {
+  ForestGeneratorBottomLevel intermediate {
+  }
+ }
+ m_aClusters {
+  ForestGeneratorCircleCluster Clutter {
+   m_aObjects {
+    SmallForestGeneratorClusterObject Rock_Debris_DesertMonolith_C {
+     m_fMinScale 1.3
+     m_fMaxScale 2.2
+     m_Prefab "{EB70C255F8826F8F}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_C.et"
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMinRadius 0.4
+     m_fMaxRadius 3.5
+     m_fMaxTerrainSlope 28
+     m_iMinCount 1
+     m_iMaxCount 3
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertMonolith_D {
+     m_fMinScale 1.3
+     m_fMaxScale 2.2
+     m_Prefab "{EB2E83C5D658D88B}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_D.et"
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMinRadius 0.4
+     m_fMaxRadius 3.5
+     m_fMaxTerrainSlope 28
+     m_iMinCount 1
+     m_iMaxCount 3
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertSlab {
+     m_fMinScale 1.3
+     m_fMaxScale 2.2
+     m_Prefab "{D88B38AF813B43F1}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab.et"
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMinRadius 0.4
+     m_fMaxRadius 3.5
+     m_fMaxTerrainSlope 28
+     m_iMinCount 1
+     m_iMaxCount 3
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertStone {
+     m_fMinScale 1.3
+     m_fMaxScale 2.2
+     m_Prefab "{A1C55F4DB20814DB}Prefabs/Rocks/Debris/Rock_Debris_DesertStone.et"
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMinRadius 0.4
+     m_fMaxRadius 3.5
+     m_fMaxTerrainSlope 28
+     m_iMinCount 1
+     m_iMaxCount 3
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_WeatheredSandstoneBoulder {
+     m_fMinScale 1.3
+     m_fMaxScale 2.2
+     m_Prefab "{87E3BEC2248B876F}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder.et"
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMinRadius 0.4
+     m_fMaxRadius 3.5
+     m_fMaxTerrainSlope 28
+     m_iMinCount 1
+     m_iMaxCount 3
+    }
+   }
+   m_fMinCDENSHA 50
+   m_fMaxCDENSHA 50
+  }
+ }
+}

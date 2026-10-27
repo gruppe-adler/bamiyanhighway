@@ -9,6 +9,11 @@ GenericEntity {
      AssignedMaterial "{0CC2A850F8E42790}Prefabs/Rocks/Debris/Rock_RoseMesaStone/Data/Rock_RoseMesaStone.emat"
     }
    }
+   LODFactors {
+    4 4 4 4 4
+   }
+   PixelSizeScale 4
+   ObjectHeightmapBias 1
   }
   RigidBody "{EAA499C92D45C70C}" {
    LayerPreset "BuildingFireView"

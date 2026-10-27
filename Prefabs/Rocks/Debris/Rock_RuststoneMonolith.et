@@ -9,6 +9,11 @@ GenericEntity {
      AssignedMaterial "{F7B7E74052A359E7}Prefabs/Rocks/Debris/Rock_RuststoneMonolith/Data/Rock_RuststoneMonolith.emat"
     }
    }
+   LODFactors {
+    4 4 4 4 4
+   }
+   PixelSizeScale 4
+   ObjectHeightmapBias 1
   }
   RigidBody "{90DDD5424BAC3E37}" {
    LayerPreset "BuildingFireView"

@@ -1,0 +1,128 @@
+ForestGeneratorEntity {
+ ID "5A0D660A7BD4A65F"
+ Flags 0x100003 0
+ coords 3.531 -1.977 0.52
+ m_iSeed 50945
+ m_bAvoidObjects 1
+ m_bAvoidRoads 1
+ m_bAvoidRivers 1
+ m_bAvoidPowerLines 1
+ m_bAvoidTracks 1
+ m_bAvoidLakes 1
+ m_aLevels {
+  ForestGeneratorBottomLevel intermediate {
+  }
+ }
+ m_aClusters {
+  ForestGeneratorCircleCluster Clutter {
+   m_aObjects {
+    SmallForestGeneratorClusterObject Rock_Debris_DesertMonolith_A_Sandstone {
+     m_fMinScale 0.6
+     m_fMaxScale 2.99
+     m_Prefab "{40EC15DE74D94C83}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_A_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertMonolith_B_Sandstone {
+     m_fMinScale 0.2
+     m_fMaxScale 3
+     m_Prefab "{686E953BE39A0E1F}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_B_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertMonolith_C_Sandstone {
+     m_fMinScale 0.8
+     m_fMaxScale 3
+     m_Prefab "{569EA28C391DE541}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_C_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertMonolith_D_Sandstone {
+     m_fMinScale 0.8
+     m_fMaxScale 3
+     m_Prefab "{6D4D60F813A46D4B}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_D_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertSlab_Sandstone {
+     m_fMinScale 0.8
+     m_fMaxScale 3
+     m_Prefab "{E4E09FF6D45D0C28}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_DesertStone_Sandstone {
+     m_fMinScale 0.8
+     m_fMaxScale 3
+     m_Prefab "{EB8ACED1DDA088C9}Prefabs/Rocks/Debris/Rock_Debris_DesertStone_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_WeatheredSandstoneBoulder_Sandstone {
+     m_fMinScale 0.8
+     m_fMaxScale 3
+     m_Prefab "{81BE8E6446F2B80E}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+    SmallForestGeneratorClusterObject Rock_Debris_WeatheredStoneChunk_Sandstone {
+     m_fMinScale 0.8
+     m_fMaxScale 3
+     m_Prefab "{F37C32578236F7E4}Prefabs/Rocks/Debris/Rock_Debris_WeatheredStoneChunk_Sandstone.et"
+     m_fBotDistance 0.2
+     m_fRandomPitchAngle 15
+     m_fRandomRollAngle 15
+     m_fMaxTerrainSlope 30
+     m_iMinCount 2
+     m_iMaxCount 30
+     m_fMinRadius 0.15
+     m_fMaxRadius 2.5
+    }
+   }
+   m_fMinCDENSHA 300
+   m_fMaxCDENSHA 500
+  }
+ }
+}

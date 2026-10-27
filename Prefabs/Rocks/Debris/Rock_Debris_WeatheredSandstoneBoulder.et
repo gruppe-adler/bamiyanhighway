@@ -9,6 +9,11 @@ GenericEntity {
      AssignedMaterial "{507F916D9EA33905}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder/Data/Rock_Debris_WeatheredSandstoneBoulder.emat"
     }
    }
+   LODFactors {
+    4 4 4 4 4
+   }
+   PixelSizeScale 4
+   ObjectHeightmapBias 1
   }
   RigidBody "{E0FCA215ECABB721}" {
    LayerPreset "BuildingFireView"
