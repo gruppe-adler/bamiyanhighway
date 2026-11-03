@@ -1,0 +1,6 @@
+MatTerrainObject : "{003244BB00581E06}Common/Materials/default_MatTerrainObj_TerrShadows.emat" {
+ BCRMap "{DAC907FB25D1AB88}Assets/Structures/Irrigation/Graben/Data/Graben_Lehm_BCR.edds"
+ NMOMap "{EF854298A6DC129D}Assets/Structures/Irrigation/Graben/Data/Graben_Lehm_NMO.edds"
+ MaterialBlendUseVertexColor R
+ MaterialBlendUseTerrainDistance 1
+}

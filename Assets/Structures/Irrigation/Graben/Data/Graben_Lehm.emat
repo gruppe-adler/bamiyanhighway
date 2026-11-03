@@ -1,0 +1,9 @@
+MatPBRBasic {
+ AOScale 0.5
+ BCRMap "{DAC907FB25D1AB88}Assets/Structures/Irrigation/Graben/Data/Graben_Lehm_BCR.edds"
+ NMOMap "{EF854298A6DC129D}Assets/Structures/Irrigation/Graben/Data/Graben_Lehm_NMO.edds"
+ GlobalMapsUVTransform MatUVTransform "{6AC74DAE259B778D}" {
+  TilingU 5
+  TilingV 5
+ }
+}

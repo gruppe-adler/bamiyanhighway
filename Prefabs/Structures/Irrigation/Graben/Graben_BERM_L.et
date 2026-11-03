@@ -1,0 +1,13 @@
+GenericEntity {
+ ID "99690C3D25F28520"
+ components {
+  MeshObject "{7BEF8B65A4798A8B}" {
+   Object "{5384C0C3C09D97B7}Assets/Structures/Irrigation/Graben/Graben_BERM_L.xob"
+  }
+  RigidBody "{546096B6C55CCECF}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+ }
+}

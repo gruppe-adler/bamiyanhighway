@@ -1,0 +1,15 @@
+WallGeneratorEntity {
+ ID "15995B8AE4397465"
+ Flags 0x100003 0
+ PrePadding -0.12
+ PostPadding -0.12
+ m_aWallGroups {
+  WallLengthGroup "{85288BD5336E923A}" {
+   m_aWallPrefabs {
+    WallWeightPair "{7A50E2D1EAE44B9D}" {
+     m_sWallAsset "{2EB275FAE89B324A}Prefabs/Structures/Irrigation/Graben/Graben_BERM_L.et"
+    }
+   }
+  }
+ }
+}

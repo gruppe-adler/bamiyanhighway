@@ -2,7 +2,7 @@ ForestGeneratorEntity {
  ID "6AB71E4329C487A1"
  Flags 0x100003 0
  coords 3.531 -1.977 0.52
- m_iSeed 23995
+ m_iSeed 2508
  m_bAvoidObjects 1
  m_bAvoidRoads 1
  m_bAvoidRivers 1
