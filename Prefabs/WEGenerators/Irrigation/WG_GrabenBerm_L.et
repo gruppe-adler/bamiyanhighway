@@ -1,8 +1,11 @@
 WallGeneratorEntity {
  ID "15995B8AE4397465"
  Flags 0x100003 0
- PrePadding -0.12
- PostPadding -0.12
+ m_iSeed 19959
+ m_vShapeOffset 0.2 -0.11 0
+ m_bSnapOffsetShapeToTheGround 0
+ PrePadding -0.2
+ PostPadding -0.2
  m_aWallGroups {
   WallLengthGroup "{85288BD5336E923A}" {
    m_aWallPrefabs {

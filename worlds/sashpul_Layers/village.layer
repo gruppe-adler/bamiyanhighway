@@ -8320,12 +8320,6 @@ $grp SplineShapeEntity {
   LineColor 0 0 0 0
   {
    WallGeneratorEntity : "{34BEFF5117BF3A30}Prefabs/WEGenerators/Irrigation/WG_GrabenBerm_R.et" {
-    Flags 0x100003 0
-    m_iSeed 10942
-    m_vShapeOffset -0.2 -0.11 0
-    m_bSnapOffsetShapeToTheGround 0
-    PrePadding -0.2
-    PostPadding -0.2
     {
      $grp GenericEntity : "{2F9F6B0F59729958}Prefabs/Structures/Irrigation/Graben/Graben_BERM_R.et" {
       {
@@ -10459,12 +10453,6 @@ $grp SplineShapeEntity {
     GUID "6AC770A33FCF58FD"
    }
    WallGeneratorEntity : "{EC3D2D6DB7E02632}Prefabs/WEGenerators/Irrigation/WG_GrabenBerm_L.et" {
-    Flags 0x100003 0
-    m_iSeed 19959
-    m_vShapeOffset 0.2 -0.11 0
-    m_bSnapOffsetShapeToTheGround 0
-    PrePadding -0.2
-    PostPadding -0.2
     {
      $grp GenericEntity : "{2EB275FAE89B324A}Prefabs/Structures/Irrigation/Graben/Graben_BERM_L.et" {
       {
