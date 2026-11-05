@@ -30234,7 +30234,7 @@ $grp SplineShapeEntity {
        angles 0 1.392 0
       }
       {
-       coords 48.101 -0 40.857
+       coords 48.101 0 40.857
        angles 0 1.395 0
       }
       {
@@ -43777,7 +43777,7 @@ $grp SplineShapeEntity {
        angles 0 333.454 0
       }
       {
-       coords 58.039 -0 42.807
+       coords 58.039 0 42.807
        angles 0 333.454 0
       }
       {
@@ -53718,6 +53718,9 @@ $grp SplineShapeEntity {
   }
  }
 }
+Tree : "{09E03E65489EEC39}Prefabs/Vegetation/Bush/b_phragmites_australis_1.et" {
+ coords 1.764 0.012 464.377
+}
 SCR_DestructibleBuildingEntity : "{0AEF9F241BE43DFC}Prefabs/Structures/Walls/Concrete/ConcreteRetainingWall_01/ConcreteRetainingWall_01_8m_30.et" {
  coords 599.516 -34.127 837.627
  angles 0 -172.204 0
@@ -53782,6 +53785,9 @@ StaticModelEntity : "{84CB4C5EC2DAFE91}PrefabLibrary/DefaultLibrary/Infrastructu
  coords 613.291 -0.007 844.189
  angles 0 138.45 0
  placement none
+}
+GenericEntity : "{967DBE542809555A}Prefabs/Rocks/Debris/Rock_DesertMonolith_B_Sandstone.et" {
+ coords 1.136 -28.786 463.095
 }
 GenericEntity : "{DB17133F11B2B8C5}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Short.et" {
  coords 1191.646 -38.677 1053.849

@@ -12604,6 +12604,10 @@ $grp SCR_DestructibleBuildingEntity : "{26D9ACB98DEC20C2}Prefabs/Structures/Wall
   angles 0 41.371 0
  }
 }
+GenericEntity : "{29063844DEEAC10B}Prefabs/Props/Garbage/Generic/Junk_01/Junk_01_pile_large.et" {
+ coords 1413.814 -31.387 1221.499
+ angles 1.712 0.003 0.428
+}
 GenericEntity : "{2A6186F7E7BB7C9D}Prefabs/Structures/Misc/Cable2.et" {
  coords 804.067 -19.778 989.709
  angles 0 -55.848 0
