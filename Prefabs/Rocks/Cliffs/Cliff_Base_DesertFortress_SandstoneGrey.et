@@ -1,0 +1,17 @@
+GenericEntity : "{866903007B16B1DA}Prefabs/Rocks/Cliffs/Cliff_Base_DesertFortress.et" {
+ ID "BB2D420F0F88080B"
+ components {
+  MeshObject "{6AAB5BF2A57E8C6D}" {
+   Materials {
+    MaterialAssignClass "{623FA34E88A17798}" {
+     SourceMaterial "Cliff_DesertFortress"
+     AssignedMaterial "{8D116ECE1738F7D9}Prefabs/Rocks/Cliffs/Cliff_DesertFortress/Data/Cliff_DesertFortress_SandstoneGrey.emat"
+    }
+    MaterialAssignClass "{FE004683D5544D71}" {
+     SourceMaterial "Cliff_DesertFortress_terrain"
+     AssignedMaterial "{0F21DDB66CAD4A26}Prefabs/Rocks/Cliffs/Cliff_DesertFortress/Data/Cliff_DesertFortress_Sandstone_terrainGrey.emat"
+    }
+   }
+  }
+ }
+}

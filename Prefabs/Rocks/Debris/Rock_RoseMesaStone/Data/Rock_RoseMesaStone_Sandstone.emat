@@ -1,5 +1,5 @@
 MatPBRMulti {
- Color 0.15 0.15 0.15 1
+ Color 0.397 0.352 0.279 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MaskMap "{D017D15B30787C91}Prefabs/Rocks/Debris/Rock_RoseMesaStone/Rock_RoseMesaStone_MASK.edds"
  GlobalNMOMap "{A7914BC39F272143}Prefabs/Rocks/Debris/Rock_RoseMesaStone/Rock_RoseMesaStone_NMO.edds"

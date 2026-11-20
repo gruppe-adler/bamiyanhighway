@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{D23F0824128B2F33}Prefabs/Rocks/Cliffs/Cliff_CrimsonBadlandsRidge_cut/Data/Cliff_CrimsonBadlandsRidge_cut_Sandstone_terrainGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

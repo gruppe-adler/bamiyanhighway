@@ -1,0 +1,17 @@
+GenericEntity : "{DCF66AA65C13D764}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedDesertCliffs.et" {
+ ID "F0CE583505C6AF07"
+ components {
+  MeshObject "{6AAB5BF2F19BE846}" {
+   Materials {
+    MaterialAssignClass "{7ADEC6F3A4BBCA9A}" {
+     SourceMaterial "Cliff_ErodedDesertCliffs"
+     AssignedMaterial "{6B4CB2424A23D596}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertCliffs/Data/Cliff_ErodedDesertCliffs_SandstoneGrey.emat"
+    }
+    MaterialAssignClass "{31337489966DA78E}" {
+     SourceMaterial "Cliff_ErodedDesertCliffs_terrain"
+     AssignedMaterial "{8A6A63EC24EDE6A4}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertCliffs/Data/Cliff_ErodedDesertCliffs_Sandstone_terrainGrey.emat"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{953F48F1A09F76B5}Prefabs/Rocks/Cliffs/Cliff_DesertMesaFragment/Data/Cliff_DesertMesaFragment_Sandstone_terrainGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

@@ -53777,6 +53777,11 @@ $grp SCR_DestructibleBuildingEntity : "{1E1FF3AE13CDC15D}Prefabs/Structures/Wall
   angles 0 -105.809 0
  }
 }
+DecalEntity : "{25AB7FF81B8EDEF9}Prefabs/Decals/Dirt/Decal_Dirt_Tracks_01.et" {
+ coords 1880.46 -0 1111.68
+ angles -89.98 0 127.181
+ scale 10
+}
 SCR_DestructibleBuildingEntity : "{6DF062B77D4F27B5}Prefabs/Structures/Infrastructure/Bridges/BridgeConcrete_E_01_small/BridgeConcrete_E_01_small.et" {
  coords 1177.559 -0.541 1059.145
  angles -2.228 57.148 2.328
@@ -53788,6 +53793,52 @@ StaticModelEntity : "{84CB4C5EC2DAFE91}PrefabLibrary/DefaultLibrary/Infrastructu
 }
 GenericEntity : "{967DBE542809555A}Prefabs/Rocks/Debris/Rock_DesertMonolith_B_Sandstone.et" {
  coords 1.136 -28.786 463.095
+}
+DecalEntity : "{9EE74738BD9E8CDB}Prefabs/Decals/Dirt/Decal_Dirt_Tracks_02.et" {
+ coords 1882.141 0.203 1107.021
+ angles -90 0 15.348
+ scale 5
+}
+$grp DecalEntity : "{B7AF69D585D9C715}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_01_V2.et" {
+ {
+  coords 1824.868 0.004 1072.978
+  angles -90 0 -38.717
+  scale 4.8
+ }
+ {
+  coords 1823.268 -0 1074.535
+  angles -90 -180 -180
+  scale 4.8
+ }
+}
+$grp DecalEntity : "{BCF98BBA87A30CEE}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_02.et" {
+ {
+  coords 1824.46 0 1072.514
+  angles -90 -180 -180
+  scale 4.2
+ }
+ {
+  coords 1824.534 0 1072.658
+  angles -90 -180 -180
+  scale 4.2
+ }
+}
+DecalEntity : "{BD0A399833C93492}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_02_V2.et" {
+ coords 1825.695 -0.002 1075.054
+ angles -90 -180 -180
+ scale 5
+}
+$grp DecalEntity : "{D0ADBF5A3B6783C0}Prefabs/Decals/Dirt/Decal_Dirt_Crossroad_01.et" {
+ {
+  coords 1824.154 0 1073.011
+  angles -90 -180 -180
+  scale 4.8
+ }
+ {
+  coords 1822.066 0.198 1076.768
+  angles -90 -180 -180
+  scale 4.8
+ }
 }
 GenericEntity : "{DB17133F11B2B8C5}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Short.et" {
  coords 1191.646 -38.677 1053.849

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{8D116ECE1738F7D9}Prefabs/Rocks/Cliffs/Cliff_DesertFortress/Data/Cliff_DesertFortress_SandstoneGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

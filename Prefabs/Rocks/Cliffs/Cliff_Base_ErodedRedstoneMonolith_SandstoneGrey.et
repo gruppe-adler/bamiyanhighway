@@ -1,0 +1,13 @@
+GenericEntity : "{4E34BE8E9CC1D47B}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedRedstoneMonolith.et" {
+ ID "37DC76FB0F17A300"
+ components {
+  MeshObject "{B1933498A0C8D34C}" {
+   Materials {
+    MaterialAssignClass "{963CC58EA44ECD5B}" {
+     SourceMaterial "Cliff_ErodedRedstoneMonolith"
+     AssignedMaterial "{18F135D25F557203}Prefabs/Rocks/Cliffs/Cliff_ErodedRedstoneMonolith/Data/Cliff_ErodedRedstoneMonolith_SandstoneGrey.emat"
+    }
+   }
+  }
+ }
+}

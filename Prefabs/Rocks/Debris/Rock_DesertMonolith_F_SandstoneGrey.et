@@ -1,0 +1,13 @@
+GenericEntity : "{C5305FA9445BA752}Prefabs/Rocks/Debris/Rock_DesertMonolith_F.et" {
+ ID "F2EE4E4519F9919C"
+ components {
+  MeshObject "{859A43470FC2025F}" {
+   Materials {
+    MaterialAssignClass "{283CC9FB695E3F8B}" {
+     SourceMaterial "Rock_DesertMonolith_F"
+     AssignedMaterial "{EEEACBE226E87555}Prefabs/Rocks/Debris/Rock_DesertMonolith_F/Data/Rock_DesertMonolith_F_SandstoneGrey.emat"
+    }
+   }
+  }
+ }
+}

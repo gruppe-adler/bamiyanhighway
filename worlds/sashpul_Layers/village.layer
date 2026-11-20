@@ -12874,10 +12874,6 @@ SCR_DestructibleBuildingEntity : "{A0E65FE503C8D6D2}Prefabs/Structures/Bulding/H
  coords 526.648 -17.599 830.532
  angles 0 169.896 0
 }
-SCR_DestructibleEntity : "{A20F29C2A16B2AC5}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_4m_v1_sand.et" {
- coords 1864.351 -0.382 1101.457
- angles 0 -32.285 0
-}
 $grp SCR_DestructibleBuildingEntity : "{A24E20F839D2EB6F}Prefabs/Structures/Stairs/MEStairs.et" {
  {
   Flags 0 0x80000

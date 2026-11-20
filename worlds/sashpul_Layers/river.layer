@@ -1818,6 +1818,641 @@ $grp SplineShapeEntity {
    }
   }
  }
+ {
+  coords 1854.97 -42.017 1061.827
+  Points {
+   ShapePoint "{6AE7628A5780AE4D}" {
+    Position -2.69 0 8.043
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5780CA04}" {
+    Position 5.265 0.571 -6.028
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5031ECD6}" {
+    Position 20.016 0 -26.366
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A536B7076}" {
+    Position 31.331 0 -47.997
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53F717D1}" {
+    Position 23.406 0 -36.645
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53977DF0}" {
+    Position 10.425 0 -17.979
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5255FFB5}" {
+    Position 5.015 0 -10.719
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A4D7C61A6}" {
+    Position -10.902 0 12.685
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A4DF2D05D}" {
+    Position -4.377 0 9.5
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   ForestGeneratorEntity : "{4B4987D56BA49B67}PrefabLibrary/DefaultLibrary/Generators/Stones/FG_BeachStone_Dense_example.et" {
+    Flags 0x100003 0
+    m_iSeed 426
+    m_bRandomiseSeedOnUse 0
+    {
+     $grp SCR_IndestructibleEnvironmentalEntity : "{2A841F5C64F4BCE2}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_BeachCluster_02/Granite_BeachCluster_02.et" {
+      {
+       coords 2.079 0.056 -0.64
+       angles -5.607 -165.044 1.15
+       scale 1.142
+      }
+      {
+       coords -5.884 -0.393 6.018
+       angles 10.662 97.907 17.857
+       scale 1.157
+      }
+      {
+       coords -0.408 -0.113 2.38
+       angles 3.699 -3.616 -9.142
+       scale 1.137
+      }
+     }
+     SCR_IndestructibleEnvironmentalEntity : "{FC2FFB6EB18CBA53}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_Stone_01/Granite_BeachStone_01.et" {
+      coords -3.976 -0.863 2.922
+      angles -1.386 17.93 1.587
+      scale 1.158
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1848.275 -42.017 1054.663
+  Points {
+   ShapePoint "{6AE7628A5780AE4D}" {
+    Position 5.106 0 -1.416
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5780CA04}" {
+    Position 9.962 0.567 -4.536
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5031ECD6}" {
+    Position 29.953 -0.117 -32.647
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A536B7076}" {
+    Position 31.331 0 -47.997
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53F717D1}" {
+    Position 25.65 0 -33.074
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53977DF0}" {
+    Position 18.505 0 -21.643
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5255FFB5}" {
+    Position 7.858 0 -7.725
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A4DF2D05D}" {
+    Position 3.269 0 -1.43
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   ForestGeneratorEntity : "{3D07E37E995558F1}PrefabLibrary/DefaultLibrary/Generators/Brushlands/FG_Brushland_Phragmites.et" {
+    Flags 0x100003 0
+    m_iSeed 4872
+    m_bAvoidRivers 1
+    m_bAvoidLakes 1
+    {
+     Tree : "{077C695F02F4312C}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_phragmites_australis_1.et" {
+      coords 22.25 1.352 -26.538
+      angles -0.116 84.443 -1.676
+      scale 0.603
+     }
+     SCR_IndestructibleEnvironmentalEntity : "{1BA4712EED0CB208}PrefabLibrary/DefaultLibrary/Rocks/Granite/GraniteStone_03.et" {
+      coords 16.567 1.097 -17.682
+      angles -55.043 46.644 135.103
+      scale 0.689
+     }
+     $grp Tree : "{516D7C7E2AB8D436}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_phragmites_australis_1b.et" {
+      {
+       coords 12.72 0.466 -11.438
+       angles -2.351 134.631 0.327
+       scale 1.092
+      }
+      {
+       coords 13.511 0.72 -13.023
+       angles -2.716 -136.839 2.708
+       scale 0.825
+      }
+      {
+       coords 13.506 1.288 -14.864
+       angles -0.057 78.313 1.565
+       scale 0.915
+      }
+      {
+       coords 23.941 1.051 -27.649
+       angles -1.248 166.854 2.719
+       scale 0.977
+      }
+      {
+       coords 29.559 0.979 -39.798
+       angles -0.901 -154.231 -1.428
+       scale 1.057
+      }
+      {
+       coords 28.248 1.417 -39.596
+       angles -0.42 75.38 -2.984
+       scale 1.057
+      }
+      {
+       coords 29.919 0.812 -37.365
+       angles -1.078 -179.874 -2.497
+       scale 0.842
+      }
+      {
+       coords 27.326 1.334 -34.085
+       angles 2.444 -136.85 0.707
+       scale 0.857
+      }
+      {
+       coords 27.861 0.829 -32.886
+       angles 2.869 -17.842 1.568
+       scale 0.897
+      }
+      {
+       coords 30.02 0.822 -43.795
+       angles -1.793 144.727 -0.389
+       scale 1.082
+      }
+      {
+       coords 23.534 1.29 -28.191
+       angles 1.852 133.675 -2.631
+       scale 1.023
+      }
+      {
+       coords 21.491 0.857 -24
+       angles -0.354 108.603 2.705
+       scale 1.012
+      }
+      {
+       coords 22.706 0.401 -24.174
+       angles 2.892 -156.307 -1.762
+       scale 1.068
+      }
+      {
+       coords 20.09 0.42 -20.613
+       angles 1.246 130.873 -0.642
+       scale 0.832
+      }
+      {
+       coords 11.763 0.78 -11.349
+       angles -2.221 -177.984 2.639
+       scale 0.911
+      }
+      {
+       coords 11.019 0.138 -8.523
+       angles 0.706 -31.554 -1.308
+       scale 1.186
+      }
+      {
+       coords 8.058 0.778 -7.675
+       angles 1.307 -129.269 -2.565
+       scale 0.84
+      }
+      {
+       coords 10.744 0.443 -9.136
+       angles -2.585 -8.317 1.592
+       scale 0.97
+      }
+      {
+       coords 9.329 0.034 -6.43
+       angles 2.529 -79.258 1.651
+       scale 1.044
+      }
+      {
+       coords 7.441 0.01 -3.901
+       angles 2.982 -162.515 2.318
+       scale 1.158
+      }
+      {
+       coords 6.498 0.388 -3.771
+       angles -1.717 88.695 1.856
+       scale 0.963
+      }
+     }
+     Tree : "{960EA50FD57CD7D5}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_1sw.et" {
+      coords 20.008 0.834 -21.83
+      angles 1.714 125.446 -1.339
+      scale 0.83
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1853.575 -42.017 1056.709
+  Points {
+   ShapePoint "{6AE7628A5780AE4D}" {
+    Position 5.106 0 -1.416
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5780CA04}" {
+    Position 9.962 0.567 -4.536
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5031ECD6}" {
+    Position 29.953 -0.117 -32.647
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A536B7076}" {
+    Position 31.331 0 -47.997
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53F717D1}" {
+    Position 25.65 0 -33.074
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53977DF0}" {
+    Position 18.505 0 -21.643
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5255FFB5}" {
+    Position 7.858 0 -7.725
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A4DF2D05D}" {
+    Position 3.269 0 -1.43
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   ForestGeneratorEntity : "{3D07E37E995558F1}PrefabLibrary/DefaultLibrary/Generators/Brushlands/FG_Brushland_Phragmites.et" {
+    Flags 0x100003 0
+    m_iSeed 4872
+    m_bAvoidRivers 1
+    m_bAvoidLakes 1
+    {
+     Tree : "{077C695F02F4312C}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_phragmites_australis_1.et" {
+      coords 22.25 0.399 -26.538
+      angles -0.116 84.443 -1.676
+      scale 0.603
+     }
+     SCR_IndestructibleEnvironmentalEntity : "{1BA4712EED0CB208}PrefabLibrary/DefaultLibrary/Rocks/Granite/GraniteStone_03.et" {
+      coords 16.567 0.666 -17.682
+      angles -55.043 46.644 135.103
+      scale 0.689
+     }
+     $grp Tree : "{516D7C7E2AB8D436}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_phragmites_australis_1b.et" {
+      {
+       coords 12.72 0.505 -11.438
+       angles -2.351 134.631 0.327
+       scale 1.092
+      }
+      {
+       coords 13.511 0.421 -13.023
+       angles -2.716 -136.839 2.708
+       scale 0.825
+      }
+      {
+       coords 13.506 0.174 -14.864
+       angles -0.057 78.313 1.565
+       scale 0.915
+      }
+      {
+       coords 23.941 0.801 -27.649
+       angles -1.248 166.854 2.719
+       scale 0.977
+      }
+      {
+       coords 29.559 1.226 -39.798
+       angles -0.901 -154.231 -1.428
+       scale 1.057
+      }
+      {
+       coords 28.248 0.701 -39.596
+       angles -0.42 75.38 -2.984
+       scale 1.057
+      }
+      {
+       coords 29.919 1.397 -37.365
+       angles -1.078 -179.874 -2.497
+       scale 0.842
+      }
+      {
+       coords 27.326 0.78 -34.085
+       angles 2.444 -136.85 0.707
+       scale 0.857
+      }
+      {
+       coords 27.861 1.266 -32.886
+       angles 2.869 -17.842 1.568
+       scale 0.897
+      }
+      {
+       coords 30.02 1.453 -43.795
+       angles -1.793 144.727 -0.389
+       scale 1.082
+      }
+      {
+       coords 23.534 0.528 -28.191
+       angles 1.852 133.675 -2.631
+       scale 1.023
+      }
+      {
+       coords 21.491 0.934 -24
+       angles -0.354 108.603 2.705
+       scale 1.012
+      }
+      {
+       coords 22.706 1.328 -24.174
+       angles 2.892 -156.307 -1.762
+       scale 1.068
+      }
+      {
+       coords 20.09 1.236 -20.613
+       angles 1.246 130.873 -0.642
+       scale 0.832
+      }
+      {
+       coords 11.763 0.292 -11.349
+       angles -2.221 -177.984 2.639
+       scale 0.911
+      }
+      {
+       coords 11.019 0.633 -8.523
+       angles 0.706 -31.554 -1.308
+       scale 1.186
+      }
+      {
+       coords 8.058 -0.006 -7.675
+       angles 1.307 -129.269 -2.565
+       scale 0.84
+      }
+      {
+       coords 10.744 0.414 -9.136
+       angles -2.585 -8.317 1.592
+       scale 0.97
+      }
+      {
+       coords 9.329 0.516 -6.43
+       angles 2.529 -79.258 1.651
+       scale 1.044
+      }
+      {
+       coords 7.441 0.303 -3.901
+       angles 2.982 -162.515 2.318
+       scale 1.158
+      }
+      {
+       coords 6.498 0.121 -3.771
+       angles -1.717 88.695 1.856
+       scale 0.963
+      }
+     }
+     Tree : "{960EA50FD57CD7D5}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_1sw.et" {
+      coords 20.008 0.973 -21.83
+      angles 1.714 125.446 -1.339
+      scale 0.83
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 1855.921 -42.017 1057.4
+  Points {
+   ShapePoint "{6AE7628A5780AE4D}" {
+    Position 5.106 0 -1.416
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5780CA04}" {
+    Position 9.962 0.567 -4.536
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5031ECD6}" {
+    Position 29.953 -0.117 -32.647
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A536B7076}" {
+    Position 33.056 0.193 -80.373
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628B2A53DE92}" {
+    Position 24.81 0.277 -109.978
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628B2BEF6A2F}" {
+    Position 23.359 0.271 -95.532
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628B2E63FBC4}" {
+    Position 29.17 0.027 -51.272
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53F717D1}" {
+    Position 25.65 0 -33.074
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A53977DF0}" {
+    Position 18.505 0 -21.643
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A5255FFB5}" {
+    Position 7.858 0 -7.725
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AE7628A4DF2D05D}" {
+    Position 3.269 0 -1.43
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   ForestGeneratorEntity : "{2DD3BAF3AC596F99}PrefabLibrary/DefaultLibrary/Generators/Brushlands/FG_Brushland_Salix.et" {
+    Flags 0x100003 0
+    m_iSeed 15126
+    {
+     $grp Tree : "{5D765B912A33A615}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_salix_fragilis_2s.et" {
+      {
+       coords 17.478 1.275 -19.888
+       angles 1.534 53.966 -1.355
+       scale 0.654
+      }
+      {
+       coords 20.83 1.482 -24.928
+       angles -0.137 -54.307 0.939
+       scale 0.988
+      }
+     }
+     $grp Tree : "{932E56F57F6F0C9A}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_salix_cinerea_1w.et" {
+      {
+       coords 29.469 1.685 -42.78
+       angles -7.305 -90.938 -4.119
+       scale 0.904
+      }
+      {
+       coords 14.343 1.214 -12.616
+       angles 8.824 91.507 3.611
+       scale 0.777
+      }
+      {
+       coords 25.37 1.904 -91.783
+       angles 0.778 -142.712 -1.021
+       scale 0.985
+      }
+      {
+       coords 26.598 1.851 -88.197
+       angles 0.695 173.069 -1.377
+       scale 0.95
+      }
+     }
+     $grp Tree : "{9CC816FDA9E08938}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_salix_cinerea_1.et" {
+      {
+       coords 18.943 1.479 -18.455
+       angles 0 -125.369 0
+       scale 0.833
+      }
+      {
+       coords 29.187 1.669 -42.557
+       angles 0 -89.486 0
+       scale 0.767
+      }
+      {
+       coords 30.313 1.671 -45.246
+       angles 0 46.1 0
+       scale 0.886
+      }
+      {
+       coords 29.632 1.652 -51.818
+       angles 0 -41.771 0
+       scale 1.09
+      }
+     }
+    }
+   }
+  }
+ }
 }
 $grp SCR_IndestructibleEnvironmentalEntity : "{0D51E91E4EA4162A}Prefabs/Rocks/Desert/Desert_Cluster_05.et" {
  {

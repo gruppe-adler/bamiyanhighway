@@ -1,0 +1,17 @@
+GenericEntity : "{FB64BC74FCC93629}Prefabs/Rocks/Cliffs/Cliff_Base_DesertMonolith.et" {
+ ID "72158370D269A9A5"
+ components {
+  MeshObject "{36237F57E32774E5}" {
+   Materials {
+    MaterialAssignClass "{01D9DA9914FB0D41}" {
+     SourceMaterial "Cliff_DesertMonolith"
+     AssignedMaterial "{0FD630F1F29D0DA9}Prefabs/Rocks/Cliffs/Cliff_DesertMonolith/Data/Cliff_DesertMonolith_SandstoneGrey.emat"
+    }
+    MaterialAssignClass "{9D4C48BC1F49D321}" {
+     SourceMaterial "Cliff_DesertMonolith_terrain"
+     AssignedMaterial "{95E60AF593BD04CF}Prefabs/Rocks/Cliffs/Cliff_DesertMonolith/Data/Cliff_DesertMonolith_Sandstone_terrainGrey.emat"
+    }
+   }
+  }
+ }
+}

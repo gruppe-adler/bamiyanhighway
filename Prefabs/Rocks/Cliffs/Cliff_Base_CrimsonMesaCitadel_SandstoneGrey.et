@@ -1,0 +1,17 @@
+GenericEntity : "{6399C82133269916}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCitadel.et" {
+ ID "59A54A7BB1FEE08F"
+ components {
+  MeshObject "{6AAB5BF2477F6325}" {
+   Materials {
+    MaterialAssignClass "{46209C656A687794}" {
+     SourceMaterial "Cliff_CrimsonMesaCitadel"
+     AssignedMaterial "{1818E811892F902B}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Data/Cliff_CrimsonMesaCitadel_SandstoneGrey.emat"
+    }
+    MaterialAssignClass "{4C0EC0BBC1DAE15C}" {
+     SourceMaterial "Cliff_CrimsonMesaCitadel_terrain"
+     AssignedMaterial "{9531985D5D9DC9F8}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel/Data/Cliff_CrimsonMesaCitadel_Sandstone_terrainGrey.emat"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{36F675CC81E74EF5}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCitadel_cut/Data/Cliff_CrimsonMesaCitadel_cut_Sandstone_terrainGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

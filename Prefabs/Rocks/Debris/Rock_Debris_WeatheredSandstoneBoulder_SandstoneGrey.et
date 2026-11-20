@@ -1,0 +1,13 @@
+GenericEntity : "{87E3BEC2248B876F}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder.et" {
+ ID "AE3A2B7FDFE01893"
+ components {
+  MeshObject "{A770C69E2C961C7F}" {
+   Materials {
+    MaterialAssignClass "{8C6E22DD86703A99}" {
+     SourceMaterial "Rock_Debris_WeatheredSandstoneBoulder"
+     AssignedMaterial "{57EE05CDE00902C7}Prefabs/Rocks/Debris/Rock_Debris_WeatheredSandstoneBoulder/Data/Rock_Debris_WeatheredSandstoneBoulder_SandstoneGrey.emat"
+    }
+   }
+  }
+ }
+}

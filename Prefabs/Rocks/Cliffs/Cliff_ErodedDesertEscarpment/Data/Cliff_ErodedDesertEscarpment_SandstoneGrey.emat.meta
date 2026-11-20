@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{AE97BA94D0EDA82F}Prefabs/Rocks/Cliffs/Cliff_ErodedDesertEscarpment/Data/Cliff_ErodedDesertEscarpment_SandstoneGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

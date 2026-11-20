@@ -1,5 +1,5 @@
 MatPBRMulti {
- Color 0.15 0.15 0.15 1
+ Color 0.397 0.352 0.279 1
  SurfaceProperties "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
  MaskMap "{0093945FFF108002}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab/Rock_Debris_DesertSlab_MASK.edds"
  GlobalNMOMap "{ED1524AA379B5232}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab/Rock_Debris_DesertSlab_NMO.edds"

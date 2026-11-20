@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{4CDD2055930D6EAF}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab/Data/Rock_Debris_DesertSlab_SandstoneGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}

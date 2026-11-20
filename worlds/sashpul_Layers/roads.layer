@@ -392,58 +392,53 @@ $grp PolylineShapeEntity {
   }
   LineColor 0 0 0 0
   {
-   WallGeneratorEntity : "{272D40AD86F21423}PrefabLibrary/DefaultLibrary/Generators/Walls/Stone/WG_StoneWall_02.et" {
+   WallGeneratorEntity : "{BF54A2989D5E52E2}Prefabs/WEGenerators/Walls/Stone/WG_StoneWall_01_sand.et" {
     Flags 0x100003 0
-    coords 0 0 0
-    m_iSeed 15049
+    m_iSeed 731
     {
-     $grp SCR_DestructibleEntity : "{1BF9335AB2008B33}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_4m_v2.et" {
+     $grp SCR_DestructibleEntity : "{2664803330FC7D12}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_4m_B_sand.et" {
       {
-       coords 14.517 0.962 12.183
-       angles 0 -36.15 0
+       coords 4.102 0.229 4.425
+       angles 0 -36.503 0
       }
       {
-       coords 17.643 1.131 14.467
-       angles 0 -35.227 0
-      }
-     }
-     $grp SCR_DestructibleEntity : "{6B08AEEC99A1CFE8}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_4m_v1.et" {
-      {
-       coords 0.032 -0.104 0.99
-       angles 0 -40.047 0
+       coords 7.127 0.516 6.663
+       angles 0 -36.503 0
       }
       {
-       coords 2.798 0.093 3.315
-       angles 0 -40.047 0
+       coords 13.142 0.882 11.115
+       angles 0 -36.503 0
       }
       {
-       coords 8.674 0.614 7.915
-       angles 0 -36.15 0
-      }
-      {
-       coords 11.595 0.793 10.049
-       angles 0 -36.15 0
-      }
-      {
-       coords 20.779 1.305 16.681
-       angles 0 -35.227 0
-      }
-      {
-       coords 23.735 1.484 18.769
-       angles 0 -35.227 0
+       coords 22.2 1.398 17.71
+       angles 0 -35.104 0
       }
      }
-     SCR_DestructibleEntity : "{AA29DDBF1CD8EE47}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_start.et" {
-      coords 26.719 1.68 20.876
-      angles 0 -35.227 0
-     }
-     SCR_DestructibleEntity : "{D84A36F4699A8743}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_end.et" {
+     SCR_DestructibleEntity : "{A6DBC2623678BF64}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_start_sand.et" {
       coords -0.018 -0.113 0.948
       angles 0 -40.047 0
      }
-     SCR_DestructibleEntity : "{FE657FA3BEE51C58}Prefabs/Structures/Walls/Stone/StoneWall_02/StoneWall_02_4m_v3.et" {
-      coords 5.592 0.389 5.663
-      angles 0 -36.15 0
+     SCR_DestructibleEntity : "{D4EDC428AF1BFB4B}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_end_sand.et" {
+      coords 25.32 1.603 19.903
+      angles 0 -35.104 0
+     }
+     $grp SCR_DestructibleEntity : "{E8A74EE1B973A5A9}Prefabs/Structures/Walls/Stone/StoneWall_01/StoneWall_01_4m_A_sand.et" {
+      {
+       coords 1.263 -0.009 2.025
+       angles 0 -40.047 0
+      }
+      {
+       coords 10.152 0.701 8.902
+       angles 0 -36.503 0
+      }
+      {
+       coords 16.167 1.048 13.354
+       angles 0 -36.503 0
+      }
+      {
+       coords 19.155 1.217 15.57
+       angles 0 -35.104 0
+      }
      }
     }
    }
@@ -5700,7 +5695,7 @@ $grp SplineShapeEntity {
     Position 12.786 1.949 9.881
    }
    ShapePoint "{6AA944EAD8F96685}" {
-    Position 34.664 3.272 26.013
+    Position 34.669 2.665 26.018
    }
    ShapePoint "{6AA944EA269B0D2F}" {
     Position 36.976 2.367 33.566
@@ -5721,7 +5716,7 @@ $grp SplineShapeEntity {
         Position 12.786 1.949 9.881
        }
        ShapePoint "{6AA944EA6B76F0DD}" {
-        Position 34.664 3.272 26.013
+        Position 34.669 2.665 26.018
        }
        ShapePoint "{6AA944EA6B76F08F}" {
         Position 36.976 2.367 33.566

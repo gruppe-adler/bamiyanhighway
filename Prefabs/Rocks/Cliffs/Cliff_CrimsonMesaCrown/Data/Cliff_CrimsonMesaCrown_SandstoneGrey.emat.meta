@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{1600A35A099950D8}Prefabs/Rocks/Cliffs/Cliff_CrimsonMesaCrown/Data/Cliff_CrimsonMesaCrown_SandstoneGrey.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+  EMATResourceClass Xbox : PC {
+  }
+ }
+}
