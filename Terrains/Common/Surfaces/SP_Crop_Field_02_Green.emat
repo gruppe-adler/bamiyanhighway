@@ -13,6 +13,7 @@ TerrainMaterial {
  DetailBlendDistance 40
  PlantMat "{CD0C004DA4C323AA}Assets/Clutter/Procedural/cp_wheat_01_green.emat"
  DebugColor 0.839 0.839 0.359 1
+ MiddleColor 0.323 0.323 0.323 1
  BCRMiddleMap "{925CCBC4C551F269}Terrains/Common/Surfaces/Data/Crop_Field_01_Middle_BCR.edds"
  NHOMiddleMap "{44DAF8EB024976B4}Terrains/Common/Surfaces/Data/Crop_Field_Middle_NHO.edds"
  MiddleScaleUV 150

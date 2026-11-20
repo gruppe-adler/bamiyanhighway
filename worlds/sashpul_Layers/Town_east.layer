@@ -56495,8 +56495,13 @@ $grp SplineShapeEntity {
   }
  }
 }
-GenericEntity : "{04E5F5AB6A45AB1D}Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredStone_Sandstone.et" {
- coords 1952.393 -39.718 1124.898
+$grp GenericEntity : "{04E5F5AB6A45AB1D}Prefabs/Rocks/Cliffs/Cliff_Base_WeatheredStone_Sandstone.et" {
+ {
+  coords 1952.393 -39.718 1124.898
+ }
+ {
+  coords 1818.386 -14.938 715.155
+ }
 }
 $grp GenericEntity : "{07787312C09C1E62}PrefabLibrary/CainLibrary/Props/Garbage/MetalDebris_01_V2.et" {
  {
@@ -56599,6 +56604,10 @@ $grp GenericEntity : "{230D977EE2257159}Prefabs/Rocks/Cliffs/Cliff_Base_Weathere
   coords 2033.54 -36.64 702.06
   angles 0 55.563 0
  }
+ {
+  coords 1900.984 -17.163 581.219
+  scale 1.39
+ }
 }
 $grp GenericEntity : "{2A6186F7E7BB7C9D}Prefabs/Structures/Misc/Cable2.et" {
  {
@@ -56621,6 +56630,10 @@ SCR_DestructibleBuildingEntity : "{2AACDC6030C1C0EA}Prefabs/Structures/Bulding/H
 GenericEntity : "{2F67953E56F1D453}Prefabs/Structures/Wreck/Trailer.et" {
  coords 1889.563 -41.25 1163.779
  angles 0 50.721 0
+}
+SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite/SP_GraniteCliff_01.et" {
+ coords 1801.327 -14.643 778.783
+ angles 39.936 69.767 0
 }
 $grp StaticModelEntity : "{3437433FD6CD5B27}Prefarbs/custom_compositions/MiddleEast_Debris_pile_01.et" {
  {
@@ -56652,6 +56665,11 @@ GenericEntity : "{3A4C562AB5F09755}PrefabLibrary/CainLibrary/Props/Garbage/Metal
 GenericEntity : "{3D54B486FA666640}Prefabs/Structures/Market/SmallStand.et" {
  coords 1855.838 -41.309 1224.16
  angles 0 -51.521 0
+}
+GenericEntity : "{43AB727BE583ACCE}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedDesertEscarpment.et" {
+ coords 1809.359 -34.118 779.943
+ angles 0 -120.28 0
+ scale 1.7
 }
 $grp GenericEntity : "{451ABD81F1D69ED6}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonSentinel_SandstoneGrey.et" {
  {
@@ -57697,6 +57715,10 @@ $grp GenericEntity : "{49952399C4AAEAC1}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSa
   coords 1870 -51.63 1235.093
   angles 0 78.332 0
  }
+ {
+  coords 1883.281 -8.429 566.052
+  angles 0 -33.372 0
+ }
 }
 $grp GenericEntity : "{519088F590FBBD11}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_C_SandstoneGrey.et" {
  {
@@ -58438,6 +58460,27 @@ $grp GenericEntity : "{5D46AF783B52901A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonS
   coords 1887.568 -48.022 1289.612
   angles 0 -159.443 0
  }
+ {
+  coords 1823.872 -23.261 716.174
+  scale 1.13
+ }
+ {
+  coords 1831.776 -30.604 673.964
+  scale 1.41
+ }
+ {
+  coords 1825.532 -18.932 670.568
+  angles 0 172.352 0
+  scale 1.41
+ }
+ {
+  coords 1808.461 -11.528 712.918
+  angles 0 179.779 0
+  scale 1.24
+ }
+}
+SCR_IndestructibleEnvironmentalEntity : "{5E90E716A9364280}Prefabs/Rocks/Granite/SP_GraniteCliff_02.et" {
+ coords 1783.952 -8.5 770.263
 }
 $grp GenericEntity : "{616499C9E25A7605}Prefabs/Rocks/Cliffs/Cliff_Cut_DesertFortress_SandstoneGrey.et" {
  {
@@ -58792,6 +58835,11 @@ $grp GenericEntity : "{64E50CAD66237A04}Prefabs/Rocks/Debris/Rock_DesertMonolith
 GenericEntity : "{65DC9F503F63AF83}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandstoneWall_SandstoneGrey.et" {
  coords 1942.012 -38.152 1051.333
  angles 0 -95.451 6.877
+}
+GenericEntity : "{665493635526502A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge_Sandstone.et" {
+ coords 1779.411 -17.713 760.542
+ angles 0 -113.169 0
+ scale 1.495
 }
 $grp GenericEntity : "{66836886A260CD0B}Prefabs/Rocks/Debris/Rock_DesertMonolith_B_SandstoneGrey.et" {
  {
@@ -59772,6 +59820,18 @@ $grp GenericEntity : "{7F26144B98289FCD}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonM
   coords 2025.583 -37.677 720.391
   angles 0 44.441 0
  }
+ {
+  coords 1850.297 -29.323 680.767
+  scale 1.06
+ }
+ {
+  coords 1825.019 -33.108 731.021
+  scale 1.16
+ }
+}
+GenericEntity : "{8165B83B053881DF}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCrown.et" {
+ coords 1785.45 -39.078 815.048
+ scale 1.91
 }
 $grp GenericEntity : "{876AB60A8BF5D37B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith_Sandstone.et" {
  {
@@ -60774,6 +60834,11 @@ $grp GenericEntity : "{895FD7B326B94C7F}Prefabs/Rocks/Debris/Rock_DesertMonolith
 SCR_DestructibleBuildingEntity : "{89732831F26334E8}Prefabs/Structures/Bulding/HouseL/House_L_8_EP1_Full.et" {
  coords 1859.837 -41.395 1175.389
  angles 0 -35.39 0
+}
+GenericEntity : "{89CB69F069CA56DD}Prefabs/Rocks/Cliffs/Cliff_Cut_ErodedCanyonWall_Sandstone.et" {
+ coords 1845.801 -32.129 729.356
+ angles 0 -97.551 0
+ scale 1.595
 }
 SCR_DestructibleBuildingEntity : "{8C8A143C1B2ED325}Prefabs/Structures/Bulding/HouseC/House_C_12_EP3.et" {
  coords 1852.926 -41.206 1199.585
@@ -62652,6 +62717,15 @@ $grp GenericEntity : "{B9658D7DBC036095}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedRe
   coords 2026.302 -43.868 841.202
   angles 0 119.111 0
  }
+ {
+  coords 1838.518 -30.626 701.99
+  angles 0 46.608 0
+  scale 1.09
+ }
+}
+SCR_IndestructibleEnvironmentalEntity : "{BB0CABEFA5D3D5EB}Prefabs/Rocks/Granite/SP_GraniteCliff_03.et" {
+ coords 1788.486 -17.971 781.693
+ angles 0 -35.325 -30.104
 }
 SCR_DestructibleBuildingEntity : "{BCA7012AFAE5ACAC}Prefabs/Structures/Bulding/HouseC/House_C_4_EP3.et" {
  coords 1842.824 -40.181 1318.324
@@ -62674,6 +62748,10 @@ $grp GenericEntity : "{C64E5A22FAC180D6}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonM
   coords 1901.976 -47.278 1273.894
   angles 0 176.514 0
  }
+ {
+  coords 1817.587 -27.261 689.669
+  scale 1.61
+ }
 }
 GenericEntity : "{C7E893F48CE5848E}Prefabs/Structures/Signs/Warnings/SignNoEntryVehicle_01_pole.et" {
  coords 2028.785 -24.167 728.138
@@ -62691,6 +62769,11 @@ $grp GenericEntity : "{CA02135E92B1D3F2}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonB
  {
   coords 2001.635 -29.477 985.147
   angles 0 78.736 0
+ }
+ {
+  coords 1864.301 -26.165 651.268
+  angles 0 -114.924 0
+  scale 1.548
  }
 }
 $grp GenericEntity : "{CE99ED95803B77BE}Prefabs/Structures/Market/CarpetRack.et" {
@@ -64400,4 +64483,9 @@ $grp GenericEntity : "{FC132D0D113DB17D}Prefabs/Rocks/Debris/Rock_DesertMonolith
   angles -7.148 -173.384 9.765
   scale 0.381
  }
+}
+GenericEntity : "{FC891B4A6A50DF4D}Prefabs/Rocks/Cliffs/Cliff_Cut_CrimsonMesaCitadel_SandstoneGrey.et" {
+ coords 1864.381 11.221 549.208
+ angles 0 -38.811 5.613
+ scale 1.33
 }

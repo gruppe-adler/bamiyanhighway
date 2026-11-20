@@ -115722,7 +115722,6 @@ $grp SplineShapeEntity {
     m_bAvoidRivers 1
     m_bAvoidTracks 1
     m_bAvoidLakes 1
-    m_bRegenerateByObstacleChanges 1
     {
      SCR_IndestructibleEnvironmentalEntity : "{1BA4712EED0CB208}PrefabLibrary/DefaultLibrary/Rocks/Granite/GraniteStone_03.et" {
       coords 62.871 2.783 -20.716
@@ -116155,7 +116154,6 @@ $grp SplineShapeEntity {
     m_bAvoidRivers 1
     m_bAvoidTracks 1
     m_bAvoidLakes 1
-    m_bRegenerateByObstacleChanges 1
     {
      $grp SCR_IndestructibleEnvironmentalEntity : "{1BA4712EED0CB208}PrefabLibrary/DefaultLibrary/Rocks/Granite/GraniteStone_03.et" {
       {
@@ -116642,7 +116640,6 @@ $grp SplineShapeEntity {
     m_bAvoidRivers 1
     m_bAvoidTracks 1
     m_bAvoidLakes 1
-    m_bRegenerateByObstacleChanges 1
    }
    ForestGeneratorEntity : "{6A1223EBFEA6BC84}PrefabLibrary/DefaultLibrary/Generators/Forests/FG_Forest_Birch2.et" {
     Flags 0x100003 0
@@ -116651,7 +116648,6 @@ $grp SplineShapeEntity {
     m_bAvoidRivers 1
     m_bAvoidTracks 1
     m_bAvoidLakes 1
-    m_bRegenerateByObstacleChanges 1
     {
      Tree : "{1FCF4B90FC74DE73}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_3f.et" {
       coords 75.154 1.804 -0.5
@@ -117474,7 +117470,6 @@ $grp SplineShapeEntity {
       {
        coords 45.15 2.565 -25.699
        angles -0.899 -124.578 -1.852
-       scale 1
       }
       {
        coords 28.822 0.964 29.355
@@ -118204,7 +118199,6 @@ $grp SplineShapeEntity {
     m_bAvoidRivers 1
     m_bAvoidTracks 1
     m_bAvoidLakes 1
-    m_bRegenerateByObstacleChanges 1
     {
      $grp SCR_IndestructibleEnvironmentalEntity : "{1BA4712EED0CB208}PrefabLibrary/DefaultLibrary/Rocks/Granite/GraniteStone_03.et" {
       {
@@ -118922,7 +118916,6 @@ $grp SplineShapeEntity {
     m_bAvoidRivers 1
     m_bAvoidTracks 1
     m_bAvoidLakes 1
-    m_bRegenerateByObstacleChanges 1
     {
      $grp SCR_IndestructibleEnvironmentalEntity : "{2A841F5C64F4BCE2}PrefabLibrary/DefaultLibrary/Rocks/Granite/Granite_BeachCluster_02/Granite_BeachCluster_02.et" {
       {
@@ -120828,7 +120821,6 @@ $grp SplineShapeEntity {
       {
        coords 1.029 -1.536 27.667
        angles 2.966 138.113 1.757
-       scale 1
       }
       {
        coords 0.408 0.317 -4.2
@@ -121164,7 +121156,6 @@ $grp SplineShapeEntity {
       {
        coords 78.391 3.212 29.357
        angles 1.879 -107.713 1.7
-       scale 1
       }
       {
        coords 128.542 4.562 -53.481
@@ -121470,17 +121461,17 @@ $grp SplineShapeEntity {
      $grp Tree : "{9C6CE0F73E3AED80}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_pinus_sylvestris_1f.et" {
       {
        coords 133.763 4.674 -61.62
-       angles -1.338 -160.021 -0
+       angles -1.338 -160.021 0
        scale 0.679
       }
       {
        coords 134.514 4.556 -59.218
-       angles 1.394 -70.029 -0
+       angles 1.394 -70.029 0
        scale 0.823
       }
       {
        coords 132.568 4.634 -59.818
-       angles -1.439 44.232 -0
+       angles -1.439 44.232 0
        scale 0.929
       }
       {
