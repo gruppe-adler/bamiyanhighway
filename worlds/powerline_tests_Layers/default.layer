@@ -207,3 +207,7 @@ $grp PolylineShapeEntity {
   }
  }
 }
+Building : "{D320C458D8BC8ABF}Prefabs/Entrances/Entrance_Floor_Hole.et" {
+ coords 3061.632 41.507 2122.214
+ angles 0 94.136 0
+}

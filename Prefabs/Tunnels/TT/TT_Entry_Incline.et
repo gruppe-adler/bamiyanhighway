@@ -1,0 +1,16 @@
+GenericEntity {
+ ID "CE2802CA26ADA77D"
+ components {
+  MeshObject "{73D1CA6ED7E1550B}" {
+   Object "{88E67D23F546CEF0}Assets/Tunnels/TT/TT_Entry_Incline.xob"
+  }
+  RigidBody "{DD14019E7577A82F}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{FF162D6C0433FEF3}" {
+   m_bEntrance 1
+  }
+ }
+}

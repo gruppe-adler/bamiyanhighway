@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "A626447DFA09BA3E"
+ components {
+  MeshObject "{6D3659567CFF025F}" {
+   Object "{F6FA4A69D1935999}Assets/Tunnels/TT/TT_Slope.xob"
+  }
+  RigidBody "{2F900970CB11832C}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{934757D61A8C5B7C}" {
+  }
+ }
+}

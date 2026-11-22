@@ -1,0 +1,15 @@
+MatPBRBasic {
+ DiffuseIBL 0 0 0 1
+ SpecularIBL 0 0 0 1
+ Ambient 0 0 0 1
+ Color 0.46 0.35 0.24 1
+ MetalnessScale 0
+ Cull none
+ DisableFog 1
+ BCRMap "{0F4E177CBD0F9B82}Assets/_SharedData/Soil/ST_Soil_01_1m_BCR.edds"
+ NMOMap "{3796ACEE6478C91C}Assets/_SharedData/Soil/ST_Soil_01_1m_NMO.edds"
+ GlobalMapsUVTransform MatUVTransform "{6AED1700A1000001}" {
+  TilingU 16
+  TilingV 16
+ }
+}

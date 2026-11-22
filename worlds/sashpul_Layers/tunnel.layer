@@ -1,0 +1,242 @@
+GenericEntity EoHTunnelRecord_482797 {
+ components {
+  SP_TunnelGenRecordComponent "{6AED46AA07DB30DF}" {
+   m_iSeed 482797
+   m_sSettings "candidates=8;length=300;reach=150;rooms=4;roomSpacing=40;largeRooms=1;branch=0.5;sideMin=15;sideMax=60;straight=3;longShare=0.5;turn=1.5;uturn=0.2;wiggle=1;hump=0.4;water=0.2;hold=0.6;standing=1;crouch=0.6;prone=0.1;minCover=2;checkCover=1;exposure=2;targetCover=3.5;slope=1;upturn=0.4;ladder=0.15;maxLevels=8;entrances=1;entranceSpacing=70;entranceTol=1;eStair=1;eHole=1;eRocky=1;eHill=1;masksDoor=1;masksAll=1;avoid=1;avoidWorld=1;ignorePlants=1;blockers=1;maxRun=12;kit=1;"
+   m_sCatalogHash "-1034719232"
+   m_vStartPos 1582.11 -7.229 839.019
+   m_fStartYaw 0
+   m_sStartPrefab "{49BCFF0BBFACE27B}Prefabs/Tunnels/TT/TT_Entry_Incline.et"
+   m_sSummary "seed 482797: 59 pieces, 230 m of tunnel, 3 rooms, 0 extra entrances, 4 dead ends (1 forced), 8 level changes, 0 left open, 0 masks"
+  }
+ }
+ coords 1582.115 -5.229 839.019
+}
+$grp GenericEntity : "{320828C06ABAAACF}Prefabs/Tunnels/TT/TT_End.et" {
+ EoHT_482797_40 {
+  coords 1638.015 -6.429 771.747
+  angles 0 -90 0
+ }
+ EoHT_482797_51 {
+  coords 1588.015 -7.629 828.646
+ }
+ EoHT_482797_53 {
+  coords 1626.815 -6.429 780.447
+ }
+ EoHT_482797_58 {
+  coords 1639.015 -5.229 824.047
+ }
+}
+$grp GenericEntity : "{324FC540AB600888}Prefabs/Tunnels/TT/TT_Slope.et" {
+ EoHT_482797_1 {
+  coords 1582.115 -11.229 835.646
+  angles 0 180 0
+ }
+ EoHT_482797_3 {
+  coords 1577.515 -10.029 828.047
+  angles 0 180 0
+ }
+ EoHT_482797_4 {
+  coords 1577.515 -8.829 824.047
+  angles 0 180 0
+ }
+ EoHT_482797_7 {
+  coords 1582.115 -7.629 812.447
+  angles 0 180 0
+ }
+ EoHT_482797_11 {
+  coords 1595.115 -7.629 806.647
+  angles 0 -90 0
+ }
+ EoHT_482797_14 {
+  coords 1603.115 -7.629 800.247
+  angles 0 180 0
+ }
+ EoHT_482797_27 {
+  coords 1629.915 -6.429 761.047
+  angles 0 90 0
+ }
+ EoHT_482797_36 {
+  coords 1647.815 -6.429 773.547
+ }
+}
+GenericEntity : "{49BCFF0BBFACE27B}Prefabs/Tunnels/TT/TT_Entry_Incline.et" {
+ coords 1582.115 -7.229 839.019
+}
+$grp GenericEntity : "{50B4C165C08C7FC2}Prefabs/Tunnels/TT/TT_Junction.et" {
+ EoHT_482797_12 {
+  coords 1597.915 -7.629 806.647
+  angles 0 90 0
+ }
+ EoHT_482797_22 {
+  coords 1627.515 -6.429 777.647
+  angles 0 90 0
+ }
+}
+$grp GenericEntity : "{753D5E5E61E3CC4D}Prefabs/Tunnels/TT/TT_Straight_4.et" {
+ EoHT_482797_6 {
+  coords 1582.115 -7.629 812.447
+ }
+ EoHT_482797_15 {
+  coords 1603.115 -6.429 792.247
+ }
+ EoHT_482797_19 {
+  coords 1617.115 -6.429 782.247
+  angles 0 -90 0
+ }
+ EoHT_482797_21 {
+  coords 1620.715 -6.429 777.647
+  angles 0 90 0
+ }
+ EoHT_482797_23 {
+  coords 1628.115 -6.429 770.847
+ }
+ EoHT_482797_24 {
+  coords 1628.115 -6.429 766.847
+ }
+ EoHT_482797_25 {
+  coords 1628.115 -6.429 762.847
+ }
+ EoHT_482797_29 {
+  coords 1635.715 -5.229 766.847
+  angles 0 180 0
+ }
+ EoHT_482797_35 {
+  coords 1647.815 -5.229 781.547
+  angles 0 180 0
+ }
+ EoHT_482797_38 {
+  coords 1642.015 -6.429 771.747
+  angles 0 90 0
+ }
+ EoHT_482797_39 {
+  coords 1638.015 -6.429 771.747
+  angles 0 90 0
+ }
+ EoHT_482797_41 {
+  coords 1597.215 -7.629 813.447
+  angles 0 180 0
+ }
+ EoHT_482797_42 {
+  coords 1643.615 -5.229 790.047
+  angles 0 -180 0
+ }
+ EoHT_482797_45 {
+  coords 1592.615 -7.629 821.047
+  angles 0 180 0
+ }
+ EoHT_482797_47 {
+  coords 1592.615 -7.629 821.047
+ }
+ EoHT_482797_52 {
+  coords 1643.615 -5.229 804.447
+ }
+ EoHT_482797_54 {
+  coords 1643.615 -5.229 808.447
+ }
+ EoHT_482797_55 {
+  coords 1643.615 -5.229 816.447
+  angles 0 -180 0
+ }
+ EoHT_482797_57 {
+  coords 1639.015 -5.229 824.047
+  angles 0 -180 0
+ }
+}
+GenericEntity EoHT_482797_33 : "{80DD3245B6F9F49E}Prefabs/Tunnels/TT/TT_Room.et" {
+ coords 1641.815 -5.229 781.847
+}
+$grp GenericEntity : "{A60B2D23B9E61477}Prefabs/Tunnels/TT/TT_Dogleg_R.et" {
+ EoHT_482797_2 {
+  coords 1577.515 -10.029 828.047
+ }
+ EoHT_482797_9 {
+  coords 1583.915 -6.429 806.647
+  angles 0 90 0
+ }
+ EoHT_482797_18 {
+  coords 1613.115 -6.429 782.247
+  angles 0 -90 0
+ }
+ EoHT_482797_20 {
+  coords 1617.115 -6.429 782.247
+  angles 0 90 0
+ }
+ EoHT_482797_31 {
+  coords 1631.115 -5.229 770.447
+ }
+ EoHT_482797_32 {
+  coords 1640.315 -5.229 777.647
+  angles 0 -180 0
+ }
+ EoHT_482797_46 {
+  coords 1639.015 -5.229 793.647
+ }
+ EoHT_482797_50 {
+  coords 1639.015 -5.229 800.847
+ }
+}
+$grp GenericEntity : "{E7E68F8E17CC2094}Prefabs/Tunnels/TT/TT_Turn90.et" {
+ EoHT_482797_8 {
+  coords 1583.915 -6.429 806.647
+  angles 0 -90 0
+ }
+ EoHT_482797_17 {
+  coords 1609.515 -6.429 786.847
+  angles 0 -90 0
+ }
+ EoHT_482797_26 {
+  coords 1629.915 -6.429 761.047
+  angles 0 -90 0
+ }
+ EoHT_482797_28 {
+  coords 1635.715 -5.229 762.847
+  angles 0 180 0
+ }
+ EoHT_482797_34 {
+  coords 1646.015 -5.229 783.347
+  angles 0 90 0
+ }
+ EoHT_482797_37 {
+  coords 1647.815 -6.429 773.547
+  angles 0 180 0
+ }
+}
+$grp GenericEntity : "{FE9CA681176D8D60}Prefabs/Tunnels/TT/TT_Dogleg_L.et" {
+ EoHT_482797_5 {
+  coords 1582.115 -7.629 816.447
+ }
+ EoHT_482797_10 {
+  coords 1587.515 -6.429 802.047
+  angles 0 90 0
+ }
+ EoHT_482797_13 {
+  coords 1603.115 -7.629 800.247
+ }
+ EoHT_482797_16 {
+  coords 1603.115 -6.429 792.247
+  angles 0 180 0
+ }
+ EoHT_482797_30 {
+  coords 1635.715 -5.229 766.847
+ }
+ EoHT_482797_43 {
+  coords 1592.615 -7.629 817.047
+  angles 0 180 0
+ }
+ EoHT_482797_44 {
+  coords 1639.015 -5.229 793.647
+  angles 0 -180 0
+ }
+ EoHT_482797_48 {
+  coords 1639.015 -5.229 800.847
+  angles 0 -180 0
+ }
+ EoHT_482797_49 {
+  coords 1588.015 -7.629 828.646
+  angles 0 -180 0
+ }
+ EoHT_482797_56 {
+  coords 1643.615 -5.229 816.447
+ }
+}

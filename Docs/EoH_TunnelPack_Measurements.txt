@@ -1,0 +1,369 @@
+SP_MEASURE 57 prefabs under $EoHModularTunnelPack:Prefabs
+PIECE {DE474B726E40E4A4}Prefabs/Pathways/Misc/S_Blocked_Path.et | min -0.643 -1.160 -0.004 | max 00.686 01.028 02.771 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 00.008 -0.064 -0.004 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+PIECE {A4B29676CA302A2B}Prefabs/Rooms/Room9_Kitchen.et | min -3.501 -2.862 -2.788 | max 03.501 03.243 04.561 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at -2.379 01.033 -2.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at -3.500 01.033 00.000 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Doorway3' | at 02.375 01.033 02.000 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP 'Doorway4' | at 03.500 01.033 00.004 | fwd -1.000 00.000 00.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -3.501 01.612 00.000 | span 3.224 x 4.000 (axes 1,2) | samples 58 floorY 00.000 roofY 03.224
+  OPEN +X | centre 03.501 01.612 00.000 | span 3.224 x 4.000 (axes 1,2) | samples 58 floorY 00.000 roofY 03.224
+PIECE {B71FB5C409AC6930}Prefabs/Pathways/Standing/S_Down_Slope.et | min -0.630 -3.141 -0.001 | max 00.699 01.017 05.488 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.028 -0.242 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.028 -2.208 05.487 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 00.018 -0.076 -0.001 | span 1.214 x 2.164 (axes 0,1) | samples 40 floorY -1.158 roofY 01.006
+  OPEN +Z | centre 00.021 -2.042 05.488 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -3.124 roofY -0.960
+PIECE {93131BBA9182BC18}Prefabs/Rooms/Room4_4way.et | min -4.768 -0.099 -6.114 | max 09.542 02.655 06.316 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at 06.375 00.995 -5.132 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at 09.235 00.995 -3.036 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway3' | at 09.207 00.995 03.637 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway4' | at 06.375 00.995 05.639 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway5' | at 00.000 00.995 06.175 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway6' | at -4.680 00.995 00.265 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway7' | at -0.361 00.995 -5.836 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -4.768 01.100 00.265 | span 2.395 x 2.174 (axes 1,2) | samples 54 floorY -0.098 roofY 02.298
+  OPEN -Z | centre -0.256 01.100 -6.114 | span 2.022 x 2.364 (axes 0,1) | samples 24 floorY -0.082 roofY 02.282
+  OPEN +Z | centre 00.000 01.100 06.316 | span 2.200 x 2.395 (axes 0,1) | samples 61 floorY -0.098 roofY 02.298
+PIECE {5AF087C5563BF18A}Prefabs/Pathways/Crouching/C_Right90.et | min -0.665 -0.855 -0.004 | max 05.496 00.745 08.246 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.051 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 05.495 -0.051 07.595 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +X | centre 05.496 -0.045 07.562 | span 1.575 x 1.294 (axes 1,2) | samples 26 floorY -0.833 roofY 00.742
+  OPEN -Z | centre -0.006 -0.044 -0.004 | span 1.295 x 1.571 (axes 0,1) | samples 26 floorY -0.829 roofY 00.742
+PIECE {2528460B0C533E76}Prefabs/Pathways/Standing/S_Right90.et | min -0.643 -1.160 -0.008 | max 05.479 01.028 08.224 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 05.478 -0.227 07.566 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +X | centre 05.479 -0.062 07.546 | span 2.166 x 1.213 (axes 1,2) | samples 37 floorY -1.145 roofY 01.022
+  OPEN -Z | centre 00.010 -0.064 -0.008 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+PIECE {1F9D8A3FB7D6EF2C}Prefabs/Rooms/Room3_Split.et | min -3.889 -0.001 -4.625 | max 03.701 02.401 04.884 | parts 1 physics 0
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at 00.079 01.083 -4.398 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at -2.605 01.091 04.772 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Doorway3' | at 02.454 01.091 04.772 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+PIECE {7B72E27FBD0B894B}Prefabs/Entrances/Entrance_Floor_Staircase.et | min -2.669 -3.560 -2.864 | max 02.752 00.048 05.327 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -2.627 05.326 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +Y | centre 00.008 00.048 00.153 | span 2.252 x 1.212 (axes 2,0) | samples 36
+  OPEN +Z | centre 00.008 -2.463 05.327 | span 1.212 x 2.165 (axes 0,1) | samples 37 floorY -3.545 roofY -1.380
+PIECE {1E23DFB4A18F2EB3}Prefabs/Pathways/Standing/S_Straight_7.5m.et | min -0.643 -1.160 -0.004 | max 00.686 01.028 07.582 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.015 -0.227 07.581 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 00.008 -0.064 -0.004 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+  OPEN +Z | centre 00.008 -0.064 07.582 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+PIECE {7B2E19C4AE1F77A8}Prefabs/Pathways/Crouching/C_Up_Turn_L.et | min -5.515 -0.863 -0.004 | max 00.641 03.740 08.227 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.012 -0.051 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -5.507 02.944 07.566 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -5.515 02.938 07.576 | span 1.592 x 1.293 (axes 1,2) | samples 28 floorY 02.142 roofY 03.735
+  OPEN -Z | centre -0.010 -0.049 -0.004 | span 1.293 x 1.588 (axes 0,1) | samples 28 floorY -0.843 roofY 00.745
+PIECE {84318325887DD5B2}Prefabs/Pathways/Standing/S_Left90.et | min -5.479 -1.160 -0.008 | max 00.686 01.028 08.266 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -5.478 -0.227 07.595 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -5.479 -0.067 07.565 | span 2.156 x 1.211 (axes 1,2) | samples 36 floorY -1.145 roofY 01.011
+  OPEN -Z | centre 00.008 -0.059 -0.008 | span 1.212 x 2.169 (axes 0,1) | samples 38 floorY -1.143 roofY 01.025
+PIECE {0636F53CCB8C4B31}Prefabs/Pathways/Crouching/C_Up_Turn_R.et | min -0.632 -0.873 -0.000 | max 05.509 03.724 08.243 | parts 1 physics 0
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.023 -0.067 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 05.508 02.927 07.569 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+PIECE {1B2A5D152C48E483}Prefabs/Pathways/Standing/S_Up_Bend.et | min -0.658 -1.175 -0.001 | max 00.686 03.090 11.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.000 -0.242 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.000 -0.242 11.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.003 -0.080 -0.001 | span 1.212 x 2.162 (axes 0,1) | samples 36 floorY -1.161 roofY 01.001
+  OPEN +Z | centre -0.002 -0.079 11.001 | span 1.212 x 2.159 (axes 0,1) | samples 36 floorY -1.159 roofY 01.001
+PIECE {FAAE2C05CB6CC7BD}Prefabs/Pathways/Prone/P_Right90.et | min -0.665 -0.484 -0.004 | max 05.507 00.433 08.246 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.023 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 05.506 -0.023 07.595 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +X | centre 05.507 -0.019 07.563 | span 0.901 x 1.294 (axes 1,2) | samples 14 floorY -0.470 roofY 00.431
+  OPEN -Z | centre -0.006 -0.019 -0.004 | span 1.295 x 0.899 (axes 0,1) | samples 14 floorY -0.468 roofY 00.431
+PIECE {8BB286E7C4214064}Prefabs/Pathways/Standing/S_L_Bend.et | min -2.535 -1.175 -0.001 | max 00.708 01.013 10.004 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.242 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.015 -0.242 10.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 00.014 -0.079 -0.001 | span 1.212 x 2.161 (axes 0,1) | samples 37 floorY -1.159 roofY 01.002
+  OPEN +Z | centre 00.008 -0.078 10.004 | span 1.211 x 2.162 (axes 0,1) | samples 37 floorY -1.159 roofY 01.003
+PIECE {16924D45F5C4E80E}Prefabs/Masks/P_mask.et | min -0.779 -0.551 -0.253 | max 00.769 00.549 00.253 | parts 1 physics 0
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+PIECE {298F2ED44A80382E}Prefabs/Rooms/Room1_Square.et | min -4.766 -1.301 -3.996 | max 04.079 01.301 04.424 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway' | at -0.233 -0.201 04.399 | fwd -0.011 00.000 -1.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at -4.151 -0.201 00.188 | fwd 00.926 00.000 -0.377 | up -0.000 01.000 -0.000
+  MP 'Doorway3' | at -1.090 -0.201 -3.582 | fwd -0.221 00.000 00.975 | up 00.000 01.000 00.000
+  MP 'Doorway4' | at 03.838 -0.201 00.159 | fwd -0.990 00.000 -0.145 | up 00.000 01.000 00.000
+  OPEN +X | centre 04.079 00.000 -0.865 | span 2.576 x 5.039 (axes 1,2) | samples 9 floorY -1.288 roofY 01.288
+  OPEN +Z | centre -0.140 00.000 04.424 | span 5.628 x 2.600 (axes 0,1) | samples 61 floorY -1.300 roofY 01.300
+PIECE {F464A84A30B9EF5C}Prefabs/Doorways/C_Doorway.et | min -1.193 -1.123 -0.884 | max 01.258 01.592 00.259 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Pathway' | at -0.015 -0.086 00.258 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +Z | centre -0.013 -0.080 00.259 | span 1.289 x 1.575 (axes 0,1) | samples 28 floorY -0.867 roofY 00.708
+PIECE {24B42774670D3042}Prefabs/Pathways/Standing/S_U_Turn.et | min -11.699 -1.160 -0.004 | max 00.686 01.028 08.266 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -11.028 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -11.020 -0.067 -0.004 | span 1.212 x 2.156 (axes 0,1) | samples 37 floorY -1.145 roofY 01.012
+  OPEN -Z | centre 00.006 -0.061 -0.004 | span 1.212 x 2.167 (axes 0,1) | samples 37 floorY -1.145 roofY 01.022
+PIECE {708166ACC608E726}Prefabs/Rooms/Room12_Bump.et | min -3.735 -0.001 -5.001 | max 03.735 02.501 05.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -3.613 01.083 00.000 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.000 01.083 04.895 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP '3' | at 03.603 01.083 00.000 | fwd -1.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP '4' | at 00.000 01.083 -4.901 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -3.735 01.250 00.000 | span 2.500 x 3.222 (axes 1,2) | samples 61 floorY 00.000 roofY 02.500
+  OPEN +X | centre 03.735 01.250 00.000 | span 2.500 x 3.222 (axes 1,2) | samples 61 floorY 00.000 roofY 02.500
+  OPEN -Z | centre 00.000 01.253 -5.001 | span 4.969 x 2.467 (axes 0,1) | samples 61 floorY 00.020 roofY 02.486
+  OPEN +Z | centre 00.000 01.253 05.001 | span 4.969 x 2.467 (axes 0,1) | samples 61 floorY 00.020 roofY 02.486
+PIECE {3C044566882964D8}Prefabs/Rooms/Room5_20x20m.et | min -9.006 -0.001 -9.022 | max 09.729 02.628 09.026 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at -5.164 01.069 08.899 | fwd 00.010 00.022 -1.000 | up -0.008 01.000 00.022
+  MP 'Doorway2' | at -2.496 01.068 -8.629 | fwd -0.207 -0.007 00.978 | up -0.007 01.000 00.005
+  MP 'Doorway3' | at 07.453 01.069 -8.568 | fwd -0.319 00.010 00.948 | up 00.002 01.000 -0.010
+  MP 'Doorway4' | at 04.232 01.065 08.901 | fwd 00.019 -0.040 -0.999 | up 00.001 00.999 -0.040
+  OPEN -Y | centre -2.571 -0.001 -3.364 | span 3.186 x 2.629 (axes 2,0) | samples 118
+  OPEN +Y | centre -2.571 02.628 -3.364 | span 3.186 x 2.629 (axes 2,0) | samples 119
+  OPEN +Z | centre -5.049 01.315 09.026 | span 3.307 x 2.544 (axes 0,1) | samples 54 floorY 00.043 roofY 02.587
+  OPEN +Z | centre 04.185 01.314 09.026 | span 2.590 x 2.558 (axes 0,1) | samples 62 floorY 00.034 roofY 02.593
+PIECE {3B8AB783321BF71B}Prefabs/Pathways/Crouching/C_Down_Slope.et | min -0.669 -2.836 00.002 | max 00.647 00.823 05.488 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 00.028 00.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -0.014 -2.031 05.487 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.011 00.031 00.002 | span 1.292 x 1.572 (axes 0,1) | samples 28 floorY -0.754 roofY 00.817
+  OPEN +Z | centre -0.008 -2.021 05.488 | span 1.295 x 1.574 (axes 0,1) | samples 27 floorY -2.807 roofY -1.234
+PIECE {C600BFFF8EE87936}Prefabs/Pathways/Standing/S_Straight_3.5m.et | min -0.643 -1.160 -0.004 | max 00.686 01.028 03.501 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.015 -0.227 03.500 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 00.008 -0.064 -0.004 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+  OPEN +Z | centre 00.008 -0.064 03.501 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+PIECE {FD4704AEFAB43DE7}Prefabs/Pathways/Prone/P_Straight_7.5m.et | min -0.665 -0.484 -0.004 | max 00.641 00.433 07.582 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.023 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -0.014 -0.023 07.581 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.008 -0.018 -0.004 | span 1.295 x 0.899 (axes 0,1) | samples 14 floorY -0.468 roofY 00.431
+  OPEN +Z | centre -0.008 -0.018 07.582 | span 1.295 x 0.899 (axes 0,1) | samples 14 floorY -0.468 roofY 00.431
+PIECE {D320C458D8BC8ABF}Prefabs/Entrances/Entrance_Floor_Hole.et | min -2.083 -2.505 -2.109 | max 02.107 00.040 02.143 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.061 -1.702 01.914 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +Y | centre -0.006 00.040 00.048 | span 1.494 x 1.634 (axes 2,0) | samples 24
+  OPEN +Z | centre 00.062 -1.696 02.143 | span 1.317 x 1.580 (axes 0,1) | samples 27 floorY -2.486 roofY -0.906
+PIECE {188C090DC833E7D4}Prefabs/Masks/S_Mask.et | min -0.763 -1.081 -0.379 | max 00.758 01.392 00.379 | parts 1 physics 0
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+PIECE {DCF04686C70441C3}Prefabs/Rooms/Room8_Stair_Steps.et | min -7.001 00.099 -3.001 | max 01.140 04.820 03.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at 00.077 01.197 -3.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at 00.077 01.197 03.000 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP 'Doorway3' | at -7.000 03.395 -1.500 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Doorway4' | at -5.905 03.395 03.000 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -7.001 03.559 00.000 | span 2.519 x 6.000 (axes 1,2) | samples 68 floorY 02.300 roofY 04.819
+  OPEN -Z | centre -0.931 01.407 -3.001 | span 4.139 x 2.613 (axes 0,1) | samples 54 floorY 00.100 roofY 02.713
+  OPEN +Z | centre -3.617 03.559 03.001 | span 6.765 x 2.519 (axes 0,1) | samples 60 floorY 02.300 roofY 04.819
+  OPEN +Z | centre -0.931 01.407 03.001 | span 4.139 x 2.613 (axes 0,1) | samples 54 floorY 00.100 roofY 02.713
+PIECE {6F56BC68111AD605}Prefabs/Rooms/Room6_Side_Path.et | min -2.876 -0.001 -2.734 | max 02.876 03.066 04.501 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at -2.875 01.073 -1.616 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at 02.875 01.073 -1.616 | fwd -1.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Doorway3' | at 01.177 01.073 04.500 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP 'Doorway4' | at -1.177 01.073 04.500 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -2.876 01.283 -1.605 | span 2.565 x 2.255 (axes 1,2) | samples 54 floorY 00.000 roofY 02.565
+  OPEN +X | centre 02.876 01.283 -1.605 | span 2.565 x 2.255 (axes 1,2) | samples 54 floorY 00.000 roofY 02.565
+  OPEN +Z | centre 00.000 01.533 04.501 | span 5.000 x 3.065 (axes 0,1) | samples 53 floorY 00.000 roofY 03.065
+  OPEN +Z | centre 00.000 01.533 04.501 | span 5.000 x 3.065 (axes 0,1) | samples 53 floorY 00.000 roofY 03.065
+PIECE {3412E68886EBAD87}Prefabs/Pathways/Crouching/C_Left90.et | min -5.508 -0.855 -0.004 | max 00.641 00.745 08.221 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.051 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -5.507 -0.051 07.566 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -5.508 -0.050 07.549 | span 1.589 x 1.294 (axes 1,2) | samples 28 floorY -0.845 roofY 00.744
+  OPEN -Z | centre -0.009 -0.049 -0.004 | span 1.295 x 1.585 (axes 0,1) | samples 28 floorY -0.842 roofY 00.743
+PIECE {256464E5D5D36A62}Prefabs/Pathways/Prone/P_Straight_3.5m.et | min -0.665 -0.484 -0.004 | max 00.641 00.433 03.501 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.023 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -0.014 -0.023 03.500 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.008 -0.018 -0.004 | span 1.295 x 0.899 (axes 0,1) | samples 14 floorY -0.468 roofY 00.431
+  OPEN +Z | centre -0.008 -0.018 03.501 | span 1.295 x 0.899 (axes 0,1) | samples 14 floorY -0.468 roofY 00.431
+PIECE {E77C2C3650772100}Prefabs/Pathways/Standing/S_R_Bend.et | min -0.664 -1.175 -0.001 | max 02.578 01.013 10.004 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.000 -0.242 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.000 -0.242 10.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.010 -0.079 -0.001 | span 1.210 x 2.164 (axes 0,1) | samples 36 floorY -1.161 roofY 01.003
+  OPEN +Z | centre -0.007 -0.079 10.004 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.161 roofY 01.003
+PIECE {3B91E34ACAB73851}Prefabs/Pathways/Crouching/C_L_Bend.et | min -2.557 -0.870 -0.001 | max 00.651 00.730 10.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.066 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -0.014 -0.066 10.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.002 -0.065 -0.001 | span 1.295 x 1.589 (axes 0,1) | samples 28 floorY -0.860 roofY 00.729
+  OPEN +Z | centre -0.005 -0.065 10.001 | span 1.295 x 1.589 (axes 0,1) | samples 28 floorY -0.860 roofY 00.729
+PIECE {A96DAF9A1470AB8B}Prefabs/Pathways/Standing/S_Up_Turn_L.et | min -5.508 -1.165 -0.004 | max 00.717 04.022 08.298 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.023 -0.226 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -5.507 02.767 07.595 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -5.508 02.932 07.592 | span 2.166 x 1.212 (axes 1,2) | samples 38 floorY 01.849 roofY 04.016
+  OPEN -Z | centre 00.007 -0.058 -0.004 | span 1.212 x 2.170 (axes 0,1) | samples 38 floorY -1.143 roofY 01.027
+PIECE {D475436271E39712}Prefabs/Pathways/Standing/S_Up_Turn_R.et | min -0.663 -1.176 -0.000 | max 05.511 04.006 08.296 | parts 1 physics 1
+  OPEN +X | centre 05.511 02.914 07.618 | span 2.164 x 1.217 (axes 1,2) | samples 35 floorY 01.832 roofY 03.996
+  OPEN -Z | centre -0.018 -0.079 -0.000 | span 1.212 x 2.164 (axes 0,1) | samples 34 floorY -1.161 roofY 01.003
+PIECE {11C2B110C7898FB0}Prefabs/Pathways/Misc/S_Ladder_Parallel.et | min -0.981 -1.558 -0.004 | max 03.832 04.519 07.582 | parts 2 physics 2
+  CHILD GameEntity  | at 02.058 02.228 03.797 | ypr -90.000 10.000 -0.000 | name ''
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 03.015 03.264 07.581 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at 03.015 03.264 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '3' | at -0.323 -0.231 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '4' | at -0.323 -0.231 07.581 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.330 -0.064 -0.004 | span 1.214 x 2.164 (axes 0,1) | samples 40 floorY -1.146 roofY 01.018
+  OPEN -Z | centre 03.153 03.433 -0.004 | span 1.213 x 2.170 (axes 0,1) | samples 39 floorY 02.348 roofY 04.517
+  OPEN +Z | centre -0.330 -0.064 07.582 | span 1.214 x 2.164 (axes 0,1) | samples 40 floorY -1.146 roofY 01.018
+  OPEN +Z | centre 03.153 03.433 07.582 | span 1.213 x 2.170 (axes 0,1) | samples 39 floorY 02.348 roofY 04.517
+PIECE {1CD99CD96F911DF7}Prefabs/Pathways/Crouching/C_Straight_7.5m.et | min -0.665 -0.855 -0.004 | max 00.641 00.745 07.582 | parts 1 physics 1
+  OPEN -Z | centre -0.008 -0.043 -0.004 | span 1.295 x 1.571 (axes 0,1) | samples 27 floorY -0.829 roofY 00.742
+  OPEN +Z | centre -0.008 -0.043 07.582 | span 1.295 x 1.571 (axes 0,1) | samples 27 floorY -0.829 roofY 00.742
+PIECE {0369D72938316D18}Prefabs/Pathways/Standing/S_Water_Trap.et | min -0.658 -2.675 -0.001 | max 00.671 01.285 11.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.000 00.000 00.000 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP '2' | at 00.000 00.000 11.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.007 00.169 -0.001 | span 1.212 x 2.163 (axes 0,1) | samples 36 floorY -0.913 roofY 01.250
+  OPEN +Z | centre -0.007 00.169 11.001 | span 1.212 x 2.163 (axes 0,1) | samples 36 floorY -0.913 roofY 01.250
+PIECE {257296BA1475AC37}Prefabs/Pathways/Misc/L_4x4m_2Room.et | min -2.005 -6.116 -2.003 | max 02.007 02.522 02.008 | parts 2 physics 2
+  CHILD GameEntity  | at -0.476 -0.012 -0.634 | ypr 28.241 00.000 00.000 | name ''
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Lower1' | at 01.948 -4.459 00.043 | fwd -1.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Lower2' | at 00.005 -4.459 -1.922 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Lower3' | at -1.929 -4.459 00.027 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Lower4' | at 00.009 -4.459 01.951 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP 'Upper1' | at 01.925 01.037 00.021 | fwd -1.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Upper2' | at -0.024 01.037 -1.942 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Upper3' | at -1.945 01.037 00.003 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP 'Upper4' | at -0.016 01.037 01.931 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -2.005 -4.268 00.011 | span 2.536 x 3.991 (axes 1,2) | samples 64 floorY -5.536 roofY -3.000
+  OPEN -X | centre -2.005 01.260 -0.006 | span 2.521 x 3.991 (axes 1,2) | samples 65 floorY 00.000 roofY 02.521
+  OPEN +X | centre 02.007 -4.268 00.011 | span 2.536 x 3.991 (axes 1,2) | samples 64 floorY -5.536 roofY -3.000
+  OPEN +X | centre 02.007 01.260 -0.006 | span 2.521 x 3.991 (axes 1,2) | samples 66 floorY 00.000 roofY 02.521
+  OPEN -Z | centre 00.011 -4.268 -2.003 | span 3.991 x 2.536 (axes 0,1) | samples 64 floorY -5.536 roofY -3.000
+  OPEN -Z | centre -0.008 01.260 -2.003 | span 3.991 x 2.521 (axes 0,1) | samples 65 floorY 00.000 roofY 02.521
+  OPEN +Z | centre 00.011 -4.268 02.008 | span 3.991 x 2.536 (axes 0,1) | samples 64 floorY -5.536 roofY -3.000
+  OPEN +Z | centre -0.008 01.260 02.008 | span 3.991 x 2.521 (axes 0,1) | samples 65 floorY 00.000 roofY 02.521
+PIECE {949742D9699B4877}Prefabs/Pathways/Crouching/C_U_Turn.et | min -11.679 -0.870 -0.007 | max 00.665 00.730 08.246 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.014 -0.066 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -11.028 -0.066 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -11.020 -0.058 -0.008 | span 1.295 x 1.571 (axes 0,1) | samples 26 floorY -0.844 roofY 00.727
+  OPEN -Z | centre 00.006 -0.066 -0.008 | span 1.295 x 1.590 (axes 0,1) | samples 28 floorY -0.861 roofY 00.729
+PIECE {47D035737D1C4CB4}Prefabs/Masks/C_Mask.et | min -0.742 -0.890 -0.301 | max 00.757 00.943 00.301 | parts 1 physics 0
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+PIECE {F1EA47D1D081BFB4}Prefabs/Pathways/Misc/S_Blocked_Path_Custom.et | min -0.643 -1.160 -0.004 | max 00.686 01.028 02.771 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 00.015 -0.227 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 00.008 -0.064 -0.004 | span 1.212 x 2.164 (axes 0,1) | samples 36 floorY -1.146 roofY 01.018
+PIECE {954E612E8A7B4B07}Prefabs/Doorways/P_Doorway.et | min -1.193 -1.123 -0.884 | max 01.258 01.592 00.259 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.416 00.258 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN +Z | centre -0.018 -0.413 00.259 | span 1.284 x 0.902 (axes 0,1) | samples 15 floorY -0.864 roofY 00.038
+PIECE {C4FAFC9240F64A72}Prefabs/Pathways/Crouching/C_Straight_3.5m.et | min -0.665 -0.855 -0.004 | max 00.641 00.745 03.501 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.051 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -0.014 -0.051 03.500 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.008 -0.043 -0.004 | span 1.295 x 1.571 (axes 0,1) | samples 27 floorY -0.829 roofY 00.742
+  OPEN +Z | centre -0.008 -0.043 03.501 | span 1.295 x 1.571 (axes 0,1) | samples 27 floorY -0.829 roofY 00.742
+PIECE {DC500F69FC6AED7D}Prefabs/Doorways/Blocked_Doorway.et | min -1.193 -1.123 -0.884 | max 01.258 01.592 00.169 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Pathway' | at 00.015 -0.380 00.258 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+PIECE {DF074ADBDA26DC6D}Prefabs/Pathways/Prone/P_Left90.et | min -5.508 -0.484 -0.004 | max 00.641 00.433 08.221 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.023 -0.003 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -5.507 -0.023 07.566 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -5.508 -0.023 07.549 | span 0.909 x 1.294 (axes 1,2) | samples 14 floorY -0.477 roofY 00.432
+  OPEN -Z | centre -0.009 -0.022 -0.004 | span 1.295 x 0.907 (axes 0,1) | samples 15 floorY -0.475 roofY 00.432
+PIECE {907C9B98AED5999E}Prefabs/Rooms/Room7_A.et | min -3.801 -0.001 -3.001 | max 03.001 02.621 03.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Empty' | at 02.030 01.121 03.000 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP 'Empty.001' | at 02.030 01.121 -3.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 02.000 01.310 -3.001 | span 2.000 x 2.620 (axes 0,1) | samples 54 floorY 00.000 roofY 02.620
+  OPEN +Z | centre 02.000 01.310 03.001 | span 2.000 x 2.620 (axes 0,1) | samples 54 floorY 00.000 roofY 02.620
+PIECE {FC28AF78121116B0}Prefabs/Rooms/Room7_B.et | min -4.515 -0.001 -3.001 | max 03.001 02.642 03.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at 02.022 01.095 -3.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at 02.022 01.101 03.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre 02.000 01.320 -3.001 | span 2.000 x 2.641 (axes 0,1) | samples 53 floorY 00.000 roofY 02.641
+  OPEN +Z | centre 02.000 01.320 03.001 | span 2.000 x 2.641 (axes 0,1) | samples 53 floorY 00.000 roofY 02.641
+PIECE {28A565DC4E5EBEF9}Prefabs/Rooms/Room10_A.et | min -3.501 -0.001 -2.001 | max 03.501 02.882 02.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -2.121 01.038 -1.944 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP '2' | at 02.122 01.038 -1.944 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '3' | at 03.463 01.038 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '4' | at 02.121 01.038 01.944 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '5' | at -2.121 01.038 01.944 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '6' | at -3.463 01.038 00.000 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -3.501 01.441 00.000 | span 2.881 x 4.000 (axes 1,2) | samples 61 floorY 00.000 roofY 02.881
+  OPEN +X | centre 03.501 01.441 00.000 | span 2.881 x 4.000 (axes 1,2) | samples 61 floorY 00.000 roofY 02.881
+  OPEN -Z | centre 00.000 01.255 -2.001 | span 7.000 x 2.510 (axes 0,1) | samples 54 floorY 00.000 roofY 02.510
+  OPEN -Z | centre 00.000 01.255 -2.001 | span 7.000 x 2.510 (axes 0,1) | samples 54 floorY 00.000 roofY 02.510
+  OPEN +Z | centre 00.000 01.255 02.001 | span 7.000 x 2.510 (axes 0,1) | samples 54 floorY 00.000 roofY 02.510
+  OPEN +Z | centre 00.000 01.255 02.001 | span 7.000 x 2.510 (axes 0,1) | samples 54 floorY 00.000 roofY 02.510
+PIECE {44F1513CF29A31D7}Prefabs/Rooms/Room10_B.et | min -3.501 -0.001 -2.001 | max 03.501 02.905 02.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -3.444 01.057 00.000 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP '2' | at 02.159 01.057 01.948 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '3' | at 02.159 01.057 -1.948 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -3.501 01.452 00.000 | span 2.904 x 4.000 (axes 1,2) | samples 61 floorY 00.000 roofY 02.904
+  OPEN -Z | centre 00.000 01.266 -2.001 | span 7.000 x 2.532 (axes 0,1) | samples 54 floorY 00.000 roofY 02.532
+  OPEN +Z | centre 00.000 01.266 02.001 | span 7.000 x 2.532 (axes 0,1) | samples 54 floorY 00.000 roofY 02.532
+PIECE {A16D1DC5FE7FA6BC}Prefabs/Rooms/Room10_C.et | min -3.501 -0.001 -2.384 | max 03.982 02.905 02.642 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -3.444 01.057 00.000 | fwd 01.000 00.000 00.000 | up 00.000 01.000 00.000
+  MP '2' | at 02.159 01.057 01.948 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '3' | at 02.159 01.057 -1.948 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -3.501 01.452 00.000 | span 2.903 x 4.000 (axes 1,2) | samples 54 floorY 00.000 roofY 02.903
+PIECE {575F499B5EE15935}Prefabs/Pathways/Crouching/C_R_Bend.et | min -0.665 -0.870 -0.001 | max 02.533 00.730 10.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -0.014 -0.066 10.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '2' | at -0.014 -0.066 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.002 -0.059 -0.001 | span 1.292 x 1.572 (axes 0,1) | samples 26 floorY -0.844 roofY 00.727
+  OPEN +Z | centre -0.006 -0.058 10.001 | span 1.294 x 1.571 (axes 0,1) | samples 26 floorY -0.844 roofY 00.727
+PIECE {5FAD16FBC0EB104A}Prefabs/Fortifications/Dirt_Bunker.et | min -1.564 -0.282 -2.540 | max 01.598 02.869 02.540 | parts 1 physics 1
+  OPEN -Z | centre 00.000 01.055 -2.540 | span 2.134 x 2.244 (axes 0,1) | samples 64 floorY -0.067 roofY 02.177
+  OPEN +Z | centre 00.000 01.055 02.540 | span 2.134 x 2.244 (axes 0,1) | samples 64 floorY -0.067 roofY 02.177
+PIECE {6A943C7A0A8FDB41}Prefabs/Doorways/S_Doorway.et | min -1.258 -1.123 -0.259 | max 01.193 01.592 00.885 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Pathway' | at -0.015 00.016 -0.258 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -Z | centre -0.005 00.184 -0.259 | span 1.214 x 2.169 (axes 0,1) | samples 43 floorY -0.900 roofY 01.269
+PIECE {CB647D3C92234EEB}Prefabs/Entrances/Entrance_Hill_Crawl.et | min -3.867 -0.579 -3.416 | max 00.113 02.050 03.422 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at -3.866 -0.120 -0.015 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -3.867 01.195 -0.004 | span 1.704 x 5.328 (axes 1,2) | samples 48 floorY 00.343 roofY 02.047
+  OPEN +X | centre 00.113 00.503 -0.015 | span 0.934 x 1.286 (axes 1,2) | samples 13 floorY 00.036 roofY 00.971
+PIECE {92AC3A999D637882}Prefabs/Rooms/Room2_Pillar.et | min -4.001 -1.251 -6.001 | max 04.001 01.751 06.001 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway1' | at -2.000 -0.150 -6.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway2' | at -4.000 -0.150 02.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway3' | at -1.000 -0.150 06.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP 'Doorway4' | at 04.000 -0.150 02.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  OPEN -X | centre -4.001 00.250 -0.322 | span 3.000 x 11.356 (axes 1,2) | samples 35 floorY -1.250 roofY 01.750
+  OPEN +X | centre 04.001 00.000 01.000 | span 2.500 x 10.000 (axes 1,2) | samples 61 floorY -1.250 roofY 01.250
+  OPEN -Y | centre 00.990 -1.251 -0.990 | span 1.486 x 1.486 (axes 2,0) | samples 25
+  OPEN -Z | centre -2.000 00.000 -6.001 | span 4.000 x 2.500 (axes 0,1) | samples 61 floorY -1.250 roofY 01.250
+  OPEN +Z | centre 00.512 00.250 06.001 | span 6.977 x 3.000 (axes 0,1) | samples 61 floorY -1.250 roofY 01.750
+PIECE {F897A44C3243FCA6}Prefabs/Entrances/Entrance_Rocky.et | min -4.888 -2.440 -4.259 | max 04.230 01.862 04.679 | parts 1 physics 1
+  OPEN -X | centre -4.888 -1.635 -0.008 | span 1.584 x 1.295 (axes 1,2) | samples 28 floorY -2.427 roofY -0.843
+PIECE {0B8672246D4BF05D}Prefabs/Rooms/Room11_25x20m.et | min -4.532 -0.001 -10.580 | max 16.154 02.500 15.435 | parts 1 physics 1
+  MP 'Scene_Root' | at 00.000 00.000 00.000 | fwd 00.000 00.000 01.000 | up 00.000 01.000 00.000
+  MP '1' | at 12.769 01.098 -5.879 | fwd -0.939 00.000 -0.344 | up 00.000 01.000 00.000
+  MP '2' | at 03.268 01.095 -8.785 | fwd 00.522 00.000 00.853 | up 00.000 01.000 00.000
+  MP '3' | at -2.644 01.088 03.877 | fwd 00.673 00.000 -0.740 | up 00.000 01.000 00.000
+  MP '4' | at -2.996 01.087 13.655 | fwd 00.886 00.000 -0.464 | up 00.000 01.000 00.000
+  MP '5' | at 09.613 01.085 11.177 | fwd -0.817 00.000 -0.577 | up 00.000 01.000 00.000
+  MP '6' | at 11.978 01.082 08.445 | fwd 00.000 00.000 -1.000 | up 00.000 01.000 00.000
+  MP '7' | at 14.530 01.088 01.367 | fwd -0.885 00.000 00.465 | up 00.000 01.000 00.000
+  OPEN -Y | centre 10.427 -0.001 -3.553 | span 2.491 x 1.318 (axes 2,0) | samples 10
+  OPEN -Y | centre 04.083 -0.001 00.550 | span 5.281 x 1.519 (axes 2,0) | samples 121
+  OPEN +Y | centre 10.441 02.500 -3.554 | span 2.494 x 1.344 (axes 2,0) | samples 10
+  OPEN +Y | centre 04.083 02.500 00.550 | span 5.281 x 1.519 (axes 2,0) | samples 121
+SP_MEASURE done

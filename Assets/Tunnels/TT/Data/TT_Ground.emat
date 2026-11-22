@@ -1,0 +1,8 @@
+MatTerrainObject : "{003244BB00581E06}Common/Materials/default_MatTerrainObj_TerrShadows.emat" {
+ BCRMap "{0F4E177CBD0F9B82}Assets/_SharedData/Soil/ST_Soil_01_1m_BCR.edds"
+ NMOMap "{3796ACEE6478C91C}Assets/_SharedData/Soil/ST_Soil_01_1m_NMO.edds"
+ MetalnessScale 0
+ MaterialBlendUseVertexColor R
+ MaterialBlendUseTerrainDistance 0
+ UseOnTerrainHeightmapShadows 1
+}

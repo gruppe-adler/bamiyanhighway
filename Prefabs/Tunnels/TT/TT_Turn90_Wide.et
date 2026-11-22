@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "1F0D0B17813C9620"
+ components {
+  MeshObject "{CA36BE27246C3358}" {
+   Object "{81B9271ECC112206}Assets/Tunnels/TT/TT_Turn90_Wide.xob"
+  }
+  RigidBody "{69E22E99D2D024FC}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{F1DA09C7E52A64D0}" {
+  }
+ }
+}

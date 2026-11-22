@@ -1,0 +1,11 @@
+MatPBRBasic {
+ DiffuseIBL 0 0 0 1
+ SpecularIBL 0 0 0 1
+ Ambient 0 0 0 1
+ Color 0.2 0.16 0.12 1
+ RoughnessScale 3
+ Cull none
+ DisableFog 1
+ DielectricReflectance 0.01
+ BCRMap "{647D2367A4B91B22}Assets/_SharedData/Wood/ST_WoodPlanks_03_BCR.edds"
+}

@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "2CC8FC700B259D9A"
+ components {
+  MeshObject "{522F09B55656C360}" {
+   Object "{9EA042EBEC418939}Assets/Tunnels/TT/TT_Straight_4.xob"
+  }
+  RigidBody "{1C8ECACE60DFCBE8}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{65B6B36CBDC5E4F3}" {
+  }
+ }
+}
