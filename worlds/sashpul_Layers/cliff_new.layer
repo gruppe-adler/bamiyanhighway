@@ -17,7 +17,7 @@ GenericEntity : "{838D91DAAE7CD279}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandsto
  angles 0 -35.482 0
 }
 GenericEntity : "{866903007B16B1DA}Prefabs/Rocks/Cliffs/Cliff_Base_DesertFortress.et" {
- coords 1693.235 -39.289 990.414
+ coords 1693.235 -40.123 990.414
  angles 0 -64.314 0
  scale 2
 }
@@ -37,7 +37,7 @@ $grp GenericEntity : "{DAC33788C4D87F57}Prefabs/Rocks/Cliffs/Cliff_Base_MesaOfSt
  }
 }
 GenericEntity : "{F92C7BF71226756B}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonBadlandsRidge.et" {
- coords 1723.638 -37.342 917.536
+ coords 1723.638 -37.694 917.536
  angles 0 62.311 0
  scale 3
 }

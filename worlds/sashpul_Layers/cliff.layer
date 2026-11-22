@@ -103,6 +103,16 @@ GenericEntity : "{32654927F2657E8A}Prefabs/Props/Forest/WoodPile/WoodLog_01_A.et
 SCR_IndestructibleEnvironmentalEntity : "{450AAF1BC197F8C9}Prefabs/Rocks/Granite/Granite_Cluster_01.et" {
  coords 1571.248 -0.034 966.047
 }
+$grp Building : "{47D035737D1C4CB4}Prefabs/Masks/C_Mask.et" {
+ {
+  coords 1968.15 -41.299 1121.101
+  angles 10.369 0 0
+ }
+ {
+  coords 1968.136 -41.046 1131.338
+  angles 16.589 0 0
+ }
+}
 GenericEntity : "{5E317DC74EA1F1A4}Prefabs/Props/Forest/WoodPile/WoodLog_01_B.et" {
  coords 1580.169 -29.9 953.771
  angles 0 60.826 0
@@ -118,4 +128,8 @@ SCR_IndestructibleEnvironmentalEntity : "{A5A0B5EF1773A200}Prefabs/Rocks/Granite
 GenericEntity : "{BBAD313E424466CF}Prefabs/Props/Forest/WoodPile/WoodLog_01_C.et" {
  coords 1580.044 -29.877 953.964
  angles 0 61.783 0
+}
+Building : "{DC500F69FC6AED7D}Prefabs/Doorways/Blocked_Doorway.et" {
+ coords 1962.542 -41.98 1138.561
+ angles -8.863 -11.854 -26.903
 }

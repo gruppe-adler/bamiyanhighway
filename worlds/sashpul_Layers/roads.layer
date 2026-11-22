@@ -1100,8 +1100,23 @@ $grp SplineShapeEntity {
    ShapePoint "{6A59150AEAA1368B}" {
     Position 772.535 -13.139 101.223
    }
+   ShapePoint "{6AECB359F239E154}" {
+    Position 782.939 -12.827 107.6
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 4.606 -0.219 2.741
+      OutTangent 16.463 -0.782 9.798
+     }
+    }
+   }
    ShapePoint "{6A59150AE4EABBBE}" {
-    Position 805.448 -15.142 120.812
+    Position 805.461 -14.702 120.82
+    Data {
+     SplinePointData SplinePointData {
+      InTangent 32.074 -3.81 18.904
+      OutTangent 32.186 -1.267 18.97
+     }
+    }
    }
    ShapePoint "{6A59150AE735C7A0}" {
     Position 836.907 -15.674 139.163
@@ -1237,18 +1252,33 @@ $grp SplineShapeEntity {
         Position 772.535 -13.139 101.223
        }
        ShapePoint "{6A5915055EFAFA56}" {
-        Position 805.448 -15.142 120.812
+        Position 782.939 -12.827 107.6
+        Data {
+         SplinePointData "{00000000D8F1BA4F}" {
+          InTangent 4.606 -0.219 2.741
+          OutTangent 16.463 -0.782 9.798
+         }
+        }
        }
        ShapePoint "{6A5915055EFAFA28}" {
-        Position 836.907 -15.674 139.163
+        Position 805.461 -14.702 120.819
+        Data {
+         SplinePointData "{00000000D8F1BA4F}" {
+          InTangent 32.074 -3.81 18.904
+          OutTangent 32.186 -1.268 18.97
+         }
+        }
        }
        ShapePoint "{6A5915055EFAFBED}" {
-        Position 864.253 -15.846 128.716
+        Position 836.907 -15.674 139.163
        }
        ShapePoint "{6A5915055EFAFBA8}" {
-        Position 897.944 -16.198 107.057
+        Position 864.253 -15.846 128.716
        }
        ShapePoint "{6A5915055EFAFB6C}" {
+        Position 897.944 -16.198 107.057
+       }
+       ShapePoint "{6A5915055EFAFB20}" {
         Position 913.989 -16.28 85.639
         Data {
          SplinePointData "{00000000D8F1BA4F}" {
@@ -1257,7 +1287,7 @@ $grp SplineShapeEntity {
          }
         }
        }
-       ShapePoint "{6A5915055EFAFB20}" {
+       ShapePoint "{6AA944E93324D86D}" {
         Position 920.138 -15.799 71.474
         Data {
          SplinePointData "{00000000D8F1BA4F}" {
@@ -1266,7 +1296,7 @@ $grp SplineShapeEntity {
          }
         }
        }
-       ShapePoint "{6AA944E93324D86D}" {
+       ShapePoint "{6AA944E9047F3DE3}" {
         Position 923.904 -15.865 62.456
         Data {
          SplinePointData "{00000000D8F1BA4F}" {
@@ -1275,7 +1305,7 @@ $grp SplineShapeEntity {
          }
         }
        }
-       ShapePoint "{6AA944E9047F3DE3}" {
+       ShapePoint "{6AECB359F23A46CE}" {
         Position 930.614 -15.597 59.823
        }
       }

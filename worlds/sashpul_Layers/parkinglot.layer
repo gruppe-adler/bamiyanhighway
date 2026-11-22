@@ -1,0 +1,148 @@
+SplineShapeEntity {
+ coords 1955.207 -31.816 918.536
+ angles 0 -104.018 0
+ Points {
+  ShapePoint "{6AECB3503CB42220}" {
+   Position -6.893 -0.133 -10.144
+  }
+  ShapePoint "{6AECB359D705A630}" {
+   Position 12.073 -0.271 -0.641
+   Data {
+    SplinePointData SplinePointData {
+     InTangent 3.174 0 1.059
+     OutTangent 17.143 0 5.72
+    }
+   }
+  }
+  ShapePoint "{6AECB3582C27A0B4}" {
+   Position 27.393 -0.133 1.296
+  }
+  ShapePoint "{6AECB3582E48E151}" {
+   Position 36.263 0 -1.35
+  }
+  ShapePoint "{6AECB3582ECC42DE}" {
+   Position 39.84 -0.133 -1.646
+  }
+  ShapePoint "{6AECB3582BF07FCC}" {
+   Position 46.829 -0.133 -6.362
+  }
+  ShapePoint "{6AECB358245DD600}" {
+   Position 52.603 -0.133 -13.439
+  }
+ }
+ LineColor 0 0 0 0
+ {
+  WallGeneratorEntity : "{F5F26A55D657F34C}PrefabLibrary/DefaultLibrary/Generators/Walls/Pole/WG_PoleFence_02.et" {
+   Flags 0x100003 0
+   m_iSeed 10017
+   {
+    $grp SCR_DestructibleEntity : "{035E7D477B6F1F64}Prefabs/Structures/Walls/Pole/PoleFence_02/PoleFence_02_8m_C.et" {
+     {
+      coords 11.069 -0.158 -1.097
+      angles 0 345.639 0
+     }
+     {
+      coords 38.824 -0.133 -1.316
+      angles 0 30.821 0
+     }
+    }
+    SCR_DestructibleEntity : "{5D8CDA67B81B1FC3}Prefabs/Structures/Walls/Pole/PoleFence_02/PoleFence_02_D.et" {
+     coords -6.893 -0.133 -10.144
+     angles 0 333.053 0
+    }
+    SCR_DestructibleEntity : "{8A96055ECB4E0721}Prefabs/Structures/Walls/Pole/PoleFence_02/PoleFence_02_8m_A.et" {
+     coords 27.143 -0.133 1.3
+     angles 0 15.564 0
+    }
+    $grp SCR_DestructibleEntity : "{A0034468130DC93D}Prefabs/Structures/Walls/Pole/PoleFence_02/PoleFence_02_4m_A.et" {
+     {
+      coords 0.042 -0.133 -6.619
+      angles 0 333.167 0
+     }
+     {
+      coords 3.71 -0.133 -4.763
+      angles 0 333.328 0
+     }
+     {
+      coords 7.384 -0.138 -2.918
+      angles 0 333.706 0
+     }
+     {
+      coords 18.936 -0.133 0.917
+      angles 0 355.108 0
+     }
+     {
+      coords 23.032 -0.133 1.268
+      angles 0 359.548 0
+     }
+     {
+      coords 34.744 -0.133 -0.817
+      angles 0 6.981 0
+     }
+    }
+    SCR_DestructibleEntity : "{E6C231BE778A880F}Prefabs/Structures/Walls/Pole/PoleFence_02/PoleFence_02_8m_B.et" {
+     coords 45.631 -0.133 -5.29
+     angles 0 48.202 0
+    }
+    SCR_DestructibleEntity : "{F260C6128FD34953}Prefabs/Structures/Walls/Pole/PoleFence_02/PoleFence_02_Pole.et" {
+     coords 51.061 -0.133 -11.363
+     angles 0 52.995 0
+    }
+   }
+  }
+ }
+}
+GenericEntity : "{119A72D174C9DF6A}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMonolith_SandstoneGrey.et" {
+ coords 1944.072 -56.949 963.014
+ angles 0 -35.063 0
+}
+GenericEntity : "{22E2462FA3AE0849}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Long_Pile.et" {
+ coords 1966.466 -31.935 927.188
+}
+GenericEntity : "{29063844DEEAC10B}Prefabs/Props/Garbage/Generic/Junk_01/Junk_01_pile_large.et" {
+ coords 1955.912 -31.949 967.397
+ angles 0 -58.166 0
+}
+GenericEntity : "{451ABD81F1D69ED6}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonSentinel_SandstoneGrey.et" {
+ coords 1950.512 -57.006 970.927
+ angles 0 -78.426 0
+}
+GenericEntity : "{52F4C6F1D59655CA}Prefabs/Props/Garbage/Generic/Junk_01/Junk_01_single_bathtub.et" {
+ coords 1967.087 -31.242 937.511
+ angles -8.162 35.428 174.09
+}
+GenericEntity : "{630C2872BB87F44F}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Short_Pile.et" {
+ coords 1966.239 -31.949 931.522
+ angles 0 -7.168 0
+}
+GenericEntity : "{65DC9F503F63AF83}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedSandstoneWall_SandstoneGrey.et" {
+ coords 1953.773 -44.384 934.136
+ angles 0 94.528 0
+}
+$grp GenericEntity : "{6720CD0D5B7B7768}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Long.et" {
+ {
+  coords 1965.742 -31.949 933.345
+ }
+ {
+  coords 1965.583 -31.949 934.402
+  angles 0 -6.668 0
+ }
+}
+GenericEntity : "{74D1DB7828061BD7}Prefabs/Props/Garbage/Generic/Junk_01/Junk_01_pile_small.et" {
+ coords 1967.117 -31.92 936.375
+}
+GenericEntity : "{7F26144B98289FCD}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonMesaCrown_SandstoneGrey.et" {
+ coords 1971.294 -56.102 908.775
+}
+GenericEntity : "{A446CB3C732A360D}Prefabs/Props/Garbage/Generic/Junk_01/Junk_01_pile_long.et" {
+ coords 1963.98 -31.97 939.604
+ angles 0 81.535 0
+}
+GenericEntity : "{D6221D514F58856A}Prefabs/Structures/Wreck/Trailer_Green.et" {
+ coords 1961.398 -31.949 930.476
+ angles 0 -9.621 0
+}
+SCR_DestructibleEntity : "{FE43934149F46BFC}Prefabs/Props/Industrial/CompressorTrailerWreck_01/CompressorTrailerWreck_01_Yellow.et" {
+ coords 1952.656 -31.949 962.179
+ angles 0 28.136 0
+}

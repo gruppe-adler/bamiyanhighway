@@ -11,11 +11,11 @@ Grass {
  AOToCavity 1
  WetnessScale 0.15
  ViewDependency 1
- Plants 7
- Height 0.3
- HeightRandomOffset 0.34
+ BladesCount 4
+ Height 0.19
+ HeightRandomOffset 0.17
  FarHide 0.85
- Edge 1.28
+ Edge 0.66
  Zenith 3
  ZenithRandomOffset 5
  Distribution "1 1 1 1 1 1 1 1"
@@ -31,6 +31,7 @@ Grass {
   0.485 0.965 0 0.91
  }
  TexPlants 8
+ WindStiffness 0.096
  WindLightness 0.07
  WindLightnessOffset 0.5
  ObstacleFlatteningAffection 0.65
