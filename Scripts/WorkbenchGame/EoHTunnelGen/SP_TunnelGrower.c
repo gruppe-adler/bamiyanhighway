@@ -11,9 +11,11 @@ class SP_TunnelGenSettings
 
 	float m_fTargetLength = 300;
 	float m_fMaxReach = 150;
-	int m_iMaxRooms = 4;
+	int m_iMaxRooms = 6;
 	float m_fRoomSpacing = 40;
 	bool m_bLargeRooms = true;
+	bool m_bRoomsOnce = true;		// each room at most once per network (junctions may repeat)
+	bool m_bRoomAtDeadEnds = true;	// a corridor that ends gets a room there if one fits, before a plain dead end
 
 	float m_fBranchChance = 0.5;
 	float m_fSideBranchMin = 15;
@@ -56,6 +58,7 @@ class SP_TunnelGenSettings
 	bool m_bLightBlockers = true;
 	float m_fMaxStraightRun = 6;
 	int m_iKit = 0;
+	float m_fSplineTolerance = 3;
 
 	//------------------------------------------------------------------------------------------------
 	//! Everything that shapes a layout, as key=value; (the seed is kept separately)
@@ -64,6 +67,7 @@ class SP_TunnelGenSettings
 		string s = "";
 		s += "candidates=" + m_iCandidates + ";length=" + m_fTargetLength + ";reach=" + m_fMaxReach + ";";
 		s += "rooms=" + m_iMaxRooms + ";roomSpacing=" + m_fRoomSpacing + ";largeRooms=" + Bs(m_bLargeRooms) + ";";
+		s += "roomsOnce=" + Bs(m_bRoomsOnce) + ";roomEnds=" + Bs(m_bRoomAtDeadEnds) + ";";
 		s += "branch=" + m_fBranchChance + ";sideMin=" + m_fSideBranchMin + ";sideMax=" + m_fSideBranchMax + ";";
 		s += "straight=" + m_fStraightWeight + ";longShare=" + m_fLongStraightShare + ";turn=" + m_fTurnWeight + ";uturn=" + m_fUTurnWeight + ";";
 		s += "wiggle=" + m_fWiggleWeight + ";hump=" + m_fHumpWeight + ";water=" + m_fWaterTrapWeight + ";hold=" + m_fHoldBearing + ";";
@@ -78,6 +82,7 @@ class SP_TunnelGenSettings
 		s += "masksDoor=" + Bs(m_bMasksAtDoorways) + ";masksAll=" + Bs(m_bMasksAtAllJoints) + ";";
 		s += "avoid=" + Bs(m_bAvoidExisting) + ";avoidWorld=" + Bs(m_bAvoidWorld) + ";ignorePlants=" + Bs(m_bIgnorePlants) + ";";
 		s += "blockers=" + Bs(m_bLightBlockers) + ";maxRun=" + m_fMaxStraightRun + ";kit=" + m_iKit + ";";
+		s += "splineTol=" + m_fSplineTolerance + ";";
 		return s;
 	}
 
@@ -120,6 +125,8 @@ class SP_TunnelGenSettings
 				case "rooms": m_iMaxRooms = i; break;
 				case "roomSpacing": m_fRoomSpacing = f; break;
 				case "largeRooms": m_bLargeRooms = B(v); break;
+				case "roomsOnce": m_bRoomsOnce = B(v); break;
+				case "roomEnds": m_bRoomAtDeadEnds = B(v); break;
 				case "branch": m_fBranchChance = f; break;
 				case "sideMin": m_fSideBranchMin = f; break;
 				case "sideMax": m_fSideBranchMax = f; break;
@@ -157,6 +164,7 @@ class SP_TunnelGenSettings
 				case "blockers": m_bLightBlockers = B(v); break;
 				case "maxRun": m_fMaxStraightRun = f; break;
 				case "kit": m_iKit = i; break;
+				case "splineTol": m_fSplineTolerance = f; break;
 			}
 		}
 	}
@@ -196,6 +204,14 @@ class SP_TunnelBranch
 	float m_fSinceRoom;
 	float m_fRun;			// metres since the last piece that breaks the line of sight
 	int m_iFromEntrance;
+
+	// Following a spline (m_iPath >= 0): how far along it, the next of its points to reach, and what that point said
+	int m_iPath = -1;
+	float m_fPathS;
+	int m_iNextMark;
+	bool m_bNoTurns;
+	bool m_bPathEnded;
+	int m_iPieces;
 }
 
 //! A box of something already in the world to keep clear of
@@ -226,6 +242,13 @@ class SP_TunnelLayout
 	int m_iRefusals;
 	ref array<string> m_aRefused = {};
 
+	// Following splines
+	bool m_bSpline;
+	float m_fSplineMissed;		// metres of the splines not reached
+	int m_iMarksPlaced;
+	int m_iMarksFailed;
+	ref array<string> m_aMarkLog = {};
+
 	string Refusals()
 	{
 		return string.Format("pieces refused: %1 too far from the start, %2 not enough earth over them, %3 into this network, %4 into tunnels already in the world, %5 into other things in the world (cliffs, rocks, buildings)", m_iFailReach, m_iFailCover, m_iFailOverlap, m_iFailObstacle, m_iFailWorld);
@@ -234,7 +257,11 @@ class SP_TunnelLayout
 	string Summary()
 	{
 		string text = string.Format("seed %1: %2 pieces, %3 m of tunnel, %4 rooms, %5 extra entrances, %6 dead ends (%7 forced), %8 level changes, %9 left open", m_iSeed, m_aPlaced.Count(), Math.Round(m_fLength), m_iRooms, m_iEntrances, m_iCaps, m_iForcedCaps, m_iLevelChanges, m_iOpenLeft);
-		return text + string.Format(", %1 masks", m_iMasks);
+		text += string.Format(", %1 masks", m_iMasks);
+		if (m_bSpline)
+			text += string.Format("; spline: %1 m not reached, %2 point pieces placed, %3 not", Math.Round(m_fSplineMissed), m_iMarksPlaced, m_iMarksFailed);
+
+		return text;
 	}
 }
 
@@ -262,11 +289,19 @@ class SP_TunnelGrower
 	// Indices into the catalog, by what they're for
 	protected ref array<int> m_aCorridor = {};
 	protected ref array<int> m_aRooms = {};
+	protected bool m_bDeadEndRoom;		// while a room is being put at a dead end: its other openings are closed off
 	protected ref array<int> m_aEntrancePieces = {};
 	protected int m_aCap[3];
 	protected int m_aDoorway[3];
 	protected int m_aMask[3];
 	protected int m_iDoorCap = -1;
+
+	// Splines to follow (none: grow freely, as always)
+	protected static const float LOOKAHEAD = 6;		// steer at the spline this far ahead of where a piece comes out
+	protected static const float MARK_REACH = 2;		// a spline point counts as reached this far before it
+	protected static const float END_REACH = 2.5;		// and the spline's end this far before it
+	protected ref array<ref SP_TunnelSplinePath> m_aPaths = {};
+	protected bool m_bSplineMode;
 
 	//------------------------------------------------------------------------------------------------
 	void SP_TunnelGrower(SP_TunnelCatalog catalog, SP_TunnelGenSettings settings, WorldEditorAPI api, array<ref SP_TunnelObstacle> obstacles)
@@ -444,6 +479,22 @@ class SP_TunnelGrower
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Splines to follow, built and linked (paths[0] starts at the start piece). None or empty: grow freely
+	void SetPaths(array<ref SP_TunnelSplinePath> paths)
+	{
+		m_aPaths.Clear();
+		if (paths)
+		{
+			foreach (SP_TunnelSplinePath path : paths)
+			{
+				m_aPaths.Insert(path);
+			}
+		}
+
+		m_bSplineMode = !m_aPaths.IsEmpty();
+	}
+
+	//------------------------------------------------------------------------------------------------
 	protected bool WorldFilter(notnull IEntity e, vector start = "0 0 0", vector dir = "0 0 0")
 	{
 		IEntity root = e.GetRootParent();
@@ -543,8 +594,9 @@ class SP_TunnelGrower
 	protected bool Fits(SP_TunnelPlaced placed, array<int> except, float needCover)
 	{
 		string name = m_Catalog.m_aPieces[placed.m_iPiece].m_sName;
+		// (following a spline, the spline says how far it goes)
 		float away = vector.DistanceXZ(placed.m_vCentre, m_vStart);
-		if (away > m_Set.m_fMaxReach)
+		if (!m_bSplineMode && away > m_Set.m_fMaxReach)
 		{
 			m_Layout.m_iFailReach++;
 			Refused(string.Format("%1 at %2: %3 m from the start, more than the reach", name, placed.m_vPos, Math.Round(away)));
@@ -683,18 +735,49 @@ class SP_TunnelGrower
 		if (startIsEntrance)
 			m_aEntrances.Insert(startPos);
 
-		bool first = true;
+		m_Layout.m_bSpline = m_bSplineMode;
+		foreach (SP_TunnelSplinePath unclaimed : m_aPaths)
+		{
+			unclaimed.m_bClaimed = false;
+		}
+
+		// The main way leaves by the first socket; following a spline, by the one that leads onto it
+		int mainSocket = 0;
+		if (m_bSplineMode)
+			mainSocket = StartSocket(startDef, startPos, startYaw);
+
 		foreach (int s, SP_TunnelSocketDef socket : startDef.m_aSockets)
 		{
 			vector dir = Rot(socket.m_vDir, startYaw);
 			// Whatever the start piece, right by it the tunnel may be shallow, and has to get deeper as it goes
 			int fromEntrance = 0;
+			bool isMain = s == mainSocket;
 
-			int branch = NewBranch(first, YawOf(dir), fromEntrance);
+			int branch = NewBranch(isMain, YawOf(dir), fromEntrance);
 			SP_TunnelOpen open = new SP_TunnelOpen();
-			open.m_bGrow = first || m_Rand.RandFloat01() < m_Set.m_fBranchChance;
-			first = false;
 			open.m_vPos = startPos + Rot(socket.m_vPos, startYaw);
+			if (m_bSplineMode)
+			{
+				// The main spline from the main socket; a branch spline that starts by another socket from that one
+				int path = -1;
+				if (isMain)
+				{
+					path = 0;
+					m_aPaths[0].m_bClaimed = true;
+				}
+				else
+				{
+					path = ClaimChild(0, open.m_vPos, dir);
+				}
+
+				StartPath(m_aBranches[branch], path);
+				open.m_bGrow = path >= 0;
+			}
+			else
+			{
+				open.m_bGrow = isMain || m_Rand.RandFloat01() < m_Set.m_fBranchChance;
+			}
+
 			open.m_vDir = dir;
 			open.m_iSize = socket.m_iSize;
 			open.m_iRole = socket.m_iRole;
@@ -722,6 +805,9 @@ class SP_TunnelGrower
 		}
 
 		m_Layout.m_iOpenLeft = m_aOpen.Count();
+		if (m_bSplineMode)
+			SplineMissed();
+
 		Score();
 		return m_Layout;
 	}
@@ -739,6 +825,12 @@ class SP_TunnelGrower
 			return;
 
 		SP_TunnelBranch branch = m_aBranches[open.m_iBranch];
+		if (branch.m_iPath >= 0 && open.m_bGrow)
+		{
+			HandleSpline(open, branch);
+			return;
+		}
+
 		bool done = m_Layout.m_fLength >= m_Set.m_fTargetLength || !open.m_bGrow;
 		if (!branch.m_bMain && branch.m_fLength >= branch.m_fBudget)
 			done = true;
@@ -764,6 +856,410 @@ class SP_TunnelGrower
 			return;
 
 		EndHere(open, true);
+	}
+
+	//================================================================================================
+	// Following a spline
+	//================================================================================================
+
+	//------------------------------------------------------------------------------------------------
+	//! Of the start piece's openings, the one that leads onto the main spline
+	protected int StartSocket(SP_TunnelPieceDef startDef, vector startPos, float startYaw)
+	{
+		SP_TunnelSplinePath path = m_aPaths[0];
+		vector ahead = path.At(Math.Min(LOOKAHEAD, path.m_fLength));
+		int best = 0;
+		float bestScore = -100000;
+		foreach (int s, SP_TunnelSocketDef socket : startDef.m_aSockets)
+		{
+			if (socket.m_iRole != SP_TunnelRole.PATH)
+				continue;
+
+			vector pos = startPos + Rot(socket.m_vPos, startYaw);
+			vector dir = Rot(socket.m_vDir, startYaw);
+			vector to = ahead - pos;
+			to[1] = 0;
+			float along = 0;
+			float len = to.Length();
+			if (len > 0.01)
+				along = vector.Dot(dir, to) / len;
+
+			float score = along - 0.1 * vector.DistanceXZ(pos, path.First());
+			if (score > bestScore)
+			{
+				bestScore = score;
+				best = s;
+			}
+		}
+
+		return best;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void StartPath(SP_TunnelBranch branch, int path)
+	{
+		if (path < 0)
+			return;
+
+		branch.m_iPath = path;
+		branch.m_fPathS = 0;
+		branch.m_iNextMark = 0;
+		branch.m_bNoTurns = false;
+		branch.m_bPathEnded = false;
+		branch.m_iPieces = 0;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A branch spline of this path that starts near an opening facing its way, not taken yet: it's taken
+	protected int ClaimChild(int parent, vector pos, vector dir)
+	{
+		float radius = Math.Max(8, m_Set.m_fSplineTolerance * 3);
+		int best = -1;
+		float bestDist = radius;
+		foreach (int p, SP_TunnelSplinePath path : m_aPaths)
+		{
+			if (path.m_iParent != parent || path.m_bClaimed || p == 0)
+				continue;
+
+			float d = vector.DistanceXZ(path.First(), pos);
+			vector ahead = path.At(Math.Min(LOOKAHEAD, path.m_fLength)) - pos;
+			ahead[1] = 0;
+			if (ahead.Length() > 0.5 && vector.Dot(ahead, dir) < 0)
+				continue;
+
+			if (d < bestDist)
+			{
+				bestDist = d;
+				best = p;
+			}
+		}
+
+		if (best >= 0)
+			m_aPaths[best].m_bClaimed = true;
+
+		return best;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Side openings: following splines nothing grows off them (unless a branch spline claims them); otherwise by chance
+	protected bool SideGrows()
+	{
+		if (m_bSplineMode)
+			return false;
+
+		return m_Rand.RandFloat01() < m_Set.m_fBranchChance;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool IsTurn(int kind)
+	{
+		return kind == SP_TunnelKind.TURN || kind == SP_TunnelKind.UTURN || kind == SP_TunnelKind.UPTURN;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The next piece on a branch that follows a spline: what the spline's point asks for when one is reached, the end of
+	//! the tunnel at the spline's end, and otherwise the usual pieces, steered toward the spline
+	protected void HandleSpline(SP_TunnelOpen open, SP_TunnelBranch branch)
+	{
+		SP_TunnelSplinePath path = m_aPaths[branch.m_iPath];
+		if (branch.m_bPathEnded)
+		{
+			EndHere(open, false);
+			return;
+		}
+
+		// Lost (wandering without getting along it): give up on it
+		if (branch.m_iPieces > path.m_fLength / 1.5 + 40)
+		{
+			EndHere(open, true);
+			return;
+		}
+
+		Track(open, branch, path);
+		bool atEnd = branch.m_fPathS >= path.m_fLength - END_REACH;
+		SP_TunnelSplineMark mark = NextMark(branch, path, atEnd);
+		if (mark)
+		{
+			if (PlaceMark(open, branch, mark))
+			{
+				m_Layout.m_iMarksPlaced++;
+				if (atEnd)
+					branch.m_bPathEnded = true;
+
+				return;
+			}
+
+			m_Layout.m_iMarksFailed++;
+		}
+
+		// The end of the spline: the end of the tunnel
+		if (atEnd)
+		{
+			EndHere(open, false);
+			return;
+		}
+
+		if (m_Layout.m_iRooms < m_Set.m_iMaxRooms && branch.m_fSinceRoom >= m_Set.m_fRoomSpacing && m_Rand.RandFloat01() < 0.5)
+		{
+			if (TryRoom(open, branch))
+				return;
+		}
+
+		if (TryCorridor(open, branch))
+			return;
+
+		if (m_Layout.m_iRooms < m_Set.m_iMaxRooms && TryRoom(open, branch))
+			return;
+
+		EndHere(open, true);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! How far along the spline the open end has got, and the bearing to steer for (rooms pick their way on by it)
+	protected void Track(SP_TunnelOpen open, SP_TunnelBranch branch, SP_TunnelSplinePath path)
+	{
+		float lateral;
+		float s = path.Project(open.m_vPos, branch.m_fPathS, 30, lateral);
+		if (s > branch.m_fPathS)
+			branch.m_fPathS = s;
+
+		vector want = path.At(branch.m_fPathS + LOOKAHEAD) - open.m_vPos;
+		want[1] = 0;
+		if (want.Length() > 0.5)
+			branch.m_fBearing = YawOf(want);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The spline points reached now: their "no turns" applies from here, and the first that asks for a piece is returned
+	protected SP_TunnelSplineMark NextMark(SP_TunnelBranch branch, SP_TunnelSplinePath path, bool atEnd)
+	{
+		while (branch.m_iNextMark < path.m_aMarks.Count())
+		{
+			SP_TunnelSplineMark mark = path.m_aMarks[branch.m_iNextMark];
+			if (!atEnd && mark.m_fS > branch.m_fPathS + MARK_REACH)
+				return null;
+
+			branch.m_iNextMark++;
+			if (mark.m_iAnchor >= 0)
+				branch.m_bNoTurns = mark.m_bNoTurns;
+
+			if (mark.HasPiece())
+				return mark;
+		}
+
+		return null;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void MarkLog(string text)
+	{
+		if (m_Layout.m_aMarkLog.Count() < 40)
+			m_Layout.m_aMarkLog.Insert(text);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The piece a spline point asks for, put on this open end (still checked like any other piece)
+	protected bool PlaceMark(SP_TunnelOpen open, SP_TunnelBranch branch, SP_TunnelSplineMark mark)
+	{
+		array<int> pool = MarkPieces(mark);
+		if (pool.IsEmpty())
+		{
+			MarkLog(mark.Describe() + ": no such piece in this kit's catalog");
+			return false;
+		}
+
+		int before = m_Layout.m_aPlaced.Count();
+		int kind = m_Catalog.m_aPieces[pool[0]].m_iKind;
+		bool placed = false;
+		if (kind == SP_TunnelKind.ROOM)
+			placed = TryRoom(open, branch, pool);
+		else if (kind == SP_TunnelKind.ENTRANCE)
+			placed = TryEntrance(open, pool);
+		else if (kind == SP_TunnelKind.CAP)
+			placed = PlaceCap(open, pool);
+		else if (kind == SP_TunnelKind.DOORWAY || kind == SP_TunnelKind.DOORCAP || kind == SP_TunnelKind.MASK)
+			placed = false;
+		else
+			placed = TryCorridor(open, branch, pool);
+
+		if (!placed)
+		{
+			MarkLog(mark.Describe() + ": didn't fit there (see the refusals), the usual pieces carry on");
+			return false;
+		}
+
+		string names = "";
+		for (int i = before; i < m_Layout.m_aPlaced.Count(); i++)
+		{
+			SP_TunnelPieceDef piece = m_Catalog.m_aPieces[m_Layout.m_aPlaced[i].m_iPiece];
+			if (piece.m_iKind != SP_TunnelKind.MASK)
+				names += " " + piece.m_sName;
+		}
+
+		MarkLog(mark.Describe() + ": placed" + names);
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The catalog's pieces a spline point asks for: its prefab, or all of its kind
+	protected array<int> MarkPieces(SP_TunnelSplineMark mark)
+	{
+		array<int> pool = {};
+		if (!mark.m_sPiece.IsEmpty())
+		{
+			int index = m_Catalog.IndexOfPrefab(mark.m_sPiece);
+			if (index >= 0)
+				pool.Insert(index);
+
+			return pool;
+		}
+
+		foreach (int i, SP_TunnelPieceDef piece : m_Catalog.m_aPieces)
+		{
+			if (KindMatches(mark.m_iKind, piece))
+				pool.Insert(i);
+		}
+
+		// A kit without a junction: any room
+		if (pool.IsEmpty() && mark.m_iKind == SP_TunnelSplineKind.JUNCTION)
+		{
+			foreach (int r, SP_TunnelPieceDef room : m_Catalog.m_aPieces)
+			{
+				if (room.m_iKind == SP_TunnelKind.ROOM)
+					pool.Insert(r);
+			}
+		}
+
+		return pool;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool KindMatches(int kind, SP_TunnelPieceDef piece)
+	{
+		switch (kind)
+		{
+			case SP_TunnelSplineKind.STRAIGHT: return piece.m_iKind == SP_TunnelKind.STRAIGHT;
+			case SP_TunnelSplineKind.WIDE: return piece.m_iKind == SP_TunnelKind.STRAIGHT && piece.m_sName.Contains("Wide");
+			case SP_TunnelSplineKind.NARROW: return piece.m_iKind == SP_TunnelKind.STRAIGHT && piece.m_sName.Contains("Narrow");
+			case SP_TunnelSplineKind.TURN: return piece.m_iKind == SP_TunnelKind.TURN;
+			case SP_TunnelSplineKind.DOGLEG: return piece.m_iKind == SP_TunnelKind.BEND;
+			case SP_TunnelSplineKind.SLOPE: return piece.m_iKind == SP_TunnelKind.SLOPE;
+			case SP_TunnelSplineKind.JUNCTION: return piece.m_iKind == SP_TunnelKind.ROOM && piece.m_sName.Contains("Junction");
+			case SP_TunnelSplineKind.ROOM: return piece.m_iKind == SP_TunnelKind.ROOM && !piece.m_sName.Contains("Junction");
+			case SP_TunnelSplineKind.CAP: return piece.m_iKind == SP_TunnelKind.CAP;
+			case SP_TunnelSplineKind.ENTRY: return piece.m_iKind == SP_TunnelKind.ENTRANCE;
+		}
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A dead end of these, of the open end's size
+	protected bool PlaceCap(SP_TunnelOpen open, array<int> pool)
+	{
+		foreach (int index : pool)
+		{
+			SP_TunnelPieceDef cap = m_Catalog.m_aPieces[index];
+			if (cap.m_iSize != open.m_iSize || cap.m_aSockets.IsEmpty())
+				continue;
+
+			vector pos;
+			float yaw;
+			SP_TunnelGrower.Attach(open.m_vPos, open.m_vDir, cap.m_aSockets[0], pos, yaw);
+			Add(MakePlaced(index, pos, yaw));
+			JointMask(open);
+			m_Layout.m_iCaps++;
+			return true;
+		}
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! How much a piece that comes out at outPos, facing outDir, keeps to the spline: facing the spline a little ahead,
+	//! not wandering off sideways past the tolerance, not going back, and at the height the spline wants (or, where the
+	//! spline was drawn on the ground, at the usual earth cover)
+	protected float SplineWeight(SP_TunnelOpen open, SP_TunnelBranch branch, SP_TunnelSplinePath path, vector outPos, vector outDir, float depthNow)
+	{
+		float tolerance = Math.Max(m_Set.m_fSplineTolerance, 0.5);
+		float latNow;
+		float sNow = path.Project(open.m_vPos, branch.m_fPathS, 30, latNow);
+		float latAfter;
+		float sAfter = path.Project(outPos, branch.m_fPathS, 30, latAfter);
+		float w = 1;
+
+		vector want = path.At(sAfter + LOOKAHEAD) - outPos;
+		want[1] = 0;
+		if (want.Length() > 0.5)
+		{
+			float off = (YawOf(outDir) - YawOf(want)) * Math.DEG2RAD;
+			w *= Math.Max(0.03, 1 + 2.5 * Math.Cos(off)) / 3.5;
+		}
+
+		// Sideways: a little against moving away, and past the tolerance only what brings it back
+		w *= 1 / (1 + 0.5 * Math.Max(latAfter - latNow, 0));
+		if (latAfter > tolerance && latAfter > latNow - 0.2)
+			w *= 0.05;
+
+		if (sAfter < sNow - 0.5)
+			w *= 0.2;
+
+		float errNow;
+		float errAfter;
+		if (path.OnGround(sAfter))
+		{
+			float wantDepth = m_Set.m_fTargetCover + 1.3;
+			float depthAfter = m_Api.GetTerrainSurfaceY(outPos[0], outPos[2]) - outPos[1];
+			errNow = Math.AbsFloat(depthNow - wantDepth);
+			errAfter = Math.AbsFloat(depthAfter - wantDepth);
+		}
+		else
+		{
+			errNow = Math.AbsFloat(open.m_vPos[1] - path.WantY(sNow));
+			errAfter = Math.AbsFloat(outPos[1] - path.WantY(sAfter));
+		}
+
+		// Off the height by more than half a slope: strongly for what gets nearer, against what gets further
+		float change = errAfter - errNow;
+		if (errNow > 0.6)
+		{
+			if (change < -0.3)
+				w *= 4;
+			else if (change > 0.3)
+				w *= 0.05;
+		}
+		else if (change > 0.3)
+		{
+			w *= 0.2;
+		}
+
+		return w;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Metres of the splines the layout didn't get along
+	protected void SplineMissed()
+	{
+		float missed = 0;
+		foreach (int p, SP_TunnelSplinePath path : m_aPaths)
+		{
+			if (path.m_iParent == -2)
+				continue;
+
+			float reached = -1;
+			foreach (SP_TunnelBranch b : m_aBranches)
+			{
+				if (b.m_iPath == p)
+					reached = Math.Max(reached, b.m_fPathS);
+			}
+
+			if (reached < 0)
+				missed += path.m_fLength;
+			else
+				missed += Math.Max(0, path.m_fLength - END_REACH - reached);
+		}
+
+		m_Layout.m_fSplineMissed = missed;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -846,28 +1342,47 @@ class SP_TunnelGrower
 	}
 
 	//------------------------------------------------------------------------------------------------
-	protected bool TryCorridor(SP_TunnelOpen open, SP_TunnelBranch branch)
+	//! only: just these pieces (a spline point asked for them: the straight-run limit doesn't hold them back)
+	protected bool TryCorridor(SP_TunnelOpen open, SP_TunnelBranch branch, array<int> only = null)
 	{
 		// Every corridor piece of this size, entered by each socket that fits, with its weight
 		array<int> optionPiece = {};
 		array<int> optionSocket = {};
 		array<float> optionWeight = {};
 		float depthNow = m_Api.GetTerrainSurfaceY(open.m_vPos[0], open.m_vPos[2]) - open.m_vPos[1];
-		foreach (int index : m_aCorridor)
+		array<int> pool = m_aCorridor;
+		if (only)
+			pool = only;
+
+		SP_TunnelSplinePath path;
+		if (branch.m_iPath >= 0)
+			path = m_aPaths[branch.m_iPath];
+
+		foreach (int index : pool)
 		{
 			SP_TunnelPieceDef piece = m_Catalog.m_aPieces[index];
 			if (piece.m_iSize != open.m_iSize)
 				continue;
 
 			float weight = KindWeight(piece);
+			if (only)
+				weight = 1;
+
 			if (weight <= 0)
 				continue;
 
-			if (IsLevelChange(piece.m_iKind) && m_Layout.m_iLevelChanges >= m_Set.m_iMaxLevelChanges)
+			// (following a spline, the spline decides the height: no cap on level changes)
+			if (!path && IsLevelChange(piece.m_iKind) && m_Layout.m_iLevelChanges >= m_Set.m_iMaxLevelChanges)
+				continue;
+
+			if (path && !only && branch.m_bNoTurns && IsTurn(piece.m_iKind))
 				continue;
 
 			// Seen far enough straight along already: only something that breaks the line of sight
 			bool breaks = BreaksSight(piece.m_iKind);
+			if (only)
+				breaks = true;
+
 			if (!breaks && m_Set.m_fMaxStraightRun > 0 && branch.m_fRun >= m_Set.m_fMaxStraightRun - 0.5)
 				continue;
 
@@ -882,7 +1397,12 @@ class SP_TunnelGrower
 				SP_TunnelGrower.Attach(open.m_vPos, open.m_vDir, socket, pos, yaw);
 				int onIndex = WayOn(piece, s);
 				float w = weight;
-				if (onIndex >= 0)
+				if (onIndex >= 0 && path)
+				{
+					SP_TunnelSocketDef onSpline = piece.m_aSockets[onIndex];
+					w *= SplineWeight(open, branch, path, pos + Rot(onSpline.m_vPos, yaw), Rot(onSpline.m_vDir, yaw), depthNow);
+				}
+				else if (onIndex >= 0)
 				{
 					SP_TunnelSocketDef on = piece.m_aSockets[onIndex];
 					vector outPos = pos + Rot(on.m_vPos, yaw);
@@ -988,7 +1508,7 @@ class SP_TunnelGrower
 			else
 			{
 				next.m_iBranch = NewBranch(false, YawOf(next.m_vDir), branch.m_iFromEntrance + 1);
-				next.m_bGrow = m_Rand.RandFloat01() < m_Set.m_fBranchChance;
+				next.m_bGrow = SideGrows();
 			}
 
 			m_aOpen.Insert(next);
@@ -1002,6 +1522,7 @@ class SP_TunnelGrower
 			branch.m_fRun += chord;
 
 		branch.m_iFromEntrance++;
+		branch.m_iPieces++;
 		m_Layout.m_fLength += chord;
 		return true;
 	}
@@ -1021,15 +1542,20 @@ class SP_TunnelGrower
 
 	//------------------------------------------------------------------------------------------------
 	//! A doorway onto the end of this corridor, and a room on it, by one of the room's doorframes
-	protected bool TryRoom(SP_TunnelOpen open, SP_TunnelBranch branch)
+	//! only: one of just these rooms (a spline point asked for them)
+	protected bool TryRoom(SP_TunnelOpen open, SP_TunnelBranch branch, array<int> only = null)
 	{
-		if (m_aRooms.IsEmpty())
+		array<int> rooms = RoomChoices(m_bDeadEndRoom);
+		if (only)
+			rooms = only;
+
+		if (rooms.IsEmpty())
 			return false;
 
 		// A kit whose rooms have the tunnel's own openings: the room straight onto the corridor
 		int doorwayIndex = m_aDoorway[open.m_iSize];
 		if (doorwayIndex < 0)
-			return TryRoomDirect(open, branch);
+			return TryRoomDirect(open, branch, rooms);
 
 		SP_TunnelPieceDef doorway = m_Catalog.m_aPieces[doorwayIndex];
 		int pathSocket = -1;
@@ -1059,7 +1585,7 @@ class SP_TunnelGrower
 		// A few rooms, each by a few of its doorframes
 		for (int attempt = 0; attempt < 8; attempt++)
 		{
-			int roomIndex = m_aRooms[m_Rand.RandInt(0, m_aRooms.Count())];
+			int roomIndex = rooms[m_Rand.RandInt(0, rooms.Count())];
 			SP_TunnelPieceDef room = m_Catalog.m_aPieces[roomIndex];
 			int doorCount = room.m_aSockets.Count();
 			if (doorCount == 0)
@@ -1091,11 +1617,11 @@ class SP_TunnelGrower
 
 	//------------------------------------------------------------------------------------------------
 	//! A room joined straight onto the corridor, by one of its openings of the corridor's size
-	protected bool TryRoomDirect(SP_TunnelOpen open, SP_TunnelBranch branch)
+	protected bool TryRoomDirect(SP_TunnelOpen open, SP_TunnelBranch branch, array<int> rooms)
 	{
 		for (int attempt = 0; attempt < 8; attempt++)
 		{
-			int roomIndex = m_aRooms[m_Rand.RandInt(0, m_aRooms.Count())];
+			int roomIndex = rooms[m_Rand.RandInt(0, rooms.Count())];
 			SP_TunnelPieceDef room = m_Catalog.m_aPieces[roomIndex];
 			array<int> fitting = {};
 			foreach (int rs, SP_TunnelSocketDef roomSocket : room.m_aSockets)
@@ -1134,7 +1660,7 @@ class SP_TunnelGrower
 		SP_TunnelPlaced placed = m_Layout.m_aPlaced[roomPlacedIndex];
 		SP_TunnelPieceDef room = m_Catalog.m_aPieces[placed.m_iPiece];
 		int carryOn = -1;
-		if (branch.m_bMain)
+		if (!m_bDeadEndRoom && (branch.m_bMain || branch.m_iPath >= 0))
 		{
 			float bestAlong = -100;
 			foreach (int d, SP_TunnelSocketDef door : room.m_aSockets)
@@ -1163,7 +1689,13 @@ class SP_TunnelGrower
 			next.m_iSize = socket.m_iSize;
 			next.m_iRole = socket.m_iRole;
 			next.m_iOwner = roomPlacedIndex;
-			if (s == carryOn)
+			if (m_bDeadEndRoom)
+			{
+				// a room at a dead end: its other openings are closed off
+				next.m_iBranch = branchIndex;
+				next.m_bGrow = false;
+			}
+			else if (s == carryOn)
 			{
 				next.m_iBranch = branchIndex;
 				branch.m_fSinceRoom = 0;
@@ -1172,7 +1704,20 @@ class SP_TunnelGrower
 			else
 			{
 				next.m_iBranch = NewBranch(false, YawOf(next.m_vDir), branch.m_iFromEntrance + 2);
-				next.m_bGrow = m_Rand.RandFloat01() < m_Set.m_fBranchChance;
+				// A branch spline that starts by this opening goes on from it
+				int child = -1;
+				if (branch.m_iPath >= 0)
+					child = ClaimChild(branch.m_iPath, next.m_vPos, next.m_vDir);
+
+				if (child >= 0)
+				{
+					StartPath(m_aBranches[next.m_iBranch], child);
+					next.m_bGrow = true;
+				}
+				else
+				{
+					next.m_bGrow = SideGrows();
+				}
 			}
 
 			m_aOpen.Insert(next);
@@ -1202,7 +1747,11 @@ class SP_TunnelGrower
 	protected void HandleDoor(SP_TunnelOpen open)
 	{
 		SP_TunnelBranch branch = m_aBranches[open.m_iBranch];
-		bool grow = open.m_bGrow && m_Layout.m_fLength < m_Set.m_fTargetLength;
+		// (on a spline the spline says how long it is)
+		bool grow = open.m_bGrow && (branch.m_iPath >= 0 || m_Layout.m_fLength < m_Set.m_fTargetLength);
+		if (branch.m_bPathEnded)
+			grow = false;
+
 		if (grow)
 		{
 			int size = PickSize();
@@ -1265,11 +1814,58 @@ class SP_TunnelGrower
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! The rooms that may go in now: each at most once per network when so set (junctions may repeat), and no junction
+	//! at a dead end
+	protected array<int> RoomChoices(bool deadEnd)
+	{
+		array<int> choices = {};
+		foreach (int r : m_aRooms)
+		{
+			string roomName = m_Catalog.m_aPieces[r].m_sName;
+			bool junction = roomName.Contains("Junction");
+			if (deadEnd && junction)
+				continue;
+
+			if (m_Set.m_bRoomsOnce && !junction && IsPlaced(r))
+				continue;
+
+			choices.Insert(r);
+		}
+
+		return choices;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool IsPlaced(int pieceIndex)
+	{
+		foreach (SP_TunnelPlaced p : m_Layout.m_aPlaced)
+		{
+			if (p.m_iPiece == pieceIndex)
+				return true;
+		}
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! The end of a corridor: a way out to the surface if one's wanted and the ground fits, otherwise a dead end
 	protected void EndHere(SP_TunnelOpen open, bool forced)
 	{
-		if (m_Layout.m_iEntrances < m_Set.m_iExtraEntrances && TryEntrance(open))
+		// (following splines, entrances only where a point asks for one)
+		if (!m_bSplineMode && m_Layout.m_iEntrances < m_Set.m_iExtraEntrances && TryEntrance(open))
 			return;
+
+		// A corridor that just stops makes more sense ending in a room: one that hasn't been used yet, if it fits
+		// (not after a room's own openings, so this doesn't chain)
+		if (!m_bSplineMode && m_Set.m_bRoomAtDeadEnds && m_Layout.m_iRooms < m_Set.m_iMaxRooms && open.m_iBranch >= 0 &&
+			open.m_iOwner >= 0 && m_Catalog.m_aPieces[m_Layout.m_aPlaced[open.m_iOwner].m_iPiece].m_iKind != SP_TunnelKind.ROOM)
+		{
+			m_bDeadEndRoom = true;
+			bool roomed = TryRoom(open, m_aBranches[open.m_iBranch]);
+			m_bDeadEndRoom = false;
+			if (roomed)
+				return;
+		}
 
 		m_Layout.m_iCaps++;
 		if (forced)
@@ -1320,15 +1916,20 @@ class SP_TunnelGrower
 	//------------------------------------------------------------------------------------------------
 	//! An entrance piece on the end of a corridor, if its top comes out near enough the ground and it's far enough
 	//! from the other ways in
-	protected bool TryEntrance(SP_TunnelOpen open)
+	//! only: one of just these (a spline point asked for an entry there: the spacing between entrances doesn't apply)
+	protected bool TryEntrance(SP_TunnelOpen open, array<int> only = null)
 	{
+		array<int> pieces = m_aEntrancePieces;
+		if (only)
+			pieces = only;
+
 		foreach (vector other : m_aEntrances)
 		{
-			if (vector.DistanceXZ(other, open.m_vPos) < m_Set.m_fEntranceSpacing)
+			if (!only && vector.DistanceXZ(other, open.m_vPos) < m_Set.m_fEntranceSpacing)
 				return false;
 		}
 
-		foreach (int index : m_aEntrancePieces)
+		foreach (int index : pieces)
 		{
 			SP_TunnelPieceDef piece = m_Catalog.m_aPieces[index];
 			if (piece.m_iSize != open.m_iSize || piece.m_aSockets.IsEmpty())
@@ -1362,6 +1963,17 @@ class SP_TunnelGrower
 	//! Lower is better
 	protected void Score()
 	{
+		// Following splines: how much of them it got along, and what their points asked for
+		if (m_bSplineMode)
+		{
+			float splineCost = m_Layout.m_fSplineMissed * 2;
+			splineCost += m_Layout.m_iMarksFailed * 10;
+			splineCost += m_Layout.m_iForcedCaps * 4;
+			splineCost += m_Layout.m_iOpenLeft * 20;
+			m_Layout.m_fCost = splineCost;
+			return;
+		}
+
 		float cost = 0;
 		cost += Math.AbsFloat(m_Set.m_fTargetLength - m_Layout.m_fLength) / Math.Max(m_Set.m_fTargetLength, 1) * 100;
 		cost += (m_Set.m_iMaxRooms - m_Layout.m_iRooms) * 10;

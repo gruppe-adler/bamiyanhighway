@@ -1,0 +1,15 @@
+MatPBRBasic {
+ DiffuseIBL 0 0 0 1
+ SpecularIBL 0 0 0 1
+ Ambient 0 0 0 1
+ Color 0.9 0.9 0.9 1
+ MetalnessScale 0
+ Cull none
+ DisableFog 1
+ BCRMap "{3F4EE2BC73D35BBC}Assets/Tunnels/Cave/Textures/Cave_Riverbed_BCR.edds"
+ NMOMap "{0796592EAAA40922}Assets/Tunnels/Cave/Textures/Cave_Riverbed_NMO.edds"
+ GlobalMapsUVTransform MatUVTransform "{E089DF76889C687B}" {
+  TilingU 16
+  TilingV 16
+ }
+}

@@ -14,6 +14,14 @@
 	The same seed, settings, catalog and ground give the same network. Re-roll tries the next seed; Regenerate builds the
 	seed in the box again. Each build replaces the one before it (this session), Clear removes it.
 	New entrances still need a hole cut in the terrain (Terrain Tool, Hole), as the readme says: their places are logged.
+
+	Following a spline: draw a SplineShapeEntity (or PolylineShapeEntity) starting at the start piece, select it (and the
+	start piece, or the spline alone: then the kit piece nearest one of its ends is the start), Generate. The tunnel is
+	steered along it with the usual pieces and checks and ends where it ends. Height: where the spline lies on the
+	ground the tunnel keeps the usual earth cover; where its points are lowered under the ground the tunnel's centre
+	line (its sockets, 1 m over its floor) follows them. A point can ask for a piece: add SP_TunnelSplinePointData
+	under the point's Data (exact prefab, or a kind, and "no turns" to the next point). More splines selected, each
+	starting near another: branches, with a junction where each leaves.
 */
 [WorkbenchPluginAttribute(name: "EoH Tunnel Generator", description: "Grow an EoH Modular Tunnel Pack network from the selected piece", wbModules: {"WorldEditor"}, awesomeFontCode: 0xF6E3)]
 class SP_TunnelGenPlugin : WorldEditorPlugin
@@ -24,6 +32,9 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 	[Attribute("6", UIWidgets.EditBox, "Longest straight run, in metres, before a turn, dogleg or room must break the line of sight. 0: no limit", category: "Shape")]
 	protected float m_fMaxStraightRun;
+
+	[Attribute("3", UIWidgets.EditBox, "With a spline selected (it's followed automatically): how far, in metres, the tunnel may wander sideways off it before only pieces that bring it back are taken", category: "Spline")]
+	protected float m_fSplineTolerance;
 
 	// Seed
 	[Attribute("0", UIWidgets.EditBox, "Layout seed. 0 picks one. After generating, the seed used is shown here", category: "Seed")]
@@ -42,7 +53,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 	[Attribute("150", UIWidgets.EditBox, "Furthest any piece may be from the start, in metres", category: "Size")]
 	protected float m_fMaxReach;
 
-	[Attribute("4", UIWidgets.EditBox, "Most rooms", category: "Size")]
+	[Attribute("6", UIWidgets.EditBox, "Most rooms", category: "Size")]
 	protected int m_iMaxRooms;
 
 	[Attribute("40", UIWidgets.EditBox, "Least tunnel between two rooms along one branch, in metres", category: "Size")]
@@ -50,6 +61,12 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 	[Attribute("1", UIWidgets.CheckBox, "Allow the big rooms (20x20 m, 25x20 m)", category: "Size")]
 	protected bool m_bLargeRooms;
+
+	[Attribute("1", UIWidgets.CheckBox, "Each room at most once per network (one of each; junctions may repeat)", category: "Size")]
+	protected bool m_bRoomsOnce;
+
+	[Attribute("1", UIWidgets.CheckBox, "End dead ends in a room where one fits (an unused one), before a plain dead end", category: "Size")]
+	protected bool m_bRoomAtDeadEnds;
 
 	// Shape
 	[Attribute("0.5", UIWidgets.Slider, "Chance that a room's other doorframes (and a ladder's other level) lead on to side branches; otherwise they're closed off", "0 1 0.05", category: "Shape")]
@@ -188,7 +205,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 	//------------------------------------------------------------------------------------------------
 	override void Run()
 	{
-		Workbench.ScriptDialog("EoH Tunnel Generator", "Select the piece to grow from (an entrance, usually), or a record entity to load its settings.", this);
+		Workbench.ScriptDialog("EoH Tunnel Generator", "Select the piece to grow from (an entrance, usually), or a record entity to load its settings. Select a spline too (or only the spline, drawn from the start piece) to make the tunnel follow it.", this);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -212,6 +229,8 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		cfg.m_iMaxRooms = m_iMaxRooms;
 		cfg.m_fRoomSpacing = m_fRoomSpacing;
 		cfg.m_bLargeRooms = m_bLargeRooms;
+		cfg.m_bRoomsOnce = m_bRoomsOnce;
+		cfg.m_bRoomAtDeadEnds = m_bRoomAtDeadEnds;
 		cfg.m_fBranchChance = m_fBranchChance;
 		cfg.m_fSideBranchMin = m_fSideBranchMin;
 		cfg.m_fSideBranchMax = m_fSideBranchMax;
@@ -249,6 +268,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		cfg.m_bLightBlockers = m_bLightBlockers;
 		cfg.m_fMaxStraightRun = m_fMaxStraightRun;
 		cfg.m_iKit = m_eKit;
+		cfg.m_fSplineTolerance = m_fSplineTolerance;
 		return cfg;
 	}
 
@@ -261,6 +281,8 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		m_iMaxRooms = cfg.m_iMaxRooms;
 		m_fRoomSpacing = cfg.m_fRoomSpacing;
 		m_bLargeRooms = cfg.m_bLargeRooms;
+		m_bRoomsOnce = cfg.m_bRoomsOnce;
+		m_bRoomAtDeadEnds = cfg.m_bRoomAtDeadEnds;
 		m_fBranchChance = cfg.m_fBranchChance;
 		m_fSideBranchMin = cfg.m_fSideBranchMin;
 		m_fSideBranchMax = cfg.m_fSideBranchMax;
@@ -298,6 +320,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		m_bLightBlockers = cfg.m_bLightBlockers;
 		m_fMaxStraightRun = cfg.m_fMaxStraightRun;
 		m_eKit = cfg.m_iKit;
+		m_fSplineTolerance = cfg.m_fSplineTolerance;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -504,13 +527,14 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! The piece to grow from: the selection, or the start piece a selected record names
-	protected bool FindStart(WorldEditorAPI api, out int pieceIndex, out vector pos, out float yaw, out IEntity startEntity)
+	//! The piece to grow from: the selection (the first selected that isn't a spline), the start piece a selected record
+	//! names, or with only splines selected, the kit's piece nearest one of their ends
+	protected bool FindStart(WorldEditorAPI api, array<IEntitySource> shapes, out int pieceIndex, out vector pos, out float yaw, out IEntity startEntity)
 	{
 		pieceIndex = -1;
 		if (api.GetSelectedEntitiesCount() < 1)
 		{
-			Workbench.Dialog("EoH Tunnel Generator", "Select the piece to grow from first: an entrance, a tunnel piece or a room from the EoH Modular Tunnel Pack.");
+			Workbench.Dialog("EoH Tunnel Generator", "Select the piece to grow from first: an entrance, a tunnel piece or a room of the chosen kit (and a spline to follow, if wanted).");
 			return false;
 		}
 
@@ -531,7 +555,27 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 			return true;
 		}
 
-		IEntitySource src = api.GetSelectedEntity(0);
+		IEntitySource src;
+		for (int i = 0; i < api.GetSelectedEntitiesCount(); i++)
+		{
+			IEntitySource selected = api.GetSelectedEntity(i);
+			if (selected && !ShapeEntity.Cast(api.SourceToEntity(selected)))
+			{
+				src = selected;
+				break;
+			}
+		}
+
+		if (!src)
+		{
+			src = PieceNearShapes(api, shapes);
+			if (!src)
+			{
+				Workbench.Dialog("EoH Tunnel Generator", string.Format("Only splines are selected, and no piece of the chosen kit is within %1 m of either end of one. Place the entry where the spline starts, or select it as well.", START_SEARCH));
+				return false;
+			}
+		}
+
 		startEntity = api.SourceToEntity(src);
 		ResourceName prefab = PrefabOf(src, startEntity, pieceIndex);
 		if (pieceIndex < 0 || !startEntity)
@@ -556,6 +600,235 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		return true;
 	}
 
+	//================================================================================================
+	// Splines
+	//================================================================================================
+
+	protected static const float START_SEARCH = 20;	// with only splines selected: how far from an end the start piece may be
+
+	//------------------------------------------------------------------------------------------------
+	//! The selected splines and polylines
+	protected array<IEntitySource> SelectedShapes(WorldEditorAPI api)
+	{
+		array<IEntitySource> shapes = {};
+		for (int i = 0; i < api.GetSelectedEntitiesCount(); i++)
+		{
+			IEntitySource src = api.GetSelectedEntity(i);
+			if (src && ShapeEntity.Cast(api.SourceToEntity(src)))
+				shapes.Insert(src);
+		}
+
+		return shapes;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A shape's point (in its own space) in the world
+	protected vector ToWorld(vector local, vector mat[4])
+	{
+		return mat[0] * local[0] + mat[1] * local[1] + mat[2] * local[2] + mat[3];
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The kit's piece nearest an end of one of the splines (not one a build made)
+	protected IEntitySource PieceNearShapes(WorldEditorAPI api, array<IEntitySource> shapes)
+	{
+		IEntitySource best;
+		float bestDist = START_SEARCH;
+		foreach (IEntitySource shapeSrc : shapes)
+		{
+			ShapeEntity shape = ShapeEntity.Cast(api.SourceToEntity(shapeSrc));
+			if (!shape)
+				continue;
+
+			array<vector> points = {};
+			shape.GetPointsPositions(points);
+			if (points.IsEmpty())
+				continue;
+
+			vector mat[4];
+			shape.GetWorldTransform(mat);
+			array<vector> ends = {};
+			ends.Insert(ToWorld(points[0], mat));
+			ends.Insert(ToWorld(points[points.Count() - 1], mat));
+			foreach (vector end : ends)
+			{
+				m_aFoundPieces.Clear();
+				api.GetWorld().QueryEntitiesByAABB(end - Vector(START_SEARCH, 30, START_SEARCH), end + Vector(START_SEARCH, 30, START_SEARCH), OnPieceQuery, null, EQueryEntitiesFlags.ALL);
+				foreach (IEntity piece : m_aFoundPieces)
+				{
+					IEntitySource pieceSrc = api.EntityToSource(piece);
+					if (!pieceSrc)
+						continue;
+
+					// A piece a build made isn't a start
+					string name = pieceSrc.GetName();
+					if (name.IndexOf("EoHT_") == 0)
+						continue;
+
+					float d = vector.Distance(piece.GetOrigin(), end);
+					if (d < bestDist)
+					{
+						bestDist = d;
+						best = pieceSrc;
+					}
+				}
+			}
+		}
+
+		return best;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A spline's curve and points in world space, and what each point asks for (SP_TunnelSplinePointData in its Data)
+	protected SP_TunnelSplinePath ReadPath(WorldEditorAPI api, IEntitySource src)
+	{
+		ShapeEntity shape = ShapeEntity.Cast(api.SourceToEntity(src));
+		if (!shape)
+			return null;
+
+		SP_TunnelSplinePath path = new SP_TunnelSplinePath();
+		path.m_sName = src.GetName();
+		if (path.m_sName.IsEmpty())
+			path.m_sName = "unnamed " + src.GetClassName();
+
+		path.m_bClosed = shape.IsClosed();
+		vector mat[4];
+		shape.GetWorldTransform(mat);
+
+		array<vector> anchors = {};
+		shape.GetPointsPositions(anchors);
+		BaseContainerList points = src.GetObjectArray("Points");
+		foreach (int i, vector anchor : anchors)
+		{
+			SP_TunnelSplineMark mark = new SP_TunnelSplineMark();
+			mark.m_iAnchor = i;
+			mark.m_vPos = ToWorld(anchor, mat);
+			if (points && i < points.Count())
+				ReadMark(points.Get(i), mark);
+
+			path.m_aMarks.Insert(mark);
+		}
+
+		array<vector> curve = {};
+		shape.GenerateTesselatedShape(curve);
+		if (curve.Count() < 2)
+			curve = anchors;
+
+		foreach (vector local : curve)
+		{
+			path.m_aCurve.Insert(ToWorld(local, mat));
+		}
+
+		return path;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void ReadMark(BaseContainer point, SP_TunnelSplineMark mark)
+	{
+		if (!point)
+			return;
+
+		BaseContainerList data = point.GetObjectArray("Data");
+		if (!data)
+			return;
+
+		for (int j = 0; j < data.Count(); j++)
+		{
+			BaseContainer item = data.Get(j);
+			if (!item || item.GetClassName() != "SP_TunnelSplinePointData")
+				continue;
+
+			ResourceName piece;
+			int kind;
+			bool noTurns;
+			item.Get("m_sPiece", piece);
+			item.Get("m_iKind", kind);
+			item.Get("m_bNoTurns", noTurns);
+			mark.m_bHasData = true;
+			mark.m_sPiece = piece;
+			mark.m_iKind = kind;
+			mark.m_bNoTurns = noTurns;
+			return;
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The selected splines, ready to follow: the one with an end nearest the start piece first (turned to start there),
+	//! the others linked to it as branches
+	protected bool ReadPaths(WorldEditorAPI api, array<IEntitySource> shapes, vector startPos, notnull array<ref SP_TunnelSplinePath> paths)
+	{
+		foreach (IEntitySource shapeSrc : shapes)
+		{
+			SP_TunnelSplinePath read = ReadPath(api, shapeSrc);
+			if (read && read.m_aCurve.Count() >= 2)
+				paths.Insert(read);
+			else
+				Print("SP_TunnelGen: a selected spline has fewer than two points, left out", LogLevel.WARNING);
+		}
+
+		if (paths.IsEmpty())
+		{
+			Workbench.Dialog("EoH Tunnel Generator", "The selected spline has fewer than two points.");
+			return false;
+		}
+
+		int main = 0;
+		bool reverse = false;
+		float bestDist = 1000000;
+		foreach (int p, SP_TunnelSplinePath candidate : paths)
+		{
+			float dFirst = vector.DistanceXZ(candidate.First(), startPos);
+			float dLast = vector.DistanceXZ(candidate.Last(), startPos);
+			if (dFirst < bestDist)
+			{
+				bestDist = dFirst;
+				main = p;
+				reverse = false;
+			}
+
+			if (dLast < bestDist)
+			{
+				bestDist = dLast;
+				main = p;
+				reverse = true;
+			}
+		}
+
+		if (main != 0)
+		{
+			SP_TunnelSplinePath first = paths[0];
+			paths[0] = paths[main];
+			paths[main] = first;
+		}
+
+		if (reverse)
+			paths[0].Reverse();
+
+		foreach (SP_TunnelSplinePath built : paths)
+		{
+			built.Build(api);
+		}
+
+		SP_TunnelSplinePath.Link(paths, api, Math.Max(12, m_fSplineTolerance * 3));
+		if (bestDist > 15)
+			Print(string.Format("SP_TunnelGen: the spline starts %1 m from the start piece: the first pieces head for it", Math.Round(bestDist)), LogLevel.WARNING);
+
+		foreach (int index, SP_TunnelSplinePath path : paths)
+		{
+			string role = "main";
+			if (path.m_iParent == -2)
+				role = "not near any other spline: left out";
+			else if (path.m_iParent >= 0)
+				role = string.Format("branch off %1 at %2 m", paths[path.m_iParent].m_sName, Math.Round(path.m_fParentS));
+
+			Print(string.Format("SP_TunnelGen: spline %1 '%2': %3 m, %4 points, %5 asking for pieces, %6", index, path.m_sName, Math.Round(path.m_fLength), path.m_aMarks.Count(), path.CountPieces(), role));
+			if (path.m_bClosed)
+				Print("SP_TunnelGen:   it's closed: followed from its first point round to its last", LogLevel.WARNING);
+		}
+
+		return true;
+	}
+
 	//------------------------------------------------------------------------------------------------
 	protected bool OnPieceQuery(IEntity entity)
 	{
@@ -567,14 +840,13 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 	//------------------------------------------------------------------------------------------------
 	//! Tunnel pieces already in the world near the start (not the start itself, not what's about to be replaced)
-	protected array<ref SP_TunnelObstacle> Obstacles(WorldEditorAPI api, vector start, IEntity startEntity)
+	protected array<ref SP_TunnelObstacle> Obstacles(WorldEditorAPI api, vector start, IEntity startEntity, float reach)
 	{
 		array<ref SP_TunnelObstacle> obstacles = {};
 		if (!m_bAvoidExisting)
 			return obstacles;
 
 		m_aFoundPieces.Clear();
-		float reach = m_fMaxReach + 30;
 		api.GetWorld().QueryEntitiesByAABB(start - Vector(reach, 200, reach), start + Vector(reach, 200, reach), OnPieceQuery, null, EQueryEntitiesFlags.ALL);
 		int subScene = api.GetCurrentSubScene();
 		foreach (IEntity entity : m_aFoundPieces)
@@ -618,8 +890,23 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		vector startPos;
 		float startYaw;
 		IEntity startEntity;
-		if (!FindStart(api, startPiece, startPos, startYaw, startEntity))
+		array<IEntitySource> shapes = SelectedShapes(api);
+		if (!FindStart(api, shapes, startPiece, startPos, startYaw, startEntity))
 			return;
+
+		// Splines selected: the network follows them
+		array<ref SP_TunnelSplinePath> paths = {};
+		if (!shapes.IsEmpty() && !ReadPaths(api, shapes, startPos, paths))
+			return;
+
+		float reach = m_fMaxReach + 30;
+		foreach (SP_TunnelSplinePath reachPath : paths)
+		{
+			foreach (vector point : reachPath.m_aPoints)
+			{
+				reach = Math.Max(reach, vector.DistanceXZ(point, startPos) + 30);
+			}
+		}
 
 		// A record selected: that's the build to replace
 		IEntityComponentSource selectedRecord = SelectedRecord(api);
@@ -640,8 +927,9 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		}
 
 		SP_TunnelGenSettings cfg = Settings();
-		array<ref SP_TunnelObstacle> obstacles = Obstacles(api, startPos, startEntity);
+		array<ref SP_TunnelObstacle> obstacles = Obstacles(api, startPos, startEntity, reach);
 		SP_TunnelGrower grower = new SP_TunnelGrower(m_Catalog, cfg, api, obstacles);
+		grower.SetPaths(paths);
 		array<IEntity> ignore = BuildEntities(api, m_iBuiltSeed);
 		if (startEntity)
 			ignore.Insert(startEntity);
@@ -665,6 +953,11 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		foreach (string why : best.m_aRefused)
 		{
 			Print("SP_TunnelGen:   refused " + why);
+		}
+
+		foreach (string markLine : best.m_aMarkLog)
+		{
+			Print("SP_TunnelGen:   spline " + markLine);
 		}
 
 		foreach (vector hole : best.m_aEntrancePoints)
@@ -972,10 +1265,10 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 	//------------------------------------------------------------------------------------------------
 	// EoH Tunnel Network's dark probes: their boxes are 4.6 x 4.4 x 8 (corridor), 9.6 x 4.2 x 9.6 (junction),
 	// 13.6 x 5.4 x 13.6 (small room), 19 x 5.4 x 19 (room)
-	protected static const ResourceName PROBE_CORRIDOR = "{EA1C10A8AA100009}Prefabs/Systems/Tunnel/EoH_TunnelDarkProbe.et";
-	protected static const ResourceName PROBE_HUB = "{EA1C10ACAA100009}Prefabs/Systems/Tunnel/EoH_TunnelDarkProbe_Hub.et";
-	protected static const ResourceName PROBE_ROOM_SMALL = "{EA1C10AEAA100009}Prefabs/Systems/Tunnel/EoH_TunnelDarkProbe_RoomSmall.et";
-	protected static const ResourceName PROBE_ROOM = "{EA1C10ADAA100009}Prefabs/Systems/Tunnel/EoH_TunnelDarkProbe_Room.et";
+	protected static const ResourceName PROBE_CORRIDOR = "{352949EEDBDE3131}Prefabs/Tunnels/TT/TT_TunnelProbe.et";
+	protected static const ResourceName PROBE_HUB = "{DCB788BCD0E04851}Prefabs/Tunnels/TT/TT_TunnelProbe_Hub.et";
+	protected static const ResourceName PROBE_ROOM_SMALL = "{FD5CC9ADB86752B5}Prefabs/Tunnels/TT/TT_TunnelProbe_RoomSmall.et";
+	protected static const ResourceName PROBE_ROOM = "{B27654EF25D5E71D}Prefabs/Tunnels/TT/TT_TunnelProbe_Room.et";
 	protected int m_iProbes;
 
 	//------------------------------------------------------------------------------------------------

@@ -1,0 +1,26 @@
+GameEnvironmentProbeEntity : "{94B6B47CDA125A62}Prefabs/Structures/Core/ProbeEnvCave_base.et" {
+ ID "574D1CA943A1E22B"
+ FarPlane 1
+ VisibleDistance 80
+ Rendering 0x4 0
+ InteriorProbe 1
+ PriorityProbe 1
+ LVReflectionBrightness -20
+ LVDiffuseBrightness -20
+ ReflectionColor 0 0 0 1
+ ReflectionDesaturation 1
+ DiffuseColor 0 0 0 1
+ DiffuseDesaturation 1
+ TopColorEV -20
+ TopColor 0 0 0 1
+ BottomColorEV -20
+ BottomColor 0 0 0 1
+ {
+  ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+   ID "8551397617A47A9D"
+   Box BoundingVolume "{04B6B596DFD88D8C}" {
+    Size 1.8 2.6 1.8
+   }
+  }
+ }
+}

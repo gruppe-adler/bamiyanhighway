@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{C8D662D994F29178}Assets/Tunnels/Cave/TT_Room_Drip_C_info.json"
+ Configurations {
+  JSONResourceClass PC {
+  }
+  JSONResourceClass XBOX_ONE : PC {
+  }
+  JSONResourceClass XBOX_SERIES : PC {
+  }
+  JSONResourceClass PS4 : PC {
+  }
+  JSONResourceClass PS5 : PC {
+  }
+  JSONResourceClass HEADLESS : PC {
+  }
+  JSONResourceClass Xbox : PC {
+  }
+ }
+}

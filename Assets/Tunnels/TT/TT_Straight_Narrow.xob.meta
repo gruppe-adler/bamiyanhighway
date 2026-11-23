@@ -2,6 +2,7 @@ MetaFileClass {
  Name "{CBBEBC6D9787BD4E}Assets/Tunnels/TT/TT_Straight_Narrow.xob"
  Configurations {
   FBXResourceClass PC {
+   ExportSceneHierarchy 1
    MaterialAssigns {
     MaterialAssignClass "{6AED4152FD3F9CC4}" {
      SourceMaterial "TT_Earth"

@@ -1,7 +1,4 @@
 MatPBRBasic {
- DiffuseIBL 0 0 0 1
- SpecularIBL 0 0 0 1
- Ambient 0 0 0 1
  Color 0.2 0.16 0.12 1
  RoughnessScale 3
  Cull none

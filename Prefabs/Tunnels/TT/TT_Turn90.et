@@ -10,6 +10,7 @@ GenericEntity {
    ModelGeometry 1
   }
   SP_TunnelExposureComponent "{D2E6C4550D27FF1A}" {
+   m_bKeepRendered 1
   }
  }
 }

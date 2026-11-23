@@ -11,6 +11,7 @@ GenericEntity {
   }
   SP_TunnelExposureComponent "{4EFFC23779F28DC9}" {
    m_bEntrance 1
+   m_bKeepRendered 1
   }
  }
 }

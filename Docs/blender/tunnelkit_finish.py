@@ -10,6 +10,10 @@ root), or exec() it in Blender. Safe to run again.
 """
 import os, re, hashlib
 
+# Tries the engine's "not culled the standard way" flag on every piece (SP_TunnelExposureComponent.m_bKeepRendered), to stop
+# pieces vanishing past ~20 m underground. Draws nothing. Set False if it makes no difference or costs frame time.
+KEEP_RENDERED = True
+
 ADDON = r"C:\Users\nomisum\Documents\my games\ArmaReforgerWorkbench\addons\Shashpul"
 ASSETS = os.path.join(ADDON, "Assets", "Tunnels", "TT")
 PREFABS = os.path.join(ADDON, "Prefabs", "Tunnels", "TT")
@@ -20,9 +24,6 @@ EARTH_EMAT = "{003244BB00581E06}Common/Materials/default_MatTerrainObj_TerrShado
 
 # The inside: dark mud, no sky light (IBL and ambient 0), the one thing that keeps the tunnel dark
 EARTH = """MatPBRBasic {
- DiffuseIBL 0 0 0 1
- SpecularIBL 0 0 0 1
- Ambient 0 0 0 1
  Color 0.46 0.35 0.24 1
  MetalnessScale 0
  Cull none
@@ -91,6 +92,7 @@ def materials():
     wood = open(TUNNEL_MOD, encoding="utf-8").read() if os.path.exists(TUNNEL_MOD) else EARTH
     # the tunnel mod's own container GUIDs would clash: give ours their own
     wood = re.sub(r'"\{[0-9A-F]{16}\}"', '"{%s}"' % guid("wood.uv"), wood)
+    wood = re.sub(r'^ (DiffuseIBL|SpecularIBL|Ambient) .*\n', '', wood, flags=re.M)      # vanilla interiors take ambient light
     write(os.path.join(ASSETS, "Data", "TT_Wood.emat"), wood)
 
 
@@ -101,6 +103,8 @@ def resource(emat):
 
 def fix_meta(meta_path):
     t = open(meta_path, encoding="utf-8").read()
+    if 'ExportSceneHierarchy' not in t:      # the empties (openings) only come through as memory points with it
+        t = t.replace('  FBXResourceClass PC {\n', '  FBXResourceClass PC {\n   ExportSceneHierarchy 1\n', 1)
     t = re.sub(r'"\{[0-9A-F]{16}\}TT_[A-Za-z]+\.gamemat"', '"%s"' % DIRT, t)
     t = re.sub(r'(SourceMaterial "TT_Earth"\s*AssignedMaterial ")[^"]*(")', r'\g<1>%s\g<2>' % resource("TT_Earth.emat"), t)
     # TT_Ground is new to models imported before it existed: its assignment and its collider surface added
@@ -164,7 +168,7 @@ def prefabs():
         xob = fix_meta(os.path.join(ASSETS, name))
         path = "Prefabs/Tunnels/TT/%s.et" % base
         write(os.path.join(PREFABS, base + ".et"), PREFAB.format(id=guid(base + ".id"), mesh=guid(base + ".mesh"), body=guid(base + ".body"), xob=xob,
-                                                                   expo=guid(base + ".expo"), entrance="   m_bEntrance 1\n" if "Entry" in base else ""))
+                                                                   expo=guid(base + ".expo"), entrance=("   m_bEntrance 1\n" if "Entry" in base else "") + ("   m_bKeepRendered 1\n" if KEEP_RENDERED else "")))
         meta = os.path.join(PREFABS, base + ".et.meta")
         if not os.path.exists(meta):
             write(meta, PREFAB_META.format(guid=guid(base + ".et"), path=path))

@@ -1,0 +1,47 @@
+SCR_DestructibleBuildingEntity : "{EAF94EE6779EB1DE}Prefabs/Structures/Industrial/CoalMineShaft_01/Complete/CoalMineShaft_01_complete_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SignalsManagerComponent "{6AEF289A571ED279}" {
+  }
+  SCR_BuildingSoundComponent "{6AEF289A571ED261}" {
+   Filenames {
+    "{2D22FFF694E4914F}Sounds/Structures/Industrial/CoalMineShaft_01/Structures_CoalMineShaft_01.acp" "{D3F695C98C85D1B1}Sounds/Structures/Industrial/CoalMineShaft_01/Structures_CoalMineShaft_01_WaterDrop.acp"
+   }
+   IncludeInactive 1
+   SoundPoints {
+    SoundPointInfo Lamp_1 {
+     Offset -0.032 3.193 -15.605
+    }
+    SoundPointInfo Lamp_2 {
+     Offset -10.05 3.2 -21.089
+    }
+   }
+   m_eSpawnType POINTS
+   m_iTimeIntervalMin 1
+   m_iTimeIntervalMax 2
+   m_aSpawnPoints {
+    PointInfo "{6AEF289A571ED269}" {
+     Offset 0.072 0.753 -24.66
+    }
+    PointInfo "{6AEF289A571ED256}" {
+     Offset -8.333 0.394 -17.847
+    }
+    PointInfo "{6AEF289A571ED257}" {
+     Offset -9.997 0.707 -25.47
+    }
+    PointInfo "{6AEF289A571ED254}" {
+     Offset -9.997 0.707 -25.47
+    }
+   }
+  }
+  MeshObject "{506EDA9D46FC6C06}" {
+   Object "{8B22F111C0AC11DA}Assets/Structures/Industrial/CoalMineShaft_01/Complete/CoalMineShaft_01_complete_V2.xob"
+  }
+ }
+ {
+  GenericEntity : "{637231C4947F741A}Prefabs/Structures/Industrial/CoalMineShaft_01/Complete/Furniture/CoalMineShaft_USSR_01_complete_Aurora_furniture_01.et" {
+   ID "6AEF289A571ED2C6"
+   coords 0 0 0
+  }
+ }
+}

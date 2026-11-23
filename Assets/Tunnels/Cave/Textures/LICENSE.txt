@@ -1,0 +1,4 @@
+Source textures: Poly Haven (https://polyhaven.com), CC0 1.0 public domain.
+Cave_Flowstone = marble_rock_02, Cave_Wall = rock_face_03, Cave_WallDark = dark_rock_02,
+Cave_Floor = dry_riverbed_rock, Cave_Riverbed = river_small_rocks (2k, repacked as BCR / NMO).
+Cave_Limestone = marble_rock_03, Cave_Dripstone = marble_cliff_05, Cave_Mud = brown_mud_02 (2k, repacked as BCR / NMO).

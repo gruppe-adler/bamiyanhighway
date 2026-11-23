@@ -1,0 +1,18 @@
+GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+ ID "295D46992466FDE6"
+ coords 0 0 0
+ LVReflectionBrightness -16
+ ReflectionColor 1 1 1 1
+ LVDiffuseBrightness -16
+ DiffuseColor 1 1 1 1
+ VisiblePercentBlack 90
+ VisiblePercentWhite 55
+ {
+  ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+   ID "EF503CD47AFF8255"
+   Box BoundingVolume "{72F0FA42337AB69B}" {
+    Size 9.6 4.2 9.6
+   }
+  }
+ }
+}
