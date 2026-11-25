@@ -13980,7 +13980,6 @@ $grp SplineShapeEntity {
       {
        coords -56.313 -14.726 157.049
        angles 0 -169.502 0
-       scale 1
       }
       {
        coords -55.232 -14.727 157.579
@@ -20960,7 +20959,6 @@ $grp SplineShapeEntity {
       {
        coords -43.163 0.789 240.564
        angles -16.085 31.101 2.429
-       scale 1
       }
       {
        coords -45.459 0.623 242.721
@@ -28322,7 +28320,6 @@ $grp SplineShapeEntity {
       {
        coords 24.016 25.228 181.036
        angles 0.404 3.605 -6.381
-       scale 1
       }
       {
        coords 25.803 25.47 182.026
@@ -28727,7 +28724,6 @@ $grp SplineShapeEntity {
       {
        coords 1.314 20.081 267.601
        angles -4.378 -12.163 -17.682
-       scale 1
       }
       {
        coords 12.24 31.376 325.916
@@ -45178,7 +45174,6 @@ $grp SplineShapeEntity {
       {
        coords 15.589 25.552 127.381
        angles 9.244 165.649 15.159
-       scale 1
       }
       {
        coords 15.986 25.7 128.492
@@ -52825,7 +52820,6 @@ $grp SplineShapeEntity {
       {
        coords 0.639 16.962 259.09
        angles 22.209 109.152 29.069
-       scale 1
       }
       {
        coords 0.869 20.356 271.192
@@ -55980,7 +55974,6 @@ $grp SplineShapeEntity {
       {
        coords -81.036 -0.92 325.598
        angles 20.595 54.082 11.94
-       scale 1
       }
       {
        coords -78.802 -0.536 325.792
@@ -59044,7 +59037,6 @@ $grp SplineShapeEntity {
       {
        coords 26.694 0.068 -110.487
        angles 34.12 41.281 -3.841
-       scale 1
       }
       {
        coords 26.43 -0.909 -111.798
@@ -65169,7 +65161,6 @@ $grp SplineShapeEntity {
       {
        coords -26.941 -1.133 54.482
        angles -3.428 -35.89 -48.383
-       scale 1
       }
       {
        coords -26.84 -2.902 51.117
@@ -68285,7 +68276,6 @@ $grp SplineShapeEntity {
       {
        coords -8.456 4.951 49.748
        angles -3.963 -46.46 -12.962
-       scale 1
       }
       {
        coords -52.996 0.43 215.803
@@ -71497,7 +71487,6 @@ $grp SplineShapeEntity {
       {
        coords 22.799 0.735 -84.589
        angles 31.454 61.686 5.442
-       scale 1
       }
       {
        coords 22.446 0.294 -85.36
@@ -84094,7 +84083,6 @@ $grp SplineShapeEntity {
       {
        coords -69.987 -14.405 147.001
        angles 18.477 -151.834 -6.367
-       scale 1
       }
       {
        coords -72.693 -13.107 139.323
@@ -84889,7 +84877,6 @@ $grp SplineShapeEntity {
       {
        coords -53.625 4.038 334.151
        angles 37.766 73.888 16.184
-       scale 1
       }
       {
        coords -57.357 1.503 326.38
@@ -85821,7 +85808,6 @@ $grp SplineShapeEntity {
       {
        coords -29.999 14.402 326.95
        angles -18.516 -123.103 6.983
-       scale 1
       }
       {
        coords -41.356 0.488 205.243
@@ -88611,7 +88597,6 @@ $grp SplineShapeEntity {
       {
        coords 2.505 6.478 27.7
        angles -1.417 93.564 -11.506
-       scale 1
       }
       {
        coords 2.747 6.431 28.328
@@ -94253,7 +94238,6 @@ $grp SplineShapeEntity {
       {
        coords -32.827 1.021 84.32
        angles 1.017 139.622 23.553
-       scale 1
       }
       {
        coords -19.628 8.261 103.346
@@ -240146,10 +240130,6 @@ SCR_IndestructibleEnvironmentalEntity : "{32C4D3F615F2CDAE}Prefabs/Rocks/Granite
  coords 1801.327 -14.643 778.783
  angles 39.936 69.767 0
 }
-Building : "{3412E68886EBAD87}Prefabs/Pathways/Crouching/C_Left90.et" {
- coords 1968.136 -41.079 1131.586
- angles -3.06 -0.267 -8.877
-}
 $grp StaticModelEntity : "{3437433FD6CD5B27}Prefarbs/custom_compositions/MiddleEast_Debris_pile_01.et" {
  {
   coords 2039.035 -24.207 728.779
@@ -240256,16 +240236,6 @@ $grp GenericEntity : "{4635B2175B7FF3B3}Prefabs/Structures/Misc/Cable1.et" {
  {
   coords 1882.119 -45.197 1174.846
   angles 0 -81.96 -0.949
- }
-}
-$grp Building : "{47D035737D1C4CB4}Prefabs/Masks/C_Mask.et" {
- {
-  coords 1968.136 -41.046 1131.338
-  angles -0.484 0 0
- }
- {
-  coords 1968.15 -41.299 1121.101
-  angles -2.008 0 0
  }
 }
 $grp GenericEntity : "{482C9CBC43435CC5}Prefabs/Rocks/Debris/Rock_Debris_DesertMonolith_A_SandstoneGrey.et" {
@@ -241995,10 +241965,6 @@ $grp GenericEntity : "{571242425051C1CC}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonM
   coords 1960.458 -29.448 1239.294
   angles 0 56.645 0
  }
-}
-Building : "{575F499B5EE15935}Prefabs/Pathways/Crouching/C_R_Bend.et" {
- coords 1968.15 -41.258 1121.34
- angles 1.589 0 0
 }
 GenericEntity : "{58D5563DAB2CD31E}Prefabs/Rocks/Cliffs/Cliff_Base_ErodedDesertCliffs_SandstoneGrey.et" {
  coords 2027.52 -45.896 858.279
@@ -246489,9 +246455,6 @@ $grp GenericEntity : "{CE99ED95803B77BE}Prefabs/Structures/Market/CarpetRack.et"
   angles 1.283 0.038 1.712
  }
 }
-Building : "{D320C458D8BC8ABF}Prefabs/Entrances/Entrance_Floor_Hole.et" {
- coords 1968.09 -39.597 1119.187
-}
 $grp GenericEntity : "{D4C28C2E7C26847F}Prefabs/Rocks/Cliffs/Cliff_Cut_ErodedDesertEscarpment_SandstoneGrey.et" {
  {
   coords 2033.624 -19.515 909.398
@@ -248003,20 +247966,6 @@ $grp GenericEntity : "{F3AED0B6C7AC1491}Prefabs/Rocks/Debris/Rock_Debris_Weather
   scale 0.582
  }
 }
-$grp Building : "{F464A84A30B9EF5C}Prefabs/Doorways/C_Doorway.et" {
- {
-  coords 1968.15 -41.299 1121.101
-  angles -4.631 0 0
- }
- {
-  coords 1968.136 -41.046 1131.338
-  angles 0.855 0 0
- }
- {
-  coords 1962.681 -42.348 1138.798
-  angles 11.759 76.286 -9.055
- }
-}
 SCR_IndestructibleEnvironmentalEntity : "{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et" {
  coords 1824.508 -60.81 1306.338
  angles 0 -83.977 0
@@ -248028,15 +247977,6 @@ GenericEntity : "{FBAD3E320F88F397}Prefabs/Structures/Wreck/tractor_2.et" {
 SCR_DestructibleBuildingEntity : "{FBCE1861B987EA68}Prefabs/Structures/Military/Houses/GuardTower_01/GuardTower_01.et" {
  coords 1890.553 -0.028 1257.076
  angles 0 -110.452 0
-}
-GenericEntity : "{FBD32285925CFBE7}Prefabs/Editor/Plane_01/GridPlane_100x100.et" {
- components {
-  RigidBody "{1A2A26F308447ABD}" {
-   Enabled 0
-  }
- }
- coords 1966.107 -35.614 1220.667
- angles 0 0 -8.882
 }
 $grp GenericEntity : "{FC132D0D113DB17D}Prefabs/Rocks/Debris/Rock_DesertMonolith_C_SandstoneGrey.et" {
  {
