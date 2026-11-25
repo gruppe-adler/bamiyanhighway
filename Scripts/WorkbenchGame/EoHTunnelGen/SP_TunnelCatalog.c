@@ -3,6 +3,14 @@
 //! pieces attach). Built once from the pack's own memory points (bones on each model), with the facing of each socket
 //! found by tracing, then saved to $profile:SP_TunnelCatalog.txt and loaded from there, so layouts stay repeatable.
 
+//! Which family a piece belongs to: dug tunnel pieces, natural cave pieces, or a break-through that joins the two
+class SP_TunnelTheme
+{
+	static const int DUG = 0;
+	static const int CAVE = 1;
+	static const int MIX = 2;
+}
+
 class SP_TunnelKind
 {
 	static const int STRAIGHT = 0;
@@ -20,10 +28,11 @@ class SP_TunnelKind
 	static const int ROOM = 12;
 	static const int ENTRANCE = 13;
 	static const int MASK = 14;		// covers joints and blocks light, no collision
+	static const int TRANSITION = 15;	// TT_Trans_<A>_<B>: opening "1" has size A, opening "2" size B. Never picked by the generator (weight 0), placed by hand
 
 	static string Name(int kind)
 	{
-		array<string> names = {"straight", "turn", "bend", "hump", "water", "slope", "upturn", "uturn", "ladder", "cap", "doorway", "doorcap", "room", "entrance", "mask"};
+		array<string> names = {"straight", "turn", "bend", "hump", "water", "slope", "upturn", "uturn", "ladder", "cap", "doorway", "doorcap", "room", "entrance", "mask", "transition"};
 		if (kind < 0 || kind >= names.Count())
 			return "?";
 
@@ -377,6 +386,19 @@ class SP_TunnelCatalog
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! A piece's theme from its name: TT_Cave_*, TT_Room_Drip_* are cave, TT_Brk_* bridge dug and cave, everything else is dug
+	static int ThemeOf(string name)
+	{
+		if (name.Contains("Brk_"))
+			return SP_TunnelTheme.MIX;
+
+		if (name.Contains("Cave_") || name.Contains("Room_Drip"))
+			return SP_TunnelTheme.CAVE;
+
+		return SP_TunnelTheme.DUG;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! The test kit: one tunnel size (S); chambers and rooms have the tunnel's own openings
 	protected bool ClassifyTT(ResourceName prefab, out int kind, out int size)
 	{
@@ -386,8 +408,22 @@ class SP_TunnelCatalog
 		if (name.IndexOf("TT_") != 0)
 			return false;
 
-		if (name.Contains("Straight"))
+		// Crouch and prone families (Docs/TunnelKit_CrouchProne.md): TT_C_* are crouch, TT_P_* prone, in every opening;
+		// TT_Trans_<A>_<B> changes size from opening "1" (size A) to opening "2" (size B)
+		if (name.IndexOf("TT_C_") == 0)
+			size = SP_TunnelSize.C;
+		else if (name.IndexOf("TT_P_") == 0)
+			size = SP_TunnelSize.P;
+		else if (name.IndexOf("TT_Trans_") == 0)
+			size = TransSize(name, "1");
+
+		// TT_Adapter_*: an entrance piece between two opening rings (TT_Adapter_Cave: the new dug tunnel ring on opening "1", the old cave ring on "2")
+		if (name.IndexOf("TT_Trans_") == 0 || name.IndexOf("TT_Adapter_") == 0)
+			kind = SP_TunnelKind.TRANSITION;
+		else if (name.Contains("Straight") || name.Contains("Curve_"))
 			kind = SP_TunnelKind.STRAIGHT;
+		else if (name.Contains("Pass_"))
+			kind = SP_TunnelKind.BEND;			// natural passages (TT_Cave_Pass_*) wind: they break the line of sight
 		else if (name.Contains("Turn"))
 			kind = SP_TunnelKind.TURN;
 		else if (name.Contains("Dogleg"))
@@ -398,10 +434,39 @@ class SP_TunnelCatalog
 			kind = SP_TunnelKind.CAP;
 		else if (name.Contains("Junction") || name.Contains("Room"))
 			kind = SP_TunnelKind.ROOM;
+		else if (name.Contains("Hall_") || name.Contains("Chamber_") || name.Contains("Crawl_") || name.Contains("Ledge_") || name.Contains("Jct_") || name.Contains("Grotto_") || name.Contains("Brk_"))
+			kind = SP_TunnelKind.ROOM;		// the other cave pieces (CaveKit_Concept_30.md) and the dug-to-cave breakthroughs: chambers with their own openings
 		else if (name.Contains("Entry"))
 			kind = SP_TunnelKind.ENTRANCE;
 
 		return kind >= 0;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected static int SizeOfLetter(string letter)
+	{
+		if (letter == "C")
+			return SP_TunnelSize.C;
+
+		if (letter == "P")
+			return SP_TunnelSize.P;
+
+		return SP_TunnelSize.S;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! TT_Trans_<A>_<B>: the size of the opening on the bone "1" (A) or "2" (B); any other piece name: standing
+	protected static int TransSize(string name, string bone)
+	{
+		int at = name.IndexOf("Trans_");
+		if (at < 0 || name.Length() < at + 9)
+			return SP_TunnelSize.S;
+
+		string letters = name.Substring(at + 6, 3);
+		if (bone == "2")
+			return SizeOfLetter(letters.Substring(2, 1));
+
+		return SizeOfLetter(letters.Substring(0, 1));
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -686,6 +751,9 @@ class SP_TunnelCatalog
 			socket.m_vPos = pos;
 			socket.m_sBone = bone;
 			socket.m_iSize = piece.m_iSize;
+			if (m_iKit == KIT_TT && piece.m_iKind == SP_TunnelKind.TRANSITION)
+				socket.m_iSize = TransSize(piece.m_sName, bone);
+
 			socket.m_iRole = SP_TunnelRole.PATH;
 
 			// Rooms whose memory points really face somewhere face into the room: out is the other way. One set at an angle
@@ -693,6 +761,22 @@ class SP_TunnelCatalog
 			// turned wrong in the model (Room10_A's doorframe '1' sits on the -Z wall but points along X): the way that
 			// puts the doorframe against its wall wins.
 			socket.m_vDir = OutwardOf(pos, piece.m_vMin, piece.m_vMax);
+
+			// A gentle curve (TT_Curve_5, TT_Curve_10, ...): its far end faces turned right by the angle in its name, not along
+			// the nearest axis (OutwardOf would call it straight ahead, and the heading would be wrong by that angle per piece)
+			int curveAt = piece.m_sName.IndexOf("Curve_");
+			if (m_iKit == KIT_TT && curveAt >= 0 && pos[2] > 0.5)
+			{
+				// (the angle is the number after "Curve_": TT_Curve_10_A, a variant of TT_Curve_10, is 10 degrees too)
+				string angleText = piece.m_sName.Substring(curveAt + 6, piece.m_sName.Length() - curveAt - 6);
+				int angleEnd = angleText.IndexOf("_");
+				if (angleEnd > 0)
+					angleText = angleText.Substring(0, angleEnd);
+
+				float curveAngle = angleText.ToFloat();
+				socket.m_vDir = Vector(Math.Sin(curveAngle * Math.DEG2RAD), 0, Math.Cos(curveAngle * Math.DEG2RAD));
+			}
+
 			if (m_iKit != KIT_TT && piece.m_iKind == SP_TunnelKind.ROOM && !defaultFacing)
 			{
 				forward.Normalize();

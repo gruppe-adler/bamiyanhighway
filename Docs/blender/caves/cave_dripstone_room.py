@@ -71,9 +71,39 @@ VARIANTS = {
               openings=[('S', 0.0), ('E', -0.5)],
               pools=1, pool_r=(0.9, 1.2), pool_depth=(0.2, 0.3), lip=(0.07, 0.12), talus=0.28, relief=0.07,
               ribs=0.18, wall_amp=0.17, col_clear=1.9, stalactites=9, stalagmites=7, columns=4, pairs=2, straws=4, len_st=(0.7, 3.4)),
+    # a low chamber you can only cross prone: wider than one person, ceiling tilted (0.8 m at one side, 1.7 at the other), floor rising
+    # 4 degrees; both openings are standing-size, each with a neck (the ceiling comes down from 2.3 m in 0.3 m per metre)
+    'F': dict(label='CrawlSlab', asset='TT_Cave_Room_CrawlSlab', seed=89, rx=5.2, ry=4.6, h=1.5, depth=1.0, p=2.3, sink=0.5, wobble=0.04, slope=0.07, voxel=0.12,
+              openings=[('S', -1.6), ('E', 2.0)], neck=4.6, ceil_tilt=(0.0, -0.16), ceil_var=0.2, asym=0.8, alcoves=4, pockets=2, drops=0,
+              up_cap=0.2, side_cap=0.3, lopside=0.14, ico=5, vault=0.12, bank=0.2, swell=0.1,
+              pools=0, pool_r=(1.0, 1.4), pool_depth=(0.2, 0.3), lip=(0.06, 0.1), talus=0.15, relief=0.05,
+              ribs=0.04, wall_amp=0.08, stalactites=4, stalagmites=1, columns=0, pairs=0, straws=0, len_st=(0.06, 0.2)),
+    # the everyday connector: a narrow winding passage, standing height, 18 m long, with waists and a few formations
+    'G': dict(label='Meander', asset='TT_Cave_Pass_Meander', seed=97, rx=2.3, ry=9.5, h=3.3, depth=1.2, p=2.8, wobble=0.07, voxel=0.12,
+              openings=[('S', 0.0), ('N', 0.0)], meander=2.4, pinches=3, asym=0.8, alcoves=6, pockets=3, drops=2, ico=5,
+              ceil_var=0.3, up_cap=0.4, side_cap=0.35, lopside=0.2,
+              pools=0, pool_r=(0.8, 1.1), pool_depth=(0.2, 0.3), lip=(0.06, 0.1), talus=0.25, relief=0.08,
+              ribs=0.08, wall_amp=0.16, stalactites=14, stalagmites=5, columns=1, pairs=3, straws=0, len_st=(0.15, 1.1)),
+    # a jewel grotto: a small round dead-end chamber, one opening, crowded with formations
+    'H': dict(label='Grotto', asset='TT_Cave_Room_Grotto', seed=101, rx=3.3, ry=3.0, h=3.8, depth=1.3, p=2.6, wobble=0.1, voxel=0.12,
+              openings=[('S', 0.0)], asym=0.8, alcoves=4, pockets=3, drops=2, ico=5, ceil_var=0.3,
+              pools=2, pool_r=(0.6, 0.9), pool_depth=(0.15, 0.25), lip=(0.05, 0.09), talus=0.3, relief=0.08,
+              ribs=0.1, wall_amp=0.15, stalactites=22, stalagmites=12, columns=3, pairs=5, straws=0, len_st=(0.15, 1.4)),
+    # a junction round a rock island: four ways in, a ring passage round a column of rock (a loop to walk)
+    'I': dict(label='Island', asset='TT_Cave_Jct_Island', seed=113, rx=7.6, ry=7.6, h=4.8, depth=1.4, p=2.5, wobble=0.08, voxel=0.14,
+              openings=[('S', 0.0), ('N', 0.0), ('E', 0.0), ('W', 0.0)], island=(0.2, -0.1, 3.0, 3.5), probe_from=4.6,
+              asym=0.8, alcoves=6, pockets=3, drops=2, ico=5, ceil_var=0.25, up_cap=0.4, side_cap=0.3, lopside=0.14,
+              pools=1, pool_r=(0.9, 1.3), pool_depth=(0.2, 0.3), lip=(0.06, 0.1), talus=0.3, relief=0.08,
+              ribs=0.1, wall_amp=0.17, stalactites=26, stalagmites=8, columns=2, pairs=4, straws=0, len_st=(0.2, 1.8)),
+    # a cathedral 100 m long and 20 m wide, floor rising 5 m over its length, openings at both ends and on the sides
+    'E': dict(label='Cathedral100', seed=73, rx=8.0, ry=41.0, h=9.0, depth=1.5, p=3.2, wobble=0.07, slope=0.05, voxel=0.3,
+              openings=[('S', 0.0), ('N', 0.0), ('E', -22.0), ('E', 24.0), ('W', 8.0)],
+              pools=4, pool_r=(2.0, 3.5), pool_depth=(0.3, 0.6), lip=(0.1, 0.18), talus=0.5, relief=0.12,
+              ribs=0.15, wall_amp=0.25, stalactites=140, stalagmites=45, columns=14, pairs=22, straws=0, len_st=(0.6, 3.5),
+              asym=0.85, alcoves=18, pockets=10, drops=7, ceil_var=0.35, vault=1.4, bank=0.9, swell=0.4, ico=6, side_cap=0.3, up_cap=0.4, lopside=0.14, pinches=7, meander=3.2),
 }
 P = dict(VARIANTS[VARIANT])
-P['name'] = 'TT_Room_Drip_' + VARIANT
+P['name'] = P.get('asset') or ('TT_Room_Drip_' + VARIANT)
 P['_off'] = Vector((random.Random(P['seed']).uniform(-90, 90), random.Random(P['seed'] + 1).uniform(-90, 90),
                     random.Random(P['seed'] + 2).uniform(-90, 90)))
 
@@ -90,21 +120,157 @@ def clamp01(x):
 
 def build_void_low(P):
     bm = bmesh.new()
+    ico = P.get('ico', 3)               # a long hall needs a finer base: the shapes must be wider than its point spacing
     try:
-        bmesh.ops.create_icosphere(bm, subdivisions=3, radius=1.0)
+        bmesh.ops.create_icosphere(bm, subdivisions=ico, radius=1.0)
     except TypeError:
-        bmesh.ops.create_icosphere(bm, subdivisions=3, diameter=1.0)
+        bmesh.ops.create_icosphere(bm, subdivisions=ico, diameter=1.0)
     o1, o2 = P['_off'], P['_off'] * 0.37 + Vector((7.1, 3.3, 1.9))
+    o3, o4 = P['_off'] * 0.61 + Vector((3.7, 9.1, 2.3)), P['_off'] * 0.83 + Vector((11.3, 1.7, 6.1))
+    asym = P.get('asym', 0.7)
+    rg = random.Random(P['seed'] * 3 + 5)
+
+    def blob(az, el, w, amp):
+        ex = math.sqrt(max(0.0, 1 - el * el))
+        return (Vector((ex * math.cos(az), ex * math.sin(az), el)), w, amp)
+
+    # side alcoves and lobes (low on the walls) and pockets up into the ceiling, all at random places and sizes
+    alcoves = [blob(rg.uniform(0, 2 * math.pi), rg.uniform(0.02, 0.4), rg.uniform(0.22, 0.6), rg.uniform(0.15, 0.42) * (0.4 + asym))
+               for _ in range(P.get('alcoves', 6))]
+    pockets = [blob(rg.uniform(0, 2 * math.pi), rg.uniform(0.55, 0.95), rg.uniform(0.2, 0.5), rg.uniform(0.18, 0.5) * (0.4 + asym))
+               for _ in range(P.get('pockets', 4))]
+    drops = [blob(rg.uniform(0, 2 * math.pi), rg.uniform(0.5, 0.9), rg.uniform(0.2, 0.4), -rg.uniform(0.12, 0.3) * (0.4 + asym))
+             for _ in range(P.get('drops', 3))]
     for v in bm.verts:
         d = v.co.normalized()
         cz = P['h'] if d.z > 0 else P['depth']
+        if d.z > 0:
+            cz *= 1 + P.get('ceil_var', 0.3) * asym * noise.noise(d * 1.2 + o3)
+            up = 0.0
+            down = 0.0
+            for (pv, w, amp) in pockets:
+                up += max(0.0, amp) * math.exp(-(math.acos(max(-1.0, min(1.0, d.dot(pv)))) / w) ** 2)
+            for (pv, w, amp) in drops:
+                down += max(0.0, -amp) * math.exp(-(math.acos(max(-1.0, min(1.0, d.dot(pv)))) / w) ** 2)
+            cz *= (1 + min(up, P.get('up_cap', 0.55))) * (1 - min(down, 0.3))       # bumps add up, and are capped (they used to multiply)
         k = (abs(d.x / P['rx']) ** P['p'] + abs(d.y / P['ry']) ** P['p'] + abs(d.z / cz) ** P['p']) ** (-1.0 / P['p'])
+        side = 0.0
+        for (pv, w, amp) in alcoves:
+            side += amp * math.exp(-(math.acos(max(-1.0, min(1.0, d.dot(pv)))) / w) ** 2)
+        k *= 1 + min(side, P.get('side_cap', 0.5))
+        k *= 1 + P.get('lopside', 0.22) * asym * noise.noise(d * 0.9 + o4)
         big = noise.noise(d * 1.3 + o1)
         mid = noise.noise(d * 3.1 + o2)
         v.co = d * (k * (1 + P['wobble'] * (0.7 * big + 0.3 * mid)))
+    # one-sided pinches (the wall comes in on ONE side over a stretch: a waist, never on both sides at once) and a gentle
+    # meander of the whole axis; both fade out at the ends, and pinches keep away from side openings on their own side
+    pinches = []
+    for i in range(P.get('pinches', 0)):
+        for _try in range(80):
+            side = 1 if rg.random() < 0.5 else -1
+            yc = rg.uniform(-0.62, 0.62) * P['ry']
+            ln = rg.uniform(0.12, 0.28) * P['ry']
+            if any(so in ('E', 'W') and (1 if so == 'E' else -1) == side and abs(al - yc) < ln * 2.2 for so, al in P['openings']):
+                continue
+            if any(s2 == side and abs(y2 - yc) < 1.25 * (l2 + ln) for (s2, y2, l2, f2) in pinches):
+                continue                                            # no two on one side close together (that is a canyon)
+            pinches.append((side, yc, ln, rg.uniform(0.4, 0.6)))
+            break
+    amp = P.get('meander', 0.0)
+    ph = rg.uniform(0, 2 * math.pi)
+    if pinches or amp:
+        for v in bm.verts:
+            x, y = v.co.x, v.co.y
+            red = 0.0
+            for (side, yc, ln, frac) in pinches:
+                if x * side > 0:
+                    red += frac * math.exp(-((y - yc) / ln) ** 2)
+            x *= 1 - min(red, 0.6)                                  # at most 60 percent narrower, however many overlap
+            if amp:
+                env = max(0.0, math.sin(math.pi * (y + P['ry']) / (2 * P['ry']))) if abs(y) < P['ry'] else 0.0
+                x += amp * env * math.sin(2 * math.pi * 1.3 * (y / (2 * P['ry'])) + ph)
+            v.co.x = x
+    P['_pinches'] = pinches
+    tilt = P.get('ceil_tilt')
+    if tilt:                             # the ceiling tilted across the room (a fraction of its height per room half-width)
+        for v in bm.verts:
+            if v.co.z > 0:
+                f = 1 + tilt[0] * v.co.x / P['rx'] + tilt[1] * v.co.y / P['ry']
+                v.co.z *= max(0.45, f)
+    if P.get('sink'):                    # the whole blob sunk: the floor cuts it below its equator, so the walls slope in like a lens
+        for v in bm.verts:
+            v.co.z -= P['sink']
     for v in bm.verts:
         v.co.z = max(v.co.z, 0.0)        # the flat floor, exactly at the kit's Z 0
+    s_ = P.get('slope', 0.0)
+    if s_:
+        for v in bm.verts:               # a floor rising along Y (the openings follow it; the sections stay upright)
+            v.co.z += s_ * v.co.y
+    if P.get('neck'):
+        add_necks(bm, P)
     return bm
+
+
+def add_necks(bm, P):
+    """At every opening a standing-height passage (wider than the kit's door) whose roof comes down towards the room in
+    NECK_SLOPE metres per metre until it meets the chamber's own ceiling: a closed wedge added to the void before the
+    remesh (the voxel remesh unions it with the room). The ceiling over the wedge is never lower than the room's ceiling."""
+    L = P['neck']
+    s_ = P.get('slope', 0.0)
+    for side, along in P['openings']:
+        out, lat = SIDE[side]
+        r_out = (P['ry'] if side in ('S', 'N') else P['rx']) + 0.8          # starts outside the room, inside the shell
+        w = 0.9
+        top0 = 2.35
+        ring = []
+        for t_ in (0.0, 1.5, L):
+            pos_c = lat * along + out * (r_out - t_)
+            # the wedge's roof: from top0 at the mouth, sinking 0.3 m per metre but never under 0.55 m
+            zt = max(1.05, top0 - 0.3 * t_)
+            row = []
+            for u, z in ((-w, 0.0), (w, 0.0), (w, zt), (-w, zt)):
+                pp = pos_c + lat * u
+                pp.z = z + s_ * pp.y
+                row.append(bm.verts.new(pp))
+            ring.append(row)
+        for i in range(len(ring) - 1):
+            r0, r1 = ring[i], ring[i + 1]
+            for k in range(4):
+                bm.faces.new((r0[k], r0[(k + 1) % 4], r1[(k + 1) % 4], r1[k]))
+        bm.faces.new(ring[0][::-1])
+        bm.faces.new(ring[-1])
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
+
+
+def cut_island(V2, P):
+    """A column of rock from floor to ceiling (an irregular, slightly waisted ellipse) cut out of the void: the room becomes a ring"""
+    ix, iy, rx_, ry_ = P['island']
+    g = bmesh.new()
+    bmesh.ops.create_cone(g, cap_ends=True, cap_tris=False, segments=40, radius1=1.0, radius2=1.0, depth=P['h'] * 3.0)
+    rg = random.Random(P['seed'] + 17)
+    ph = rg.uniform(0, 6.28)
+    for v in g.verts:
+        a = math.atan2(v.co.y, v.co.x)
+        k = 1 + 0.18 * math.sin(2 * a + ph) + 0.12 * math.sin(3 * a + 2 * ph) + 0.06 * math.sin(5 * a)
+        waist = 1 - 0.10 * math.cos(v.co.z / (P['h'] * 1.5) * math.pi * 1.4) ** 2
+        v.co.x = ix + v.co.x * rx_ * k * waist
+        v.co.y = iy + v.co.y * ry_ * k * waist
+        v.co.z = v.co.z + P['h'] * 0.5
+    bmesh.ops.triangulate(g, faces=g.faces[:])
+    ob_v = to_object(V2, P['name'] + '_tmp_v')
+    ob_i = to_object(g, P['name'] + '_tmp_island')
+    m = ob_v.modifiers.new('isl', 'BOOLEAN')
+    m.operation = 'DIFFERENCE'
+    m.solver = 'EXACT'
+    m.object = ob_i
+    dg = bpy.context.evaluated_depsgraph_get()
+    me = bpy.data.meshes.new_from_object(ob_v.evaluated_get(dg))
+    bpy.data.objects.remove(ob_i)
+    bpy.data.objects.remove(ob_v)
+    out = bmesh.new()
+    out.from_mesh(me)
+    bpy.data.meshes.remove(me)
+    return out
 
 
 def remesh(bm_low, voxel=0.3):
@@ -147,55 +313,97 @@ def outer_from(bm_low, P, shell_wall=0.9, shell_floor=1.5):
 
 def probe_opening(tree, side, along):
     out, lat = SIDE[side]
+    s_ = P.get('slope', 0.0)
+    d_ = (out + Vector((0, 0, s_ * out.y))).normalized()       # rays follow the sloped floor
     dists = []
     for dx in (-0.7, 0.0, 0.7):
         for z in (0.2, 1.0, 1.9):
-            o = lat * (along + dx) + Vector((0, 0, z))
-            hit = tree.ray_cast(o, out)
+            o = lat * (along + dx) + out * P.get('probe_from', 0.0)
+            o = o + Vector((0, 0, z + s_ * o.y))
+            hit = tree.ray_cast(o, d_)
             if hit[0] is not None:
-                dists.append(hit[3])
+                dists.append(hit[3] + P.get('probe_from', 0.0))
     return min(dists), max(dists)
 
 
 def build_room(P):
     t0 = time.time()
     piece = Piece(P['name'])
+    piece.frames = False                 # a cave has no timber (the dug tunnel's own frame at the joint stays)
     low = build_void_low(P)
     V2 = remesh(low, P.get('voxel', 0.36))
-    S = outer_from(low, P)
+    if P.get('island'):
+        V2 = cut_island(V2, P)
+    if P.get('neck'):
+        # the low blob is not one clean solid any more (the necks overlap the room): push the remeshed union out instead
+        S = outer_from(V2, P, 1.1, 1.5)
+        for _ in range(3):
+            bmesh.ops.smooth_vert(S, verts=S.verts[:], factor=0.5, use_axis_x=True, use_axis_y=True, use_axis_z=True)
+    else:
+        S = outer_from(low, P)
     tree = BVHTree.FromBMesh(V2)
     ob_s = to_object(S, P['name'] + '_tmp_outer')
+    union = V2.copy() if P.get('neck') else None         # necked rooms: void and holes are ONE cutter (the holes sit inside the void; sequential cuts broke the shell)
     ob_v = to_object(V2.copy(), P['name'] + '_tmp_void')
-    cutters = [ob_v]
+    cutters = [ob_v] if union is None else []
     stubs, opens = [], []
     bbox = {}
+    collar = bmesh.new() if not P.get('neck') else None        # rock round each opening (see below)
     for side, along in P['openings']:
         out, lat = SIDE[side]
         far = max(v.co.dot(out) for v in ob_s.data.vertices)
-        wmin, wmax = probe_opening(tree, side, along)
+        if P.get('neck'):
+            # a low room: the probe rays would start inside the rock. The neck's mouth is a flat wall at a known distance
+            wmin = wmax = (P['ry'] if side in ('S', 'N') else P['rx']) + 0.8
+        else:
+            wmin, wmax = probe_opening(tree, side, along)
         base = lat * along + out * wmin
+        z0 = P.get('slope', 0.0) * base.y                       # the floor height where this opening meets the wall
+        base.z = z0
         start = lat * along + out * (wmax + 0.55)
         end = lat * along + out * max(far + 0.35, wmax + 1.4)
-        hole = bmesh.new()
-        prism(hole, [(base - out * 0.3, out), (lat * along + out * (wmax + 2.2), out)], offset(INNER, 0.001))
-        cutters.append(to_object(hole, P['name'] + '_tmp_hole'))
+        start.z = z0
+        end.z = z0
+        hole = bmesh.new() if union is None else union
+        hole_end = lat * along + out * (wmax + 2.2)
+        hole_end.z = z0
+        prism(hole, [(base - out * 0.3, out), (hole_end, out)], offset(INNER, 0.001))
+        if union is None:
+            cutters.append(to_object(hole, P['name'] + '_tmp_hole'))
+        if collar is not None:
+            # A solid tube of (almost) the sleeve's outer profile from behind the room's wall out past the sleeve's start cap, unioned into
+            # the rock BEFORE the cuts (the void cut trims what lies inside the room). Without it the rock skin can end before the sleeve
+            # starts and there is a see-through slot between them (0.3-0.6 m, measured with ray scans in the Island and Drip rooms).
+            prism(collar, [(base - out * 0.3, out), (start + out * 0.3, out)], offset(OUTER, -0.05))
         stubs.append((start, end, out))
         opens.append(dict(side=side, base=base, out=out, lat=lat, wmin=wmin, wmax=wmax, end=end))
         # headroom where the tunnel meets the wall
         up = tree.ray_cast(base - out * 0.3 + Vector((0, 0, 0.3)), Vector((0, 0, 1)))
-        if up[0] is not None and up[3] < 2.3:
+        if up[0] is not None and up[3] < 2.3 and not P.get('neck'):
             print('WARNING: low ceiling (%.2f m) at opening %s' % (up[3], side))
+    if union is not None:
+        cutters.append(to_object(union, P['name'] + '_tmp_cut'))
+    ob_collar = None
+    if collar is not None and len(collar.faces):
+        ob_collar = to_object(collar, P['name'] + '_tmp_collar')
+        m = ob_s.modifiers.new('collar', 'BOOLEAN')
+        m.operation = 'UNION'
+        m.solver = 'EXACT'
+        m.object = ob_collar
     for c in cutters:
         m = ob_s.modifiers.new('cut', 'BOOLEAN')
         m.operation = 'DIFFERENCE'
         m.solver = 'EXACT'
         m.object = c
+        if union is not None:
+            m.use_self = True
     dg = bpy.context.evaluated_depsgraph_get()
     me = bpy.data.meshes.new_from_object(ob_s.evaluated_get(dg))
-    for c in cutters:
+    for c in cutters + ([ob_collar] if ob_collar else []):
         bpy.data.objects.remove(c)
     bpy.data.objects.remove(ob_s)
     piece.bm.from_mesh(me)
+    print('shell after boolean: %d faces, volume %.1f (void %.1f)' % (len(piece.bm.faces), piece.bm.calc_volume(), V2.calc_volume()))
     bpy.data.meshes.remove(me)
     for a, b, out in stubs:
         sweep(piece.bm, [(a, out), (b, out)], INNER, OUTER, closed=True, mat=0)
@@ -496,6 +704,7 @@ def save_atlas(atlas, name):
 # 5. Placing the formations on the finished shell (ray casts floor/ceiling), keeping the walking routes clear
 
 def probe(tree, x, y, z0=1.0):
+    z0 = z0 + P.get('slope', 0.0) * y
     up = tree.ray_cast(Vector((x, y, z0)), Vector((0, 0, 1)))
     dn = tree.ray_cast(Vector((x, y, z0)), Vector((0, 0, -1)))
     if up[0] is None or dn[0] is None or up[1].z > -0.3 or dn[1].z < 0.3:

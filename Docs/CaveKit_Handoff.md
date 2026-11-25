@@ -149,3 +149,13 @@ Plan:
   - Scripts reload via the World Editor menu `Game > Reload Game Scripts` (`wb_reload` doesn't work here).
 - **Concept doc on blueprints** (markers, routing, caverns): the user pasted it. A spline replaces the markers.
 - **Reference photos:** about 23 from Wikimedia Commons, used for the review. They were in the scratchpad (`cave_refs`), so they may be gone.
+
+---
+## Update 2026-11-24 (session: first wave)
+**New variants in `cave_dripstone_room.py` (`VARIANTS`)** - `asset=` gives the model its own name (otherwise `TT_Room_Drip_<variant>`):
+- `F` `TT_Cave_Room_CrawlSlab`: prone chamber, lens cross-section (`sink` sinks the blob so the floor cuts it below the equator -> sloped walls), `ceil_tilt`, `neck` (standing-height wedge at each opening, roof 0.3 m/m down to 1.05 m; the voxel remesh unions it; for necked rooms void + holes are ONE boolean cutter with `use_self`, outer shell built from the remeshed void). Measured: headroom map `_headroom_map.py` (scratchpad) + crawl flood fill (>=0.95 m).
+- `G` `TT_Cave_Pass_Meander` (18 m winding passage, 2 openings), `H` `TT_Cave_Room_Grotto` (dead-end chamber, 1 opening).
+- Not yet: Saddle, Rubble, Island junction, Squeeze, Breakthrough (see `CaveKit_Concept_30.md`).
+**v4 changes driven by the critic agent:** wall zones (flowstone sheet / normal / blocky), 8 m bulge band, `floor_big`, clustered formation sites (`cluster_p`, `cluster_scale`), offset stalagmites (`apart`), skewed stalactite lengths, blunt/domed stalagmite tops, waisted columns, `scallop`.
+**Generator themes (uncompiled, untested):** `SP_TunnelTheme` (DUG/CAVE/MIX) via `SP_TunnelCatalog.ThemeOf(name)`: `TT_Cave_*`/`TT_Room_Drip*` = cave, `Brk_` = mix, rest dug. `ThemeWeight` multiplies corridor weights and thins room picks (setting `Theme switch`, default 0.15). `TT_Cave_Pass_*` classify as BEND. Rooms with one way in (grotto) only at dead ends.
+**Trap:** `split_for_remesh` must find joint stubs by box distance to the socket (< 0.3 m), not by centre.

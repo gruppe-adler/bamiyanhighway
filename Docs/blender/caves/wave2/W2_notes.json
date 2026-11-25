@@ -1,0 +1,75 @@
+{
+ "squeezep": {
+  "what": "Prone squeeze: standing mouths, a diagonal S-jog in the middle (no sight line end to end: the straight line along the mouths leaves the void), 3.5 m of prone crawl under a roof of 1.22 m (design), ramps of 0.4 m/m into and out of it. Concept said 12 m long; it needs about 15 m (2 x 3.7 m ramps + 3.5 m prone + 2 x 2 m standing). Mud floor: not baked (the mask's sediment share is the generic one).",
+  "issues": "The first check failed (0.30 m / 1.21 m): cause was the collider, not the shape: holes in the collider's roof round small stalactite roots (collide flag inherited from the formation, see the generator findings above) and buried stub faces. Fixed in W2_overrides.w2_collider; re-measured 1.17 m high / 1.59 m wide. Roughening is scaled to 0.3 where the headroom is below 1.7 m (the roof is smoother there than in the rooms).",
+  "status": "done"
+ },
+ "breakthrough": {
+  "what": "A dug tunnel (the NEW dug kit's ring: 1.6 x 2.2 m clear, fillet 0.30, earth only, NO timber, as of 2026-11-24) runs 10 m into a cave chamber; the floor drops 0.6 m over rubble. Socket 1 is the dug end (new ring, 24 profile points), socket 2 the cave end (old cave ring 1.4 x 2.1). The dug tube is the same signed-distance union as the cave, so the ragged edge where earth meets rock is the real intersection of the two surfaces.",
+  "status": "built + exported with the OLD ring and timber; rebuild with the new ring running",
+  "issues": "Rebuilt after the dug-kit redesign (the first build had the old 1.4 x 2.1 ring with timber frames). Earlier failures (0.30 m / 0.00 m) were collider artefacts: holes in the collider's roof round small stalactite roots (collide flag inherited from the formation) and buried faces behind the timber ribbons. Material slots in the FBX: TT_Earth (cave rock), TT_EarthDug (the dug tube), TT_Ground (outer skin); W2_finish.py assigns the TT dug kit's own TT_Earth.emat to the dug tube. The cave sockets of every W2 piece still use the OLD cave ring (1.4 x 2.1, like the existing rooms): only the dug ends follow the new ring."
+ },
+ "squeezec": {
+  "what": "Crouch squeeze: standing mouths, a gentle kink, 3.2 m of crouch under a roof of 1.88 m (design; the route clearance must stay >= 1.6 m), ramps of 0.35 m/m.",
+  "status": "done"
+ },
+ "crack": {
+  "what": "Tall leaning crack: walls lean 0.14 m per metre (8 degrees; the concept's 19 degrees would leave a vertical body only about 1.0 m of free width in a 1.9 m wide crack, below the 1.2 m minimum; the lean fades to zero near the mouths so the opening profile is exact), floor rises 1.5 m over 17 m (about 5 degrees), a sideways pinch 2.7 m at the floor (the first build, 2.3 m, measured only 0.99 m free: roughness and lean eat about 1.3 m) wide halfway; roof 7 m.",
+  "issues": "Needs about 9 m of earth above the floor.",
+  "status": "rebuild running (first build failed the width check)"
+ },
+ "flooded": {
+  "what": "Dry water-cut passage: a channel 2 m wide and 0.55 m deep between two 1.6 m ledges; ledge roof 1.85 m (crouch), channel headroom 2.4 m (walk); the channel fades out over the first 3 m so the mouths are flat.",
+  "issues": "Reads wrong without water (as the concept warned); the user adds a water plane at the channel's level (floor -0.55 in the middle).",
+  "status": "done"
+ },
+ "saddle": {
+  "what": "A tall room (2.9 m) crossed diagonally by a low band: roof 1.05 m (prone) at the west end rising to 2.0 m (crouch) at the east end; two routes S to N: west prone, east crouch (checked separately with route masks).",
+  "status": "rebuild running (first build failed east crouch width)"
+ },
+ "rubble": {
+  "what": "Breakdown crawl: 14 jammed blocks under a 1.9 m slab, a winding crouch route (>= 1.6 m) and two prone pockets (roof 1.22 m) beside it; floor tilted 4 percent."
+ },
+ "bubble": {
+  "what": "Phreatic bubble 7 x 6 x 3.5 m: smooth walls, dome, shallow bowl in the floor, almost no formations; two mouths on adjacent walls."
+ },
+ "cleft": {
+  "what": "Wall cleft you move through sideways: leaning walls (0.12 m/m), pinch 2.7 m at the floor (the first build, 2.3 m, measured only 0.99 m free: roughness and lean eat about 1.3 m), rubble floor rising 1.2 m to the north mouth, a side pocket with a high east mouth (+1.9 m) reached by a 20 degree rubble slope."
+ },
+ "tri": {
+  "what": "Asymmetric three-way chamber: east half at 0, west half 1.2 m lower in four steps of 0.3 m (west mouth on the lower floor, dz -1.2), one roof drop, breakdown floor noise. Concept listed the W mouth as '+1.2'; I put it on the lower west floor (-1.2), the physically consistent reading."
+ },
+ "star": {
+  "what": "Five-way hub: a 0.9 m basin in the middle with a ramp ring, a raised east ledge (+1.8 m instead of 2.4 so its ramp stays under 30 degrees) with the high east mouth, four standing mouths and a west mouth reached by a crouch neck (roof 1.88 m, 5 m neck).",
+  "status": "failed: S_N / S_Ehigh width 0.89 / 0.99 m on the collider (design check passes 3.9 m): cause not found, not exported"
+ },
+ "sump": {
+  "what": "Dry basin ending at a sealed low arch: floor steps down 1.0 m in four 0.25 m steps, the roof comes down to the floor at the far end (sealed, no gap, no see-through slit)."
+ },
+ "grottocrawl": {
+  "what": "Secret nook at the end of a 6 m prone neck (roof 1.22 m by design, also in the nook); one standing mouth; the only way out is back."
+ },
+ "hole": {
+  "what": "Dug stub (4.4 m, new kit ring, no timber), a narrow ragged hole, three rubble steps of 0.27 m, a 3 m crouch squeeze (roof 1.88 m design, >= 1.6 m required), then cave passage; the cave mouth is 0.81 m higher than the dug floor."
+ },
+ "cutting": {
+  "what": "A dug straight (11 m, new kit ring, no timber frames, sockets 1 and 2 in line) with a cave pocket opening off its east wall (socket 3, 0.3 m lower); the tunnel carries on."
+ },
+ "pillars": {
+  "what": "A forest of 12 columns (the concept's 16 do not fit with every gap >= 1.5 m in a 15 x 14 m room) under a 3.7 m roof, floor rising 3 percent to the north, every gap between neighbours and to the walls at least 1.5 m, mouths staggered (S, E, N). Columns are signed-distance cylinders flaring at floor and roof (merged with the rock, not glued on)."
+ },
+ "lake": {
+  "what": "Basin hall 30 x 22 m: a dry 16 x 10 m basin 2.2 m deep in seven terraces (0.31 m steps), a rim walk 6-7 m wide, east mouth +1.2 m, north mouth on a ledge at +2.0 m (the concept said +3.0; +2.0 keeps the ledge ramp under 30 degrees), south and west mouths low. No water (the user adds it).",
+  "status": "failed: S_N width 1.27 m (needs 1.3), not exported"
+ },
+ "cascade": {
+  "what": "A flowstone cascade 4.5 m high down the north end into one gour field at the foot (v4 rimstone terraces); upper gallery mouth N at +4.5, low mouth S, side mouth E on the gour steps (+0.65). The slope is 26 degrees.",
+  "status": "failed: route up width 1.07 m (floor slope 26 deg plus gour and noise), not exported"
+ },
+ "collapse": {
+  "what": "Collapse chamber: floor is a cone of boulders rising 5.8 m to the east wall under a dome, 70 breakdown blocks keeping clear of three declared routes; S, N, W mouths low, E mouth at the crest (+4.16)."
+ },
+ "gallerycrawl": {
+  "what": "Long crawl gallery 30 m: prone stretches (1.22 m), a crouch stretch (1.88 m), three rest pockets (2.0 m), 1.4-2.6 m half width, standing mouths."
+ }
+}

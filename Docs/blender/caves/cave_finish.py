@@ -4,11 +4,13 @@ sees it as a room). Plain Python from the addon root:  python Docs/blender/caves
 Safe to run again.
 
 Layers (all on UV set 1 = world-space box UVs, so they run on across every joint; the mask on UV set 2):
-  1 base rock      Cave_Limestone
-  2 mask R         Cave_Flowstone   (flowstone: ceilings, floors, round the roots)
-  3 mask G         Cave_Dripstone   (the formations, past their roots), warm tint
-  4 mask B         Cave_Flowstone   (white tips), pale tint
+  1 base rock      Cave_Chalk       (calm grey-cream rock: hardly any hero features, so it can tile over walls and ceilings)
+  2 mask R         Cave_Flowstone   (flowstone: floor sheets, smooth wall zones, round the roots)
+  3 mask G         Cave_Dripstone   (the formations, and blocky wall zones), warm tint
+  4 mask B         Cave_Sediment    (the floor ground outside the flowstone sheets)
   dirt             Cave_Mud (off for now: DirtOpacity 0)
+  The four layers tile at different sizes (5.9 / 5 / 2.5 / 7 m) and the mask (cave_export.break_up_repetition) puts them in
+  patches of 3-13 m, so nothing repeats over a long wall
 Which mask channel drives which layer is an assumption (R->2, G->3, B->4): check it in Workbench.
 """
 import os, re, sys, hashlib
@@ -64,32 +66,32 @@ def material():
  MaskMap "{mask}"
  DirtOpacity 0
  DirtBCRMap "{tex('Cave_Mud', 'BCR')}"
- Color_1 1 1 1 1
- BCR_1 "{tex('Cave_Limestone', 'BCR')}"
- NMO_1 "{tex('Cave_Limestone', 'NMO')}"
- UVTransform_1 {uvt(n + '.uv1', 16)}
+ Color_1 1 0.96 0.9 1
+ BCR_1 "{tex('Cave_Chalk', 'BCR')}"
+ NMO_1 "{tex('Cave_Chalk', 'NMO')}"
+ UVTransform_1 {uvt(n + '.uv1', 6)}
  Roughness_1 1
  Metalness_1 0
  Enabled_2 1
- Color_2 1 0.92 0.8 1
+ Color_2 0.93 0.88 0.78 1
  BCR_2 "{tex('Cave_Flowstone', 'BCR')}"
  NMO_2 "{tex('Cave_Flowstone', 'NMO')}"
- UVTransform_2 {uvt(n + '.uv2', 16)}
+ UVTransform_2 {uvt(n + '.uv2', 7)}
  Roughness_2 0.45
  Metalness_2 0
  Enabled_3 1
- Color_3 1 0.82 0.6 1
+ Color_3 1 0.85 0.66 1
  BCR_3 "{tex('Cave_Dripstone', 'BCR')}"
  NMO_3 "{tex('Cave_Dripstone', 'NMO')}"
- UVTransform_3 {uvt(n + '.uv3', 24)}
+ UVTransform_3 {uvt(n + '.uv3', 14)}
  Roughness_3 0.32
  Metalness_3 0
  Enabled_4 1
- Color_4 1 1 0.96 1
- BCR_4 "{tex('Cave_Flowstone', 'BCR')}"
- NMO_4 "{tex('Cave_Flowstone', 'NMO')}"
- UVTransform_4 {uvt(n + '.uv4', 32)}
- Roughness_4 0.25
+ Color_4 0.95 0.9 0.84 1
+ BCR_4 "{tex('Cave_Sediment', 'BCR')}"
+ NMO_4 "{tex('Cave_Sediment', 'NMO')}"
+ UVTransform_4 {uvt(n + '.uv4', 5)}
+ Roughness_4 0.95
  Metalness_4 0
 }}
 """
@@ -189,16 +191,14 @@ def fix_model(cave_emat):
     if 'MaterialAssigns' not in t:
         print('the model is not imported yet (no MaterialAssigns in its meta): import it in Workbench, then run again')
         return None
+    # only the materials the model really has (Workbench lists them in the meta after the import); adding a source material the FBX
+    # does not contain makes the next reimport complain ("Deleted materials"). The timber frames are gone, so drop TT_Wood.
+    t = re.sub(r'    MaterialAssignClass "\{[0-9A-F]{16}\}" \{\s*SourceMaterial "TT_Wood"\s*AssignedMaterial "[^"]*"\s*\}\n', '', t)
     assign = {'TT_Earth': cave_emat, 'TT_CalciteGlow': cave_emat,
-              'TT_Wood': resource(os.path.join(TT_DATA, 'TT_Wood.emat.meta')),
               'TT_Ground': cave_emat}       # rooms are underground: the terrain material on the outer shell only looked like blue water
     for src, dst in assign.items():
         if 'SourceMaterial "%s"' % src in t:
             t = re.sub(r'(SourceMaterial "%s"\s*AssignedMaterial ")[^"]*(")' % src, r'\g<1>%s\g<2>' % dst, t)
-        else:
-            entry = ('    MaterialAssignClass "{%s}" {\n     SourceMaterial "%s"\n     AssignedMaterial "%s"\n    }\n'
-                     % (guid(NAME + '.assign.' + src), src, dst))
-            t = t.replace("   }\n   MeshParams {", entry + "   }\n   MeshParams {", 1)
     if 'ExportSceneHierarchy' not in t:      # the empties (openings) only come through as memory points with it
         t = t.replace('  FBXResourceClass PC {\n', '  FBXResourceClass PC {\n   ExportSceneHierarchy 1\n', 1)
     t = re.sub(r'"\{[0-9A-F]{16}\}[^"]*TT_[A-Za-z]+\.gamemat"', '"%s"' % DIRT, t)

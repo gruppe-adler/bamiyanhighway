@@ -33,7 +33,7 @@ COMMON = dict(voxel=0.12,
               ledge_amp=0.07, ledge_step=0.55,
               knob_amp=0.13, knob_r=0.42, knob2_amp=0.07, knob2_r=0.17,
               crack_depth=0.05, crust=0.05, cracks=4, crack_len=(1.8, 3.4), crack_density=10.0, straw_share=0.45,
-              mound_amp=0.20, mound_r=0.75,
+              mound_amp=0.10, mound_r=0.75,
               gours=1, gour_R=(1.2, 1.8), gour_steps=5, gour_h=0.14, gour_lip=0.14,
               hero=4, curtains=2, boulders=2, candles=2)
 EXTRA = {
@@ -41,11 +41,24 @@ EXTRA = {
     'B': dict(cracks=6, crack_density=13.0, ledge_amp=0.09, knob_amp=0.10, hero=2, curtains=1, gours=1, boulders=3),
     'C': dict(gours=3, gour_R=(1.2, 1.9), gour_steps=6, cracks=3, curtains=1, hero=3, pools=1),
     'D': dict(curtains=5, cracks=3, ribs=0.22, ledge_amp=0.05, hero=3, gours=0),
+    'E': dict(cracks=16, crack_len=(4.0, 9.0), crack_density=9.0, crack_depth=0.07, ledge_amp=0.10, ledge_step=0.9,
+              knob_amp=0.16, knob_r=0.6, mound_r=1.1, mound_amp=0.14, gours=5, gour_R=(2.0, 3.2), gour_steps=7,
+              gour_h=0.16, gour_lip=0.16, hero=18, curtains=7, boulders=22, candles=8, col_span=14.0, len_scale=1.8,
+              floor_big=0.45, boulder_big=1.4, floor_grain=0.04, floor_step=0.07, bulge_amp=0.2, cluster_scale=2.2, cluster_p=0.75),
+    'G': dict(cracks=4, crack_len=(2.0, 4.0), crack_density=9.0, knob_amp=0.1, hero=1, curtains=1, boulders=2, candles=1, gours=0,
+              floor_big=0.06, bulge_amp=0.1, cluster_scale=1.0, col_span=4.5),
+    'H': dict(cracks=3, crack_len=(1.5, 3.0), crack_density=11.0, hero=2, curtains=2, boulders=1, candles=3, gours=1, gour_R=(0.8, 1.2), gour_steps=4,
+              floor_big=0.05, bulge_amp=0.1, cluster_scale=0.9, col_span=5.0),
+    'I': dict(cracks=4, crack_len=(2.0, 4.5), crack_density=9.0, hero=3, curtains=1, boulders=3, candles=2, gours=1, gour_R=(1.0, 1.5), gour_steps=4,
+              floor_big=0.12, bulge_amp=0.14, cluster_scale=1.4, col_span=6.0),
+    # the crawl chamber: nothing may hang or stand where a prone body goes (formations only above 1.3 m, never on the routes)
+    'F': dict(cracks=2, crack_len=(1.5, 3.0), crack_density=8.0, knob_amp=0.05, hero=0, curtains=0, boulders=0, scallop=0.06, candles=0, gours=0,
+              floor_big=0.09, bulge_amp=0.05, cluster_scale=0.6, col_span=2.0, knob2_amp=0.03, ledge_amp=0.03),
 }
 P = dict(VARIANTS[VARIANT])
 P.update(COMMON)
 P.update(EXTRA.get(VARIANT, {}))
-P['name'] = 'TT_Room_Drip_' + VARIANT
+P['name'] = P.get('asset') or ('TT_Room_Drip_' + VARIANT)
 P['_off'] = Vector((random.Random(P['seed']).uniform(-90, 90), random.Random(P['seed'] + 1).uniform(-90, 90),
                     random.Random(P['seed'] + 2).uniform(-90, 90)))
 PIECE_KEEP = []
@@ -182,7 +195,13 @@ def basin_z(b, x, y):
 def floor_field2(x, y):
     off = P['_off']
     rho = math.sqrt((x / P['rx']) ** 2 + (y / P['ry']) ** 2)
-    z = P['talus'] * smooth(clamp01((rho - 0.72) / 0.28))
+    phi = math.atan2(y / P['ry'], x / P['rx'])
+    side = 0.35 + 0.65 * (0.5 + 0.5 * noise.noise(Vector((math.cos(phi) * 1.4, math.sin(phi) * 1.4, 3.1)) + off))
+    z = P['talus'] * side * smooth(clamp01((rho - 0.62) / 0.38))
+    wallness = smooth(clamp01((rho - 0.55) / 0.35))
+    keep_walk = smooth(clamp01((path_dist(x, y) - 1.2) / 2.2))
+    z += keep_walk * wallness * P.get('bank', 0.55) * (0.5 + 0.5 * noise.noise(Vector((x * 0.16, y * 0.16, 1.7)) + off))
+    z += keep_walk * P.get('swell', 0.25) * noise.noise(Vector((x * 0.07, y * 0.07, 4.1)) + off)
     z += P['relief'] * noise.noise(Vector((x * 0.3, y * 0.3, 0.0)) + off)
     taken = 0.0
     for b in P['_basins']:
@@ -238,18 +257,20 @@ def refine(bm):
 
 
 def ledge(c):
-    s = (c.z + 0.35 * noise.noise(c * 0.35 + P['_off'])) / P['ledge_step']
+    # bedding ledges: the course height wanders a lot and the strength comes and goes (no brickwork on a long wall)
+    s = (c.z + 1.6 * P['ledge_step'] * noise.noise(Vector((c.x * 0.16, c.y * 0.16, c.z * 0.3)) + P['_off'])) / P['ledge_step']      # courses tilt and wave, never ruled lines
     f = s - math.floor(s)
-    return P['ledge_amp'] * (smooth(clamp01(f / 0.8)) - 0.5)
+    strength = 0.25 + 0.75 * (0.5 + 0.5 * noise.noise(c * 0.3 + P['_off'] * 0.7 + Vector((4.1, 2.7, 8.3))))
+    return P['ledge_amp'] * strength * (smooth(clamp01(f / 0.8)) - 0.5)
 
 
-def knobs(c):
+def knobs(c, popcorn=True):
     off = P['_off']
     k1 = smooth(clamp01(1 - voro((c + off) / P['knob_r']) / 0.7)) ** 1.5
     k2 = smooth(clamp01(1 - voro((c + off * 1.7) / P['knob2_r']) / 0.7)) ** 1.5
     m = max(0.0, 0.5 + 0.6 * noise.noise(c * 0.4 + off))
     k3 = smooth(clamp01(1 - voro((c + off * 2.3) / 0.075) / 0.6))
-    return P['knob_amp'] * k1 * m + P['knob2_amp'] * k2 + 0.022 * k3
+    return P['knob_amp'] * k1 * m + P['knob2_amp'] * k2 + (0.022 * k3 if popcorn else 0.0)
 
 
 def crack_sd(x, y):
@@ -286,26 +307,30 @@ SK_CELL = 0.5
 
 
 def add_skirt(grid, x, y, rad, hgt):
-    k = (int(math.floor(x / SK_CELL)), int(math.floor(y / SK_CELL)))
-    grid.setdefault(k, []).append((x, y, rad, hgt))
-    grid['_reach'] = max(grid.get('_reach', 1), int(math.ceil(2.6 * rad / SK_CELL)) + 1)
+    """A skirt is registered in every grid cell its disc (2.5 radii) touches, so a lookup only reads one cell"""
+    reach = 2.5 * rad
+    x0, x1 = int(math.floor((x - reach) / SK_CELL)), int(math.floor((x + reach) / SK_CELL))
+    y0, y1 = int(math.floor((y - reach) / SK_CELL)), int(math.floor((y + reach) / SK_CELL))
+    item = (x, y, rad, hgt)
+    for i in range(x0, x1 + 1):
+        for j in range(y0, y1 + 1):
+            grid.setdefault((i, j), []).append(item)
 
 
 def skirt_at(grid, x, y):
     """Sum of the skirts' bumps, each a Gaussian that reaches exactly 0 at 2.5 radii (no cut-off edges)"""
-    kx, ky = int(math.floor(x / SK_CELL)), int(math.floor(y / SK_CELL))
-    reach = grid.get('_reach', 1)
+    items = grid.get((int(math.floor(x / SK_CELL)), int(math.floor(y / SK_CELL))))
+    if not items:
+        return 0.0
     tot, top = 0.0, 0.0
     floor_e = math.exp(-6.25)
-    for i in range(-reach, reach + 1):
-        for j in range(-reach, reach + 1):
-            for (sx, sy, rad, hgt) in grid.get((kx + i, ky + j), ()):
-                d2 = (x - sx) ** 2 + (y - sy) ** 2
-                if d2 >= 6.25 * rad * rad:
-                    continue
-                h = hgt * (math.exp(-d2 / (rad * rad)) - floor_e) / (1 - floor_e)
-                tot += h
-                top = max(top, hgt)
+    for (sx, sy, rad, hgt) in items:
+        d2 = (x - sx) ** 2 + (y - sy) ** 2
+        if d2 >= 6.25 * rad * rad:
+            continue
+        h = hgt * (math.exp(-d2 / (rad * rad)) - floor_e) / (1 - floor_e)
+        tot += h
+        top = max(top, hgt)
     if top <= 0:
         return 0.0
     cap = 1.5 * top
@@ -336,7 +361,10 @@ def roughen_cave2(bm, keep):
         base = 0.6 * noise.noise(c * 0.5 + off) + 0.3 * noise.noise(c * 1.4 + off * 0.7) + 0.1 * noise.noise(c * 4.0 + off * 1.3)
         d = Vector()
         if wf > 0:
-            dz = floor_field2(c.x, c.y) + skirt_at(SKIRT_F, c.x, c.y) + 0.012 * base + 0.006 * noise.noise(c * 9.0 + off)
+            dz = (floor_field2(c.x, c.y) + skirt_at(SKIRT_F, c.x, c.y) + 0.012 * base + 0.006 * noise.noise(c * 9.0 + off)
+                  + P.get('floor_big', 0.0) * noise.noise(Vector((c.x * 0.13, c.y * 0.13, 0.0)) + off * 0.6)
+                  + P.get('floor_grain', 0.0) * (noise.noise(Vector((c.x * 1.5, c.y * 1.5, 0.0)) + off * 0.3) + 0.5 * noise.noise(Vector((c.x * 4.0, c.y * 4.0, 0.0)) + off * 0.8))
+                  + P.get('floor_step', 0.0) * smooth(clamp01((noise.noise(Vector((c.x * 0.22, c.y * 0.22, 0.0)) + off * 0.45) * 6.0) % 1.0)))      # shelves
             d += Vector((0, 0, dz * wf))
         if wc > 0 or ww > 0:
             kn = knobs(c)
@@ -344,13 +372,26 @@ def roughen_cave2(bm, keep):
             sk = skirt_at(SKIRT_C, c.x, c.y)
             if wc > 0:
                 head = 0.35 + 0.65 * smooth(clamp01((path_dist(c.x, c.y) - 0.8) / 0.9))
-                dc = 0.5 * base * P['wall_amp'] + kn * head + crack_field(c.x, c.y) + 0.6 * ld
+                vault = P.get('vault', 0.7) * noise.noise(c * 0.09 + off * 0.3)
+                if vault > 0:
+                    vault *= 0.5            # a sag, held back above all by `head` below
+                scal = P.get('scallop', 0.0) * 1.2 * (0.5 - abs(noise.noise(c * 1.7 + off * 0.5)))      # flow scallops, ~0.5 m
+                dc = 0.5 * base * P['wall_amp'] + kn * head + crack_field(c.x, c.y) + 0.6 * ld + scal * head - 1.0 * vault * (1.0 if vault < 0 else head)
                 if dc > 0:
                     dc *= head
                 d += n * ((dc + sk) * wc)
             if ww > 0:
                 rib = 1.2 * (0.5 - abs(noise.noise(Vector((c.x * 2.0, c.y * 2.0, c.z * 0.35)) + off * 0.5)))
-                dw = base * P['wall_amp'] + rib * P['ribs'] + ld + 0.5 * kn + 0.6 * sk
+                # zones of ~10 m: smooth fluted flowstone sheets, ordinary rock, angular blocky rock; so no wall has one texture
+                zone = noise.noise(c * 0.085 + off * 0.4)
+                zs = smooth(clamp01((-zone - 0.04) / 0.18))             # flowstone sheet: quiet, with vertical flutes
+                zb = smooth(clamp01((zone - 0.10) / 0.18))              # blocky: sharp creases
+                bulge = P.get('bulge_amp', 0.8 * P['wall_amp']) * noise.noise(c * 0.13 + off * 0.9)       # ~8 m bulges and hollows
+                flute = 0.07 * (0.5 - abs(noise.noise(Vector((c.x * 3.4, c.y * 3.4, c.z * 0.20)) + off * 0.8)))
+                crease = 1.3 * (0.5 - abs(noise.noise(c * 0.75 + off * 0.3)))
+                dw = (base * P['wall_amp'] * (0.55 - 0.4 * zs) + bulge + zs * flute + zb * 0.55 * P['wall_amp'] * crease
+                      + rib * P['ribs'] * (1 - 0.6 * zs) + ld * (1 + 0.8 * zb) * (1 - 0.7 * zs)
+                      + 0.3 * knobs(c, False) * (1 - zs) + 0.6 * sk)       # walls: no popcorn (the normal map has it)
                 d += n * (dw * ww)
         moves.append((v, d * w))
     for v, dd in moves:
@@ -404,6 +445,10 @@ def speleothem2(kind, length, r, seed, tile, atlas, sides=8, rings=9, bend=0.0, 
     ring_n = rnd.uniform(5, 9)
     ring_amp = rnd.uniform(0.03, 0.08)
     tipr = min(r * 0.4, rnd.uniform(0.006, 0.01))
+    mite_e = rnd.uniform(0.5, 0.95)                 # stalagmite top: 0.5 = blunt dome, 0.95 = pointed
+    mite_blunt = mite_e < 0.7
+    st_e = rnd.uniform(1.15, 2.3)                   # stalactite taper: low = tapers late (a rod), high = a cone
+    waist = rnd.uniform(0.32, 0.68)                 # where a column is thinnest
     lump = 0.10 if kind == 'stalactite' else 0.14
     for i in range(rings):
         t = i / rings
@@ -423,7 +468,7 @@ def speleothem2(kind, length, r, seed, tile, atlas, sides=8, rings=9, bend=0.0, 
             elif kind == 'straw':
                 rad = r * (1.35 if s > 0.88 else 1.0)
             else:
-                rad = 1.3 * r * (1 - s) ** 1.6 * (1 + 0.05 * math.sin(s * 26 + phase) * (1 - s))
+                rad = 1.3 * r * (1 - s) ** st_e * (1 + 0.05 * math.sin(s * 26 + phase) * (1 - s))
                 rad = max(rad, tipr * (1.0 if s < 0.96 else 0.6))
                 rad *= 1 + 0.9 * math.exp(-s / 0.07)
         cx = bend * math.sin(clamp01(t - e) * math.pi * 0.9)
@@ -472,8 +517,10 @@ def fillet_of(kind, r, Lvis):
     if kind == 'straw':
         return 0.0
     if kind == 'candle':
-        return min(0.9 * r + 0.03, 0.15, 0.4 * Lvis)
-    return min(1.4 * r + 0.05, 0.32, 0.45 * Lvis)
+        return min(0.6 * r + 0.02, 0.08, 0.3 * Lvis)
+    if kind == 'stalagmite':
+        return min(0.8 * r + 0.03, 0.16, 0.35 * Lvis)
+    return min(1.2 * r + 0.04, 0.26, 0.4 * Lvis)
 
 
 def speleothem3(kind, Lvis, r, seed, tile, atlas, sides=8, n_body=9, bend=0.0, bake=True):
@@ -491,9 +538,14 @@ def speleothem3(kind, Lvis, r, seed, tile, atlas, sides=8, n_body=9, bend=0.0, b
     ring_n = rnd.uniform(5, 9)
     ring_amp = rnd.uniform(0.03, 0.08)
     tipr = min(r * 0.4, rnd.uniform(0.006, 0.01))
+    mite_e = rnd.uniform(0.5, 0.95)                 # stalagmite top: 0.5 = blunt dome, 0.95 = pointed
+    mite_blunt = mite_e < 0.7
+    st_e = rnd.uniform(1.15, 2.3)                   # stalactite taper: low = tapers late (a rod), high = a cone
+    waist = rnd.uniform(0.32, 0.68)                 # where a column is thinnest
     lump = 0.10 if kind == 'stalactite' else 0.14
     fil = [f * (1 - math.cos(k / 6 * math.pi / 2)) for k in range(1, 7)] if f > 0 else []
-    ds = [-EMBED, 0.0] + fil[:-1]
+    small = sides <= 5                      # a cheap formation: buried 4 cm only, no cap under it (hidden in the rock)
+    ds = [-0.04 if small else -EMBED, 0.0] + fil[:-1]
     start = f
     if kind == 'straw':
         ds = [-0.05, 0.0, Lvis * 0.88]                  # a thin tube: ~20 triangles
@@ -503,19 +555,23 @@ def speleothem3(kind, Lvis, r, seed, tile, atlas, sides=8, n_body=9, bend=0.0, b
         ds += [Lvis - x for x in reversed(fil[:-1])] + [Lvis, Lvis + EMBED]
     else:
         ds += [start + (Lvis - start) * k / n_body for k in range(0, n_body)]
+        if kind == 'stalagmite' and not small and mite_blunt:
+            ds += [Lvis * 0.955, Lvis * 0.99]
     rings = len(ds)
 
     def prof(s):
         if kind == 'column':
-            return r * (1 + 0.7 * (2 * abs(s - 0.5)) ** 2.2) * (1 + 0.10 * math.sin(s * 23 + phase))
+            u = (s - waist) / (waist if s < waist else (1 - waist))        # -1..0..1 around the waist
+            return r * (0.8 + 1.15 * abs(u) ** 1.7) * (1 + 0.10 * math.sin(s * 23 + phase))
         if kind == 'stalagmite':
-            rad = r * max(0.0, 1 - s ** 2.4) ** 0.5
-            return rad * (1 + ring_amp * (0.5 + 0.5 * math.sin(s * ring_n * 2 * math.pi + phase)) ** 3 * (1 - 0.6 * s))
+            # a rounded top (blunt ones are nearly domed), slender to sturdy, slightly irregular
+            rad = r * (max(0.0, 1 - s) ** mite_e + 0.05 * (1 - s))
+            return rad * (1 + 0.5 * ring_amp * (0.5 + 0.5 * math.sin(s * ring_n * 2 * math.pi + phase)) ** 3) * (1 + 0.10 * math.sin(s * 13 + phase))
         if kind == 'candle':
             return r * max(0.0, 1 - s ** 7) ** 0.45 * (1 + 0.06 * math.sin(s * 31 + phase))
         if kind == 'straw':
             return r * (1.35 if s > 0.88 else 1.0)
-        rad = 1.3 * r * (1 - s) ** 1.6 * (1 + 0.05 * math.sin(s * 26 + phase) * (1 - s))
+        rad = 1.3 * r * (1 - s) ** st_e * (1 + 0.05 * math.sin(s * 26 + phase) * (1 - s))
         return max(rad, tipr * (1.0 if s < 0.96 else 0.6))
 
     def ext(d):
@@ -568,7 +624,7 @@ def speleothem3(kind, Lvis, r, seed, tile, atlas, sides=8, n_body=9, bend=0.0, b
             bm.faces.new((top[k], top[(k + 1) % sides], apex))
     else:
         bm.faces.new(list(reversed(top)))
-    bm.faces.new(list(reversed(ringv[0])))
+    bm.faces.new(list(reversed(ringv[0])))                  # (3 triangles; a closed mesh is worth more than saving them)
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
     lathe_uvs(bm, uvl, info, sides, rings, tile)
     for fc in bm.faces:
@@ -707,6 +763,7 @@ def boulder(x, y, fz, size, seed):
 
 def probe_raw(tree, x, y, z0=1.0):
     """Floor and ceiling heights above (x, y), whatever way the surfaces face (for the void mesh before shaping)"""
+    z0 = z0 + P.get('slope', 0.0) * y
     up = tree.ray_cast(Vector((x, y, z0)), Vector((0, 0, 1)))
     dn = tree.ray_cast(Vector((x, y, z0)), Vector((0, 0, -1)))
     if up[0] is None or dn[0] is None:
@@ -716,6 +773,7 @@ def probe_raw(tree, x, y, z0=1.0):
 
 def probe_n(tree, x, y, z0=1.0):
     """Floor and ceiling of the finished shell with their normals (into the room)"""
+    z0 = z0 + P.get('slope', 0.0) * y
     up = tree.ray_cast(Vector((x, y, z0)), Vector((0, 0, 1)))
     dn = tree.ray_cast(Vector((x, y, z0)), Vector((0, 0, -1)))
     if up[0] is None or dn[0] is None or up[1].z > -0.3 or dn[1].z < 0.3:
@@ -733,15 +791,40 @@ def plan_specs(P, void_bm):
     rocks = []
     used = []
 
+    # formations grow in clusters (along cracks and drip lines), with bare stretches between them
+    n_cl = max(3, int((P['stalactites'] + P['stalagmites'] + P['pairs'] * 2) / 9))
+    clusters = []
+    for k in range(n_cl):
+        if P['_cracks'] and rng.random() < 0.6:
+            pts = P['_cracks'][rng.randrange(len(P['_cracks']))]
+            q = pts[rng.randrange(len(pts))]
+            clusters.append((q.x, q.y, rng.uniform(0.7, 2.2) * P.get('cluster_scale', 1.0)))
+        else:
+            a = rng.uniform(0, 2 * math.pi)
+            rr = math.sqrt(rng.random()) * 0.8
+            clusters.append((rr * P['rx'] * math.cos(a), rr * P['ry'] * math.sin(a), rng.uniform(1.0, 3.2) * P.get('cluster_scale', 1.0)))
+
     def site(maxrho=0.82, need=1.6):
         for _ in range(80):
-            a = rng.uniform(0, 2 * math.pi)
-            rr = math.sqrt(rng.random()) * maxrho
-            x, y = rr * P['rx'] * math.cos(a), rr * P['ry'] * math.sin(a)
+            if rng.random() < P.get('cluster_p', 0.7):
+                cx, cy, cs = clusters[rng.randrange(len(clusters))]
+                x, y = rng.gauss(cx, cs), rng.gauss(cy, cs)
+                if (x / P['rx']) ** 2 + (y / P['ry']) ** 2 > maxrho ** 2:
+                    continue
+            else:
+                a = rng.uniform(0, 2 * math.pi)
+                rr = math.sqrt(rng.random()) * maxrho
+                x, y = rr * P['rx'] * math.cos(a), rr * P['ry'] * math.sin(a)
             pr = probe_raw(tree, x, y)
             if pr and pr[1] - pr[0] > need:
                 return x, y, pr[0], pr[1]
         return None
+
+    def apart(x, y, r):
+        # a stalagmite is not exactly below its stalactite: the drop splashes, the air moves
+        a = rng.uniform(0, 2 * math.pi)
+        d = rng.uniform(0.3, 1.6) * r + rng.uniform(0.0, 0.12)
+        return x + d * math.cos(a), y + d * math.sin(a)
 
     def free(x, y, r, gap=0.25, where='cf'):
         return all(math.hypot(x - px, y - py) > r + pr + gap for w in where for px, py, pr in placed[w])
@@ -761,7 +844,7 @@ def plan_specs(P, void_bm):
         if kind in ('stalactite', 'column'):
             add_skirt(SKIRT_C, x, y, 3.4 * r + 0.16, min(0.35 * r + 0.02, 0.09))
         if kind in ('stalagmite', 'candle', 'column'):
-            add_skirt(SKIRT_F, x, y, 3.6 * r + 0.2, min(0.3 * r + 0.02, 0.10))
+            add_skirt(SKIRT_F, x, y, 2.4 * r + 0.1, min(0.16 * r + 0.012, 0.05))
 
     def lim_down(x, y, span):
         return span - 2.25 if path_dist(x, y) < 1.15 else span - 0.5
@@ -773,9 +856,9 @@ def plan_specs(P, void_bm):
                 continue
             x, y, fz, cz = s
             span = cz - fz
-            if span > 7.8 or path_dist(x, y) < P.get('col_clear', 1.4) or in_water(x, y):
+            if span > P.get('col_span', 7.8) or path_dist(x, y) < P.get('col_clear', 1.4) or in_water(x, y):
                 continue
-            r = rng.uniform(0.15, 0.34) * (0.8 + 0.1 * span)
+            r = rng.uniform(0.12, 0.27) * (0.8 + 0.1 * span)
             if free(x, y, r * 1.9, 0.5):
                 spec('column', x, y, span, r, False, True, sides=16, rings=28, bend=rng.uniform(-0.05, 0.05))
                 break
@@ -788,16 +871,19 @@ def plan_specs(P, void_bm):
             span = cz - fz
             if path_dist(x, y) < 1.3:
                 continue
-            L = min(rng.uniform(1.1, 2.6), span - 0.7)
+            L = min(rng.uniform(1.1, 2.6) * P.get('len_scale', 1.0), span - 0.7)
             if L < 0.8:
                 continue
-            r = L / rng.uniform(5.0, 7.0)
+            r = L / rng.uniform(6.5, 12.0)
             if free(x, y, r * 1.6, 0.3, 'c'):
                 spec('stalactite', x, y, L, r, True, (span - L) < 2.3, rings=20, bend=rng.uniform(-0.05, 0.05))
-                if rng.random() < 0.7 and not in_water(x, y):
+                if rng.random() < 0.6 and not in_water(x, y):
                     H = min(rng.uniform(0.25, 0.6) * span, span - L - 0.3)
                     if H > 0.25:
-                        spec('stalagmite', x, y, H, max(0.08, H / rng.uniform(2.2, 3.4)), False, True, rings=18)
+                        r2 = max(0.05, H / rng.uniform(3.4, 6.5))
+                        x2, y2 = apart(x, y, r2)
+                        if free(x2, y2, r2 * 1.2, 0.2, 'f') and path_dist(x2, y2) > 1.0:
+                            spec('stalagmite', x2, y2, H, r2, False, True, rings=18)
                 break
     for _ in range(P['pairs']):
         for _try in range(40):
@@ -812,10 +898,13 @@ def plan_specs(P, void_bm):
             H = rng.uniform(0.12, 0.28) * span
             if span - L1 - H < 0.4:
                 H = max(0.2, span - L1 - 0.4)
-            r1, r2 = max(0.04, L1 / rng.uniform(4.5, 7)), max(0.06, H / rng.uniform(2.4, 3.6))
+            r1, r2 = max(0.04, L1 / rng.uniform(4.5, 7)), max(0.045, H / rng.uniform(3.4, 6.0))
             if L1 > 0.3 and free(x, y, max(r1, r2) * 1.5):
                 spec('stalactite', x, y, L1, r1, True, L1 > span - 2.3, rings=16, bend=rng.uniform(-0.04, 0.04))
-                spec('stalagmite', x, y, H, r2, False, True, rings=16)
+                if rng.random() < 0.65:
+                    x2, y2 = apart(x, y, r2)
+                    if free(x2, y2, r2 * 1.2, 0.15, 'f') and path_dist(x2, y2) > 0.9 and not in_water(x2, y2):
+                        spec('stalagmite', x2, y2, H, r2, False, True, rings=16)
                 break
     for _ in range(P['curtains']):
         for _try in range(60):
@@ -899,10 +988,11 @@ def plan_specs(P, void_bm):
                 continue
             x, y, fz, cz = s
             span = cz - fz
-            L = min(rng.uniform(*P['len_st']), lim_down(x, y, span))
-            if L < 0.2:
+            lo_, hi_ = P['len_st']
+            L = min(lo_ * (hi_ / lo_) ** (rng.random() ** 1.7), lim_down(x, y, span))
+            if L < min(0.2, lo_):
                 continue
-            r = max(0.03, L / rng.uniform(5, 9))
+            r = max(0.03, L / rng.uniform(5, 12))
             if free(x, y, r * 1.3, 0.12, 'c'):
                 spec('stalactite', x, y, L, r, True, (span - L) < 2.3, rings=12 if r < 0.08 else 16, bend=rng.uniform(-0.04, 0.04))
                 break
@@ -913,7 +1003,7 @@ def plan_specs(P, void_bm):
             x, y = rr * P['rx'] * math.cos(a), rr * P['ry'] * math.sin(a)
             if path_dist(x, y) < 0.9 or any(gour_eval(g, x, y)[1] > 0.25 for g in P['_gours']):
                 continue
-            size = rng.uniform(0.3, 0.7)
+            size = rng.uniform(0.3, 0.7) * (1.0 + P.get('boulder_big', 0.0) * rng.random() ** 2)
             if free(x, y, size, 0.2, 'f'):
                 rocks.append(dict(x=x, y=y, size=size, seed=rng.randint(0, 10 ** 6)))
                 placed['f'].append((x, y, size))
@@ -930,7 +1020,7 @@ def plan_specs(P, void_bm):
             H = min(rng.uniform(0.3, 1.2), cz - fz - 1.2)
             if H < 0.25:
                 continue
-            r = H / rng.uniform(2.2, 3.8) + 0.05
+            r = H / rng.uniform(3.4, 6.5) + 0.03
             if free(x, y, r * 1.3, 0.25, 'f'):
                 spec('stalagmite', x, y, H, r, False, True, rings=16)
                 # its drip source above: a stalactite (most of the time) or just a straw
@@ -995,8 +1085,8 @@ def plan_specs(P, void_bm):
             else:
                 kind = 'stalagmite'
                 flat = clamp01((fall - 1.5) / 3.0)                          # long fall: broad, flat "fried egg"
-                r = max(0.05, H / rng.uniform(2.2, 3.6)) * (1 + 0.8 * flat)
-                H *= 1 - 0.45 * flat
+                r = max(0.04, H / rng.uniform(3.4, 6.0)) * (1 + 0.35 * flat)
+                H *= 1 - 0.25 * flat
             if free(fx, fy, r * 1.15, 0.06, 'f'):
                 spec(kind, fx, fy, H, r, False, True, sides=10 if kind == 'candle' else None, rings=14)
                 drips += 1
@@ -1062,7 +1152,7 @@ def build_specs(P, shell_bm, specs, curtains_p, rocks_p, atlas):
         top = pr[1] if pr else P['h']
         meta['curtains'].append((Vector((c['x'], c['y'], top - c['height'] * 0.5)), Vector((-math.cos(c['a']), -math.sin(c['a']), 0))))
     for r in rocks_p:
-        dn = tree.ray_cast(Vector((r['x'], r['y'], 1.2)), Vector((0, 0, -1)))
+        dn = tree.ray_cast(Vector((r['x'], r['y'], 1.2 + P.get('slope', 0.0) * r['y'])), Vector((0, 0, -1)))
         if dn[0] is None:
             continue
         rocks.append(boulder(r['x'], r['y'], dn[0].z - 0.08, r['size'], r['seed']))
@@ -1368,6 +1458,43 @@ def weld_root(bm, NV, sides, column, ri, axis, sn, kd, shell_vs, L):
 
 
 
+def traverse_check(me):
+    """Can a player walk between the openings? Along straight lines from the room's middle to each opening and between
+    the openings: the least headroom, the steepest floor, the biggest step in floor height between samples"""
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    tree = BVHTree.FromBMesh(bm)
+    bases = [o['base'] for o in P['_open']]
+    lines = [(Vector((0, 0, 0)), b) for b in bases]
+    for i in range(len(bases)):
+        for j in range(i + 1, len(bases)):
+            lines.append((bases[i], bases[j]))
+    worst_head, worst_slope, worst_step = 99.0, 0.0, 0.0
+    samples = 0
+    for a, b in lines:
+        n = max(2, int(math.hypot(b.x - a.x, b.y - a.y) / 0.5))
+        prev = None
+        for k in range(n + 1):
+            x = a.x + (b.x - a.x) * k / n
+            y = a.y + (b.y - a.y) * k / n
+            pr = probe_n(tree, x, y)
+            if not pr:
+                prev = None
+                continue
+            fz, cz, nf, nc = pr
+            samples += 1
+            worst_head = min(worst_head, cz - fz)
+            worst_slope = max(worst_slope, math.degrees(math.acos(max(-1.0, min(1.0, nf.z)))))
+            if prev is not None:
+                worst_step = max(worst_step, abs(fz - prev))
+            prev = fz
+    bm.free()
+    res = dict(samples=samples, min_headroom=round(worst_head, 2), max_floor_slope_deg=round(worst_slope, 1), max_step_per_half_m=round(worst_step, 2))
+    if worst_head < 2.0 or worst_slope > 45 or worst_step > 0.6:
+        res['WARNING'] = 'a way between openings may be blocked or too steep'
+    return res
+
+
 def assemble2(P):
     global PIECE_KEEP
     t0 = time.time()
@@ -1378,6 +1505,8 @@ def assemble2(P):
     PIECE_KEEP = piece.sockets + piece.fades
     objs = finish(piece)
     print('shell finished in %.1f s' % (time.time() - t0))
+    P['_traverse'] = traverse_check(objs[0].data)
+    print('traverse:', P['_traverse'])
     lod, utm = objs[0], objs[1]
     me = lod.data
     shell_tris = len(me.polygons)
@@ -1609,7 +1738,7 @@ def assemble2(P):
     stats = dict(name=P['name'], variant=VARIANT, label=P['label'], tris_shell=shell_tris, tris_formations=spl_tris,
                  tris_boulders=rock_tris, tris_lod0=len(me.polygons), tris_collider=coll_tris, tris_collider_before_decimate=coll_tris_full, tris_water=water_tris,
                  formations=counts, cracks=used, gours=len(P['_gours']), pools=len(P['_basins']),
-                 blended_root_verts=len(blend_target), hugged_verts=hugged, weld=weld_stats, drip=P.get('_drip_stats'), build_s=round(time.time() - t0, 1), bbox=[round(x, 2) for x in lod.dimensions])
+                 blended_root_verts=len(blend_target), hugged_verts=hugged, weld=weld_stats, traverse=P.get('_traverse'), drip=P.get('_drip_stats'), build_s=round(time.time() - t0, 1), bbox=[round(x, 2) for x in lod.dimensions])
     P['_meta'] = meta
     P['_picks'] = picks
     return piece, objs, water, img, stats, V2

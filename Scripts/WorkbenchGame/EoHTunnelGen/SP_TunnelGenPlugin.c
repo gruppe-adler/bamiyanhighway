@@ -22,6 +22,13 @@
 	line (its sockets, 1 m over its floor) follows them. A point can ask for a piece: add SP_TunnelSplinePointData
 	under the point's Data (exact prefab, or a kind, and "no turns" to the next point). More splines selected, each
 	starting near another: branches, with a junction where each leaves.
+
+	Connecting entrances: select two or more entrance pieces of the kit (TT_Entry_Horizontal / TT_Entry_Incline; no spline),
+	Generate. The first selected is the start and never moves. Routes are planned from it to the nearest other entrance,
+	then from the nearest point of the routes so far to each further one (a junction where a branch leaves). The tunnel
+	follows them with the usual pieces (rooms along the way by the usual settings); near each entrance it searches the piece
+	sequences that end where that entrance's socket can meet it, and the entrance is moved to meet it, by at most the
+	"Connect" settings (move, turn, height). Entrances that can't be reached are listed in the log and the result dialog.
 */
 [WorkbenchPluginAttribute(name: "EoH Tunnel Generator", description: "Grow an EoH Modular Tunnel Pack network from the selected piece", wbModules: {"WorldEditor"}, awesomeFontCode: 0xF6E3)]
 class SP_TunnelGenPlugin : WorldEditorPlugin
@@ -35,6 +42,16 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 	[Attribute("3", UIWidgets.EditBox, "With a spline selected (it's followed automatically): how far, in metres, the tunnel may wander sideways off it before only pieces that bring it back are taken", category: "Spline")]
 	protected float m_fSplineTolerance;
+
+	// Connect: with two or more entrances of the kit selected (and no spline) the tunnels join them all. The first selected is the start and never moves.
+	[Attribute("2", UIWidgets.EditBox, "Connect mode (2 or more entrances selected): how far, horizontally in metres, each entrance but the first may be moved so its socket meets the tunnel", category: "Connect")]
+	protected float m_fDockMove;
+
+	[Attribute("20", UIWidgets.EditBox, "Connect mode: how far, in degrees, each entrance but the first may be turned. The tunnels only turn in 90 degree steps from the first entrance's direction, so an entrance pointing further than this off that grid can't be connected", category: "Connect")]
+	protected float m_fDockTurn;
+
+	[Attribute("0.6", UIWidgets.EditBox, "Connect mode: how far, in metres, each entrance but the first may be raised or lowered. The slope piece rises 1.2 m, so 0.6 reaches any height difference", category: "Connect")]
+	protected float m_fDockRise;
 
 	// Seed
 	[Attribute("0", UIWidgets.EditBox, "Layout seed. 0 picks one. After generating, the seed used is shown here", category: "Seed")]
@@ -67,6 +84,9 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 	[Attribute("1", UIWidgets.CheckBox, "End dead ends in a room where one fits (an unused one), before a plain dead end", category: "Size")]
 	protected bool m_bRoomAtDeadEnds;
+
+	[Attribute("0.15", UIWidgets.Slider, "How readily a dug tunnel leads straight into a cave piece and the other way round (1 = no preference; low = caves join caves, dug joins dug, and only Brk_ pieces bridge)", "0 1 0.05", category: "Size")]
+	protected float m_fThemeSwitch;
 
 	// Shape
 	[Attribute("0.5", UIWidgets.Slider, "Chance that a room's other doorframes (and a ladder's other level) lead on to side branches; otherwise they're closed off", "0 1 0.05", category: "Shape")]
@@ -231,6 +251,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		cfg.m_bLargeRooms = m_bLargeRooms;
 		cfg.m_bRoomsOnce = m_bRoomsOnce;
 		cfg.m_bRoomAtDeadEnds = m_bRoomAtDeadEnds;
+		cfg.m_fThemeSwitch = m_fThemeSwitch;
 		cfg.m_fBranchChance = m_fBranchChance;
 		cfg.m_fSideBranchMin = m_fSideBranchMin;
 		cfg.m_fSideBranchMax = m_fSideBranchMax;
@@ -269,6 +290,9 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		cfg.m_fMaxStraightRun = m_fMaxStraightRun;
 		cfg.m_iKit = m_eKit;
 		cfg.m_fSplineTolerance = m_fSplineTolerance;
+		cfg.m_fDockMove = m_fDockMove;
+		cfg.m_fDockTurn = m_fDockTurn;
+		cfg.m_fDockRise = m_fDockRise;
 		return cfg;
 	}
 
@@ -283,6 +307,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		m_bLargeRooms = cfg.m_bLargeRooms;
 		m_bRoomsOnce = cfg.m_bRoomsOnce;
 		m_bRoomAtDeadEnds = cfg.m_bRoomAtDeadEnds;
+		m_fThemeSwitch = cfg.m_fThemeSwitch;
 		m_fBranchChance = cfg.m_fBranchChance;
 		m_fSideBranchMin = cfg.m_fSideBranchMin;
 		m_fSideBranchMax = cfg.m_fSideBranchMax;
@@ -321,6 +346,9 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		m_fMaxStraightRun = cfg.m_fMaxStraightRun;
 		m_eKit = cfg.m_iKit;
 		m_fSplineTolerance = cfg.m_fSplineTolerance;
+		m_fDockMove = cfg.m_fDockMove;
+		m_fDockTurn = cfg.m_fDockTurn;
+		m_fDockRise = cfg.m_fDockRise;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -607,6 +635,70 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 	protected static const float START_SEARCH = 20;	// with only splines selected: how far from an end the start piece may be
 
 	//------------------------------------------------------------------------------------------------
+	//! Connect mode: the selected entities that are entrances of the kit, in selection order (not shapes; not pieces a build
+	//! made, which a new build would clear). True: two or more, the first being the start and the rest "pinned".
+	protected bool SelectedEntrances(WorldEditorAPI api, notnull array<ref SP_TunnelPin> pins)
+	{
+		for (int i = 0; i < api.GetSelectedEntitiesCount(); i++)
+		{
+			IEntitySource src = api.GetSelectedEntity(i);
+			if (!src)
+				continue;
+
+			IEntity entity = api.SourceToEntity(src);
+			if (!entity || ShapeEntity.Cast(entity))
+				continue;
+
+			int pieceIndex;
+			PrefabOf(src, entity, pieceIndex);
+			if (pieceIndex < 0 || m_Catalog.m_aPieces[pieceIndex].m_iKind != SP_TunnelKind.ENTRANCE)
+				continue;
+
+			string srcName = src.GetName();
+			if (srcName.IndexOf("EoHT_") == 0)
+			{
+				Print("SP_TunnelGen: " + srcName + " was made by a build: left out of the entrances to connect", LogLevel.WARNING);
+				continue;
+			}
+
+			vector mat[4];
+			entity.GetWorldTransform(mat);
+			SP_TunnelPin pin = new SP_TunnelPin();
+			pin.m_Entity = entity;
+			pin.m_Src = src;
+			pin.m_iPiece = pieceIndex;
+			pin.m_vPos = mat[3];
+			pin.m_fYaw = SP_TunnelGrower.YawOf(mat[2]);
+			pin.m_sName = srcName;
+			if (pin.m_sName.IsEmpty())
+				pin.m_sName = m_Catalog.m_aPieces[pieceIndex].m_sName + " at " + pin.m_vPos.ToString(false);
+
+			if (src.GetParent())
+				pin.m_sSkip = "it is inside another entity, so it can't be moved";
+			else if (mat[1][1] < 0.999)
+				Print("SP_TunnelGen: " + pin.m_sName + " is tilted; it is only turned about the vertical", LogLevel.WARNING);
+
+			pins.Insert(pin);
+		}
+
+		return pins.Count() >= 2;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A docked entrance to its new pose (its own undo step): the same keys the editor uses, coords and angleY
+	protected void MoveEntrance(WorldEditorAPI api, SP_TunnelDocking dock)
+	{
+		if (!dock.m_Src)
+			return;
+
+		api.BeginEntityAction("EoH tunnels: dock entrance " + dock.m_sName);
+		api.SetVariableValue(dock.m_Src, null, "coords", dock.m_vPos.ToString(false));
+		api.SetVariableValue(dock.m_Src, null, "angleY", (dock.m_fYaw * m_fYawSign).ToString());
+		api.EndEntityAction();
+		Print(string.Format("SP_TunnelGen:   entrance %1 moved from %2 (yaw %3) to %4 (yaw %5)", dock.m_sName, dock.m_vFrom.ToString(false), Math.Round(dock.m_fFromYaw), dock.m_vPos.ToString(false), Math.Round(dock.m_fYaw)));
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! The selected splines and polylines
 	protected array<IEntitySource> SelectedShapes(WorldEditorAPI api)
 	{
@@ -840,7 +932,8 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 	//------------------------------------------------------------------------------------------------
 	//! Tunnel pieces already in the world near the start (not the start itself, not what's about to be replaced)
-	protected array<ref SP_TunnelObstacle> Obstacles(WorldEditorAPI api, vector start, IEntity startEntity, float reach)
+	//! skip: more entities that aren't obstacles (connect mode's other entrances)
+	protected array<ref SP_TunnelObstacle> Obstacles(WorldEditorAPI api, vector start, IEntity startEntity, float reach, array<IEntity> skip = null)
 	{
 		array<ref SP_TunnelObstacle> obstacles = {};
 		if (!m_bAvoidExisting)
@@ -851,7 +944,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		int subScene = api.GetCurrentSubScene();
 		foreach (IEntity entity : m_aFoundPieces)
 		{
-			if (entity == startEntity)
+			if (entity == startEntity || (skip && skip.Contains(entity)))
 				continue;
 
 			IEntitySource src = api.EntityToSource(entity);
@@ -891,13 +984,63 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		float startYaw;
 		IEntity startEntity;
 		array<IEntitySource> shapes = SelectedShapes(api);
-		if (!FindStart(api, shapes, startPiece, startPos, startYaw, startEntity))
-			return;
+		SP_TunnelGenSettings cfg = Settings();
 
-		// Splines selected: the network follows them
+		// Two or more entrances selected (and no spline): connect them all. The first is the start, the rest are pinned.
+		array<ref SP_TunnelPin> pins = {};
+		bool connect = false;
+		if (shapes.IsEmpty())
+			connect = SelectedEntrances(api, pins);
+
 		array<ref SP_TunnelSplinePath> paths = {};
-		if (!shapes.IsEmpty() && !ReadPaths(api, shapes, startPos, paths))
-			return;
+		if (connect)
+		{
+			SP_TunnelPin first = pins[0];
+			pins.RemoveOrdered(0);
+			startPiece = first.m_iPiece;
+			startPos = first.m_vPos;
+			startYaw = first.m_fYaw;
+			startEntity = first.m_Entity;
+			Print(string.Format("SP_TunnelGen: connect mode: %1 entrances selected; the first, %2, is the start and stays where it is", pins.Count() + 1, first.m_sName));
+			SP_TunnelPieceDef connectDef = m_Catalog.m_aPieces[startPiece];
+			if (connectDef.m_aSockets.IsEmpty())
+			{
+				Workbench.Dialog("EoH Tunnel Generator", "The first selected entrance has no socket in the catalog.");
+				return;
+			}
+
+			vector sockPos = startPos + SP_TunnelGrower.Rot(connectDef.m_aSockets[0].m_vPos, startYaw);
+			vector sockDir = SP_TunnelGrower.Rot(connectDef.m_aSockets[0].m_vDir, startYaw);
+			SP_TunnelConnect.Check(m_Catalog, cfg, sockDir, connectDef.m_aSockets[0].m_iSize, pins);
+			string skipped = "";
+			foreach (SP_TunnelPin pin : pins)
+			{
+				if (pin.m_sSkip.IsEmpty())
+				{
+					Print(string.Format("SP_TunnelGen:   %1 at %2: socket at %3 facing %4, %5 degrees off the grid", pin.m_sName, pin.m_vPos, pin.m_vSocketPos, pin.m_vSocketDir, Math.Round(pin.m_fGridOff)));
+				}
+				else
+				{
+					Print(string.Format("SP_TunnelGen:   %1 left out: %2", pin.m_sName, pin.m_sSkip), LogLevel.WARNING);
+					skipped += pin.m_sName + ": " + pin.m_sSkip + "\n";
+				}
+			}
+
+			if (!SP_TunnelConnect.Plan(api, cfg, sockPos, sockDir, pins, paths))
+			{
+				Workbench.Dialog("EoH Tunnel Generator", "None of the other selected entrances can be connected:\n\n" + skipped);
+				return;
+			}
+		}
+		else
+		{
+			if (!FindStart(api, shapes, startPiece, startPos, startYaw, startEntity))
+				return;
+
+			// Splines selected: the network follows them
+			if (!shapes.IsEmpty() && !ReadPaths(api, shapes, startPos, paths))
+				return;
+		}
 
 		float reach = m_fMaxReach + 30;
 		foreach (SP_TunnelSplinePath reachPath : paths)
@@ -926,13 +1069,26 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 			Print(string.Format("SP_TunnelGen:   its socket %1 at %2 facing %3, %4 m under the ground", si, socketAt, SP_TunnelGrower.Rot(startSocket.m_vDir, startYaw), api.GetTerrainSurfaceY(socketAt[0], socketAt[2]) - socketAt[1]));
 		}
 
-		SP_TunnelGenSettings cfg = Settings();
-		array<ref SP_TunnelObstacle> obstacles = Obstacles(api, startPos, startEntity, reach);
+		// The other entrances are in the world already: not obstacles, not in the way of the world check
+		array<IEntity> pinEntities = {};
+		foreach (SP_TunnelPin pinned : pins)
+		{
+			if (pinned.m_Entity)
+				pinEntities.Insert(pinned.m_Entity);
+		}
+
+		array<ref SP_TunnelObstacle> obstacles = Obstacles(api, startPos, startEntity, reach, pinEntities);
 		SP_TunnelGrower grower = new SP_TunnelGrower(m_Catalog, cfg, api, obstacles);
 		grower.SetPaths(paths);
+		grower.SetPins(pins);
 		array<IEntity> ignore = BuildEntities(api, m_iBuiltSeed);
 		if (startEntity)
 			ignore.Insert(startEntity);
+
+		foreach (IEntity pinEntity : pinEntities)
+		{
+			ignore.Insert(pinEntity);
+		}
 
 		grower.SetWorld(api.GetWorld(), ignore);
 		SP_TunnelLayout best;
@@ -960,6 +1116,14 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 			Print("SP_TunnelGen:   spline " + markLine);
 		}
 
+		foreach (SP_TunnelDocking dock : best.m_aDockings)
+		{
+			if (dock.m_bDocked)
+				Print("SP_TunnelGen: entrance " + dock.Describe());
+			else
+				Print("SP_TunnelGen: entrance " + dock.Describe(), LogLevel.WARNING);
+		}
+
 		foreach (vector hole : best.m_aEntrancePoints)
 		{
 			Print(string.Format("SP_TunnelGen: new entrance at %1: cut a hole in the terrain there (Terrain Tool, Hole) and shape the ground to it", hole));
@@ -984,7 +1148,7 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 		if (m_bDryRun)
 		{
-			Workbench.Dialog("EoH Tunnel Generator", "Dry run, nothing placed.\n\n" + best.Summary());
+			Workbench.Dialog("EoH Tunnel Generator", "Dry run, nothing placed.\n\n" + best.Summary() + "\n\n" + best.DockingText());
 			return;
 		}
 
@@ -1326,7 +1490,11 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		{
 			SP_TunnelSocketDef a = piece.m_aSockets[0];
 			SP_TunnelSocketDef b = piece.m_aSockets[1];
-			if (vector.Dot(a.m_vDir, b.m_vDir) < -0.99 && Math.AbsFloat(a.m_vPos[1] - b.m_vPos[1]) < 0.3 && vector.Distance(a.m_vPos, b.m_vPos) < 8.5)
+			// ...and really in line: a dogleg's exit faces the same way but sits 4.6 m to the side, so its mouths lie outside one
+			// probe along the middle (their wall strips then got the sky's light)
+			vector ab = b.m_vPos - a.m_vPos;
+			vector sideways = ab - a.m_vDir * vector.Dot(ab, a.m_vDir);
+			if (vector.Dot(a.m_vDir, b.m_vDir) < -0.99 && Math.AbsFloat(a.m_vPos[1] - b.m_vPos[1]) < 0.3 && vector.Distance(a.m_vPos, b.m_vPos) < 8.5 && sideways.Length() < 0.4)
 			{
 				Probe(api, layerId, PROBE_CORRIDOR, centre, placed.m_fYaw + SP_TunnelGrower.YawOf(b.m_vDir), prefix + "_0");
 				return;
@@ -1386,8 +1554,8 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		int made = 0;
 		foreach (int i, SP_TunnelPlaced placed : layout.m_aPlaced)
 		{
-			// The start piece is already in the world
-			if (i == 0)
+			// The start piece is already in the world, and so are the pinned entrances (docked ones are moved below)
+			if (i == 0 || placed.m_iPin >= 0)
 				continue;
 
 			SP_TunnelPieceDef piece = m_Catalog.m_aPieces[placed.m_iPiece];
@@ -1397,6 +1565,17 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 
 		api.EndEntityAction();
 		Print(string.Format("SP_TunnelGen: placed %1 pieces", made));
+
+		// Connect mode: each docked entrance to the pose that meets the tunnel, one undo step each
+		if (layout.m_iPinned > 0)
+		{
+			Print(string.Format("SP_TunnelGen: step 2b, docking %1 of %2 entrances", layout.m_iDocked, layout.m_iPinned));
+			foreach (SP_TunnelDocking dock : layout.m_aDockings)
+			{
+				if (dock.m_bDocked)
+					MoveEntrance(api, dock);
+			}
+		}
 
 		bool packOnly = m_eKit == SP_TunnelCatalog.KIT_EOH;
 		if (m_bLightBlockers && packOnly)
@@ -1448,7 +1627,11 @@ class SP_TunnelGenPlugin : WorldEditorPlugin
 		}
 
 		Print(string.Format("SP_TunnelGen: built %1 pieces into layer %2", made, layer));
-		Workbench.Dialog("EoH Tunnel Generator", string.Format("Built into layer %1, its entities named %4*.\n\n%2\n\n%3\n\nNew entrances need a hole cut in the terrain: see the log for where.", layer, layout.Summary(), layout.Refusals(), prefix));
+		string dockText = "";
+		if (layout.m_iPinned > 0)
+			dockText = "\n\n" + layout.DockingText();
+
+		Workbench.Dialog("EoH Tunnel Generator", string.Format("Built into layer %1, its entities named %4*.\n\n%2\n\n%3%5\n\nNew entrances need a hole cut in the terrain: see the log for where.", layer, layout.Summary(), layout.Refusals(), prefix, dockText));
 	}
 
 	//------------------------------------------------------------------------------------------------

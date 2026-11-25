@@ -50,6 +50,7 @@ class SP_TunnelSplinePath
 	int m_iParent = -1;		// the path this one branches off (-1: the main one, -2: not linked)
 	float m_fParentS;
 	bool m_bClaimed;			// a growing layout has started down it
+	int m_iPin = -1;			// connect mode: the pinned entrance (index into the grower's pins) this path ends at; -1: none
 
 	//------------------------------------------------------------------------------------------------
 	//! Turned round: the last point first

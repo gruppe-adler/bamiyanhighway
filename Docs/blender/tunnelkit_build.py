@@ -234,14 +234,16 @@ def path_slope(length, rise, steps=16):
 # ---------------------------------------------------------------------------------------------------------------------
 # Joints: a sleeve and a timber frame at an opening
 
-def joint(bm, pos, outward):
+def joint(bm, pos, outward, frame=True):
     """pos: the opening's floor centre; outward: horizontal, pointing out of the piece"""
     out = Vector((outward.x, outward.y, 0)).normalized()
     sleeve = [(pos - out * SLEEVE, out), (pos + out * SLEEVE, out)]
     sweep(bm, sleeve, SLEEVE_A, SLEEVE_B, closed=True, mat=0)
+    if not frame:                      # natural cave pieces have no timber
+        return
     fa, fb = frame_profiles(INNER)
-    frame = [(pos - out * FRAME_L, out), (pos - out * 0.005, out)]
-    sweep(bm, frame, fa, fb, closed=False, mat=1)
+    frame_path = [(pos - out * FRAME_L, out), (pos - out * 0.005, out)]
+    sweep(bm, frame_path, fa, fb, closed=False, mat=1)
 
 
 class Piece:
@@ -250,11 +252,12 @@ class Piece:
         self.bm = bmesh.new()
         self.sockets = []      # (floor centre, outward)
         self.fades = []        # more places to keep exact (a mouth with no socket): (floor centre, outward)
+        self.frames = True     # a timber frame at each joint (cave pieces switch it off)
 
     def socket(self, pos, outward, joint_too=True):
         self.sockets.append((pos.copy(), Vector((outward.x, outward.y, 0)).normalized()))
         if joint_too:
-            joint(self.bm, pos, outward)
+            joint(self.bm, pos, outward, self.frames)
 
 
 def breathe(samples, wide, high, ease=0.5, ramp=1.2):
@@ -362,6 +365,22 @@ def build_straight_narrow():
     p = Piece('TT_Straight_Narrow')
     samples = path_straight(4.0, step=0.25)
     corridor(p, samples, breathe(samples, 0.78, 0.9))
+    return p
+
+
+def build_curve(angle):
+    """A very gentle bend of `angle` degrees (to the right; entered from the other end it bends left), 4 m long like
+    Straight_4, so the joints stay exact: for fitting things together (headings in small steps, small sideways shifts)"""
+    p = Piece('TT_Curve_%d' % angle)
+    samples = path_arc(4.0 / math.radians(angle), degrees=angle, steps=16)
+    corridor(p, samples, breathe(samples, 1.08, 1.0))
+    return p
+
+
+def build_straight_short(length):
+    """1 m and 2 m straights: they take up the last bit of a length that doesn't come out in 4 m steps"""
+    p = Piece('TT_Straight_%d' % length)
+    corridor(p, path_straight(float(length), step=0.25))
     return p
 
 
@@ -659,6 +678,8 @@ def export(piece):
     print(f'{piece.name}: {tris} triangles, {len(piece.sockets)} openings -> {path}')
 
 
+FINE = [lambda: build_curve(5), lambda: build_curve(10), lambda: build_curve(15), lambda: build_straight_short(1), lambda: build_straight_short(2)]
+
 BUILDERS = [build_straight, build_straight_wide, build_straight_narrow, build_turn, build_turn_wide, lambda: build_dogleg('L'), lambda: build_dogleg('R'), build_slope, build_end,
             build_junction, build_room, build_entry_horizontal, build_entry_incline]
 
@@ -673,7 +694,7 @@ def preview():
         col = bpy.data.collections.new('TT_Preview')
         bpy.context.scene.collection.children.link(col)
     x = 0.0
-    for build in BUILDERS:
+    for build in FINE + BUILDERS:
         piece = build()
         objs = finish(piece, Vector((x, 0, 0)), col)
         for o in objs:
@@ -691,7 +712,10 @@ if EXPORT:
         for o in list(old.objects):
             bpy.data.objects.remove(o)
         bpy.data.collections.remove(old)
-    for build in BUILDERS:
+    # TT_ONLY=fine exports only the fine-adjustment pieces (curves, short straights): the others are already imported
+    import os
+    only = os.environ.get('TT_ONLY', '')
+    for build in (FINE if only == 'fine' else FINE + BUILDERS):
         export(build())
     print('exported')
 else:

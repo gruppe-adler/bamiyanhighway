@@ -16,6 +16,7 @@ class SP_TunnelGenSettings
 	bool m_bLargeRooms = true;
 	bool m_bRoomsOnce = true;		// each room at most once per network (junctions may repeat)
 	bool m_bRoomAtDeadEnds = true;	// a corridor that ends gets a room there if one fits, before a plain dead end
+	float m_fThemeSwitch = 0.15;	// weight of a piece of the other theme (dug <-> cave); Brk_ pieces bridge both
 
 	float m_fBranchChance = 0.5;
 	float m_fSideBranchMin = 15;
@@ -60,6 +61,11 @@ class SP_TunnelGenSettings
 	int m_iKit = 0;
 	float m_fSplineTolerance = 3;
 
+	// Connect mode (2 or more entrances selected): how far each entrance but the first may be moved to meet the tunnel
+	float m_fDockMove = 2;		// horizontally, metres
+	float m_fDockTurn = 20;		// turn, degrees
+	float m_fDockRise = 0.6;	// height, metres (the slope piece rises 1.2: half of that makes every height reachable)
+
 	//------------------------------------------------------------------------------------------------
 	//! Everything that shapes a layout, as key=value; (the seed is kept separately)
 	string Write()
@@ -67,7 +73,7 @@ class SP_TunnelGenSettings
 		string s = "";
 		s += "candidates=" + m_iCandidates + ";length=" + m_fTargetLength + ";reach=" + m_fMaxReach + ";";
 		s += "rooms=" + m_iMaxRooms + ";roomSpacing=" + m_fRoomSpacing + ";largeRooms=" + Bs(m_bLargeRooms) + ";";
-		s += "roomsOnce=" + Bs(m_bRoomsOnce) + ";roomEnds=" + Bs(m_bRoomAtDeadEnds) + ";";
+		s += "roomsOnce=" + Bs(m_bRoomsOnce) + ";roomEnds=" + Bs(m_bRoomAtDeadEnds) + ";theme=" + m_fThemeSwitch + ";";
 		s += "branch=" + m_fBranchChance + ";sideMin=" + m_fSideBranchMin + ";sideMax=" + m_fSideBranchMax + ";";
 		s += "straight=" + m_fStraightWeight + ";longShare=" + m_fLongStraightShare + ";turn=" + m_fTurnWeight + ";uturn=" + m_fUTurnWeight + ";";
 		s += "wiggle=" + m_fWiggleWeight + ";hump=" + m_fHumpWeight + ";water=" + m_fWaterTrapWeight + ";hold=" + m_fHoldBearing + ";";
@@ -83,6 +89,7 @@ class SP_TunnelGenSettings
 		s += "avoid=" + Bs(m_bAvoidExisting) + ";avoidWorld=" + Bs(m_bAvoidWorld) + ";ignorePlants=" + Bs(m_bIgnorePlants) + ";";
 		s += "blockers=" + Bs(m_bLightBlockers) + ";maxRun=" + m_fMaxStraightRun + ";kit=" + m_iKit + ";";
 		s += "splineTol=" + m_fSplineTolerance + ";";
+		s += "dockMove=" + m_fDockMove + ";dockTurn=" + m_fDockTurn + ";dockRise=" + m_fDockRise + ";";
 		return s;
 	}
 
@@ -127,6 +134,7 @@ class SP_TunnelGenSettings
 				case "largeRooms": m_bLargeRooms = B(v); break;
 				case "roomsOnce": m_bRoomsOnce = B(v); break;
 				case "roomEnds": m_bRoomAtDeadEnds = B(v); break;
+				case "theme": m_fThemeSwitch = f; break;
 				case "branch": m_fBranchChance = f; break;
 				case "sideMin": m_fSideBranchMin = f; break;
 				case "sideMax": m_fSideBranchMax = f; break;
@@ -165,6 +173,9 @@ class SP_TunnelGenSettings
 				case "maxRun": m_fMaxStraightRun = f; break;
 				case "kit": m_iKit = i; break;
 				case "splineTol": m_fSplineTolerance = f; break;
+				case "dockMove": m_fDockMove = f; break;
+				case "dockTurn": m_fDockTurn = f; break;
+				case "dockRise": m_fDockRise = f; break;
 			}
 		}
 	}
@@ -181,6 +192,7 @@ class SP_TunnelPlaced
 	vector m_vHalf;
 	float m_fLowY;
 	float m_fHighY;
+	int m_iPin = -1;			// connect mode: a pinned entrance already in the world (the plugin doesn't place it; it may be moved)
 }
 
 //! A socket nobody has attached to yet
@@ -212,6 +224,26 @@ class SP_TunnelBranch
 	bool m_bNoTurns;
 	bool m_bPathEnded;
 	int m_iPieces;
+
+	// Connect mode: the pinned entrance this branch is heading for, how far its open end is from it, and how the approach goes
+	int m_iPin = -1;
+	float m_fTargetDist = -1;
+	int m_iApproach;
+	int m_iStuck;
+	bool m_bDocked;
+}
+
+//! One state of the search for a way to a pinned entrance: where an open end would be after some pieces
+class SP_TunnelApproach
+{
+	vector m_vPos;
+	vector m_vDir;
+	float m_fRun;
+	int m_iDepth;
+	int m_iFirstPiece;
+	int m_iFirstSocket;
+	float m_fCost;
+	float m_fNudge;
 }
 
 //! A box of something already in the world to keep clear of
@@ -225,6 +257,7 @@ class SP_TunnelLayout
 	int m_iSeed;
 	ref array<ref SP_TunnelPlaced> m_aPlaced = {};
 	float m_fLength;
+	float m_fFreeLength;		// the part not on a planned route (the maze round the routes in connect mode)
 	int m_iRooms;
 	int m_iEntrances;
 	int m_iCaps;
@@ -249,6 +282,11 @@ class SP_TunnelLayout
 	int m_iMarksFailed;
 	ref array<string> m_aMarkLog = {};
 
+	// Connect mode: one entry per pinned entrance
+	int m_iPinned;
+	int m_iDocked;
+	ref array<ref SP_TunnelDocking> m_aDockings = {};
+
 	string Refusals()
 	{
 		return string.Format("pieces refused: %1 too far from the start, %2 not enough earth over them, %3 into this network, %4 into tunnels already in the world, %5 into other things in the world (cliffs, rocks, buildings)", m_iFailReach, m_iFailCover, m_iFailOverlap, m_iFailObstacle, m_iFailWorld);
@@ -260,6 +298,21 @@ class SP_TunnelLayout
 		text += string.Format(", %1 masks", m_iMasks);
 		if (m_bSpline)
 			text += string.Format("; spline: %1 m not reached, %2 point pieces placed, %3 not", Math.Round(m_fSplineMissed), m_iMarksPlaced, m_iMarksFailed);
+
+		if (m_iPinned > 0)
+			text += string.Format("; connect: %1 of %2 other entrances docked", m_iDocked, m_iPinned);
+
+		return text;
+	}
+
+	//! One line per pinned entrance: connected (and how far it was moved) or why not
+	string DockingText()
+	{
+		string text = "";
+		foreach (SP_TunnelDocking dock : m_aDockings)
+		{
+			text += dock.Describe() + "\n";
+		}
 
 		return text;
 	}
@@ -283,6 +336,7 @@ class SP_TunnelGrower
 	protected ref array<ref SP_TunnelBranch> m_aBranches = {};
 	protected ref array<vector> m_aEntrances = {};
 	protected vector m_vStart;
+	protected float m_fRouteExtent;
 	protected bool m_bStartIsEntrance;
 	protected int m_iStartPlaced;
 
@@ -302,6 +356,17 @@ class SP_TunnelGrower
 	protected static const float END_REACH = 2.5;		// and the spline's end this far before it
 	protected ref array<ref SP_TunnelSplinePath> m_aPaths = {};
 	protected bool m_bSplineMode;
+
+	// Connect mode: the pinned entrances (in the layout from the start, at placed index 1 + their own), the one a step is
+	// heading for (its box doesn't count as in the way then), and the branch spline a junction is being placed for
+	protected ref array<ref SP_TunnelPin> m_aPins = {};
+	protected ref array<int> m_aPinPlaced = {};
+	protected int m_iSkipPlaced = -1;
+	protected int m_iPendingChild = -1;
+	protected static const float APPROACH_RANGE = 26;	// within this of the target's socket the approach search takes over
+	protected static const int APPROACH_DEPTH = 10;		// pieces it looks ahead
+	protected static const int APPROACH_WIDTH = 60;		// states kept per piece of lookahead
+	protected static const int MOST_APPROACH = 30;		// approach pieces before giving up on an entrance
 
 	//------------------------------------------------------------------------------------------------
 	void SP_TunnelGrower(SP_TunnelCatalog catalog, SP_TunnelGenSettings settings, WorldEditorAPI api, array<ref SP_TunnelObstacle> obstacles)
@@ -495,6 +560,34 @@ class SP_TunnelGrower
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Connect mode: how far the planned routes reach from the start (free branches may go that much further)
+	protected void MeasureRoutes()
+	{
+		m_fRouteExtent = 0;
+		foreach (SP_TunnelSplinePath path : m_aPaths)
+		{
+			foreach (vector point : path.m_aPoints)
+			{
+				m_fRouteExtent = Math.Max(m_fRouteExtent, vector.DistanceXZ(point, m_vStart));
+			}
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Entrances already in the world that the routes (SetPaths: each with its m_iPin) end at. None: not connect mode
+	void SetPins(array<ref SP_TunnelPin> pins)
+	{
+		m_aPins.Clear();
+		if (pins)
+		{
+			foreach (SP_TunnelPin pin : pins)
+			{
+				m_aPins.Insert(pin);
+			}
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
 	protected bool WorldFilter(notnull IEntity e, vector start = "0 0 0", vector dir = "0 0 0")
 	{
 		IEntity root = e.GetRootParent();
@@ -596,7 +689,11 @@ class SP_TunnelGrower
 		string name = m_Catalog.m_aPieces[placed.m_iPiece].m_sName;
 		// (following a spline, the spline says how far it goes)
 		float away = vector.DistanceXZ(placed.m_vCentre, m_vStart);
-		if (!m_bSplineMode && away > m_Set.m_fMaxReach)
+		float reachLimit = m_Set.m_fMaxReach;
+		if (!m_aPins.IsEmpty())
+			reachLimit += m_fRouteExtent;
+
+		if ((!m_bSplineMode || !m_aPins.IsEmpty()) && away > reachLimit)
 		{
 			m_Layout.m_iFailReach++;
 			Refused(string.Format("%1 at %2: %3 m from the start, more than the reach", name, placed.m_vPos, Math.Round(away)));
@@ -616,7 +713,7 @@ class SP_TunnelGrower
 
 		foreach (int index, SP_TunnelPlaced other : m_Layout.m_aPlaced)
 		{
-			if (!other.m_bSolid || except.Contains(index))
+			if (!other.m_bSolid || except.Contains(index) || index == m_iSkipPlaced)
 				continue;
 
 			if (Overlaps(placed, other))
@@ -725,6 +822,7 @@ class SP_TunnelGrower
 		m_aBranches.Clear();
 		m_aEntrances.Clear();
 		m_vStart = startPos;
+		MeasureRoutes();
 
 		// The start piece is already there: it's only in the layout so nothing grows back into it
 		SP_TunnelPlaced start = MakePlaced(startPiece, startPos, startYaw);
@@ -735,6 +833,31 @@ class SP_TunnelGrower
 		if (startIsEntrance)
 			m_aEntrances.Insert(startPos);
 
+		// Connect mode: the other entrances are in the world too. In the layout from the start, at their own poses, so
+		// nothing grows into them; they aren't opened for growth
+		m_aPinPlaced.Clear();
+		m_iSkipPlaced = -1;
+		m_iPendingChild = -1;
+		foreach (int pinIndex, SP_TunnelPin pin : m_aPins)
+		{
+			SP_TunnelPlaced pinned = MakePlaced(pin.m_iPiece, pin.m_vPos, pin.m_fYaw);
+			pinned.m_iPin = pinIndex;
+			m_aPinPlaced.Insert(Add(pinned));
+			SP_TunnelDocking docking = new SP_TunnelDocking();
+			docking.m_sName = pin.m_sName;
+			docking.m_Src = pin.m_Src;
+			docking.m_vFrom = pin.m_vPos;
+			docking.m_fFromYaw = pin.m_fYaw;
+			docking.m_vPos = pin.m_vPos;
+			docking.m_fYaw = pin.m_fYaw;
+			docking.m_sWhy = "no route reached it";
+			if (!pin.m_sSkip.IsEmpty())
+				docking.m_sWhy = pin.m_sSkip;
+
+			m_Layout.m_aDockings.Insert(docking);
+		}
+
+		m_Layout.m_iPinned = m_aPins.Count();
 		m_Layout.m_bSpline = m_bSplineMode;
 		foreach (SP_TunnelSplinePath unclaimed : m_aPaths)
 		{
@@ -831,7 +954,7 @@ class SP_TunnelGrower
 			return;
 		}
 
-		bool done = m_Layout.m_fLength >= m_Set.m_fTargetLength || !open.m_bGrow;
+		bool done = GrowLength() >= m_Set.m_fTargetLength || !open.m_bGrow;
 		if (!branch.m_bMain && branch.m_fLength >= branch.m_fBudget)
 			done = true;
 
@@ -907,6 +1030,13 @@ class SP_TunnelGrower
 		branch.m_bNoTurns = false;
 		branch.m_bPathEnded = false;
 		branch.m_iPieces = 0;
+		branch.m_iPin = -1;
+		branch.m_fTargetDist = -1;
+		branch.m_iApproach = 0;
+		branch.m_iStuck = 0;
+		branch.m_bDocked = false;
+		if (m_aPaths[path].m_iPin >= 0 && m_aPaths[path].m_iPin < m_aPins.Count())
+			branch.m_iPin = m_aPaths[path].m_iPin;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -944,10 +1074,31 @@ class SP_TunnelGrower
 	//! Side openings: following splines nothing grows off them (unless a branch spline claims them); otherwise by chance
 	protected bool SideGrows()
 	{
-		if (m_bSplineMode)
+		// (following splines nothing grows off the side, but in connect mode the maze round the routes does)
+		if (m_bSplineMode && m_aPins.IsEmpty())
 			return false;
 
 		return m_Rand.RandFloat01() < m_Set.m_fBranchChance;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Length counted against "Max length" for free growth: all of it, but in connect mode only the maze round the routes
+	protected float GrowLength()
+	{
+		if (m_aPins.IsEmpty())
+			return m_Layout.m_fLength;
+
+		return m_Layout.m_fFreeLength;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A dead end that grows freely: anywhere when not following splines, off the routes in connect mode
+	protected bool FreeEnd(SP_TunnelOpen open)
+	{
+		if (!m_bSplineMode)
+			return true;
+
+		return !m_aPins.IsEmpty() && open.m_iBranch >= 0 && m_aBranches[open.m_iBranch].m_iPath < 0;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -962,6 +1113,8 @@ class SP_TunnelGrower
 	protected void HandleSpline(SP_TunnelOpen open, SP_TunnelBranch branch)
 	{
 		SP_TunnelSplinePath path = m_aPaths[branch.m_iPath];
+		// Connect mode: this route ends at a pinned entrance, which it docks with instead of just stopping
+		bool connect = branch.m_iPin >= 0;
 		if (branch.m_bPathEnded)
 		{
 			EndHere(open, false);
@@ -971,12 +1124,18 @@ class SP_TunnelGrower
 		// Lost (wandering without getting along it): give up on it
 		if (branch.m_iPieces > path.m_fLength / 1.5 + 40)
 		{
+			if (connect)
+				m_Layout.m_aDockings[branch.m_iPin].m_sWhy = "the tunnel wandered off the route before getting there";
+
 			EndHere(open, true);
 			return;
 		}
 
 		Track(open, branch, path);
-		bool atEnd = branch.m_fPathS >= path.m_fLength - END_REACH;
+		bool atEnd = !connect && branch.m_fPathS >= path.m_fLength - END_REACH;
+		if (connect)
+			branch.m_fTargetDist = vector.DistanceXZ(open.m_vPos, m_aPins[branch.m_iPin].m_vSocketPos);
+
 		SP_TunnelSplineMark mark = NextMark(branch, path, atEnd);
 		if (mark)
 		{
@@ -991,6 +1150,10 @@ class SP_TunnelGrower
 
 			m_Layout.m_iMarksFailed++;
 		}
+
+		// Near the pinned entrance: dock if its socket can meet this open end, otherwise steer for the pose that can
+		if (connect && ConnectStep(open, branch, branch.m_iPin))
+			return;
 
 		// The end of the spline: the end of the tunnel
 		if (atEnd)
@@ -1010,6 +1173,9 @@ class SP_TunnelGrower
 
 		if (m_Layout.m_iRooms < m_Set.m_iMaxRooms && TryRoom(open, branch))
 			return;
+
+		if (connect)
+			m_Layout.m_aDockings[branch.m_iPin].m_sWhy = "the tunnel got stuck on the way (no piece fits, see the refusals)";
 
 		EndHere(open, true);
 	}
@@ -1072,7 +1238,12 @@ class SP_TunnelGrower
 		int kind = m_Catalog.m_aPieces[pool[0]].m_iKind;
 		bool placed = false;
 		if (kind == SP_TunnelKind.ROOM)
+		{
+			// A junction added for a branch route: the room's doors are chosen so one leads out onto that branch
+			m_iPendingChild = mark.m_iChild;
 			placed = TryRoom(open, branch, pool);
+			m_iPendingChild = -1;
+		}
 		else if (kind == SP_TunnelKind.ENTRANCE)
 			placed = TryEntrance(open, pool);
 		else if (kind == SP_TunnelKind.CAP)
@@ -1236,6 +1407,372 @@ class SP_TunnelGrower
 		return w;
 	}
 
+	//================================================================================================
+	// Connecting entrances
+	//================================================================================================
+
+	//------------------------------------------------------------------------------------------------
+	//! The pose a pinned entrance would need so its socket meets an open end (facing it), and whether that is within what it
+	//! may be moved: horizontally, in turn and in height
+	protected bool DockPose(SP_TunnelPin pin, vector openPos, vector openDir, out vector newPos, out float newYaw, out float move, out float turn, out float rise)
+	{
+		SP_TunnelPieceDef def = m_Catalog.m_aPieces[pin.m_iPiece];
+		SP_TunnelGrower.Attach(openPos, openDir, def.m_aSockets[pin.m_iSocket], newPos, newYaw);
+		move = vector.DistanceXZ(newPos, pin.m_vPos);
+		float d = newYaw - pin.m_fYaw;
+		d = d - 360 * Math.Round(d / 360);
+		turn = Math.AbsFloat(d);
+		rise = Math.AbsFloat(newPos[1] - pin.m_vPos[1]);
+		return move <= m_Set.m_fDockMove + 0.001 && turn <= m_Set.m_fDockTurn + 0.001 && rise <= m_Set.m_fDockRise + 0.001;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! How near the open end is to being docked: 0 is exact, 3 is at all three limits
+	protected float NudgeOf(float move, float turn, float rise)
+	{
+		return move / Math.Max(m_Set.m_fDockMove, 0.01) + turn / Math.Max(m_Set.m_fDockTurn, 0.01) + rise / Math.Max(m_Set.m_fDockRise, 0.01);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Does a pinned entrance at its new pose clear what's in the network (except the pieces it joins) and the tunnels
+	//! already in the world. (Not the world check: it was put there by hand and may stand close to things.)
+	protected bool PinFree(SP_TunnelPlaced placed, array<int> except)
+	{
+		foreach (int index, SP_TunnelPlaced other : m_Layout.m_aPlaced)
+		{
+			if (!other.m_bSolid || except.Contains(index))
+				continue;
+
+			if (Overlaps(placed, other))
+				return false;
+		}
+
+		return HitsObstacle(placed) == null;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Docks the pinned entrance on this open end if it can be moved to meet it: its pose is updated in the layout, the
+	//! joint masked, and the branch ends
+	protected bool TryDock(SP_TunnelOpen open, SP_TunnelBranch branch, int pinIndex)
+	{
+		SP_TunnelPin pin = m_aPins[pinIndex];
+		SP_TunnelDocking docking = m_Layout.m_aDockings[pinIndex];
+		if (docking.m_bDocked)
+			return false;
+
+		SP_TunnelPieceDef def = m_Catalog.m_aPieces[pin.m_iPiece];
+		if (def.m_aSockets[pin.m_iSocket].m_iSize != open.m_iSize)
+			return false;
+
+		vector newPos;
+		float newYaw;
+		float move;
+		float turn;
+		float rise;
+		if (!DockPose(pin, open.m_vPos, open.m_vDir, newPos, newYaw, move, turn, rise))
+			return false;
+
+		SP_TunnelPlaced placed = MakePlaced(pin.m_iPiece, newPos, newYaw);
+		placed.m_iPin = pinIndex;
+		int placedIndex = m_aPinPlaced[pinIndex];
+		array<int> except = {open.m_iOwner, placedIndex};
+		if (!PinFree(placed, except))
+		{
+			docking.m_sWhy = "it would run into the tunnel or something in the world at the pose that meets it";
+			return false;
+		}
+
+		m_Layout.m_aPlaced[placedIndex] = placed;
+		docking.m_bDocked = true;
+		docking.m_vPos = newPos;
+		docking.m_fYaw = newYaw;
+		docking.m_fMove = move;
+		docking.m_fTurn = turn;
+		docking.m_fRise = rise;
+		docking.m_sWhy = "";
+		JointMask(open);
+		branch.m_bPathEnded = true;
+		branch.m_bDocked = true;
+		branch.m_fPathS = m_aPaths[branch.m_iPath].m_fLength;
+		m_Layout.m_iDocked++;
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Near a pinned entrance: dock, or place the piece that leads towards a pose it can dock at. True: this open end was dealt
+	//! with. False: still too far, carry on along the route.
+	protected bool ConnectStep(SP_TunnelOpen open, SP_TunnelBranch branch, int pinIndex)
+	{
+		SP_TunnelPin pin = m_aPins[pinIndex];
+		if (branch.m_fTargetDist > APPROACH_RANGE)
+			return false;
+
+		// (the entrance being approached isn't something to keep clear of: it's where this is going)
+		m_iSkipPlaced = m_aPinPlaced[pinIndex];
+		bool handled = Approach(open, branch, pinIndex, pin);
+		m_iSkipPlaced = -1;
+		return handled;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool Approach(SP_TunnelOpen open, SP_TunnelBranch branch, int pinIndex, SP_TunnelPin pin)
+	{
+		if (TryDock(open, branch, pinIndex))
+			return true;
+
+		SP_TunnelDocking docking = m_Layout.m_aDockings[pinIndex];
+		branch.m_iApproach++;
+		if (branch.m_iApproach > MOST_APPROACH)
+		{
+			docking.m_sWhy = string.Format("gave up after %1 approach pieces", MOST_APPROACH);
+			EndHere(open, true);
+			return true;
+		}
+
+		bool docks;
+		array<ref SP_TunnelApproach> options = PlanApproach(open, branch, pin, docks);
+		if (docks)
+		{
+			branch.m_iStuck = 0;
+		}
+		else
+		{
+			// No way to a pose it can dock at within the lookahead: steps that only get nearer; a few of those and that's it
+			branch.m_iStuck++;
+			if (branch.m_iStuck > 6)
+			{
+				docking.m_sWhy = "no sequence of pieces reaches a pose it can dock at (the allowed move, turn and height change may be too small for these pieces)";
+				EndHere(open, true);
+				return true;
+			}
+		}
+
+		int tries = 0;
+		foreach (SP_TunnelApproach option : options)
+		{
+			if (tries >= 6)
+				break;
+
+			tries++;
+			if (PlaceCorridor(open, branch, option.m_iFirstPiece, option.m_iFirstSocket))
+				return true;
+		}
+
+		docking.m_sWhy = "no piece fits on the way to it (see the refusals)";
+		EndHere(open, true);
+		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! How far a pose that an open end would have is from the one that meets the pinned entrance: distance, height error
+	//! twice over, and the heading error (0.15 per degree)
+	protected float ApproachCost(vector pos, vector dir, SP_TunnelPin pin)
+	{
+		float d = YawOf(dir) - YawOf(-pin.m_vSocketDir);
+		d = d - 360 * Math.Round(d / 360);
+		return vector.DistanceXZ(pos, pin.m_vSocketPos) + 2 * Math.AbsFloat(pos[1] - pin.m_vSocketPos[1]) + 0.15 * Math.AbsFloat(d);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The pieces to try first, best first: a breadth search over sequences of corridor pieces (with the straight-run rule,
+	//! ignoring what's in the way: Fits decides that when one is placed) for the fewest pieces that end at a pose the
+	//! pinned entrance can dock at, a few states kept per depth. docks: such a sequence was found. Otherwise the options
+	//! lead to the state, after the full lookahead, that is nearest by ApproachCost.
+	protected array<ref SP_TunnelApproach> PlanApproach(SP_TunnelOpen open, SP_TunnelBranch branch, SP_TunnelPin pin, out bool docks)
+	{
+		docks = false;
+		array<ref SP_TunnelApproach> found = {};
+		array<ref SP_TunnelApproach> layer = {};
+		array<ref SP_TunnelApproach> last = {};
+		SP_TunnelApproach root = new SP_TunnelApproach();
+		root.m_vPos = open.m_vPos;
+		root.m_vDir = open.m_vDir;
+		root.m_fRun = branch.m_fRun;
+		layer.Insert(root);
+		float rootDist = vector.DistanceXZ(open.m_vPos, pin.m_vSocketPos);
+		float maxRun = m_Set.m_fMaxStraightRun;
+		for (int depth = 1; depth <= APPROACH_DEPTH; depth++)
+		{
+			array<ref SP_TunnelApproach> next = {};
+			foreach (SP_TunnelApproach state : layer)
+			{
+				foreach (int index : m_aCorridor)
+				{
+					SP_TunnelPieceDef piece = m_Catalog.m_aPieces[index];
+					if (piece.m_iSize != open.m_iSize || KindWeight(piece) <= 0)
+						continue;
+
+					bool breaks = BreaksSight(piece.m_iKind);
+					if (!breaks && maxRun > 0 && state.m_fRun >= maxRun - 0.5)
+						continue;
+
+					foreach (int s, SP_TunnelSocketDef socket : piece.m_aSockets)
+					{
+						if (socket.m_iRole != SP_TunnelRole.PATH || socket.m_iSize != open.m_iSize)
+							continue;
+
+						int onIndex = WayOn(piece, s);
+						if (onIndex < 0)
+							continue;
+
+						SP_TunnelSocketDef onSocket = piece.m_aSockets[onIndex];
+						float chord = vector.Distance(onSocket.m_vPos, socket.m_vPos);
+						if (!breaks && maxRun > 0 && state.m_fRun + chord > maxRun)
+							continue;
+
+						vector pos;
+						float yaw;
+						SP_TunnelGrower.Attach(state.m_vPos, state.m_vDir, socket, pos, yaw);
+						vector outPos = pos + Rot(onSocket.m_vPos, yaw);
+						vector outDir = Rot(onSocket.m_vDir, yaw);
+						// (no use walking off from it)
+						if (vector.DistanceXZ(outPos, pin.m_vSocketPos) > rootDist + 12)
+							continue;
+
+						SP_TunnelApproach child = new SP_TunnelApproach();
+						child.m_vPos = outPos;
+						child.m_vDir = outDir;
+						child.m_iDepth = depth;
+						if (breaks)
+							child.m_fRun = 0;
+						else
+							child.m_fRun = state.m_fRun + chord;
+
+						child.m_iFirstPiece = state.m_iFirstPiece;
+						child.m_iFirstSocket = state.m_iFirstSocket;
+						if (depth == 1)
+						{
+							child.m_iFirstPiece = index;
+							child.m_iFirstSocket = s;
+						}
+
+						child.m_fCost = ApproachCost(outPos, outDir, pin);
+						vector dockPos;
+						float dockYaw;
+						float move;
+						float turn;
+						float rise;
+						if (DockPose(pin, outPos, outDir, dockPos, dockYaw, move, turn, rise))
+						{
+							child.m_fNudge = NudgeOf(move, turn, rise);
+							found.Insert(child);
+						}
+						else
+						{
+							next.Insert(child);
+						}
+					}
+				}
+			}
+
+			if (!found.IsEmpty())
+				break;
+
+			layer = ThinApproach(next);
+			if (layer.IsEmpty())
+				break;
+
+			last = layer;
+		}
+
+		array<ref SP_TunnelApproach> options = {};
+		array<ref SP_TunnelApproach> source = last;
+		if (!found.IsEmpty())
+		{
+			docks = true;
+			source = found;
+		}
+
+		// Best first, one entry per first piece and socket
+		array<bool> taken = {};
+		for (int t = 0; t < source.Count(); t++)
+		{
+			taken.Insert(false);
+		}
+
+		for (int pick = 0; pick < source.Count() && options.Count() < 8; pick++)
+		{
+			int bestAt = -1;
+			float bestKey = 1000000;
+			for (int i = 0; i < source.Count(); i++)
+			{
+				if (taken[i])
+					continue;
+
+				float key = source[i].m_fCost;
+				if (docks)
+					key = source[i].m_fNudge;
+
+				if (key < bestKey)
+				{
+					bestKey = key;
+					bestAt = i;
+				}
+			}
+
+			if (bestAt < 0)
+				break;
+
+			taken[bestAt] = true;
+			bool seen = false;
+			foreach (SP_TunnelApproach already : options)
+			{
+				if (already.m_iFirstPiece == source[bestAt].m_iFirstPiece && already.m_iFirstSocket == source[bestAt].m_iFirstSocket)
+					seen = true;
+			}
+
+			if (!seen)
+				options.Insert(source[bestAt]);
+		}
+
+		return options;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! A layer of search states cut down: places that are the same (to half a metre, ten degrees, the same run) keep the cheaper,
+	//! then the cheapest APPROACH_WIDTH
+	protected array<ref SP_TunnelApproach> ThinApproach(array<ref SP_TunnelApproach> states)
+	{
+		map<string, int> at = new map<string, int>();
+		array<ref SP_TunnelApproach> unique = {};
+		foreach (SP_TunnelApproach state : states)
+		{
+			string key = string.Format("%1_%2", Math.Round(state.m_vPos[0] * 2), Math.Round(state.m_vPos[2] * 2));
+			key += string.Format("_%1_%2_%3", Math.Round(state.m_vPos[1] * 2), Math.Round(YawOf(state.m_vDir) / 10), Math.Round(state.m_fRun / 2));
+			if (at.Contains(key))
+			{
+				int old = at.Get(key);
+				if (state.m_fCost < unique[old].m_fCost)
+					unique[old] = state;
+
+				continue;
+			}
+
+			at.Insert(key, unique.Count());
+			unique.Insert(state);
+		}
+
+		if (unique.Count() <= APPROACH_WIDTH)
+			return unique;
+
+		array<float> costs = {};
+		foreach (SP_TunnelApproach entry : unique)
+		{
+			costs.Insert(entry.m_fCost);
+		}
+
+		costs.Sort();
+		float limit = costs[APPROACH_WIDTH - 1];
+		array<ref SP_TunnelApproach> kept = {};
+		foreach (SP_TunnelApproach candidate : unique)
+		{
+			if (candidate.m_fCost <= limit && kept.Count() < APPROACH_WIDTH)
+				kept.Insert(candidate);
+		}
+
+		return kept;
+	}
+
 	//------------------------------------------------------------------------------------------------
 	//! Metres of the splines the layout didn't get along
 	protected void SplineMissed()
@@ -1272,20 +1809,68 @@ class SP_TunnelGrower
 
 		// From an entrance its first pieces may stick out of the ground (the mouth's surroundings get shaped by hand),
 		// then have to be under it within a few pieces; from anything else, a little earth right away
+		float need = Math.Min(m_Set.m_fMinCover, 0.2 + branch.m_iFromEntrance * 0.6);
 		if (m_bStartIsEntrance)
-			return Math.Min(m_Set.m_fMinCover, -m_Set.m_fEntranceExposure + branch.m_iFromEntrance * 0.8);
+			need = Math.Min(m_Set.m_fMinCover, -m_Set.m_fEntranceExposure + branch.m_iFromEntrance * 0.8);
 
-		return Math.Min(m_Set.m_fMinCover, 0.2 + branch.m_iFromEntrance * 0.6);
+		// Heading for a pinned entrance: right by its mouth the tunnel may be shallow too (0.2 m more earth per metre away)
+		if (branch.m_iPin >= 0 && branch.m_fTargetDist >= 0)
+			need = Math.Min(need, -m_Set.m_fEntranceExposure + branch.m_fTargetDist * 0.2);
+
+		return need;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The theme of what an open socket belongs to (the piece that has it); a pinned entrance is dug
+	protected int OpenTheme(SP_TunnelOpen open)
+	{
+		if (open.m_iOwner < 0 || open.m_iOwner >= m_Layout.m_aPlaced.Count())
+			return SP_TunnelTheme.DUG;
+
+		return SP_TunnelCatalog.ThemeOf(m_Catalog.m_aPieces[m_Layout.m_aPlaced[open.m_iOwner].m_iPiece].m_sName);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! How well a piece follows the theme of the socket it attaches to: the same theme 1, a Brk_ bridge halfway, the other
+	//! theme straight on the setting (so cave pieces mostly lead on to cave pieces, dug ones to dug ones)
+	protected float ThemeWeight(int fromTheme, SP_TunnelPieceDef piece)
+	{
+		int to = SP_TunnelCatalog.ThemeOf(piece.m_sName);
+		if (to == fromTheme)
+			return 1;
+
+		if (to == SP_TunnelTheme.MIX || fromTheme == SP_TunnelTheme.MIX)
+			return Math.Max(m_Set.m_fThemeSwitch, 0.5);
+
+		return m_Set.m_fThemeSwitch;
 	}
 
 	//------------------------------------------------------------------------------------------------
 	//! How heavily each corridor piece is weighted
 	protected float KindWeight(SP_TunnelPieceDef piece)
 	{
+		// The neck (_A) and wide (_C) variants of a shape (TT_Straight_4_A, TT_Curve_10_C, ...) share the weight of their standard
+		// piece: a third each of the usual one would triple the shape's share
+		float variant = 1;
+		string name = piece.m_sName;
+		if (name.Length() > 3 && (name.EndsWith("_A") || name.EndsWith("_C")))
+			variant = 0.5;
+
+		return KindWeightBase(piece) * variant;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected float KindWeightBase(SP_TunnelPieceDef piece)
+	{
 		switch (piece.m_iKind)
 		{
 			case SP_TunnelKind.STRAIGHT:
 			{
+				// The fine-adjustment pieces (gentle curves, 1 m and 2 m straights) are for fitting things together: they
+				// turn up now and then as wiggle, but must not swamp the usual straights
+				if (piece.m_sName.Contains("Curve_") || piece.m_sName == "TT_Straight_1" || piece.m_sName == "TT_Straight_2")
+					return m_Set.m_fStraightWeight * 0.1;
+
 				float share = m_Set.m_fLongStraightShare;
 				if (piece.m_sName.Contains("7.5"))
 					return m_Set.m_fStraightWeight * share;
@@ -1354,6 +1939,8 @@ class SP_TunnelGrower
 		if (only)
 			pool = only;
 
+		int fromTheme = OpenTheme(open);
+
 		SP_TunnelSplinePath path;
 		if (branch.m_iPath >= 0)
 			path = m_aPaths[branch.m_iPath];
@@ -1396,7 +1983,7 @@ class SP_TunnelGrower
 				float yaw;
 				SP_TunnelGrower.Attach(open.m_vPos, open.m_vDir, socket, pos, yaw);
 				int onIndex = WayOn(piece, s);
-				float w = weight;
+				float w = weight * ThemeWeight(fromTheme, piece);
 				if (onIndex >= 0 && path)
 				{
 					SP_TunnelSocketDef onSpline = piece.m_aSockets[onIndex];
@@ -1524,6 +2111,8 @@ class SP_TunnelGrower
 		branch.m_iFromEntrance++;
 		branch.m_iPieces++;
 		m_Layout.m_fLength += chord;
+		if (branch.m_iPath < 0)
+			m_Layout.m_fFreeLength += chord;
 		return true;
 	}
 
@@ -1619,10 +2208,17 @@ class SP_TunnelGrower
 	//! A room joined straight onto the corridor, by one of its openings of the corridor's size
 	protected bool TryRoomDirect(SP_TunnelOpen open, SP_TunnelBranch branch, array<int> rooms)
 	{
-		for (int attempt = 0; attempt < 8; attempt++)
+		int attempts = 8;
+		if (m_iPendingChild >= 0)
+			attempts = 24;
+
+		for (int attempt = 0; attempt < attempts; attempt++)
 		{
 			int roomIndex = rooms[m_Rand.RandInt(0, rooms.Count())];
 			SP_TunnelPieceDef room = m_Catalog.m_aPieces[roomIndex];
+			if (m_iPendingChild < 0 && m_Rand.RandFloat01() > ThemeWeight(OpenTheme(open), room))
+				continue;
+
 			array<int> fitting = {};
 			foreach (int rs, SP_TunnelSocketDef roomSocket : room.m_aSockets)
 			{
@@ -1637,6 +2233,10 @@ class SP_TunnelGrower
 			vector roomPos;
 			float roomYaw;
 			SP_TunnelGrower.Attach(open.m_vPos, open.m_vDir, room.m_aSockets[entryDoor], roomPos, roomYaw);
+			// A junction for a branch route: one door must face the branch, another carry on
+			if (m_iPendingChild >= 0 && ChildDoor(room, entryDoor, roomYaw, branch) < 0)
+				continue;
+
 			SP_TunnelPlaced roomPlaced = MakePlaced(roomIndex, roomPos, roomYaw);
 			array<int> except = {open.m_iOwner};
 			if (!Fits(roomPlaced, except, NeedCover(branch)))
@@ -1653,6 +2253,57 @@ class SP_TunnelGrower
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! A junction placed for a branch route (m_iPendingChild): of the room's doors the one that faces the first stretch of
+	//! that route (within 60 degrees), provided another door can carry the main way on (not facing back). -1: none
+	protected int ChildDoor(SP_TunnelPieceDef room, int entryDoor, float roomYaw, SP_TunnelBranch branch)
+	{
+		if (m_iPendingChild < 0 || m_iPendingChild >= m_aPaths.Count())
+			return -1;
+
+		SP_TunnelSplinePath child = m_aPaths[m_iPendingChild];
+		vector want = child.At(Math.Min(LOOKAHEAD, child.m_fLength)) - child.First();
+		want[1] = 0;
+		float len = want.Length();
+		if (len < 0.5)
+			return -1;
+
+		want = want * (1 / len);
+		int best = -1;
+		float bestCos = 0.5;
+		foreach (int d, SP_TunnelSocketDef door : room.m_aSockets)
+		{
+			if (d == entryDoor || door.m_iRole != SP_TunnelRole.PATH)
+				continue;
+
+			float along = vector.Dot(Rot(door.m_vDir, roomYaw), want);
+			if (along > bestCos)
+			{
+				bestCos = along;
+				best = d;
+			}
+		}
+
+		if (best < 0)
+			return -1;
+
+		bool carry = false;
+		foreach (int c, SP_TunnelSocketDef other : room.m_aSockets)
+		{
+			if (c == entryDoor || c == best)
+				continue;
+
+			float off = (YawOf(Rot(other.m_vDir, roomYaw)) - branch.m_fBearing) * Math.DEG2RAD;
+			if (Math.Cos(off) >= -0.1)
+				carry = true;
+		}
+
+		if (!carry)
+			return -1;
+
+		return best;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! A room's other doorframes: on the main way one carries on (the one most nearly along its heading), the rest are
 	//! side branches now and then, and closed off otherwise
 	protected void RoomDoors(int roomPlacedIndex, int entryDoor, int branchIndex, SP_TunnelBranch branch)
@@ -1660,12 +2311,22 @@ class SP_TunnelGrower
 		SP_TunnelPlaced placed = m_Layout.m_aPlaced[roomPlacedIndex];
 		SP_TunnelPieceDef room = m_Catalog.m_aPieces[placed.m_iPiece];
 		int carryOn = -1;
+
+		// A junction added for a branch route: its door that faces the branch leads out onto it
+		int childDoor = -1;
+		int childPath = m_iPendingChild;
+		if (childPath >= 0 && !m_bDeadEndRoom)
+			childDoor = ChildDoor(room, entryDoor, placed.m_fYaw, branch);
+
+		if (childDoor >= 0)
+			m_aPaths[childPath].m_bClaimed = true;
+
 		if (!m_bDeadEndRoom && (branch.m_bMain || branch.m_iPath >= 0))
 		{
 			float bestAlong = -100;
 			foreach (int d, SP_TunnelSocketDef door : room.m_aSockets)
 			{
-				if (d == entryDoor)
+				if (d == entryDoor || d == childDoor)
 					continue;
 
 				float off = (YawOf(Rot(door.m_vDir, placed.m_fYaw)) - branch.m_fBearing) * Math.DEG2RAD;
@@ -1694,6 +2355,12 @@ class SP_TunnelGrower
 				// a room at a dead end: its other openings are closed off
 				next.m_iBranch = branchIndex;
 				next.m_bGrow = false;
+			}
+			else if (s == childDoor)
+			{
+				next.m_iBranch = NewBranch(false, YawOf(next.m_vDir), branch.m_iFromEntrance + 2);
+				StartPath(m_aBranches[next.m_iBranch], childPath);
+				next.m_bGrow = true;
 			}
 			else if (s == carryOn)
 			{
@@ -1748,7 +2415,7 @@ class SP_TunnelGrower
 	{
 		SP_TunnelBranch branch = m_aBranches[open.m_iBranch];
 		// (on a spline the spline says how long it is)
-		bool grow = open.m_bGrow && (branch.m_iPath >= 0 || m_Layout.m_fLength < m_Set.m_fTargetLength);
+		bool grow = open.m_bGrow && (branch.m_iPath >= 0 || GrowLength() < m_Set.m_fTargetLength);
 		if (branch.m_bPathEnded)
 			grow = false;
 
@@ -1826,6 +2493,10 @@ class SP_TunnelGrower
 			if (deadEnd && junction)
 				continue;
 
+			// a room with a single way in (a grotto) is only for the end of a branch
+			if (!deadEnd && PathSockets(m_Catalog.m_aPieces[r]) < 2)
+				continue;
+
 			if (m_Set.m_bRoomsOnce && !junction && IsPlaced(r))
 				continue;
 
@@ -1833,6 +2504,19 @@ class SP_TunnelGrower
 		}
 
 		return choices;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected int PathSockets(SP_TunnelPieceDef piece)
+	{
+		int n = 0;
+		foreach (SP_TunnelSocketDef socket : piece.m_aSockets)
+		{
+			if (socket.m_iRole == SP_TunnelRole.PATH)
+				n++;
+		}
+
+		return n;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -1852,12 +2536,12 @@ class SP_TunnelGrower
 	protected void EndHere(SP_TunnelOpen open, bool forced)
 	{
 		// (following splines, entrances only where a point asks for one)
-		if (!m_bSplineMode && m_Layout.m_iEntrances < m_Set.m_iExtraEntrances && TryEntrance(open))
+		if (FreeEnd(open) && m_Layout.m_iEntrances < m_Set.m_iExtraEntrances && TryEntrance(open))
 			return;
 
 		// A corridor that just stops makes more sense ending in a room: one that hasn't been used yet, if it fits
 		// (not after a room's own openings, so this doesn't chain)
-		if (!m_bSplineMode && m_Set.m_bRoomAtDeadEnds && m_Layout.m_iRooms < m_Set.m_iMaxRooms && open.m_iBranch >= 0 &&
+		if (FreeEnd(open) && m_Set.m_bRoomAtDeadEnds && m_Layout.m_iRooms < m_Set.m_iMaxRooms && open.m_iBranch >= 0 &&
 			open.m_iOwner >= 0 && m_Catalog.m_aPieces[m_Layout.m_aPlaced[open.m_iOwner].m_iPiece].m_iKind != SP_TunnelKind.ROOM)
 		{
 			m_bDeadEndRoom = true;
@@ -1970,6 +2654,24 @@ class SP_TunnelGrower
 			splineCost += m_Layout.m_iMarksFailed * 10;
 			splineCost += m_Layout.m_iForcedCaps * 4;
 			splineCost += m_Layout.m_iOpenLeft * 20;
+
+			// Connect mode: every entrance left unconnected outweighs everything else; of the layouts that connect all,
+			// the one that moves the entrances least
+			splineCost += (m_Layout.m_iPinned - m_Layout.m_iDocked) * 1000;
+			if (!m_aPins.IsEmpty())
+			{
+				// the maze round the routes: near the wanted length, with the wanted rooms and ways out
+				splineCost += Math.AbsFloat(m_Set.m_fTargetLength - m_Layout.m_fFreeLength) / Math.Max(m_Set.m_fTargetLength, 1) * 30;
+				splineCost += (m_Set.m_iMaxRooms - m_Layout.m_iRooms) * 3;
+				splineCost += (m_Set.m_iExtraEntrances - m_Layout.m_iEntrances) * 5;
+			}
+
+			foreach (SP_TunnelDocking docking : m_Layout.m_aDockings)
+			{
+				if (docking.m_bDocked)
+					splineCost += NudgeOf(docking.m_fMove, docking.m_fTurn, docking.m_fRise) * 3;
+			}
+
 			m_Layout.m_fCost = splineCost;
 			return;
 		}
