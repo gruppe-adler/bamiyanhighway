@@ -1,0 +1,9 @@
+MatPBRBasic {
+ Color 0.35 0.8 1 1
+ Sort translucent
+ CastShadow 0
+ AlphaMul 0.5
+ BlendMode AlphaBlend
+ RoughnessScale 1
+ MetalnessScale 0
+}

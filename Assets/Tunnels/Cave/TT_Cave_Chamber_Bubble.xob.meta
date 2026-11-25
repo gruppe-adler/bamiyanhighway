@@ -1,0 +1,65 @@
+MetaFileClass {
+ Name "{A755AF135A1D13AF}Assets/Tunnels/Cave/TT_Cave_Chamber_Bubble.xob"
+ Configurations {
+  FBXResourceClass PC {
+   ExportSceneHierarchy 1
+   MaterialAssigns {
+    MaterialAssignClass "{6AF13A379D89DC0D}" {
+     SourceMaterial "TT_Ground"
+     AssignedMaterial "{50CFA040AD8AA2ED}Assets/Tunnels/Cave/Data/TT_Cave_Chamber_Bubble.emat"
+    }
+    MaterialAssignClass "{6AF13A379D89DDEC}" {
+     SourceMaterial "TT_Earth"
+     AssignedMaterial "{50CFA040AD8AA2ED}Assets/Tunnels/Cave/Data/TT_Cave_Chamber_Bubble.emat"
+    }
+    MaterialAssignClass "{6AF13A379D89DDD7}" {
+     SourceMaterial "TT_CalciteGlow"
+     AssignedMaterial "{50CFA040AD8AA2ED}Assets/Tunnels/Cave/Data/TT_Cave_Chamber_Bubble.emat"
+    }
+   }
+   MeshParams {
+    MeshParam TT_Cave_Chamber_Bubble {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_TT_Cave_Chamber_Bubble {
+     SurfaceProperties {
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{6AF13A376291A99F}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "4.5.14 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{6AF13A376291A6A6}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{6AF13A376291A673}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{6AF13A376291A64A}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{6AF13A376291A615}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{6AF13A376291A7E1}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{6AF13A376291A7B7}" {
+   }
+  }
+ }
+}

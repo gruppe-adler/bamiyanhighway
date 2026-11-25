@@ -12,10 +12,6 @@ MetaFileClass {
      SourceMaterial "TT_CalciteGlow"
      AssignedMaterial "{4467FB35E0BB0BD4}Assets/Tunnels/Cave/Data/TT_Room_Drip_A.emat"
     }
-    MaterialAssignClass "{8CC42B2CC7DA69F3}" {
-     SourceMaterial "TT_Wood"
-     AssignedMaterial "{3ED528EC5E2F3DEF}Assets/Tunnels/TT/Data/TT_Wood.emat"
-    }
     MaterialAssignClass "{A5CB2518FA1089D9}" {
      SourceMaterial "TT_Ground"
      AssignedMaterial "{4467FB35E0BB0BD4}Assets/Tunnels/Cave/Data/TT_Room_Drip_A.emat"

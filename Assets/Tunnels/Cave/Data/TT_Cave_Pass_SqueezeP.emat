@@ -1,0 +1,46 @@
+MatPBRMulti {
+ DisableFog 1
+ UVSrcGlobalMaps "UV set 2"
+ MaskMap "{BBFAF9D986C7D299}Assets/Tunnels/Cave/TT_Cave_Pass_SqueezeP_MASK.edds"
+ DirtOpacity 0
+ DirtBCRMap "{088B8F1FAA7A4F79}Assets/Tunnels/Cave/Textures/Cave_Mud_BCR.edds"
+ Color_1 1 0.96 0.9 1
+ BCR_1 "{E930B69F6FC02A19}Assets/Tunnels/Cave/Textures/Cave_Chalk_BCR.edds"
+ NMO_1 "{D1E80D0DB6B77887}Assets/Tunnels/Cave/Textures/Cave_Chalk_NMO.edds"
+ UVTransform_1 MatUVTransform "{91824E4062259A1E}" {
+  TilingU 6
+  TilingV 6
+ }
+ Roughness_1 1
+ Metalness_1 0
+ Enabled_2 1
+ Color_2 0.93 0.88 0.78 1
+ BCR_2 "{DA521CA9BD9D9D00}Assets/Tunnels/Cave/Textures/Cave_Flowstone_BCR.edds"
+ NMO_2 "{E28AA73B64EACF9E}Assets/Tunnels/Cave/Textures/Cave_Flowstone_NMO.edds"
+ UVTransform_2 MatUVTransform "{0C9B866653553618}" {
+  TilingU 7
+  TilingV 7
+ }
+ Roughness_2 0.45
+ Metalness_2 0
+ Enabled_3 1
+ Color_3 1 0.85 0.66 1
+ BCR_3 "{4ADAB51B95D40BDF}Assets/Tunnels/Cave/Textures/Cave_Dripstone_BCR.edds"
+ NMO_3 "{72020E894CA35941}Assets/Tunnels/Cave/Textures/Cave_Dripstone_NMO.edds"
+ UVTransform_3 MatUVTransform "{CF3CEE7F11FBA2B7}" {
+  TilingU 14
+  TilingV 14
+ }
+ Roughness_3 0.32
+ Metalness_3 0
+ Enabled_4 1
+ Color_4 0.95 0.9 0.84 1
+ BCR_4 "{F301BAA2D2CD6434}Assets/Tunnels/Cave/Textures/Cave_Sediment_BCR.edds"
+ NMO_4 "{CBD901300BBA36AA}Assets/Tunnels/Cave/Textures/Cave_Sediment_NMO.edds"
+ UVTransform_4 MatUVTransform "{85292382554B30F5}" {
+  TilingU 5
+  TilingV 5
+ }
+ Roughness_4 0.95
+ Metalness_4 0
+}

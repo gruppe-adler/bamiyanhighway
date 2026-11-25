@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "D38F7F8709FC0159"
+ components {
+  MeshObject "{67E4C75DAAE02029}" {
+   Object "{44A156029F50643F}Assets/Tunnels/Cave/TT_Cave_Grotto_Crawl.xob"
+  }
+  RigidBody "{A0A6E223326E1E4C}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{28C958955E514521}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "591F61D6952EEAF5"
+   coords 0.039 0.964 -2.757
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "5C6F7A84329B5893"
+     Box BoundingVolume "{081CDDCCEF93247C}" {
+      Size 7.38 6.34 18.96
+     }
+    }
+   }
+  }
+ }
+}

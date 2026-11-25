@@ -1,0 +1,42 @@
+GenericEntity {
+ ID "82E5818F97A9876C"
+ components {
+  MeshObject "{A60EBAE7727338EB}" {
+   Object "{81C4472BA36B7AD6}Assets/Tunnels/Cave/TT_Cave_Room_SwimThrough.xob"
+  }
+  RigidBody "{0CFA6D53B0FFE78B}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{43376809E9790341}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "9B43C481B31BD430"
+   coords 0.079 1.250 -0.012
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "85D2A37EB79A311D"
+     Box BoundingVolume "{421988718D51313C}" {
+      Size 16.84 13.87 28.38
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "26C9371F7800D3FE"
+   Name "WaterLevel"
+   coords 0 -1.000 0
+  }
+ }
+}

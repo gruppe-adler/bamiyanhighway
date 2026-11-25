@@ -1,0 +1,61 @@
+MetaFileClass {
+ Name "{5D6B64A418499BC5}Assets/Tunnels/TT/TT_Turn90_A.xob"
+ Configurations {
+  FBXResourceClass PC {
+   ExportSceneHierarchy 1
+   MaterialAssigns {
+    MaterialAssignClass "{E267FFA46C84D989}" {
+     SourceMaterial "TT_Earth"
+     AssignedMaterial "{C0BEF3FC2CDDDC10}Assets/Tunnels/TT/Data/TT_Earth.emat"
+    }
+    MaterialAssignClass "{77214EDAEEA303D8}" {
+     SourceMaterial "TT_Ground"
+     AssignedMaterial "{21C9EDC5B7985B58}Assets/Tunnels/TT/Data/TT_Ground.emat"
+    }
+   }
+   MeshParams {
+    MeshParam TT_Turn90_A {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_TT_Turn90_A {
+     SurfaceProperties {
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{601D1757FC01373B}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "4.5.14 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{AEBFBA980EA60788}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{A7CB3582C1F7A2E7}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{9BB297FE031C9155}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{8FFBDBB25DD56854}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{38AA31E9FC4F28A4}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{57AC0AF97F38A3E8}" {
+   }
+  }
+ }
+}

@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "CAAB75B4741026CD"
+ components {
+  MeshObject "{36761B09C4BB307B}" {
+   Object "{81B7B7627F1CA381}Assets/Tunnels/Cave/TT_Cave_Jct_Island.xob"
+  }
+  RigidBody "{3D4EA1E97956C17A}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{305E8A839E8F5D28}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "EB46B900F0264F85"
+   coords -0.018 2.550 0.565
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "390266A85189E145"
+     Box BoundingVolume "{209A1620F013EEF8}" {
+      Size 22.84 10.06 21.71
+     }
+    }
+   }
+  }
+ }
+}

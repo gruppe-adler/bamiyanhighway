@@ -1,0 +1,61 @@
+MetaFileClass {
+ Name "{873FBAFD7B9724BC}Assets/Tunnels/TT/TT_Straight_4_C.xob"
+ Configurations {
+  FBXResourceClass PC {
+   ExportSceneHierarchy 1
+   MaterialAssigns {
+    MaterialAssignClass "{19569A6A4A5FB68D}" {
+     SourceMaterial "TT_Earth"
+     AssignedMaterial "{C0BEF3FC2CDDDC10}Assets/Tunnels/TT/Data/TT_Earth.emat"
+    }
+    MaterialAssignClass "{C234237C665C2BE3}" {
+     SourceMaterial "TT_Ground"
+     AssignedMaterial "{21C9EDC5B7985B58}Assets/Tunnels/TT/Data/TT_Ground.emat"
+    }
+   }
+   MeshParams {
+    MeshParam TT_Straight_4_C {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_TT_Straight_4_C {
+     SurfaceProperties {
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{1C81707BF9E18070}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "4.5.14 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{5335B3BA0E56272F}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{2984DB1C7F9C8FA8}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{985F9C52C1CF2B56}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{4B96A7D7B2BD6150}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{8695D937E1DEB4E7}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{704E6AB11F0B61CA}" {
+   }
+  }
+ }
+}

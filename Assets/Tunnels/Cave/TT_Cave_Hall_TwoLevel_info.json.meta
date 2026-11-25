@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{BF2237F2C5B55641}Assets/Tunnels/Cave/TT_Cave_Hall_TwoLevel_info.json"
+ Configurations {
+  JSONResourceClass PC {
+  }
+  JSONResourceClass XBOX_ONE : PC {
+  }
+  JSONResourceClass XBOX_SERIES : PC {
+  }
+  JSONResourceClass PS4 : PC {
+  }
+  JSONResourceClass PS5 : PC {
+  }
+  JSONResourceClass HEADLESS : PC {
+  }
+  JSONResourceClass Xbox : PC {
+  }
+ }
+}

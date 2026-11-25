@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "1CE48FE6A50676DC"
+ components {
+  MeshObject "{9C49FE39DC41A549}" {
+   Object "{91FA08257B9B4761}Assets/Tunnels/Cave/TT_Cave_Pass_Meander.xob"
+  }
+  RigidBody "{FE09A1F44AF361FE}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{1A6E9932547D1FD9}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "3E08300F5A71BD02"
+   coords -0.015 1.547 -0.921
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "837D74FAE58ABEE8"
+     Box BoundingVolume "{9A069450B7B278C3}" {
+      Size 12.40 7.49 24.50
+     }
+    }
+   }
+  }
+ }
+}

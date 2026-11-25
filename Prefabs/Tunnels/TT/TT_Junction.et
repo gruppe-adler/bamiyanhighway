@@ -11,6 +11,13 @@ GenericEntity {
   }
   SP_TunnelExposureComponent "{AE78549901972DF0}" {
    m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{DCB788BCD0E04851}Prefabs/Tunnels/TT/TT_TunnelProbe_Hub.et" {
+   ID "45623A4B5A36285F"
+   coords 0 1.064 -0.404
   }
  }
 }

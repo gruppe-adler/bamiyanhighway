@@ -4,43 +4,43 @@ MatPBRMulti {
  MaskMap "{7CD68AC4EA49DDA4}Assets/Tunnels/Cave/TT_Room_Drip_C_MASK.edds"
  DirtOpacity 0
  DirtBCRMap "{088B8F1FAA7A4F79}Assets/Tunnels/Cave/Textures/Cave_Mud_BCR.edds"
- Color_1 1 1 1 1
- BCR_1 "{757A31543C742493}Assets/Tunnels/Cave/Textures/Cave_Limestone_BCR.edds"
- NMO_1 "{4DA28AC6E503760D}Assets/Tunnels/Cave/Textures/Cave_Limestone_NMO.edds"
+ Color_1 1 0.96 0.9 1
+ BCR_1 "{E930B69F6FC02A19}Assets/Tunnels/Cave/Textures/Cave_Chalk_BCR.edds"
+ NMO_1 "{D1E80D0DB6B77887}Assets/Tunnels/Cave/Textures/Cave_Chalk_NMO.edds"
  UVTransform_1 MatUVTransform "{5F561ACA3DAABF26}" {
-  TilingU 16
-  TilingV 16
+  TilingU 6
+  TilingV 6
  }
  Roughness_1 1
  Metalness_1 0
  Enabled_2 1
- Color_2 1 0.92 0.8 1
+ Color_2 0.93 0.88 0.78 1
  BCR_2 "{DA521CA9BD9D9D00}Assets/Tunnels/Cave/Textures/Cave_Flowstone_BCR.edds"
  NMO_2 "{E28AA73B64EACF9E}Assets/Tunnels/Cave/Textures/Cave_Flowstone_NMO.edds"
  UVTransform_2 MatUVTransform "{2244BFAE4EA35A01}" {
-  TilingU 16
-  TilingV 16
+  TilingU 7
+  TilingV 7
  }
  Roughness_2 0.45
  Metalness_2 0
  Enabled_3 1
- Color_3 1 0.82 0.6 1
+ Color_3 1 0.85 0.66 1
  BCR_3 "{4ADAB51B95D40BDF}Assets/Tunnels/Cave/Textures/Cave_Dripstone_BCR.edds"
  NMO_3 "{72020E894CA35941}Assets/Tunnels/Cave/Textures/Cave_Dripstone_NMO.edds"
  UVTransform_3 MatUVTransform "{2C11C2326BAEBEFA}" {
-  TilingU 24
-  TilingV 24
+  TilingU 14
+  TilingV 14
  }
  Roughness_3 0.32
  Metalness_3 0
  Enabled_4 1
- Color_4 1 1 0.96 1
- BCR_4 "{DA521CA9BD9D9D00}Assets/Tunnels/Cave/Textures/Cave_Flowstone_BCR.edds"
- NMO_4 "{E28AA73B64EACF9E}Assets/Tunnels/Cave/Textures/Cave_Flowstone_NMO.edds"
+ Color_4 0.95 0.9 0.84 1
+ BCR_4 "{F301BAA2D2CD6434}Assets/Tunnels/Cave/Textures/Cave_Sediment_BCR.edds"
+ NMO_4 "{CBD901300BBA36AA}Assets/Tunnels/Cave/Textures/Cave_Sediment_NMO.edds"
  UVTransform_4 MatUVTransform "{279F2ABE0259E77F}" {
-  TilingU 32
-  TilingV 32
+  TilingU 5
+  TilingV 5
  }
- Roughness_4 0.25
+ Roughness_4 0.95
  Metalness_4 0
 }

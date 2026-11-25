@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "586165A3B900F43C"
+ components {
+  MeshObject "{B6B7CAA463C1CCB4}" {
+   Object "{1E5EFC0A519C2BDA}Assets/Tunnels/Cave/TT_Cave_Crawl_Rubble.xob"
+  }
+  RigidBody "{06477CF10EADE0CC}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{BE899F533748D424}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "F30C0EDB78047D7D"
+   coords 0.177 0.794 0.110
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "48B1C61018616F53"
+     Box BoundingVolume "{D9F1B9F2CE6ECED9}" {
+      Size 13.45 5.99 12.00
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,61 @@
+MetaFileClass {
+ Name "{43BB469AAA78BBAD}Assets/Tunnels/TT/TT_Curve_5_C.xob"
+ Configurations {
+  FBXResourceClass PC {
+   ExportSceneHierarchy 1
+   MaterialAssigns {
+    MaterialAssignClass "{E30B6851E723018C}" {
+     SourceMaterial "TT_Earth"
+     AssignedMaterial "{C0BEF3FC2CDDDC10}Assets/Tunnels/TT/Data/TT_Earth.emat"
+    }
+    MaterialAssignClass "{40F8714CF4DCA693}" {
+     SourceMaterial "TT_Ground"
+     AssignedMaterial "{21C9EDC5B7985B58}Assets/Tunnels/TT/Data/TT_Ground.emat"
+    }
+   }
+   MeshParams {
+    MeshParam TT_Curve_5_C {
+    }
+   }
+   GeometryParams {
+    GeometryParam UTM_TT_Curve_5_C {
+     SurfaceProperties {
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+   Common TXOCommonClass "{B11BC84027A0F890}" : "{0877E7C4BB2B2C9A}Configs/System/ResourceTypes/PC/MeshObjectCommon.conf" {
+   }
+   ApplicationVendor "Blender Foundation"
+   ApplicationName "Blender (stable FBX IO)"
+   ApplicationVersion "4.5.14 LTS"
+  }
+  FBXResourceClass XBOX_ONE : PC {
+   Common TXOCommonClass "{E4B3A61366260AA6}" : "{9D5B6207F7628CE2}Configs/System/ResourceTypes/XBOX_ONE/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+   Common TXOCommonClass "{4EBB96C8DEE0DE75}" : "{DD9F02115C764647}Configs/System/ResourceTypes/XBOX_SERIES/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS4 : PC {
+   Common TXOCommonClass "{B90030779D34627E}" : "{53EC476BC921D99A}Configs/System/ResourceTypes/PS4/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass PS5 : PC {
+   Common TXOCommonClass "{B2D21759354BDFC3}" : "{F62AA8E7B8EA9D26}Configs/System/ResourceTypes/PS5/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass HEADLESS : PC {
+   Common TXOCommonClass "{910A607371D5DD8C}" : "{3A5B3356978039E8}Configs/System/ResourceTypes/HEADLESS/MeshObjectCommon.conf" {
+   }
+  }
+  FBXResourceClass Xbox : PC {
+   Common TXOCommonClass "{8E68C613531F0FCD}" {
+   }
+  }
+ }
+}

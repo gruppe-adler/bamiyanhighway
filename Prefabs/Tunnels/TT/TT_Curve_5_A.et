@@ -1,0 +1,24 @@
+GenericEntity {
+ ID "EAFF9A84DACC05DB"
+ components {
+  MeshObject "{E58792558A98F150}" {
+   Object "{8D20732AE1E30FDC}Assets/Tunnels/TT/TT_Curve_5_A.xob"
+  }
+  RigidBody "{4549343EB2A125B3}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{CCD812D2F8157E58}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{352949EEDBDE3131}Prefabs/Tunnels/TT/TT_TunnelProbe.et" {
+   ID "62FCCDA05F9D9D23"
+   coords 0.095 1.064 2.068
+   angleY 5.002
+  }
+ }
+}

@@ -8,10 +8,6 @@ MetaFileClass {
      SourceMaterial "TT_Earth"
      AssignedMaterial "{C0BEF3FC2CDDDC10}Assets/Tunnels/TT/Data/TT_Earth.emat"
     }
-    MaterialAssignClass "{6AED161B178A6F3F}" {
-     SourceMaterial "TT_Wood"
-     AssignedMaterial "{3ED528EC5E2F3DEF}Assets/Tunnels/TT/Data/TT_Wood.emat"
-    }
     MaterialAssignClass "{E0D17706AB4CFD39}" {
      SourceMaterial "TT_Ground"
      AssignedMaterial "{21C9EDC5B7985B58}Assets/Tunnels/TT/Data/TT_Ground.emat"
@@ -24,7 +20,6 @@ MetaFileClass {
    GeometryParams {
     GeometryParam UTM_TT_Room {
      SurfaceProperties {
-      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
       "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
       "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
      }

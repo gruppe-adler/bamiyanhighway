@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "ED55BD931B20743B"
+ components {
+  MeshObject "{57E410C0A6DC4F5F}" {
+   Object "{46DB649C42DD6FE4}Assets/Tunnels/Cave/TT_Cave_Ledge_Collapse.xob"
+  }
+  RigidBody "{53BE42FFDB1F0F50}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{AB1422F15B938762}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "82E7E5916165F567"
+   coords 0.000 4.345 -0.011
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "248FEF25D49F484E"
+     Box BoundingVolume "{DF1A1714769D0504}" {
+      Size 27.77 12.96 29.08
+     }
+    }
+   }
+  }
+ }
+}

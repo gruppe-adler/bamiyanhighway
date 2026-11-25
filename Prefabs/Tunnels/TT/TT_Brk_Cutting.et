@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "29363A0489F63A30"
+ components {
+  MeshObject "{BD88A06A0EE0AB95}" {
+   Object "{80F6BEFF0B173625}Assets/Tunnels/Cave/TT_Brk_Cutting.xob"
+  }
+  RigidBody "{3404BD41D5B0EF5B}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{B60B06AC47D41ED6}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "78681CB8FE1EF6B3"
+   coords 3.984 0.418 -0.022
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "CD6D7F630C3C379E"
+     Box BoundingVolume "{BDC47B895464EC53}" {
+      Size 12.33 5.85 15.86
+     }
+    }
+   }
+  }
+ }
+}

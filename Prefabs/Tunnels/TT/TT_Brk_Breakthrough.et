@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "C0F4B18EC8898739"
+ components {
+  MeshObject "{6ABACAEE0FE7C8A9}" {
+   Object "{8F4EB386EBC74392}Assets/Tunnels/Cave/TT_Brk_Breakthrough.xob"
+  }
+  RigidBody "{B1B1433549BCEEE6}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{02442F879B9EE824}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "5249293B1CF33C04"
+   coords -0.008 0.123 3.046
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "2FE8314558110FA9"
+     Box BoundingVolume "{CE0D6A4B09027119}" {
+      Size 10.09 6.31 23.61
+     }
+    }
+   }
+  }
+ }
+}

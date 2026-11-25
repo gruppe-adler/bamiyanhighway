@@ -12,10 +12,6 @@ MetaFileClass {
      SourceMaterial "TT_Ground"
      AssignedMaterial "{21C9EDC5B7985B58}Assets/Tunnels/TT/Data/TT_Ground.emat"
     }
-    MaterialAssignClass "{6AED4152FD3F9CB2}" {
-     SourceMaterial "TT_Wood"
-     AssignedMaterial "{3ED528EC5E2F3DEF}Assets/Tunnels/TT/Data/TT_Wood.emat"
-    }
    }
    MeshParams {
     MeshParam TT_Straight_Narrow {
@@ -24,7 +20,6 @@ MetaFileClass {
    GeometryParams {
     GeometryParam UTM_TT_Straight_Narrow {
      SurfaceProperties {
-      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
       "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
       "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
      }

@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "9559E06A7328A925"
+ components {
+  MeshObject "{26423871B3A16759}" {
+   Object "{BE37964FB2CA69D1}Assets/Tunnels/Cave/TT_Cave_Room_Grotto.xob"
+  }
+  RigidBody "{927C687BD549B8AB}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{0ABC7C3637DE10EE}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "F317BB92C578C4C3"
+   coords -0.036 1.073 -0.241
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "48D3F4C41E2B3862"
+     Box BoundingVolume "{B66CE6EA8A3C2EEF}" {
+      Size 9.27 6.64 9.78
+     }
+    }
+   }
+  }
+ }
+}

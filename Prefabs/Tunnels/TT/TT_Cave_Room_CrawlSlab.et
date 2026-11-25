@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "35C05E9D28E55B8B"
+ components {
+  MeshObject "{8F6C4AE1CA9768CF}" {
+   Object "{F0EEBCA2B8C03936}Assets/Tunnels/Cave/TT_Cave_Room_CrawlSlab.xob"
+  }
+  RigidBody "{D9D062C969AD473A}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{477939067E8E6415}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "FC79D6AB297F3B79"
+   coords 1.293 0.810 -1.197
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "E1782047F1491F2E"
+     Box BoundingVolume "{03320E774A5B9D86}" {
+      Size 14.51 5.00 12.41
+     }
+    }
+   }
+  }
+ }
+}

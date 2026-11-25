@@ -1,0 +1,37 @@
+GenericEntity {
+ ID "F0A6E7F74516AB29"
+ components {
+  MeshObject "{1FB94DBC32E549FA}" {
+   Object "{7B73782C4AAE8001}Assets/Tunnels/Cave/TT_Cave_Jct_Tri.xob"
+  }
+  RigidBody "{71B45345AED8A181}" {
+   LayerPreset "BuildingFireView"
+   SimState Collision
+   ModelGeometry 1
+  }
+  SP_TunnelExposureComponent "{47D9516BB2A59B3F}" {
+   m_bKeepRendered 1
+   m_bExposureControl 0
+  }
+ }
+ {
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "FC55B1811ABCAA29"
+   coords -0.425 0.281 -0.438
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "912CFEE8AB733D92"
+     Box BoundingVolume "{4341DCAF928C1BF6}" {
+      Size 16.38 7.35 14.15
+     }
+    }
+   }
+  }
+ }
+}

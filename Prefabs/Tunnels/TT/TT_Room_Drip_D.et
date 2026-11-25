@@ -17,7 +17,7 @@ GenericEntity {
  {
   GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
    ID "8B09975126073CFE"
-   coords 0.509 3.334 -0.781
+   coords 0.776 3.102 -1.109
    LVReflectionBrightness -16
    ReflectionColor 1 1 1 1
    LVDiffuseBrightness -16
@@ -28,7 +28,7 @@ GenericEntity {
     ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
      ID "F7A119DA71D598D8"
      Box BoundingVolume "{01A14B6D6C46D970}" {
-      Size 9.87 9.18 8.82
+      Size 11.27 10.59 11.08
      }
     }
    }
