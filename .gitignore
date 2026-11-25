@@ -1,3 +1,26 @@
-resourceDatabase.rdb
-resourceDatabase.rdb
+# Workbench's local resource database
 *.rdb
+
+# Python / Blender leftovers (regenerable)
+__pycache__/
+*.pyc
+*.blend1
+*.blend2
+
+# Cave / tunnel generator scratch: intermediate .blend files per build (hundreds of MB), logs, staging copies of FBX
+**/_scratch/
+Docs/blender/redesign_staging/
+
+# Preview renders written by the generators (new ones; the few already tracked stay)
+Docs/blender/previews/
+Docs/blender/caves/previews/
+
+# Cave mask textures: written by the cave generator on every export (reproducible from the generator); Workbench builds the .edds from them
+Assets/Tunnels/Cave/*_MASK.tif
+
+# Generator measurement results (rewritten by every build; the docs quote them) and the per-export stats next to the cave models
+Docs/blender/caves/wave2/results/
+Assets/Tunnels/Cave/*_info.json
+
+# Workbench text model files (source for the .xob, generated from the .fbx on import; not distributed, some are over 100 MB)
+*.txo
