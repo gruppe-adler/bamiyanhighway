@@ -69,6 +69,23 @@ KEYS     [Space] place  [X/Ctrl+X/Backspace] remove selected  [N/B] other open e
 - Keys the engine owns (W, V, and probably Q/E/R and the WASD fly keys) are not used. If another key here is also an editor shortcut, tell me which.
 - Stance needs size classes in the catalog: `ClassifyTT` knows `TT_C_*` (crouch), `TT_P_*` (prone) and `TT_Trans_<A>_<B>` (kind `TRANSITION`, weight 0 in the generator). Press **Rebuild TT catalog** in the tool settings after importing pieces.
 
+## Path between two openings (25 Nov 2026)
+**Drag** from one free opening and let go over another (or **shift+click** both): a random chain of pieces is built between them and selected.
+**Space** builds a different one (as long as no other tool key or click came in between), **X** removes the path, **Esc** cancels after a first
+shift+click. A plain click still places one piece as before.
+
+- Nothing that already stands is moved. What the chain misses the second opening by is spread over all its joints: at most 12 cm sideways /
+  along, 6 cm step, 1.5 degrees per joint (setting "Path": the gap; the sleeves overlap 25 cm). Longer links have more joints to give.
+- Search: `SP_TunnelPathFinder.c` (weighted A*, every run weighs the moves differently, `_A` / `_C` variants picked at random). Dug pieces;
+  cave passes when both ends are cave pieces; transitions when the sizes differ. Keeps clear of what is placed; mildly prefers to stay under
+  ground when both ends are.
+- Python port on the 25 Nov catalog and layer: the user's pair (42 m, 0.3 m height) 4 of 4 each way, 2-7 cm per joint; random walk-size
+  pairs 8-35 m 16 of 20, 25-50 m 12 of 12.
+- New pieces that would raise the hit rate (same port, one attempt per pair; none built yet):
+  crouch curve 15 deg / 4 m: crouch 55 -> 95 % (prone not measured, same gap in the kit);
+  walk, short links 6-18 m (today 53 %): turn 45 deg 73 %, step slope 0.3 m / 2 m 70 %, curve 10 deg / 2 m 70 %, slope + turn 45 77 %.
+  Side jogs and 0.5 / 1.5 m straights: no gain.
+
 ## Known limits / next steps
 - Yaw only (the generator never tilts pieces; slopes are pieces with rising openings).
 - No live preview or hover picking yet. The APIs are now known (see above), so a hover tool is the next step.

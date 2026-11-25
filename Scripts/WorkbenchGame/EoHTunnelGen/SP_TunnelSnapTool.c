@@ -8,6 +8,9 @@
 //! the two openings meet, position and height equal, facing each other (same maths as the generator, SP_TunnelGrower.Attach).
 //! One undo step per snap. Esc cancels a pick (or clears the selection when nothing is picked).
 //!
+//! Drag from one free opening onto another (or shift+click both): a random chain of pieces is built between them
+//! (SP_TunnelPathFinder); the two pieces stay where they are. Space: another one.
+//!
 //! An opening counts as taken when another piece's opening already sits within 0.5 m of it, so pieces that were not selected are
 //! known too (unlike the Entrance Snap plugin, which only knows the selection). Pieces are placed yaw-only, like the generator.
 
@@ -90,6 +93,18 @@ class SP_TunnelSnapTool : WorldEditorTool
 	[Attribute("1", UIWidgets.CheckBox, "Mark every free opening in the world with a small orange ball, so the open ends of the maze are easy to find", category: "Maze")]
 	protected bool m_bFrontier;
 
+	[Attribute("0.12", UIWidgets.EditBox, "Path between two openings: neither piece moves, what the path misses by is spread over its joints. The most one joint may be off, in metres (the step in height: half of it). Smaller is cleaner and found less often", category: "Path")]
+	protected float m_fPathGap;
+
+	[Attribute("6000", UIWidgets.EditBox, "Path: how many partial paths are tried before giving up (three attempts). More finds more, and takes longer", category: "Path")]
+	protected int m_iPathNodes;
+
+	[Attribute("1", UIWidgets.CheckBox, "Shift+click path: prefer to stay under the ground between the two ends", category: "Path")]
+	protected bool m_bPathUnderground;
+
+	protected static const float PATH_MAX_SPAN = 120;
+	protected static const float PATH_MAX_WEDGE = 1.5;		// degrees one joint may be off
+	protected static const float DRAG_PIXELS = 12;			// moved this far with the button down: a drag, not a click
 	protected static const int COL_HOVER = 0xFFFFFF00;
 	protected static const int COL_PICK = 0xFF00FFFF;
 	protected static const int COL_CANDIDATE = 0x8855FF00;
@@ -131,6 +146,22 @@ class SP_TunnelSnapTool : WorldEditorTool
 	// the picked opening (the piece that will move)
 	protected IEntitySource m_PickSrc;
 	protected int m_iPickSocket = -1;
+
+	// path between two openings: the first one (shift+click), and what was last built (for "another one")
+	protected IEntitySource m_PathStart;
+	protected int m_iPathStartSocket = -1;
+	protected IEntitySource m_PathFrom;
+	protected int m_iPathFromSocket;
+	protected IEntitySource m_PathTo;
+	protected int m_iPathToSocket;
+	protected ref array<IEntitySource> m_aPathMade = {};
+
+	// dragging from an opening
+	protected IEntitySource m_DragSrc;
+	protected int m_iDragSocket;
+	protected float m_fDragX;
+	protected float m_fDragY;
+	protected bool m_bDragging;
 
 	// the opening under the cursor
 	protected int m_iHover = -1;		// index in m_aAll
@@ -187,6 +218,8 @@ class SP_TunnelSnapTool : WorldEditorTool
 	//------------------------------------------------------------------------------------------------
 	protected override void OnActivate()
 	{
+		EndDrag();
+		ForgetPath();
 		m_PickSrc = null;
 		m_iPickSocket = -1;
 		m_iHover = -1;
@@ -222,6 +255,8 @@ class SP_TunnelSnapTool : WorldEditorTool
 	//------------------------------------------------------------------------------------------------
 	protected override void OnDeActivate()
 	{
+		EndDrag();
+		ForgetPath();
 		CloseMenu();
 		m_Shapes.Clear();
 		m_Hud = null;
@@ -233,6 +268,8 @@ class SP_TunnelSnapTool : WorldEditorTool
 	//------------------------------------------------------------------------------------------------
 	protected override void OnBeforeUnloadWorld()
 	{
+		EndDrag();
+		ForgetPath();
 		CloseMenu();
 		m_aWorld.Clear();
 		m_aAll.Clear();
@@ -265,8 +302,29 @@ class SP_TunnelSnapTool : WorldEditorTool
 
 		m_iLastHover = 0;
 		UpdateHover(x, y);
+		if (GetModifierKeyState(ModifierKey.SHIFT))
+		{
+			if (m_iHover >= 0)
+				ShiftClickOpening(m_aAll[m_iHover]);
+			else
+				SetHud("Path: shift+click a free opening (the balls); Esc cancels");
+
+			return;
+		}
+
+		ForgetPath();
+		EndDrag();
 		if (m_iHover >= 0)
 		{
+			// a click as ever; held and let go over another opening, it was a drag (see OnMouseReleaseEvent)
+			if (m_bMenuMode)
+			{
+				m_DragSrc = m_aWorld[m_aAll[m_iHover].m_iWorld].m_Src;
+				m_iDragSocket = m_aAll[m_iHover].m_iSocket;
+				m_fDragX = x;
+				m_fDragY = y;
+			}
+
 			ClickOpening(m_aAll[m_iHover]);
 			return;
 		}
@@ -301,9 +359,47 @@ class SP_TunnelSnapTool : WorldEditorTool
 	}
 
 	//------------------------------------------------------------------------------------------------
+	protected override void OnMouseReleaseEvent(float x, float y, WETMouseButtonFlag buttons)
+	{
+		if (!m_DragSrc)
+			return;
+
+		if (!m_bDragging)
+		{
+			EndDrag();
+			return;
+		}
+
+		m_iLastHover = 0;
+		UpdateHover(x, y);
+		SP_HoverSocket from = FindSocket(m_DragSrc, m_iDragSocket);
+		EndDrag();
+		SP_HoverSocket to;
+		if (m_iHover >= 0)
+			to = m_aAll[m_iHover];
+
+		if (!from || !to || (from.m_iWorld == to.m_iWorld && from.m_iSocket == to.m_iSocket))
+		{
+			Redraw();
+			ShowHint();
+			return;
+		}
+
+		StartPath(from, to);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void EndDrag()
+	{
+		m_DragSrc = null;
+		m_bDragging = false;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Rebuild a kit's catalog from its prefabs (measures them in the world, like the generator's Rebuild catalog), then rescan
 	protected void RebuildKit(int kit)
 	{
+		ForgetPath();
 		CloseMenu();
 		ClearPick();
 		SP_TunnelCatalog catalog = new SP_TunnelCatalog(kit);
@@ -731,6 +827,311 @@ class SP_TunnelSnapTool : WorldEditorTool
 		m_API.EndEntityAction();
 	}
 
+	//================================================================================================
+	// Shift+click path
+	//================================================================================================
+
+	//------------------------------------------------------------------------------------------------
+	protected void ForgetPath()
+	{
+		m_PathStart = null;
+		m_iPathStartSocket = -1;
+		m_PathFrom = null;
+		m_PathTo = null;
+		m_aPathMade.Clear();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! The first shift+click marks an opening, the second builds the path to it
+	protected void ShiftClickOpening(SP_HoverSocket clicked)
+	{
+		IEntitySource src = m_aWorld[clicked.m_iWorld].m_Src;
+		if (!m_PathStart)
+		{
+			ForgetPath();
+			CloseMenu();
+			ClearPick();
+			m_PathStart = src;
+			m_iPathStartSocket = clicked.m_iSocket;
+			Redraw();
+			ShowHint();
+			SetHud(string.Format("Path from %1, opening %2: shift+click the opening it should lead to (Esc cancels)", m_aWorld[clicked.m_iWorld].m_sName, clicked.m_iSocket + 1));
+			return;
+		}
+
+		if (src == m_PathStart && clicked.m_iSocket == m_iPathStartSocket)
+		{
+			ForgetPath();
+			Redraw();
+			ShowHint();
+			return;
+		}
+
+		SP_HoverSocket first = FindSocket(m_PathStart, m_iPathStartSocket);
+		if (!first)
+		{
+			ForgetPath();
+			SetHud("Path: the first piece is gone, shift+click again");
+			return;
+		}
+
+		StartPath(first, clicked);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Both openings chosen (by drag or by two shift+clicks): build between them
+	protected void StartPath(SP_HoverSocket from, SP_HoverSocket to)
+	{
+		if (from.m_Def.m_iRole != SP_TunnelRole.PATH || to.m_Def.m_iRole != SP_TunnelRole.PATH)
+		{
+			SetHud("Path: both openings have to be tunnel openings (not doorframes)");
+			return;
+		}
+
+		IEntitySource fromSrc = m_aWorld[from.m_iWorld].m_Src;
+		IEntitySource toSrc = m_aWorld[to.m_iWorld].m_Src;
+		int fromSocket = from.m_iSocket;
+		int toSocket = to.m_iSocket;
+		CloseMenu();
+		ClearPick();
+		ForgetPath();
+		m_PathFrom = fromSrc;
+		m_iPathFromSocket = fromSocket;
+		m_PathTo = toSrc;
+		m_iPathToSocket = toSocket;
+		RunPath(false);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected SP_HoverSocket FindSocket(IEntitySource src, int index)
+	{
+		foreach (SP_HoverSocket socket : m_aAll)
+		{
+			if (socket.m_iSocket == index && m_aWorld[socket.m_iWorld].m_Src == src)
+				return socket;
+		}
+
+		return null;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! What stands in the world, for the path to keep clear of. skip: the pieces of the path about to be replaced
+	protected void AddObstacles(SP_TunnelPathFinder finder, notnull array<IEntitySource> skip)
+	{
+		foreach (SP_HoverPiece piece : m_aWorld)
+		{
+			if (skip.Find(piece.m_Src) >= 0)
+				continue;
+
+			IEntity entity = m_API.SourceToEntity(piece.m_Src);
+			if (!entity)
+				continue;
+
+			vector mat[4];
+			entity.GetWorldTransform(mat);
+			float yaw = SP_TunnelGrower.YawOf(mat[2]);
+			SP_TunnelPieceDef def = piece.m_Cat.m_aPieces[piece.m_iPiece];
+			if (def.m_aSockets.Count() == 2)
+			{
+				vector a = mat[3] + SP_TunnelGrower.Rot(def.m_aSockets[0].m_vPos, yaw);
+				vector b = mat[3] + SP_TunnelGrower.Rot(def.m_aSockets[1].m_vPos, yaw);
+				array<vector> points = {};
+				points.Insert(a);
+				SP_TunnelPathFinder.Along(a, SP_TunnelGrower.Rot(-def.m_aSockets[0].m_vDir, yaw), b, SP_TunnelGrower.Rot(def.m_aSockets[1].m_vDir, yaw), points);
+				foreach (vector point : points)
+				{
+					finder.AddObstaclePoint(point);
+				}
+			}
+			else if (def.m_aSockets.Count() == 1)
+			{
+				// an entry or a dead end: from its opening back into the piece (the incline's stairs climb)
+				vector open = mat[3] + SP_TunnelGrower.Rot(def.m_aSockets[0].m_vPos, yaw);
+				vector inward = SP_TunnelGrower.Rot(-def.m_aSockets[0].m_vDir, yaw);
+				float climb = 0;
+				if (def.m_sName.Contains("Incline"))
+					climb = 0.9;
+
+				int depth = 1;
+				if (def.m_iKind == SP_TunnelKind.ENTRANCE)
+					depth = 5;
+
+				for (int d = 0; d < depth; d++)
+				{
+					float far = d + 0.5;
+					finder.AddObstaclePoint(open + inward * far + Vector(0, climb * far, 0));
+				}
+			}
+			else
+			{
+				finder.AddObstacleBox(def, mat[3], yaw);
+			}
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Search and build. again: replace the path built last by another one
+	protected void RunPath(bool again)
+	{
+		RefreshWorld();
+		if (again)
+		{
+			// all of it still there? (an undo or a delete takes the offer away)
+			foreach (IEntitySource made : m_aPathMade)
+			{
+				if (!FindSocket(made, 0))
+				{
+					ForgetPath();
+					SetHud("Path: the last one has been changed since, shift+click the two openings again");
+					return;
+				}
+			}
+		}
+
+		SP_HoverSocket from = FindSocket(m_PathFrom, m_iPathFromSocket);
+		SP_HoverSocket to = FindSocket(m_PathTo, m_iPathToSocket);
+		if (!from || !to)
+		{
+			ForgetPath();
+			SetHud("Path: one of the two pieces is gone");
+			return;
+		}
+
+		SP_TunnelSocketDef toDef = to.m_Def;
+		vector goal = to.m_vPos;
+		vector goalDir = to.m_vDir;
+		float span = vector.Distance(from.m_vPos, goal);
+		if (span > PATH_MAX_SPAN)
+		{
+			ForgetPath();
+			SetHud(string.Format("Path: the openings are %1 m apart, the most is %2", Math.Round(span), Math.Round(PATH_MAX_SPAN)));
+			return;
+		}
+
+		float maxGap = Math.Max(m_fPathGap, 0.02);
+
+		SP_TunnelCatalog catalog = m_aWorld[from.m_iWorld].m_Cat;
+		string fromName = catalog.m_aPieces[m_aWorld[from.m_iWorld].m_iPiece].m_sName;
+		string toName = catalog.m_aPieces[m_aWorld[to.m_iWorld].m_iPiece].m_sName;
+		bool caves = SP_TunnelCatalog.ThemeOf(fromName) == SP_TunnelTheme.CAVE && SP_TunnelCatalog.ThemeOf(toName) == SP_TunnelTheme.CAVE;
+		WorldEditorAPI depthApi = null;
+		if (m_bPathUnderground)
+			depthApi = m_API;
+
+		SetHud("Path: searching...");
+		int started = System.GetTickCount();
+		SP_TunnelPathFinder finder = new SP_TunnelPathFinder(catalog, depthApi, started);
+		finder.BuildMoves(caves, from.m_Def.m_iSize != toDef.m_iSize);
+		AddObstacles(finder, m_aPathMade);
+
+		bool found = false;
+		for (int attempt = 0; attempt < 3 && !found; attempt++)
+		{
+			found = finder.Find(from.m_vPos, SP_TunnelGrower.YawOf(from.m_vDir), from.m_Def.m_iSize, goal, SP_TunnelGrower.YawOf(-goalDir), toDef.m_iSize, maxGap, maxGap * 0.5, PATH_MAX_WEDGE, m_iPathNodes);
+		}
+
+		int took = System.GetTickCount() - started;
+		if (!found)
+		{
+			float rise = goal[1] - from.m_vPos[1];
+			string closest = "none";
+			if (finder.m_fNearest < 99999)
+				closest = finder.m_fNearest.ToString(-1, 2) + " m";
+
+			string failed = string.Format("Path: none found (%1 m apart, %2 m height difference; closest try %3). Try again, or raise the joint gap in the tool settings (Path); short links have few joints to give", Math.Round(span), rise.ToString(-1, 2), closest);
+			Print("SP_TunnelSnapTool: " + failed, LogLevel.WARNING);
+			SetHud(failed);
+			return;
+		}
+
+		BuildPath(finder, catalog, again);
+		Print(string.Format("SP_TunnelSnapTool: path of %1 pieces from %2 to %3, %4 ms", finder.m_aSteps.Count(), fromName, toName, took));
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Put the found pieces into the world (one undo step); nothing that was there already is touched
+	protected void BuildPath(SP_TunnelPathFinder finder, SP_TunnelCatalog catalog, bool again)
+	{
+		CloseMenu();
+		m_API.BeginEntityAction("Entrance snap: path");
+		if (again)
+		{
+			foreach (IEntitySource old : m_aPathMade)
+			{
+				m_API.DeleteEntity(old);
+			}
+		}
+
+		m_aPathMade.Clear();
+		array<vector> positions = {};
+		array<float> yaws = {};
+		int layer = m_API.GetCurrentEntityLayerId();
+		foreach (SP_PathStep step : finder.m_aSteps)
+		{
+			SP_TunnelPieceDef def = catalog.m_aPieces[step.m_iPiece];
+			IEntitySource src = m_API.CreateEntity(def.m_sPrefab, "", layer, null, step.m_vPos, Vector(0, step.m_fYaw * m_fYawSign, 0));
+			if (!src)
+			{
+				Print("SP_TunnelSnapTool: CreateEntity failed for " + def.m_sPrefab, LogLevel.WARNING);
+				continue;
+			}
+
+			m_aPathMade.Insert(src);
+			positions.Insert(step.m_vPos);
+			yaws.Insert(step.m_fYaw);
+		}
+
+		m_API.EndEntityAction();
+
+		// the editor's turning direction, if this session hasn't settled it yet: settle it on one piece, then redo the others
+		if (!m_bSignKnown)
+		{
+			foreach (int c, IEntitySource check : m_aPathMade)
+			{
+				float turned = Math.AbsFloat(SP_TunnelConnect.Wrap(yaws[c]));
+				if (turned > 5 && turned < 175)
+				{
+					float sign = m_fYawSign;
+					CheckYawSign(check, positions[c], yaws[c]);
+					if (sign != m_fYawSign)
+					{
+						m_API.BeginEntityAction("Entrance snap: path (rotation fix)");
+						foreach (int r, IEntitySource redo : m_aPathMade)
+						{
+							ApplyPose(redo, positions[r], yaws[r]);
+						}
+
+						m_API.EndEntityAction();
+					}
+
+					break;
+				}
+			}
+		}
+
+		// the whole path selected, so X removes it
+		m_API.ClearEntitySelection();
+		foreach (int s, IEntitySource selected : m_aPathMade)
+		{
+			if (s == 0)
+				m_API.SetEntitySelection(selected);
+			else
+				m_API.AddToEntitySelection(selected);
+		}
+
+		RefreshWorld();
+		m_iHover = -1;
+		m_sHoverKey = "";
+		Redraw();
+		DrawMenu();
+		float gapCm = finder.m_fGapFlat * 100;
+		float stepCm = finder.m_fGapHeight * 100;
+		float wedge = Math.AbsFloat(finder.m_fGapYaw);
+		string joints = string.Format("each joint off by %1 cm, step %2 cm, %3 deg", gapCm.ToString(-1, 0), stepCm.ToString(-1, 0), wedge.ToString(-1, 1));
+		Print("SP_TunnelSnapTool: " + joints);
+		SetHud(string.Format("Path: %1 pieces, %2 m, %3.  Space: another one, X: remove it", m_aPathMade.Count(), Math.Round(finder.m_fLength), joints));
+	}
+
 	//------------------------------------------------------------------------------------------------
 	protected void SetHud(string text)
 	{
@@ -758,6 +1159,29 @@ class SP_TunnelSnapTool : WorldEditorTool
 
 				shown++;
 				m_Shapes.AddSphere(open.m_vPos, m_fMarkerRadius * 0.8, COL_FRONTIER, flags);
+			}
+		}
+
+		if (m_PathStart)
+		{
+			foreach (SP_HoverSocket first : m_aAll)
+			{
+				if (first.m_iSocket != m_iPathStartSocket || m_aWorld[first.m_iWorld].m_Src != m_PathStart)
+					continue;
+
+				m_Shapes.AddSphere(first.m_vPos, m_fMarkerRadius * 1.5, COL_GHOST, flags);
+				m_Shapes.AddArrow(first.m_vPos, first.m_vPos + first.m_vDir * 2, 0, COL_GHOST, flags);
+			}
+		}
+
+		if (m_bDragging)
+		{
+			SP_HoverSocket dragged = FindSocket(m_DragSrc, m_iDragSocket);
+			if (dragged)
+			{
+				m_Shapes.AddSphere(dragged.m_vPos, m_fMarkerRadius * 1.5, COL_GHOST, flags);
+				if (m_iHover >= 0)
+					m_Shapes.AddLine(dragged.m_vPos, m_aAll[m_iHover].m_vPos, COL_GHOST, flags);
 			}
 		}
 
@@ -874,6 +1298,17 @@ class SP_TunnelSnapTool : WorldEditorTool
 		float x1 = def.m_vMax[0] - OVERLAP_SHRINK;
 		float z0 = def.m_vMin[2] + OVERLAP_SHRINK;
 		float z1 = def.m_vMax[2] - OVERLAP_SHRINK;
+		float low = def.m_vMin[1];
+		float high = def.m_vMax[1];
+		if (def.m_iKind == SP_TunnelKind.ENTRANCE && !def.m_sName.Contains("Incline"))
+		{
+			// the rock mound round a horizontal entry is not tunnel: only the middle counts
+			x0 = Math.Max(x0, -1.2);
+			x1 = Math.Min(x1, 1.2);
+			low = Math.Max(low, -0.9);
+			high = Math.Min(high, 3.0);
+		}
+
 		if (x1 < x0)
 		{
 			x0 = (x0 + x1) * 0.5;
@@ -891,8 +1326,8 @@ class SP_TunnelSnapTool : WorldEditorTool
 		foot.m_aCorners.Insert(pos + SP_TunnelGrower.Rot(Vector(x1, 0, z0), yaw));
 		foot.m_aCorners.Insert(pos + SP_TunnelGrower.Rot(Vector(x1, 0, z1), yaw));
 		foot.m_aCorners.Insert(pos + SP_TunnelGrower.Rot(Vector(x0, 0, z1), yaw));
-		foot.m_fY0 = pos[1] + def.m_vMin[1] + OVERLAP_SHRINK;
-		foot.m_fY1 = pos[1] + def.m_vMax[1] - OVERLAP_SHRINK;
+		foot.m_fY0 = pos[1] + low + OVERLAP_SHRINK;
+		foot.m_fY1 = pos[1] + high - OVERLAP_SHRINK;
 		return foot;
 	}
 
@@ -1158,6 +1593,14 @@ class SP_TunnelSnapTool : WorldEditorTool
 		m_fMouseX = x;
 		m_fMouseY = y;
 		CheckTypeRow();
+		if (m_DragSrc && !m_bDragging && Math.AbsFloat(x - m_fDragX) + Math.AbsFloat(y - m_fDragY) > DRAG_PIXELS)
+		{
+			m_bDragging = true;
+			m_sHoverKey = "";
+			Redraw();
+			ShowHint();
+		}
+
 		if (!m_Hud && EnsureHud())
 		{
 			LoadCatalog();
@@ -1383,6 +1826,7 @@ class SP_TunnelSnapTool : WorldEditorTool
 	//! Start placing at one free opening: what fits there, the piece placed last (or the longest straight) selected, the preview
 	protected void OpenMenu(SP_HoverSocket target)
 	{
+		ForgetPath();
 		CloseMenu();
 		SP_HoverPiece targetPiece = m_aWorld[target.m_iWorld];
 		m_iMenuWorld = target.m_iWorld;
@@ -1580,6 +2024,12 @@ class SP_TunnelSnapTool : WorldEditorTool
 	protected void ShowHint()
 	{
 		DrawMenu();
+		if (m_bDragging)
+		{
+			SetHud("Path: let go over the opening it should lead to (anywhere else cancels)");
+			return;
+		}
+
 		if (m_bMenuOpen)
 		{
 			SP_MenuEntry chosen = SelectedEntry();
@@ -1715,6 +2165,25 @@ class SP_TunnelSnapTool : WorldEditorTool
 			int code = key;
 			Print(string.Format("SP_TunnelSnapTool: key %1 (ctrl %2, alt %3, shift %4)", code, GetModifierKeyState(ModifierKey.CONTROL), GetModifierKeyState(ModifierKey.ALT), GetModifierKeyState(ModifierKey.SHIFT)));
 		}
+
+		// another random path between the same two openings
+		if (!m_bMenuOpen && !m_aPathMade.IsEmpty() && (key == KeyCode.KC_SPACE || key == KeyCode.KC_RETURN))
+		{
+			RunPath(true);
+			return;
+		}
+
+		if (m_PathStart && key == KeyCode.KC_ESCAPE)
+		{
+			ForgetPath();
+			Redraw();
+			ShowHint();
+			return;
+		}
+
+		// any other key of the tool ends "another one": X then removes the selected path, which stays selected until then
+		if (key == KeyCode.KC_M || key == KeyCode.KC_N || key == KeyCode.KC_B || key == KeyCode.KC_X || key == KeyCode.KC_BACK || key == KeyCode.KC_DELETE || key == KeyCode.KC_ESCAPE)
+			ForgetPath();
 
 		if (key == KeyCode.KC_M)
 		{
@@ -2418,6 +2887,9 @@ class SP_TunnelSnapTool : WorldEditorTool
 			{
 				AddKeyCap(world, "N", string.Format("first open end (%1 free)", ends), AvailState(ends > 0));
 				AddKeyCap(world, "Click", "an open end", AvailState(ends > 0));
+				AddKeyCap(world, "Drag / Shift+Click", "opening to opening: path", AvailState(ends > 1));
+				if (!m_aPathMade.IsEmpty())
+					AddKeyCap(world, "Space", "another path", 2);
 				AddKeyCap(world, "X / Ctrl+X / Bksp", "remove selected piece", 0);
 				AddKeyCap(world, "M", "move a placed piece", 0);
 			}
@@ -2590,6 +3062,7 @@ class SP_TunnelSnapTool : WorldEditorTool
 			overlaps = "hidden";
 
 		AddKeyCap(world, "O", "overlaps " + overlaps, 0);
+		AddKeyCap(world, "Drag / Shift+Click", "path to another opening", AvailState(ends > 1));
 		AddKeyCap(world, "Esc", "close", 0);
 	}
 }

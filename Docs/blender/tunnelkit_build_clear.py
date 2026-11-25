@@ -240,6 +240,8 @@ class Piece:
         self.sockets = []      # (floor centre, outward, class)
         self.fades = []
         self.noise = 1.0       # 0: smooth walls (the _A necks)
+        self.sculpt = None     # entries: shapes the finished mesh (bm) further, after the inside's noise
+        self.smooth_ground = False     # entries: the outside is smooth-shaded too
 
     def socket(self, pos, outward, cls=None):
         cls = cls or self.cls
@@ -368,22 +370,198 @@ def build_end(cls='S'):
 ENTRY = {'S': (0.5, 0.2, 0.12, 0.15), 'C': (0.5, 0.30, 0.10, 0.04), 'P': (0.6, 0.50, 0.10, 0.04)}
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# Rounded, terrain-friendly mouths (the entries)
+LIP_R = 0.25          # radius of the mouth's rim (the shell is 0.6 thick: what is left flat at the very front is 0.10)
+SKIRT = 0.45          # how much wider the outside gets towards its foot: sloped sides, no vertical wall standing on the ground
+RAKE_TOP = 0.5        # the mouth leans back: its top this far behind the floor's front edge
+RAKE_LEN = 2.5        # the lean has faded out this far in
+LUMP = 0.16           # lumps on the outside (only ever outwards)
+GROUND_REFINE = 0.28
+SIDE_OUTER = 1        # face layer 'side': an entry's outside, always TT_Ground
+SIDE_INNER = 2        # and a mouth's inside, always TT_Earth (split_inside would zigzag along the open rim)
+
+
+def refine_ground(bm, near, size=None):
+    """The outside's edges halved until none inside 'near' is longer than size (GROUND_REFINE), so it can take a shape"""
+    size = size or GROUND_REFINE
+    for _ in range(8):
+        long = [e for e in bm.edges if e.calc_length() > size and any(f.material_index == MAT_GROUND for f in e.link_faces)
+                and near((e.verts[0].co + e.verts[1].co) * 0.5)]
+        if not long:
+            break
+        bmesh.ops.subdivide_edges(bm, edges=long, cuts=1, use_grid_fill=False)
+        bmesh.ops.triangulate(bm, faces=[f for f in bm.faces if len(f.verts) > 3], quad_method='BEAUTY', ngon_method='BEAUTY')
+
+
+def mark_outer(bm, samples, n, front_cap=False, inner=False):
+    """Tags a fresh sweep's outer faces (face layer 'side'). TT_Ground alone doesn't tell them apart: the inside of an open shaft
+    is TT_Ground too. sweep's face order: per segment the inner ring then the outer ring, then the two end caps"""
+    side = bm.faces.layers.int.new('side')
+    bm.faces.ensure_lookup_table()
+    segs = len(samples) - 1
+    for i in range(segs):
+        for k in range(n):
+            bm.faces[i * 2 * n + n + k][side] = SIDE_OUTER
+            if inner:
+                bm.faces[i * 2 * n + k][side] = SIDE_INNER
+    if front_cap:
+        for k in range(n):
+            bm.faces[segs * 2 * n + k][side] = SIDE_OUTER
+
+
+def lumps(bm, weight):
+    """Noise on the outside, outwards only (it only adds earth). weight(co): 0 .. 1. Only verts whose faces are all tagged outer"""
+    side = bm.faces.layers.int.get('side')
+    bm.normal_update()
+    moves = []
+    for v in bm.verts:
+        if not v.link_faces or any(f.material_index != MAT_GROUND or f[side] != SIDE_OUTER for f in v.link_faces):
+            continue
+        w = weight(v.co)
+        if w <= 0:
+            continue
+        co = v.co
+        h = 0.65 * noise.noise(co * 0.9 + Vector((3.1, 8.2, 1.4))) + 0.35 * noise.noise(co * 2.3 + Vector((7.4, 0.6, 4.8)))
+        moves.append((v, v.normal * (clamp01(0.5 + 0.5 * h / 0.6) * LUMP * w)))
+    for v, d in moves:
+        v.co += d
+    bm.normal_update()
+
+
+# The horizontal entries' mound: a rounded mass of rock round the opening, to cover the terrain hole and bed into the ground.
+# Radius per class: about 1.5 x the piece's own height, so the mound is about 3 x it across. It ends before the joint: past it
+# the next piece's tunnel starts (turns, doglegs), which a mass there would block
+MOUND_R = {'S': 6.4, 'C': 5.5, 'P': 4.5}
+MOUND_MID = 2.2       # the mound is widest this far in from the mouth
+MOUND_END = 4.7       # and back to the plain shell here
+MOUND_ROUND = 2.8     # its profile along the tunnel: (1 - d^p)^(1/p), 2 an ellipse, more: fuller
+MOUND_ARC = 8.0       # degrees: the profile's points are no further apart than this, seen from the mound's centre
+MOUND_REFINE = 0.36
+MOUND_UNEVEN = 0.2    # the radius wanders this much (share of it) round the outline: not a clean ball
+
+
+def mound_shape(y):
+    """0 .. 1: how far out towards the mound's radius the outside is at y"""
+    d = (MOUND_MID - y) / MOUND_MID if y < MOUND_MID else (y - MOUND_MID) / (MOUND_END - MOUND_MID)
+    return (1 - clamp01(d) ** MOUND_ROUND) ** (1 / MOUND_ROUND)
+
+
+def edge_cuts(profile, zc):
+    """How many pieces each edge of the profile needs for MOUND_ARC"""
+    ang = [math.atan2(z - zc, x) for x, z in profile]
+    out = []
+    for i in range(len(profile)):
+        d = abs((ang[(i + 1) % len(ang)] - ang[i] + math.pi) % (2 * math.pi) - math.pi)
+        out.append(max(1, math.ceil(math.degrees(d) / MOUND_ARC)))
+    return out
+
+
+def densify(profile, cuts):
+    out = []
+    for i, n in enumerate(cuts):
+        a, b = profile[i], profile[(i + 1) % len(profile)]
+        out += [(a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n) for k in range(n)]
+    return out
+
+
+def rock_bumps(bm, mouth_hw, mouth_h, seed):
+    """The mound's surface: warped swells, rounded blocks with creases between them, grit. It starts small right by the rim, only
+    adds earth where the mound is thin, and stops before the joint, so it can't break into the tunnel"""
+    side = bm.faces.layers.int.get('side')
+    bm.normal_update()
+    off = Vector((seed * 37.1, seed * 11.3, seed * 71.9))
+    moves = []
+    for v in bm.verts:
+        if not v.link_faces or any(f.material_index != MAT_GROUND or f[side] != SIDE_OUTER for f in v.link_faces):
+            continue
+        co = v.co
+        away = math.hypot(max(0.0, abs(co.x) - mouth_hw), max(0.0, co.z - mouth_h, -co.z))      # from the opening
+        w = smooth(clamp01((away - 0.08) / 0.55)) * (1 - smooth(clamp01((co.y - 4.1) / 0.6)))
+        if w <= 0:
+            continue
+        p = co + off
+        q = p + Vector((noise.noise(p * 0.35), noise.noise(p * 0.35 + Vector((19.1, 3.3, 7.7))), noise.noise(p * 0.35 + Vector((4.2, 27.5, 13.9))))) * 0.9
+        cell = noise.voronoi(q * 0.8)[0]
+        block = min(cell[1] - cell[0], 0.5) / 0.5 - 0.6                 # rounded tops, sharp creases
+        h = (0.55 * noise.noise(q * 0.33) + 0.22 * block + 0.17 * noise.noise(q * 1.4) + 0.06 * noise.noise(p * 3.6) + 0.08) * w
+        thin = 1 - smooth(clamp01((away - 0.5) / 0.8))                   # by the opening the mound is thin: only ever add there
+        add = max(0.0, 0.2 + 0.28 * noise.noise(q * 1.4 + Vector((8.1, 2.2, 6.4))) + 0.2 * block) * w
+        h = h + (add - h) * thin
+        moves.append((v, v.normal * h))
+    for v, d in moves:
+        v.co += d
+    bm.normal_update()
+
+
+def make_mouth_sculpt(mouth_hw, mouth_h, seed):
+    def sculpt(bm):
+        refine_ground(bm, lambda c: c.y < MOUND_END + 0.1, MOUND_REFINE)
+        rock_bumps(bm, mouth_hw, mouth_h, seed)
+        for v in bm.verts:                     # the front leans back: the top behind the floor's front edge
+            c = v.co
+            fall = 1 - smooth(clamp01(c.y / RAKE_LEN))
+            if fall > 0:
+                c.y += RAKE_TOP * clamp01(c.z / 2.9) ** 1.3 * fall
+        bm.normal_update()
+    return sculpt
+
+
 def build_entry_horizontal(cls='S'):
-    """A mouth into a hillside: the opening flares out over its first 1.2 m; pivot at the mouth's floor centre; no timber"""
+    """A mouth into a hillside: the opening flares out over its first 1.2 m; pivot at the mouth's floor centre; no timber.
+    A rounded rim, a mouth leaning back and a big bumpy mound of rock round it (see MOUND_R)"""
     p = Piece(name_for('Entry_Horizontal', cls, ''), cls)
     c = CLASSES[cls]
     fw, fh, sw, sh = ENTRY[cls]
-    samples = path_straight(5.0, step=0.25)
-    profs = []
-    for pos, _ in samples:
-        t = min(pos.y / 1.2, 1.0)
-        inner = smooth(clamp01((5.0 - pos.y - 0.5) / 1.5))
+    R = MOUND_R[cls]
+
+    def size(y):
+        """The nominal opening at y (without the rim's rounding)"""
+        t = min(y / 1.2, 1.0)
+        inner = smooth(clamp01((5.0 - y - 0.5) / 1.5))
         hw = c['hw'] * max(1.0 + fw * (1 - smooth(t)), 1.0 + sw * inner)
         H = c['H'] * max(1.0 + fh * (1 - smooth(t)), 1.0 + sh * inner)
         if cls == 'S':                                    # the walk height rule near the joint: 2.32 within 0.5 m
-            H = max(H, c['H'] + smooth(clamp01((5.0 - pos.y) / H_RAMP)) * (2.32 - c['H']))
-        profs.append(mk_profile(hw, H, c['r']))
-    sweep(p.bm, samples, profs, [offset(q, SHELL) for q in profs], mat=MAT_EARTH)
+            H = max(H, c['H'] + smooth(clamp01((5.0 - y) / H_RAMP)) * (2.32 - c['H']))
+        return hw, H
+
+    # stations: every 0.25 m, finer through the rim and where the mound curves in at its two ends
+    ys = [s[0].y for s in path_straight(5.0, step=0.25)]
+    ys += [LIP_R * (1 - math.cos(math.radians(a))) for a in (15, 30, 45, 60, 75, 90)]
+    ys += [MOUND_MID * (1 - math.cos(math.radians(a))) for a in range(10, 90, 10)]
+    ys += [MOUND_MID + (MOUND_END - MOUND_MID) * math.sin(math.radians(a)) for a in range(10, 91, 10)]
+    stations = []
+    for y in sorted(ys):
+        if not stations or y - stations[-1] > 0.008:
+            stations.append(y)
+    stations[-1] = 5.0
+
+    mouth_h = size(0.0)[1]
+    zc = mouth_h / 2                                      # the mound's centre: the middle of the opening
+    cuts = edge_cuts(mk_profile(*size(0.0), c['r']), zc)
+    seed = seed_of(p.name)
+    samples, inners, outers = [], [], []
+    for y in stations:
+        hw, H = size(y)
+        s = math.sin(math.acos(1 - min(y / LIP_R, 1.0)))  # through the rim a quarter circle (0 .. 1)
+        flare_in = LIP_R * (1 - s)
+        nominal = densify(mk_profile(hw, H, c['r']), cuts)
+        inner = densify(mk_profile(hw + flare_in, H + flare_in, c['r']), cuts)       # the floor stays flat
+        # through the rim the outside is measured from the flared inside, so the two can never cross
+        shell = offset(inner, SHELL - 2 * flare_in) if flare_in > 0 else offset(nominal, SHELL)
+        k = mound_shape(y)
+        outer = []
+        for (x, z), (ox, oz) in zip(nominal, shell):
+            a = math.atan2(z - zc, x)
+            r = R * (1.06 + MOUND_UNEVEN * noise.noise(Vector((math.cos(a) * 1.6 + seed * 31, math.sin(a) * 1.6 + seed * 17, y * 0.3))))
+            outer.append((ox + (r * math.cos(a) - ox) * k, oz + (zc + r * math.sin(a) - oz) * k))
+        samples.append((Vector((0, y, 0)), Vector((0, 1, 0))))
+        inners.append(inner)
+        outers.append(outer)
+    sweep(p.bm, samples, inners, outers, mat=MAT_EARTH)
+    mark_outer(p.bm, samples, len(inners[0]), front_cap=True, inner=True)      # the front cap: the rim's flat
+    p.sculpt = make_mouth_sculpt(size(0.0)[0] + LIP_R, mouth_h + LIP_R, seed)
+    p.smooth_ground = True
     p.fades.append((Vector((0, 0, 0)), Vector((0, -1, 0))))       # the mouth gets no memory point, but its wall stays exact
     p.socket(samples[-1][0], samples[-1][1])
     return p
@@ -391,6 +569,42 @@ def build_entry_horizontal(cls='S'):
 
 SHAFT_H = 1.55
 SHAFT_W = 1.25
+
+
+RIM_DROP = 0.5        # the incline's collar: its outer edge this far under the ground, a quarter round
+RIM_W = 0.6
+
+
+def sculpt_incline(bm):
+    """The shaft's collar rounded off downwards and outwards, sloped lumpy sides. In the piece's own space: ground at z 0,
+    the open hole about y -1.8 .. 1.6, the exit end (+y, the stairs' top) stays level"""
+    refine_ground(bm, lambda c: c.z > -2.2)
+    # the sides slope: wider below the collar, back to the plain shell further down
+    bm.normal_update()
+    moves = []
+    for v in bm.verts:
+        c = v.co
+        if not v.link_faces or any(f.material_index != MAT_GROUND for f in v.link_faces) or abs(c.x) < 1.3:
+            continue
+        depth = -c.z
+        k = smooth(clamp01((depth - 0.2) / 0.8)) * (1 - smooth(clamp01((depth - 1.4) / 0.9)))
+        moves.append((v, math.copysign(SKIRT * k * clamp01((abs(c.x) - 1.3) / 0.25), c.x)))
+    for v, dx in moves:
+        v.co.x += dx
+    lumps(bm, lambda c: (1 - smooth(clamp01((-c.z - 1.8) / 0.8))) * (0.3 + 0.7 * smooth(clamp01(-c.z / 0.4))))
+    # the collar: everything beyond the hole's edge sinks, most at its rim
+    for v in bm.verts:
+        c = v.co
+        high = smooth(clamp01((c.z + 1.2) / 1.2))
+        if high <= 0:
+            continue
+        dx = max(0.0, abs(c.x) - 1.05)
+        dy = max(0.0, -1.85 - c.y)
+        d = clamp01(math.hypot(dx, dy) / RIM_W)
+        if d <= 0:
+            continue
+        c.z -= RIM_DROP * (1 - math.sqrt(1 - d * d)) * high
+    bm.normal_update()
 
 
 def build_entry_incline():
@@ -412,6 +626,7 @@ def build_entry_incline():
         profs.append(mk_profile(c['hw'] * (1 + (SHAFT_W - 1) * k), c['H'] * (1 + (SHAFT_H - 1) * k), c['r']))
     shell = bmesh.new()
     sweep(shell, samples, profs, [offset(q, SHELL) for q in profs], mat=MAT_EARTH)
+    mark_outer(shell, samples, len(profs[0]))
     stairs = bmesh.new()
     n = int(rise / 0.25) + 2
     outline = [(1.0, -0.4)]
@@ -445,6 +660,8 @@ def build_entry_incline():
     hole = Vector((0, 1.0 + rise - 2.1 * SHAFT_H / 2, rise))          # as the old piece: the pivot / sockets stay where they were
     bmesh.ops.translate(p.bm, verts=p.bm.verts[:], vec=-hole)
     p.sockets = [(pos - hole, out, cl) for pos, out, cl in p.sockets]
+    p.sculpt = sculpt_incline
+    p.smooth_ground = True
     return p
 
 
@@ -659,9 +876,20 @@ def finish(piece, at=Vector((0, 0, 0)), collection=None):
     bmesh.ops.recalc_face_normals(bm, faces=bm.faces[:])
     bmesh.ops.triangulate(bm, faces=bm.faces[:], quad_method='BEAUTY', ngon_method='BEAUTY')
     split_inside(bm)
+    side = bm.faces.layers.int.get('side')
+    if side:
+        for f in bm.faces:
+            if f[side] == SIDE_OUTER:
+                f.material_index = MAT_GROUND
+            elif f[side] == SIDE_INNER:
+                f.material_index = MAT_EARTH
     refine(bm)
     if piece.noise > 0:
         roughen(bm, [(s[0], s[1]) for s in piece.sockets] + piece.fades, piece.cls, piece.noise)
+    if piece.sculpt:
+        piece.sculpt(bm)
+        bmesh.ops.dissolve_degenerate(bm, dist=0.001, edges=bm.edges[:])
+        bmesh.ops.triangulate(bm, faces=[f for f in bm.faces if len(f.verts) > 3], quad_method='BEAUTY', ngon_method='BEAUTY')
     for f in bm.faces:
         if f.material_index in (MAT_HIDDEN, MAT_STEP):
             f.material_index = MAT_EARTH
@@ -686,7 +914,7 @@ def finish(piece, at=Vector((0, 0, 0)), collection=None):
     for m in materials():
         me.materials.append(m)
     for p in me.polygons:
-        p.use_smooth = p.material_index == MAT_EARTH
+        p.use_smooth = p.material_index == MAT_EARTH or piece.smooth_ground
     coll = collection or bpy.context.scene.collection
     lod = bpy.data.objects.new(piece.name + '_LOD0', me)
     utm = bpy.data.objects.new('UTM_' + piece.name, me.copy())

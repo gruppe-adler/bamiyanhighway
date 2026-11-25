@@ -245544,7 +245544,7 @@ $grp GenericEntity : "{A268AA872607679D}Prefabs/Rocks/Debris/Rock_RuststoneMonol
  }
 }
 Tree : "{A5DE58FC9FB6BA60}Prefabs/Vegetation/Bush/b_corylus_avellana_2.et" {
- coords 1966.945 0.128 1120.821
+ coords 1965.405 0.438 1119.904
 }
 $grp GenericEntity : "{A7ABE1C29E1A8EF4}Prefabs/Rocks/Debris/Rock_Debris_DesertSlab_SandstoneGrey.et" {
  {
@@ -246441,7 +246441,7 @@ $grp GenericEntity : "{CA02135E92B1D3F2}Prefabs/Rocks/Cliffs/Cliff_Base_CrimsonB
   angles 0 55.415 0
  }
  {
-  coords 1972.648 -30.747 1147.911
+  coords 1974.639 -30.747 1150.143
   angles 0 131.725 0
  }
 }

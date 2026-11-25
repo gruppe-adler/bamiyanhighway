@@ -16,14 +16,55 @@ GenericEntity {
   }
  }
  {
-  GameEnvironmentProbeEntity : "{352949EEDBDE3131}Prefabs/Tunnels/TT/TT_TunnelProbe.et" {
-   ID "E11FE50323CEF205"
-   coords 0 -2.7 0.127
-   angleY 180
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "2EAD3F48196C0BF3"
+   coords 0 -1.75 -1.6
+   LVReflectionBrightness -5
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -5
+   DiffuseColor 1 1 1 1
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "FB0037582BCBF5F4"
+     Box BoundingVolume "{90360DD120A6FEDB}" {
+      Size 2.3 0.9 3.8
+     }
+    }
+   }
   }
-  GameEnvironmentProbeEntity : "{352949EEDBDE3131}Prefabs/Tunnels/TT/TT_TunnelProbe.et" {
-   ID "288197F4F7D967BC"
-   coords 0 -2.446 -0.532
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "3BB72DDB5F96FA1B"
+   coords 0 -2.65 -2.05
+   LVReflectionBrightness -10
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -10
+   DiffuseColor 1 1 1 1
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "90F82D95580B1EDC"
+     Box BoundingVolume "{CD96280A229906C2}" {
+      Size 2.3 0.9 2.9
+     }
+    }
+   }
+  }
+  GameEnvironmentProbeEntity : "{565470F7BA530E0D}Prefabs/Structures/Core/ProbeHouse_Base.et" {
+   ID "6AC9A52F3D9BE500"
+   coords 0 -3.65 -2.525
+   LVReflectionBrightness -16
+   ReflectionColor 1 1 1 1
+   LVDiffuseBrightness -16
+   DiffuseColor 1 1 1 1
+   VisiblePercentBlack 90
+   VisiblePercentWhite 55
+   {
+    ProbeVolume : "{CD5BB05FBEEBAE01}Prefabs/Structures/Core/ProbeVolume_Base.et" {
+     ID "FDF951CA623411B1"
+     Box BoundingVolume "{0CEE4E2A42A568D4}" {
+      Size 2.3 1.1 2.25
+     }
+    }
+   }
   }
  }
 }

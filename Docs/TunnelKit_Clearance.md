@@ -246,3 +246,16 @@ The square headroom is lower on the first steps because the shaft grows from the
 - `Docs/blender/redesign_staging/full/*.fbx` (the 55 built files, identical to `Assets/Tunnels/TT`), `Docs/blender/previews/CL_*.png`, `CL_before_all.json`, `CL_after_full.json`, `CL_before_nonoise.json`.
 - Previews (Workbench engine, studio lighting; they do not show the texture): `CL_plan_chain_A_std_C_A.png`, `CL_sections_A_std_C_crouch_prone.png`, `CL_inside_joint_*.png`, `CL_inside_neck_A.png`, `CL_inside_wide_C_into_neck_A.png`,
   `CL_plan_junction_staggered.png`, `CL_plan_junction_crouch_prone.png`, `CL_plan_room.png`, `CL_plan_turn90_C.png`, `CL_plan_turn90_Wide.png`, `CL_plan_dogleg_C.png`, `CL_section_entry_incline.png`, `CL_section_transitions.png`, `CL_inside_entry_horizontal_mouth.png`, `CL_inside_*_straight.png`, `CL_fillet_closeup.png`.
+
+## 8. Walk entries: rounded mouths and graded dark boxes (25 Nov 2026)
+
+All four entries.
+
+- Horizontal entries, all three sizes (`tunnelkit_build_clear.py`, `build_entry_horizontal`, `rock_bumps`): rounded rim (LIP_R), mouth leaning
+  back (RAKE_TOP), a bumpy rock mound round the opening about 3 x the piece's height across (MOUND_R, MOUND_UNEVEN). It ends before the joint
+  so it can't block the next piece. Incline (`sculpt_incline`): collar rounded off downwards (RIM_DROP). Pivots and sockets unchanged, bounds
+  much wider (walk x +-7.5, z -6 .. 8): rebuild the TT catalog. Collider = visual mesh (25 - 36k triangles).
+- Dark boxes: `Docs/blender/CL_entry_probes.py` writes three per entry (-5, -10, -16 EV), inside the shell and behind the open part of the
+  mouth. `tunnelkit_finish.py` rewrites prefabs without probes: re-run this script after it.
+- Not verified in game: the look of the steps between the boxes, and whether the neighbouring piece's 8 m probe (reaches 2 to 3 m back into an
+  entry) shows.
