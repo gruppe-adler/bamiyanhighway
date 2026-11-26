@@ -1,5 +1,6 @@
-GenericEntity {
+Building {
  ID "F990995ED5BF1DC1"
+ UndergroundStructure 1
  components {
   MeshObject "{5B55DF1CA3691860}" {
    Object "{1ACB9870DF175294}Assets/Tunnels/Cave/TT_Cave_Pass_Crack.xob"

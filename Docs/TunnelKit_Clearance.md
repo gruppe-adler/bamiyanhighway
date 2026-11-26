@@ -261,3 +261,17 @@ All four entries.
   mouth. `tunnelkit_finish.py` rewrites prefabs without probes: re-run this script after it.
 - Not verified in game: the look of the steps between the boxes, and whether the neighbouring piece's 8 m probe (reaches 2 to 3 m back into an
   entry) shows.
+
+## 9. Occluders, trial (26 Nov 2026)
+
+`tunnelkit_build_clear.py` (`fit_occluders`) buries up to 6 box occluders (`OCC_`, no material, like the cliffs') in the earth of the
+pieces in `OCCLUDER_PIECES`: Straight_2, Straight_4, Turn90, Turn90_Wide. A box is accepted only if no face touches it with 5 cm
+margin and its middle is in solid earth. Visible mesh and openings unchanged. They cover only part of the walls (curved walls take
+short boxes). Open: whether the engine's culling in play changes, and that nothing is wrongly hidden. Roll out only after that.
+
+## 10. Earth without sky light (26 Nov 2026, test)
+
+White 'holes' underground were walls lit by the sky where a dark probe did not apply. `TT_Earth.emat` now has DiffuseIBL /
+SpecularIBL / Ambient 0 (dug pieces; probes no longer needed for these walls). The four entries use `TT_Earth_Entrance.emat` (the
+old material). Cave materials not changed yet. `tunnelkit_finish.py` still writes the old TT_Earth: add the three lines back after
+running it. Soldiers and weapons still rely on the probes.

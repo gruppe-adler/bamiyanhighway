@@ -87,6 +87,28 @@ shift+click. A plain click still places one piece as before.
   walk, short links 6-18 m (today 53 %): turn 45 deg 73 %, step slope 0.3 m / 2 m 70 %, curve 10 deg / 2 m 70 %, slope + turn 45 77 %.
   Side jogs and 0.5 / 1.5 m straights: no gain.
 
+## No-cull flag and culling in play (26 Nov 2026, open)
+The user reports no culling in the World Editor with the flag set on every piece at spawn, but culling in play, mostly when turning
+around. Tried and removed: flag only within a radius, then only on connected pieces (capped, live diag switches): culling was the same
+whatever the count. Now: flag set once at spawn as before; play mode asks the engine every second whether it is still there
+(`SP_TunnelKeep:` lines) and names the piece looked at. Tested: with `PLAY_WITHOUT_FLAG = true` (no flag in play) culling was far worse, even near the entry, so the flag is needed; it is back to `false`. The switch overrides
+the prefabs, so no piece is flagged in play (the earlier cap tests never proved that removing the flag takes effect). Untested ideas: cave model weight (up to 45 MB, one detail level), play-mode
+camera / graphics settings.
+
+Play-mode diag "Tunnels cull" (test, results open): Update() every frame, hide + show every frame, model assigned again once a
+second, SetFixedLOD(0); pieces within 120 m.
+
+Diag "Max flagged pieces" (restored): at 300 every piece is flagged once at spawn; lower, only the nearest connected ones.
+"Re-show piece after flag change" goes with it.
+
+Automatic detection (26 Nov): `SightCheck` fires 15 rays across the view and uses `IEntity.IsRendered()` (needs
+`EntityFlags.SET_RENDERED`): `IN VIEW BUT NOT DRAWN` lines. More switches: remove STATIC, add ACTIVE, add NO_TREE, relink
+(`UPDATE_LINK`) every second.
+
+**Found by the user (26 Nov): the limit is about 24 flagged pieces at once.** Default is again every piece (300 on the slider); below that, ten times a second, given to:
+pieces holding the camera, their neighbours, then connected pieces by distance along the tunnels combined with the view cone
+(slider, 60 degrees either side; out of view counts 3x + 20 m further, ray-seen half as far).
+
 ## Known limits / next steps
 - Yaw only (the generator never tilts pieces; slopes are pieces with rising openings).
 - No live preview or hover picking yet. The APIs are now known (see above), so a hover tool is the next step.

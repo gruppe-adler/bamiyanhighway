@@ -302,6 +302,7 @@ def corridor(piece, samples, variant='', bend_bias=0.0):
     c = CLASSES[piece.cls]
     piece.noise = VARIANTS[(piece.cls, variant)].get('noise', 1.0)
     var = variation(piece, samples, variant, bend_bias)
+    piece.path = samples
     inners = [mk_profile(hw, H, c['r']) for hw, H, _ in var]
     outers = [offset(p, SHELL) for p in inners]
     # shift along 'right'. k is negative in a right-hand bend (whose inside is on the right), so the section moves LEFT = outwards
@@ -921,6 +922,102 @@ def roughen(bm, keep, cls, scale=1.0):
     bm.normal_update()
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# Occluders: boxes buried in the earth round the passage (OCC_ meshes, no material), so the engine can skip what is behind a
+# wall. A box counts only if no face of the model touches it even OCC_MARGIN bigger and its middle is in solid earth: it can
+# not reach into the passage. A trial on these pieces first
+OCCLUDER_PIECES = ('TT_Straight_2', 'TT_Straight_4', 'TT_Turn90', 'TT_Turn90_Wide')
+OCC_THICK = 0.10
+OCC_MARGIN = 0.05
+OCC_END = 0.3         # stay this far from the piece's two ends (the sleeves there overlap the neighbour)
+OCC_MOST = 6
+
+
+def box_mesh(centre, ax, ay, az, hx, hy, hz):
+    """The 8 corners and 6 faces of a box with the given axes and half sizes"""
+    pts = [centre + ax * (sx * hx) + ay * (sy * hy) + az * (sz * hz) for sx in (-1, 1) for sy in (-1, 1) for sz in (-1, 1)]
+    faces = [(0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3)]
+    return pts, faces
+
+
+def in_solid(tree, point):
+    """Odd number of surfaces between the point and outside, by two directions"""
+    for d in (Vector((0.331, 0.221, 0.917)).normalized(), Vector((-0.712, 0.553, -0.433)).normalized()):
+        n, at = 0, point
+        while n < 60:
+            hit = tree.ray_cast(at, d)[0]
+            if hit is None:
+                break
+            n += 1
+            at = hit + d * 1e-4
+        if n % 2 == 0:
+            return False
+    return True
+
+
+def buried(tree, centre, ax, ay, az, hx, hy, hz):
+    pts, faces = box_mesh(centre, ax, ay, az, hx + OCC_MARGIN, hy + OCC_MARGIN, hz + OCC_MARGIN)
+    if BVHTree.FromPolygons(pts, faces).overlap(tree):
+        return False
+    return in_solid(tree, centre)
+
+
+def fit_occluders(me, samples):
+    """samples: the piece's path. Left and right wall, roof and under the floor; a run that doesn't fit in one box (a bend,
+    a swelling) is halved, then quartered"""
+    tree = BVHTree.FromPolygons([v.co.copy() for v in me.vertices], [list(f.vertices) for f in me.polygons])
+    dist = arc_lengths(samples)
+    total = dist[-1]
+
+    def at(s):
+        for i in range(1, len(dist)):
+            if dist[i] >= s:
+                k = (s - dist[i - 1]) / max(dist[i] - dist[i - 1], 1e-6)
+                return samples[i - 1][0].lerp(samples[i][0], k)
+        return samples[-1][0].copy()
+
+    def try_run(side, s0, s1):
+        a, b = at(s0), at(s1)
+        along = Vector((b.x - a.x, b.y - a.y, 0))
+        if along.length < 0.25:
+            return None
+        half = along.length / 2
+        along.normalize()
+        right = along.cross(Z).normalized()
+        mid = (a + b) / 2
+        if side in ('left', 'right'):
+            way = right if side == 'right' else -right
+            for z0, z1 in ((0.1, 1.9), (0.2, 1.6), (0.3, 1.3)):
+                for i in range(70):
+                    c = mid + way * (0.6 + i * 0.03) + Z * ((z0 + z1) / 2)
+                    if buried(tree, c, along, way, Z, half, OCC_THICK / 2, (z1 - z0) / 2):
+                        return c, along, way, Z, half, OCC_THICK / 2, (z1 - z0) / 2
+            return None
+        for width in (0.6, 0.4, 0.25):
+            for i in range(80):
+                z = 1.7 + i * 0.03 if side == 'roof' else -0.04 - i * 0.02
+                c = mid + Z * z
+                if buried(tree, c, along, right, Z, half, width, OCC_THICK / 2):
+                    return c, along, right, Z, half, width, OCC_THICK / 2
+        return None
+
+    found = {}
+    for side in ('left', 'right', 'roof', 'floor'):
+        for parts in (1, 2, 4):
+            step = (total - 2 * OCC_END) / parts
+            boxes = [try_run(side, OCC_END + step * k, OCC_END + step * (k + 1)) for k in range(parts)]
+            boxes = [bx for bx in boxes if bx]
+            if len(boxes) == parts or (parts == 4 and boxes):
+                found[side] = boxes
+                break
+    # the walls first (they hide the most), then roof and floor, as many as the budget holds
+    chosen = []
+    for side in ('left', 'right', 'roof', 'floor'):
+        if side in found and len(chosen) + len(found[side]) <= OCC_MOST:
+            chosen += [(side, bx) for bx in found[side]]
+    return chosen
+
+
 def finish(piece, at=Vector((0, 0, 0)), collection=None):
     bm = piece.bm
     bmesh.ops.remove_doubles(bm, verts=bm.verts[:], dist=0.0005)
@@ -976,6 +1073,21 @@ def finish(piece, at=Vector((0, 0, 0)), collection=None):
     for o in objs:
         coll.objects.link(o)
         o.location = at
+    if piece.name in OCCLUDER_PIECES:
+        for k, (side, box) in enumerate(fit_occluders(me, piece.path)):
+            pts, faces = box_mesh(*box)
+            mesh = bpy.data.meshes.new('OCC_%s_%02d' % (piece.name, k + 1))
+            mesh.from_pydata(pts, [], faces)
+            bm_box = bmesh.new()
+            bm_box.from_mesh(mesh)
+            bmesh.ops.recalc_face_normals(bm_box, faces=bm_box.faces[:])
+            bm_box.to_mesh(mesh)
+            bm_box.free()
+            occluder = bpy.data.objects.new(mesh.name, mesh)
+            occluder['side'] = side
+            coll.objects.link(occluder)
+            occluder.location = at
+            objs.append(occluder)
     for i, (pos, out, cls) in enumerate(piece.sockets):
         e = bpy.data.objects.new(str(i + 1) if collection is None else f'{piece.name}.{i + 1}', None)
         e.empty_display_type = 'SINGLE_ARROW'

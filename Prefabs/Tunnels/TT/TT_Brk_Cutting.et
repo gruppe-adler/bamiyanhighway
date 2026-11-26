@@ -1,5 +1,6 @@
-GenericEntity {
+Building {
  ID "29363A0489F63A30"
+ UndergroundStructure 1
  components {
   MeshObject "{BD88A06A0EE0AB95}" {
    Object "{80F6BEFF0B173625}Assets/Tunnels/Cave/TT_Brk_Cutting.xob"

@@ -1,5 +1,6 @@
-GenericEntity {
+Building {
  ID "F08BD306BF8B298F"
+ UndergroundStructure 1
  components {
   MeshObject "{0A8620ECB1F7BFAF}" {
    Object "{7D948C843BF40F66}Assets/Tunnels/TT/TT_Dogleg_L_A.xob"

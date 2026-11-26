@@ -6,7 +6,7 @@ MetaFileClass {
    MaterialAssigns {
     MaterialAssignClass "{FFCBDC04BE72B365}" {
      SourceMaterial "TT_Earth"
-     AssignedMaterial "{C0BEF3FC2CDDDC10}Assets/Tunnels/TT/Data/TT_Earth.emat"
+     AssignedMaterial "{FD73310DECF039D0}Assets/Tunnels/TT/Data/TT_Earth_Entrance.emat"
     }
     MaterialAssignClass "{37662A3502646CDE}" {
      SourceMaterial "TT_Ground"

@@ -122014,11 +122014,11 @@ $grp SplineShapeEntity {
   }
  }
 }
-GenericEntity : "{04A38F49C4636BA1}Prefabs/Tunnels/TT/TT_Room_Drip_C.et" {
+Building : "{04A38F49C4636BA1}Prefabs/Tunnels/TT/TT_Room_Drip_C.et" {
  coords 2040.224 -41.896 1183.409
  angles 0 115.23 0
 }
-$grp GenericEntity : "{07590CB9868F5A7A}Prefabs/Tunnels/TT/TT_Straight_2.et" {
+$grp Building : "{07590CB9868F5A7A}Prefabs/Tunnels/TT/TT_Straight_2.et" {
  {
   coords 2005.656 -41.671 1159.095
   angles 0 -138.52 0
@@ -122044,7 +122044,7 @@ $grp GenericEntity : "{07590CB9868F5A7A}Prefabs/Tunnels/TT/TT_Straight_2.et" {
   angles 0 95.23 0
  }
 }
-$grp GenericEntity : "{0780E3AC1D4044F2}Prefabs/Tunnels/TT/TT_Straight_Narrow.et" {
+$grp Building : "{0780E3AC1D4044F2}Prefabs/Tunnels/TT/TT_Straight_Narrow.et" {
  {
   coords 2040.5 -47.296 1259.045
   angles 0 25.23 0
@@ -122078,7 +122078,7 @@ $grp GenericEntity : "{0780E3AC1D4044F2}Prefabs/Tunnels/TT/TT_Straight_Narrow.et
   angles 0 95.232 0
  }
 }
-$grp GenericEntity : "{1094B174D328543D}Prefabs/Tunnels/TT/TT_Curve_10_A.et" {
+$grp Building : "{1094B174D328543D}Prefabs/Tunnels/TT/TT_Curve_10_A.et" {
  {
   coords 2006.966 -47.261 1246.4
   angles 0 60.231 0
@@ -122104,7 +122104,7 @@ $grp GenericEntity : "{1094B174D328543D}Prefabs/Tunnels/TT/TT_Curve_10_A.et" {
   angles 0 145.229 0
  }
 }
-$grp GenericEntity : "{15B34B44A4B7F84D}Prefabs/Tunnels/TT/TT_Dogleg_L_A.et" {
+$grp Building : "{15B34B44A4B7F84D}Prefabs/Tunnels/TT/TT_Dogleg_L_A.et" {
  {
   coords 2000.029 -47.896 1187.209
   angles 0 -19.772 0
@@ -122118,7 +122118,7 @@ $grp GenericEntity : "{15B34B44A4B7F84D}Prefabs/Tunnels/TT/TT_Dogleg_L_A.et" {
   angles 0 95.23 0
  }
 }
-$grp GenericEntity : "{1BEB90A14EFF96E2}Prefabs/Tunnels/TT/TT_Slope_C.et" {
+$grp Building : "{1BEB90A14EFF96E2}Prefabs/Tunnels/TT/TT_Slope_C.et" {
  {
   coords 2024.375 -43.096 1178.696
   angles 0 25.23 0
@@ -122213,7 +122213,7 @@ DecalEntity : "{22F9041142B00E5A}PrefabLibrary/DefaultLibrary/Decals/Stains/Deca
  angles -90 -134.317 -180
  scale 3.546
 }
-$grp GenericEntity : "{2305E5BED27B86B9}Prefabs/Tunnels/TT/TT_Curve_10_C.et" {
+$grp Building : "{2305E5BED27B86B9}Prefabs/Tunnels/TT/TT_Curve_10_C.et" {
  {
   coords 2021.391 -47.072 1252.962
   angles 0 60.231 0
@@ -122255,15 +122255,15 @@ $grp GenericEntity : "{2305E5BED27B86B9}Prefabs/Tunnels/TT/TT_Curve_10_C.et" {
   angles 0 103.414 0
  }
 }
-GenericEntity : "{26AF927917313926}Prefabs/Tunnels/TT/TT_Cave_Room_Pillars.et" {
+Building : "{26AF927917313926}Prefabs/Tunnels/TT/TT_Cave_Room_Pillars.et" {
  coords 1992.974 -47.696 1197.67
  angles 0 -19.772 0
 }
-GenericEntity : "{2B271A38078DEA58}Prefabs/Tunnels/TT/TT_Cave_Hall_TwoLevel.et" {
+Building : "{2B271A38078DEA58}Prefabs/Tunnels/TT/TT_Cave_Hall_TwoLevel.et" {
  coords 2028.879 -47.296 1231.567
  angles 0 -154.77 0
 }
-$grp GenericEntity : "{324FC540AB600888}Prefabs/Tunnels/TT/TT_Slope.et" {
+$grp Building : "{324FC540AB600888}Prefabs/Tunnels/TT/TT_Slope.et" {
  {
   coords 2050.51 -47.295 1285.237
   angles 0 15.224 0
@@ -122333,7 +122333,7 @@ $grp GenericEntity : "{324FC540AB600888}Prefabs/Tunnels/TT/TT_Slope.et" {
   angles 0 105.231 0
  }
 }
-$grp GenericEntity : "{32E08BBD7BD98A2A}Prefabs/Tunnels/TT/TT_Turn90_A.et" {
+$grp Building : "{32E08BBD7BD98A2A}Prefabs/Tunnels/TT/TT_Turn90_A.et" {
  {
   coords 2003.928 -47.692 1203.78
   angles 0 70.228 0
@@ -122375,7 +122375,7 @@ $grp GenericEntity : "{32E08BBD7BD98A2A}Prefabs/Tunnels/TT/TT_Turn90_A.et" {
   angles 0 115.23 0
  }
 }
-$grp GenericEntity : "{332A4DE316B3C349}Prefabs/Tunnels/TT/TT_Curve_10.et" {
+$grp Building : "{332A4DE316B3C349}Prefabs/Tunnels/TT/TT_Curve_10.et" {
  {
   coords 2021.412 -47.119 1252.995
   angles 0 -119.769 0
@@ -122405,7 +122405,7 @@ $grp GenericEntity : "{332A4DE316B3C349}Prefabs/Tunnels/TT/TT_Curve_10.et" {
   angles 0 -84.767 0
  }
 }
-$grp GenericEntity : "{3B18EE71ECAAF79E}Prefabs/Tunnels/TT/TT_Cave_Pass_Meander.et" {
+$grp Building : "{3B18EE71ECAAF79E}Prefabs/Tunnels/TT/TT_Cave_Pass_Meander.et" {
  {
   coords 1986.697 -47.496 1218.087
   angles 0 -19.772 0
@@ -122415,15 +122415,15 @@ $grp GenericEntity : "{3B18EE71ECAAF79E}Prefabs/Tunnels/TT/TT_Cave_Pass_Meander.
   angles 0 115.23 0
  }
 }
-GenericEntity : "{3BA6367C2BDBC1F1}Prefabs/Tunnels/TT/TT_Brk_Hole.et" {
+Building : "{3BA6367C2BDBC1F1}Prefabs/Tunnels/TT/TT_Brk_Hole.et" {
  coords 2027.677 -47.296 1287.534
  angles 0 -74.767 0
 }
-GenericEntity : "{3E532296412A1686}Prefabs/Tunnels/TT/TT_Cave_Jct_Island.et" {
+Building : "{3E532296412A1686}Prefabs/Tunnels/TT/TT_Cave_Jct_Island.et" {
  coords 1979.757 -47.496 1237.395
  angles 0 -19.772 0
 }
-$grp GenericEntity : "{45EBC58C7D61ED79}Prefabs/Tunnels/TT/TT_Straight_4_C.et" {
+$grp Building : "{45EBC58C7D61ED79}Prefabs/Tunnels/TT/TT_Straight_4_C.et" {
  {
   coords 1959.008 -47.605 1276.507
   angles 0 170.227 0
@@ -122445,7 +122445,7 @@ $grp GenericEntity : "{45EBC58C7D61ED79}Prefabs/Tunnels/TT/TT_Straight_4_C.et" {
   angles 0 95.231 0
  }
 }
-$grp GenericEntity : "{47602509158BC835}Prefabs/Tunnels/TT/TT_Room_Drip_D.et" {
+$grp Building : "{47602509158BC835}Prefabs/Tunnels/TT/TT_Room_Drip_D.et" {
  {
   coords 1974.018 -47.496 1253.361
   angles 0 -19.772 0
@@ -122455,7 +122455,7 @@ $grp GenericEntity : "{47602509158BC835}Prefabs/Tunnels/TT/TT_Room_Drip_D.et" {
   angles 0 115.23 0
  }
 }
-$grp GenericEntity : "{49A0A1A96FE00F64}Prefabs/Tunnels/TT/TT_Slope_A.et" {
+$grp Building : "{49A0A1A96FE00F64}Prefabs/Tunnels/TT/TT_Slope_A.et" {
  {
   coords 1938.631 -46.473 1305.432
   angles 0 15.234 0
@@ -122509,23 +122509,23 @@ $grp GenericEntity : "{49A0A1A96FE00F64}Prefabs/Tunnels/TT/TT_Slope_A.et" {
   angles 0 105.232 0
  }
 }
-GenericEntity : "{49BCFF0BBFACE27B}Prefabs/Tunnels/TT/TT_Entry_Incline.et" {
+Building : "{49BCFF0BBFACE27B}Prefabs/Tunnels/TT/TT_Entry_Incline.et" {
  coords 2031.367 -17.768 1442.483
  angles -10.021 0 0
 }
-GenericEntity : "{4FD654333D04C93C}Prefabs/Tunnels/TT/TT_Cave_Pass_Flooded.et" {
+Building : "{4FD654333D04C93C}Prefabs/Tunnels/TT/TT_Cave_Pass_Flooded.et" {
  coords 2002.051 -46.486 1294.512
  angles 0 -74.767 0
 }
-GenericEntity : "{5E74C18A47EE67FD}Prefabs/Tunnels/TT/TT_Brk_Cutting.et" {
+Building : "{5E74C18A47EE67FD}Prefabs/Tunnels/TT/TT_Brk_Cutting.et" {
  coords 2003.194 -47.896 1178.405
  angles 0 -19.772 0
 }
-GenericEntity : "{60B99E24A3F30C85}Prefabs/Tunnels/TT/TT_Cave_Pass_GalleryCrawl.et" {
+Building : "{60B99E24A3F30C85}Prefabs/Tunnels/TT/TT_Cave_Pass_GalleryCrawl.et" {
  coords 1996.977 -47.496 1261.082
  angles 0 70.228 0
 }
-$grp GenericEntity : "{688FE6CF4DBAC7CE}Prefabs/Tunnels/TT/TT_Cave_Room_CrawlSlab.et" {
+$grp Building : "{688FE6CF4DBAC7CE}Prefabs/Tunnels/TT/TT_Cave_Room_CrawlSlab.et" {
  {
   coords 2021.181 -47.118 1268.083
   angles 0 70.228 0
@@ -122535,15 +122535,15 @@ $grp GenericEntity : "{688FE6CF4DBAC7CE}Prefabs/Tunnels/TT/TT_Cave_Room_CrawlSla
   angles 0 -64.77 0
  }
 }
-GenericEntity : "{6F863F050522A878}Prefabs/Tunnels/TT/TT_Curve_5_A.et" {
+Building : "{6F863F050522A878}Prefabs/Tunnels/TT/TT_Curve_5_A.et" {
  coords 2089.508 -36.345 1300.495
  angles 0 110.228 0
 }
-GenericEntity : "{73ACA96642FC3E6C}Prefabs/Tunnels/TT/TT_Cave_Room_SwimThrough.et" {
+Building : "{73ACA96642FC3E6C}Prefabs/Tunnels/TT/TT_Cave_Room_SwimThrough.et" {
  coords 1977.609 -46.486 1301.168
  angles 0 -74.767 0
 }
-$grp GenericEntity : "{753D5E5E61E3CC4D}Prefabs/Tunnels/TT/TT_Straight_4.et" {
+$grp Building : "{753D5E5E61E3CC4D}Prefabs/Tunnels/TT/TT_Straight_4.et" {
  {
   coords 1959.658 -47.596 1272.622
   angles 0 170.227 0
@@ -122593,7 +122593,7 @@ $grp GenericEntity : "{753D5E5E61E3CC4D}Prefabs/Tunnels/TT/TT_Straight_4.et" {
   angles 0 95.229 0
  }
 }
-$grp GenericEntity : "{7795C11EEF484114}Prefabs/Tunnels/TT/TT_Curve_15_C.et" {
+$grp Building : "{7795C11EEF484114}Prefabs/Tunnels/TT/TT_Curve_15_C.et" {
  {
   coords 2015.753 -41.746 1165.015
   angles 0 57.73 0
@@ -122631,7 +122631,7 @@ $grp GenericEntity : "{7795C11EEF484114}Prefabs/Tunnels/TT/TT_Curve_15_C.et" {
   angles 0 155.227 0
  }
 }
-$grp GenericEntity : "{78344B3ACADEAC26}Prefabs/Tunnels/TT/TT_Cave_Grotto_Sump.et" {
+$grp Building : "{78344B3ACADEAC26}Prefabs/Tunnels/TT/TT_Cave_Grotto_Sump.et" {
  {
   coords 2027.323 -20.308 1311.613
   angles 0 -165 0
@@ -122641,11 +122641,11 @@ $grp GenericEntity : "{78344B3ACADEAC26}Prefabs/Tunnels/TT/TT_Cave_Grotto_Sump.e
   angles 0 25.23 0
  }
 }
-GenericEntity : "{79B6A6A4E26F9695}Prefabs/Tunnels/TT/TT_Room_Drip_E.et" {
+Building : "{79B6A6A4E26F9695}Prefabs/Tunnels/TT/TT_Room_Drip_E.et" {
  coords 2067.348 -39.257 1239.799
  angles 0 25.23 0
 }
-$grp GenericEntity : "{7A6835D8302F8444}Prefabs/Tunnels/TT/TT_Turn90_C.et" {
+$grp Building : "{7A6835D8302F8444}Prefabs/Tunnels/TT/TT_Turn90_C.et" {
  {
   coords 2040.544 -47.296 1283.095
   angles 0 -160.483 0
@@ -122671,7 +122671,7 @@ $grp GenericEntity : "{7A6835D8302F8444}Prefabs/Tunnels/TT/TT_Turn90_C.et" {
   angles 0 -74.972 0
  }
 }
-$grp GenericEntity : "{7FCCC84B9CCE4D05}Prefabs/Tunnels/TT/TT_Cave_Crawl_Rubble.et" {
+$grp Building : "{7FCCC84B9CCE4D05}Prefabs/Tunnels/TT/TT_Cave_Crawl_Rubble.et" {
  {
   coords 2025.894 -21.768 1391.536
   angles 0 105 0
@@ -122681,11 +122681,11 @@ $grp GenericEntity : "{7FCCC84B9CCE4D05}Prefabs/Tunnels/TT/TT_Cave_Crawl_Rubble.
   angles 0 15.233 0
  }
 }
-GenericEntity : "{874C38B0619199EF}Prefabs/Tunnels/TT/TT_Cave_Grotto_Crawl.et" {
+Building : "{874C38B0619199EF}Prefabs/Tunnels/TT/TT_Cave_Grotto_Crawl.et" {
  coords 1970.429 -41.896 1223.598
  angles 0 -44.775 0
 }
-$grp GenericEntity : "{8F624ABAA927C8EA}Prefabs/Tunnels/TT/TT_Cave_Chamber_Cleft.et" {
+$grp Building : "{8F624ABAA927C8EA}Prefabs/Tunnels/TT/TT_Cave_Chamber_Cleft.et" {
  {
   coords 1953.069 -46.486 1307.228
   angles 0 -74.767 0
@@ -122695,7 +122695,7 @@ $grp GenericEntity : "{8F624ABAA927C8EA}Prefabs/Tunnels/TT/TT_Cave_Chamber_Cleft
   angles 0 15.233 0
  }
 }
-$grp GenericEntity : "{9021CD48139F73D5}Prefabs/Tunnels/TT/TT_Turn90_Wide.et" {
+$grp Building : "{9021CD48139F73D5}Prefabs/Tunnels/TT/TT_Turn90_Wide.et" {
  {
   coords 2002.192 -41.633 1154.319
   angles 0 -154.145 0
@@ -122737,7 +122737,7 @@ $grp GenericEntity : "{9021CD48139F73D5}Prefabs/Tunnels/TT/TT_Turn90_Wide.et" {
   angles 0 15.009 0
  }
 }
-$grp GenericEntity : "{94D49DAD442E53D1}Prefabs/Tunnels/TT/TT_Cave_Pass_Crack.et" {
+$grp Building : "{94D49DAD442E53D1}Prefabs/Tunnels/TT/TT_Cave_Pass_Crack.et" {
  {
   coords 2020.311 -23.268 1374.561
   angles 0 15 0
@@ -122747,7 +122747,7 @@ $grp GenericEntity : "{94D49DAD442E53D1}Prefabs/Tunnels/TT/TT_Cave_Pass_Crack.et
   angles 0 105.233 0
  }
 }
-$grp GenericEntity : "{9830724EE353AEF9}Prefabs/Tunnels/TT/TT_Curve_5.et" {
+$grp Building : "{9830724EE353AEF9}Prefabs/Tunnels/TT/TT_Curve_5.et" {
  {
   coords 1992.772 -47.449 1242.049
   angles 0 70.228 0
@@ -122757,7 +122757,7 @@ $grp GenericEntity : "{9830724EE353AEF9}Prefabs/Tunnels/TT/TT_Curve_5.et" {
   angles 0 -154.386 0
  }
 }
-$grp GenericEntity : "{A1E08C645BF80A0F}Prefabs/Tunnels/TT/TT_Dogleg_L_C.et" {
+$grp Building : "{A1E08C645BF80A0F}Prefabs/Tunnels/TT/TT_Dogleg_L_C.et" {
  {
   coords 2029.112 -21.768 1421.318
   angles 0 -165 0
@@ -122767,11 +122767,11 @@ $grp GenericEntity : "{A1E08C645BF80A0F}Prefabs/Tunnels/TT/TT_Dogleg_L_C.et" {
   angles 0 -76.196 0
  }
 }
-GenericEntity : "{A60B2D23B9E61477}Prefabs/Tunnels/TT/TT_Dogleg_R.et" {
+Building : "{A60B2D23B9E61477}Prefabs/Tunnels/TT/TT_Dogleg_R.et" {
  coords 2103.563 -37.995 1222.824
  angles 0 -66.691 0
 }
-$grp GenericEntity : "{B1C65D918FA7AE8B}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeC.et" {
+$grp Building : "{B1C65D918FA7AE8B}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeC.et" {
  {
   coords 2014.865 -23.268 1354.236
   angles 0 15 0
@@ -122781,7 +122781,7 @@ $grp GenericEntity : "{B1C65D918FA7AE8B}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeC
   angles 0 105.233 0
  }
 }
-$grp GenericEntity : "{B7C7A7ECB2C56503}Prefabs/Tunnels/TT/TT_Curve_5_C.et" {
+$grp Building : "{B7C7A7ECB2C56503}Prefabs/Tunnels/TT/TT_Curve_5_C.et" {
  {
   coords 2029.977 -21.768 1425.222
   angles 0 -170.003 0
@@ -122796,7 +122796,7 @@ DecalEntity : "{BD7194E89FF448BA}PrefabLibrary/DefaultLibrary/Decals/Stains/Deca
  angles -90 -63.278 -180
  scale 2.223
 }
-$grp GenericEntity : "{BDF2AFA7294AF89A}Prefabs/Tunnels/TT/TT_Cave_Jct_Tri.et" {
+$grp Building : "{BDF2AFA7294AF89A}Prefabs/Tunnels/TT/TT_Cave_Jct_Tri.et" {
  {
   coords 2011.022 -23.268 1337.965
   angles 0 -165 0
@@ -122810,7 +122810,7 @@ $grp GenericEntity : "{BDF2AFA7294AF89A}Prefabs/Tunnels/TT/TT_Cave_Jct_Tri.et" {
   angles 0 115.23 0
  }
 }
-$grp GenericEntity : "{BF9DAEE232803035}Prefabs/Tunnels/TT/TT_Straight_Wide.et" {
+$grp Building : "{BF9DAEE232803035}Prefabs/Tunnels/TT/TT_Straight_Wide.et" {
  {
   coords 2003.317 -47.355 1244.954
   angles 0 -104.77 0
@@ -122820,15 +122820,15 @@ $grp GenericEntity : "{BF9DAEE232803035}Prefabs/Tunnels/TT/TT_Straight_Wide.et" 
   angles 0 75.002 0
  }
 }
-GenericEntity : "{C1474445D8EFA109}Prefabs/Tunnels/TT/TT_Cave_Chamber_Bubble.et" {
+Building : "{C1474445D8EFA109}Prefabs/Tunnels/TT/TT_Cave_Chamber_Bubble.et" {
  coords 2049.872 -24.468 1326.313
  angles 0 105 0
 }
-GenericEntity : "{C6AD8D3098F4C43F}Prefabs/Tunnels/TT/TT_Cave_Ledge_Collapse.et" {
+Building : "{C6AD8D3098F4C43F}Prefabs/Tunnels/TT/TT_Cave_Ledge_Collapse.et" {
  coords 2031.818 -24.468 1330.322
  angles 0 105 0
 }
-$grp GenericEntity : "{C8B5F393FF6B1CFC}Prefabs/Tunnels/TT/TT_Curve_15_A.et" {
+$grp Building : "{C8B5F393FF6B1CFC}Prefabs/Tunnels/TT/TT_Curve_15_A.et" {
  {
   coords 2008.609 -41.708 1161.655
   angles 0 57.105 0
@@ -122846,19 +122846,19 @@ $grp GenericEntity : "{C8B5F393FF6B1CFC}Prefabs/Tunnels/TT/TT_Curve_15_A.et" {
   angles 0 95.229 0
  }
 }
-GenericEntity : "{CE0B814FBFE7AE97}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeP.et" {
+Building : "{CE0B814FBFE7AE97}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeP.et" {
  coords 2036.123 -24.468 1354.114
  angles 0 15 0
 }
-GenericEntity : "{DCFD82F896680163}Prefabs/Tunnels/TT/TT_Cave_Room_Grotto.et" {
+Building : "{DCFD82F896680163}Prefabs/Tunnels/TT/TT_Cave_Room_Grotto.et" {
  coords 2040.099 -24.468 1368.951
  angles 0 15 0
 }
-GenericEntity : "{E4180A497EB79016}Prefabs/Tunnels/TT/TT_Room_Drip_B.et" {
+Building : "{E4180A497EB79016}Prefabs/Tunnels/TT/TT_Room_Drip_B.et" {
  coords 2046.925 -47.296 1275.627
  angles 0 -74.767 0
 }
-$grp GenericEntity : "{E7E68F8E17CC2094}Prefabs/Tunnels/TT/TT_Turn90.et" {
+$grp Building : "{E7E68F8E17CC2094}Prefabs/Tunnels/TT/TT_Turn90.et" {
  {
   coords 2013.545 -47.916 1190.676
   angles 0 -99.775 0
@@ -122904,7 +122904,7 @@ $grp GenericEntity : "{E7E68F8E17CC2094}Prefabs/Tunnels/TT/TT_Turn90.et" {
   angles 0 15.084 0
  }
 }
-$grp GenericEntity : "{EB68EE7A72EA7F67}Prefabs/Tunnels/TT/TT_Adapter_Cave.et" {
+$grp Building : "{EB68EE7A72EA7F67}Prefabs/Tunnels/TT/TT_Adapter_Cave.et" {
  {
   coords 1996.451 -41.596 1153.831
   angles 0 -64.77 0
@@ -122990,7 +122990,7 @@ $grp GenericEntity : "{EB68EE7A72EA7F67}Prefabs/Tunnels/TT/TT_Adapter_Cave.et" {
   angles 0 -154.77 0
  }
 }
-$grp GenericEntity : "{EF6923D2568B9913}Prefabs/Tunnels/TT/TT_Curve_15.et" {
+$grp Building : "{EF6923D2568B9913}Prefabs/Tunnels/TT/TT_Curve_15.et" {
  {
   coords 2015.789 -41.727 1165.036
   angles 0 -122.583 0
@@ -123008,7 +123008,7 @@ $grp GenericEntity : "{EF6923D2568B9913}Prefabs/Tunnels/TT/TT_Curve_15.et" {
   angles 0 -9.774 0
  }
 }
-$grp GenericEntity : "{F05F9C9C30B14625}Prefabs/Tunnels/TT/TT_Straight_1.et" {
+$grp Building : "{F05F9C9C30B14625}Prefabs/Tunnels/TT/TT_Straight_1.et" {
  {
   coords 2015.797 -48.14 1183.314
   angles 0 -109.772 0
@@ -123018,7 +123018,7 @@ $grp GenericEntity : "{F05F9C9C30B14625}Prefabs/Tunnels/TT/TT_Straight_1.et" {
   angles 0 -104.965 0
  }
 }
-$grp GenericEntity : "{F120F6DEE0EC5C19}Prefabs/Tunnels/TT/TT_Trans_S_P.et" {
+$grp Building : "{F120F6DEE0EC5C19}Prefabs/Tunnels/TT/TT_Trans_S_P.et" {
  {
   coords 1998.738 -41.896 1200.913
   angles 0 115.23 0
@@ -123040,7 +123040,7 @@ $grp GenericEntity : "{F120F6DEE0EC5C19}Prefabs/Tunnels/TT/TT_Trans_S_P.et" {
   angles 0 9.997 0
  }
 }
-$grp GenericEntity : "{FCD6046B33E5618D}Prefabs/Tunnels/TT/TT_Straight_4_A.et" {
+$grp Building : "{FCD6046B33E5618D}Prefabs/Tunnels/TT/TT_Straight_4_A.et" {
  {
   coords 1961.608 -47.568 1260.968
   angles 0 170.226 0
