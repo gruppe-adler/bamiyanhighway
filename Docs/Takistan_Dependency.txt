@@ -1,0 +1,142 @@
+Shashpul's dependency on Takistan (615EEBD9BDFEEE9B), scanned 2026-11-26: references of the form {GUID}path in the addon's files.
+Takistan has no scripts; sky/fog/weather references of sashpul's world do not touch it.
+
+=== referenced by Shashpul and found ONLY in Takistan: 38 resources
+{028436859D6FC4D3}Assets/Clutter/Procedural/Takistan_Grass.emat
+      used by 1 file(s): Terrains/Common/Surfaces/CliffDustyTransition.emat
+{5BFC53BCAF5D7777}Assets/Rocks/Desert/Data/Desert_Cluster_06.emat
+      used by 1 file(s): Terrains/Common/Surfaces/GreySandstoneDirt_01.emat
+{80D6D7DAC5EE2464}PrefabLibrary/Generators/Roads/Asphalt/RoadTakistan_Main.et
+      used by 1 file(s): worlds/sashpul_Layers/roads.layer
+{9B3485F7C995A370}Prefabs/Rocks/Desert/DesertCliff_NS_01.et
+      used by 6 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/houses.layer, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer, worlds/sashpul_Layers/womansgarden.layer
+{F760B11775512C5E}Prefabs/Rocks/Desert/DesertCliff_NS_02.et
+      used by 6 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/checkpoint.layer, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/roads.layer, worlds/sashpul_Layers/village.layer, worlds/sashpul_Layers/womansgarden.layer
+{12FCFDEE79B4BB35}Prefabs/Rocks/Desert/DesertCliff_NS_03.et
+      used by 5 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer, worlds/sashpul_Layers/womansgarden.layer
+{905AA887D4CB67CC}Prefabs/Rocks/Desert/DesertRock_01.et
+      used by 1 file(s): worlds/sashpul_Layers/river.layer
+{FC0E9C67680FE8E2}Prefabs/Rocks/Desert/DesertRock_02.et
+      used by 2 file(s): worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/village.layer
+{1992D09E64EA7F89}Prefabs/Rocks/Desert/DesertRock_03.et
+      used by 1 file(s): worlds/sashpul_Layers/river.layer
+{39412454BDA355FF}Prefabs/Rocks/Desert/DesertSurfaceStone_04.et
+      used by 1 file(s): worlds/sashpul_Layers/river.layer
+{3EA83F7ADE809234}Prefabs/Rocks/Desert/Desert_Boulder_01.et
+      used by 1 file(s): worlds/sashpul_Layers/river.layer
+{52FC0B9A62441D1A}Prefabs/Rocks/Desert/Desert_Boulder_02.et
+      used by 2 file(s): worlds/sashpul_Layers/checkpoint.layer, worlds/sashpul_Layers/river.layer
+{5C31F8C6870C1033}Prefabs/Rocks/Desert/Desert_Cluster_01.et
+      used by 3 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer
+{3065CC263BC89F1D}Prefabs/Rocks/Desert/Desert_Cluster_02.et
+      used by 4 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer
+{5C31F8C6870C1034}Prefabs/Rocks/Desert/Desert_Cluster_03.et
+      used by 3 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/village.layer
+{E8CDA5E742418141}Prefabs/Rocks/Desert/Desert_Cluster_04.et
+      used by 3 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/village.layer
+{0D51E91E4EA4162A}Prefabs/Rocks/Desert/Desert_Cluster_05.et
+      used by 1 file(s): worlds/sashpul_Layers/river.layer
+{FD097CAA28268B10}Prefabs/Rocks/Desert/Desert_Cluster_Large_01.et
+      used by 1 file(s): worlds/sashpul_Layers/river.layer
+{B861048CE61C7730}Prefabs/Rocks/Desert/Desert_Stone_01.et
+      used by 4 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer
+{D435306C5AD8F81E}Prefabs/Rocks/Desert/Desert_Stone_02.et
+      used by 4 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer
+{31A97C95563D6F75}Prefabs/Rocks/Desert/Desert_Stone_03.et
+      used by 4 file(s): Prefabs/WEGenerators/Stones/SP_FG_BeachStones_Sparse_Desert.et, worlds/sashpul_Layers/river.layer, worlds/sashpul_Layers/stones_road.layer, worlds/sashpul_Layers/village.layer
+{3A113DD1929E18E5}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_Takistan_Blue.et
+      used by 1 file(s): worlds/sashpul_Layers/fuelstation.layer
+{7E030D95888DE2C9}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_Takistan_Gray.et
+      used by 1 file(s): worlds/sashpul_Layers/fuelstation.layer
+{A7E607D1C1A1B240}Prefabs/Structures/Military/Houses/Barracks_E_02/Barracks_E_Takistan_02.et
+      used by 1 file(s): worlds/sashpul_Layers/village.layer
+{E51A6B529A68F439}Prefabs/Structures/Walls/Brick/BrickGate_01/BrickGate_Takistan.et
+      used by 1 file(s): worlds/sashpul_Layers/womansgarden.layer
+{6EC9958FC4388000}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_2m.et
+      used by 3 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/walls.layer, worlds/sashpul_Layers/womansgarden.layer
+{28CE5B48712C5438}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m.et
+      used by 4 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/compounds.layer, worlds/sashpul_Layers/walls.layer, worlds/sashpul_Layers/womansgarden.layer
+{37382E22EACF3E8A}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_4m_D.et
+      used by 3 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/walls.layer, worlds/sashpul_Layers/womansgarden.layer
+{FF9F22E572547ED5}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_8m.et
+      used by 4 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/compounds.layer, worlds/sashpul_Layers/walls.layer, worlds/sashpul_Layers/womansgarden.layer
+{B6CBE2DC697F06BE}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Gate.et
+      used by 1 file(s): worlds/sashpul_Layers/Town_east.layer
+{D1A7F179B35C2F96}Prefabs/Structures/Walls/Brick/BrickWall_02/BrickWall_Takistan_Pole.et
+      used by 4 file(s): worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/compounds.layer, worlds/sashpul_Layers/walls.layer, worlds/sashpul_Layers/womansgarden.layer
+{9495F43BDE130455}Prefabs/WEGenerators/Roads/Dirt/RG_Road_Dirt_Takistan.et
+      used by 1 file(s): worlds/sashpul_Layers/Town_east.layer
+{C462022ADF8F958A}Prefabs/WEGenerators/Roads/Dirt/RG_TrailGravel_Takistan.et
+      used by 1 file(s): worlds/sashpul_Layers/Town_east.layer
+{87535EE3C887AAAE}Prefabs/WEGenerators/Walls/Stone/WG_StoneWall_Takistan_02.et
+      used by 3 file(s): worlds/sashpul_Layers/compounds.layer, worlds/sashpul_Layers/village.layer, worlds/sashpul_Layers/walls.layer
+{A44F680E19CFF7A3}Terrains/Common/Surfaces/Crop_Field_Takistan.emat
+      used by 1 file(s): worlds/Terrain/Terrain.terr
+{A35AAF689C5ADF09}Terrains/Common/Surfaces/DebrisTakistan_Rock.emat
+      used by 1 file(s): worlds/Terrain/Terrain.terr
+{68E097855362A863}Terrains/Common/Surfaces/RockTakistan_Desert.emat
+      used by 1 file(s): worlds/Terrain/Terrain.terr
+{2972AC98CC2FD5D7}Terrains/Common/Water/Pond/PondSurface_Takistan_01.emat
+      used by 1 file(s): Terrains/Common/Water/River/bamiyan_canal.emat
+
+=== referenced, in Takistan AND elsewhere (still resolve without it): 2
+Prefabs/Vegetation/Cuttings/Salix_cinerea_medium_01.et  [also: base game]  used by worlds/sashpul_Layers/fields.layer, worlds/sashpul_Layers/womansgarden.layer
+Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et  [also: base game]  used by worlds/sashpul_Layers/Town_east.layer, worlds/sashpul_Layers/compounds.layer
+
+=== Takistan files that sit on the same path as another addon (overrides): {'base game': 5}
+   base game : Assets/Structures/Walls/Brick/Data/BrickWall_02_Bricks.emat
+   base game : Assets/Structures/Walls/Brick/Data/BrickWall_02_MLOD.emat
+   base game : Assets/Structures/Walls/Brick/Data/brick_wall_02.emat
+   base game : Prefabs/Vegetation/Cuttings/Salix_cinerea_medium_01.et
+   base game : Prefabs/WEGenerators/Walls/Brick/WG_BrickWall_02.et
+
+
+=== placed entities per asset (approximate, counted from the layers)
+
+terrain / water materials: 6 assets, 0 placed entities
+       0  Takistan_Grass.emat
+       0  Desert_Cluster_06.emat
+       0  Crop_Field_Takistan.emat
+       0  DebrisTakistan_Rock.emat
+       0  RockTakistan_Desert.emat
+       0  PondSurface_Takistan_01.emat
+
+roads: 3 assets, 3 placed entities
+       1  RoadTakistan_Main.et
+       1  RG_Road_Dirt_Takistan.et
+       1  RG_TrailGravel_Takistan.et
+
+desert rocks: 18 assets, 12768 placed entities
+    6562  Desert_Stone_01.et
+    3896  Desert_Stone_03.et
+    2043  Desert_Stone_02.et
+      96  Desert_Cluster_02.et
+      42  Desert_Cluster_01.et
+      32  Desert_Cluster_04.et
+      26  Desert_Cluster_03.et
+      21  DesertCliff_NS_01.et
+      18  DesertCliff_NS_02.et
+      17  DesertCliff_NS_03.et
+       4  DesertRock_02.et
+       3  DesertRock_01.et
+       2  Desert_Boulder_02.et
+       2  Desert_Cluster_05.et
+       1  DesertRock_03.et
+       1  DesertSurfaceStone_04.et
+       1  Desert_Boulder_01.et
+       1  Desert_Cluster_Large_01.et
+
+buildings and covers: 3 assets, 3 placed entities
+       1  CanvasCover_Medium_Takistan_Blue.et
+       1  CanvasCover_Medium_Takistan_Gray.et
+       1  Barracks_E_Takistan_02.et
+
+walls and wall generators: 8 assets, 108 placed entities
+      57  BrickWall_Takistan_8m.et
+      19  BrickWall_Takistan_4m.et
+      13  BrickWall_Takistan_2m.et
+       6  BrickWall_Takistan_Pole.et
+       5  BrickWall_Takistan_4m_D.et
+       4  WG_StoneWall_Takistan_02.et
+       3  BrickGate_Takistan.et
+       1  BrickWall_Takistan_Gate.et

@@ -1,8 +1,8 @@
 #ifdef WORKBENCH
 //! A random chain of pieces from one opening to another, for the hover tool's shift+click path.
 //!
-//! A weighted A* over the two-opening pieces of the kit (straights, curves, turns, doglegs, slopes; cave passes between cave
-//! openings; transitions when the two openings differ in size). Every run weighs the moves differently, so the same two openings
+//! A weighted A* over the two-opening dug pieces of the kit (straights, curves, turns, doglegs, slopes; transitions when the two
+//! openings differ in size). Cave openings get an adapter first (the hover tool does that). Every run weighs the moves differently, so the same two openings
 //! get a different path each time, and pieces with the same geometry (_A, standard, _C) are picked at random.
 //! Neither of the two openings' pieces ever moves. Pieces only turn in 5 degree steps and climb a slope piece at a time, so a chain
 //! rarely ends exactly: what it misses by is spread over all its joints (a few cm and a fraction of a degree each, which the
@@ -36,6 +36,7 @@ class SP_PathNode
 class SP_PathStep
 {
 	int m_iPiece;
+	int m_iSocket;			// the opening it is joined by (the other one leads on)
 	vector m_vPos;
 	float m_fYaw;
 }
@@ -75,7 +76,7 @@ class SP_TunnelPathFinder
 	protected WorldEditorAPI m_API;		// null: don't care how deep the path runs
 	protected ref RandomGenerator m_Rand = new RandomGenerator();
 	protected ref array<ref SP_PathMove> m_aMoves = {};
-	protected ref map<string, int> m_Grid = new map<string, int>();
+	protected ref map<int, int> m_Grid = new map<int, int>();
 	protected ref array<ref array<vector>> m_aCells = {};
 	protected ref array<ref SP_PathBox> m_aBoxes = {};
 	protected ref array<ref SP_PathNode> m_aNodes = {};
@@ -95,8 +96,8 @@ class SP_TunnelPathFinder
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! The pieces the path may use: dug ones, or the cave passes; transitions only when asked for
-	void BuildMoves(bool caves, bool transitions)
+	//! The pieces the path may use: the dug ones (the cave passes are too few and big to steer with); transitions only when asked for
+	void BuildMoves(bool transitions)
 	{
 		m_aMoves.Clear();
 		map<string, int> known = new map<string, int>();
@@ -116,7 +117,7 @@ class SP_TunnelPathFinder
 				if (def.m_iKind != SP_TunnelKind.STRAIGHT && def.m_iKind != SP_TunnelKind.TURN && def.m_iKind != SP_TunnelKind.BEND && def.m_iKind != SP_TunnelKind.HUMP && def.m_iKind != SP_TunnelKind.SLOPE && def.m_iKind != SP_TunnelKind.UPTURN)
 					continue;
 
-				if ((SP_TunnelCatalog.ThemeOf(def.m_sName) == SP_TunnelTheme.CAVE) != caves)
+				if (SP_TunnelCatalog.ThemeOf(def.m_sName) == SP_TunnelTheme.CAVE)
 					continue;
 			}
 
@@ -129,7 +130,8 @@ class SP_TunnelPathFinder
 
 				vector pos;
 				float yaw;
-				SP_TunnelGrower.Attach(vector.Zero, "0 0 -1", near, pos, yaw);
+				// as seen from an opening that leads along +Z (Attach takes the open end's outward direction, i.e. the way travelled)
+				SP_TunnelGrower.Attach(vector.Zero, "0 0 1", near, pos, yaw);
 				vector reach = pos + SP_TunnelGrower.Rot(far.m_vPos, yaw);
 				float turn = SP_TunnelConnect.Wrap(SP_TunnelGrower.YawOf(SP_TunnelGrower.Rot(far.m_vDir, yaw)));
 				int kx = Math.Round(reach[0] * 10);
@@ -182,9 +184,9 @@ class SP_TunnelPathFinder
 	}
 
 	//------------------------------------------------------------------------------------------------
-	protected string CellKey(int cx, int cz)
+	protected int CellKey(int cx, int cz)
 	{
-		return cx.ToString() + ":" + cz.ToString();
+		return (cx + 8192) * 32768 + cz + 8192;		// numbers: this is asked millions of times
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -192,7 +194,7 @@ class SP_TunnelPathFinder
 	{
 		int cx = Math.Floor(point[0] / CELL);
 		int cz = Math.Floor(point[2] / CELL);
-		string key = CellKey(cx, cz);
+		int key = CellKey(cx, cz);
 		int index;
 		if (!m_Grid.Find(key, index))
 		{
@@ -395,6 +397,44 @@ class SP_TunnelPathFinder
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! The safety net: every joint measured again from the poses the pieces are about to get and their own openings, not from the
+	//! search's sums. Anything off: nothing is built
+	protected bool Verify(float maxGap, float maxStep, float maxWedge)
+	{
+		vector openPos = m_vStart;
+		float openYaw = m_fStartYaw;
+		foreach (int i, SP_PathStep step : m_aSteps)
+		{
+			SP_TunnelPieceDef def = m_Catalog.m_aPieces[step.m_iPiece];
+			SP_TunnelSocketDef near = def.m_aSockets[step.m_iSocket];
+			SP_TunnelSocketDef far = def.m_aSockets[1 - step.m_iSocket];
+			vector nearPos = step.m_vPos + SP_TunnelGrower.Rot(near.m_vPos, step.m_fYaw);
+			float facing = SP_TunnelGrower.YawOf(SP_TunnelGrower.Rot(near.m_vDir, step.m_fYaw)) - openYaw - 180;
+			if (!Joins(openPos, nearPos, facing, maxGap, maxStep, maxWedge, i))
+				return false;
+
+			openPos = step.m_vPos + SP_TunnelGrower.Rot(far.m_vPos, step.m_fYaw);
+			openYaw = SP_TunnelGrower.YawOf(SP_TunnelGrower.Rot(far.m_vDir, step.m_fYaw));
+		}
+
+		// the last one against the target opening (which faces back, against the way travelled into it)
+		return Joins(openPos, m_vGoal, m_fGoalYaw - openYaw, maxGap, maxStep, maxWedge, m_aSteps.Count());
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool Joins(vector a, vector b, float angle, float maxGap, float maxStep, float maxWedge, int joint)
+	{
+		float gap = vector.DistanceXZ(a, b);
+		float high = Math.AbsFloat(a[1] - b[1]);
+		float off = Math.AbsFloat(SP_TunnelConnect.Wrap(angle));
+		if (gap <= maxGap + 0.05 && high <= maxStep + 0.03 && off <= maxWedge + 0.5)
+			return true;
+
+		Print(string.Format("SP_TunnelPathFinder: BUG: joint %1 would be %2 m apart, %3 m in height, %4 degrees off. Nothing built.", joint, gap.ToString(-1, 2), high.ToString(-1, 2), Math.Round(off)), LogLevel.ERROR);
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! start / startYaw: the opening to grow from and the direction out of it. goal / goalYaw: where to arrive and the direction
 	//! travelled on arriving (into the target opening). The three limits: what one joint may take. True: m_aSteps holds a path
 	bool Find(vector start, float startYaw, int startSize, vector goal, float goalYaw, int goalSize, float maxGap, float maxStep, float maxWedge, int maxNodes)
@@ -539,6 +579,9 @@ class SP_TunnelPathFinder
 			return false;
 
 		Collect(bestChain);
+		if (!Verify(maxGap, maxStep, maxWedge))
+			return false;
+
 		return true;
 	}
 
@@ -565,6 +608,7 @@ class SP_TunnelPathFinder
 			yaw += m_fGapYaw;
 			SP_PathStep placed = new SP_PathStep();
 			placed.m_iPiece = previous;
+			placed.m_iSocket = move.m_aSockets[pick];
 			SP_TunnelGrower.Attach(pos, SP_TunnelGrower.Rot("0 0 1", yaw), socket, placed.m_vPos, placed.m_fYaw);
 			m_aSteps.Insert(placed);
 			pos = pos + SP_TunnelGrower.Rot(move.m_vEnd, yaw);

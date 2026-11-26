@@ -253,7 +253,9 @@ All four entries.
 
 - Horizontal entries, all three sizes (`tunnelkit_build_clear.py`, `build_entry_horizontal`, `rock_bumps`): rounded rim (LIP_R), mouth leaning
   back (RAKE_TOP), a bumpy rock mound round the opening about 3 x the piece's height across (MOUND_R, MOUND_UNEVEN). It ends before the joint
-  so it can't block the next piece. Incline (`sculpt_incline`): collar rounded off downwards (RIM_DROP). Pivots and sockets unchanged, bounds
+  so it can't block the next piece. Incline (`incline_collar`): a rugged rock
+  collar about 15 m across round the hole (COLLAR_R, COLLAR_RISE), flat where the stairs come out (+z), shallow behind the hole so it
+  clears the tunnel underneath. (`Docs/blender/CL_entry_probes.py` boxes unchanged.) Pivots and sockets unchanged, bounds
   much wider (walk x +-7.5, z -6 .. 8): rebuild the TT catalog. Collider = visual mesh (25 - 36k triangles).
 - Dark boxes: `Docs/blender/CL_entry_probes.py` writes three per entry (-5, -10, -16 EV), inside the shell and behind the open part of the
   mouth. `tunnelkit_finish.py` rewrites prefabs without probes: re-run this script after it.

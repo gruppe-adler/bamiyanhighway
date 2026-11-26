@@ -76,8 +76,9 @@ shift+click. A plain click still places one piece as before.
 
 - Nothing that already stands is moved. What the chain misses the second opening by is spread over all its joints: at most 12 cm sideways /
   along, 6 cm step, 1.5 degrees per joint (setting "Path": the gap; the sleeves overlap 25 cm). Longer links have more joints to give.
-- Search: `SP_TunnelPathFinder.c` (weighted A*, every run weighs the moves differently, `_A` / `_C` variants picked at random). Dug pieces;
-  cave passes when both ends are cave pieces; transitions when the sizes differ. Keeps clear of what is placed; mildly prefers to stay under
+- Search: `SP_TunnelPathFinder.c` (weighted A*, every run weighs the moves differently, `_A` / `_C` variants picked at random). Always dug pieces (transitions
+  when the sizes differ). A cave opening (1.45 x 2.10 m; dug is 1.60 x 2.20) gets a `TT_Adapter_Cave` first, as part of the path (`IsCaveOpening`:
+  every cave piece, the cave side of the breakthroughs). Keeps clear of what is placed; mildly prefers to stay under
   ground when both ends are.
 - Python port on the 25 Nov catalog and layer: the user's pair (42 m, 0.3 m height) 4 of 4 each way, 2-7 cm per joint; random walk-size
   pairs 8-35 m 16 of 20, 25-50 m 12 of 12.

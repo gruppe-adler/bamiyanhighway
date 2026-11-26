@@ -380,13 +380,16 @@ LUMP = 0.16           # lumps on the outside (only ever outwards)
 GROUND_REFINE = 0.28
 SIDE_OUTER = 1        # face layer 'side': an entry's outside, always TT_Ground
 SIDE_INNER = 2        # and a mouth's inside, always TT_Earth (split_inside would zigzag along the open rim)
+SIDE_COLLAR = 3       # the incline's rock collar, always TT_Ground
 
 
 def refine_ground(bm, near, size=None):
     """The outside's edges halved until none inside 'near' is longer than size (GROUND_REFINE), so it can take a shape"""
     size = size or GROUND_REFINE
+    side = bm.faces.layers.int.get('side')
     for _ in range(8):
         long = [e for e in bm.edges if e.calc_length() > size and any(f.material_index == MAT_GROUND for f in e.link_faces)
+                and not (side and any(f[side] == SIDE_COLLAR for f in e.link_faces))      # the collar is built fine enough
                 and near((e.verts[0].co + e.verts[1].co) * 0.5)]
         if not long:
             break
@@ -571,13 +574,72 @@ SHAFT_H = 1.55
 SHAFT_W = 1.25
 
 
-RIM_DROP = 0.5        # the incline's collar: its outer edge this far under the ground, a quarter round
-RIM_W = 0.6
+# The incline's rock collar: the horizontal entries' rugged mass, laid flat round the hole. About 3 x the piece's depth across.
+# In the piece's own space: ground at z 0, the open hole x +-1, y -1.85 .. 1.65, the stairs come out towards +y
+COLLAR_R = 7.2        # from the hole's middle to the collar's rim (wanders by MOUND_UNEVEN)
+COLLAR_RISE = 1.35    # how high the rock stands round the hole, before the lumps (it wanders 0.5 .. 1.5 times this)
+COLLAR_IN = (1.3, -2.5, 1.75)     # the inner edge: half width, back end, front end (the shaft's void stays inside it)
+
+
+def collar_noise(p):
+    """The same warped swells, rounded blocks and grit as the mounds'"""
+    q = p + Vector((noise.noise(p * 0.35), noise.noise(p * 0.35 + Vector((19.1, 3.3, 7.7))), noise.noise(p * 0.35 + Vector((4.2, 27.5, 13.9))))) * 0.9
+    cell = noise.voronoi(q * 0.8)[0]
+    block = min(cell[1] - cell[0], 0.5) / 0.5 - 0.6
+    return 0.75 * noise.noise(q * 0.33) + 0.38 * block + 0.22 * noise.noise(q * 1.4) + 0.08 * noise.noise(p * 3.6) + 0.12
+
+
+def incline_collar(bm, seed, around=112, rings=24):
+    """A closed ring of rock: a height field on top, a flat-ish underside. Flat where the stairs come out; shallow behind the
+    hole, where the next piece's tunnel runs underneath (its roof is at about z -0.55)"""
+    side = bm.faces.layers.int.get('side') or bm.faces.layers.int.new('side')
+    half, back_y, front_y = COLLAR_IN
+    cy = (back_y + front_y) / 2
+    hh = (front_y - back_y) / 2
+    off = Vector((seed * 37.1, seed * 11.3, seed * 71.9))
+    top, bottom = [], []
+    for i in range(around):
+        a = 2 * math.pi * i / around
+        ca, sa = math.cos(a), math.sin(a)
+        r_in = (abs(ca / half) ** 6 + abs(sa / hh) ** 6) ** (-1 / 6)          # a rounded rectangle round the hole
+        r_out = COLLAR_R * (1.04 + MOUND_UNEVEN * noise.noise(Vector((ca * 1.6 + seed * 31, sa * 1.6 + seed * 17, 0.5))))
+        rise = COLLAR_RISE * (1.0 + 0.9 * noise.noise(Vector((ca * 2.1 + seed * 5, sa * 2.1 + seed * 9, 3.3))))
+        rise = max(0.5 * COLLAR_RISE, min(1.5 * COLLAR_RISE, rise))
+        column_top, column_bottom = [], []
+        for j in range(rings + 1):
+            s = (j / rings) ** 1.15
+            r = r_in + (r_out - r_in) * s
+            x, y = r * ca, cy + r * sa
+            way_out = smooth(clamp01((y - 0.4) / 1.4)) * (1 - smooth(clamp01((abs(x) - 1.5) / 1.8)))
+            behind = smooth(clamp01((-0.5 - y) / 1.5))
+            hump = math.sin(math.pi * clamp01(s / 0.8)) ** 0.8
+            sink = -1.1 + 0.9 * behind                                      # where the rim ends up: buried
+            z = 0.05 + rise * hump * (1 - way_out) + sink * smooth(clamp01((s - 0.62) / 0.38))
+            w = smooth(clamp01(s / 0.16)) * (1 - way_out) * (1 - 0.7 * smooth(clamp01((s - 0.85) / 0.15)))
+            z += collar_noise(Vector((x, y, 0)) + off) * w
+            z += 0.07 * noise.noise(Vector((x * 1.7, y * 1.7, 4.2)) + off) * way_out * smooth(clamp01(s / 0.2))      # not a floor
+            z = max(z, -1.4 + 1.2 * behind)                                 # behind: never deep (the tunnel runs underneath)
+            low = -1.4 + 0.95 * smooth(clamp01((-0.3 - y) / 1.4))           # the underside: shallow behind
+            column_top.append(bm.verts.new((x, y, z)))
+            column_bottom.append(bm.verts.new((x, y, min(low, z - 0.25))))
+        top.append(column_top)
+        bottom.append(column_bottom)
+    faces = []
+    for i in range(around):
+        n = (i + 1) % around
+        for j in range(rings):
+            faces.append(bm.faces.new((top[i][j], top[i][j + 1], top[n][j + 1], top[n][j])))
+            faces.append(bm.faces.new((bottom[i][j], bottom[n][j], bottom[n][j + 1], bottom[i][j + 1])))
+        faces.append(bm.faces.new((top[i][0], top[n][0], bottom[n][0], bottom[i][0])))
+        faces.append(bm.faces.new((top[i][rings], bottom[i][rings], bottom[n][rings], top[n][rings])))
+    for f in faces:
+        f.material_index = MAT_GROUND
+        f[side] = SIDE_COLLAR
 
 
 def sculpt_incline(bm):
-    """The shaft's collar rounded off downwards and outwards, sloped lumpy sides. In the piece's own space: ground at z 0,
-    the open hole about y -1.8 .. 1.6, the exit end (+y, the stairs' top) stays level"""
+    """The shaft under the rock collar: sloped lumpy sides, for where the terrain falls away. In the piece's own space: ground
+    at z 0"""
     refine_ground(bm, lambda c: c.z > -2.2)
     # the sides slope: wider below the collar, back to the plain shell further down
     bm.normal_update()
@@ -592,18 +654,6 @@ def sculpt_incline(bm):
     for v, dx in moves:
         v.co.x += dx
     lumps(bm, lambda c: (1 - smooth(clamp01((-c.z - 1.8) / 0.8))) * (0.3 + 0.7 * smooth(clamp01(-c.z / 0.4))))
-    # the collar: everything beyond the hole's edge sinks, most at its rim
-    for v in bm.verts:
-        c = v.co
-        high = smooth(clamp01((c.z + 1.2) / 1.2))
-        if high <= 0:
-            continue
-        dx = max(0.0, abs(c.x) - 1.05)
-        dy = max(0.0, -1.85 - c.y)
-        d = clamp01(math.hypot(dx, dy) / RIM_W)
-        if d <= 0:
-            continue
-        c.z -= RIM_DROP * (1 - math.sqrt(1 - d * d)) * high
     bm.normal_update()
 
 
@@ -660,6 +710,7 @@ def build_entry_incline():
     hole = Vector((0, 1.0 + rise - 2.1 * SHAFT_H / 2, rise))          # as the old piece: the pivot / sockets stay where they were
     bmesh.ops.translate(p.bm, verts=p.bm.verts[:], vec=-hole)
     p.sockets = [(pos - hole, out, cl) for pos, out, cl in p.sockets]
+    incline_collar(p.bm, seed_of(p.name))
     p.sculpt = sculpt_incline
     p.smooth_ground = True
     return p
@@ -883,6 +934,8 @@ def finish(piece, at=Vector((0, 0, 0)), collection=None):
                 f.material_index = MAT_GROUND
             elif f[side] == SIDE_INNER:
                 f.material_index = MAT_EARTH
+            elif f[side] == SIDE_COLLAR:
+                f.material_index = MAT_GROUND
     refine(bm)
     if piece.noise > 0:
         roughen(bm, [(s[0], s[1]) for s in piece.sockets] + piece.fades, piece.cls, piece.noise)

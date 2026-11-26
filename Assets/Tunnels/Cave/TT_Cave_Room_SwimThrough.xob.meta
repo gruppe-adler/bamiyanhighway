@@ -24,8 +24,8 @@ MetaFileClass {
    GeometryParams {
     GeometryParam UTM_TT_Cave_Room_SwimThrough {
      SurfaceProperties {
-      "{B7A40E9CB8CFAD00}TT_Earth.gamemat"
-      "{848CE108C38EAF45}TT_CalciteGlow.gamemat"
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
+      "{C3691F2D8FE0234F}Common/Materials/Game/dirt.gamemat"
      }
      Mass 0
      Margin 0

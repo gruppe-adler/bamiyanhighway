@@ -52,7 +52,7 @@ MetaFileClass {
     GeometryParam UTM_castle_raw_LOD0 {
      LayerPreset "FireGeo"
      SurfaceProperties {
-      "{5E4EA52B03682185}FireGeo_Material.gamemat"
+      "{D745FD8FC67DB26A}Common/Materials/Game/stone.gamemat"
      }
      Mass 0
      Margin 0

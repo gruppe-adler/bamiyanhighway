@@ -45595,7 +45595,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -18.529 2.437 171.983
-       angles -0 108.548 -2.407
+       angles 0 108.548 -2.407
        scale 0.777
       }
       {
@@ -45931,7 +45931,6 @@ $grp SplineShapeEntity {
       {
        coords 36.853 1.893 130.374
        angles -2.581 -98.265 -0.813
-       scale 1
       }
       {
        coords 17.875 1.618 127.368
@@ -48540,7 +48539,6 @@ $grp SplineShapeEntity {
       {
        coords 185.378 -1.405 456.148
        angles -1.331 152.945 -1.015
-       scale 1
       }
       {
        coords 187.18 -1.31 442.048
@@ -49662,7 +49660,6 @@ $grp SplineShapeEntity {
       {
        coords 128.752 -1.178 388.958
        angles 1.071 -48.957 1.914
-       scale 1
       }
       {
        coords 101.165 -0.709 369.171
@@ -51055,7 +51052,6 @@ $grp SplineShapeEntity {
       {
        coords 204.135 -1.539 395.537
        angles -1.061 31.916 1.964
-       scale 1
       }
       {
        coords 193.18 -1.896 399.404
@@ -52826,7 +52822,6 @@ $grp SplineShapeEntity {
       {
        coords 181.535 -1.265 456.366
        angles 0.847 83.246 2.53
-       scale 1
       }
       {
        coords 179.382 -0.858 437.539
@@ -65306,7 +65301,6 @@ $grp SplineShapeEntity {
       {
        coords 77.104 0.993 235.99
        angles -1.073 -112.075 -2.264
-       scale 1
       }
       {
        coords 63.276 0.844 239.657
@@ -65695,7 +65689,7 @@ $grp SplineShapeEntity {
       }
       {
        coords 133.964 -0.574 286.297
-       angles 1.407 -97.814 -0
+       angles 1.407 -97.814 0
        scale 0.934
       }
       {
@@ -66156,7 +66150,6 @@ $grp SplineShapeEntity {
       {
        coords 139.903 -0.552 343.651
        angles -2.39 -108.746 1.359
-       scale 1
       }
       {
        coords 188.977 -1.036 353.779
@@ -66583,7 +66576,6 @@ $grp SplineShapeEntity {
       {
        coords 181.52 -1.004 436.911
        angles 0 44.002 0
-       scale 1
       }
       {
        coords 189.887 -1.524 447.671
@@ -69007,7 +68999,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -42.51 1.138 213.374
-       angles -1.824 161.097 -0
+       angles -1.824 161.097 0
        scale 1.095
       }
       {
@@ -70307,7 +70299,6 @@ $grp SplineShapeEntity {
       {
        coords -5.328 1.59 114.339
        angles 3.48 39.739 -3.719
-       scale 1
       }
       {
        coords 32.663 1.348 141.259
@@ -71952,7 +71943,6 @@ $grp SplineShapeEntity {
       {
        coords 152.808 -0.941 415.585
        angles 2.802 -19.688 -2.071
-       scale 1
       }
       {
        coords 147.908 0.287 434.375
@@ -74006,14 +73996,13 @@ $grp SplineShapeEntity {
        scale 0.949
       }
       {
-       coords 64.651 -0 354.464
+       coords 64.651 0 354.464
        angles 1.653 -37.651 3.846
        scale 0.675
       }
       {
        coords 81.523 0.514 317.059
        angles -3.842 -159.504 2.535
-       scale 1
       }
       {
        coords 50.795 -0.527 320.392
@@ -75220,7 +75209,6 @@ $grp SplineShapeEntity {
       {
        coords 52.822 -0.493 290.841
        angles 0 55.505 0
-       scale 1
       }
       {
        coords 49.79 -0.2 260.791
@@ -75615,7 +75603,6 @@ $grp SplineShapeEntity {
       {
        coords 173.455 -1.64 295.509
        angles 0 -105.813 0
-       scale 1
       }
       {
        coords 144.718 -0.593 270.644
@@ -75989,7 +75976,6 @@ $grp SplineShapeEntity {
       {
        coords -21.752 0.009 48.33
        angles 2.998 -159.702 -4.413
-       scale 1
       }
       {
        coords -19.957 -2.046 37.32
@@ -76905,7 +76891,7 @@ $grp SplineShapeEntity {
       }
       {
        coords -13.843 1.398 130.19
-       angles 29.382 137.916 -0
+       angles 29.382 137.916 0
        scale 0.848
       }
       {
@@ -121458,14 +121444,1633 @@ $grp SplineShapeEntity {
    }
   }
  }
+ {
+  coords 1397.993 -39.875 985.275
+  Points {
+   ShapePoint "{6AF5096D29706E34}" {
+    Position 0 0 0
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AF5096D297FBC11}" {
+    Position -26.75 -0.075 -37.713
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AF5096D750E6537}" {
+    Position -8.041 -0.138 -58.832
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AF5096D2A098D93}" {
+    Position -39.472 0 -44.063
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AF5096D7B6D345D}" {
+    Position -30.327 0.005 -27.273
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AF5096D2AB1D7D9}" {
+    Position -17.714 0 -8.313
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+   ShapePoint "{6AF5096D252AA1DB}" {
+    Position -2.694 0 2.692
+    Data {
+     ForestGeneratorPointData "{000000002C57B0BA}" {
+     }
+    }
+   }
+  }
+  LineColor 0 0 0 0
+  {
+   ForestGeneratorEntity : "{1D22FF068E5369BD}PrefabLibrary/DefaultLibrary/Generators/Forests/FG_Forest_Birch.et" {
+    Flags 0x100003 0
+    {
+     $grp Tree : "{425761285F36BF16}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_1s.et" {
+      {
+       coords -16.916 -0.33 -22.624
+       angles 1.505 113.679 2.117
+       scale 0.741
+      }
+      {
+       coords -22.701 -0.234 -22.827
+       angles -2.303 53.681 -1.697
+       scale 1.196
+      }
+      {
+       coords -28.344 0.269 -41.199
+       angles 2.376 -118.085 0.487
+       scale 0.799
+      }
+      {
+       coords -25.234 0.19 -41.13
+       angles -2.875 -22.654 -0.13
+       scale 0.774
+      }
+      {
+       coords -16.364 0.124 -54.857
+       angles -1.057 -143.101 -0.803
+       scale 0.792
+      }
+      {
+       coords -10.779 0.129 -57.098
+       angles 0.164 -155.934 -1.355
+       scale 1.197
+      }
+     }
+     $grp Tree : "{531BB93086610CA1}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_0.et" {
+      {
+       coords -7.554 -0.092 -3.905
+       angles 2.257 44.276 1.071
+       scale 0.789
+      }
+      {
+       coords -8.088 0.017 -1.862
+       angles -1.116 -82.949 -1.748
+       scale 0.951
+      }
+      {
+       coords -33.123 0.364 -38.408
+       angles 0.059 152.517 1.613
+       scale 1.089
+      }
+     }
+     $grp Tree : "{70692C116A6B4177}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_1sw.et" {
+      {
+       coords -19.574 -0.327 -16.523
+       angles 0 -83.026 0
+       scale 1.086
+      }
+      {
+       coords -24.44 0.003 -30.649
+       angles 0 -141.552 0
+       scale 0.761
+      }
+      {
+       coords -22.551 0.17 -48.764
+       angles 0 118.997 0
+       scale 0.886
+      }
+      {
+       coords -27.481 0.264 -43.644
+       angles 0 -84.092 0
+       scale 0.944
+      }
+     }
+     $grp Tree : "{A35E15EBC6033C07}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_1.et" {
+      {
+       coords -6.943 -0.294 -9.157
+       angles 1.644 -74.709 0.366
+       scale 1.124
+      }
+      {
+       coords -5.079 0.134 0.835
+       angles 1.405 64.096 1.028
+       scale 1.091
+      }
+      {
+       coords -28.321 0.116 -31.798
+       angles 1.199 87.783 -0.864
+       scale 0.85
+      }
+      {
+       coords -18.198 0.131 -52.998
+       angles 0.337 -115.613 -0.682
+       scale 1.117
+      }
+      {
+       coords -26.028 0.235 -45.629
+       angles -0.811 174.15 1.583
+       scale 0.822
+      }
+      {
+       coords -31.326 0.232 -33.771
+       angles -1.112 -134.521 -0.735
+       scale 0.852
+      }
+      {
+       coords -36.779 0.475 -40.466
+       angles -1.929 -91.662 0.379
+       scale 0.906
+      }
+     }
+     $grp Tree : "{AC43B039B67361F6}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_3s.et" {
+      {
+       coords -17.751 -0.352 -18.675
+       angles -0.997 -28.983 3.689
+       scale 0.833
+      }
+      {
+       coords -9.112 -0.177 -6.095
+       angles -2.228 -59.152 2.253
+       scale 0.978
+      }
+      {
+       coords -34.121 0.451 -45.064
+       angles 3.13 179.181 3.231
+       scale 1.039
+      }
+      {
+       coords -21.353 0.134 -45.036
+       angles -3.513 -172.831 3.39
+       scale 0.86
+      }
+     }
+     $grp Tree : "{AD7EFA7B1214DD21}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_0l.et" {
+      {
+       coords -2.854 -0.065 -2.583
+       angles -0.495 -148.661 1.592
+       scale 1.143
+      }
+      {
+       coords -17.757 -0.354 -17.033
+       angles 0.9 64.613 1.432
+       scale 1.1
+      }
+      {
+       coords -12.63 -0.066 -5.161
+       angles 1.495 114.58 0.558
+       scale 0.918
+      }
+      {
+       coords -15.729 0.091 -51.614
+       angles -0.437 -78.368 -0.41
+       scale 0.948
+      }
+      {
+       coords -35.789 0.484 -43.626
+       angles -1.526 -152.967 -1.348
+       scale 1.17
+      }
+     }
+     $grp Tree : "{B48B7DD4E1C5FE40}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_0.et" {
+      {
+       coords -11.417 -0.392 -15.269
+       angles 0 67.249 0
+       scale 1.023
+      }
+      {
+       coords -1.562 0.073 0.984
+       angles 0 -16.073 0
+       scale 0.976
+      }
+      {
+       coords -7.646 -0.031 -2.718
+       angles 0 -80.499 0
+       scale 0.897
+      }
+      {
+       coords -31.613 0.292 -36.046
+       angles 0 -34.399 0
+       scale 0.827
+      }
+     }
+     $grp Tree : "{DA7492F3E6B63251}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_1l.et" {
+      {
+       coords -14.039 -0.38 -19.525
+       angles -0.895 -85.905 -1.115
+       scale 1.151
+      }
+      {
+       coords -18.241 -0.311 -13.934
+       angles -1.461 117.425 0.705
+       scale 0.995
+      }
+      {
+       coords -20.382 -0.282 -22.031
+       angles 1.527 31.773 0.117
+       scale 1.029
+      }
+      {
+       coords -2.62 0.01 -0.928
+       angles -0.815 -134.554 0.545
+       scale 0.852
+      }
+      {
+       coords -14.024 0.082 -52.859
+       angles -1.373 174.985 -1.835
+       scale 1.057
+      }
+      {
+       coords -29.273 0.049 -26.021
+       angles 0.223 7.13 -1.139
+       scale 1.002
+      }
+     }
+     $grp Tree : "{DB49D8B142D18E86}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_2s.et" {
+      {
+       coords -22.054 -0.253 -17.201
+       angles -0.115 -72.16 -1.008
+       scale 0.878
+      }
+      {
+       coords -16.739 -0.304 -12.115
+       angles 2.042 139.838 0.93
+       scale 0.862
+      }
+      {
+       coords -12.468 -0.369 -13.718
+       angles -2.875 -58.416 1.893
+       scale 1.046
+      }
+      {
+       coords -27.162 0.279 -47.937
+       angles -2.761 8.526 0.203
+       scale 0.982
+      }
+      {
+       coords -25.403 0.062 -32.334
+       angles 2.284 -169.162 2.108
+       scale 0.808
+      }
+     }
+     $grp Tree : "{F1DB9A8115310093}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_1f.et" {
+      {
+       coords -11.644 -0.26 -8.92
+       angles -1.153 -34.96 3.974
+       scale 0.763
+      }
+      {
+       coords -16.804 -0.343 -14.13
+       angles 1.985 13.426 -2.246
+       scale 0.803
+      }
+      {
+       coords -11.753 -0.06 -4.633
+       angles 1.761 -166.14 -3.467
+       scale 0.728
+      }
+      {
+       coords -21.848 -0.13 -27.341
+       angles -2.131 -40.607 2.469
+       scale 1.194
+      }
+      {
+       coords -18.891 0.108 -48.803
+       angles 2.172 -84.312 1.434
+       scale 0.923
+      }
+      {
+       coords -23.343 0.212 -51.021
+       angles -3.719 64.03 0.922
+       scale 0.701
+      }
+      {
+       coords -20.309 0.16 -51.513
+       angles -0.819 135.982 -3.518
+       scale 0.988
+      }
+      {
+       coords -39.103 0.576 -44.158
+       angles 2.969 60.657 -1.945
+       scale 0.803
+      }
+     }
+    }
+   }
+   ForestGeneratorEntity : "{6A1223EBFEA6BC84}PrefabLibrary/DefaultLibrary/Generators/Forests/FG_Forest_Birch2.et" {
+    Flags 0x100003 0
+    {
+     Tree : "{425761285F36BF16}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_1s.et" {
+      coords -4.504 -0.149 -5.027
+      angles 0.962 5.702 1.945
+      scale 0.971
+     }
+     $grp Tree : "{531BB93086610CA1}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_0.et" {
+      {
+       coords -18.126 -0.305 -22.753
+       angles -1.143 57.197 -1.676
+       scale 1.072
+      }
+      {
+       coords -22.106 -0.216 -23.94
+       angles 1.497 40.925 0.765
+       scale 1.181
+      }
+      {
+       coords -21.082 -0.19 -25.931
+       angles -1.27 112.624 2.621
+       scale 1.129
+      }
+      {
+       coords -19.76 -0.278 -23.067
+       angles -2.237 -148.353 -0.067
+       scale 0.783
+      }
+      {
+       coords -26.7 0.086 -31.824
+       angles -2.279 -139.575 2.004
+       scale 1.187
+      }
+      {
+       coords -25.529 -0.147 -22.088
+       angles -2.84 -4.076 -0.152
+       scale 0.951
+      }
+     }
+     Tree : "{70692C116A6B4177}Prefabs/Vegetation/Tree/t_betula_pendula/t_betula_pendula_1sw.et" {
+      coords -21.104 -0.21 -14.57
+      angles 0 36.838 0
+      scale 1.026
+     }
+     $grp Tree : "{A35E15EBC6033C07}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_1.et" {
+      {
+       coords -3.395 0.138 1.518
+       angles -0.195 122.106 1.474
+       scale 1.079
+      }
+      {
+       coords -36.112 0.461 -40.606
+       angles -1.604 125.347 0.183
+       scale 0.81
+      }
+      {
+       coords -18.379 -0.205 -11.61
+       angles 0.328 -27.587 1.511
+       scale 0.848
+      }
+      {
+       coords -16.004 -0.132 -8.257
+       angles -0.6 94.925 0.192
+       scale 0.815
+      }
+     }
+     $grp Tree : "{AC43B039B67361F6}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_3s.et" {
+      {
+       coords -12.792 -0.326 -11.491
+       angles 3.465 -99.254 0.248
+       scale 0.723
+      }
+      {
+       coords -25.518 -0.042 -28.625
+       angles 3.404 167.448 1.413
+       scale 0.728
+      }
+      {
+       coords -6.801 -0.092 -4.003
+       angles 0.335 99.539 0.842
+       scale 0.717
+      }
+     }
+     $grp Tree : "{AD7EFA7B1214DD21}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_0l.et" {
+      {
+       coords -18.185 -0.278 -24.354
+       angles 0.733 -108.636 0.667
+       scale 0.879
+      }
+      {
+       coords -33.761 0.391 -39.287
+       angles 0.81 -117.052 -0.4
+       scale 1.155
+      }
+      {
+       coords -29.742 0.237 -35.48
+       angles -0.179 -147.771 1.45
+       scale 1.025
+      }
+      {
+       coords -32.108 0.231 -32.853
+       angles 0.461 -177.808 0.182
+       scale 0.918
+      }
+     }
+     $grp Tree : "{B48B7DD4E1C5FE40}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_0.et" {
+      {
+       coords -19.381 -0.333 -17.87
+       angles 0 -173.589 0
+       scale 1.072
+      }
+      {
+       coords -23.855 0.007 -31.485
+       angles 0 131.269 0
+       scale 1.186
+      }
+      {
+       coords -14.933 -0.368 -20.007
+       angles 0 21.413 0
+       scale 1.068
+      }
+      {
+       coords -0.718 -0.007 -0.517
+       angles 0 -103.769 0
+       scale 1.101
+      }
+      {
+       coords -16.078 -0.209 -9.563
+       angles 0 19.381 0
+       scale 0.976
+      }
+      {
+       coords -24.89 -0.181 -22.869
+       angles 0 99.968 0
+       scale 0.897
+      }
+      {
+       coords -7.675 -0.149 -5.153
+       angles 0 37.629 0
+       scale 0.823
+      }
+     }
+     $grp Tree : "{DA7492F3E6B63251}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_1l.et" {
+      {
+       coords -29.599 0.189 -33.29
+       angles -0.065 154.363 -1.389
+       scale 0.827
+      }
+      {
+       coords -11.886 -0.365 -13.261
+       angles -1.878 -64.206 -1.684
+       scale 1.153
+      }
+      {
+       coords -6.345 0.008 -1.903
+       angles -0.632 -142.86 -0.822
+       scale 0.873
+      }
+      {
+       coords -22.412 -0.259 -20.858
+       angles -1.998 117.711 -0.348
+       scale 0.852
+      }
+     }
+     $grp Tree : "{DB49D8B142D18E86}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_betula_pendula_2s.et" {
+      {
+       coords -33.46 0.308 -34.948
+       angles -2.762 84.29 0.227
+       scale 0.694
+      }
+      {
+       coords -16.937 -0.357 -19.502
+       angles -0.707 -28.192 -0.373
+       scale 0.637
+      }
+      {
+       coords -9.753 -0.358 -11.752
+       angles -1.313 -21.973 -0.655
+       scale 0.766
+      }
+     }
+    }
+   }
+   ForestGeneratorEntity : "{E8A63167E43D9C92}PrefabLibrary/DefaultLibrary/Generators/Forests/FG_Forest_Clearing.et" {
+    Flags 0x100003 0
+    {
+     Tree : "{5CA1D12C1B27CAE2}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_picea_abies_stump_02.et" {
+      coords -33.71 0.313 -35.321
+      angles 0.201 -11.173 0.868
+      scale 0.911
+     }
+     $grp Tree : "{779DF03FAB7A131E}PrefabLibrary/DefaultLibrary/Vegetation/Trees/t_picea_abies_stump_01.et" {
+      {
+       coords -27.24 0.141 -33.781
+       angles 0 -89.431 0
+       scale 1.196
+      }
+      {
+       coords -18.549 -0.286 -23.547
+       angles 0 -26.28 0
+       scale 1.126
+      }
+      {
+       coords -29.804 0.243 -36.151
+       angles 0 76.182 0
+       scale 1.168
+      }
+      {
+       coords -9.633 -0.064 -3.53
+       angles 0 -9.295 0
+      }
+     }
+     $grp Tree : "{DA7492F3E6B63251}PrefabLibrary/DefaultLibrary/Vegetation/Bushes/b_corylus_avellana_1l.et" {
+      {
+       coords -35.831 0.434 -38.632
+       angles -1.449 43.661 1.316
+       scale 0.813
+      }
+      {
+       coords -14.104 -0.253 -9.179
+       angles 1.575 -53.263 1.825
+       scale 1.119
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity : "{04A38F49C4636BA1}Prefabs/Tunnels/TT/TT_Room_Drip_C.et" {
+ coords 2040.224 -41.896 1183.409
+ angles 0 115.23 0
+}
+$grp GenericEntity : "{07590CB9868F5A7A}Prefabs/Tunnels/TT/TT_Straight_2.et" {
+ {
+  coords 2005.656 -41.671 1159.095
+  angles 0 -138.52 0
+ }
+ {
+  coords 1998.219 -41.615 1152.948
+  angles 0 -64.457 0
+ }
+ {
+  coords 2000.705 -47.896 1185.327
+  angles 0 -19.772 0
+ }
+ {
+  coords 1998.503 -47.402 1243.713
+  angles 0 -104.77 0
+ }
+ {
+  coords 1954.719 -47.623 1285.462
+  angles 0 145.228 0
+ }
+ {
+  coords 2071.505 -36.355 1297.9
+  angles 0 95.23 0
+ }
+}
+$grp GenericEntity : "{0780E3AC1D4044F2}Prefabs/Tunnels/TT/TT_Straight_Narrow.et" {
+ {
+  coords 2040.5 -47.296 1259.045
+  angles 0 25.23 0
+ }
+ {
+  coords 1960.308 -47.586 1268.737
+  angles 0 170.227 0
+ }
+ {
+  coords 1998.738 -41.896 1200.913
+  angles 0 -64.77 0
+ }
+ {
+  coords 1995.119 -41.896 1202.618
+  angles 0 -64.77 0
+ }
+ {
+  coords 1952.445 -47.63 1288.76
+  angles 0 145.228 0
+ }
+ {
+  coords 2031.367 -21.768 1439.11
+  angles 0 180 0
+ }
+ {
+  coords 2040.858 -41.843 1169.329
+  angles 0 -79.869 0
+ }
+ {
+  coords 2055.451 -36.363 1299.253
+  angles 0 95.232 0
+ }
+}
+$grp GenericEntity : "{1094B174D328543D}Prefabs/Tunnels/TT/TT_Curve_10_A.et" {
+ {
+  coords 2006.966 -47.261 1246.4
+  angles 0 60.231 0
+ }
+ {
+  coords 2043.587 -47.296 1266.412
+  angles 0 -164.767 0
+ }
+ {
+  coords 1991.501 -41.896 1204.323
+  angles 0 -64.77 0
+ }
+ {
+  coords 1988.049 -41.896 1206.334
+  angles 0 -54.773 0
+ }
+ {
+  coords 1943.408 -47.648 1296.459
+  angles 0 115.234 0
+ }
+ {
+  coords 1955.853 -47.617 1283.807
+  angles 0 145.229 0
+ }
+}
+$grp GenericEntity : "{15B34B44A4B7F84D}Prefabs/Tunnels/TT/TT_Dogleg_L_A.et" {
+ {
+  coords 2000.029 -47.896 1187.209
+  angles 0 -19.772 0
+ }
+ {
+  coords 2069.77 -40.573 1190.866
+  angles 0 117.049 0
+ }
+ {
+  coords 2077.54 -36.351 1297.406
+  angles 0 95.23 0
+ }
+}
+$grp GenericEntity : "{1BEB90A14EFF96E2}Prefabs/Tunnels/TT/TT_Slope_C.et" {
+ {
+  coords 2024.375 -43.096 1178.696
+  angles 0 25.23 0
+ }
+ {
+  coords 2022.67 -44.296 1175.078
+  angles 0 25.23 0
+ }
+ {
+  coords 2020.965 -45.496 1171.459
+  angles 0 25.23 0
+ }
+ {
+  coords 2019.26 -46.696 1167.841
+  angles 0 25.23 0
+ }
+ {
+  coords 2017.555 -47.896 1164.223
+  angles 0 25.23 0
+ }
+ {
+  coords 1937.573 -47.667 1301.56
+  angles 0 15.235 0
+ }
+ {
+  coords 2052.649 -44.893 1292.837
+  angles 0 15.206 0
+ }
+ {
+  coords 2055.852 -41.29 1304.238
+  angles 0 15.179 0
+ }
+ {
+  coords 2054.827 -40.087 1311.66
+  angles 0 -74.839 0
+ }
+ {
+  coords 2047.143 -37.685 1313.632
+  angles 0 -74.857 0
+ }
+ {
+  coords 2043.116 -35.282 1320.567
+  angles 0 15.116 0
+ }
+ {
+  coords 2046.404 -34.08 1325.578
+  angles 0 105.098 0
+ }
+ {
+  coords 2054.434 -30.476 1317.187
+  angles 0 -164.937 0
+ }
+ {
+  coords 2050.208 -28.072 1308.012
+  angles 0 -74.964 0
+ }
+ {
+  coords 2107.036 -40.372 1213.846
+  angles 0 24.462 0
+ }
+ {
+  coords 2066.195 -41.803 1192.624
+  angles 0 116.594 0
+ }
+ {
+  coords 1964.978 -41.031 1336.912
+  angles 0 105.195 0
+ }
+ {
+  coords 1972.695 -38.654 1334.819
+  angles 0 105.177 0
+ }
+ {
+  coords 1980.413 -36.276 1332.729
+  angles 0 105.158 0
+ }
+ {
+  coords 1988.132 -33.899 1330.641
+  angles 0 105.14 0
+ }
+ {
+  coords 2003.306 -27.989 1346.233
+  angles 0 -164.935 0
+ }
+ {
+  coords 2023.769 -38.78 1304.363
+  angles 0 105.232 0
+ }
 }
 DecalEntity : "{22F9041142B00E5A}PrefabLibrary/DefaultLibrary/Decals/Stains/Decal_OilStain_01_extralarge.et" {
  coords 1282.937 0 1124.399
  angles -90 -134.317 -180
  scale 3.546
 }
+$grp GenericEntity : "{2305E5BED27B86B9}Prefabs/Tunnels/TT/TT_Curve_10_C.et" {
+ {
+  coords 2021.391 -47.072 1252.962
+  angles 0 60.231 0
+ }
+ {
+  coords 2014.178 -47.166 1249.681
+  angles 0 60.231 0
+ }
+ {
+  coords 2008.178 -47.804 1199.285
+  angles 0 145.229 0
+ }
+ {
+  coords 2016.762 -48.028 1185.481
+  angles 0 -19.772 0
+ }
+ {
+  coords 1939.666 -47.655 1297.853
+  angles 0 105.236 0
+ }
+ {
+  coords 1946.853 -47.642 1294.435
+  angles 0 125.232 0
+ }
+ {
+  coords 2031.367 -21.768 1435.11
+  angles 0 180 0
+ }
+ {
+  coords 2102.093 -38.003 1228.396
+  angles 0 -67.075 0
+ }
+ {
+  coords 2078.757 -40.542 1191.83
+  angles 0 -72.493 0
+ }
+ {
+  coords 2082.608 -40.48 1190.83
+  angles 0 103.414 0
+ }
+}
+GenericEntity : "{26AF927917313926}Prefabs/Tunnels/TT/TT_Cave_Room_Pillars.et" {
+ coords 1992.974 -47.696 1197.67
+ angles 0 -19.772 0
+}
+GenericEntity : "{2B271A38078DEA58}Prefabs/Tunnels/TT/TT_Cave_Hall_TwoLevel.et" {
+ coords 2028.879 -47.296 1231.567
+ angles 0 -154.77 0
+}
+$grp GenericEntity : "{324FC540AB600888}Prefabs/Tunnels/TT/TT_Slope.et" {
+ {
+  coords 2050.51 -47.295 1285.237
+  angles 0 15.224 0
+ }
+ {
+  coords 2053.717 -43.692 1296.637
+  angles 0 15.197 0
+ }
+ {
+  coords 2050.985 -38.886 1312.646
+  angles 0 -74.848 0
+ }
+ {
+  coords 2042.053 -36.483 1316.765
+  angles 0 15.125 0
+ }
+ {
+  coords 2050.285 -32.879 1324.476
+  angles 0 105.089 0
+ }
+ {
+  coords 2055.455 -31.677 1321.109
+  angles 0 -164.928 0
+ }
+ {
+  coords 2045.111 -26.87 1311.135
+  angles 0 15.018 0
+ }
+ {
+  coords 2105.339 -41.564 1210.294
+  angles 0 24.846 0
+ }
+ {
+  coords 2107.209 -39.187 1221.295
+  angles 0 -66.307 0
+ }
+ {
+  coords 1961.119 -42.22 1337.96
+  angles 0 105.205 0
+ }
+ {
+  coords 1968.836 -39.842 1335.866
+  angles 0 105.186 0
+ }
+ {
+  coords 1995.669 -32.721 1331.713
+  angles 0 15.121 0
+ }
+ {
+  coords 1997.752 -30.344 1339.439
+  angles 0 15.102 0
+ }
+ {
+  coords 2001.225 -25.612 1338.511
+  angles 0 -164.954 0
+ }
+ {
+  coords 1996.705 -24.445 1335.587
+  angles 0 15.018 0
+ }
+ {
+  coords 2019.88 -39.982 1305.387
+  angles 0 105.232 0
+ }
+ {
+  coords 2027.658 -37.578 1303.338
+  angles 0 105.231 0
+ }
+}
+$grp GenericEntity : "{32E08BBD7BD98A2A}Prefabs/Tunnels/TT/TT_Turn90_A.et" {
+ {
+  coords 2003.928 -47.692 1203.78
+  angles 0 70.228 0
+ }
+ {
+  coords 2013.605 -47.972 1190.744
+  angles 0 80.225 0
+ }
+ {
+  coords 2035.877 -47.296 1280.904
+  angles 0 18.089 0
+ }
+ {
+  coords 2054.167 -31.678 1323.375
+  angles 0 105.08 0
+ }
+ {
+  coords 2046.364 -26.871 1308.99
+  angles 0 -74.973 0
+ }
+ {
+  coords 2088.769 -40.418 1190.552
+  angles 0 24.32 0
+ }
+ {
+  coords 1966.715 -47.505 1232.64
+  angles 0 -109.772 0
+ }
+ {
+  coords 2002.038 -27.978 1348.438
+  angles 0 105.074 0
+ }
+ {
+  coords 2000.185 -24.423 1334.65
+  angles 0 -164.963 0
+ }
+ {
+  coords 2093.226 -36.343 1298.976
+  angles 0 115.23 0
+ }
+}
+$grp GenericEntity : "{332A4DE316B3C349}Prefabs/Tunnels/TT/TT_Curve_10.et" {
+ {
+  coords 2021.412 -47.119 1252.995
+  angles 0 -119.769 0
+ }
+ {
+  coords 2014.2 -47.213 1249.714
+  angles 0 -119.769 0
+ }
+ {
+  coords 1949.896 -47.636 1291.843
+  angles 0 135.23 0
+ }
+ {
+  coords 2041.741 -47.296 1286.88
+  angles 0 -169.052 0
+ }
+ {
+  coords 2028.99 -41.808 1169.511
+  angles 0 75.069 0
+ }
+ {
+  coords 1964.442 -47.514 1233.667
+  angles 0 -19.772 0
+ }
+ {
+  coords 2039.369 -36.374 1300.58
+  angles 0 -84.767 0
+ }
+}
+$grp GenericEntity : "{3B18EE71ECAAF79E}Prefabs/Tunnels/TT/TT_Cave_Pass_Meander.et" {
+ {
+  coords 1986.697 -47.496 1218.087
+  angles 0 -19.772 0
+ }
+ {
+  coords 2082.534 -40.357 1208.323
+  angles 0 115.23 0
+ }
+}
+GenericEntity : "{3BA6367C2BDBC1F1}Prefabs/Tunnels/TT/TT_Brk_Hole.et" {
+ coords 2027.677 -47.296 1287.534
+ angles 0 -74.767 0
+}
+GenericEntity : "{3E532296412A1686}Prefabs/Tunnels/TT/TT_Cave_Jct_Island.et" {
+ coords 1979.757 -47.496 1237.395
+ angles 0 -19.772 0
+}
+$grp GenericEntity : "{45EBC58C7D61ED79}Prefabs/Tunnels/TT/TT_Straight_4_C.et" {
+ {
+  coords 1959.008 -47.605 1276.507
+  angles 0 170.227 0
+ }
+ {
+  coords 2019.358 -41.76 1166.761
+  angles 0 73.866 0
+ }
+ {
+  coords 2098.58 -38.011 1230.189
+  angles 0 -57.462 0
+ }
+ {
+  coords 2039.398 -36.372 1300.606
+  angles 0 95.233 0
+ }
+ {
+  coords 2067.491 -36.357 1298.238
+  angles 0 95.231 0
+ }
+}
+$grp GenericEntity : "{47602509158BC835}Prefabs/Tunnels/TT/TT_Room_Drip_D.et" {
+ {
+  coords 1974.018 -47.496 1253.361
+  angles 0 -19.772 0
+ }
+ {
+  coords 2096.24 -38.057 1252.716
+  angles 0 115.23 0
+ }
+}
+$grp GenericEntity : "{49A0A1A96FE00F64}Prefabs/Tunnels/TT/TT_Slope_A.et" {
+ {
+  coords 1938.631 -46.473 1305.432
+  angles 0 15.234 0
+ }
+ {
+  coords 2051.58 -46.094 1289.037
+  angles 0 15.215 0
+ }
+ {
+  coords 2054.785 -42.491 1300.438
+  angles 0 15.188 0
+ }
+ {
+  coords 2053.414 -29.274 1313.265
+  angles 0 -164.946 0
+ }
+ {
+  coords 2046.167 -25.669 1314.939
+  angles 0 15.009 0
+ }
+ {
+  coords 2060.449 -43.065 1187.582
+  angles 0 25.685 0
+ }
+ {
+  coords 1957.863 -43.397 1332.832
+  angles 0 15.223 0
+ }
+ {
+  coords 1976.554 -37.465 1333.774
+  angles 0 105.167 0
+ }
+ {
+  coords 1984.272 -35.088 1331.685
+  angles 0 105.149 0
+ }
+ {
+  coords 1996.711 -31.533 1335.576
+  angles 0 15.112 0
+ }
+ {
+  coords 1998.793 -29.155 1343.303
+  angles 0 15.093 0
+ }
+ {
+  coords 2002.265 -26.8 1342.372
+  angles 0 -164.944 0
+ }
+ {
+  coords 2015.99 -41.184 1306.411
+  angles 0 105.232 0
+ }
+}
+GenericEntity : "{49BCFF0BBFACE27B}Prefabs/Tunnels/TT/TT_Entry_Incline.et" {
+ coords 2031.367 -17.768 1442.483
+ angles -10.021 0 0
+}
+GenericEntity : "{4FD654333D04C93C}Prefabs/Tunnels/TT/TT_Cave_Pass_Flooded.et" {
+ coords 2002.051 -46.486 1294.512
+ angles 0 -74.767 0
+}
+GenericEntity : "{5E74C18A47EE67FD}Prefabs/Tunnels/TT/TT_Brk_Cutting.et" {
+ coords 2003.194 -47.896 1178.405
+ angles 0 -19.772 0
+}
+GenericEntity : "{60B99E24A3F30C85}Prefabs/Tunnels/TT/TT_Cave_Pass_GalleryCrawl.et" {
+ coords 1996.977 -47.496 1261.082
+ angles 0 70.228 0
+}
+$grp GenericEntity : "{688FE6CF4DBAC7CE}Prefabs/Tunnels/TT/TT_Cave_Room_CrawlSlab.et" {
+ {
+  coords 2021.181 -47.118 1268.083
+  angles 0 70.228 0
+ }
+ {
+  coords 2053.197 -38.479 1257.079
+  angles 0 -64.77 0
+ }
+}
+GenericEntity : "{6F863F050522A878}Prefabs/Tunnels/TT/TT_Curve_5_A.et" {
+ coords 2089.508 -36.345 1300.495
+ angles 0 110.228 0
+}
+GenericEntity : "{73ACA96642FC3E6C}Prefabs/Tunnels/TT/TT_Cave_Room_SwimThrough.et" {
+ coords 1977.609 -46.486 1301.168
+ angles 0 -74.767 0
+}
+$grp GenericEntity : "{753D5E5E61E3CC4D}Prefabs/Tunnels/TT/TT_Straight_4.et" {
+ {
+  coords 1959.658 -47.596 1272.622
+  angles 0 170.227 0
+ }
+ {
+  coords 1960.958 -47.577 1264.852
+  angles 0 170.227 0
+ }
+ {
+  coords 1962.258 -47.559 1257.083
+  angles 0 170.226 0
+ }
+ {
+  coords 1963.687 -47.532 1245.385
+  angles 0 -174.775 0
+ }
+ {
+  coords 2032.624 -21.768 1416.65
+  angles 0 -165 0
+ }
+ {
+  coords 2031.588 -21.768 1412.786
+  angles 0 -165 0
+ }
+ {
+  coords 2030.553 -21.768 1408.923
+  angles 0 -165 0
+ }
+ {
+  coords 2029.518 -21.768 1405.059
+  angles 0 -165 0
+ }
+ {
+  coords 2028.482 -21.768 1401.195
+  angles 0 -165 0
+ }
+ {
+  coords 2047.425 -36.368 1299.929
+  angles 0 95.232 0
+ }
+ {
+  coords 2059.465 -36.361 1298.915
+  angles 0 95.231 0
+ }
+ {
+  coords 2081.574 -36.349 1301.685
+  angles 0 95.229 0
+ }
+}
+$grp GenericEntity : "{7795C11EEF484114}Prefabs/Tunnels/TT/TT_Curve_15_C.et" {
+ {
+  coords 2015.753 -41.746 1165.015
+  angles 0 57.73 0
+ }
+ {
+  coords 2005.621 -41.69 1159.075
+  angles 0 41.793 0
+ }
+ {
+  coords 2002.156 -41.652 1154.298
+  angles 0 26.168 0
+ }
+ {
+  coords 2013.563 -47.896 1162.788
+  angles 0 -64.77 0
+ }
+ {
+  coords 2010.207 -47.896 1164.944
+  angles 0 -49.771 0
+ }
+ {
+  coords 2007.525 -47.896 1167.896
+  angles 0 -34.771 0
+ }
+ {
+  coords 2006.987 -47.308 1246.433
+  angles 0 -119.769 0
+ }
+ {
+  coords 2010.221 -47.86 1195.885
+  angles 0 155.226 0
+ }
+ {
+  coords 1957.83 -47.611 1280.328
+  angles 0 155.227 0
+ }
+}
+$grp GenericEntity : "{78344B3ACADEAC26}Prefabs/Tunnels/TT/TT_Cave_Grotto_Sump.et" {
+ {
+  coords 2027.323 -20.308 1311.613
+  angles 0 -165 0
+ }
+ {
+  coords 2057.313 -38.339 1270.506
+  angles 0 25.23 0
+ }
+}
+GenericEntity : "{79B6A6A4E26F9695}Prefabs/Tunnels/TT/TT_Room_Drip_E.et" {
+ coords 2067.348 -39.257 1239.799
+ angles 0 25.23 0
+}
+$grp GenericEntity : "{7A6835D8302F8444}Prefabs/Tunnels/TT/TT_Turn90_C.et" {
+ {
+  coords 2040.544 -47.296 1283.095
+  angles 0 -160.483 0
+ }
+ {
+  coords 2040.467 -47.296 1288.968
+  angles 0 102.376 0
+ }
+ {
+  coords 2052.394 -28.073 1309.343
+  angles 0 -164.955 0
+ }
+ {
+  coords 2094.092 -38.026 1237.145
+  angles 0 121.769 0
+ }
+ {
+  coords 1958.911 -42.209 1336.694
+  angles 0 15.214 0
+ }
+ {
+  coords 1997.978 -24.434 1333.381
+  angles 0 -74.972 0
+ }
+}
+$grp GenericEntity : "{7FCCC84B9CCE4D05}Prefabs/Tunnels/TT/TT_Cave_Crawl_Rubble.et" {
+ {
+  coords 2025.894 -21.768 1391.536
+  angles 0 105 0
+ }
+ {
+  coords 1966.403 -42.686 1320.916
+  angles 0 15.233 0
+ }
+}
+GenericEntity : "{874C38B0619199EF}Prefabs/Tunnels/TT/TT_Cave_Grotto_Crawl.et" {
+ coords 1970.429 -41.896 1223.598
+ angles 0 -44.775 0
+}
+$grp GenericEntity : "{8F624ABAA927C8EA}Prefabs/Tunnels/TT/TT_Cave_Chamber_Cleft.et" {
+ {
+  coords 1953.069 -46.486 1307.228
+  angles 0 -74.767 0
+ }
+ {
+  coords 1954.513 -44.586 1321.666
+  angles 0 15.233 0
+ }
+}
+$grp GenericEntity : "{9021CD48139F73D5}Prefabs/Tunnels/TT/TT_Turn90_Wide.et" {
+ {
+  coords 2002.192 -41.633 1154.319
+  angles 0 -154.145 0
+ }
+ {
+  coords 2017.555 -47.896 1164.223
+  angles 0 -154.77 0
+ }
+ {
+  coords 2026.806 -47.025 1258.441
+  angles 0 160.228 0
+ }
+ {
+  coords 1939.673 -47.661 1297.865
+  angles 0 -74.765 0
+ }
+ {
+  coords 2054.808 -40.088 1311.72
+  angles 0 105.17 0
+ }
+ {
+  coords 2107.193 -39.18 1221.372
+  angles 0 114.077 0
+ }
+ {
+  coords 2048.66 -41.878 1169.568
+  angles 0 -154.803 0
+ }
+ {
+  coords 2062.182 -41.834 1191.219
+  angles 0 26.14 0
+ }
+ {
+  coords 1995.671 -32.71 1331.711
+  angles 0 -164.87 0
+ }
+ {
+  coords 1997.74 -23.257 1339.453
+  angles 0 15.009 0
+ }
+}
+$grp GenericEntity : "{94D49DAD442E53D1}Prefabs/Tunnels/TT/TT_Cave_Pass_Crack.et" {
+ {
+  coords 2020.311 -23.268 1374.561
+  angles 0 15 0
+ }
+ {
+  coords 1983.332 -42.686 1315.27
+  angles 0 105.233 0
+ }
+}
+$grp GenericEntity : "{9830724EE353AEF9}Prefabs/Tunnels/TT/TT_Curve_5.et" {
+ {
+  coords 1992.772 -47.449 1242.049
+  angles 0 70.228 0
+ }
+ {
+  coords 2091.994 -38.049 1244.991
+  angles 0 -154.386 0
+ }
+}
+$grp GenericEntity : "{A1E08C645BF80A0F}Prefabs/Tunnels/TT/TT_Dogleg_L_C.et" {
+ {
+  coords 2029.112 -21.768 1421.318
+  angles 0 -165 0
+ }
+ {
+  coords 2040.566 -47.296 1288.912
+  angles 0 -76.196 0
+ }
+}
+GenericEntity : "{A60B2D23B9E61477}Prefabs/Tunnels/TT/TT_Dogleg_R.et" {
+ coords 2103.563 -37.995 1222.824
+ angles 0 -66.691 0
+}
+$grp GenericEntity : "{B1C65D918FA7AE8B}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeC.et" {
+ {
+  coords 2014.865 -23.268 1354.236
+  angles 0 15 0
+ }
+ {
+  coords 2003.824 -41.186 1309.69
+  angles 0 105.233 0
+ }
+}
+$grp GenericEntity : "{B7C7A7ECB2C56503}Prefabs/Tunnels/TT/TT_Curve_5_C.et" {
+ {
+  coords 2029.977 -21.768 1425.222
+  angles 0 -170.003 0
+ }
+ {
+  coords 2082.61 -40.511 1190.797
+  angles 0 -77.041 0
+ }
+}
 DecalEntity : "{BD7194E89FF448BA}PrefabLibrary/DefaultLibrary/Decals/Stains/Decal_OilStain_01_large.et" {
  coords 1279.408 0 1128.438
  angles -90 -63.278 -180
  scale 2.223
+}
+$grp GenericEntity : "{BDF2AFA7294AF89A}Prefabs/Tunnels/TT/TT_Cave_Jct_Tri.et" {
+ {
+  coords 2011.022 -23.268 1337.965
+  angles 0 -165 0
+ }
+ {
+  coords 2098.796 -40.357 1201.213
+  angles 0 115.23 0
+ }
+ {
+  coords 2053.925 -41.896 1178.39
+  angles 0 115.23 0
+ }
+}
+$grp GenericEntity : "{BF9DAEE232803035}Prefabs/Tunnels/TT/TT_Straight_Wide.et" {
+ {
+  coords 2003.317 -47.355 1244.954
+  angles 0 -104.77 0
+ }
+ {
+  coords 2023.184 -41.773 1167.947
+  angles 0 75.002 0
+ }
+}
+GenericEntity : "{C1474445D8EFA109}Prefabs/Tunnels/TT/TT_Cave_Chamber_Bubble.et" {
+ coords 2049.872 -24.468 1326.313
+ angles 0 105 0
+}
+GenericEntity : "{C6AD8D3098F4C43F}Prefabs/Tunnels/TT/TT_Cave_Ledge_Collapse.et" {
+ coords 2031.818 -24.468 1330.322
+ angles 0 105 0
+}
+$grp GenericEntity : "{C8B5F393FF6B1CFC}Prefabs/Tunnels/TT/TT_Curve_15_A.et" {
+ {
+  coords 2008.609 -41.708 1161.655
+  angles 0 57.105 0
+ }
+ {
+  coords 1963.558 -47.541 1249.313
+  angles 0 170.226 0
+ }
+ {
+  coords 2032.93 -41.826 1170.207
+  angles 0 85.099 0
+ }
+ {
+  coords 2085.587 -36.347 1301.347
+  angles 0 95.229 0
+ }
+}
+GenericEntity : "{CE0B814FBFE7AE97}Prefabs/Tunnels/TT/TT_Cave_Pass_SqueezeP.et" {
+ coords 2036.123 -24.468 1354.114
+ angles 0 15 0
+}
+GenericEntity : "{DCFD82F896680163}Prefabs/Tunnels/TT/TT_Cave_Room_Grotto.et" {
+ coords 2040.099 -24.468 1368.951
+ angles 0 15 0
+}
+GenericEntity : "{E4180A497EB79016}Prefabs/Tunnels/TT/TT_Room_Drip_B.et" {
+ coords 2046.925 -47.296 1275.627
+ angles 0 -74.767 0
+}
+$grp GenericEntity : "{E7E68F8E17CC2094}Prefabs/Tunnels/TT/TT_Turn90.et" {
+ {
+  coords 2013.545 -47.916 1190.676
+  angles 0 -99.775 0
+ }
+ {
+  coords 2016.822 -48.084 1185.549
+  angles 0 160.228 0
+ }
+ {
+  coords 1939.688 -45.28 1309.303
+  angles 0 15.233 0
+ }
+ {
+  coords 2036.987 -47.296 1278.719
+  angles 0 -73.339 0
+ }
+ {
+  coords 2043.301 -36.484 1314.618
+  angles 0 -74.866 0
+ }
+ {
+  coords 2044.178 -34.081 1324.369
+  angles 0 15.107 0
+ }
+ {
+  coords 2095.224 -38.018 1232.262
+  angles 0 -57.846 0
+ }
+ {
+  coords 2090.709 -38.041 1239.072
+  angles 0 -58.999 0
+ }
+ {
+  coords 2088.771 -40.449 1190.519
+  angles 0 -156.134 0
+ }
+ {
+  coords 2093.538 -40.388 1192.365
+  angles 0 -155.225 0
+ }
+ {
+  coords 1999.833 -27.966 1347.167
+  angles 0 15.084 0
+ }
+}
+$grp GenericEntity : "{EB68EE7A72EA7F67}Prefabs/Tunnels/TT/TT_Adapter_Cave.et" {
+ {
+  coords 1996.451 -41.596 1153.831
+  angles 0 -64.77 0
+ }
+ {
+  coords 2026.785 -46.978 1258.408
+  angles 0 -19.772 0
+ }
+ {
+  coords 1992.793 -47.496 1242.082
+  angles 0 -109.772 0
+ }
+ {
+  coords 1961.406 -46.486 1304.958
+  angles 0 105.233 0
+ }
+ {
+  coords 1966.686 -47.496 1232.697
+  angles 0 70.228 0
+ }
+ {
+  coords 2003.868 -47.636 1203.712
+  angles 0 -109.772 0
+ }
+ {
+  coords 2014.915 -48.196 1183.043
+  angles 0 -109.772 0
+ }
+ {
+  coords 1980.773 -41.896 1213.173
+  angles 0 -44.775 0
+ }
+ {
+  coords 1941.905 -45.286 1310.579
+  angles 0 105.233 0
+ }
+ {
+  coords 2036.888 -47.296 1278.775
+  angles 0 105.233 0
+ }
+ {
+  coords 2050.491 -47.296 1285.297
+  angles 0 -164.767 0
+ }
+ {
+  coords 2047.222 -24.468 1318.743
+  angles 0 15 0
+ }
+ {
+  coords 2105.322 -41.557 1210.372
+  angles 0 -154.77 0
+ }
+ {
+  coords 2092.011 -38.057 1244.914
+  angles 0 25.23 0
+ }
+ {
+  coords 2048.665 -41.896 1169.574
+  angles 0 25.23 0
+ }
+ {
+  coords 2060.451 -43.096 1187.549
+  angles 0 -154.77 0
+ }
+ {
+  coords 2093.536 -40.357 1192.398
+  angles 0 25.23 0
+ }
+ {
+  coords 1957.864 -43.386 1332.831
+  angles 0 -164.767 0
+ }
+ {
+  coords 2001.413 -23.268 1341.575
+  angles 0 105 0
+ }
+ {
+  coords 2015.96 -41.186 1306.385
+  angles 0 -74.767 0
+ }
+ {
+  coords 2094.117 -36.341 1296.607
+  angles 0 -154.77 0
+ }
+}
+$grp GenericEntity : "{EF6923D2568B9913}Prefabs/Tunnels/TT/TT_Curve_15.et" {
+ {
+  coords 2015.789 -41.727 1165.036
+  angles 0 -122.583 0
+ }
+ {
+  coords 2008.118 -47.748 1199.217
+  angles 0 -34.771 0
+ }
+ {
+  coords 2040.863 -41.861 1169.335
+  angles 0 100.165 0
+ }
+ {
+  coords 1963.452 -47.523 1237.473
+  angles 0 -9.774 0
+ }
+}
+$grp GenericEntity : "{F05F9C9C30B14625}Prefabs/Tunnels/TT/TT_Straight_1.et" {
+ {
+  coords 2015.797 -48.14 1183.314
+  angles 0 -109.772 0
+ }
+ {
+  coords 2028.985 -41.791 1169.505
+  angles 0 -104.965 0
+ }
+}
+$grp GenericEntity : "{F120F6DEE0EC5C19}Prefabs/Tunnels/TT/TT_Trans_S_P.et" {
+ {
+  coords 1998.738 -41.896 1200.913
+  angles 0 115.23 0
+ }
+ {
+  coords 1984.999 -41.896 1208.914
+  angles 0 -44.775 0
+ }
+ {
+  coords 1980.773 -41.896 1213.173
+  angles 0 135.225 0
+ }
+ {
+  coords 2031.019 -21.768 1431.131
+  angles 0 -170.003 0
+ }
+ {
+  coords 2029.977 -21.768 1425.222
+  angles 0 9.997 0
+ }
+}
+$grp GenericEntity : "{FCD6046B33E5618D}Prefabs/Tunnels/TT/TT_Straight_4_A.et" {
+ {
+  coords 1961.608 -47.568 1260.968
+  angles 0 170.226 0
+ }
+ {
+  coords 1962.908 -47.55 1253.198
+  angles 0 170.226 0
+ }
+ {
+  coords 2094.108 -38.034 1237.067
+  angles 0 -58.615 0
+ }
+ {
+  coords 2031.548 -36.376 1302.314
+  angles 0 105.231 0
+ }
+ {
+  coords 2043.412 -36.37 1300.268
+  angles 0 95.233 0
+ }
+ {
+  coords 2051.438 -36.365 1299.591
+  angles 0 95.232 0
+ }
+ {
+  coords 2063.478 -36.359 1298.576
+  angles 0 95.231 0
+ }
+ {
+  coords 2073.526 -36.353 1297.744
+  angles 0 95.23 0
+ }
 }

@@ -915,6 +915,36 @@ class SP_TunnelSnapTool : WorldEditorTool
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Which openings have the cave's narrower shape (1.45 x 2.10 m against the dug tunnel's 1.60 x 2.20, measured on the models):
+	//! every cave piece's, the cave side of the breakthroughs, the adapter's second
+	protected bool IsCaveOpening(string name, int socket)
+	{
+		if (name.Contains("Adapter"))
+			return socket == 1;
+
+		if (name.Contains("Brk_Cutting"))
+			return socket == 2;
+
+		if (name.Contains("Brk_"))
+			return socket == 1;
+
+		return SP_TunnelCatalog.ThemeOf(name) == SP_TunnelTheme.CAVE;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! An adapter with its cave end (second opening) on the opening at pos / dir; pos and dir move on to its dug end
+	protected SP_PathStep PlanAdapter(SP_TunnelPieceDef def, int piece, inout vector pos, inout vector dir)
+	{
+		SP_PathStep step = new SP_PathStep();
+		step.m_iPiece = piece;
+		step.m_iSocket = 1;
+		SP_TunnelGrower.Attach(pos, dir, def.m_aSockets[1], step.m_vPos, step.m_fYaw);
+		pos = step.m_vPos + SP_TunnelGrower.Rot(def.m_aSockets[0].m_vPos, step.m_fYaw);
+		dir = SP_TunnelGrower.Rot(def.m_aSockets[0].m_vDir, step.m_fYaw);
+		return step;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! What stands in the world, for the path to keep clear of. skip: the pieces of the path about to be replaced
 	protected void AddObstacles(SP_TunnelPathFinder finder, notnull array<IEntitySource> skip)
 	{
@@ -998,9 +1028,31 @@ class SP_TunnelSnapTool : WorldEditorTool
 		}
 
 		SP_TunnelSocketDef toDef = to.m_Def;
+		SP_TunnelCatalog catalog = m_aWorld[from.m_iWorld].m_Cat;
+		string fromName = catalog.m_aPieces[m_aWorld[from.m_iWorld].m_iPiece].m_sName;
+		string toName = catalog.m_aPieces[m_aWorld[to.m_iWorld].m_iPiece].m_sName;
+
+		// a cave opening is narrower than the dug tunnel's: an adapter goes on it, and the path runs from the adapter's other end
+		vector startPos = from.m_vPos;
+		vector startDir = from.m_vDir;
 		vector goal = to.m_vPos;
 		vector goalDir = to.m_vDir;
-		float span = vector.Distance(from.m_vPos, goal);
+		SP_PathStep startAdapter;
+		SP_PathStep goalAdapter;
+		int adapter = -1;
+		foreach (int p, SP_TunnelPieceDef candidate : catalog.m_aPieces)
+		{
+			if (candidate.m_sName == "TT_Adapter_Cave" && candidate.m_aSockets.Count() == 2)
+				adapter = p;
+		}
+
+		if (adapter >= 0 && from.m_Def.m_iSize == SP_TunnelSize.S && IsCaveOpening(fromName, from.m_iSocket))
+			startAdapter = PlanAdapter(catalog.m_aPieces[adapter], adapter, startPos, startDir);
+
+		if (adapter >= 0 && toDef.m_iSize == SP_TunnelSize.S && IsCaveOpening(toName, to.m_iSocket))
+			goalAdapter = PlanAdapter(catalog.m_aPieces[adapter], adapter, goal, goalDir);
+
+		float span = vector.Distance(startPos, goal);
 		if (span > PATH_MAX_SPAN)
 		{
 			ForgetPath();
@@ -1010,10 +1062,6 @@ class SP_TunnelSnapTool : WorldEditorTool
 
 		float maxGap = Math.Max(m_fPathGap, 0.02);
 
-		SP_TunnelCatalog catalog = m_aWorld[from.m_iWorld].m_Cat;
-		string fromName = catalog.m_aPieces[m_aWorld[from.m_iWorld].m_iPiece].m_sName;
-		string toName = catalog.m_aPieces[m_aWorld[to.m_iWorld].m_iPiece].m_sName;
-		bool caves = SP_TunnelCatalog.ThemeOf(fromName) == SP_TunnelTheme.CAVE && SP_TunnelCatalog.ThemeOf(toName) == SP_TunnelTheme.CAVE;
 		WorldEditorAPI depthApi = null;
 		if (m_bPathUnderground)
 			depthApi = m_API;
@@ -1021,19 +1069,19 @@ class SP_TunnelSnapTool : WorldEditorTool
 		SetHud("Path: searching...");
 		int started = System.GetTickCount();
 		SP_TunnelPathFinder finder = new SP_TunnelPathFinder(catalog, depthApi, started);
-		finder.BuildMoves(caves, from.m_Def.m_iSize != toDef.m_iSize);
+		finder.BuildMoves(from.m_Def.m_iSize != toDef.m_iSize);
 		AddObstacles(finder, m_aPathMade);
 
 		bool found = false;
 		for (int attempt = 0; attempt < 3 && !found; attempt++)
 		{
-			found = finder.Find(from.m_vPos, SP_TunnelGrower.YawOf(from.m_vDir), from.m_Def.m_iSize, goal, SP_TunnelGrower.YawOf(-goalDir), toDef.m_iSize, maxGap, maxGap * 0.5, PATH_MAX_WEDGE, m_iPathNodes);
+			found = finder.Find(startPos, SP_TunnelGrower.YawOf(startDir), from.m_Def.m_iSize, goal, SP_TunnelGrower.YawOf(-goalDir), toDef.m_iSize, maxGap, maxGap * 0.5, PATH_MAX_WEDGE, m_iPathNodes);
 		}
 
 		int took = System.GetTickCount() - started;
 		if (!found)
 		{
-			float rise = goal[1] - from.m_vPos[1];
+			float rise = goal[1] - startPos[1];
 			string closest = "none";
 			if (finder.m_fNearest < 99999)
 				closest = finder.m_fNearest.ToString(-1, 2) + " m";
@@ -1042,6 +1090,18 @@ class SP_TunnelSnapTool : WorldEditorTool
 			Print("SP_TunnelSnapTool: " + failed, LogLevel.WARNING);
 			SetHud(failed);
 			return;
+		}
+
+		if (startAdapter)
+		{
+			finder.m_aSteps.InsertAt(startAdapter, 0);
+			finder.m_fLength += 3;
+		}
+
+		if (goalAdapter)
+		{
+			finder.m_aSteps.Insert(goalAdapter);
+			finder.m_fLength += 3;
 		}
 
 		BuildPath(finder, catalog, again);
@@ -1300,13 +1360,22 @@ class SP_TunnelSnapTool : WorldEditorTool
 		float z1 = def.m_vMax[2] - OVERLAP_SHRINK;
 		float low = def.m_vMin[1];
 		float high = def.m_vMax[1];
-		if (def.m_iKind == SP_TunnelKind.ENTRANCE && !def.m_sName.Contains("Incline"))
+		if (def.m_iKind == SP_TunnelKind.ENTRANCE)
 		{
-			// the rock mound round a horizontal entry is not tunnel: only the middle counts
+			// the rock round an entry is not tunnel: only the middle counts
 			x0 = Math.Max(x0, -1.2);
 			x1 = Math.Min(x1, 1.2);
-			low = Math.Max(low, -0.9);
-			high = Math.Min(high, 3.0);
+			if (def.m_sName.Contains("Incline"))
+			{
+				z0 = Math.Max(z0, -3.2);
+				z1 = Math.Min(z1, 1.9);
+				high = Math.Min(high, 0.2);
+			}
+			else
+			{
+				low = Math.Max(low, -0.9);
+				high = Math.Min(high, 3.0);
+			}
 		}
 
 		if (x1 < x0)
