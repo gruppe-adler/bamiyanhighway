@@ -1,3 +1,4 @@
 TerrainMaterial {
  SatMapBlend 0
+ SatMapBrightness 0
 }
